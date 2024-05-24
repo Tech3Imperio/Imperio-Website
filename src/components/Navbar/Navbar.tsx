@@ -32,13 +32,11 @@ const MenuItems: React.FC = () => (
   </>
 );
 
-const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, hidden }) => (
+const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen }) => (
   <div
-    className={
-      `fixed top-[8vh] right-0 w-full bg-[--black] text-white z-50 transition-all duration-700 ${
-        isOpen ? "h-[30vh]" : "h-0"
-      }` + hidden
-    }
+    className={`fixed top-[8vh] right-0 w-full bg-[--black] text-white z-50 transition-all duration-700 overflow-hidden ${
+      isOpen ? "h-[30vh]" : "h-0 "
+    }`}
   >
     {/* <header className="w-full flex justify-between pt-6 px-8">
       <Logo />
@@ -76,7 +74,7 @@ export const Navbar: React.FC = () => {
   const handleToggle = () => {
     setOpen(!open);
     setTimeout(() => {
-      hidden.current = hidden.current == "block" ? "hidden" : "block";
+      hidden.current = hidden.current == "" ? "hidden" : "";
       console.log(hidden.current);
     }, 2000);
   };
@@ -126,7 +124,7 @@ export const Navbar: React.FC = () => {
           </>
         )}
       </div>
-      <MobileMenu isOpen={open} hidden={hidden.current} />
+      <MobileMenu isOpen={open} />
     </nav>
   );
 };

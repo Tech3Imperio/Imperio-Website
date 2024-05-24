@@ -5,5 +5,4 @@ export interface MenuItemProps {
 
 export interface MobileMenuProps {
   isOpen: boolean;
-  hidden: string;
 }
