@@ -2,7 +2,7 @@ import styles from "./Navbar.module.css";
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { SocialLinks } from "../SocialLinks/SocialLinks";
-import { whiteLogo } from "../../assets/Images";
+import { whiteLogo } from "../../assets/images";
 import { MenuItemProps, MobileMenuProps } from "../../types";
 
 const Logo: React.FC = () => (
@@ -59,9 +59,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen }) => (
         isOpen ? "right-0" : "right-[-150px]"
       }`}
     >
-      <div className="flex justify-center gap-10 text-2xl text-white">
-        <SocialLinks />
-      </div>
+      <SocialLinks className="flex justify-center gap-10 text-2xl text-white" />
     </footer>
   </div>
 );

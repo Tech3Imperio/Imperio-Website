@@ -1,26 +1,54 @@
 import React from "react";
 import {
-  FaFacebook as Facebook,
-  FaTwitter as Twitter,
+  FaXTwitter as Twitter,
   FaInstagram as Instagram,
-  FaLinkedin as Linkedin,
-} from "react-icons/fa";
+} from "react-icons/fa6";
+import { RiFacebookCircleLine as Facebook } from "react-icons/ri";
+import { FiYoutube as Youtube } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import { SocialLinkProps } from "../../types";
+import { SocialLinkProps, SocialLinksProps } from "../../types";
 
-const SocialLink: React.FC<SocialLinkProps> = ({ to, icon: Icon }) => (
-  <div className="p-2 rounded-full hover:bg-white hover:text-blue-700 transition-all duration-500">
+const SocialLink: React.FC<SocialLinkProps> = ({
+  to,
+  icon: Icon,
+  className = "",
+}) => (
+  <div
+    className={
+      `rounded-full hover:text-[--secound] transition-all duration-500 ` +
+      className
+    }
+  >
     <Link to={to} target="_blank">
       <Icon />
     </Link>
   </div>
 );
 
-export const SocialLinks: React.FC = () => (
-  <>
-    <SocialLink to="" icon={Facebook} />
-    <SocialLink to="" icon={Instagram} />
-    <SocialLink to="" icon={Twitter} />
-    <SocialLink to="" icon={Linkedin} />
-  </>
+export const SocialLinks: React.FC<SocialLinksProps> = ({
+  className = "",
+  objectClassName = "",
+}) => (
+  <div className={className}>
+    <SocialLink
+      to=""
+      icon={Facebook}
+      className={objectClassName + "text-3xl pb-2"}
+    />
+    <SocialLink
+      to=""
+      icon={Instagram}
+      className={objectClassName + "text-2xl pt-1"}
+    />
+    <SocialLink
+      to=""
+      icon={Youtube}
+      className={objectClassName + "text-2xl pt-1"}
+    />
+    <SocialLink
+      to=""
+      icon={Twitter}
+      className={objectClassName + "text-2xl pt-1"}
+    />
+  </div>
 );
