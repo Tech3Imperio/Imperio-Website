@@ -6,7 +6,7 @@ import {
 import { RiFacebookCircleLine as Facebook } from "react-icons/ri";
 import { FiYoutube as Youtube } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import { SocialLinkProps, SocialLinksProps } from "../../types";
+import { SocialLinkProps, SocialLinksProps } from "../../interface";
 
 const SocialLink: React.FC<SocialLinkProps> = ({
   to,

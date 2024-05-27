@@ -1,12 +1,13 @@
 import styles from "./Navbar.module.css";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
+import { debounce } from "../../utils";
 import { Link } from "react-router-dom";
-import { SocialLinks } from "../SocialLinks/SocialLinks";
 import { whiteLogo } from "../../assets/images";
-import { MenuItemProps, MobileMenuProps } from "../../types";
+import { SocialLinks } from "../SocialLinks/SocialLinks";
+import { MenuItemProps, MobileMenuProps } from "../../interface";
 
 const Logo: React.FC = () => (
-  <Link to="/home" className="navbar-brand">
+  <Link to="/home" className="navbar-brand" aria-label="PowerHouse Home">
     <img
       src={whiteLogo}
       className="max-w-28 max-md:pl-3 transition ease-out duration-500 hover:translate-y-1 hover:scale-125"
@@ -35,20 +36,10 @@ const MenuItems: React.FC = () => (
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen }) => (
   <div
     className={`fixed top-[8vh] right-0 w-full bg-[--black] text-white z-50 transition-all duration-700 overflow-hidden ${
-      isOpen ? "h-[30vh]" : "h-0 "
+      isOpen ? "h-[30vh]" : "h-0"
     }`}
+    aria-hidden={!isOpen}
   >
-    {/* <header className="w-full flex justify-between pt-6 px-8">
-      <Logo />
-      <button
-        className="text-4xl"
-        onClick={handleClose}
-        title="Toggle close"
-        type="button"
-      >
-        <RiCloseCircleLine />
-      </button>
-    </header> */}
     <section>
       <ul className="p-8 text-lg">
         <MenuItems />
@@ -65,44 +56,54 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen }) => (
 );
 
 export const Navbar: React.FC = () => {
-  const [width, setWidth] = useState<boolean>(window.innerWidth < 1000);
-  const [open, setOpen] = useState<boolean>(false);
+  const [isMobileView, setIsMobileView] = useState<boolean>(
+    window.innerWidth < 1200
+  );
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const hidden = useRef("hidden");
 
-  const handleToggle = () => {
-    setOpen(!open);
+  const handleToggle = useCallback(() => {
+    setIsMenuOpen((prevOpen) => !prevOpen);
     setTimeout(() => {
-      hidden.current = hidden.current == "" ? "hidden" : "";
-      console.log(hidden.current);
+      hidden.current = hidden.current === "" ? "hidden" : "";
     }, 2000);
-  };
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
-      setWidth(window.innerWidth < 1000);
+      setIsMobileView(window.innerWidth < 1200);
     };
-    window.addEventListener("resize", handleResize);
+
+    const debouncedResizeHandler = debounce(handleResize, 100);
+
+    window.addEventListener("resize", debouncedResizeHandler as EventListener);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener(
+        "resize",
+        debouncedResizeHandler as EventListener
+      );
     };
   }, []);
 
   return (
     <nav
-      className={`bg-[--black] sticky top-0 z-50 ${
-        !open && "rounded-b-[30px]"
+      className={`bg-[--black] sticky top-0 z-50 transition-all duration-200 ease ${
+        !isMenuOpen ? "rounded-b-[30px]" : "rounded-b-[0px]"
       }`}
     >
-      <div className="w-full m-auto py-2 flex items-center pl-12 pr-12 max-md:py-5 justify-between">
+      <div className="w-full m-auto py-2 flex items-center px-44 max-md:py-5 justify-between">
         <Logo />
-        {width ? (
+        {isMobileView ? (
           <button
             className="text-[--white]"
             onClick={handleToggle}
-            title="Toggle open"
+            aria-label="Toggle menu"
           >
-            <div id={styles.nav_icon3} className={open ? styles.open : ""}>
+            <div
+              id={styles.nav_icon3}
+              className={isMenuOpen ? styles.open : ""}
+            >
               <span></span>
               <span></span>
               <span></span>
@@ -112,7 +113,7 @@ export const Navbar: React.FC = () => {
         ) : (
           <>
             <div className="flex-grow flex justify-center">
-              <ul className=" text-lg flex gap-16 text-white my-auto hover:border-2 shadow-md hover:shadow-white px-7 rounded-[30px]">
+              <ul className="text-lg flex gap-16 text-white my-auto hover:border-2 shadow-md hover:shadow-white px-7 transition-all duration-700 ease rounded-[30px]">
                 <MenuItems />
               </ul>
             </div>
@@ -122,7 +123,7 @@ export const Navbar: React.FC = () => {
           </>
         )}
       </div>
-      <MobileMenu isOpen={open} />
+      <MobileMenu isOpen={isMenuOpen} />
     </nav>
   );
 };

@@ -1,10 +1,10 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { Footer, Navbar } from "./components";
-// import { useScrollToTop } from "./hooks";
+import { useScrollToTop } from "./hooks";
 
 const App: React.FC = () => {
-  // useScrollToTop();
+  useScrollToTop();
   return (
     <>
       <Navbar />
