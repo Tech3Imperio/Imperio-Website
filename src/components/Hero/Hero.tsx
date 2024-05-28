@@ -1,5 +1,5 @@
 import React from "react";
-import { HeroProps } from "../../interface/hero";
+import { HeroProps } from "../../interface";
 
 export const Hero: React.FC<HeroProps> = ({
   img,
@@ -19,8 +19,8 @@ export const Hero: React.FC<HeroProps> = ({
       <div
         style={{ height: containerHeight }}
         className={`absolute left-0 top-[-28px] w-full -z-[5] overflow-hidden bg-black ${
-          curve && "rounded-b-[30px]"
-        } ${shadow && "shadow-md shadow-gray-500"}`}
+          curve && "rounded-b-4xl"
+        } ${shadow && "shadow-shadow shadow-gray-500"}`}
       >
         <img src={img} alt={altText} className="w-full h-full object-cover" />
         <div

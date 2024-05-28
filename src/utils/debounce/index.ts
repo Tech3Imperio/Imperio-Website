@@ -1,7 +1,7 @@
-import { DebounceProps } from "./../../interface/utils";
+import { DebounceProps } from "./../../interface";
 
 export const debounce: DebounceProps = (callback, wait) => {
-  let timeout: NodeJS.Timeout | null = null;
+  let timeout: number | null = null;
 
   return function (str: string, num: number): void {
     if (timeout !== null) {

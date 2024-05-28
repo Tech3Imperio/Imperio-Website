@@ -5,10 +5,10 @@
 .Link::before {
   content: "";
   position: absolute;
-  bottom: 9.5px;
+  bottom: 12px;
   left: 1px;
   width: 0%;
-  height: 2.5px;
+  height: 1.5px;
   background-color: transparent;
   transition: all 0.7s linear;
 }

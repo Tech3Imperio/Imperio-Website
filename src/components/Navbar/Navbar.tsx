@@ -3,8 +3,8 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import { debounce } from "../../utils";
 import { Link } from "react-router-dom";
 import { whiteLogo } from "../../assets/images";
-import { SocialLinks } from "../SocialLinks/SocialLinks";
 import { MenuItemProps, MobileMenuProps } from "../../interface";
+import { SocialLinks, QuoteButton } from "../../components";
 
 const Logo: React.FC = () => (
   <Link to="/home" className="navbar-brand" aria-label="PowerHouse Home">
@@ -35,18 +35,18 @@ const MenuItems: React.FC = () => (
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen }) => (
   <div
-    className={`fixed top-[8vh] right-0 w-full bg-[--black] text-white z-50 transition-all duration-700 overflow-hidden ${
-      isOpen ? "h-[30vh]" : "h-0"
+    className={`w-full bg-[--black] text-white transition-all duration-700 overflow-hidden ${
+      isOpen ? "h-[32vh]" : "h-0"
     }`}
     aria-hidden={!isOpen}
   >
     <section>
-      <ul className="p-8 text-lg">
+      <ul className="p-8 pt-4 text-lg">
         <MenuItems />
       </ul>
     </section>
     <footer
-      className={`pt-4 relative transition-all duration-700 ${
+      className={`relative transition-all duration-700 ${
         isOpen ? "right-0" : "right-[-150px]"
       }`}
     >
@@ -75,7 +75,6 @@ export const Navbar: React.FC = () => {
     };
 
     const debouncedResizeHandler = debounce(handleResize, 100);
-
     window.addEventListener("resize", debouncedResizeHandler as EventListener);
 
     return () => {
@@ -89,10 +88,10 @@ export const Navbar: React.FC = () => {
   return (
     <nav
       className={`bg-[--black] sticky top-0 z-50 transition-all duration-200 ease ${
-        !isMenuOpen ? "rounded-b-[30px]" : "rounded-b-[0px]"
+        !isMenuOpen ? "rounded-b-4xl" : "rounded-b-[0px]"
       }`}
     >
-      <div className="w-full m-auto py-2 flex items-center px-44 max-md:py-5 justify-between">
+      <div className="w-full m-auto py-2 flex items-center px-44 max-lg:px-16 justify-between">
         <Logo />
         {isMobileView ? (
           <button
@@ -113,13 +112,11 @@ export const Navbar: React.FC = () => {
         ) : (
           <>
             <div className="flex-grow flex justify-center">
-              <ul className="text-lg flex gap-16 text-white my-auto hover:border-2 shadow-md hover:shadow-white px-7 transition-all duration-700 ease rounded-[30px]">
+              <ul className="text-lg flex gap-16 text-white my-auto px-7 rounded-4xl shadow-shadow shadow-black transition-all duration-700 ease hover:shadow-white">
                 <MenuItems />
               </ul>
             </div>
-            <Link to="/" className="button">
-              GET A QUOTE
-            </Link>
+            <QuoteButton />
           </>
         )}
       </div>

@@ -1,4 +1,3 @@
-import React from "react";
 import { SocialLinks } from "../SocialLinks/SocialLinks";
 import { HiOutlinePhone } from "react-icons/hi2";
 import { MdOutlineEmail } from "react-icons/md";
@@ -8,9 +7,9 @@ export const Footer = () => {
   return (
     <footer className="bg-[--black] p-20 text-white flex flex-col md:flex-row gap-[20rem] justify-center">
       <div className="flex-1 max-w-md">
-        <header className="text-5xl font-light">Let’s keep in touch!</header>
+        <header className="text-5xl Raleway">Let’s keep in touch!</header>
         <div className="mt-8">
-          <h3 className="text-2xl">Subscribe Now</h3>
+          <h3 className="text-2xl Raleway">Subscribe Now</h3>
           <div className="mt-4 text-lg">
             Receive updates on new designs, offers and blogs.
           </div>
@@ -21,7 +20,7 @@ export const Footer = () => {
             placeholder="example@example.com"
             className="border-2 border-white rounded-l-full p-4 pl-6 w-72 text-white transition-all duration-500 ease-in-out group-hover:border-[--secound] focus:border-[--secound] outline-none "
           />
-          <button className="bg-white rounded-r-[30px] h-full p-5 transition-all duration-500 ease-in-out group-hover:bg-[--secound] group2-focus:bg-[--secound] outline-none">
+          <button className="bg-white rounded-r-4xl h-full p-5 transition-all duration-500 ease-in-out group-hover:bg-[--secound] group2-focus:bg-[--secound] outline-none">
             <svg
               width="24"
               height="20"

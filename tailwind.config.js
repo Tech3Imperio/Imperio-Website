@@ -11,6 +11,12 @@ export default {
         "--secound": "#f5ce02",
         "--third": "#03247b",
       },
+      borderRadius: {
+        "4xl": "30px",
+      },
+      boxShadow: {
+        shadow: "0px 0px 12px 4px rgba(0, 0, 0, 1)",
+      },
     },
   },
   plugins: [],
