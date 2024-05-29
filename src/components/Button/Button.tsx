@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ButtonProps, WhiteButtonProps } from "../../interface";
+import { ButtonProps, WhiteButtonProps } from "../../types";
 
 export const QuoteButton: React.FC = () => {
   return (

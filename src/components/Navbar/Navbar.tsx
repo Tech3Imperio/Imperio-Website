@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import { debounce } from "../../utils";
 import { Link } from "react-router-dom";
 import { whiteLogo } from "../../assets/images";
-import { MenuItemProps, MobileMenuProps } from "../../interface";
+import { MenuItemProps, MobileMenuProps } from "../../types";
 import { SocialLinks, QuoteButton } from "../../components";
 
 const Logo: React.FC = () => (

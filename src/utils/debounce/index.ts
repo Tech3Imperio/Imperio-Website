@@ -1,4 +1,4 @@
-import { DebounceProps } from "./../../interface";
+import { DebounceProps } from "../../types";
 
 export const debounce: DebounceProps = (callback, wait) => {
   let timeout: number | null = null;

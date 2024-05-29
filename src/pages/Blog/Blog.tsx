@@ -1,7 +1,14 @@
 import { useState } from "react";
-import { Hero, WhiteButton, Description } from "../../components";
+import {
+  Hero,
+  WhiteButton,
+  Description,
+  SlidingPanel,
+  BlogCard,
+} from "../../components";
 import { tempHeroImage } from "../../assets/images";
 import { CiSearch } from "react-icons/ci";
+import { BlogType } from "../../types";
 
 export const Blog = () => {
   const [filters, setFilters] = useState<boolean[]>([
@@ -12,6 +19,8 @@ export const Blog = () => {
   ]);
   const [search, setSearch] = useState<string>("");
   const [focus, setFocus] = useState<boolean>(false);
+  const [selectedBlog, setSelectedBlog] = useState<BlogType | null>(null);
+  const [isPanelOpen, setIsPanelOpen] = useState<boolean>(false);
 
   const toggleFilter = (index: number) => {
     setFilters(filters.map((filter, i) => (i === index ? !filter : filter)));
@@ -27,6 +36,146 @@ export const Blog = () => {
     </WhiteButton>
   );
 
+  const openPanel = (blog: BlogType) => {
+    setSelectedBlog(blog);
+    setIsPanelOpen(true);
+  };
+
+  const closePanel = () => {
+    setIsPanelOpen(false);
+    setSelectedBlog(null);
+  };
+
+  const cards = [
+    {
+      imgSrc: "https://via.placeholder.com/400",
+      alt: "helo",
+      header: "My Blog Post",
+      description: "This is a brief description of the blog post.",
+      tags: ["React", "TypeScript"],
+      socialMedia: "Tweet",
+    },
+    {
+      imgSrc: "https://via.placeholder.com/400",
+      alt: "helo",
+      header: "My Blog Post",
+      description: "This is a brief description of the blog post.",
+      tags: ["React", "TypeScript"],
+      socialMedia: "Tweet",
+    },
+    {
+      imgSrc: "https://via.placeholder.com/400",
+      alt: "helo",
+      header: "My Blog Post",
+      description: "This is a brief description of the blog post.",
+      tags: ["React", "TypeScript"],
+      socialMedia: "Tweet",
+    },
+    {
+      imgSrc: "https://via.placeholder.com/400",
+      alt: "helo",
+      header: "My Blog Post",
+      description: "This is a brief description of the blog post.",
+      tags: ["React", "TypeScript"],
+      socialMedia: "Tweet",
+    },
+    {
+      imgSrc: "https://via.placeholder.com/400",
+      alt: "helo",
+      header: "My Blog Post",
+      description: "This is a brief description of the blog post.",
+      tags: ["React", "TypeScript"],
+      socialMedia: "Tweet",
+    },
+    {
+      imgSrc: "https://via.placeholder.com/400",
+      alt: "helo",
+      header: "My Blog Post",
+      description: "This is a brief description of the blog post.",
+      tags: ["React", "TypeScript"],
+      socialMedia: "Tweet",
+    },
+    {
+      imgSrc: "https://via.placeholder.com/400",
+      alt: "helo",
+      header: "My Blog Post",
+      description: "This is a brief description of the blog post.",
+      tags: ["React", "TypeScript"],
+      socialMedia: "Tweet",
+    },
+    {
+      imgSrc: "https://via.placeholder.com/400",
+      alt: "helo",
+      header: "My Blog Post",
+      description: "This is a brief description of the blog post.",
+      tags: ["React", "TypeScript"],
+      socialMedia: "Tweet",
+    },
+    {
+      imgSrc: "https://via.placeholder.com/400",
+      alt: "helo",
+      header: "My Blog Post",
+      description: "This is a brief description of the blog post.",
+      tags: ["React", "TypeScript"],
+      socialMedia: "Tweet",
+    },
+    {
+      imgSrc: "https://via.placeholder.com/400",
+      alt: "helo",
+      header: "My Blog Post",
+      description: "This is a brief description of the blog post.",
+      tags: ["React", "TypeScript"],
+      socialMedia: "Tweet",
+    },
+    {
+      imgSrc: "https://via.placeholder.com/400",
+      alt: "helo",
+      header: "My Blog Post",
+      description: "This is a brief description of the blog post.",
+      tags: ["React", "TypeScript"],
+      socialMedia: "Tweet",
+    },
+    {
+      imgSrc: "https://via.placeholder.com/400",
+      alt: "helo",
+      header: "My Blog Post",
+      description: "This is a brief description of the blog post.",
+      tags: ["React", "TypeScript"],
+      socialMedia: "Tweet",
+    },
+    {
+      imgSrc: "https://via.placeholder.com/400",
+      alt: "helo",
+      header: "My Blog Post",
+      description: "This is a brief description of the blog post.",
+      tags: ["React", "TypeScript"],
+      socialMedia: "Tweet",
+    },
+    {
+      imgSrc: "https://via.placeholder.com/400",
+      alt: "helo",
+      header: "My Blog Post",
+      description: "This is a brief description of the blog post.",
+      tags: ["React", "TypeScript"],
+      socialMedia: "Tweet",
+    },
+    {
+      imgSrc: "https://via.placeholder.com/400",
+      alt: "helo",
+      header: "My Blog Post",
+      description: "This is a brief description of the blog post.",
+      tags: ["React", "TypeScript"],
+      socialMedia: "Tweet",
+    },
+    {
+      imgSrc: "https://via.placeholder.com/400",
+      alt: "helo",
+      header: "My Blog Post",
+      description: "This is a brief description of the blog post.",
+      tags: ["React", "TypeScript"],
+      socialMedia: "Tweet",
+    },
+  ];
   return (
     <main>
       <Hero
@@ -84,6 +233,17 @@ export const Blog = () => {
               ></div>
             </label>
           </aside>
+        </div>
+        <div className="flex flex-wrap justify-center mt-10 gap-14">
+          {cards.map((item, index) => (
+            <>
+              <BlogCard
+                key={index}
+                blog={item}
+                onClick={() => openPanel(item)}
+              />
+            </>
+          ))}
         </div>
       </section>
     </main>

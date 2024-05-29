@@ -1,5 +1,5 @@
 import React from "react";
-import { DescProps } from "../../interface";
+import { DescProps } from "../../types";
 
 export const Description: React.FC<DescProps> = ({
   yellowText,
@@ -17,7 +17,7 @@ export const Description: React.FC<DescProps> = ({
           <header className="PrimaryText max-xl:text-4xl">{mainHeader}</header>
         </div>
         <div className="flex items-end mb-5 max-lg:justify-end">
-          <text className="Text italic tracking-wide">{text}</text>
+          <div className="Text italic tracking-wide">{text}</div>
         </div>
       </div>
       {children}

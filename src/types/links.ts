@@ -1,9 +1,9 @@
-export interface SocialLinksProps {
+export type SocialLinksProps = {
   className?: string;
   objectClassName?: string;
-}
-export interface SocialLinkProps {
+};
+export type SocialLinkProps = {
   to: string;
   icon: React.ElementType;
   className?: string;
-}
+};

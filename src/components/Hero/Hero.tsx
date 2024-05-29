@@ -1,5 +1,5 @@
 import React from "react";
-import { HeroProps } from "../../interface";
+import { HeroProps } from "../../types";
 
 export const Hero: React.FC<HeroProps> = ({
   img,

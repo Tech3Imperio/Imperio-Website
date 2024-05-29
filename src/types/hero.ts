@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export interface HeroProps {
+export type HeroProps = {
   img: string;
   altText?: string;
   header: string | ReactNode;
@@ -9,4 +9,4 @@ export interface HeroProps {
   curve?: boolean;
   shadow?: boolean;
   children?: ReactNode;
-}
+};
