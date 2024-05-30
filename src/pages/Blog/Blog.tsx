@@ -3,21 +3,7 @@ import { Hero, WhiteButton, Description, BlogCard } from "../../components";
 import { tempHeroImage } from "../../assets/images";
 import { CiSearch } from "react-icons/ci";
 import { BlogType } from "../../types";
-
-const temp = {
-  imgSrc: "https://via.placeholder.com/400",
-  alt: "helo",
-  header: "My Blog Post",
-  description: "This is a brief description of the blog post.",
-  details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
-  iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
-  voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
-  tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
-  odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
-  deserunt!`,
-  tags: ["React", "TypeScript"],
-  socialMedia: "Tweet",
-};
+import { cards } from "./data";
 
 export const Blog = () => {
   const [filters, setFilters] = useState<boolean[]>([
@@ -28,7 +14,7 @@ export const Blog = () => {
   ]);
   const [search, setSearch] = useState<string>("");
   const [focus, setFocus] = useState<boolean>(false);
-  const [selectedBlog, setSelectedBlog] = useState<BlogType>(temp);
+  const [selectedBlog, setSelectedBlog] = useState<BlogType>(cards[0]);
   const [isPanelOpen, setIsPanelOpen] = useState<boolean>(false);
 
   const toggleFilter = (index: number) => {
@@ -52,221 +38,9 @@ export const Blog = () => {
 
   const closePanel = () => {
     setIsPanelOpen(false);
-    setSelectedBlog(temp);
+    setSelectedBlog(cards[0]);
   };
 
-  const cards = [
-    {
-      imgSrc: "https://via.placeholder.com/400",
-      alt: "helo",
-      header: "My Blog Post",
-      description: "This is a brief description of the blog post.",
-      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
-      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
-      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
-      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
-      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
-      deserunt!`,
-      tags: ["React", "TypeScript"],
-      socialMedia: "Tweet",
-    },
-    {
-      imgSrc: "https://via.placeholder.com/400",
-      alt: "helo",
-      header: "My Blog Post",
-      description: "This is a brief description of the blog post.",
-      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
-      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
-      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
-      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
-      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
-      deserunt!`,
-      tags: ["React", "TypeScript"],
-      socialMedia: "Tweet",
-    },
-    {
-      imgSrc: "https://via.placeholder.com/400",
-      alt: "helo",
-      header: "My Blog Post",
-      description: "This is a brief description of the blog post.",
-      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
-      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
-      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
-      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
-      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
-      deserunt!`,
-      tags: ["React", "TypeScript"],
-      socialMedia: "Tweet",
-    },
-    {
-      imgSrc: "https://via.placeholder.com/400",
-      alt: "helo",
-      header: "My Blog Post",
-      description: "This is a brief description of the blog post.",
-      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
-      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
-      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
-      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
-      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
-      deserunt!`,
-      tags: ["React", "TypeScript"],
-      socialMedia: "Tweet",
-    },
-    {
-      imgSrc: "https://via.placeholder.com/400",
-      alt: "helo",
-      header: "My Blog Post",
-      description: "This is a brief description of the blog post.",
-      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
-      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
-      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
-      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
-      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
-      deserunt!`,
-      tags: ["React", "TypeScript"],
-      socialMedia: "Tweet",
-    },
-    {
-      imgSrc: "https://via.placeholder.com/400",
-      alt: "helo",
-      header: "My Blog Post",
-      description: "This is a brief description of the blog post.",
-      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
-      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
-      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
-      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
-      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
-      deserunt!`,
-      tags: ["React", "TypeScript"],
-      socialMedia: "Tweet",
-    },
-    {
-      imgSrc: "https://via.placeholder.com/400",
-      alt: "helo",
-      header: "My Blog Post",
-      description: "This is a brief description of the blog post.",
-      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
-      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
-      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
-      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
-      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
-      deserunt!`,
-      tags: ["React", "TypeScript"],
-      socialMedia: "Tweet",
-    },
-    {
-      imgSrc: "https://via.placeholder.com/400",
-      alt: "helo",
-      header: "My Blog Post",
-      description: "This is a brief description of the blog post.",
-      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
-      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
-      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
-      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
-      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
-      deserunt!`,
-      tags: ["React", "TypeScript"],
-      socialMedia: "Tweet",
-    },
-    {
-      imgSrc: "https://via.placeholder.com/400",
-      alt: "helo",
-      header: "My Blog Post",
-      description: "This is a brief description of the blog post.",
-      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
-      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
-      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
-      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
-      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
-      deserunt!`,
-      tags: ["React", "TypeScript"],
-      socialMedia: "Tweet",
-    },
-    {
-      imgSrc: "https://via.placeholder.com/400",
-      alt: "helo",
-      header: "My Blog Post",
-      description: "This is a brief description of the blog post.",
-      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
-      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
-      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
-      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
-      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
-      deserunt!`,
-      tags: ["React", "TypeScript"],
-      socialMedia: "Tweet",
-    },
-    {
-      imgSrc: "https://via.placeholder.com/400",
-      alt: "helo",
-      header: "My Blog Post",
-      description: "This is a brief description of the blog post.",
-      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
-      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
-      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
-      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
-      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
-      deserunt!`,
-      tags: ["React", "TypeScript"],
-      socialMedia: "Tweet",
-    },
-    {
-      imgSrc: "https://via.placeholder.com/400",
-      alt: "helo",
-      header: "My Blog Post",
-      description: "This is a brief description of the blog post.",
-      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
-      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
-      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
-      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
-      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
-      deserunt!`,
-      tags: ["React", "TypeScript"],
-      socialMedia: "Tweet",
-    },
-    {
-      imgSrc: "https://via.placeholder.com/400",
-      alt: "helo",
-      header: "My Blog Post",
-      description: "This is a brief description of the blog post.",
-      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
-      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
-      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
-      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
-      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
-      deserunt!`,
-      tags: ["React", "TypeScript"],
-      socialMedia: "Tweet",
-    },
-    {
-      imgSrc: "https://via.placeholder.com/400",
-      alt: "helo",
-      header: "My Blog Post",
-      description: "This is a brief description of the blog post.",
-      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
-      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
-      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
-      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
-      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
-      deserunt!`,
-      tags: ["React", "TypeScript"],
-      socialMedia: "Tweet",
-    },
-    {
-      imgSrc: "https://via.placeholder.com/400",
-      alt: "helo",
-      header: "My Blog Post",
-      description: "This is a brief description of the blog post.",
-      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
-      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
-      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
-      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
-      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
-      deserunt!`,
-      tags: ["React", "TypeScript"],
-      socialMedia: "Tweet",
-    },
-  ];
   return (
     <main>
       <Hero
@@ -337,8 +111,8 @@ export const Blog = () => {
           onClick={closePanel}
         >
           <div
-            className={`fixed top-1/2 -translate-y-1/2 h-[80vh] bg-white w-[80vh] p-6 shadow-lg transition-all duration-700 ease-in-out ${
-              isPanelOpen ? "left-0" : "-left-full"
+            className={`fixed top-1/2 -translate-y-1/2 h-[99%] rounded-4xl bg-white w-[80vh] p-6 shadow-lg transition-all duration-700 ease-in-out ${
+              isPanelOpen ? "left-4" : "-left-full"
             }`}
             onClick={(e) => e.stopPropagation()}
           >
