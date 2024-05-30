@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Hero, WhiteButton, Description, BlogCard } from "../../components";
-import { tempHeroImage } from "../../assets/images";
+import { tempHeroImage } from "../../assets/Images";
 import { CiSearch } from "react-icons/ci";
 import { BlogType } from "../../types";
 import { cards } from "./data";

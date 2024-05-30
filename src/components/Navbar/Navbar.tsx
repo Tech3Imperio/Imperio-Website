@@ -2,7 +2,7 @@ import styles from "./Navbar.module.css";
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { debounce } from "../../utils";
 import { Link } from "react-router-dom";
-import { whiteLogo } from "../../assets/images";
+import { whiteLogo } from "../../assets/Images";
 import { MenuItemProps, MobileMenuProps } from "../../types";
 import { SocialLinks, QuoteButton } from "../../components";
 

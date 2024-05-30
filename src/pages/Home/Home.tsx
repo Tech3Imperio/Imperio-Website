@@ -1,5 +1,5 @@
 import React from "react";
-import { heroImage } from "../../assets/images";
+import { heroImage } from "../../assets/Images";
 import { Hero } from "../../components";
 import { Description } from "../../components/Description/Description";
 import { GreyButton } from "../../components/Button/Button";
