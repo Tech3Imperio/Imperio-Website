@@ -1,9 +1,16 @@
 import { useState } from "react";
-import { Hero, WhiteButton, Description, BlogCard } from "../../components";
+import {
+  Hero,
+  WhiteButton,
+  Description,
+  BlogCard,
+  BlackButton,
+} from "../../components";
 import { tempHeroImage } from "../../assets/Images";
 import { CiSearch } from "react-icons/ci";
 import { BlogType } from "../../types";
 import { cards } from "./data";
+import { HiArrowRight } from "react-icons/hi2";
 
 export const Blog = () => {
   const [filters, setFilters] = useState<boolean[]>([
@@ -111,34 +118,39 @@ export const Blog = () => {
           onClick={closePanel}
         >
           <div
-            className={`fixed top-1/2 -translate-y-1/2 h-[99%] rounded-4xl bg-white w-[80vh] p-6 shadow-lg transition-all duration-700 ease-in-out ${
+            className={`fixed top-1/2 -translate-y-1/2 h-[99%] rounded-4xl bg-white w-[80vh] p-6 shadow-lg transition-all duration-700 ease-in-out overflow-hidden ${
               isPanelOpen ? "left-4" : "-left-full"
             }`}
             onClick={(e) => e.stopPropagation()}
           >
-            <img
-              className="w-full h-48 object-cover"
-              src={selectedBlog.imgSrc}
-              alt={selectedBlog.alt}
-            />
-            <h2 className="text-2xl font-bold my-4">{selectedBlog.header}</h2>
-            <p>{selectedBlog.description}</p>
-            <div className="mt-4">
-              {selectedBlog.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-                >
-                  #{tag}
-                </span>
-              ))}
+            <div className="p-8 pt-4">
+              <header className="text-3xl font-normal text-[--third] pb-6">
+                {selectedBlog.header}
+              </header>
+              <p className="text-[--grey] pb-6">{selectedBlog.details}</p>
+              <BlackButton path="/" className="flex gap-2">
+                <div className="text-xs">VIEW FULL BLOG</div>
+                <div className="text-md">
+                  <HiArrowRight />
+                </div>
+              </BlackButton>
             </div>
-            <div className="mt-4">
-              <span className="inline-block bg-blue-500 rounded-full px-3 py-1 text-sm font-semibold text-white">
-                {selectedBlog.socialMedia}
-              </span>
+            <div className="flex justify-center items-center overflow-hidden rounded-4xl ">
+              <img
+                src={selectedBlog.imgSrc}
+                alt={selectedBlog.alt}
+                className="max-h-[570px]  rounded-4xl"
+              />
             </div>
           </div>
+        </div>
+        <div className="flex justify-end mt-12">
+          <WhiteButton
+            onClick={() => {}}
+            className="text-2xl py-4 px-8 border-2 font-normal"
+          >
+            LOAD MORE
+          </WhiteButton>
         </div>
       </section>
     </main>

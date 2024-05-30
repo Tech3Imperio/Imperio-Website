@@ -27,7 +27,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ to, label }) => (
 const MenuItems: React.FC = () => (
   <>
     <MenuItem to="/home" label="Home" />
-    <MenuItem to="/products" label="Our Products" />
+    <MenuItem to="/product" label="Our Products" />
     <MenuItem to="/aboutus" label="About Us" />
     <MenuItem to="/blog" label="Blog" />
   </>

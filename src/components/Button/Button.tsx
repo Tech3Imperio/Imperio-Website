@@ -41,7 +41,7 @@ export const BlackButton: React.FC<ButtonProps> = ({
       to={path}
       className={
         className +
-        ` w-max py-2 px-6 rounded-4xl text-[--white] bg-[--black] transition-all duration-500 ease-in-out hover:text-[--black] hover:bg-[--secound `
+        ` w-max py-4 px-6 rounded-4xl text-[--white] bg-[--black] transition-all duration-500 ease-in-out hover:text-[--black] hover:bg-[--secound]`
       }
     >
       {children}
@@ -59,7 +59,7 @@ export const WhiteButton: React.FC<WhiteButtonProps> = ({
     <button
       onClick={onClick}
       className={
-        `w-max py-2 px-6 border border-black rounded-4xl ${
+        `w-max py-2 px-6 border-2 font-normal border-black rounded-4xl ${
           value ? "bg-[--secound]" : "bg-transparent"
         } text-[--black] transition-all duration-500 ease-in-out hover:text-[--black] hover:bg-[--secound] ` +
         className

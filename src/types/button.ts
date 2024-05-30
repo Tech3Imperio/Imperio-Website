@@ -9,5 +9,5 @@ export type WhiteButtonProps = {
   className?: string;
   value?: boolean;
   children: React.ReactNode;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
