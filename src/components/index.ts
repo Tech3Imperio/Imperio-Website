@@ -5,4 +5,4 @@ export * from "./Hero/Hero";
 export * from "./Button/Button";
 export * from "./Description/Description";
 export * from "./BlogCard/BlogCard";
-export * from "./SlidingPanel/SlidingPanle";
+// export * from "./SlidingPanel/SlidingPanle";

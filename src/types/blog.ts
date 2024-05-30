@@ -3,6 +3,7 @@ export type BlogType = {
   alt?: string;
   header: string;
   description: string;
+  details?: string;
   tags: string[];
   socialMedia: string;
 };

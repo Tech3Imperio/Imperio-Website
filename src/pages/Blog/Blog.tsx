@@ -1,14 +1,23 @@
 import { useState } from "react";
-import {
-  Hero,
-  WhiteButton,
-  Description,
-  SlidingPanel,
-  BlogCard,
-} from "../../components";
+import { Hero, WhiteButton, Description, BlogCard } from "../../components";
 import { tempHeroImage } from "../../assets/images";
 import { CiSearch } from "react-icons/ci";
 import { BlogType } from "../../types";
+
+const temp = {
+  imgSrc: "https://via.placeholder.com/400",
+  alt: "helo",
+  header: "My Blog Post",
+  description: "This is a brief description of the blog post.",
+  details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
+  iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
+  voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
+  tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
+  odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
+  deserunt!`,
+  tags: ["React", "TypeScript"],
+  socialMedia: "Tweet",
+};
 
 export const Blog = () => {
   const [filters, setFilters] = useState<boolean[]>([
@@ -19,7 +28,7 @@ export const Blog = () => {
   ]);
   const [search, setSearch] = useState<string>("");
   const [focus, setFocus] = useState<boolean>(false);
-  const [selectedBlog, setSelectedBlog] = useState<BlogType | null>(null);
+  const [selectedBlog, setSelectedBlog] = useState<BlogType>(temp);
   const [isPanelOpen, setIsPanelOpen] = useState<boolean>(false);
 
   const toggleFilter = (index: number) => {
@@ -43,7 +52,7 @@ export const Blog = () => {
 
   const closePanel = () => {
     setIsPanelOpen(false);
-    setSelectedBlog(null);
+    setSelectedBlog(temp);
   };
 
   const cards = [
@@ -52,6 +61,12 @@ export const Blog = () => {
       alt: "helo",
       header: "My Blog Post",
       description: "This is a brief description of the blog post.",
+      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
+      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
+      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
+      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
+      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
+      deserunt!`,
       tags: ["React", "TypeScript"],
       socialMedia: "Tweet",
     },
@@ -60,6 +75,12 @@ export const Blog = () => {
       alt: "helo",
       header: "My Blog Post",
       description: "This is a brief description of the blog post.",
+      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
+      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
+      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
+      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
+      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
+      deserunt!`,
       tags: ["React", "TypeScript"],
       socialMedia: "Tweet",
     },
@@ -68,6 +89,12 @@ export const Blog = () => {
       alt: "helo",
       header: "My Blog Post",
       description: "This is a brief description of the blog post.",
+      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
+      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
+      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
+      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
+      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
+      deserunt!`,
       tags: ["React", "TypeScript"],
       socialMedia: "Tweet",
     },
@@ -76,6 +103,12 @@ export const Blog = () => {
       alt: "helo",
       header: "My Blog Post",
       description: "This is a brief description of the blog post.",
+      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
+      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
+      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
+      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
+      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
+      deserunt!`,
       tags: ["React", "TypeScript"],
       socialMedia: "Tweet",
     },
@@ -84,6 +117,12 @@ export const Blog = () => {
       alt: "helo",
       header: "My Blog Post",
       description: "This is a brief description of the blog post.",
+      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
+      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
+      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
+      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
+      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
+      deserunt!`,
       tags: ["React", "TypeScript"],
       socialMedia: "Tweet",
     },
@@ -92,6 +131,12 @@ export const Blog = () => {
       alt: "helo",
       header: "My Blog Post",
       description: "This is a brief description of the blog post.",
+      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
+      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
+      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
+      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
+      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
+      deserunt!`,
       tags: ["React", "TypeScript"],
       socialMedia: "Tweet",
     },
@@ -100,6 +145,12 @@ export const Blog = () => {
       alt: "helo",
       header: "My Blog Post",
       description: "This is a brief description of the blog post.",
+      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
+      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
+      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
+      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
+      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
+      deserunt!`,
       tags: ["React", "TypeScript"],
       socialMedia: "Tweet",
     },
@@ -108,6 +159,12 @@ export const Blog = () => {
       alt: "helo",
       header: "My Blog Post",
       description: "This is a brief description of the blog post.",
+      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
+      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
+      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
+      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
+      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
+      deserunt!`,
       tags: ["React", "TypeScript"],
       socialMedia: "Tweet",
     },
@@ -116,6 +173,12 @@ export const Blog = () => {
       alt: "helo",
       header: "My Blog Post",
       description: "This is a brief description of the blog post.",
+      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
+      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
+      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
+      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
+      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
+      deserunt!`,
       tags: ["React", "TypeScript"],
       socialMedia: "Tweet",
     },
@@ -124,6 +187,12 @@ export const Blog = () => {
       alt: "helo",
       header: "My Blog Post",
       description: "This is a brief description of the blog post.",
+      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
+      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
+      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
+      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
+      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
+      deserunt!`,
       tags: ["React", "TypeScript"],
       socialMedia: "Tweet",
     },
@@ -132,6 +201,12 @@ export const Blog = () => {
       alt: "helo",
       header: "My Blog Post",
       description: "This is a brief description of the blog post.",
+      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
+      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
+      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
+      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
+      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
+      deserunt!`,
       tags: ["React", "TypeScript"],
       socialMedia: "Tweet",
     },
@@ -140,6 +215,12 @@ export const Blog = () => {
       alt: "helo",
       header: "My Blog Post",
       description: "This is a brief description of the blog post.",
+      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
+      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
+      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
+      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
+      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
+      deserunt!`,
       tags: ["React", "TypeScript"],
       socialMedia: "Tweet",
     },
@@ -148,6 +229,12 @@ export const Blog = () => {
       alt: "helo",
       header: "My Blog Post",
       description: "This is a brief description of the blog post.",
+      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
+      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
+      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
+      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
+      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
+      deserunt!`,
       tags: ["React", "TypeScript"],
       socialMedia: "Tweet",
     },
@@ -156,6 +243,12 @@ export const Blog = () => {
       alt: "helo",
       header: "My Blog Post",
       description: "This is a brief description of the blog post.",
+      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
+      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
+      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
+      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
+      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
+      deserunt!`,
       tags: ["React", "TypeScript"],
       socialMedia: "Tweet",
     },
@@ -164,14 +257,12 @@ export const Blog = () => {
       alt: "helo",
       header: "My Blog Post",
       description: "This is a brief description of the blog post.",
-      tags: ["React", "TypeScript"],
-      socialMedia: "Tweet",
-    },
-    {
-      imgSrc: "https://via.placeholder.com/400",
-      alt: "helo",
-      header: "My Blog Post",
-      description: "This is a brief description of the blog post.",
+      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque
+      iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat
+      voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum
+      tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid
+      odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus
+      deserunt!`,
       tags: ["React", "TypeScript"],
       socialMedia: "Tweet",
     },
@@ -236,14 +327,44 @@ export const Blog = () => {
         </div>
         <div className="flex flex-wrap justify-center mt-10 gap-14">
           {cards.map((item, index) => (
-            <>
-              <BlogCard
-                key={index}
-                blog={item}
-                onClick={() => openPanel(item)}
-              />
-            </>
+            <BlogCard key={index} blog={item} onClick={() => openPanel(item)} />
           ))}
+        </div>
+        <div
+          className={`fixed inset-0 bg-gray-900 bg-opacity-50 z-50 transition-all duration-700 ease-in-out ${
+            isPanelOpen ? "opacity-100" : " opacity-0 pointer-events-none"
+          }`}
+          onClick={closePanel}
+        >
+          <div
+            className={`fixed top-1/2 -translate-y-1/2 h-[80vh] bg-white w-[80vh] p-6 shadow-lg transition-all duration-700 ease-in-out ${
+              isPanelOpen ? "left-0" : "-left-full"
+            }`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              className="w-full h-48 object-cover"
+              src={selectedBlog.imgSrc}
+              alt={selectedBlog.alt}
+            />
+            <h2 className="text-2xl font-bold my-4">{selectedBlog.header}</h2>
+            <p>{selectedBlog.description}</p>
+            <div className="mt-4">
+              {selectedBlog.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+                >
+                  #{tag}
+                </span>
+              ))}
+            </div>
+            <div className="mt-4">
+              <span className="inline-block bg-blue-500 rounded-full px-3 py-1 text-sm font-semibold text-white">
+                {selectedBlog.socialMedia}
+              </span>
+            </div>
+          </div>
         </div>
       </section>
     </main>
