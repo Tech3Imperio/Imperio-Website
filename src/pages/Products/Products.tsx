@@ -92,7 +92,7 @@ const productSections = [
   { header: "Endcaps", products },
 ];
 
-export const Product = () => {
+export const Products = () => {
   return (
     <main>
       <Hero
