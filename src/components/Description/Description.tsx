@@ -6,11 +6,12 @@ export const Description: React.FC<DescProps> = ({
   mainHeader,
   text,
   children,
+  className,
   black = false,
 }) => {
   return (
     <section
-      className={`py-20 px-44 max-sm:px-4 max-md:px-12 max-lg:px-20 max-xl:px-28 max-2xl:px-36 ${
+      className={`${className} py-20 px-44 max-sm:px-4 max-md:px-12 max-lg:px-20 max-xl:px-28 max-2xl:px-36 ${
         black ? "bg-[--black]" : ""
       }`}
     >
@@ -21,7 +22,7 @@ export const Description: React.FC<DescProps> = ({
           </header>
 
           <header
-            className={` text-5xl font-[Raleway] max-xl:text-4xl ${
+            className={` text-5xl Raleway max-xl:text-4xl ${
               black ? "text-white" : "text-[--third]"
             }`}
           >

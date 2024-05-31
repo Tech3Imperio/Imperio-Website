@@ -5,5 +5,6 @@ export type DescProps = {
   mainHeader: string | ReactNode;
   text?: string | ReactNode;
   black?: boolean;
+  className?: string;
   children?: ReactNode;
 };
