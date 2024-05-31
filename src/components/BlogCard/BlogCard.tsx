@@ -12,7 +12,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
       className={
         `relative max-w-[350px] ${
           hover ? "h-[350px]" : "h-[380px]"
-        } max-h-[380px] rounded-4xl shadow-lg flex flex-col overflow-hidden transition-all duration-500 ease-in-out ` +
+        } max-h-[380px] rounded-4xl shadow-lg flex flex-col overflow-hidden transition-700  ` +
         className
       }
       onMouseEnter={() => setHover(true)}
@@ -22,7 +22,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
       <div
         className={`${
           hover ? "h-[210px]" : "h-[280px]"
-        } max-h-[280px] rounded-4xl overflow-hidden transition-all duration-1000 ease-in-out`}
+        } max-h-[280px] rounded-4xl overflow-hidden transition-700`}
       >
         <img
           className="relative -top-[15%] left-0 object-contain object-center"
@@ -37,7 +37,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
           </div>
 
           <p
-            className={`text-gray-500 text-base w-3/5 transition-all duration-700 ease-in-out ${
+            className={`text-gray-500 text-base w-3/5 transition-700 ${
               hover ? "opacity-100 h-max" : "opacity-0 h-0"
             }`}
           >

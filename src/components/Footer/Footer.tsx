@@ -18,9 +18,9 @@ export const Footer = () => {
           <input
             type="text"
             placeholder="example@example.com"
-            className="border-2 border-white rounded-l-full p-4 pl-6 w-72 text-white transition-all duration-500 ease-in-out group-hover:border-[--secound] focus:border-[--secound] outline-none "
+            className="border-2 border-white rounded-l-full p-4 pl-6 w-72 text-white transition-700 group-hover:border-[--secound] focus:border-[--secound] outline-none "
           />
-          <button className="bg-white rounded-r-4xl h-full p-5 transition-all duration-500 ease-in-out group-hover:bg-[--secound] group2-focus:bg-[--secound] outline-none">
+          <button className="bg-white rounded-r-4xl h-full p-5 transition-700 group-hover:bg-[--secound] group2-focus:bg-[--secound] outline-none">
             <svg
               width="24"
               height="20"

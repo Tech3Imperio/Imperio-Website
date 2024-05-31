@@ -14,7 +14,7 @@
   --grey: #8b939c;
   --first: #f1efe7;
   --secound: #f5ce02;
-  --third: #03247b;
+  --third: #03237b;
   --black-gradient: linear-gradient(
     90deg,
     rgba(0, 0, 0, 1) 40%,
@@ -47,6 +47,13 @@ body {
 
 .Raleway {
   font-family: "Raleway";
+}
+
+.transition-200 {
+  @apply transition-all duration-200 ease-in-out;
+}
+.transition-700 {
+  @apply transition-all duration-700 ease-in-out;
 }
 
 .YellowText {

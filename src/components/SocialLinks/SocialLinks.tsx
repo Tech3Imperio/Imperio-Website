@@ -15,8 +15,7 @@ const SocialLink: React.FC<SocialLinkProps> = ({
 }) => (
   <div
     className={
-      `rounded-full hover:text-[--secound] transition-all duration-500 ` +
-      className
+      `rounded-full hover:text-[--secound] transition-700 ` + className
     }
   >
     <Link to={to} target="_blank">

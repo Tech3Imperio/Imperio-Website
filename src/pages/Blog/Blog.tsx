@@ -91,7 +91,7 @@ export const Blog = () => {
               onBlur={() => setFocus(false)}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search blogs"
-              className="bg-transparent w-80 text-right pr-4 outline-none border-b-2 border-black transition-all duration-700 ease-in-out text-xl text-black focus:w-[30rem]"
+              className="bg-transparent w-80 text-right pr-4 outline-none border-b-2 border-black transition-700 text-xl text-black focus:w-[30rem]"
             />
             <label
               htmlFor="search"
@@ -112,13 +112,13 @@ export const Blog = () => {
           ))}
         </div>
         <div
-          className={`fixed inset-0 bg-gray-900 bg-opacity-50 z-50 transition-all duration-700 ease-in-out ${
+          className={`fixed inset-0 bg-gray-900 bg-opacity-50 z-50 transition-700 ${
             isPanelOpen ? "opacity-100" : " opacity-0 pointer-events-none"
           }`}
           onClick={closePanel}
         >
           <div
-            className={`fixed top-1/2 -translate-y-1/2 h-[99%] rounded-4xl bg-white w-[80vh] p-6 shadow-lg transition-all duration-700 ease-in-out overflow-hidden ${
+            className={`fixed top-1/2 -translate-y-1/2 h-[99%] rounded-4xl bg-white w-[80vh] p-6 shadow-lg transition-700 overflow-hidden ${
               isPanelOpen ? "left-4" : "-left-full"
             }`}
             onClick={(e) => e.stopPropagation()}

@@ -11,7 +11,7 @@ const Logo: React.FC = () => (
     <img
       src={whiteLogo}
       className="max-w-28 max-md:pl-3 transition ease-out duration-500 hover:translate-y-1 hover:scale-125"
-      alt="PowerHouse Logo"
+      alt="Imperio Logo"
     />
   </Link>
 );
@@ -35,7 +35,7 @@ const MenuItems: React.FC = () => (
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen }) => (
   <div
-    className={`w-full bg-[--black] text-white transition-all duration-700 overflow-hidden ${
+    className={`fixed w-full top-20 left-0 bg-[--black] text-white transition-700 overflow-hidden ${
       isOpen ? "h-[32vh]" : "h-0"
     }`}
     aria-hidden={!isOpen}
@@ -46,7 +46,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen }) => (
       </ul>
     </section>
     <footer
-      className={`relative transition-all duration-700 ${
+      className={`relative transition-700 ${
         isOpen ? "right-0" : "right-[-150px]"
       }`}
     >
@@ -87,7 +87,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`bg-[--black] sticky top-0 z-50 transition-all duration-200 ease ${
+      className={`bg-[--black] sticky top-0 z-50 transition-200 ${
         !isMenuOpen ? "rounded-b-4xl" : "rounded-b-[0px]"
       }`}
     >
@@ -112,7 +112,7 @@ export const Navbar: React.FC = () => {
         ) : (
           <>
             <div className="flex-grow flex justify-center">
-              <ul className="text-lg flex gap-16 text-white my-auto px-7 rounded-4xl shadow-shadow shadow-black transition-all duration-700 ease hover:shadow-white">
+              <ul className="text-lg flex gap-16 text-white my-auto px-7 rounded-4xl shadow-shadow shadow-black transition-700 hover:shadow-white">
                 <MenuItems />
               </ul>
             </div>
