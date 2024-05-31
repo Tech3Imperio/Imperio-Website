@@ -6,18 +6,36 @@ export const Description: React.FC<DescProps> = ({
   mainHeader,
   text,
   children,
+  black = false,
 }) => {
   return (
-    <section className="py-20 px-44 max-sm:px-4 max-md:px-12 max-lg:px-20 max-xl:px-28 max-2xl:px-36">
+    <section
+      className={`py-20 px-44 max-sm:px-4 max-md:px-12 max-lg:px-20 max-xl:px-28 max-2xl:px-36 ${
+        black ? "bg-[--black]" : ""
+      }`}
+    >
       <div className="flex justify-between max-lg:flex-col max-lg:gap-6 max-lg:w-full">
-        <div className="flex flex-col justify-between gap-6">
+        <div className={`flex flex-col justify-between gap-6`}>
           <header className="YellowText max-xl:text-3xl max-2xl:text-4xl">
             {yellowText}
           </header>
-          <header className="PrimaryText max-xl:text-4xl">{mainHeader}</header>
+
+          <header
+            className={` text-5xl font-[Raleway] max-xl:text-4xl ${
+              black ? "text-white" : "text-[--third]"
+            }`}
+          >
+            {mainHeader}
+          </header>
         </div>
         <div className="flex items-end mb-5 max-lg:justify-end">
-          <div className="Text italic tracking-wide">{text}</div>
+          <div
+            className={` text-base  italic tracking-wide ${
+              black ? "text-white" : "text-[--grey]"
+            }`}
+          >
+            {text}
+          </div>
         </div>
       </div>
       {children}
