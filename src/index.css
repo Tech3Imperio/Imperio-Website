@@ -52,6 +52,9 @@ body {
 .transition-200 {
   @apply transition-all duration-200 ease-in-out;
 }
+.transition-500 {
+  @apply transition-all duration-500 ease-in-out;
+}
 .transition-700 {
   @apply transition-all duration-700 ease-in-out;
 }
@@ -60,6 +63,15 @@ body {
   color: var(--secound);
   font-size: 2.5rem;
   font-family: "Raleway";
+}
+
+.noscroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.noscroll::-webkit-scrollbar {
+  display: none;
 }
 
 .PrimaryText {

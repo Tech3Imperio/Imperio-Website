@@ -1,12 +1,11 @@
 import React from "react";
-import { heroImage } from "../../assets/Images";
-import { scrollerImage } from "../../assets/Images";
-import { Hero } from "../../components";
-import { Description } from "../../components/Description/Description";
-import { GreyButton } from "../../components/Button/Button";
+import { heroImage, scrollerImage } from "../../assets/Images";
+import { Hero, Description, GreyButton, FuturePanel } from "../../components";
+import { ScrollData } from "../../types";
 
-const scroller = [
+const scroller: ScrollData[] = [
   {
+    id: 1,
     img: scrollerImage,
     alt: "text",
     header: "Low Maintenance.",
@@ -14,6 +13,7 @@ const scroller = [
       "Our railings are designed to last, requiring minimal upkeep while maintaining their stunning appearance.",
   },
   {
+    id: 2,
     img: scrollerImage,
     alt: "text",
     header: "Low Maintenance.",
@@ -21,6 +21,7 @@ const scroller = [
       "Our railings are designed to last, requiring minimal upkeep while maintaining their stunning appearance.",
   },
   {
+    id: 3,
     img: scrollerImage,
     alt: "text",
     header: "Low Maintenance.",
@@ -28,6 +29,7 @@ const scroller = [
       "Our railings are designed to last, requiring minimal upkeep while maintaining their stunning appearance.",
   },
   {
+    id: 4,
     img: scrollerImage,
     alt: "text",
     header: "Low Maintenance.",
@@ -35,6 +37,21 @@ const scroller = [
       "Our railings are designed to last, requiring minimal upkeep while maintaining their stunning appearance.",
   },
 ];
+
+const text = (
+  <>
+    With innovative designs, our products redefine modern spaces.
+    <br />
+    Explore today.
+  </>
+);
+
+const mainHeader = (
+  <>
+    Innovative Designs for Every <br />
+    Needs.
+  </>
+);
 
 export const Home: React.FC = () => {
   return (
@@ -53,87 +70,12 @@ export const Home: React.FC = () => {
       >
         <GreyButton path="/">KNOW MORE</GreyButton>
       </Hero>
-
-      <div className="h-[100vh] overflow-y-scroll">
-        {scroller.map((value, index) => (
-          <Description
-            yellowText="Feature with future."
-            mainHeader={
-              <>
-                Innovative Designs for Every <br />
-                Needs.
-              </>
-            }
-            text={
-              <>
-                With innovative designs, our products redefine modern spaces.
-                <br />
-                Explore today.
-              </>
-            }
-            black
-          >
-            <div className=" h-96 w-auto flex  flex-col mt-12  gap-7">
-              <div className="flex justify-evenly">
-                <img
-                  src={value.img}
-                  alt={value.alt}
-                  className="h-96 object-cover"
-                />
-                <header
-                  className="flex text-white items-center gap-4 max-w-[45rem]"
-                  key={value.alt}
-                >
-                  <div className="text-[100px]">{index + 1}.</div>
-                  <div className="flex flex-col gap-4">
-                    <div className=" text-5xl">{value.header}</div>
-                    <p className=" text-2xl text-[--grey]">{value.subheader}</p>
-                  </div>
-                </header>
-              </div>
-            </div>
-          </Description>
-        ))}
-      </div>
-      {/* <Description
-        yellowText="Feature with future."
-        mainHeader={
-          <>
-            Innovative Designs for Every <br />
-            Needs.
-          </>
-        }
-        text={
-          <>
-            With innovative designs, our products redefine modern spaces.
-            <br />
-            Explore today.
-          </>
-        }
-        black
-      >
-        <div className=" h-96 w-auto flex overflow-y-scroll flex-col mt-12  gap-7">
-          {scroller.map((value, index) => (
-            <div className="flex justify-evenly">
-              <img
-                src={value.img}
-                alt={value.alt}
-                className="h-96 object-cover"
-              />
-              <header
-                className="flex text-white items-center gap-4 max-w-[45rem]"
-                key={value.alt}
-              >
-                <div className="text-[100px]">{index + 1}.</div>
-                <div className="flex flex-col gap-4">
-                  <div className=" text-5xl">{value.header}</div>
-                  <p className=" text-2xl text-[--grey]">{value.subheader}</p>
-                </div>
-              </header>
-            </div>
-          ))}
-        </div>
-      </Description> */}
+      <FuturePanel
+        scroller={scroller}
+        yellowHeader="Feature with future."
+        mainHeader={mainHeader}
+        text={text}
+      />
       <section className=" text-center py-10">
         <p>
           Imperio offers exquisite glass railing systems <br />

@@ -72,8 +72,8 @@ export const Blog = () => {
         }
       />
       <section className="py-20 px-44 max-sm:px-4 max-md:px-12 max-lg:px-20 max-xl:px-28 max-2xl:px-36">
-        <div className="flex justify-between">
-          <aside className="space-x-8">
+        <div className="flex justify-between ">
+          <aside className="space-x-8 border border-gray-500 rounded-4xl p-2">
             <FilterButton index={0} label="LinkedIn" />
             <FilterButton index={1} label="Twitter" />
             <FilterButton index={2} label="Quora" />
@@ -112,13 +112,13 @@ export const Blog = () => {
           ))}
         </div>
         <div
-          className={`fixed inset-0 bg-gray-900 bg-opacity-50 z-50 transition-700 ${
+          className={`fixed inset-0 bg-gray-900 bg-opacity-50 z-50 transition-700 overflow-auto ${
             isPanelOpen ? "opacity-100" : " opacity-0 pointer-events-none"
           }`}
           onClick={closePanel}
         >
           <div
-            className={`fixed top-1/2 -translate-y-1/2 h-[99%] rounded-4xl bg-white w-[80vh] p-6 shadow-lg transition-700 overflow-hidden ${
+            className={`fixed top-1/2 -translate-y-1/2 h-[99%] rounded-4xl bg-white w-[80vh] p-6 shadow-lg transition-700 overflow-y-scroll noscroll ${
               isPanelOpen ? "left-4" : "-left-full"
             }`}
             onClick={(e) => e.stopPropagation()}
@@ -141,6 +141,19 @@ export const Blog = () => {
                 alt={selectedBlog.alt}
                 className="max-h-[570px]  rounded-4xl"
               />
+            </div>
+            <div className="p-8 space-y-4">
+              <header className="text-[--third] text-2xl font-normal">
+                Category
+              </header>
+              <div className="flex justify-between text-black">
+                <div>TAG TAG</div>
+                <div>
+                  <span className="inline-block bg-gray-500 italic rounded-full px-3 py-1 text-sm font-semibold text-white mb-2">
+                    {selectedBlog.socialMedia}
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

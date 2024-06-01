@@ -6,7 +6,7 @@ export const QuoteButton: React.FC = () => {
   return (
     <Link
       to="/"
-      className="py-4 px-6 text-[--black] font-bold bg-[--secound] text-xs rounded-4xl shadow-shadow shadow-black transition-700 cursor-pointer hover:scale-110 hover:shadow-white "
+      className="py-4 px-6 text-[--black] font-bold bg-[--secound] text-xs rounded-4xl transition-700 cursor-pointer hover:border hover:border-[--secound] hover:shadow-white hover:bg-[--black] hover:text-[--secound]"
     >
       GET A QUOTE
     </Link>
@@ -59,7 +59,7 @@ export const WhiteButton: React.FC<WhiteButtonProps> = ({
     <button
       onClick={onClick}
       className={
-        `w-max py-2 px-6 border-2 font-normal border-black rounded-4xl ${
+        `w-max py-2 px-6 font-normal border-black rounded-4xl ${
           value ? "bg-[--secound]" : "bg-transparent"
         } text-[--black] transition-700 hover:text-[--black] hover:bg-[--secound] ` +
         className

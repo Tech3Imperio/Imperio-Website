@@ -16,6 +16,7 @@ export default {
       },
       boxShadow: {
         shadow: "0px 0px 12px 4px rgba(0, 0, 0, 1)",
+        small: "0px 0px 7px 0px rgb(0,0,0)",
       },
     },
   },

@@ -1,6 +1,6 @@
 export const cards = [
   {
-    imgSrc: "https://via.placeholder.com/400",
+    imgSrc: "https://via.placeholder.com/700",
     alt: "helo",
     header: "My Blog Post",
     description: "This is a brief description of the blog post.",

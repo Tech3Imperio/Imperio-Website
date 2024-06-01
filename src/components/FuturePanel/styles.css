@@ -1,0 +1,12 @@
+/* styles.css */
+.scroll-container {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.section {
+  height: 100vh;
+  scroll-snap-align: start;
+}

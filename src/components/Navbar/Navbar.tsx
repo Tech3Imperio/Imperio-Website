@@ -41,7 +41,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen }) => (
     aria-hidden={!isOpen}
   >
     <section>
-      <ul className="p-8 pt-4 text-lg">
+      <ul className="p-8 pt-4 text-base">
         <MenuItems />
       </ul>
     </section>
@@ -84,7 +84,6 @@ export const Navbar: React.FC = () => {
       );
     };
   }, []);
-
   return (
     <nav
       className={`bg-[--black] sticky top-0 z-50 transition-200 ${
@@ -112,7 +111,7 @@ export const Navbar: React.FC = () => {
         ) : (
           <>
             <div className="flex-grow flex justify-center">
-              <ul className="text-lg flex gap-16 text-white my-auto px-7 rounded-4xl shadow-shadow shadow-black transition-700 hover:shadow-white">
+              <ul className="text-base flex gap-16 text-white my-auto px-7 rounded-4xl border border-transparent transition-700 hover:shadow-small hover:shadow-white  hover:border-white">
                 <MenuItems />
               </ul>
             </div>
