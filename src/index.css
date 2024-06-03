@@ -6,7 +6,7 @@
 :root {
   font-family: "Nunito Sans";
   line-height: 1.5;
-  font-weight: 200;
+  font-weight: 300;
 
   color-scheme: light dark;
   --white: #ffffff;
@@ -42,11 +42,13 @@ body {
 
 .Title {
   font-size: 4rem;
+  font-weight: 400;
   font-family: "Raleway";
 }
 
 .Raleway {
   font-family: "Raleway";
+  font-weight: 400;
 }
 
 .transition-200 {

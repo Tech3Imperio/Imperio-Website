@@ -1,3 +1,3 @@
 import heroImage from "./hero.png";
-
-export { heroImage };
+import descImage from "./desc.png";
+export { heroImage, descImage };

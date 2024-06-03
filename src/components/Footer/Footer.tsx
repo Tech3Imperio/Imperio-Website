@@ -1,4 +1,4 @@
-import { SocialLinks } from "../SocialLinks/SocialLinks";
+import { SocialLinks } from "../../components";
 import { HiOutlinePhone } from "react-icons/hi2";
 import { MdOutlineEmail } from "react-icons/md";
 import { IoLocationOutline } from "react-icons/io5";
