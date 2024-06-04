@@ -73,14 +73,22 @@ export const Blog = () => {
       />
       <section className="py-20 px-44 max-sm:px-4 max-md:px-12 max-lg:px-20 max-xl:px-28 max-2xl:px-36">
         <div className="flex justify-between ">
-          <aside className="space-x-8 border border-gray-500 rounded-4xl p-2">
-            <FilterButton index={0} label="LinkedIn" />
-            <FilterButton index={1} label="Twitter" />
-            <FilterButton index={2} label="Quora" />
-            <FilterButton index={3} label="Pinterest" />
-            <WhiteButton value={false} onClick={resetFilters}>
+          <aside className="space-x-8 flex justify-center">
+            <div className="space-x-8 border border-gray-500 rounded-4xl p-2">
+              <FilterButton index={0} label="LinkedIn" />
+              <FilterButton index={1} label="Twitter" />
+              <FilterButton index={2} label="Quora" />
+              <FilterButton index={3} label="Pinterest" />
+            </div>
+            <button
+              onClick={resetFilters}
+              className="w-max py-2 px-6 text-white bg-black font-normal rounded-4xl transition-700 hover:text-[--black] hover:bg-[--secound]"
+            >
               Reset Filters
-            </WhiteButton>
+            </button>
+            {/* <WhiteButton value={false} onClick={resetFilters}>
+              
+            </WhiteButton> */}
           </aside>
           <aside className="flex">
             <input

@@ -9,6 +9,9 @@ import {
   QuotePanel,
 } from "../../components";
 import { ImageScrolls } from "../../components/ImageScrolls/ImageScrolls";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import VerticalCarousel from "../../components/VerticalCarousel/VerticalCarousel";
 
 const texts = [
   "Imperio offers exquisite glass railing system",
@@ -17,6 +20,13 @@ const texts = [
   "See our work, hear from satisfied clients, and",
   "take the next step with us.",
 ];
+
+const items = [
+  <div className="bg-red-500 h-full">Item 1</div>,
+  <div className="bg-green-500 h-full">Item 2</div>,
+  <div className="bg-blue-500 h-full">Item 3</div>,
+];
+
 export const Home: React.FC = () => {
   return (
     <main>
@@ -57,6 +67,7 @@ export const Home: React.FC = () => {
           <img src={descImage} alt="Description Image" />
         </div>
       </section>
+      <section></section>
       <TextComponent text={texts} />
       <Description
         mainHeader="Work Showcase."
@@ -73,6 +84,7 @@ export const Home: React.FC = () => {
       >
         <ImageScrolls className="pt-24" />
       </Description>
+      <VerticalCarousel items={items} />
       <QuotePanel />
     </main>
   );
