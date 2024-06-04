@@ -5,7 +5,7 @@ import { ButtonProps, WhiteButtonProps } from "../../types";
 export const QuoteButton: React.FC = () => {
   return (
     <Link
-      to="/"
+      to="quote"
       className="py-4 px-6 text-[--black] font-bold bg-[--secound] text-xs rounded-4xl transition-700 cursor-pointer hover:border hover:border-[--secound] hover:shadow-white hover:bg-[--black] hover:text-[--secound]"
     >
       GET A QUOTE

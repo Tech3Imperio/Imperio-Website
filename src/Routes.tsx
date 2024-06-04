@@ -1,6 +1,6 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import App from "./App";
-import { Blog, Home, NotFound, Products } from "./pages";
+import { Blog, Home, NotFound, Product, Products, Getquote } from "./pages";
 
 export const routes = createBrowserRouter([
   {
@@ -11,6 +11,8 @@ export const routes = createBrowserRouter([
       { path: "home", element: <Home /> },
       { path: "blog", element: <Blog /> },
       { path: "products", element: <Products /> },
+      { path: "product", element: <Product /> },
+      { path: "quote", element: <Getquote /> },
       { path: "*", element: <NotFound /> },
     ],
   },
