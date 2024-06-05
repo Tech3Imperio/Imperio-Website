@@ -14,6 +14,40 @@ export const Getquote = () => {
           curve
           shadow
         />
+        <header className=" italic text-[3.4rem] text-[--third] ml-24">
+          Fill this form to get your quote.
+        </header>
+        <p className=" text-3xl text-[--third] ml-24">via whatsapp.</p>
+        <div className=" mb-12">
+          <form>
+            <div className=" flex flex-col ml-24">
+              <label htmlFor="name" className=" italic text-3xl mt-5">
+                Name
+              </label>
+              <input
+                type="text"
+                name="name"
+                className=" bg-transparent border border-black outline-none max-w-96 rounded-md py-[5.5px]"
+              />
+              <label htmlFor="name" className=" italic text-3xl mt-5">
+                E-mail
+              </label>
+              <input
+                type="email"
+                name="name"
+                className=" bg-transparent border border-black outline-none max-w-96 rounded-md py-[5.5px]"
+              />
+              <label htmlFor="name" className=" italic text-3xl mt-5">
+                Whatsapp no.
+              </label>
+              <input
+                type="text"
+                name="name"
+                className=" bg-transparent border border-black outline-none max-w-96 rounded-md py-[5.5px]"
+              />
+            </div>
+          </form>
+        </div>
       </section>
     </main>
   );
