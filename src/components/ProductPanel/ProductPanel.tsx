@@ -10,8 +10,9 @@ export const ProductPanel: React.FC<ProductPanelProps> = ({
     <div className="px-44 pt-24">
       <header className="text-5xl text-[--third] font-normal">{header}</header>
       <div className="flex pt-16 px-16 flex-wrap justify-center gap-9">
-        {productDetail.map((product) => (
+        {productDetail.map((product, index) => (
           <ProductCard
+            key={index}
             img={product.img}
             alt={product.alt}
             productName={product.name}

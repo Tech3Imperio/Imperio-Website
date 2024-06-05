@@ -107,7 +107,7 @@ export const Home: React.FC = () => {
         }
         black
       >
-        <div className="flex px-20 py-10 gap-32 items-center">
+        <div className="flex px-20 py-12 gap-32 items-center">
           <div className="w-[35%]">
             <VerticalCarousel direction>
               {scrollImages.map((item) => (

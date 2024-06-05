@@ -8,18 +8,15 @@ export const VerticalCarousel: React.FC<VerticalCarouselProps> = ({
   direction = false,
 }) => {
   const settings = {
-    dots: false,
     arrows: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    vertical: true,
-    verticalSwiping: true,
     autoplay: true,
-    autoplaySpeed: 3000,
-    rtl: direction,
+    autoplaySpeed: 2000,
+    dots: false,
+    draggable: false,
+    infinite: true,
     pauseOnHover: false,
+    rtl: direction,
+    vertical: true,
   };
 
   return (

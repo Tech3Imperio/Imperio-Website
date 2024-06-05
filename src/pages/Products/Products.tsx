@@ -104,9 +104,9 @@ export const Products = () => {
         shadow
       />
       <section className="pb-24">
-        {productSections.map((section) => (
+        {productSections.map((section, index) => (
           <ProductPanel
-            key={section.header}
+            key={index}
             header={section.header}
             productDetail={section.products}
           />

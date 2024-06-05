@@ -11,7 +11,7 @@ export const routes = createBrowserRouter([
       { path: "home", element: <Home /> },
       { path: "blog", element: <Blog /> },
       { path: "products", element: <Products /> },
-      { path: "product", element: <Product /> },
+      { path: "products/:productID", element: <Product /> },
       { path: "quote", element: <Getquote /> },
       { path: "*", element: <NotFound /> },
     ],

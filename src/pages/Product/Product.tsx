@@ -6,8 +6,11 @@ import {
   GoShieldCheck,
 } from "react-icons/go";
 import { HiOutlineLightBulb } from "react-icons/hi";
+// import { useParams } from "react-router-dom";
 
 export const Product = () => {
+  // const { productID } = useParams<{ productID: string }>();
+
   const images = [
     "https://www.squareyards.com/blog/wp-content/uploads/2023/09/Balcony-with-Glass-Railing-on-Rooftop.png",
     "https://media.istockphoto.com/id/1146096609/photo/metal-railings-and-glass-wall.jpg?s=612x612&w=0&k=20&c=eWyuZdJaJtxwK8_tjwFquvXSUMFQI_LLVLeZsbfw9dU=",
