@@ -1,13 +1,15 @@
 import React from "react";
 import Slider from "react-slick";
+import { VerticalCarouselProps } from "../../types";
 
-interface VerticalCarouselProps {
-  items: React.ReactNode[];
-}
-
-const VerticalCarousel: React.FC<VerticalCarouselProps> = ({ items }) => {
+export const VerticalCarousel: React.FC<VerticalCarouselProps> = ({
+  children,
+  className = "",
+  direction = false,
+}) => {
   const settings = {
-    dots: true,
+    dots: false,
+    arrows: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -16,17 +18,13 @@ const VerticalCarousel: React.FC<VerticalCarouselProps> = ({ items }) => {
     verticalSwiping: true,
     autoplay: true,
     autoplaySpeed: 3000,
+    rtl: direction,
+    pauseOnHover: false,
   };
 
   return (
-    <Slider {...settings} className="h-[300px]">
-      {items.map((item, index) => (
-        <div key={index} className="h-full flex items-center justify-center">
-          {item}
-        </div>
-      ))}
+    <Slider {...settings} className={className}>
+      {children}
     </Slider>
   );
 };
-
-export default VerticalCarousel;

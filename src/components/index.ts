@@ -9,4 +9,5 @@ export * from "./TextComponent/TextComponent";
 export * from "./ProductPanel/ProductPanel";
 export * from "./ProductCard/ProductCard";
 export * from "./QuotePanel/QuotePanel.tsx";
+export * from "./VerticalCarousel/VerticalCarousel";
 // export * from "./SlidingPanel/SlidingPanle";

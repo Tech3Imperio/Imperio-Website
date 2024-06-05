@@ -24,3 +24,9 @@ export type FuturePanelProps = {
   yellowHeader?: string | ReactNode;
   text?: string | ReactNode;
 };
+
+export interface VerticalCarouselProps {
+  children: React.ReactNode;
+  className?: string;
+  direction?: boolean;
+}

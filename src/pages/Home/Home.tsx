@@ -11,7 +11,8 @@ import {
 import { ImageScrolls } from "../../components/ImageScrolls/ImageScrolls";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import VerticalCarousel from "../../components/VerticalCarousel/VerticalCarousel";
+import { VerticalCarousel } from "../../components";
+import { scrollerImage } from "../../assets/Images";
 
 const texts = [
   "Imperio offers exquisite glass railing system",
@@ -21,10 +22,31 @@ const texts = [
   "take the next step with us.",
 ];
 
-const items = [
-  <div className="bg-red-500 h-full">Item 1</div>,
-  <div className="bg-green-500 h-full">Item 2</div>,
-  <div className="bg-blue-500 h-full">Item 3</div>,
+const scrollImages = [
+  { img: scrollerImage, alt: "scroll image" },
+  { img: scrollerImage, alt: "scroll image" },
+  { img: scrollerImage, alt: "scroll image" },
+  { img: scrollerImage, alt: "scroll image" },
+];
+const scrollText = [
+  {
+    header: "Low Maintenance.",
+    subheader:
+      "Our railings are designed to last, requiring minimal upkeep while maintaining their stunning appearance.",
+  },
+  {
+    header: "Frameless Elegance.",
+    subheader: "Enjoy uninterrupted views with our sleek, frame-less designs.",
+  },
+  {
+    header: "Minimalist Aesthetic.",
+    subheader: "Clean lines and understated designs that complement any decor.",
+  },
+  {
+    header: "Complete Accessories.",
+    subheader:
+      "Customize your railing with our comprehensive selection of accessories.",
+  },
 ];
 
 export const Home: React.FC = () => {
@@ -67,7 +89,68 @@ export const Home: React.FC = () => {
           <img src={descImage} alt="Description Image" />
         </div>
       </section>
-      <section></section>
+      <Description
+        yellowText="Feature with future."
+        mainHeader={
+          <>
+            Innovative Designs for Every
+            <br />
+            Need.
+          </>
+        }
+        text={
+          <>
+            With innovative designs, our products redefine modern spaces.
+            <br />
+            Explore today.
+          </>
+        }
+        black
+      >
+        <div className="flex px-20 py-10 gap-32 items-center">
+          <div className="w-[35%]">
+            <VerticalCarousel direction>
+              {scrollImages.map((item) => (
+                <img src={item.img} alt={item.alt} key={item.img} />
+              ))}
+            </VerticalCarousel>
+          </div>
+          <div className="w-[65%]">
+            <VerticalCarousel>
+              {scrollText.map((item, index) => (
+                <div>
+                  <div className="flex items-center gap-5 text-white">
+                    <header className="text-8xl">{index + 1}.</header>
+                    <div className="flex flex-col gap-5">
+                      <header className="Raleway text-5xl">
+                        {item.header}
+                      </header>
+                      <p className="text-2xl w-[38rem]">{item.subheader}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </VerticalCarousel>
+          </div>
+          {/* <div>
+            <VerticalCarousel>
+              {scrollText.map((item, index) => (
+                <div>
+                  <div className="flex items-center gap-5 text-white">
+                    <header className="text-8xl">{index + 1}.</header>
+                    <div className="flex flex-col gap-5">
+                      <header className="Raleway text-5xl">
+                        {item.header}
+                      </header>
+                      <p className="text-2xl w-[38rem]">{item.subheader}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </VerticalCarousel>
+          </div> */}
+        </div>
+      </Description>
       <TextComponent text={texts} />
       <Description
         mainHeader="Work Showcase."
@@ -84,7 +167,6 @@ export const Home: React.FC = () => {
       >
         <ImageScrolls className="pt-24" />
       </Description>
-      <VerticalCarousel items={items} />
       <QuotePanel />
     </main>
   );
