@@ -10,4 +10,6 @@ export * from "./ProductPanel/ProductPanel";
 export * from "./ProductCard/ProductCard";
 export * from "./QuotePanel/QuotePanel.tsx";
 export * from "./VerticalCarousel/VerticalCarousel";
+export * from './HorizontalCarousel/HorizontalCarousel.tsx'
+export * from './ImageScrolls/ImageScrolls.tsx'
 // export * from "./SlidingPanel/SlidingPanle";
