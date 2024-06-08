@@ -5,9 +5,8 @@ export type HeroProps = {
   altText?: string;
   header: string | ReactNode;
   subHeader: string;
-  height?: number;
+  height?: boolean;
   curve?: boolean;
-  shadow?: boolean;
   children?: ReactNode;
 };
 export type ScrollData = {
@@ -25,7 +24,7 @@ export type FuturePanelProps = {
   text?: string | ReactNode;
 };
 
-export interface VerticalCarouselProps {
+export interface CarouselProps {
   children: React.ReactNode;
   className?: string;
   direction?: boolean;

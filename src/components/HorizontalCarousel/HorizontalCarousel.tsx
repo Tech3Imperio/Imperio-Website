@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import { CarouselProps } from "../../types";
 
-export const VerticalCarousel: React.FC<CarouselProps> = ({
+export const HorizontalCarousel: React.FC<CarouselProps> = ({
 	children,
 	className = "",
 	direction = false,
@@ -16,7 +16,7 @@ export const VerticalCarousel: React.FC<CarouselProps> = ({
 		infinite: true,
 		pauseOnHover: false,
 		rtl: direction,
-		vertical: true,
+		vertical: false,
 	};
 
 	return (
