@@ -6,7 +6,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   alt = "",
   productName,
   productDetail,
-  text,
 }) => {
   const [hover, setHover] = useState(false);
 
@@ -36,7 +35,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         />
       </div>
       <div className="text-[--third] font-normal pt-[0.4rem] text-xs">
-        {text}
+        {productName}
       </div>
     </div>
   );

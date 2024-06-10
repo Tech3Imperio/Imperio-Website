@@ -3,17 +3,24 @@ export type ProductCardProps = {
   alt: string;
   productName: string;
   productDetail: string;
-  text: string;
 };
 export type ProductPanelProps = {
   header: string;
-  productDetail: Product[];
+  productDetail: ProductProps[];
 };
 
-type Product = {
-  img: string;
-  alt: string;
-  name: string;
-  detail: string;
-  text: string;
+export type ProductProps = {
+  "Random Code to link the product": string;
+  "Product Category": string;
+  "Product Name": string;
+  "Product Code": string;
+  "Product Finish": string;
+  "Glass Thickness": string;
+  Features: string;
+  Applications: string;
+  "Short Description": string;
+  "Main Image": string;
+  "Alternative text": string;
+  "Min 3 Extra images": string;
+  "Alternative text for other image": string;
 };
