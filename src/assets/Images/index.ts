@@ -4,3 +4,4 @@ export * from "./hero";
 export * from "./product";
 export * from "./scroller";
 export * from "./imagesidler";
+export * from "./about";
