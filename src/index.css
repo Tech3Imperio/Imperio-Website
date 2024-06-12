@@ -82,7 +82,6 @@ body {
 
 .PrimaryText {
   color: var(--third);
-  font-size: 3rem;
   font-family: "Raleway";
 }
 
@@ -141,7 +140,7 @@ a {
 }
 
 @media (max-width: 640px) {
-  .primaryText {
+  .PrimaryText {
     font-size: 1.5rem;
   }
 }

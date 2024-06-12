@@ -16,7 +16,7 @@ export type ProductProps = {
   "Product Code": string;
   "Product Finish": string;
   "Glass Thickness": string;
-  Features: string;
+  "Features (Min 3)": string;
   Applications: string;
   "Short Description": string;
   "Main Image": string;
