@@ -13,7 +13,7 @@ export const Getquote: React.FC = () => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(
     "HANDRIL"
   );
-  const [selectedButtons, setSelectedButtons] = useState<string[]>([]);
+  const [selectedBase, setSelectedBase] = useState<string | null>(null);
 
   const handleProductClick = (product: Product) => {
     setSelectedProduct(product);
@@ -31,13 +31,7 @@ export const Getquote: React.FC = () => {
   };
 
   const handleButtonClick = (buttonName: string) => {
-    setSelectedButtons((prevSelectedButtons) => {
-      if (prevSelectedButtons.includes(buttonName)) {
-        return prevSelectedButtons.filter((name) => name !== buttonName);
-      } else {
-        return [...prevSelectedButtons, buttonName];
-      }
-    });
+    setSelectedBase(buttonName);
   };
 
   const renderImage = () => {
@@ -95,9 +89,7 @@ export const Getquote: React.FC = () => {
                   <button
                     key={buttonName}
                     className={`h-12 w-24 border border-black rounded-4xl ${
-                      selectedButtons.includes(buttonName)
-                        ? "bg-black text-white"
-                        : ""
+                      selectedBase === buttonName ? "bg-black text-white" : ""
                     }`}
                     onClick={() => handleButtonClick(buttonName)}
                   >
@@ -110,9 +102,7 @@ export const Getquote: React.FC = () => {
                   <button
                     key={buttonName}
                     className={`h-12 w-24 border border-black rounded-4xl ${
-                      selectedButtons.includes(buttonName)
-                        ? "bg-black text-white"
-                        : ""
+                      selectedBase === buttonName ? "bg-black text-white" : ""
                     }`}
                     onClick={() => handleButtonClick(buttonName)}
                   >
@@ -125,9 +115,7 @@ export const Getquote: React.FC = () => {
                   <button
                     key={buttonName}
                     className={`h-12 w-24 border border-black rounded-4xl ${
-                      selectedButtons.includes(buttonName)
-                        ? "bg-black text-white"
-                        : ""
+                      selectedBase === buttonName ? "bg-black text-white" : ""
                     }`}
                     onClick={() => handleButtonClick(buttonName)}
                   >
