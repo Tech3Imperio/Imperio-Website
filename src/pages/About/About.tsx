@@ -26,27 +26,27 @@ export function About() {
       },
       {
         name: "Mr. Mishra",
-        designation: "Founder",
+        designation: "Co-Founder",
         image: img1,
       },
       {
         name: "Mr. Mishra",
-        designation: "Founder",
+        designation: "Executive",
         image: img2,
       },
       {
         name: "Mr. Mishra",
-        designation: "Founder",
+        designation: "Executive",
         image: img3,
       },
       {
         name: "Mr. Mishra",
-        designation: "Founder",
+        designation: "Executive",
         image: img4,
       },
       {
         name: "Mr. Mishra",
-        designation: "Founder",
+        designation: "Executive",
         image: img5,
       },
     ];
@@ -54,9 +54,28 @@ export function About() {
 
   const team = getTeam();
 
+  const keyMembers = team.filter(
+    (member) =>
+      member.designation === "Founder" || member.designation === "Co-Founder"
+  );
+
+  const executives = team.filter(
+    (member) => member.designation === "Executive"
+  );
+
+  const chunkArray = (arr: TeamMember[], size: number): TeamMember[][] => {
+    const result: TeamMember[][] = [];
+    for (let i = 0; i < arr.length; i += size) {
+      result.push(arr.slice(i, i + size));
+    }
+    return result;
+  };
+
+  const executiveChunks = chunkArray(executives, 4);
+
   return (
     <main>
-      {/* <section>
+      <section>
         <Hero
           img={tempHeroImage}
           altText="hero for blog"
@@ -80,20 +99,70 @@ export function About() {
         <div>
           <Description yellowText="Our Team." />
         </div>
-        <div className="bg-black h-[55rem] w-full -mt-16 flex flex-1 flex-wrap">
-          {team.map((member, index) => (
-            <div key={index} className="text-white p-4 w-1/2 sm:w-1/3 lg:w-1/4">
-              <img
-                src={member.image}
-                alt={`${member.name} photo`}
-                className="w-[10rem] h-[10rem] rounded-full mb-4 "
-              />
-              <h3 className="text-lg font-bold">{member.name}</h3>
-              <p className="text-sm">{member.designation}</p>
+        <div className="bg-black h-screen w-full  flex justify-center items-center flex-col">
+          <div className="flex gap-20 -mt-[5rem] ">
+            {keyMembers.map((member, index) => (
+              <div key={index} className="text-center">
+                <img
+                  src={member.image}
+                  alt={`${member.name} image`}
+                  className="rounded-full w-[10rem] h-[10rem]"
+                />
+                <h3 className="text-white">{member.name}</h3>
+                <p className="text-white">{member.designation}</p>
+              </div>
+            ))}
+          </div>
+
+          {executiveChunks.map((chunk, index) => (
+            <div key={index} className="flex gap-20 mt-10">
+              {chunk.map((member, idx) => (
+                <div key={idx} className="text-center">
+                  <img
+                    src={member.image}
+                    alt={`${member.name} image`}
+                    className="rounded-full w-[10rem] h-[10rem]"
+                  />
+                  <h3 className="text-white">{member.name}</h3>
+                  <p className="text-white">{member.designation}</p>
+                </div>
+              ))}
+            </div>
+          ))}
+
+          {executiveChunks.map((chunk, index) => (
+            <div key={index} className="flex gap-20 mt-10">
+              {chunk.map((member, idx) => (
+                <div key={idx} className="text-center">
+                  <img
+                    src={member.image}
+                    alt={`${member.name} image`}
+                    className="rounded-full w-[10rem] h-[10rem]"
+                  />
+                  <h3 className="text-white">{member.name}</h3>
+                  <p className="text-white">{member.designation}</p>
+                </div>
+              ))}
+            </div>
+          ))}
+
+          {executiveChunks.map((chunk, index) => (
+            <div key={index} className="flex gap-20 mt-10">
+              {chunk.map((member, idx) => (
+                <div key={idx} className="text-center">
+                  <img
+                    src={member.image}
+                    alt={`${member.name} image`}
+                    className="rounded-full w-[10rem] h-[10rem]"
+                  />
+                  <h3 className="text-white">{member.name}</h3>
+                  <p className="text-white">{member.designation}</p>
+                </div>
+              ))}
             </div>
           ))}
         </div>
-      </section> */}
+      </section>
     </main>
   );
 }

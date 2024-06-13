@@ -1,6 +1,14 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import App from "./App";
-import { Blog, Home, NotFound, Product, Products, Getquote } from "./pages";
+import {
+  Blog,
+  Home,
+  NotFound,
+  Product,
+  Products,
+  Getquote,
+  About,
+} from "./pages";
 
 export const routes = createBrowserRouter([
   {
@@ -10,6 +18,7 @@ export const routes = createBrowserRouter([
       { path: "", element: <Navigate to="home" replace /> },
       { path: "home", element: <Home /> },
       { path: "blog", element: <Blog /> },
+      { path: "aboutus", element: <About /> },
       { path: "products", element: <Products /> },
       {
         path: "products/:productID",
