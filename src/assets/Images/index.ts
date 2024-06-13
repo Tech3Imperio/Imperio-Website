@@ -5,3 +5,4 @@ export * from "./product";
 export * from "./scroller";
 export * from "./imagesidler";
 export * from "./about";
+export * from "./testimonials";

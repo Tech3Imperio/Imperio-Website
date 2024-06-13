@@ -10,7 +10,7 @@ const products = [
     "Product Code": "qwery",
     "Product Finish": "Silver",
     "Glass Thickness": "12mm",
-    Features: "Heavy,Fireproof",
+    "Features (Min 3)": "Heavy,Fireproof",
     Applications: "Indoor",
     "Short Description":
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati quas, voluptate rem natus qui nostrum nemo doloribus ullam tempora magnam exercitationem dignissimos. Error dignissimos minus vitae excepturi, nam voluptatibus corporis blanditiis repellat aliquid quam totam mollitia neque, quas maiores consequuntur veritatis ratione provident alias dolores fugiat, reiciendis quae impedit. Qui.",
@@ -30,7 +30,7 @@ for (let i = 1; i < 20; i++) {
     "Product Code": "qwery",
     "Product Finish": "Silver",
     "Glass Thickness": "12mm",
-    Features: "Heavy,Fireproof",
+    "Features (Min 3)": "Heavy,Fireproof",
     Applications: "Indoor",
     "Short Description":
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati quas, voluptate rem natus qui nostrum nemo doloribus ullam tempora magnam exercitationem dignissimos. Error dignissimos minus vitae excepturi, nam voluptatibus corporis blanditiis repellat aliquid quam totam mollitia neque, quas maiores consequuntur veritatis ratione provident alias dolores fugiat, reiciendis quae impedit. Qui.",

@@ -1,5 +1,10 @@
 import React from "react";
-import { heroImage, descImage, scrollerImage } from "../../assets/Images";
+import {
+  heroImage,
+  descImage,
+  scrollerImage,
+  testimonial1,
+} from "../../assets/Images";
 import {
   Hero,
   Description,
@@ -10,9 +15,11 @@ import {
   HorizontalCarousel,
   VerticalCarousel,
   ImageScrolls,
+  Testimonials,
 } from "../../components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { TestimonialsData } from "../../types";
 
 const text =
   "Imperio offers exquisite glass railing systems blending safety and style. Explore innovative designs, LED options, and elegance. See our work, hear from satisfied clients, and take the next step with us.";
@@ -43,6 +50,99 @@ const scrollData = [
       "Customize your railing with our comprehensive selection of accessories.",
     img: scrollerImage,
     alt: "scroll image",
+  },
+];
+
+const testimonialsData: TestimonialsData[] = [
+  {
+    id: 0,
+    name: "Jayadeep H.",
+    add: "Mumbai, India.",
+    stars: 5,
+    quote:
+      "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
+    img: testimonial1,
+    alt: "alt text",
+  },
+  {
+    id: 1,
+    name: "Jayadeep H.",
+    add: "Mumbai, India.",
+    stars: 3.5,
+    quote:
+      "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
+    img: testimonial1,
+    alt: "alt text",
+  },
+  {
+    id: 2,
+    name: "Jayadeep H.",
+    add: "Mumbai, India.",
+    stars: 2.5,
+    quote:
+      "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
+    img: testimonial1,
+    alt: "alt text",
+  },
+  {
+    id: 3,
+    name: "Jayadeep H.",
+    add: "Mumbai, India.",
+    stars: 2.5,
+    quote:
+      "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
+    img: testimonial1,
+    alt: "alt text",
+  },
+  {
+    id: 4,
+    name: "Jayadeep H.",
+    add: "Mumbai, India.",
+    stars: 5,
+    quote:
+      "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
+    img: testimonial1,
+    alt: "alt text",
+  },
+  {
+    id: 5,
+    name: "Jayadeep H.",
+    add: "Mumbai, India.",
+    stars: 3,
+    quote:
+      "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
+    img: testimonial1,
+    alt: "alt text",
+  },
+  {
+    id: 6,
+    name: "Jayadeep H.",
+    add: "Mumbai, India.",
+    stars: 5,
+    quote:
+      "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
+    img: testimonial1,
+    alt: "alt text",
+  },
+  {
+    id: 7,
+    name: "Jayadeep H.",
+    add: "Mumbai, India.",
+    stars: 5,
+    quote:
+      "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
+    img: testimonial1,
+    alt: "alt text",
+  },
+  {
+    id: 8,
+    name: "Jayadeep H.",
+    add: "Mumbai, India.",
+    stars: 5,
+    quote:
+      "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
+    img: testimonial1,
+    alt: "alt text",
   },
 ];
 
@@ -145,19 +245,10 @@ export const Home: React.FC = () => {
       <TextComponent texts={text} />
       <Description
         mainHeader="Work Showcase."
-        text={
-          <>
-            Our portfolio features diverse projects, from luxury residential
-            <br />
-            balconies to modern commercial spaces, highlighting our
-            <br />
-            commitment to quality and detail.
-          </>
-        }
-        className="h-screen flex flex-col justify-between"
-      >
-        <ImageScrolls className="pt-24 overflow-hidden" />
-      </Description>
+        text="Our portfolio features diverse projects, from luxury residential balconies to modern commercial spaces, highlighting our commitment to quality and detail."
+      />
+      <ImageScrolls className="py-14 overflow-hidden" />
+      <Testimonials cards={testimonialsData} />
       <QuotePanel />
     </main>
   );

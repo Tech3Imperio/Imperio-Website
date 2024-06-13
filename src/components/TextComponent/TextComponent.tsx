@@ -58,7 +58,7 @@ export const TextComponent = ({
   return (
     <section
       id="textscroller"
-      className={`h-screen w-screen flex flex-col justify-center items-center text-2xl md:text-5xl gap-4 ${
+      className={`h-[82.5vh] w-screen flex flex-col justify-center items-center text-2xl md:text-5xl gap-4 ${
         inner ? "" : className
       }`}
     >

@@ -24,8 +24,24 @@ export type FuturePanelProps = {
   text?: string | ReactNode;
 };
 
-export interface CarouselProps {
+export type CarouselProps = {
   children: React.ReactNode;
   className?: string;
   direction?: boolean;
-}
+};
+
+export type TestimonialsData = {
+  id: number;
+  name: string;
+  add: string;
+  stars: number;
+  quote: string;
+  img: string;
+  alt: string;
+};
+
+export type TestimonialsProps = {
+  cards: TestimonialsData[];
+  className?: string;
+  direction?: boolean;
+};

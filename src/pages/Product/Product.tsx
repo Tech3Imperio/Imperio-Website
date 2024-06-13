@@ -131,8 +131,8 @@ const MemoProduct: React.FC = () => {
             productData.current["Product Code"]}
         </h1>
       </header>
-      <section className="md:h-[71vh] flex justify-between max-md:flex-col max-md:gap-6">
-        <aside className="flex flex-col justify-between gap-4 w-full md:w-[18%] overflow-hidden max-md:order-3">
+      <section className="xl:h-[71vh] flex justify-between max-xl:flex-col max-xl:gap-6">
+        <aside className="flex flex-col justify-between gap-4 w-full xl:w-[18%] overflow-hidden max-xl:order-3">
           <div className="flex flex-col text-base gap-2 justify-center">
             {featureData.current.map((item, index) => (
               <div key={index} className="flex flex-col gap-3">
@@ -145,7 +145,7 @@ const MemoProduct: React.FC = () => {
                 </p>
               </div>
             ))}
-            <div className="border-t-2 border-t-[--third] max-md:space-y-8 max-md:w-1/2">
+            <div className="border-t-2 border-t-[--third] max-xl:space-y-8 max-xl:w-1/2">
               <p className="text-base font-semibold mt-2">
                 SUTIABLE FOR GLASS UPTO
               </p>
@@ -157,17 +157,17 @@ const MemoProduct: React.FC = () => {
 
           <div>
             <img
-              className="rounded-4xl cursor-pointer hidden md:block"
+              className="rounded-4xl cursor-pointer hidden xl:block"
               onClick={handleLeftClick}
               src={imageData[imageData.length - 1].img}
               alt={imageData[imageData.length - 1].alt}
             />
           </div>
         </aside>
-        <center className="flex w-full max-md:mb-6 md:w-[47.5rem] justify-between items-center text-2xl max-md:order-1">
+        <center className="flex w-full max-xl:mb-6 xl:w-[47.5rem] justify-between items-center text-2xl max-xl:order-1">
           <GoChevronLeft className="cursor-pointer" onClick={handleLeftClick} />
           <img
-            className="rounded-4xl max-h-[70vh] max-w-[70vw] md:max-h-[40.5rem] md:max-w-[40.5rem] overflow-hidden"
+            className="rounded-4xl max-h-[70vh] max-w-[70vw] xl:max-h-[40.5rem] xl:max-w-[40.5rem] overflow-hidden"
             src={imageData[0].img}
             alt={imageData[0].alt}
           />
@@ -176,21 +176,21 @@ const MemoProduct: React.FC = () => {
             onClick={handleRightClick}
           />
         </center>
-        <aside className="flex flex-col gap-4 w-full md:w-[20%] overflow-hidden justify-between max-md:order-2">
-          <div className="flex flex-col gap-6 md:gap-8">
-            <header className="text-[--third] Raleway text-2xl block md:hidden">
+        <aside className="flex flex-col gap-4 w-full xl:w-[20%] overflow-hidden justify-between max-xl:order-2">
+          <div className="flex flex-col gap-6 xl:gap-8">
+            <header className="text-[--third] Raleway text-2xl block xl:hidden">
               Detailed Description.
             </header>
             <ExpandableText maxLength={100} className="text-[--third]">
               {productData.current["Short Description"]}
             </ExpandableText>
-            <BlackButton className="hidden md:block">
+            <BlackButton className="hidden xl:block">
               View other products
             </BlackButton>
           </div>
           <div>
             <img
-              className="rounded-4xl cursor-pointer hidden md:block"
+              className="rounded-4xl cursor-pointer hidden xl:block"
               onClick={handleRightClick}
               src={imageData[1].img}
               alt={imageData[1].alt}
