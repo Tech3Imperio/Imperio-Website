@@ -14,9 +14,11 @@ export const ProductPanel: React.FC<ProductPanelProps> = ({
           <ProductCard
             key={product["Random Code to link the product"]}
             img={product["Main Image"]}
+            path={product["Random Code to link the product"]}
             alt={product["Alternative text"]}
             productName={product["Product Name"]}
             productDetail={product["Short Description"]}
+            data={product}
           />
         ))}
       </div>

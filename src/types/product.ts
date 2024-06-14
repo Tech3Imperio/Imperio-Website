@@ -1,11 +1,19 @@
 export type ProductCardProps = {
   img: string;
   alt: string;
+  path: string;
+  data: ProductProps;
   productName: string;
   productDetail: string;
 };
+
 export type ProductPanelProps = {
   header: string;
+  productDetail: ProductProps[];
+};
+
+export type ProductDataProps = {
+  base: string;
   productDetail: ProductProps[];
 };
 

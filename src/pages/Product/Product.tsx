@@ -1,16 +1,16 @@
 import React, { useEffect, useRef, useCallback, useState } from "react";
-import { useFetch } from "../../hooks";
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { ProductProps } from "../../types";
 import { iconsFeature } from "./iconsMaping";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 import { BlackButton } from "../../components";
 
-type prop1 = {
+type ImageData = {
   img: string;
   alt: string;
 };
-type prop2 = {
+
+type FeatureData = {
   icon: ({ size, color }: { size?: number; color?: string }) => JSX.Element;
   feature: string;
 };
@@ -52,83 +52,84 @@ const ExpandableText: React.FC<ExpandableTextProps> = ({
 };
 
 const MemoProduct: React.FC = () => {
-  const { data } = useFetch(
-    "https://script.googleusercontent.com/a/macros/imperiorailing.com/echo?user_content_key=Ay_XW6emxmiwQ7Lncs10OYWdnFeTW0upS6uckktFqOCWvYse7Um3IucncElvDr3F6e1U0oIbcefbm_KsKRb7lGfzRJKfhSKKOJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMi80zadyHLKC1zka5stJV6CJ8rbxa1V-UsEmAp_psx4LPWV2VVapqoanwc9S-o8wsibsbmz75VIWJ6s0UnHNjn57l_O834N2gmbbRpWFxXoNaVLQCjst0OCroO14vipAt9G3wLhldpT5hqak0MdSxiw&lib=McNTorF1LzcGC_6h_0B7S9zQVEnUvMwCs"
-  );
-  const productData = useRef<ProductProps>();
-  const featureData = useRef<prop2[] | null>(null);
-  const [imageData, setImageData] = useState<prop1[]>();
-  const { productID } = useParams();
+  const location = useLocation();
+  const [productData, setProductData] = useState<ProductProps | null>(null);
+  const [imageData, setImageData] = useState<ImageData[]>([]);
+  const featureData = useRef<FeatureData[]>([]);
 
   const processData = useCallback(() => {
-    if (data) {
-      productData.current = data.find(
-        (item) => item["Random Code to link the product"] === productID
-      );
-      if (productData.current) {
-        const alttext = productData.current["Alternative text for other image"]
-          .split(",")
-          .map((item) => item.trim());
-        const arr = productData.current["Min 3 Extra images"]
-          .split(",")
-          .map((item, index) => ({ img: item.trim(), alt: alttext[index] }));
-        arr.unshift({
-          img: productData.current["Main Image"],
-          alt: productData.current["Alternative text"],
+    if (productData) {
+      const altTextArray = productData["Alternative text for other image"]
+        .split(",")
+        .map((text) => text.trim());
+
+      const images = productData["Min 3 Extra images"]
+        .split(",")
+        .map((img, index) => ({ img: img.trim(), alt: altTextArray[index] }));
+
+      images.unshift({
+        img: productData["Main Image"],
+        alt: productData["Alternative text"],
+      });
+
+      setImageData(images);
+
+      featureData.current = productData["Features (Min 3)"]
+        .split(",")
+        .map((feature) => {
+          const trimmedFeature = feature.trim() as keyof typeof iconsFeature;
+          return {
+            icon: iconsFeature[trimmedFeature],
+            feature: trimmedFeature,
+          };
         });
-
-        setImageData(arr);
-
-        featureData.current = productData.current["Features (Min 3)"]
-          .split(",")
-          .map((item) => {
-            const trimmedItem = item.trim() as keyof typeof iconsFeature;
-            return { icon: iconsFeature[trimmedItem], feature: trimmedItem };
-          });
-      }
     }
-  }, [data, productID]);
+  }, [productData]);
+
+  useEffect(() => {
+    if (location.state) {
+      setProductData(location.state as ProductProps);
+    }
+  }, [location.state]);
 
   useEffect(() => {
     processData();
   }, [processData]);
 
-  if (!productData.current || !featureData.current || !imageData) {
+  if (!productData || !imageData.length) {
     return <div>Loading...</div>;
   }
 
   const handleLeftClick = () => {
-    if (imageData) {
-      const temp = [...imageData];
-      const value = temp.pop();
-      if (value) {
-        temp.unshift(value);
+    setImageData((prev) => {
+      const temp = [...prev];
+      const lastImage = temp.pop();
+      if (lastImage) {
+        temp.unshift(lastImage);
       }
-      setImageData(temp);
-    }
+      return temp;
+    });
   };
 
   const handleRightClick = () => {
-    if (imageData) {
-      const temp = [...imageData];
-      const value = temp.shift();
-      if (value) {
-        temp.push(value);
+    setImageData((prev) => {
+      const temp = [...prev];
+      const firstImage = temp.shift();
+      if (firstImage) {
+        temp.push(firstImage);
       }
-      setImageData(temp);
-    }
+      return temp;
+    });
   };
 
   return (
     <main className="py-4 px-12 md:px-32 xl:px-44">
       <header className="pb-8">
         <h3 className="YellowText text-[1.75rem] md:text-4xl xl:text-[2.5rem]">
-          {productData.current["Product Category"]}
+          {productData["Product Category"]}
         </h3>
-        <h1 className="Raleway text-[--third] text-4xl md:text-[2.8rem]  xl:text-5xl">
-          {productData.current["Product Name"] +
-            " " +
-            productData.current["Product Code"]}
+        <h1 className="Raleway text-[--third] text-4xl md:text-[2.8rem] xl:text-5xl">
+          {productData["Product Name"] + " " + productData["Product Code"]}
         </h1>
       </header>
       <section className="xl:h-[71vh] flex justify-between max-xl:flex-col max-xl:gap-6">
@@ -147,14 +148,13 @@ const MemoProduct: React.FC = () => {
             ))}
             <div className="border-t-2 border-t-[--third] max-xl:space-y-8 max-xl:w-1/2">
               <p className="text-base font-semibold mt-2">
-                SUTIABLE FOR GLASS UPTO
+                SUITABLE FOR GLASS UP TO
               </p>
               <h5 className="text-5xl text-[--third]">
-                {productData.current["Glass Thickness"]}
+                {productData["Glass Thickness"]}
               </h5>
             </div>
           </div>
-
           <div>
             <img
               className="rounded-4xl cursor-pointer hidden xl:block"
@@ -182,7 +182,7 @@ const MemoProduct: React.FC = () => {
               Detailed Description.
             </header>
             <ExpandableText maxLength={100} className="text-[--third]">
-              {productData.current["Short Description"]}
+              {productData["Short Description"]}
             </ExpandableText>
             <BlackButton className="hidden xl:block">
               View other products

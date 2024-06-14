@@ -1,16 +1,20 @@
 import { useState } from "react";
 import { ProductCardProps } from "../../types";
+import { useNavigate } from "react-router-dom";
 
 export const ProductCard: React.FC<ProductCardProps> = ({
   img,
   alt = "",
+  path,
+  data,
   productName,
   productDetail,
 }) => {
   const [hover, setHover] = useState(false);
-
+  const navigate = useNavigate();
   return (
     <div
+      onClick={() => navigate(path, { state: data })}
       className={`${
         hover ? "" : "shadow-sm"
       } max-w-64 max-h-72 h-72 flex flex-col items-center rounded-xl overflow-hidden transition-700`}

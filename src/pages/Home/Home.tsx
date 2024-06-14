@@ -124,26 +124,6 @@ const testimonialsData: TestimonialsData[] = [
     img: testimonial1,
     alt: "alt text",
   },
-  {
-    id: 7,
-    name: "Jayadeep H.",
-    add: "Mumbai, India.",
-    stars: 5,
-    quote:
-      "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
-    img: testimonial1,
-    alt: "alt text",
-  },
-  {
-    id: 8,
-    name: "Jayadeep H.",
-    add: "Mumbai, India.",
-    stars: 5,
-    quote:
-      "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
-    img: testimonial1,
-    alt: "alt text",
-  },
 ];
 
 export const Home: React.FC = () => {

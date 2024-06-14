@@ -1,54 +1,34 @@
 import { Hero, ProductPanel, QuotePanel } from "../../components";
 import { tempHeroImage } from "../../assets/Images";
-import { product } from "../../assets/Images";
+import { useFetch } from "../../hooks";
+import { useEffect, useState } from "react";
+import { ProductProps } from "../../types";
 
-const products = [
-  {
-    "Random Code to link the product": "aaa",
-    "Product Category": "Base",
-    "Product Name": "Imperio ACE (series name).",
-    "Product Code": "qwery",
-    "Product Finish": "Silver",
-    "Glass Thickness": "12mm",
-    "Features (Min 3)": "Heavy,Fireproof",
-    Applications: "Indoor",
-    "Short Description":
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati quas, voluptate rem natus qui nostrum nemo doloribus ullam tempora magnam exercitationem dignissimos. Error dignissimos minus vitae excepturi, nam voluptatibus corporis blanditiis repellat aliquid quam totam mollitia neque, quas maiores consequuntur veritatis ratione provident alias dolores fugiat, reiciendis quae impedit. Qui.",
-    "Main Image": product,
-    "Alternative text": "alt text",
-    "Min 3 Extra images":
-      "https://media.istockphoto.com/id/1146096609/photo/metal-railings-and-glass-wall.jpg?s=612x612&w=0&k=20&c=eWyuZdJaJtxwK8_tjwFquvXSUMFQI_LLVLeZsbfw9dU= , https://png.pngtree.com/thumb_back/fh260/background/20230617/pngtree-beautiful-stairs-and-glass-railings-in-a-modern-lobby-image_2976238.jpg , https://www.99acres.com/microsite/wp-content/blogs.dir/6161/files/2023/08/Stainless-Steel-Accents.jpg",
-    "Alternative text for other image": "alt text,alt text,alt text",
-  },
-];
+type ProductSection = { header: string; products: ProductProps[] };
 
-for (let i = 1; i < 20; i++) {
-  products.push({
-    "Random Code to link the product": "aaa",
-    "Product Category": "Base",
-    "Product Name": "Imperio ACE (series name).",
-    "Product Code": "qwery",
-    "Product Finish": "Silver",
-    "Glass Thickness": "12mm",
-    "Features (Min 3)": "Heavy,Fireproof",
-    Applications: "Indoor",
-    "Short Description":
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati quas, voluptate rem natus qui nostrum nemo doloribus ullam tempora magnam exercitationem dignissimos. Error dignissimos minus vitae excepturi, nam voluptatibus corporis blanditiis repellat aliquid quam totam mollitia neque, quas maiores consequuntur veritatis ratione provident alias dolores fugiat, reiciendis quae impedit. Qui.",
-    "Main Image": product,
-    "Alternative text": "alt text",
-    "Min 3 Extra images":
-      "https://media.istockphoto.com/id/1146096609/photo/metal-railings-and-glass-wall.jpg?s=612x612&w=0&k=20&c=eWyuZdJaJtxwK8_tjwFquvXSUMFQI_LLVLeZsbfw9dU= , https://png.pngtree.com/thumb_back/fh260/background/20230617/pngtree-beautiful-stairs-and-glass-railings-in-a-modern-lobby-image_2976238.jpg , https://www.99acres.com/microsite/wp-content/blogs.dir/6161/files/2023/08/Stainless-Steel-Accents.jpg",
-    "Alternative text for other image": "alt text,alt text,alt text",
-  });
-}
+export const Products: React.FC = () => {
+  const { data, error, loading } = useFetch(
+    "https://script.googleusercontent.com/a/macros/imperiorailing.com/echo?user_content_key=Ay_XW6emxmiwQ7Lncs10OYWdnFeTW0upS6uckktFqOCWvYse7Um3IucncElvDr3F6e1U0oIbcefbm_KsKRb7lGfzRJKfhSKKOJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMi80zadyHLKC1zka5stJV6CJ8rbxa1V-UsEmAp_psx4LPWV2VVapqoanwc9S-o8wsibsbmz75VIWJ6s0UnHNjn57l_O834N2gmbbRpWFxXoNaVLQCjst0OCroO14vipAt9G3wLhldpT5hqak0MdSxiw&lib=McNTorF1LzcGC_6h_0B7S9zQVEnUvMwCs"
+  );
 
-const productSections = [
-  { header: "Base", products },
-  { header: "Handrail", products },
-  { header: "Endcaps", products },
-];
+  const [productSections, setProductSections] = useState<ProductSection[]>([]);
 
-export const Products = () => {
+  useEffect(() => {
+    if (data) {
+      const headers = [
+        ...new Set(data.map((item) => item["Product Category"])),
+      ];
+      const sections = headers.map((header) => ({
+        header,
+        products: data.filter((item) => item["Product Category"] === header),
+      }));
+      setProductSections(sections);
+    }
+  }, [data]);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error loading products</div>;
+
   return (
     <main>
       <Hero
@@ -71,52 +51,3 @@ export const Products = () => {
     </main>
   );
 };
-
-// import { Hero, ProductPanel, QuotePanel } from "../../components";
-// import { tempHeroImage } from "../../assets/Images";
-// import { useFetch } from "../../hooks/Fetch";
-// import { ProductProps } from "../../types";
-
-// export const Products = () => {
-//   const { data, error, loading } = useFetch(
-//     "https://sheetdb.io/api/v1/7kytl3y2afe0p"
-//   );
-
-//   if (loading) {
-//     return <div>Loading...</div>; // Show loading state
-//   }
-
-//   if (error) {
-//     return <div>Error: {error}</div>; // Show error state
-//   }
-
-//   type prop = { header: string; data: ProductProps[] };
-
-//   const productSections: prop[] = [
-//     { header: "Base", data },
-//     { header: "Handrail", data },
-//     { header: "Endcaps", data },
-//   ];
-//   console.log(data);
-//   return (
-//     <main>
-//       <Hero
-//         img={tempHeroImage}
-//         altText="Hero image for product"
-//         header="Our Products"
-//         subHeader="Discover the perfect blend of safety and sophistication with Imperio's glass railing systems."
-//         curve
-//       />
-//       <section className="pb-24">
-//         {productSections.map((section, index) => (
-//           <ProductPanel
-//             key={index}
-//             header={section.header}
-//             productDetail={section.data}
-//           />
-//         ))}
-//       </section>
-//       <QuotePanel />
-//     </main>
-//   );
-// };

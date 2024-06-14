@@ -35,14 +35,14 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ cards }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentCard((prevCard) => (prevCard + 1) % cards.length);
-    }, 12000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [cards.length]);
 
   return (
-    <section className="p-24 pb-[30rem] h-screen flex flex-col justify-between bg-[--black] overflow-hidden">
-      <header className="Raleway text-5xl text-white mb-12">
+    <section className="mx-24 my-36 px-20 pt-24 pb-[25rem] h-[68vh] flex flex-col justify-between rounded-4xl bg-[--black] overflow-hidden">
+      <header className="Raleway text-5xl text-white ">
         Client testimonials
       </header>
       <div className="relative flex justify-center w-full">
@@ -57,12 +57,14 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ cards }) => {
             <div
               key={card.id}
               className={classNames(
-                "absolute text-white p-9 w-[40rem] h-80 flex items-center gap-9 rounded-4xl transition-all duration-500 ease-in-out",
+                "absolute text-white p-9 w-[40rem] h-80 flex justify-center items-center gap-9 rounded-4xl transition-all duration-500 ease-in-out",
                 {
                   "bg-[--black] z-20 transform scale-110 opacity-100 -translate-x-1/2":
                     isCurrent,
-                  "bg-[--grey] z-10 opacity-70 transform scale-95 translate-y-16 -translate-x-1/2":
-                    isPrev || isNext,
+                  "bg-[--grey] z-10 opacity-70 transform scale-95 translate-y-32 -translate-x-[98%]":
+                    isPrev,
+                  "bg-[--grey] z-10 opacity-70 transform scale-95 translate-y-32 translate-x-[8%]":
+                    isNext,
                   "opacity-0": !isCurrent && !isPrev && !isNext,
                 }
               )}
@@ -79,18 +81,21 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ cards }) => {
                 alt={card.alt}
                 className="rounded-4xl overflow-hidden w-28 h-28"
               />
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-5 max-w-[75%]">
                 <div className="flex flex-col gap-2">
                   <header className="Raleway text-3xl">{card.name}</header>
                   <div className="text-lg">{card.add}</div>
                   <div className="flex gap-6">{stars}</div>
                 </div>
-                <div className="flex w-[70%]">
-                  <FaQuoteLeft />
-                  {card.quote}
-                  <FaQuoteRight />
+                <div className="flex justify-between">
+                  <div className="flex items-start">
+                    <FaQuoteLeft />
+                  </div>
+                  <div className="w-5/6 items-center">{card.quote}</div>
+                  <div className="flex items-end mt-auto">
+                    <FaQuoteRight />
+                  </div>
                 </div>
-                {/* <div className="text-base">{card.content}</div> */}
               </div>
             </div>
           );
