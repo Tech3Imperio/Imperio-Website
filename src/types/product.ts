@@ -17,6 +17,8 @@ export type ProductDataProps = {
   productDetail: ProductProps[];
 };
 
+export type ProductSection = { header: string; products: ProductProps[] };
+
 export type ProductProps = {
   "Random Code to link the product": string;
   "Product Category": string;
