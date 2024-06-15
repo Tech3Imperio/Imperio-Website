@@ -1,7 +1,8 @@
 import React from "react";
 import { ProductPanelProps } from "../../types";
-import { ProductCard } from "../../components";
+import { ProductCard } from "./ProductCard/ProductCard";
 
+export { ProductCard };
 export const ProductPanel: React.FC<ProductPanelProps> = ({
   header,
   productDetail,

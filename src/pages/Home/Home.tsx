@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  heroImage,
-  descImage,
-  scrollerImage,
-  testimonial1,
-} from "../../assets/Images";
+import { heroImage, descImage } from "../../assets/Images";
 import {
   Hero,
   Description,
@@ -19,114 +14,14 @@ import {
 } from "../../components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { TestimonialsData } from "../../types";
+import { scrollData, testimonialsData } from "../../assets/Data";
 
 const text =
   "Imperio offers exquisite glass railing systems blending safety and style. Explore innovative designs, LED options, and elegance. See our work, hear from satisfied clients, and take the next step with us.";
 
-const scrollData = [
-  {
-    header: "Low Maintenance.",
-    subheader:
-      "Our railings are designed to last, requiring minimal upkeep while maintaining their stunning appearance.",
-    img: scrollerImage,
-    alt: "scroll image",
-  },
-  {
-    header: "Frameless Elegance.",
-    subheader: "Enjoy uninterrupted views with our sleek, frame-less designs.",
-    img: scrollerImage,
-    alt: "scroll image",
-  },
-  {
-    header: "Minimalist Aesthetic.",
-    subheader: "Clean lines and understated designs that complement any decor.",
-    img: scrollerImage,
-    alt: "scroll image",
-  },
-  {
-    header: "Complete Accessories.",
-    subheader:
-      "Customize your railing with our comprehensive selection of accessories.",
-    img: scrollerImage,
-    alt: "scroll image",
-  },
-];
-
-const testimonialsData: TestimonialsData[] = [
-  {
-    id: 0,
-    name: "Jayadeep H.",
-    add: "Mumbai, India.",
-    stars: 5,
-    quote:
-      "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
-    img: testimonial1,
-    alt: "alt text",
-  },
-  {
-    id: 1,
-    name: "Jayadeep H.",
-    add: "Mumbai, India.",
-    stars: 3.5,
-    quote:
-      "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
-    img: testimonial1,
-    alt: "alt text",
-  },
-  {
-    id: 2,
-    name: "Jayadeep H.",
-    add: "Mumbai, India.",
-    stars: 2.5,
-    quote:
-      "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
-    img: testimonial1,
-    alt: "alt text",
-  },
-  {
-    id: 3,
-    name: "Jayadeep H.",
-    add: "Mumbai, India.",
-    stars: 2.5,
-    quote:
-      "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
-    img: testimonial1,
-    alt: "alt text",
-  },
-  {
-    id: 4,
-    name: "Jayadeep H.",
-    add: "Mumbai, India.",
-    stars: 5,
-    quote:
-      "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
-    img: testimonial1,
-    alt: "alt text",
-  },
-  {
-    id: 5,
-    name: "Jayadeep H.",
-    add: "Mumbai, India.",
-    stars: 3,
-    quote:
-      "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
-    img: testimonial1,
-    alt: "alt text",
-  },
-  {
-    id: 6,
-    name: "Jayadeep H.",
-    add: "Mumbai, India.",
-    stars: 5,
-    quote:
-      "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
-    img: testimonial1,
-    alt: "alt text",
-  },
-];
-
 export const Home: React.FC = () => {
+  const isDesktop = window.innerWidth > 800;
+
   return (
     <main>
       <Hero
@@ -180,7 +75,7 @@ export const Home: React.FC = () => {
         text="With innovative designs, our products redefine modern spaces. Explore today."
         black
       >
-        {window.innerWidth > 800 ? (
+        {isDesktop ? (
           <div className="flex px-20 py-12 gap-32 items-center">
             <VerticalCarousel direction className="w-[35%]">
               {scrollData.map((item) => (
@@ -189,7 +84,7 @@ export const Home: React.FC = () => {
             </VerticalCarousel>
             <VerticalCarousel className="w-[65%]">
               {scrollData.map((item, index) => (
-                <div>
+                <div key={index}>
                   <div className="flex items-center gap-5 text-white">
                     <header className="text-8xl">{index + 1}.</header>
                     <div className="flex flex-col gap-5">

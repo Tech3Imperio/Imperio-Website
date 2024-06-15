@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useCallback, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { ProductProps } from "../../types";
-import { iconsFeature } from "./iconsMaping";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
-import { BlackButton } from "../../components";
+import { ProductProps } from "../../../types";
+import { BlackButton } from "../../../components";
+import { iconsFeature } from "../../../assets/Data";
 
 type ImageData = {
   img: string;

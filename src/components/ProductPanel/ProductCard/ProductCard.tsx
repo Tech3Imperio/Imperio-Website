@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ProductCardProps } from "../../types";
+import { ProductCardProps } from "../../../types";
 import { useNavigate } from "react-router-dom";
 
 export const ProductCard: React.FC<ProductCardProps> = ({

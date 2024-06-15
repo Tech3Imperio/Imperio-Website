@@ -6,4 +6,3 @@ export * from "./home";
 export * from "./utils";
 export * from "./blog";
 export * from "./product";
-export * from "./imagescroll";
