@@ -18,7 +18,6 @@ const MemoProducts: React.FC = () => {
 
   const dataBuilder = useCallback((data: ProductProps[]): ProductSection[] => {
     const headers = [...new Set(data.map((item) => item["Product Category"]))];
-    console.log(headers);
     return headers.map((header) => ({
       header,
       products: data.filter((item) => item["Product Category"] === header),
@@ -33,14 +32,15 @@ const MemoProducts: React.FC = () => {
     } else if (data) {
       const sections = dataBuilder(data);
       setProductSections(sections);
-      if (JSON.stringify(localData) !== JSON.stringify(data)) {
-        setLocalStorageItem<ProductProps[]>("ProductData", data);
-      }
+
       if (loading || error) {
         setProblem(true);
       } else {
         setProblem(false);
       }
+    }
+    if (JSON.stringify(localData) !== JSON.stringify(data) && data.length > 0) {
+      setLocalStorageItem<ProductProps[]>("ProductData", data);
     }
   }, [data, error, loading, dataBuilder]);
 
