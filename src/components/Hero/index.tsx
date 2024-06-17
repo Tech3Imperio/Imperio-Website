@@ -32,13 +32,13 @@ export const Hero: React.FC<HeroProps> = ({
           height && !curve ? "phone:pt-72" : "phone:pt-60"
         } text-white pl-9 phone:pl-16 tablet:pl-24 laptop:pl-32 desktop:pl-44`}
       >
-        <header
+        <h1
           className={`text-[2.7rem] phone:text-[3rem] tablet:text-[3.3rem] laptop:text-[3.5rem] desktop:text-[3.8rem] Raleway ${
             height && !curve ? "w-4/5" : "w-full"
           }`}
         >
           {header}
-        </header>
+        </h1>
         <div
           className={`text-xs phone:text-base ${
             height && !curve ? "w-4/5" : "w-full"

@@ -4,7 +4,7 @@ import { debounce } from "../../utils";
 import { Link } from "react-router-dom";
 import { whiteLogo } from "../../assets/Images";
 import { MenuItemProps, MobileMenuProps } from "../../types";
-import { SocialLinks, QuoteButton } from "../../components";
+import { SocialLinks, QuoteButton } from "..";
 
 const Logo: React.FC = () => (
   <Link to="/home" className="navbar-brand" aria-label="PowerHouse Home">
@@ -12,6 +12,7 @@ const Logo: React.FC = () => (
       src={whiteLogo}
       className="max-w-28 max-md:pl-3 transition ease-out duration-500 hover:translate-y-1 hover:scale-125"
       alt="Imperio Logo"
+      title="Imperio Logo"
     />
   </Link>
 );

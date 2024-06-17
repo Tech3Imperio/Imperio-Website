@@ -1,7 +1,7 @@
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
-import { bigImg, setImg1, setImg2 } from "../../assets/Images";
-import { ImageScrollProps, ImageScrollsProps } from "../../types";
+import { bigImg, setImg1, setImg2 } from "../../../assets/Images";
+import { ImageScrollProps, ImageScrollsProps } from "../../../types";
 
 const ImageScroll: React.FC<ImageScrollProps> = ({
   children,
@@ -51,7 +51,9 @@ export const ImageScrolls: React.FC<ImageScrollsProps> = ({
     <ImageScroll direction={-3000} className={className}>
       <div className="flex gap-4" style={{ right: 0 }}>
         {cards.map((card, index) => {
-          return <img src={card.img} alt={card.alt} key={index} />;
+          return (
+            <img src={card.img} alt={card.alt} key={index} title={card.alt} />
+          );
         })}
       </div>
     </ImageScroll>

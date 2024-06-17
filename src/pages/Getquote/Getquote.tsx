@@ -39,6 +39,7 @@ export const Getquote: React.FC = () => {
       <img
         src={baseImage}
         alt="Product"
+        title="Product"
         className="h-[35rem] w-[35rem] rounded-4xl ml-[10rem] mb-[9rem] mt-[7rem]"
       />
     );
@@ -127,9 +128,9 @@ export const Getquote: React.FC = () => {
           </div>
         </div>
 
-        <header className="italic text-[3.4rem] text-[--third] ml-[10rem]">
+        <h1 className="italic text-[3.4rem] text-[--third] ml-[10rem]">
           Fill this form to get your quote.
-        </header>
+        </h1>
         <p className="text-3xl text-[--third] ml-[10rem]">via whatsapp.</p>
         <div className="mb-12">
           <form>

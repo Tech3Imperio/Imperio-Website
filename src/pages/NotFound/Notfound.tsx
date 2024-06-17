@@ -7,12 +7,12 @@ export const NotFound = () => {
         <h3 className="text-[--third] text-7xl md:text-9xl xl:text-[12rem]">
           <PiSmileySadLight />
         </h3>
-        <header className="text-[--third] text-7xl md:text-8xl xl:text-9xl text-center">
+        <h1 className="text-[--third] text-5xl md:text-6xl xl:text-7xl text-center">
           404
           <br />
           Page Not Found
-        </header>
-        <p className="text-[--third] text-xl md:text-3xl">
+        </h1>
+        <p className="text-[--third] text-xl md:text-3xl xl:text-5xl">
           The page you are looking for doesn't exist or an error occurred.
         </p>
         <p className="text-[--third] text-xl md:text-3xl">

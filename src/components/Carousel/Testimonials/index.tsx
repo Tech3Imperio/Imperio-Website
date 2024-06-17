@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { TestimonialsProps } from "../../types";
+import { TestimonialsProps } from "../../../types";
 import classNames from "classnames";
 import {
   IoIosStar as FullStar,
@@ -42,9 +42,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ cards }) => {
 
   return (
     <section className="mx-24 my-36 px-20 pt-24 pb-[25rem] h-[68vh] flex flex-col justify-between rounded-4xl bg-[--black] overflow-hidden">
-      <header className="Raleway text-5xl text-white ">
-        Client testimonials
-      </header>
+      <h1 className="Raleway text-5xl text-white ">Client testimonials</h1>
       <div className="relative flex justify-center w-full">
         {cards.map((card, index) => {
           const isCurrent = index === currentCard;
@@ -79,11 +77,12 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ cards }) => {
               <img
                 src={card.img}
                 alt={card.alt}
+                title={card.alt}
                 className="rounded-4xl overflow-hidden w-28 h-28"
               />
               <div className="flex flex-col gap-5 max-w-[75%]">
                 <div className="flex flex-col gap-2">
-                  <header className="Raleway text-3xl">{card.name}</header>
+                  <h1 className="Raleway text-3xl">{card.name}</h1>
                   <div className="text-lg">{card.add}</div>
                   <div className="flex gap-6">{stars}</div>
                 </div>

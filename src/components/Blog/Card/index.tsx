@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BlogCardProps } from "../../types";
+import { BlogCardProps } from "../../../types";
 
 export const BlogCard: React.FC<BlogCardProps> = ({
   blog,
@@ -28,6 +28,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
           className="relative -top-[15%] left-0 object-contain object-center"
           src={blog.imgSrc}
           alt={blog.alt}
+          title={blog.alt}
         />
       </div>
       <div className="">

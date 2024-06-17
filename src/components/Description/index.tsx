@@ -20,16 +20,16 @@ export const Description: React.FC<DescProps> = ({
     >
       <div className="flex flex-col md:flex-row gap-3 md:justify-between">
         <div className="flex flex-col gap-1 md:gap-6">
-          <header className="YellowText text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
+          <h1 className="YellowText text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
             {yellowText}
-          </header>
-          <header
+          </h1>
+          <h1
             className={`${
               black ? "text-white" : "text-[--third]"
             } Raleway tracking-wider w-4/5 md:w-11/12 text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] 2xl:text-5xl`}
           >
             {mainHeader}
-          </header>
+          </h1>
         </div>
         <div
           className={`flex ${

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useScroll } from "framer-motion";
-import { createGroups } from "../../utils";
+import { createGroups } from "../../../utils";
 
 interface TextWrapperProps {
   className?: string;
@@ -27,7 +27,7 @@ const TextWrapper = ({ children }: TextWrapperProps) => {
   });
 
   useEffect(() => {
-    const unsubscribe = scrollYProgress.onChange((latest) => {
+    const unsubscribe = scrollYProgress.on("change", (latest) => {
       if (latest < 0.1) {
         setScrollClass("opacity-0 text-white font-light");
       } else if (latest < 0.2) {

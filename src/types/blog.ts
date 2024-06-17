@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export type BlogType = {
   imgSrc: string;
   alt?: string;
@@ -14,9 +16,9 @@ export type BlogCardProps = {
   onClick?: () => void;
 };
 
-export type SlidingPanelProps = {
-  isOpen: boolean;
-  onClose: () => void;
+export type BlogPanelProps = {
+  BlogData: BlogType[];
+  Socials: string[];
+  children?: ReactNode;
   className?: string;
-  blog: BlogType;
 };

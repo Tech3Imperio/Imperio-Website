@@ -6,7 +6,7 @@ import {
   GreyButton,
   TextComponent,
   BlackButton,
-  QuotePanel,
+  Quote,
   HorizontalCarousel,
   VerticalCarousel,
   ImageScrolls,
@@ -44,12 +44,12 @@ export const Home: React.FC = () => {
 
       <section className="flex flex-col lg:flex-row justify-center gap-8 px-10 phone:px-20 md:px-32 xl:px-44 pb-9 phone:pb-16 md:pb-24 xl:pb-36 pt-6 phone:pt-14 md:pt-24 xl:pt-36">
         <div className="flex flex-col gap-2 phone:gap-4">
-          <header className="YellowText text-lg md:text-4xl lg:text-5xl max-xl:text-3xl max-2xl:text-4xl">
+          <h1 className="YellowText text-lg md:text-4xl lg:text-5xl max-xl:text-3xl max-2xl:text-4xl">
             Our Vision
-          </header>
-          <header className="text-3xl md:text-4xl lg:text-5xl Raleway max-xl:text-4xl text-[--third]">
+          </h1>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl Raleway max-xl:text-4xl text-[--third]">
             Crafting Excellence in Glass Railings.
-          </header>
+          </h1>
           <p className="w-full lg:w-[37rem] text-xs md:text-base lg:text-lg xl:text-xl italic text-[--grey]">
             At Imperio, we specialize in creating beautiful, durable glass
             railing systems that enhance any space. With a focus on innovation
@@ -65,6 +65,7 @@ export const Home: React.FC = () => {
             src={descImage}
             alt="Description Image"
             className="w-full h-auto"
+            title="Description Image"
           />
         </div>
       </section>
@@ -79,18 +80,21 @@ export const Home: React.FC = () => {
           <div className="flex px-20 py-12 gap-32 items-center">
             <VerticalCarousel direction className="w-[35%]">
               {scrollData.map((item) => (
-                <img src={item.img} alt={item.alt} key={item.img} />
+                <img
+                  src={item.img}
+                  alt={item.alt}
+                  key={item.img}
+                  title={item.alt}
+                />
               ))}
             </VerticalCarousel>
             <VerticalCarousel className="w-[65%]">
               {scrollData.map((item, index) => (
                 <div key={index}>
                   <div className="flex items-center gap-5 text-white">
-                    <header className="text-8xl">{index + 1}.</header>
+                    <h1 className="text-8xl">{index + 1}.</h1>
                     <div className="flex flex-col gap-5">
-                      <header className="Raleway text-5xl">
-                        {item.header}
-                      </header>
+                      <h1 className="Raleway text-5xl">{item.header}</h1>
                       <p className="text-2xl w-[38rem]">{item.subheader}</p>
                     </div>
                   </div>
@@ -103,13 +107,11 @@ export const Home: React.FC = () => {
             {scrollData.map((item, index) => (
               <div className="space-y-8" key={index}>
                 <div>
-                  <img src={item.img} alt={item.alt} />
+                  <img src={item.img} alt={item.alt} title={item.alt} />
                 </div>
                 <div className="flex flex-col text-white">
-                  <header className="text-4xl">{index + 1}.</header>
-                  <header className="Raleway text-[1.75rem]">
-                    {item.header}
-                  </header>
+                  <h1 className="text-4xl">{index + 1}.</h1>
+                  <h1 className="Raleway text-[1.75rem]">{item.header}</h1>
                   <p className="text-xs w-11/12 italic">{item.subheader}</p>
                 </div>
               </div>
@@ -124,7 +126,7 @@ export const Home: React.FC = () => {
       />
       <ImageScrolls className="py-14 overflow-hidden" />
       <Testimonials cards={testimonialsData} />
-      <QuotePanel />
+      <Quote />
     </main>
   );
 };

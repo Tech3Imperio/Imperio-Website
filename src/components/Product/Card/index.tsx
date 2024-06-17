@@ -27,12 +27,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             hover ? "opacity-50" : "opacity-0"
           } absolute h-full w-full p-5 text-white bg-gradient-to-r from-black to-black z-50 transition-700`}
         >
-          <header className="font-normal text-sm">{productName}</header>
+          <h1 className="font-normal text-sm">{productName}</h1>
           <p className="text-[9px] pt-5">{productDetail}</p>
         </div>
         <img
           src={img}
           alt={alt}
+          title={alt}
           className={`${
             hover ? "scale-x-[-1]" : ""
           } object-contain w-64 transition-700 `}

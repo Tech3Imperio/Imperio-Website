@@ -1,5 +1,5 @@
 import React from "react";
-import { Hero, ProductPanel, QuotePanel } from "../../components";
+import { Hero, ProductPanel, Quote } from "../../components";
 import { tempHeroImage } from "../../assets/Images";
 import { useFetch } from "../../hooks";
 import { useEffect, useState, useCallback } from "react";
@@ -64,18 +64,19 @@ const MemoProducts: React.FC = () => {
           />
         ))}
       </section>
-      <QuotePanel />
+      <Quote />
     </main>
   );
 };
 export const Products = React.memo(MemoProducts);
-
 export { Product };
-// import { Hero, ProductPanel, QuotePanel } from "../../components";
+
+// import { Hero, ProductPanel, Quote } from "../../components";
 // import { tempHeroImage } from "../../assets/Images";
 // import { useFetch } from "../../hooks";
 // import { useEffect, useState } from "react";
 // import { ProductProps } from "../../types";
+// import { Product } from "./Product/Product";
 
 // type ProductSection = { header: string; products: ProductProps[] };
 
@@ -120,7 +121,8 @@ export { Product };
 //           />
 //         ))}
 //       </section>
-//       <QuotePanel />
+//       <Quote />
 //     </main>
 //   );
 // };
+// export { Product };

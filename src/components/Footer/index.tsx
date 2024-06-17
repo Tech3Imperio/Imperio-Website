@@ -7,7 +7,7 @@ export const Footer = () => {
   return (
     <footer className="bg-[--black] p-20 text-white flex flex-col md:flex-row gap-[20rem] justify-center">
       <div className="flex-1 max-w-md">
-        <header className="text-5xl Raleway">Let’s keep in touch!</header>
+        <h1 className="text-5xl Raleway">Let’s keep in touch!</h1>
         <div className="mt-8">
           <h3 className="text-2xl Raleway">Subscribe Now</h3>
           <div className="mt-4 text-lg">

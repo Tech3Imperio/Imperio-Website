@@ -161,6 +161,7 @@ const MemoProduct: React.FC = () => {
               onClick={handleLeftClick}
               src={imageData[imageData.length - 1].img}
               alt={imageData[imageData.length - 1].alt}
+              title={imageData[imageData.length - 1].alt}
             />
           </div>
         </aside>
@@ -170,6 +171,7 @@ const MemoProduct: React.FC = () => {
             className="rounded-4xl max-h-[70vh] max-w-[70vw] xl:max-h-[40.5rem] xl:max-w-[40.5rem] overflow-hidden"
             src={imageData[0].img}
             alt={imageData[0].alt}
+            title={imageData[0].alt}
           />
           <GoChevronRight
             className="cursor-pointer"
@@ -178,9 +180,9 @@ const MemoProduct: React.FC = () => {
         </center>
         <aside className="flex flex-col gap-4 w-full xl:w-[20%] overflow-hidden justify-between max-xl:order-2">
           <div className="flex flex-col gap-6 xl:gap-8">
-            <header className="text-[--third] Raleway text-2xl block xl:hidden">
+            <h1 className="text-[--third] Raleway text-2xl block xl:hidden">
               Detailed Description.
-            </header>
+            </h1>
             <ExpandableText maxLength={100} className="text-[--third]">
               {productData["Short Description"]}
             </ExpandableText>
@@ -194,6 +196,7 @@ const MemoProduct: React.FC = () => {
               onClick={handleRightClick}
               src={imageData[1].img}
               alt={imageData[1].alt}
+              title={imageData[1].alt}
             />
           </div>
         </aside>
