@@ -25,7 +25,7 @@ export const Blog = () => {
         }
       />
       <BlogPanel
-        Socials={["Linkdin", "Twitter", "Ouora", "Pinterest"]}
+        Socials={["Linkdin", "Twitter", "Quora", "Pinterest"]}
         BlogData={blogCards}
       />
     </main>

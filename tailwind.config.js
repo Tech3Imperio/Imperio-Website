@@ -4,18 +4,14 @@ export default {
   theme: {
     extend: {
       screens: {
-        phone: "500px",
-        tablet: "650px",
+        phone: "480px",
+        tablet: "768px",
         laptop: "1024px",
-        desktop: "1280px",
-        screens: "1536px",
       },
       width: {
         phone: "480px",
-        tablet: "640px",
+        tablet: "768px",
         laptop: "1024px",
-        desktop: "1280px",
-        screens: "1536px",
       },
       colors: {
         "--white": " #ffffff",

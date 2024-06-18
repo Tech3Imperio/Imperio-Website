@@ -7,10 +7,10 @@ import { MenuItemProps, MobileMenuProps } from "../../types";
 import { SocialLinks, QuoteButton } from "..";
 
 const Logo: React.FC = () => (
-  <Link to="/home" className="navbar-brand" aria-label="PowerHouse Home">
+  <Link to="/" className="navbar-brand" aria-label="PowerHouse Home">
     <img
       src={whiteLogo}
-      className="max-w-28 max-md:pl-3 transition ease-out duration-500 hover:translate-y-1 hover:scale-125"
+      className="max-w-28 max-tablet:pl-3 transition ease-out duration-500 hover:translate-y-1 hover:scale-125"
       alt="Imperio Logo"
       title="Imperio Logo"
     />
@@ -27,7 +27,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ to, label }) => (
 
 const MenuItems: React.FC = () => (
   <>
-    <MenuItem to="/home" label="Home" />
+    <MenuItem to="/" label="Home" />
     <MenuItem to="/products" label="Our Products" />
     <MenuItem to="/aboutus" label="About Us" />
     <MenuItem to="/blog" label="Blog" />
@@ -36,7 +36,7 @@ const MenuItems: React.FC = () => (
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen }) => (
   <div
-    className={`fixed w-screen top-20 max-md:top-[4.5rem] left-0 bg-[--black] rounded-b-4xl text-white transition-700 overflow-hidden ${
+    className={`fixed w-screen top-20 max-tablet:top-[4.5rem] left-0 bg-[--black] rounded-b-4xl text-white transition-700 overflow-hidden ${
       isOpen ? "h-[35vh]" : "h-0"
     }`}
     aria-hidden={!isOpen}

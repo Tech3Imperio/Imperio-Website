@@ -1,5 +1,41 @@
+import { aboutImage, tempHeroImage } from "../../assets/Images";
+import { Description, Hero } from "../../components";
+
 export const About = () => {
-  return <div></div>;
+  return (
+    <main>
+      <Hero
+        img={tempHeroImage}
+        header="About us."
+        altText="hero for aboutus"
+        subHeader="Discover the perfect blend of safety and sophistication with Imperio's glass railing systems."
+        curve
+      />
+      <section className="h-screen overflow-hidden mb-16">
+        <Description
+          yellowText="Our Company."
+          mainHeader="Crafting Excellence in Glass Railings."
+          text={
+            <>
+              At Imperio, we specialize in creating beautiful, durable glass
+              railing systems that enhance any space. With a focus on innovation
+              and quality, our team is dedicated to delivering top-notch
+              solutions for both residential and commercial projects.
+            </>
+          }
+        />
+
+        <img
+          src={aboutImage}
+          alt="about us image"
+          className="h-full w-screen"
+        />
+      </section>
+      <section>
+        <Description yellowText="Our Team" />
+      </section>
+    </main>
+  );
 };
 // import {
 //   tempHeroImage,

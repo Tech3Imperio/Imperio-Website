@@ -5,7 +5,7 @@ import { IoLocationOutline } from "react-icons/io5";
 
 export const Footer = () => {
   return (
-    <footer className="bg-[--black] p-20 text-white flex flex-col md:flex-row gap-[20rem] justify-center">
+    <footer className="bg-[--black] p-20 text-white flex flex-col tablet:flex-row gap-[20rem] justify-center">
       <div className="flex-1 max-w-md">
         <h1 className="text-5xl Raleway">Let’s keep in touch!</h1>
         <div className="mt-8">

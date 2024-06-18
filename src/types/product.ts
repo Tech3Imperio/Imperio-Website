@@ -4,7 +4,6 @@ export type ProductCardProps = {
   path: string;
   data: ProductProps;
   productName: string;
-  productDetail: string;
 };
 
 export type ProductPanelProps = {

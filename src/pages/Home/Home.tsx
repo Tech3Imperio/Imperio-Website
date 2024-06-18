@@ -42,15 +42,15 @@ export const Home: React.FC = () => {
         </div>
       </Hero>
 
-      <section className="flex flex-col lg:flex-row justify-center gap-8 px-10 phone:px-20 md:px-32 xl:px-44 pb-9 phone:pb-16 md:pb-24 xl:pb-36 pt-6 phone:pt-14 md:pt-24 xl:pt-36">
+      <section className="flex flex-col lg:flex-row justify-center gap-8 px-10 phone:px-20 tablet:px-32 xl:px-44 pb-9 phone:pb-16 tablet:pb-24 xl:pb-36 pt-6 phone:pt-14 tablet:pt-24 xl:pt-36">
         <div className="flex flex-col gap-2 phone:gap-4">
-          <h1 className="YellowText text-lg md:text-4xl lg:text-5xl max-xl:text-3xl max-2xl:text-4xl">
+          <h1 className="YellowText text-lg tablet:text-4xl lg:text-5xl max-xl:text-3xl max-2xl:text-4xl">
             Our Vision
           </h1>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl Raleway max-xl:text-4xl text-[--third]">
+          <h1 className="text-3xl tablet:text-4xl lg:text-5xl Raleway max-xl:text-4xl text-[--third]">
             Crafting Excellence in Glass Railings.
           </h1>
-          <p className="w-full lg:w-[37rem] text-xs md:text-base lg:text-lg xl:text-xl italic text-[--grey]">
+          <p className="w-full lg:w-[37rem] text-xs tablet:text-base lg:text-lg xl:text-xl italic text-[--grey]">
             At Imperio, we specialize in creating beautiful, durable glass
             railing systems that enhance any space. With a focus on innovation
             and quality, our team is dedicated to delivering top-notch solutions

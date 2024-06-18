@@ -59,10 +59,10 @@ export const BlogPanel: React.FC<BlogPanelProps> = ({
 
   return (
     <section
-      className={`py-20 px-4 md:px-12 lg:px-20 xl:px-28 2xl:px-36 ${className}`}
+      className={`py-20 px-4 tablet:px-12 lg:px-20 xl:px-28 2xl:px-36 ${className}`}
     >
       <div className="flex justify-between items-end max-lg:flex-col gap-4">
-        <aside className="flex items-center justify-center flex-wrap gap-2 md:space-x-8">
+        <aside className="flex items-center justify-center flex-wrap gap-2 tablet:space-x-8">
           <div className="flex gap-2 lg:gap-4 border border-gray-500 rounded-4xl p-2 -ml-2 sm:ml-0">
             {Socials.map((Social, index) => (
               <WhiteButton
@@ -93,7 +93,7 @@ export const BlogPanel: React.FC<BlogPanelProps> = ({
               setSearchQuery(e.target.value.trim().toLowerCase())
             }
             placeholder="Search blogs"
-            className="bg-transparent w-56 md:w-80 text-right pr-4 outline-none border-b-2 border-black transition-700 text-xl text-black focus:w-80 md:focus:w-[30rem]"
+            className="bg-transparent w-56 tablet:w-80 text-right pr-4 outline-none border-b-2 border-black transition-700 text-xl text-black focus:w-80 tablet:focus:w-[30rem]"
           />
           <label
             htmlFor="search"
@@ -120,13 +120,13 @@ export const BlogPanel: React.FC<BlogPanelProps> = ({
         onClick={closePanel}
       >
         <div
-          className={`fixed left-1/2 md:top-1/2 -translate-x-1/2 md:-translate-x-0 -translate-y-0 md:-translate-y-1/2 h-[45vh] md:h-[99%] w-[95%] md:w-[40vw] rounded-4xl bg-white p-6 shadow-lg transition-700 overflow-y-scroll noscroll ${
-            isPanelOpen ? "top-4 md:left-4" : "-top-full md:-left-full"
+          className={`fixed left-1/2 tablet:top-1/2 -translate-x-1/2 tablet:-translate-x-0 -translate-y-0 tablet:-translate-y-1/2 h-[45vh] tablet:h-[99%] w-[95%] tablet:w-[40vw] rounded-4xl bg-white p-6 shadow-lg transition-700 overflow-y-scroll noscroll ${
+            isPanelOpen ? "top-4 tablet:left-4" : "-top-full tablet:-left-full"
           }`}
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="p-3 md:p-8 pt-2 md:pt-4 space-y-6">
-            <h3 className="text-xl md:text-3xl font-normal text-[--third]">
+          <div className="p-3 tablet:p-8 pt-2 tablet:pt-4 space-y-6">
+            <h3 className="text-xl tablet:text-3xl font-normal text-[--third]">
               {selectedBlog.header}
             </h3>
             <p className="text-[--grey]">{selectedBlog.details}</p>
@@ -145,7 +145,7 @@ export const BlogPanel: React.FC<BlogPanelProps> = ({
             />
           </div>
           <div className="p-8 space-y-4">
-            <header className="text-[--third] text-lg md:text-2xl font-normal">
+            <header className="text-[--third] text-lg tablet:text-2xl font-normal">
               Category
             </header>
             <div className="flex justify-between text-black">
@@ -159,10 +159,10 @@ export const BlogPanel: React.FC<BlogPanelProps> = ({
           </div>
         </div>
       </div>
-      <div className="flex justify-center md:justify-end mt-12">
+      <div className="flex justify-center tablet:justify-end mt-12">
         <WhiteButton
           onClick={() => setCardsToShow((prev) => prev + 4)}
-          className="text-lg md:text-2xl py-4 px-8 border-2 font-normal"
+          className="text-lg tablet:text-2xl py-4 px-8 border-2 font-normal"
         >
           LOAD MORE
         </WhiteButton>

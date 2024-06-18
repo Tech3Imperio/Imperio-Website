@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { ProductCardProps } from "../../../types";
 import { useNavigate } from "react-router-dom";
 
@@ -8,40 +7,30 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   path,
   data,
   productName,
-  productDetail,
 }) => {
-  const [hover, setHover] = useState(false);
   const navigate = useNavigate();
   return (
     <div
+      tabIndex={0}
+      role="button"
       onClick={() => navigate(path, { state: data })}
-      className={`${
-        hover ? "" : "shadow-sm"
-      } max-w-64 max-h-72 h-72 flex flex-col items-center rounded-xl overflow-hidden transition-700`}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
+      className="max-w-64 max-h-72 h-72 flex flex-col items-center rounded-xl overflow-hidden group shadow-sm hover:shadow-none cursor-pointer transition-700 outline-none"
     >
-      <div className="relative overflow-hidden">
-        <div
-          className={`${
-            hover ? "opacity-50" : "opacity-0"
-          } absolute h-full w-full p-5 text-white bg-gradient-to-r from-black to-black z-50 transition-700`}
-        >
+      <div className="relative overflow-hidden w-full h-full">
+        <div className="absolute h-full w-full p-5 text-white bg-gradient-to-r from-black to-black z-10 flex flex-col justify-center opacity-0 group-hover:opacity-70 transition-700">
           <h1 className="font-normal text-sm">{productName}</h1>
-          <p className="text-[9px] pt-5">{productDetail}</p>
+          <p className="text-sm pt-5">{data["Product Finish"]}</p>
         </div>
         <img
           src={img}
           alt={alt}
           title={alt}
-          className={`${
-            hover ? "scale-x-[-1]" : ""
-          } object-contain w-64 transition-700 `}
+          className="w-full h-full object-cover group-hover:scale-x-[-1] transition-700 "
         />
       </div>
-      <div className="text-[--third] font-normal pt-[0.4rem] text-xs">
-        {productName}
-      </div>
+      <h3 className="text-[--third] font-normal py-2 text-sm">
+        {productName} - {data["Product Finish"]}
+      </h3>
     </div>
   );
 };

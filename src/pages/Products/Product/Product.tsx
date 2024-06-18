@@ -123,12 +123,12 @@ const MemoProduct: React.FC = () => {
   };
 
   return (
-    <main className="py-4 px-12 md:px-32 xl:px-44">
+    <main className="py-4 px-12 tablet:px-32 xl:px-44">
       <header className="pb-8">
-        <h3 className="YellowText text-[1.75rem] md:text-4xl xl:text-[2.5rem]">
+        <h3 className="YellowText text-[1.75rem] tablet:text-4xl xl:text-[2.5rem]">
           {productData["Product Category"]}
         </h3>
-        <h1 className="Raleway text-[--third] text-4xl md:text-[2.8rem] xl:text-5xl">
+        <h1 className="Raleway text-[--third] text-4xl tablet:text-[2.8rem] xl:text-5xl">
           {productData["Product Name"] + " " + productData["Product Code"]}
         </h1>
       </header>
@@ -167,12 +167,22 @@ const MemoProduct: React.FC = () => {
         </aside>
         <center className="flex w-full max-xl:mb-6 xl:w-[47.5rem] justify-between items-center text-2xl max-xl:order-1">
           <GoChevronLeft className="cursor-pointer" onClick={handleLeftClick} />
-          <img
-            className="rounded-4xl max-h-[70vh] max-w-[70vw] xl:max-h-[40.5rem] xl:max-w-[40.5rem] overflow-hidden"
-            src={imageData[0].img}
-            alt={imageData[0].alt}
-            title={imageData[0].alt}
-          />
+          {/* <div className="max-h-[70vh] max-w-[70vw] rounded-4xl xl:max-h-[40.5rem] xl:max-w-[40.5rem] overflow-hidden">
+            <img
+              className="w-full h-full object-cover object-center"
+              src={imageData[0].img}
+              alt={imageData[0].alt}
+              title={imageData[0].alt}
+            />
+          </div> */}
+          <div className="max-h-[70vh] max-w-[70vw] rounded-4xl xl:max-h-[40.5rem] xl:max-w-[40.5rem] overflow-hidden">
+            <img
+              className="min-h-[38vh] min-w-[70vw] xl:min-h-[40.5rem] xl:min-w-[40.5rem] object-cover object-center"
+              src={imageData[0].img}
+              alt={imageData[0].alt}
+              title={imageData[0].alt}
+            />
+          </div>
           <GoChevronRight
             className="cursor-pointer"
             onClick={handleRightClick}
