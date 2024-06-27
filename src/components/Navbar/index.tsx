@@ -26,7 +26,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ to, label }) => (
 );
 
 const MenuItems: React.FC = () =>
-  window.innerWidth ? (
+  window.innerWidth < 1000 ? (
     <>
       <MenuItem to="/products" label="Our Products" />
       <MenuItem to="/blog" label="Blog" />
@@ -46,8 +46,8 @@ const MenuItems: React.FC = () =>
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen }) => (
   <div
-    className={`fixed w-screen top-20 max-tablet:top-[5.5rem] left-0 bg-[--black] rounded-b-4xl text-white transition-700 overflow-hidden ${
-      isOpen ? "h-[40vh]" : "h-0"
+    className={`fixed w-screen top-20 pb-4 max-tablet:top-[5.5rem] left-0 bg-[--black] rounded-b-4xl text-white transition-700 overflow-hidden ${
+      isOpen ? "h-max" : "h-0"
     }`}
     aria-hidden={!isOpen}
   >
