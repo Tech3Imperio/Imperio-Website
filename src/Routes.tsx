@@ -8,6 +8,7 @@ import {
   Products,
   Getquote,
   About,
+  Contact,
 } from "./pages";
 
 export const routes = createBrowserRouter([
@@ -18,6 +19,7 @@ export const routes = createBrowserRouter([
       { path: "", element: <Home /> },
       { path: "home", element: <Navigate to="/" replace={true} /> },
       { path: "blog", element: <Blog /> },
+      { path: "contactus", element: <Contact /> },
       { path: "aboutus", element: <About /> },
       { path: "products", element: <Products /> },
       {

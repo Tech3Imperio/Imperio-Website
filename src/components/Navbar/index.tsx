@@ -10,7 +10,7 @@ const Logo: React.FC = () => (
   <Link to="/" className="navbar-brand" aria-label="PowerHouse Home">
     <img
       src={whiteLogo}
-      className="max-w-28 max-tablet:pl-3 transition ease-out duration-500 hover:translate-y-1 hover:scale-125"
+      className="max-w-28 transition ease-out duration-500 hover:translate-y-1 hover:scale-125"
       alt="Imperio Logo"
       title="Imperio Logo"
     />
@@ -18,47 +18,56 @@ const Logo: React.FC = () => (
 );
 
 const MenuItem: React.FC<MenuItemProps> = ({ to, label }) => (
-  <li className="py-2 relative w-max">
+  <div className="py-2 relative w-max">
     <Link to={to} className={styles.Link}>
       {label}
     </Link>
-  </li>
+  </div>
 );
 
-const MenuItems: React.FC = () => (
-  <>
-    <MenuItem to="/" label="Home" />
-    <MenuItem to="/products" label="Our Products" />
-    <MenuItem to="/aboutus" label="About Us" />
-    <MenuItem to="/blog" label="Blog" />
-  </>
-);
+const MenuItems: React.FC = () =>
+  window.innerWidth ? (
+    <>
+      <MenuItem to="/products" label="Our Products" />
+      <MenuItem to="/blog" label="Blog" />
+      <MenuItem to="/" label="Home" />
+      <MenuItem to="/aboutus" label="About Us" />
+      <MenuItem to="/contactus" label="Contact Us" />
+    </>
+  ) : (
+    <>
+      <MenuItem to="/" label="Home" />
+      <MenuItem to="/products" label="Our Products" />
+      <MenuItem to="/aboutus" label="About Us" />
+      <MenuItem to="/contact" label="Contact Us" />
+      <MenuItem to="/blog" label="Blog" />
+    </>
+  );
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen }) => (
   <div
-    className={`fixed w-screen top-20 max-tablet:top-[4.5rem] left-0 bg-[--black] rounded-b-4xl text-white transition-700 overflow-hidden ${
-      isOpen ? "h-[35vh]" : "h-0"
+    className={`fixed w-screen top-20 max-tablet:top-[5.5rem] left-0 bg-[--black] rounded-b-4xl text-white transition-700 overflow-hidden ${
+      isOpen ? "h-[40vh]" : "h-0"
     }`}
     aria-hidden={!isOpen}
   >
-    <section>
-      <ul className="p-8 pt-4 text-xl">
-        <MenuItems />
-      </ul>
+    <section className="px-8">
+      <div className="flex flex-col gap-4 text-lg font-light">
+        <div className={"flex flex-col gap-4 text-lg"}>
+          <MenuItems />
+        </div>
+        <div className="flex justify-between item-center">
+          <SocialLinks className="flex justify-center gap-4 text-xs text-white " />
+          <QuoteButton />
+        </div>
+      </div>
     </section>
-    <footer
-      className={`relative transition-700 ${
-        isOpen ? "right-0" : "right-[-150px]"
-      }`}
-    >
-      <SocialLinks className="flex justify-center gap-10 text-2xl text-white" />
-    </footer>
   </div>
 );
 
 export const Navbar: React.FC = () => {
   const [isMobileView, setIsMobileView] = useState<boolean>(
-    window.innerWidth < 1400
+    window.innerWidth < 1000
   );
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const hidden = useRef("hidden");
@@ -72,7 +81,7 @@ export const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobileView(window.innerWidth < 1400);
+      setIsMobileView(window.innerWidth < 1000);
     };
 
     const debouncedResizeHandler = debounce(handleResize, 100);
@@ -91,7 +100,7 @@ export const Navbar: React.FC = () => {
         !isMenuOpen ? "rounded-b-4xl" : "rounded-b-[0px]"
       }`}
     >
-      <div className="w-full m-auto pt-2 pb-4 flex items-center px-8 sm:px-32 lg:px-52 2xl:px-72 justify-between">
+      <div className="w-full m-auto pt-2 pb-4 flex gap-0 xl:gap-10 items-center px-8 tablet:px-20 laptop:px-36 xl:px-56 2xl:px-72 justify-between">
         <Logo />
         {isMobileView ? (
           <button
@@ -112,7 +121,7 @@ export const Navbar: React.FC = () => {
         ) : (
           <>
             <div className="flex-grow flex justify-center">
-              <ul className="text-base flex gap-16 text-white my-auto px-7 rounded-4xl border border-transparent transition-700 hover:shadow-small hover:shadow-white  hover:border-white">
+              <ul className="text-base flex gap-10 2xl:gap-16 text-white my-auto px-7 rounded-4xl border border-transparent transition-700 hover:shadow-small hover:shadow-white  hover:border-white">
                 <MenuItems />
               </ul>
             </div>

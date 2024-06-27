@@ -13,9 +13,9 @@ export const Description: React.FC<DescProps> = ({
     <section
       className={
         className +
-        ` pt-12 sm:pt-16 tablet:pt-20 xl:pt-28 px-9 sm:px-16 lg:px-28 2xl:px-44 flex flex-col gap-8 ${
-          black ? "bg-[--black] " : ""
-        }`
+        ` pt-12 sm:pt-16 tablet:pt-20 xl:pt-28 px-9 sm:px-16 lg:px-28 2xl:px-44 flex flex-col ${
+          children ? "gap-4" : "gap-8"
+        } ${black ? "bg-[--black] " : ""}`
       }
     >
       <div className="flex flex-col tablet:flex-row gap-3 tablet:justify-between">
