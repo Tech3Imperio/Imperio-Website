@@ -85,6 +85,7 @@ export const Home: React.FC = () => {
                   alt={item.alt}
                   key={item.img}
                   title={item.alt}
+                  className="rounded-4xl w-[479px] h-[479px]"
                 />
               ))}
             </VerticalCarousel>

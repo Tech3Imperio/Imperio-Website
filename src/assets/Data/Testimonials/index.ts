@@ -1,75 +1,82 @@
 import { TestimonialsData } from "../../../types";
-import { testimonial1 } from "../../Images";
+import {
+  mukeshambani,
+  rakeshjhunjhunwala,
+  cyrusmistry,
+  salmankhan,
+  ashabhosle,
+  divyankturakhia,
+} from "../../Images";
 
 export const testimonialsData: TestimonialsData[] = [
   {
     id: 0,
-    name: "Jayadeep H.",
+    name: "Mukesh Ambani.",
     add: "Mumbai, India.",
     stars: 5,
     quote:
       "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
-    img: testimonial1,
+    img: mukeshambani,
     alt: "alt text",
   },
   {
     id: 1,
-    name: "Jayadeep H.",
+    name: "Rakesh Jhunjhunwala.",
     add: "Mumbai, India.",
-    stars: 3.5,
+    stars: 4.5,
     quote:
       "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
-    img: testimonial1,
+    img: rakeshjhunjhunwala,
     alt: "alt text",
   },
   {
     id: 2,
-    name: "Jayadeep H.",
+    name: "Cyrus Mistry.",
     add: "Mumbai, India.",
-    stars: 2.5,
+    stars: 3.7,
     quote:
       "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
-    img: testimonial1,
-    alt: "alt text",
+    img: cyrusmistry,
+    alt: "Cyrus Mistry",
   },
   {
     id: 3,
-    name: "Jayadeep H.",
+    name: "Salman Khan",
     add: "Mumbai, India.",
-    stars: 2.5,
+    stars: 4.8,
     quote:
       "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
-    img: testimonial1,
-    alt: "alt text",
+    img: salmankhan,
+    alt: "salmankhan",
   },
   {
     id: 4,
-    name: "Jayadeep H.",
+    name: "Asha Bhosle.",
     add: "Mumbai, India.",
     stars: 5,
     quote:
       "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
-    img: testimonial1,
-    alt: "alt text",
+    img: ashabhosle,
+    alt: "Asha Bhosle",
   },
   {
     id: 5,
-    name: "Jayadeep H.",
+    name: "Divyank Turakhia.",
     add: "Mumbai, India.",
-    stars: 3,
+    stars: 4,
     quote:
       "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
-    img: testimonial1,
-    alt: "alt text",
+    img: divyankturakhia,
+    alt: "Divyank Turakhia",
   },
-  {
-    id: 6,
-    name: "Jayadeep H.",
-    add: "Mumbai, India.",
-    stars: 5,
-    quote:
-      "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
-    img: testimonial1,
-    alt: "alt text",
-  },
+  // {
+  //   id: 6,
+  //   name: "Jayadeep H.",
+  //   add: "Mumbai, India.",
+  //   stars: 5,
+  //   quote:
+  //     "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
+  //   img: testimonial1,
+  //   alt: "alt text",
+  // },
 ];
