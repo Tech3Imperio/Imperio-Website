@@ -1,10 +1,10 @@
-import styles from "./Navbar.module.css";
 import React, { useEffect, useRef, useState, useCallback } from "react";
-import { debounce } from "../../utils";
 import { Link } from "react-router-dom";
+import { debounce } from "../../utils";
 import { whiteLogo } from "../../assets/Images";
-import { MenuItemProps, MobileMenuProps } from "../../types";
+import { MenuItemProps, MobileMenuProps, MenuItemsProps } from "../../types";
 import { SocialLinks, QuoteButton } from "..";
+import styles from "./Navbar.module.css";
 
 const Logo: React.FC = () => (
   <Link to="/" className="navbar-brand" aria-label="PowerHouse Home">
@@ -17,47 +17,45 @@ const Logo: React.FC = () => (
   </Link>
 );
 
-const MenuItem: React.FC<MenuItemProps> = ({ to, label }) => (
+const MenuItem: React.FC<MenuItemProps> = ({ to, label, handleClick }) => (
   <div className="py-2 relative w-max">
-    <Link to={to} className={styles.Link}>
+    <Link to={to} className={styles.Link} onClick={handleClick}>
       {label}
     </Link>
   </div>
 );
 
-const MenuItems: React.FC = () =>
-  window.innerWidth < 1000 ? (
+const MenuItems: React.FC<MenuItemsProps> = ({ handleClick }) =>
+  window.innerWidth > 1000 ? (
     <>
-      <MenuItem to="/products" label="Our Products" />
-      <MenuItem to="/blog" label="Blog" />
-      <MenuItem to="/" label="Home" />
-      <MenuItem to="/aboutus" label="About Us" />
-      <MenuItem to="/contactus" label="Contact Us" />
+      <MenuItem to="/products" label="Our Products" handleClick={() => {}} />
+      <MenuItem to="/blog" label="Blog" handleClick={() => {}} />
+      <MenuItem to="/" label="Home" handleClick={() => {}} />
+      <MenuItem to="/aboutus" label="About Us" handleClick={() => {}} />
+      <MenuItem to="/contactus" label="Contact Us" handleClick={() => {}} />
     </>
   ) : (
     <>
-      <MenuItem to="/" label="Home" />
-      <MenuItem to="/products" label="Our Products" />
-      <MenuItem to="/aboutus" label="About Us" />
-      <MenuItem to="/contact" label="Contact Us" />
-      <MenuItem to="/blog" label="Blog" />
+      <MenuItem to="/" label="Home" handleClick={handleClick} />
+      <MenuItem to="/products" label="Our Products" handleClick={handleClick} />
+      <MenuItem to="/aboutus" label="About Us" handleClick={handleClick} />
+      <MenuItem to="/contactus" label="Contact Us" handleClick={handleClick} />
+      <MenuItem to="/blog" label="Blog" handleClick={handleClick} />
     </>
   );
 
-const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen }) => (
+const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, handleClick }) => (
   <div
-    className={`fixed w-screen top-20 pb-4 max-tablet:top-[5.5rem] left-0 bg-[--black] rounded-b-4xl text-white transition-700 overflow-hidden ${
-      isOpen ? "h-max" : "h-0"
+    className={`fixed z-10 w-screen h-fit left-0 bg-[--black] rounded-b-4xl text-white transition-700 overflow-hidden ${
+      isOpen ? "top-[5.5rem] pb-6" : "-top-[25rem] pb-0"
     }`}
     aria-hidden={!isOpen}
   >
     <section className="px-8">
       <div className="flex flex-col gap-4 text-lg font-light">
-        <div className={"flex flex-col gap-4 text-lg"}>
-          <MenuItems />
-        </div>
-        <div className="flex justify-between item-center">
-          <SocialLinks className="flex justify-center gap-4 text-xs text-white " />
+        <MenuItems handleClick={handleClick} />
+        <div className="flex justify-between items-center">
+          <SocialLinks className="flex justify-center gap-4 text-xs text-white" />
           <QuoteButton />
         </div>
       </div>
@@ -94,6 +92,7 @@ export const Navbar: React.FC = () => {
       );
     };
   }, []);
+
   return (
     <nav
       className={`bg-[--black] sticky top-0 z-50 transition-200 ${
@@ -121,15 +120,15 @@ export const Navbar: React.FC = () => {
         ) : (
           <>
             <div className="flex-grow flex justify-center">
-              <ul className="text-base flex gap-10 2xl:gap-16 text-white my-auto px-7 rounded-4xl border border-transparent transition-700 hover:shadow-small hover:shadow-white  hover:border-white">
-                <MenuItems />
+              <ul className="text-base flex gap-10 2xl:gap-16 text-white my-auto px-7 rounded-4xl border border-transparent transition-700 hover:shadow-small hover:shadow-white hover:border-white">
+                <MenuItems handleClick={handleToggle} />
               </ul>
             </div>
             <QuoteButton />
           </>
         )}
       </div>
-      <MobileMenu isOpen={isMenuOpen} />
+      <MobileMenu isOpen={isMenuOpen} handleClick={handleToggle} />
     </nav>
   );
 };

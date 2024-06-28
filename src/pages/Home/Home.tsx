@@ -38,7 +38,7 @@ export const Home: React.FC = () => {
         height
       >
         <div className="p-8 pl-0 w-max text-xs">
-          <GreyButton path="/">KNOW MORE</GreyButton>
+          <GreyButton path="/aboutus">KNOW MORE</GreyButton>
         </div>
       </Hero>
 
@@ -57,7 +57,7 @@ export const Home: React.FC = () => {
             for both residential and commercial projects.
           </p>
           <div className="pt-8 text-[9px] phone:text-xs">
-            <BlackButton path="/">KNOW MORE</BlackButton>
+            <BlackButton path="/aboutus">KNOW MORE</BlackButton>
           </div>
         </div>
         <div className="w-full lg:w-3/5">

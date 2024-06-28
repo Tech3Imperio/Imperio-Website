@@ -165,8 +165,11 @@ const MemoProduct: React.FC = () => {
             />
           </div>
         </aside>
-        <center className="flex w-full max-xl:mb-6 xl:w-[47.5rem] justify-between items-center text-2xl max-xl:order-1">
-          <GoChevronLeft className="cursor-pointer" onClick={handleLeftClick} />
+        <center className="flex w-screen  max-tablet:-mx-12 max-laptop:-mx-32 max-xl:mb-6 xl:w-[47.5rem] justify-between items-center text-2xl max-xl:order-1">
+          <GoChevronLeft
+            className="cursor-pointer text-8xl tablet:text-5xl laptop:text-3xl"
+            onClick={handleLeftClick}
+          />
           {/* <div className="max-h-[70vh] max-w-[70vw] rounded-4xl xl:max-h-[40.5rem] xl:max-w-[40.5rem] overflow-hidden">
             <img
               className="w-full h-full object-cover object-center"
@@ -175,16 +178,16 @@ const MemoProduct: React.FC = () => {
               title={imageData[0].alt}
             />
           </div> */}
-          <div className="max-h-[70vh] max-w-[70vw] rounded-4xl xl:max-h-[40.5rem] xl:max-w-[40.5rem] overflow-hidden">
+          <div className="max-h-[70vh] max-w-[100vw] xl:max-h-[40.5rem] xl:max-w-[40.5rem] rounded-4xl overflow-hidden">
             <img
-              className="min-h-[38vh] min-w-[70vw] xl:min-h-[40.5rem] xl:min-w-[40.5rem] object-cover object-center"
+              className="min-h-[38vh]  xl:min-h-[40.5rem] xl:min-w-[40.5rem] object-cover object-center"
               src={imageData[0].img}
               alt={imageData[0].alt}
               title={imageData[0].alt}
             />
           </div>
           <GoChevronRight
-            className="cursor-pointer"
+            className="cursor-pointer text-8xl tablet:text-5xl laptop:text-3xl"
             onClick={handleRightClick}
           />
         </center>
