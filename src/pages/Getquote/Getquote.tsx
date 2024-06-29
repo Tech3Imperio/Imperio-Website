@@ -174,13 +174,59 @@
 import React, { useState } from "react";
 import { product, tempHeroImage } from "../../assets/Images";
 import { Hero } from "../../components";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 export const Getquote: React.FC = () => {
   const [stage, setStage] = useState(0);
+  const [data, setData] = useState<prop1>({
+    Base: "",
+    Handrail: "",
+    Endcap: "",
+    Color: "",
+  });
 
   const handleStage = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     const id = parseInt(e.currentTarget.id);
     setStage(id);
+  };
+
+  type prop = {
+    Base: string[];
+    Handrail: string[];
+    Endcap: string[];
+    Color: string[];
+  };
+  type prop1 = {
+    Base: string;
+    Handrail: string;
+    Endcap: string;
+    Color: string;
+  };
+
+  const handleData = (text) => {
+    const temp = data;
+    console.log(data[stages[stage] as keyof prop1]);
+    temp[stages[stage] as keyof prop1] = text;
+    setData(temp);
+  };
+
+  const Button = ({ text }) => (
+    <button
+      className={`border-2 border-black rounded-4xl py-4 px-8 text-xl ${
+        data[stages[stage] as keyof prop1] && "bg-[--black]"
+      }`}
+      onClick={() => handleData(text)}
+    >
+      {text}
+    </button>
+  );
+
+  const stages = ["Base", "Handrail", "Endcap", "Color"];
+  const stagesContains: prop = {
+    Base: ["Base0", "Base0", "Base0", "Base0"],
+    Handrail: ["Handrail0", "Handrail0", "Handrail0", "Handrail0"],
+    Endcap: ["Endcap0", "Endcap0", "Endcap0", "Endcap0"],
+    Color: ["Color0", "Color0", "Color0", "Color0"],
   };
 
   return (
@@ -193,37 +239,50 @@ export const Getquote: React.FC = () => {
         curve
       />
       <section className="h-screen pt-10 px-44">
-        <div className="flex gap-1 pb-10">
-          {[
-            "Select Base ",
-            "> Select Handrail",
-            "> Select Endcap",
-            "> Select Color",
-          ].map((top, index) =>
-            index <= stage ? (
-              <a
-                onClick={handleStage}
-                id={`${index}`}
-                className="text-[--third] font-bold underline-none"
-              >
-                {top}
-              </a>
-            ) : (
-              <a
-                onClick={handleStage}
-                id={`${index}`}
-                className="text-[--grey] underline-none"
-              >
-                {top}
-              </a>
-            )
-          )}
+        <div className="flex gap-1 pb-10 cursor-pointer">
+          {stages.map((top, index) => (
+            <a
+              onClick={handleStage}
+              id={`${index}`}
+              className={`${
+                index <= stage ? "text-[--third] font-bold" : "text-[--grey]"
+              } transition-500 underline-none`}
+            >
+              Select {top} {index !== 3 ? "> " : ""}
+            </a>
+          ))}
         </div>
         <div className="h-[78%] flex justify-between">
           <aside className="h-full">
             <img src={product} alt="product" className="rounded-4xl h-full" />
           </aside>
-          <aside></aside>
+          <aside className="w-[40rem] px-16 flex flex-col justify-between">
+            <header className="flex flex-col justify-center items-center py-11 pr-4 w-full">
+              <h6>{stage + 1}/4</h6>
+              <h2 className="flex justify-between w-full">
+                <FaArrowLeft
+                  className={`text-3xl transition-500 ${
+                    stage === 0 ? "text-[--grey]" : "text-[--black]"
+                  }`}
+                  onClick={() => setStage((prev) => (prev <= 0 ? 0 : prev - 1))}
+                />
+                <div className="font-normal font-[Raleway] text-2xl ">
+                  Select {stages[stage]}
+                </div>
+                <FaArrowRight
+                  className={`text-3xl transition-500 ${
+                    stage === 3 ? "text-[--grey]" : "text-[--black]"
+                  }`}
+                  onClick={() => setStage((prev) => (prev >= 3 ? 3 : prev + 1))}
+                />
+              </h2>
+            </header>
+            <div className="flex flex-wrap justify-center gap-8">
+              {stagesContains[stages[stage] as keyof prop].map((stage) => (
+                <Button text={stage} />
+              ))}
+            </div>
+          </aside>
         </div>
       </section>
     </main>

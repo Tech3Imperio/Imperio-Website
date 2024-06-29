@@ -25,6 +25,8 @@ export const iconsFeature = {
   "Hole Adjustment Feature": icon04,
   "Height Adjustment Option": icon05,
   "3 Part Design": icon06,
+  "Round design": icon06,
+  "Oval shape design": icon06,
   "Ultra Strong and Modern Aesthetics": icon07,
   "High Grade Anti Corrosion": icon08,
   "Better Grip": icon09,
@@ -36,4 +38,5 @@ export const iconsFeature = {
   "Easy to install Led": icon15,
   "Lighting below eye level": icon16,
   "Led Provision on side": icon17,
+  "Led Provision on both side": icon17,
 };
