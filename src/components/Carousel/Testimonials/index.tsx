@@ -90,7 +90,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ cards }) => {
                 src={card.img}
                 alt={card.alt}
                 title={card.alt}
-                className="rounded-4xl overflow-hidden w-12 h-12 phone:w-16 phone:h-16 tablet:w-20 tablet:h-20 laptop:w-28 laptop:h-28"
+                className="rounded-full overflow-hidden w-12 h-12 phone:w-16 phone:h-16 tablet:w-20 tablet:h-20 laptop:w-28 laptop:h-28"
               />
               <div className="flex flex-col gap-[0.2rem] phone:gap-1 tablet:gap-3 laptop:gap-5 max-w-[75%]">
                 <div className="flex flex-col gap-2">
