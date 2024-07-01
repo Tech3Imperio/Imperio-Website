@@ -310,25 +310,27 @@ export const Getquote: React.FC = () => {
       </section>
       <form
         onSubmit={handleSubmit}
-        action="https://script.google.com/macros/s/AKfycbw7-OYzjqJJcPHtm4QtIrXAu-PbuB5KsCGn6NachmsRhBE48PZadNpGG6uF8dDWUkZ0/exec"
+        action="https://script.google.com/macros/s/AKfycbyqDgW3mG_ykP_GklM-ruT83fYgzDtLoxixoOnxa1yJpbCG-OrGxkErDnbyvneAXbUS/exec"
         method="post"
       >
         <div className="flex flex-col w-[28rem] ml-44">
           <label htmlFor="name" className="text-black text-lg">
-            Name.
+            Name
           </label>
           <input
             type="text"
-            name="name"
+            name="Name"
             className="bg-transparent border-black border-[1px] rounded-full h-8 p-4"
+            required
           />
           <label htmlFor="email" className="text-black text-lg">
-            Email.
+            Email
           </label>
           <input
             type="text"
-            name="email"
+            name="Email"
             className="bg-transparent border-black border-[1px] rounded-full h-8 p-4"
+            required
           />
           <label htmlFor="WhatsappNo" className="text-black text-lg">
             Whatsapp No.
@@ -337,6 +339,7 @@ export const Getquote: React.FC = () => {
             type="text"
             name="WhatsappNo"
             className="bg-transparent border-black border-[1px] rounded-full h-8 p-4"
+            required
           />
           <label htmlFor="ProductName" className="text-black text-lg">
             Product Name
@@ -345,14 +348,25 @@ export const Getquote: React.FC = () => {
             type="text"
             name="ProductName"
             className="bg-transparent border-black border-[1px] rounded-full h-8 p-4"
+            required
           />
-          <label htmlFor="Area" className="text-black text-lg">
-            Area
+          <label htmlFor="Quantity" className="text-black text-lg">
+            Quantity (ft<sup>2</sup>)
           </label>
           <input
             type="text"
-            name="Area"
+            name="Quantity"
             className="bg-transparent border-black border-[1px] rounded-full h-8 p-4"
+            required
+          />
+          <label htmlFor="Unit" className="text-black text-lg">
+            Unit
+          </label>
+          <input
+            type="number"
+            name="Unit"
+            className="bg-transparent border-black border-[1px] rounded-full h-8 p-4"
+            required
           />
         </div>
         <button
