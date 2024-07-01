@@ -78,12 +78,13 @@ export const Home: React.FC = () => {
       >
         {isDesktop ? (
           <div className="flex px-20 py-12 gap-32 items-center">
-            <VerticalCarousel direction className="w-[35%]">
+            <VerticalCarousel direction className="w-[35%] h-fit">
               {scrollData.map((item) => (
                 <img
                   src={item.img}
                   alt={item.alt}
                   key={item.img}
+                  className="rounded-4xl w-[30rem] h-[30rem]"
                   title={item.alt}
                 />
               ))}
