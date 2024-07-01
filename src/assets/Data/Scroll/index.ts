@@ -1,6 +1,19 @@
-import { balcony, stairs, terracefloor, terresrailing } from "../../Images";
+import {
+  balcony,
+  stairs,
+  terracefloor,
+  terresrailing,
+  penthouse,
+} from "../../Images";
 
 export const scrollData = [
+  {
+    header: "Low Maintenance.",
+    subheader:
+      "Our railings are designed to last, requiring minimal upkeep while maintaining their stunning appearance.",
+    img: penthouse,
+    alt: "balcony image",
+  },
   {
     header: "Low Maintenance.",
     subheader:
