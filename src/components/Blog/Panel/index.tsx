@@ -4,6 +4,7 @@ import { BlogPanelProps, BlogType } from "../../../types";
 import { CiSearch } from "react-icons/ci";
 import { BlogCard } from "../Card";
 import { HiArrowRight } from "react-icons/hi2";
+import { useFetch } from "../../../hooks";
 
 export const BlogPanel: React.FC<BlogPanelProps> = ({
   BlogData,
@@ -18,6 +19,24 @@ export const BlogPanel: React.FC<BlogPanelProps> = ({
   const [selectedBlog, setSelectedBlog] = useState<BlogType>(BlogData[0]);
   const [filteredBlogs, setFilteredBlogs] = useState<BlogType[]>(BlogData);
   const [isPanelOpen, setIsPanelOpen] = useState<boolean>(false);
+
+  const { data, error, loading } = useFetch(
+    "https://script.google.com/macros/s/AKfycbx6KhinVmm6rHIuHsoyHhh1snT5GsdOZd8jH6aope5wm5jPaCQ1ai_H7tdjddN4q6rM/exec"
+  );
+  console.log(data, error, loading);
+
+  // async function Fechingdata() {
+  //   try {
+  //     const response = await fetch(
+  //       "https://script.google.com/macros/s/AKfycbx6KhinVmm6rHIuHsoyHhh1snT5GsdOZd8jH6aope5wm5jPaCQ1ai_H7tdjddN4q6rM/exec"
+  //     );
+  //     const data = await response.json();
+  //     console.log(data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
+  // Fechingdata();
 
   useEffect(() => {
     let filteredData = BlogData;
