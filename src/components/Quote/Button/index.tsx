@@ -6,7 +6,7 @@ export const QuoteButton: React.FC<QuoteButtonProps> = ({ className }) => {
     <Link
       to="/quote"
       className={
-        "py-4 px-6 text-[--black] font-bold bg-[--secound] text-xs rounded-4xl transition-700 cursor-pointer hover:border hover:border-[--secound] hover:shadow-white hover:bg-[--black] hover:text-[--secound] " +
+        "py-4 px-6 text-[--black] font-bold bg-[--secound] text-xs rounded-4xl transition-700 cursor-pointer border border-[--secound]  hover:bg-[--black] hover:text-[--secound] " +
         className
       }
     >
