@@ -24,6 +24,7 @@ export const Home: React.FC = () => {
 
   return (
     <main>
+      <title>Imperio Railing </title>
       <Hero
         img={heroImage}
         altText="hero for home"

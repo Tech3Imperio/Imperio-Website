@@ -33,6 +33,7 @@ import { Description, Hero } from "../../components";
 export const About = () => {
   return (
     <main>
+      <title>About Us - Imperio Railing</title>
       <Hero
         img={tempHeroImage}
         header="About us."
