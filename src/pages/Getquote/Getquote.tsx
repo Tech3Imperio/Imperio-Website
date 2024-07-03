@@ -48,6 +48,7 @@ export const Getquote: React.FC = () => {
 
   return (
     <form>
+      <title>Quote - Imperio Railing</title>
       <Hero
         img={tempHeroImage}
         altText="Hero image for product"

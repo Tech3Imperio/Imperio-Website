@@ -5,6 +5,7 @@ import { blogCards } from "../../assets/Data";
 export const Blog = () => {
   return (
     <main>
+      <title>Blog - Imperio Railing</title>
       <Hero
         img={tempHeroImage}
         altText="hero for blog"

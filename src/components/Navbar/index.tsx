@@ -25,25 +25,15 @@ const MenuItem: React.FC<MenuItemProps> = ({ to, label, handleClick }) => (
   </div>
 );
 
-const MenuItems: React.FC<MenuItemsProps> = ({ handleClick }) =>
-  window.innerWidth > 1000 ? (
-    <>
-      <MenuItem to="/products" label="Our Products" handleClick={() => {}} />
-      <MenuItem to="/blog" label="Blog" handleClick={() => {}} />
-      <MenuItem to="/" label="Home" handleClick={() => {}} />
-      <MenuItem to="/aboutus" label="About Us" handleClick={() => {}} />
-      <MenuItem to="/contactus" label="Contact Us" handleClick={() => {}} />
-    </>
-  ) : (
-    <>
-      <MenuItem to="/" label="Home" handleClick={handleClick} />
-      <MenuItem to="/products" label="Our Products" handleClick={handleClick} />
-      <MenuItem to="/aboutus" label="About Us" handleClick={handleClick} />
-      <MenuItem to="/contactus" label="Contact Us" handleClick={handleClick} />
-      <MenuItem to="/blog" label="Blog" handleClick={handleClick} />
-    </>
-  );
-
+const MenuItems: React.FC<MenuItemsProps> = ({ handleClick }) => (
+  <>
+    <MenuItem to="/" label="Home" handleClick={handleClick} />
+    <MenuItem to="/products" label="Our Products" handleClick={handleClick} />
+    <MenuItem to="/aboutus" label="About Us" handleClick={handleClick} />
+    <MenuItem to="/contactus" label="Contact Us" handleClick={handleClick} />
+    <MenuItem to="/blog" label="Blog" handleClick={handleClick} />
+  </>
+);
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, handleClick }) => (
   <div
     className={`fixed z-10 w-screen h-fit left-0 bg-[--black] rounded-b-4xl text-white transition-700 overflow-hidden ${

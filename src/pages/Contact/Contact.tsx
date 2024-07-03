@@ -4,6 +4,7 @@ import { Description, Hero, Quote } from "../../components";
 export const Contact = () => {
   return (
     <main>
+      <title>Contact Us - Imperio Railing</title>
       <Hero
         img={tempHeroImage}
         header="Contact Information."
