@@ -105,13 +105,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ cards }) => {
                   </div>
                 </div>
                 <div className="flex justify-between text-[0.5rem] phone:text-xs tablet:text-sm laptop:text-base">
-                  <div className="flex items-start">
-                    <FaQuoteLeft />
-                  </div>
                   <div className="w-5/6 items-center">{card.quote}</div>
-                  <div className="flex items-end mt-auto">
-                    <FaQuoteRight />
-                  </div>
                 </div>
               </div>
             </div>
