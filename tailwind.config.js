@@ -25,6 +25,8 @@ export default {
         "4xl": "30px",
       },
       boxShadow: {
+        navbar: "0px 3px 10px 0px rgba(245,206,2,1)",
+        navmobile: "0px 9px 11px -5px rgba(245,206,2,1)",
         shadow: "0px 0px 12px 4px rgba(0, 0, 0, 1)",
         small: "0px 0px 7px 0px rgb(0,0,0)",
       },

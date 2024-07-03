@@ -7,7 +7,7 @@ export const Contact = () => {
       <title>Contact Us - Imperio Railing</title>
       <Hero
         img={tempHeroImage}
-        header="Contact Information."
+        header="Contact Information"
         altText="hero for aboutus"
         subHeader="Discover the perfect blend of safety and sophistication with Imperio's glass railing systems."
         curve

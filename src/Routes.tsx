@@ -6,7 +6,7 @@ import {
   NotFound,
   Product,
   Products,
-  Getquote,
+  GetQuote,
   About,
   Contact,
 } from "./pages";
@@ -26,7 +26,7 @@ export const routes = createBrowserRouter([
         path: "products/:productID",
         element: <Product />,
       },
-      { path: "quote", element: <Getquote /> },
+      { path: "quote", element: <GetQuote /> },
       { path: "*", element: <NotFound /> },
     ],
   },

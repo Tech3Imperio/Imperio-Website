@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ProductProps } from "../../types";
 
-export const useFetch = (link: string) => {
+export const useProduct = (link: string) => {
   const [data, setData] = useState<ProductProps[]>([]);
   const [error, setError] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(true);

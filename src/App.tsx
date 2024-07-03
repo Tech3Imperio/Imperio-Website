@@ -13,13 +13,7 @@ const App: React.FC = () => {
   useScrollToTop();
   useEffect(() => {
     const matcher = window.matchMedia("(prefers-color-scheme: dark)");
-    const updateFavicon = () => setFaviconUrl(getFaviconPath(matcher.matches));
-    updateFavicon();
-    matcher.addEventListener("change", updateFavicon);
-
-    return () => {
-      matcher.removeEventListener("change", updateFavicon);
-    };
+    setFaviconUrl(getFaviconPath(matcher.matches));
   }, []);
 
   return (

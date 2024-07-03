@@ -24,7 +24,7 @@ export const Home: React.FC = () => {
 
   return (
     <main>
-      <title>Imperio Railing </title>
+      <title>Imperio Railing Systems - Home</title>
       <Hero
         img={heroImage}
         altText="hero for home"
@@ -109,7 +109,12 @@ export const Home: React.FC = () => {
             {scrollData.map((item, index) => (
               <div className="space-y-8" key={index}>
                 <div>
-                  <img src={item.img} alt={item.alt} title={item.alt} />
+                  <img
+                    src={item.img}
+                    alt={item.alt}
+                    title={item.alt}
+                    className="rounded-4xl w-[20rem] h-[22rem]"
+                  />
                 </div>
                 <div className="flex flex-col text-white">
                   <h1 className="text-4xl">{index + 1}.</h1>

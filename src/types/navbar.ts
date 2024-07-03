@@ -1,7 +1,7 @@
 export type MenuItemProps = {
   to: string;
   label: string;
-  handleClick: () => void;
+  handleClick?: () => void;
 };
 
 export type MobileMenuProps = {
@@ -10,5 +10,6 @@ export type MobileMenuProps = {
 };
 
 export type MenuItemsProps = {
-  handleClick: () => void;
+  handleClick?: () => void;
+  type: string;
 };

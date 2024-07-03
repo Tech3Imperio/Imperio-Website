@@ -5,7 +5,8 @@ import { PiSmileySadLight } from "react-icons/pi";
 
 export const NotFound: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[90vh] bg-gray-100 text-[--third] p-4">
+    <main className="flex flex-col items-center justify-center min-h-[90vh] bg-gray-100 text-[--third] p-4">
+      <title>NotFound - Imperio Railing Systems</title>
       <h1 className="text-6xl font-[Raleway] font-semibold mb-8 flex flex-col items-center ">
         <PiSmileySadLight className="text-[10rem]" />
         404
@@ -22,7 +23,7 @@ export const NotFound: React.FC = () => {
       >
         <HiOutlineHome className="mr-2" /> Go Back Home
       </Link>
-    </div>
+    </main>
   );
 };
 

@@ -1,14 +1,14 @@
 import React from "react";
 import { Hero, ProductPanel, Quote } from "../../components";
 import { tempHeroImage } from "../../assets/Images";
-import { useFetch } from "../../hooks";
+import { useProduct } from "../../hooks";
 import { useEffect, useState, useCallback } from "react";
 import { ProductProps, ProductSection } from "../../types";
 import { getLocalStorageItem, setLocalStorageItem } from "../../utils";
 import { Product } from "./Product/Product";
 
 const MemoProducts: React.FC = () => {
-  const { data, error, loading } = useFetch(
+  const { data, error, loading } = useProduct(
     "https://script.googleusercontent.com/a/macros/imperiorailing.com/echo?user_content_key=Ay_XW6emxmiwQ7Lncs10OYWdnFeTW0upS6uckktFqOCWvYse7Um3IucncElvDr3F6e1U0oIbcefbm_KsKRb7lGfzRJKfhSKKOJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMi80zadyHLKC1zka5stJV6CJ8rbxa1V-UsEmAp_psx4LPWV2VVapqoanwc9S-o8wsibsbmz75VIWJ6s0UnHNjn57l_O834N2gmbbRpWFxXoNaVLQCjst0OCroO14vipAt9G3wLhldpT5hqak0MdSxiw&lib=McNTorF1LzcGC_6h_0B7S9zQVEnUvMwCs"
   );
   const [productSections, setProductSections] = useState<ProductSection[]>([]);
@@ -48,6 +48,7 @@ const MemoProducts: React.FC = () => {
 
   return (
     <main>
+      <title>Products - Imperio Railing Systems</title>
       <Hero
         img={tempHeroImage}
         altText="Hero image for product"

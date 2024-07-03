@@ -1,34 +1,5 @@
-import {
-  aboutImage,
-  // ishan,
-  // shreyansh,
-  tempHeroImage,
-  // temp,
-} from "../../assets/Images";
+import { aboutImage, tempHeroImage } from "../../assets/Images";
 import { Description, Hero } from "../../components";
-
-// const impPeople = [
-// 	{ name: "Mr. Ishan Jain", position: "CEO", image: ishan },
-// 	{
-// 		name: "Mr. Shreyansh Jain",
-// 		position: "System Designer",
-// 		image: shreyansh,
-// 	},
-// ];
-
-// const employees = [
-// 	{ id: 0, name: "Mr. Example", position: "Example", image: temp },
-// 	{ id: 1, name: "Mr. Example", position: "Example", image: temp },
-// 	{ id: 2, name: "Mr. Example", position: "Example", image: temp },
-// 	{ id: 3, name: "Mr. Example", position: "Example", image: temp },
-// 	{ id: 4, name: "Mr. Example", position: "Example", image: temp },
-// 	{ id: 5, name: "Mr. Example", position: "Example", image: temp },
-// 	{ id: 6, name: "Mr. Example", position: "Example", image: temp },
-// 	{ id: 7, name: "Mr. Example", position: "Example", image: temp },
-// 	{ id: 8, name: "Mr. Example", position: "Example", image: temp },
-// 	{ id: 9, name: "Mr. Example", position: "Example", image: temp },
-// 	{ id: 10, name: "Mr. Example", position: "Example", image: temp },
-// ];
 
 export const About = () => {
   return (
@@ -36,7 +7,7 @@ export const About = () => {
       <title>About Us - Imperio Railing</title>
       <Hero
         img={tempHeroImage}
-        header="About us."
+        header="About us"
         altText="hero for aboutus"
         subHeader="Discover the perfect blend of safety and sophistication with Imperio's glass railing systems."
         curve

@@ -5,11 +5,11 @@ import { blogCards } from "../../assets/Data";
 export const Blog = () => {
   return (
     <main>
-      <title>Blog - Imperio Railing</title>
+      <title>Blogs - Imperio Railing</title>
       <Hero
         img={tempHeroImage}
         altText="hero for blog"
-        header="Blog,"
+        header="Blog"
         subHeader="Check out our blogs. We post daily!"
         curve
       />

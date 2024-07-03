@@ -6,7 +6,6 @@ import {
   IoIosStarHalf as HalfStar,
   IoIosStarOutline as EmptyStar,
 } from "react-icons/io";
-import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 const countStars = (full: number, half: number = 0) => {
   const stars = [];
