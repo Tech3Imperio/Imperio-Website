@@ -1,4 +1,4 @@
-import { SocialLinks } from "../../components";
+import { PopupMessage, SocialLinks } from "../../components";
 import { MdOutlineEmail } from "react-icons/md";
 import { HiOutlinePhone } from "react-icons/hi2";
 import { IoLocationOutline } from "react-icons/io5";
@@ -6,6 +6,7 @@ import React, { useState } from "react";
 
 export const Footer = () => {
   const [value, setValue] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
@@ -14,31 +15,30 @@ export const Footer = () => {
     e.preventDefault();
     const countryCodePattern = /^\+\d+/;
     if (!countryCodePattern.test(value)) {
-      alert("Please add your country code before the number.");
+      setMessage("Please add your country code before the number.");
       return;
     }
-
-    try {
-      const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbxZkAIkMdyPL12OcMyOmmEcY4wa_1bqcrdNJ4OPh_hReJli3xGUnPFDF_PN6IjG3RPg/exec",
-        {
-          method: "POST",
-          body: new URLSearchParams({ phoneNumber: value }),
-        }
-      );
-      const text = await response.text();
-      if (text.includes("Success")) {
-        alert("Thank you, your number has been submitted.");
-        setValue("");
-      } else if (text.includes("Phone number already exists")) {
-        alert("This number already exists in the database.");
+    fetch(
+      "https://script.google.com/macros/s/AKfycby42s7fS3M8-toUDfTVgRzWz7AB4zPjbxiIWsi0l1VDC6dzwMJ0nuA7DFX_bA91BjUs/exec",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          from: "footer",
+          number: value,
+        }),
       }
-    } catch (error) {
-      console.error("Error:", error);
-      alert(
-        "An error occurred while submitting your phone number. Please try again later."
-      );
-    }
+    )
+      .then((res) => res.text())
+      .then((data) => {
+        console.log(data);
+        if (data == "Success") {
+          setMessage("Thank you for connecting with us");
+        } else {
+          setMessage(
+            "Try with some other number this is already in the database"
+          );
+        }
+      });
   };
 
   return (
@@ -120,6 +120,9 @@ export const Footer = () => {
           </div>
         </div>
       </aside>
+      {message && (
+        <PopupMessage message={message} onClose={() => setMessage("")} />
+      )}
     </footer>
   );
 };

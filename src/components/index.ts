@@ -9,3 +9,4 @@ export * from "./Product";
 export * from "./Quote";
 export * from "./Scroll";
 export * from "./SocialLinks";
+export * from "./PopUp";
