@@ -1,2 +1,3 @@
 import tempHeroImage from "./hero.webp";
-export { tempHeroImage };
+import blogImage from "./blog.png";
+export { tempHeroImage, blogImage };
