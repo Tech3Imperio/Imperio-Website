@@ -1,5 +1,5 @@
 import { Hero, Description, BlogPanel } from "../../components";
-import { tempHeroImage } from "../../assets/Images";
+import { blogImage } from "../../assets/Images";
 import { blogCards } from "../../assets/Data";
 
 export const Blog = () => {
@@ -7,7 +7,7 @@ export const Blog = () => {
     <main>
       <title>Blogs - Imperio Railing</title>
       <Hero
-        img={tempHeroImage}
+        img={blogImage}
         altText="hero for blog"
         header="Blog"
         subHeader="Check out our blogs. We post daily!"
