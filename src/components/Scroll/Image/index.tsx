@@ -47,7 +47,7 @@ export const ImageScrolls: React.FC<ImageScrollsProps> = ({
 }) => {
   return (
     <ImageScroll
-      direction={window.innerWidth < 600 ? -2000 : -1000}
+      direction={window.innerWidth < 600 ? -2700 : -1000}
       className={className}
     >
       <div className="flex gap-4" style={{ right: 0 }}>
