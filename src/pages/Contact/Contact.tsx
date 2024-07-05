@@ -1,4 +1,4 @@
-import { tempHeroImage } from "../../assets/Images";
+import { contactHero } from "../../assets/Images";
 import { Description, Hero, Quote } from "../../components";
 
 export const Contact = () => {
@@ -6,7 +6,7 @@ export const Contact = () => {
     <main>
       <title>Contact Us - Imperio Railing</title>
       <Hero
-        img={tempHeroImage}
+        img={contactHero}
         header="Contact Information"
         altText="hero for aboutus"
         subHeader="Discover the perfect blend of safety and sophistication with Imperio's glass railing systems."

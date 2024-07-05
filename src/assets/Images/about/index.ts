@@ -1,3 +1,3 @@
 import aboutImage from "./aboutmain.webp";
-import aboutImg from "./about.webp";
-export { aboutImage, aboutImg };
+import aboutHero from "./about.webp";
+export { aboutImage, aboutHero };

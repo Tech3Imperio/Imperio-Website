@@ -1,4 +1,4 @@
-import { aboutImage, aboutImg } from "../../assets/Images";
+import { aboutImage, aboutHero } from "../../assets/Images";
 import { Description, Hero } from "../../components";
 
 export const About = () => {
@@ -6,7 +6,7 @@ export const About = () => {
     <main>
       <title>About Us - Imperio Railing</title>
       <Hero
-        img={aboutImg}
+        img={aboutHero}
         header="About us"
         altText="hero for aboutus"
         subHeader="Discover the perfect blend of safety and sophistication with Imperio's glass railing systems."
