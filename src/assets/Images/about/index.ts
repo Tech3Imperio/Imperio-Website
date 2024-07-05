@@ -1,2 +1,2 @@
-import aboutImage from "./aboutmain.png";
+import aboutImage from "./aboutmain.webp";
 export { aboutImage };

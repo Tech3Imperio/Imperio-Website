@@ -1,3 +1,3 @@
-import heroImage from "./hero.png";
-import descImage from "./desc.png";
+import heroImage from "./hero.webp";
+import descImage from "./desc.webp";
 export { heroImage, descImage };

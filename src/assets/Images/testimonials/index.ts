@@ -1,9 +1,9 @@
-import mukeshambani from "./mukeshambani.jpg";
-import rakeshjhunjhunwala from "./rakeshjhunjhunwala.jpg";
-import salmankhan from "./salmankhan.jpg";
-import divyankturakhia from "./divyankturakhia.jpg";
-import ashabhosle from "./ashabhosle.jpg";
-import cyrusmistry from "./cyrusmistry.jpg";
+import mukeshambani from "./mukeshambani.webp";
+import rakeshjhunjhunwala from "./rakeshjhunjhunwala.webp";
+import salmankhan from "./salmankhan.webp";
+import divyankturakhia from "./divyankturakhia.webp";
+import ashabhosle from "./ashabhosle.webp";
+import cyrusmistry from "./cyrusmistry.webp";
 export {
   mukeshambani,
   rakeshjhunjhunwala,

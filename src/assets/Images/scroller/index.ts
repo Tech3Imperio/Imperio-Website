@@ -1,7 +1,7 @@
-import balcony from "./balcony.jpg";
-import stairs from "./stairs.jpg";
-import terracefloor from "./terracefloor.jpg";
-import terresrailing from "./terresrailing.jpg";
-import penthouse from "./penthouse.jpg";
+import balcony from "./balcony.webp";
+import stairs from "./stairs.webp";
+import terracefloor from "./terracefloor.webp";
+import terresrailing from "./terresrailing.webp";
+import penthouse from "./penthouse.webp";
 
 export { balcony, stairs, terracefloor, terresrailing, penthouse };

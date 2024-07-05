@@ -1,6 +1,6 @@
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
-import { bigImg, setImg1, setImg2, setImg3 } from "../../../assets/Images";
+import { bigImg1, bigImg2, setImg1, setImg2 } from "../../../assets/Images";
 import { ImageScrollProps, ImageScrollsProps } from "../../../types";
 
 const ImageScroll: React.FC<ImageScrollProps> = ({
@@ -36,17 +36,20 @@ const ImageScroll: React.FC<ImageScrollProps> = ({
 };
 
 const cards = [
-  { img: bigImg, alt: "main image for scroll" },
+  { img: bigImg1, alt: "main image for scroll" },
   { img: setImg1, alt: "main image for scroll" },
   { img: setImg2, alt: "main image for scroll" },
-  { img: setImg3, alt: "main image for scroll" },
+  { img: bigImg2, alt: "main image for scroll" },
 ];
 
 export const ImageScrolls: React.FC<ImageScrollsProps> = ({
   className = "",
 }) => {
   return (
-    <ImageScroll direction={-1000} className={className}>
+    <ImageScroll
+      direction={window.innerWidth < 600 ? -2000 : -1000}
+      className={className}
+    >
       <div className="flex gap-4" style={{ right: 0 }}>
         {cards.map((card, index) => {
           return (

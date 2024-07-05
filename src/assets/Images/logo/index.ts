@@ -1,5 +1,3 @@
-import blackLogo from "./Black.png";
-import circleLogo from "./Circle.png";
-import whiteLogo from "./White.png";
+import whiteLogo from "./White.webp";
 
-export { blackLogo, circleLogo, whiteLogo };
+export { whiteLogo };

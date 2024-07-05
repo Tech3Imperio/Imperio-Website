@@ -1,6 +1,6 @@
-import bigImg from "./img1.png";
-import setImg1 from "./img2.png";
-import setImg2 from "./img3.png";
-import setImg3 from "./imgL.png";
+import bigImg1 from "./big1.webp";
+import bigImg2 from "./big2.webp";
+import setImg1 from "./img1.webp";
+import setImg2 from "./img2.webp";
 
-export { bigImg, setImg1, setImg2, setImg3 };
+export { bigImg1, setImg1, setImg2, bigImg2 };
