@@ -151,7 +151,7 @@ export const GetQuote: React.FC = () => {
           setContact={setContact}
         />
       </motion.section>
-      {errors && (
+      {errors.length !== 0 && (
         <PopupMessage message={errors[0]} onClose={() => setErrors([])} />
       )}
     </main>
