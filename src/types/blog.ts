@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 
 export type BlogType = {
+  id?: string;
   imgSrc: string;
   alt?: string;
   header: string;
@@ -8,6 +9,7 @@ export type BlogType = {
   details?: string;
   tags: string[];
   socialMedia: string;
+  socialMediaLink: string;
 };
 
 export type BlogCardProps = {

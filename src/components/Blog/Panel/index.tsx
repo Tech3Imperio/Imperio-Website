@@ -5,7 +5,6 @@ import { CiSearch } from "react-icons/ci";
 import { BlogCard } from "../Card";
 import { HiArrowRight } from "react-icons/hi2";
 
-// https://script.google.com/macros/s/AKfycby42s7fS3M8-toUDfTVgRzWz7AB4zPjbxiIWsi0l1VDC6dzwMJ0nuA7DFX_bA91BjUs/exec
 export const BlogPanel: React.FC<BlogPanelProps> = ({
   BlogData,
   Socials,
