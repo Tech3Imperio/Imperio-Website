@@ -81,16 +81,19 @@ export const GetQuote: React.FC = () => {
           quantity: formData.quantity,
           base:
             data.Base +
-            " - " +
-            ["Black", "Champagne", "Wood", "Silver"][colors[0]],
+            (data.Base !== "None"
+              ? " - " + ["Black", "Champagne", "Wood", "Silver"][colors[0]]
+              : ""),
           handrail:
             data.Handrail +
-            " - " +
-            ["Black", "Champagne", "Wood", "Silver"][colors[1]],
+            (data.Handrail !== "None"
+              ? " - " + ["Black", "Champagne", "Wood", "Silver"][colors[1]]
+              : ""),
           endcap:
             data.Endcap +
-            " - " +
-            ["Black", "Champagne", "Wood", "Silver"][colors[2]],
+            (data.Endcap !== "None"
+              ? " - " + ["Black", "Champagne", "Wood", "Silver"][colors[2]]
+              : ""),
         }),
       }
     ).then(() => navigate("thanks"));
