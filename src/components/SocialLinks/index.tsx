@@ -37,22 +37,22 @@ export const SocialLinks: React.FC<SocialLinksProps> = ({
 }) => (
   <div className={className}>
     <SocialLink
-      to="" // Facebook URL
+      to="https://www.facebook.com/imperiorailingsystem" // Facebook URL
       icon={Facebook} // Facebook icon component
       className={objectClassName + "text-3xl pb-2"} // Additional styling for Facebook link
     />
     <SocialLink
-      to="" // Instagram URL
+      to="https://www.instagram.com/imperio.railings/?igsh=OWlmaXB6NnJpcWJ0" // Instagram URL
       icon={Instagram} // Instagram icon component
       className={objectClassName + "text-2xl pt-1"} // Additional styling for Instagram link
     />
     <SocialLink
-      to="" // YouTube URL
+      to="https://www.youtube.com/channel/UCfc7xvEAq7E1KPy6xFA_msg" // YouTube URL
       icon={Youtube} // YouTube icon component
       className={objectClassName + "text-2xl pt-1"} // Additional styling for YouTube link
     />
     <SocialLink
-      to="" // Twitter URL
+      to="https://x.com/ImperioRailing" // Twitter URL
       icon={Twitter} // Twitter icon component
       className={objectClassName + "text-2xl pt-1"} // Additional styling for Twitter link
     />
