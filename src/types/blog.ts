@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 export type BlogType = {
   id?: string;
-  imgSrc: string;
+  img: string;
   alt?: string;
   header: string;
   description: string;

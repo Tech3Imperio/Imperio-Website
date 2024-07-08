@@ -48,7 +48,7 @@ export const WhiteButton: React.FC<WhiteButtonProps> = ({
     <button
       onClick={onClick}
       className={
-        `w-max py-2 px-6 border-black rounded-4xl ${
+        `w-max py-1 laptop:py-2 px-3 laptop:px-6 border-black rounded-4xl ${
           value ? "bg-[--secound]" : "bg-transparent"
         } text-[--black] transition-700 hover:text-[--black] hover:bg-[--secound] ` +
         className

@@ -46,12 +46,12 @@ export const BlogPanel: React.FC<BlogPanelProps> = ({
   const closePanel = () => {
     setSelectedBlog(null);
   };
-
+  console.log(filteredBlogs.length, cardsToShow);
   return (
     <section
       className={`py-20 px-4 tablet:px-12 lg:px-20 xl:px-28 2xl:px-36 ${className}`}
     >
-      <div className="flex justify-between items-end max-lg:flex-col gap-4">
+      <div className="flex justify-between items-start max-lg:flex-col gap-4">
         <aside className="flex items-center justify-center flex-wrap gap-2 tablet:space-x-8">
           <div className="flex gap-2 lg:gap-4 border border-gray-500 rounded-4xl p-2 -ml-2 sm:ml-0">
             {Socials.map((Social, index) => (
@@ -59,7 +59,7 @@ export const BlogPanel: React.FC<BlogPanelProps> = ({
                 key={index}
                 value={filters[index]}
                 onClick={() => toggleFilter(index)}
-                className="text-[0.85rem] lg:text-base"
+                className="text-base"
               >
                 {Social}
               </WhiteButton>
@@ -67,12 +67,12 @@ export const BlogPanel: React.FC<BlogPanelProps> = ({
           </div>
           <button
             onClick={resetFilters}
-            className="w-max py-4 px-6 text-white bg-black font-normal rounded-4xl transition-700 hover:text-[--black] hover:bg-[--secound]"
+            className="w-max py-3 laptop:py-4 px-5 laptop:px-6 text-base text-white bg-[--black] font-normal rounded-4xl transition-700 hover:text-[--black] hover:bg-[--secound]"
           >
             Reset Filters
           </button>
         </aside>
-        <aside className="flex">
+        <aside className="flex flex-row-reverse laptop:flex-row">
           <input
             id="search"
             type="text"
@@ -80,20 +80,20 @@ export const BlogPanel: React.FC<BlogPanelProps> = ({
             onFocus={() => setIsSearchFocused(true)}
             onBlur={() => setIsSearchFocused(false)}
             onChange={(e) =>
-              setSearchQuery(e.target.value.trim().toLowerCase())
+              setSearchQuery(e.target.value.replace(/\s+/g, " ").toLowerCase())
             }
             placeholder="Search blogs"
-            className="bg-transparent w-56 tablet:w-80 text-right pr-4 outline-none border-b-2 border-black transition-700 text-xl text-black focus:w-80 tablet:focus:w-[30rem]"
+            className="bg-transparent w-56 tablet:w-80 text-left laptop:text-right pr-4 outline-none border-b-2 border-black transition-700 text-xl text-black focus:w-80 tablet:focus:w-[30rem]"
           />
           <label
             htmlFor="search"
-            className="border-b-2 border-black flex flex-row-reverse"
+            className="border-b-2 border-black flex laptop:flex-row-reverse"
           >
             <CiSearch className="text-5xl pr-4" />
             <div
               className={`border-l-2 h-[90%] border-l-black pr-4 ${
                 isSearchFocused ? "w-4 opacity-100" : "w-0 opacity-0"
-              } transition-width transition-opacity duration-300 ease-out`}
+              } transition-500`}
             ></div>
           </label>
         </aside>
@@ -123,7 +123,10 @@ export const BlogPanel: React.FC<BlogPanelProps> = ({
                 {selectedBlog.header}
               </h3>
               <p className="text-[--grey]">{selectedBlog.details}</p>
-              <BlackButton path="/" className="flex gap-2">
+              <BlackButton
+                path={selectedBlog.socialMediaLink}
+                className="flex gap-2"
+              >
                 <div className="text-xs">VIEW FULL BLOG</div>
                 <div className="text-md">
                   <HiArrowRight />
@@ -132,7 +135,7 @@ export const BlogPanel: React.FC<BlogPanelProps> = ({
             </div>
             <div className="flex justify-center items-center overflow-hidden rounded-4xl ">
               <img
-                src={selectedBlog.imgSrc}
+                src={selectedBlog.img}
                 alt={selectedBlog.alt}
                 className="max-h-[570px] rounded-4xl"
               />
@@ -140,7 +143,11 @@ export const BlogPanel: React.FC<BlogPanelProps> = ({
           </div>
         </div>
       )}
-      <div className="flex justify-center tablet:justify-end mt-12">
+      <div
+        className={`justify-center tablet:justify-end mt-12 ${
+          filteredBlogs.length <= cardsToShow ? "hidden" : "flex"
+        }`}
+      >
         <WhiteButton
           onClick={() => setCardsToShow((prev) => prev + 4)}
           className="text-lg tablet:text-2xl py-4 px-8 border-2 font-normal"

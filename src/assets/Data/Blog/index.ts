@@ -1,0 +1,48 @@
+import { BlogType } from "../../../types";
+
+export const blogCards: BlogType[] = [
+  {
+    id: "1",
+    img: "https://www.researchgate.net/profile/Adrian-Rozanski/publication/258023546/figure/fig2/AS:297431607595010@1447924629213/A-digital-image-500-500-pixels-of-the-reconstructed-2D-realization.png",
+    alt: "Image 1",
+    header: "Blog Post 1",
+    description: "This is a brief description of the blog post.",
+    details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus deserunt!`,
+    tags: ["Temp", "Temp"],
+    socialMedia: "Temp",
+    socialMediaLink: "Temp",
+  },
+  {
+    id: "2",
+    img: "https://www.researchgate.net/profile/Adrian-Rozanski/publication/258023546/figure/fig2/AS:297431607595010@1447924629213/A-digital-image-500-500-pixels-of-the-reconstructed-2D-realization.png",
+    alt: "Image 2",
+    header: "Blog Post 2",
+    description: "This is a brief description of the blog post.",
+    details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus deserunt!`,
+    tags: ["Temp", "Temp"],
+    socialMedia: "Temp",
+    socialMediaLink: "Temp",
+  },
+  {
+    id: "3",
+    img: "https://www.researchgate.net/profile/Adrian-Rozanski/publication/258023546/figure/fig2/AS:297431607595010@1447924629213/A-digital-image-500-500-pixels-of-the-reconstructed-2D-realization.png",
+    alt: "Image 3",
+    header: "Blog Post 3",
+    description: "This is a brief description of the blog post.",
+    details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus deserunt!`,
+    tags: ["Temp", "Temp"],
+    socialMedia: "Temp",
+    socialMediaLink: "Temp",
+  },
+  {
+    id: "4",
+    img: "https://www.researchgate.net/profile/Adrian-Rozanski/publication/258023546/figure/fig2/AS:297431607595010@1447924629213/A-digital-image-500-500-pixels-of-the-reconstructed-2D-realization.png",
+    alt: "Image 4",
+    header: "Blog Post 4",
+    description: "This is a brief description of the blog post.",
+    details: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur atque iste magnam maiores voluptatibus praesentium, dolor cumque aut iure fugiat voluptate possimus! Voluptas delectus quos autem quibusdam adipisci, illum tempore cumque ex quia omnis quis labore qui aut, provident nobis aliquid odit molestiae? Reprehenderit porro libero laborum obcaecati doloribus deserunt!`,
+    tags: ["Temp", "Temp"],
+    socialMedia: "Temp",
+    socialMediaLink: "Temp",
+  },
+];
