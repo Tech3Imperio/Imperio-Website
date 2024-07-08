@@ -1,6 +1,6 @@
 import React from "react";
 import { Hero, ProductPanel, Quote } from "../../components";
-import { tempHeroImage } from "../../assets/Images";
+import { productImage } from "../../assets/Images";
 import { useProduct } from "../../hooks";
 import { useEffect, useState, useCallback } from "react";
 import { ProductProps, ProductSection } from "../../types";
@@ -50,7 +50,7 @@ const MemoProducts: React.FC = () => {
     <main>
       <title>Products - Imperio Railing Systems</title>
       <Hero
-        img={tempHeroImage}
+        img={productImage}
         altText="Hero image for product"
         header="Our Products"
         subHeader="Discover the perfect blend of safety and sophistication with Imperio's glass railing systems."

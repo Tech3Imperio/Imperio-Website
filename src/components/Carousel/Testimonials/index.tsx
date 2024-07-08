@@ -7,14 +7,18 @@ import {
   IoIosStarOutline as EmptyStar,
 } from "react-icons/io";
 
+// Helper function to count and generate star elements based on full and half star counts
 const countStars = (full: number, half: number = 0) => {
   const stars = [];
+  // Add full stars
   for (let i = 0; i < full; i++) {
     stars.push(<FullStar className="text-[--secound]" key={`full-${i}`} />);
   }
+  // Add half stars
   for (let i = 0; i < half; i++) {
     stars.push(<HalfStar className="text-[--secound]" key={`half-${i}`} />);
   }
+  // Add empty stars until we have a total of 5 stars
   while (stars.length < 5) {
     stars.push(
       <EmptyStar className="text-white" key={`empty-${stars.length}`} />
@@ -23,6 +27,7 @@ const countStars = (full: number, half: number = 0) => {
   return stars;
 };
 
+// Helper function to calculate the number of full and half stars based on the rating
 const calculateStars = (rating: number) => {
   if (Number.isInteger(rating)) {
     return countStars(rating);
@@ -30,6 +35,7 @@ const calculateStars = (rating: number) => {
   return countStars(Math.floor(rating), 1);
 };
 
+// Helper function to calculate the distance of cards based on window width
 const calculateDistance = () => {
   if (window.innerWidth < 400) return [0, 0];
   if (window.innerWidth < 600) return [90, 30];
@@ -39,13 +45,13 @@ const calculateDistance = () => {
 };
 
 export const Testimonials: React.FC<TestimonialsProps> = ({ cards }) => {
-  const [currentCard, setCurrentCard] = useState(0);
+  const [currentCard, setCurrentCard] = useState(0); // State to keep track of the current card index
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentCard((prevCard) => (prevCard + 1) % cards.length);
+      setCurrentCard((prevCard) => (prevCard + 1) % cards.length); // Cycle through cards every 5 seconds
     }, 5000);
-    return () => clearInterval(interval);
+    return () => clearInterval(interval); // Clean up the interval on component unmount
   }, [cards.length]);
 
   return (
@@ -55,12 +61,12 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ cards }) => {
       </h1>
       <div className="relative flex justify-center w-full">
         {cards.map((card, index) => {
-          const isCurrent = index === currentCard;
+          const isCurrent = index === currentCard; // Check if the card is the current card
           const isPrev =
-            index === (currentCard - 1 + cards.length) % cards.length;
-          const isNext = index === (currentCard + 1) % cards.length;
-          const stars = calculateStars(card.stars);
-          const distance = calculateDistance();
+            index === (currentCard - 1 + cards.length) % cards.length; // Check if the card is the previous card
+          const isNext = index === (currentCard + 1) % cards.length; // Check if the card is the next card
+          const stars = calculateStars(card.stars); // Calculate the stars for the card
+          const distance = calculateDistance(); // Calculate the distance for card positioning
 
           return (
             <div
@@ -69,20 +75,20 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ cards }) => {
                 "text-white p-9 w-[19rem] h-[9.5rem] phone:w-[26rem] phone:h-[13rem] tablet:w-[33rem] tablet:h-[16.5rem] laptop:w-[40rem] laptop:h-80 flex justify-center items-center gap-4 phone:gap-5 tablet:gap-7 laptop:gap-9 rounded-4xl transition-all duration-500 ease-in-out",
                 {
                   "absolute bg-[--black] z-20 transform scale-110 opacity-100 -translate-x-1/2 translate-y-16 phone:translate-y-28 tablet:translate-y-16 laptop:translate-y-0":
-                    isCurrent,
+                    isCurrent, // Styles for the current card
                   "absolute bg-[--grey] z-10 opacity-70 transform scale-95 translate-y-36 phone:translate-y-52 tablet:translate-y-44 laptop:translate-y-32 -translate-x-[98%]":
-                    isPrev,
+                    isPrev, // Styles for the previous card
                   "absolute bg-[--grey] z-10 opacity-70 transform scale-95 translate-y-36 phone:translate-y-52 tablet:translate-y-44 laptop:translate-y-32 translate-x-[8%]":
-                    isNext,
-                  hidden: !isCurrent && !isPrev && !isNext,
+                    isNext, // Styles for the next card
+                  hidden: !isCurrent && !isPrev && !isNext, // Hide cards that are neither current, previous, nor next
                 }
               )}
               style={{
                 left: isPrev
-                  ? `calc(50% - ${distance[0]}px)`
+                  ? `calc(50% - ${distance[0]}px)` // Position for the previous card
                   : isNext
-                  ? `calc(50% + ${distance[1]}px)`
-                  : "50%",
+                  ? `calc(50% + ${distance[1]}px)` // Position for the next card
+                  : "50%", // Position for the current card
               }}
             >
               <img
