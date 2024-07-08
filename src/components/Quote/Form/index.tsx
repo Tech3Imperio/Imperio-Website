@@ -2,21 +2,24 @@ import React from "react";
 import { QuoteFormProps } from "../../../types";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
+// Functional component QuoteForm with props destructuring
 export const QuoteForm: React.FC<QuoteFormProps> = ({
   data,
   submit,
   setContact,
 }) => {
-  const [value, setValue] = data;
+  const [value, setValue] = data; // Destructuring data state
 
+  // Handler for input changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { id, value } = e.target;
+    const { id, value } = e.target; // Destructure id and value from the event target
     setValue((prevData) => ({
       ...prevData,
-      [id]: value,
+      [id]: value, // Update the state with the new value for the specific input field
     }));
   };
 
+  // Form fields configuration
   const formFields = [
     { id: "name", label: "Name", type: "text", value: value.name },
     { id: "email", label: "Email", type: "email", value: value.email },
@@ -25,7 +28,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
       label: "WhatsApp No.",
       type: "text",
       value: value.number,
-      pattern: "\\d*",
+      pattern: "\\d*", // Pattern to allow only digits
     },
     { id: "pname", label: "Product Name", type: "text", value: value.pname },
     {
@@ -61,8 +64,8 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
                 type={type}
                 id={id}
                 value={value}
-                onChange={handleChange}
-                pattern={pattern}
+                onChange={handleChange} // Attach change handler
+                pattern={pattern} // Apply pattern if available
                 className="py-3 px-8 bg-transparent border-2 rounded-2xl border-black w-full laptop:w-[50rem] outline-none"
               />
             </div>
@@ -71,7 +74,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
         <aside className="flex flex-row laptop:flex-col gap-0 laptop:gap-10 justify-between laptop:justify-end py-5">
           <button
             type="button"
-            onClick={() => setContact((prev) => !prev)}
+            onClick={() => setContact((prev) => !prev)} // Toggle contact view
             className="py-4 laptop:py-6 px-6 laptop:px-9 text-base laptop:text-lg font-semibold text-white bg-[--black] hover:text-[--black] hover:bg-[--secound] transition-500 rounded-full flex justify-center gap-2"
           >
             <FaArrowLeft className="text-xl laptop:text-2xl" />

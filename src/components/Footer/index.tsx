@@ -1,41 +1,45 @@
-import { PopupMessage, SocialLinks } from "../../components";
-import { MdOutlineEmail } from "react-icons/md";
-import { HiOutlinePhone } from "react-icons/hi2";
-import { IoLocationOutline } from "react-icons/io5";
-import React, { useState } from "react";
+import { PopupMessage, SocialLinks } from "../../components"; // Import necessary components
+import { MdOutlineEmail } from "react-icons/md"; // Import email icon
+import { HiOutlinePhone } from "react-icons/hi2"; // Import phone icon
+import { IoLocationOutline } from "react-icons/io5"; // Import location icon
+import React, { useState } from "react"; // Import React and useState hook
 
 export const Footer = () => {
-  const [value, setValue] = useState("");
-  const [message, setMessage] = useState("");
+  const [value, setValue] = useState(""); // State to hold input value
+  const [message, setMessage] = useState(""); // State to hold feedback message
 
+  // Handle input change
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
+
+  // Handle form submission
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const countryCodePattern = /^\+\d+/;
+    e.preventDefault(); // Prevent default form submission behavior
+    const countryCodePattern = /^\+\d+/; // Regex pattern to check for country code
     if (!countryCodePattern.test(value)) {
-      setMessage("Please add your country code before the number.");
+      setMessage("Please add your country code before the number."); // Set message if country code is missing
       return;
     }
+    // Make a POST request to the Google Script
     fetch(
       "https://script.google.com/macros/s/AKfycby42s7fS3M8-toUDfTVgRzWz7AB4zPjbxiIWsi0l1VDC6dzwMJ0nuA7DFX_bA91BjUs/exec",
       {
         method: "POST",
         body: JSON.stringify({
-          from: "footer",
-          number: value,
+          from: "footer", // Indicate the form source
+          number: value, // Include the phone number
         }),
       }
     )
-      .then((res) => res.text())
+      .then((res) => res.text()) // Parse the response text
       .then((data) => {
         console.log(data);
         if (data == "Success") {
-          setMessage("Thank you for connecting with us");
+          setMessage("Thank you for connecting with us"); // Success message
         } else {
           setMessage(
-            "Try with some other number this is already in the database"
+            "Try with some other number this is already in the database" // Failure message
           );
         }
       });
@@ -55,6 +59,8 @@ export const Footer = () => {
             </p>
           </div>
           <form onSubmit={handleSubmit}>
+            {" "}
+            {/* Form to handle phone number submission */}
             <div className="flex text-[0.5rem] phone:text-xs tablet:text-sm laptop:text-base group">
               <input
                 type="text"
@@ -87,6 +93,8 @@ export const Footer = () => {
         </div>
 
         <div className="flex-col text-white hidden laptop:flex">
+          {" "}
+          {/* Social media links and policies for larger screens */}
           <SocialLinks className="flex text-2xl gap-5" />
           <div className="flex gap-4 text-xs">
             <p>Terms of Use</p>
@@ -95,22 +103,24 @@ export const Footer = () => {
         </div>
       </aside>
       <aside className="flex flex-col justify-center min-h-full text-white pr-0 phone:pr-12 tablet:pr-24 laptop:pr-36 xl:pr-48 gap-4 tablet:gap-6">
+        {" "}
+        {/* Contact details section */}
         <div className="flex gap-4 ">
-          <HiOutlinePhone />
+          <HiOutlinePhone /> {/* Phone icon */}
           <div className="flex flex-col gap-3 text-xs tablet:text-sm laptop:text-base">
             <h6>Telephone</h6>
             <p>+91 85919 53385</p>
           </div>
         </div>
         <div className="flex gap-4 ">
-          <MdOutlineEmail />
+          <MdOutlineEmail /> {/* Email icon */}
           <div className="flex flex-col gap-3 text-xs tablet:text-sm laptop:text-base">
             <h6>Email</h6>
             <p>info@imperiorailings.com</p>
           </div>
         </div>
         <div className="flex gap-4 ">
-          <IoLocationOutline />
+          <IoLocationOutline /> {/* Location icon */}
           <div className="flex flex-col gap-3 text-xs tablet:text-sm laptop:text-base">
             <h6>Headquarters</h6>
             <p className=" w-80">
@@ -120,7 +130,7 @@ export const Footer = () => {
           </div>
         </div>
       </aside>
-      {message && (
+      {message /* Conditional rendering of the popup message */ && (
         <PopupMessage message={message} onClose={() => setMessage("")} />
       )}
     </footer>

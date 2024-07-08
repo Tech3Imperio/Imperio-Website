@@ -2,6 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ButtonProps, WhiteButtonProps } from "../../types";
 
+// GreyButton component
+// This component renders a button styled as a link with a grey background.
+// Props:
+// - path: the URL path the button links to.
+// - children: the content inside the button.
+// - className: additional CSS classes for the button.
 export const GreyButton: React.FC<ButtonProps> = ({
   path = "",
   children,
@@ -20,6 +26,12 @@ export const GreyButton: React.FC<ButtonProps> = ({
   );
 };
 
+// BlackButton component
+// This component renders a button styled as a link with a black background.
+// Props:
+// - path: the URL path the button links to.
+// - children: the content inside the button.
+// - className: additional CSS classes for the button.
 export const BlackButton: React.FC<ButtonProps> = ({
   path = "",
   children,
@@ -38,6 +50,13 @@ export const BlackButton: React.FC<ButtonProps> = ({
   );
 };
 
+// WhiteButton component
+// This component renders a button with a white or transparent background based on the value prop.
+// Props:
+// - className: additional CSS classes for the button.
+// - value: boolean to determine the background color of the button (true for [--secound] color, false for transparent).
+// - children: the content inside the button.
+// - onClick: function to handle the click event.
 export const WhiteButton: React.FC<WhiteButtonProps> = ({
   className = "",
   value = false,
@@ -48,7 +67,7 @@ export const WhiteButton: React.FC<WhiteButtonProps> = ({
     <button
       onClick={onClick}
       className={
-        `w-max py-1 laptop:py-2 px-3 laptop:px-6 border-black rounded-4xl ${
+        `w-max py-2 px-6 border-black rounded-4xl ${
           value ? "bg-[--secound]" : "bg-transparent"
         } text-[--black] transition-700 hover:text-[--black] hover:bg-[--secound] ` +
         className

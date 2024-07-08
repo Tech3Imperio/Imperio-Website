@@ -2,22 +2,30 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion, useScroll } from "framer-motion";
 import { createGroups } from "../../../utils";
 
+// Define the types for the props of the TextWrapper component
 interface TextWrapperProps {
   className?: string;
   children: React.ReactNode;
 }
+
+// Define the types for the props of the TextComponent component
 interface TextComponentProps {
   texts: string;
   inner?: boolean;
   className?: string;
 }
 
+// TextWrapper component definition
 const TextWrapper = ({ children }: TextWrapperProps) => {
+  // Create a reference to the text div
   const text = useRef<HTMLDivElement>(null);
+
+  // Initialize state for the scrollClass
   const [scrollClass, setScrollClass] = useState<string>(
     "opacity-0 text-white font-light"
   );
 
+  // Destructure scrollYProgress from useScroll hook
   const { scrollYProgress } = useScroll({
     target: text,
     offset:
@@ -26,6 +34,7 @@ const TextWrapper = ({ children }: TextWrapperProps) => {
         : ["end end", "start start"],
   });
 
+  // useEffect to handle scroll changes and update scrollClass accordingly
   useEffect(() => {
     const unsubscribe = scrollYProgress.on("change", (latest) => {
       if (latest < 0.1) {
@@ -36,9 +45,12 @@ const TextWrapper = ({ children }: TextWrapperProps) => {
         setScrollClass("opacity-100 text-[--third] font-medium");
       }
     });
+
+    // Cleanup function to unsubscribe from scroll changes
     return () => unsubscribe();
   }, [scrollYProgress]);
 
+  // Return the motion.p component with dynamic class names based on scroll position
   return (
     <div ref={text}>
       <motion.p className={`Raleway ${scrollClass} transition-500 =`}>
@@ -48,13 +60,16 @@ const TextWrapper = ({ children }: TextWrapperProps) => {
   );
 };
 
+// TextComponent component definition
 export const TextComponent = ({
   className = "",
   texts,
   inner = false,
 }: TextComponentProps) => {
+  // Create groups of text by splitting the input text by spaces
   const textList = createGroups(texts.split(" "));
 
+  // Return a section with mapped TextWrapper components
   return (
     <section
       id="textscroller"
