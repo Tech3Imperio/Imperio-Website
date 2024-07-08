@@ -5,6 +5,8 @@ export const useScrollToTop = (): void => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    setTimeout(() => {
+      window.scroll(0, 0);
+    }, 1);
   }, [pathname]);
 };

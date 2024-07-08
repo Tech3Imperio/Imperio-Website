@@ -14,7 +14,7 @@ export const Hero: React.FC<HeroProps> = ({
     <section
       className={`relative -top-7 w-full ${
         condition
-          ? "h-screen max-phone:h-[60vh]"
+          ? "h-screen max-phone:h-[60vh] overflow-hidden"
           : "h-[60vh] max-phone:h-[50vh] rounded-b-4xl overflow-hidden"
       } bg-cover bg-center `}
       style={{ backgroundImage: `url(${img})` }}

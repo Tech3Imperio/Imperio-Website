@@ -20,7 +20,7 @@ const text =
   "Imperio offers exquisite glass railing systems blending safety and style. Explore innovative designs, LED options, and elegance. See our work, hear from satisfied clients, and take the next step with us.";
 
 export const Home: React.FC = () => {
-  const isDesktop = window.innerWidth > 800;
+  const isDesktop = window.innerWidth > 1000;
 
   return (
     <main>
@@ -78,19 +78,19 @@ export const Home: React.FC = () => {
         black
       >
         {isDesktop ? (
-          <div className="flex px-20 py-12 gap-32 items-center">
-            <VerticalCarousel direction className="w-[35%] h-fit">
+          <div className="flex px-0 phone:px-6 tablet:px-10 laptop:px-20 py-12 gap-32 items-center">
+            <VerticalCarousel direction className="max-w-[40%] h-fit">
               {scrollData.map((item) => (
                 <img
                   src={item.img}
                   alt={item.alt}
                   key={item.img}
-                  className="rounded-4xl w-[30rem] h-[30rem]"
+                  className="rounded-4xl max-w-[30rem] h-[30rem]"
                   title={item.alt}
                 />
               ))}
             </VerticalCarousel>
-            <VerticalCarousel className="w-[65%]">
+            <VerticalCarousel className="w-[60%]">
               {scrollData.map((item, index) => (
                 <div key={index}>
                   <div className="flex items-center gap-5 text-white">

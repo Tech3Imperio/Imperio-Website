@@ -16,7 +16,6 @@ const App: React.FC = () => {
     const updateFavicon = () => setFaviconUrl(getFaviconPath(matcher.matches));
     updateFavicon();
     matcher.addEventListener("change", updateFavicon);
-
     return () => {
       matcher.removeEventListener("change", updateFavicon);
     };
