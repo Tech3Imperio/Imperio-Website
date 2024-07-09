@@ -77,7 +77,7 @@ export const Footer = () => {
                   width="24"
                   height="20"
                   viewBox="0 0 24 20"
-                  className="w-3 tablet:w-6 h-[0.68rem] tablet:h-5"
+                  className="w-3 tablet:w-6 h-[0.70rem] tablet:h-5"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
