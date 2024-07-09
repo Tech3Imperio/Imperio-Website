@@ -52,15 +52,61 @@ const MemoProducts: React.FC = () => {
           subHeader="Discover the perfect blend of safety and sophistication with Imperio's glass railing systems."
           curve
         />
-        <section className="pb-24">
-          {productSections.map((section, index) => (
-            <ProductPanel
-              key={index}
-              header={section.header}
-              productDetail={section.products}
-            />
-          ))}
-        </section>
+        <main>
+          <h1 className=" text-[2.25rem] phone:text-[2.5rem] tablet:text-[2.75rem] laptop:text-5xl text-[--third] font-normal">
+            Base
+          </h1>
+          <section className="grid gap-10 xl:gap-20 py-2 phone:py-4 tablet:py-8 laptop:py-16 grid-cols-2 xl:grid-cols-4 justify-items-center">
+            <div className=" max-w-64 max-h-72 h-72 flex flex-col items-center rounded-xl overflow-hidden group shadow-sm hover:shadow-none cursor-pointer transition-700 outline-none">
+              <div className=" relative overflow-hidden w-full h-full">
+                <div className=" absolute h-full p-5 text-white bg-gradient-to-r from-black to-black z-10 flex flex-col justify-center opacity-0 group-hover:opacity-70 transition-700 ">
+                  <img
+                    src="https://i.postimg.cc/8PwYtjPT/IMPERIO-A50-BLACK.jpg"
+                    alt="A50 Image"
+                    title="A50 Image"
+                    className="w-full h-full object-cover group-hover:scale-x-[-1] transition-700"
+                  ></img>
+                </div>
+              </div>
+            </div>
+            <div className=" max-w-64 max-h-72 h-72 flex flex-col items-center rounded-xl overflow-hidden group shadow-sm hover:shadow-none cursor-pointer transition-700 outline-none">
+              <div className=" relative overflow-hidden w-full h-full">
+                <div className=" absolute h-full p-5 text-white bg-gradient-to-r from-black to-black z-10 flex flex-col justify-center opacity-0 group-hover:opacity-70 transition-700 ">
+                  <img
+                    src="https://i.postimg.cc/8PwYtjPT/IMPERIO-A50-BLACK.jpg"
+                    alt="A50 Image"
+                    title="A50 Image"
+                    className="w-full h-full object-cover group-hover:scale-x-[-1] transition-700"
+                  ></img>
+                </div>
+              </div>
+            </div>
+            <div className=" max-w-64 max-h-72 h-72 flex flex-col items-center rounded-xl overflow-hidden group shadow-sm hover:shadow-none cursor-pointer transition-700 outline-none">
+              <div className=" relative overflow-hidden w-full h-full">
+                <div className=" absolute h-full p-5 text-white bg-gradient-to-r from-black to-black z-10 flex flex-col justify-center opacity-0 group-hover:opacity-70 transition-700 ">
+                  <img
+                    src="https://i.postimg.cc/8PwYtjPT/IMPERIO-A50-BLACK.jpg"
+                    alt="A50 Image"
+                    title="A50 Image"
+                    className="w-full h-full object-cover group-hover:scale-x-[-1] transition-700"
+                  ></img>
+                </div>
+              </div>
+            </div>
+            <div className=" max-w-64 max-h-72 h-72 flex flex-col items-center rounded-xl overflow-hidden group shadow-sm hover:shadow-none cursor-pointer transition-700 outline-none">
+              <div className=" relative overflow-hidden w-full h-full">
+                <div className=" absolute h-full p-5 text-white bg-gradient-to-r from-black to-black z-10 flex flex-col justify-center opacity-0 group-hover:opacity-70 transition-700 ">
+                  <img
+                    src="https://i.postimg.cc/8PwYtjPT/IMPERIO-A50-BLACK.jpg"
+                    alt="A50 Image"
+                    title="A50 Image"
+                    className="w-full h-full object-cover group-hover:scale-x-[-1] transition-700"
+                  ></img>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
       </div>
     );
   }
