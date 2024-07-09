@@ -59,7 +59,6 @@ export const Footer = () => {
             </p>
           </div>
           <form onSubmit={handleSubmit}>
-            {" "}
             {/* Form to handle phone number submission */}
             <div className="flex text-[0.5rem] phone:text-xs tablet:text-sm laptop:text-base group">
               <input
@@ -68,7 +67,7 @@ export const Footer = () => {
                 value={value}
                 onChange={handleChange}
                 placeholder="Whatsapp -> +91 0123456789"
-                className="border-2 border-white rounded-l-full p-[0.65rem] tablet:p-4 pl-3 tablet:pl-6 max-tablet:h-8 w-40 phone:w-[13rem] tablet:w-[17rem] laptop:w-80 transition-700 group-hover:border-[--secound] group-focus-within:border-[--secound] outline-none"
+                className="border-2 border-white bg-[--black] rounded-l-full p-[0.65rem] tablet:p-4 pl-3 tablet:pl-6 max-tablet:h-8 w-40 phone:w-[13rem] tablet:w-[17rem] laptop:w-80 transition-700 group-hover:border-[--secound] group-focus-within:border-[--secound] outline-none"
               />
               <button
                 type="submit"

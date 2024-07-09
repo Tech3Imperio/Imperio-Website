@@ -132,7 +132,7 @@ const MemoProduct: React.FC = () => {
           {productData["Product Name"] + " " + productData["Product Code"]}
         </h1>
       </header>
-      <section className="xl:h-[71vh] flex justify-between max-xl:flex-col max-xl:gap-6">
+      <section className="xl:h-screen  flex justify-between max-xl:flex-col max-xl:gap-6">
         <aside className="flex flex-col justify-between gap-4 w-full xl:w-[18%] overflow-hidden max-xl:order-3">
           <div className="flex flex-col text-base gap-2 justify-center">
             {featureData.current.map((item, index) => (
@@ -178,9 +178,9 @@ const MemoProduct: React.FC = () => {
               title={imageData[0].alt}
             />
           </div> */}
-          <div className="max-h-[70vh] max-w-[100vw] xl:max-h-[40.5rem] xl:max-w-[40.5rem] rounded-4xl overflow-hidden">
+          <div className="max-h-[70vh] max-w-[100vw] xl:h-[40.5rem] xl:w-[40.5rem] rounded-4xl overflow-hidden">
             <img
-              className="min-h-[38vh]  xl:min-h-[40.5rem] xl:min-w-[40.5rem] object-cover object-center"
+              className="object-cover object-center"
               src={imageData[0].img}
               alt={imageData[0].alt}
               title={imageData[0].alt}
@@ -199,7 +199,7 @@ const MemoProduct: React.FC = () => {
             <ExpandableText maxLength={100} className="text-[--third]">
               {productData["Short Description"]}
             </ExpandableText>
-            <BlackButton className="hidden xl:block">
+            <BlackButton className="hidden xl:block" path="/products">
               View other products
             </BlackButton>
           </div>
