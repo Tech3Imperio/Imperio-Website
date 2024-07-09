@@ -43,7 +43,18 @@ const MemoProducts: React.FC = () => {
   }, [data, error, loading, dataBuilder]);
 
   if (problem) {
-    return <div>Loading....</div>;
+    return (
+      <div>
+        <Hero
+          img={productImage}
+          altText="Hero image for product"
+          header="Our Products"
+          subHeader="Discover the perfect blend of safety and sophistication with Imperio's glass railing systems."
+          curve
+        />
+        <h3 className=" text-2xl text-[--third]">Base</h3>
+      </div>
+    );
   }
 
   return (
