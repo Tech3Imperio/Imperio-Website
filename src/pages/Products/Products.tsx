@@ -52,7 +52,7 @@ const MemoProducts: React.FC = () => {
           subHeader="Discover the perfect blend of safety and sophistication with Imperio's glass railing systems."
           curve
         />
-        <main>
+        {/* <main>
           <section className=" pb-24">
             <div className="pt-5 phone:pt-12 laptop:pt-24 px-4 phone:px-8 tablet:px-16 laptop:px-24 xl:px-32 2xl:px-44">
               <h1 className=" px-5 text-[2.25rem] phone:text-[2.5rem] tablet:text-[2.75rem] laptop:text-5xl text-[--third] font-normal">
@@ -110,7 +110,7 @@ const MemoProducts: React.FC = () => {
               </div>
             </div>
           </section>
-        </main>
+        </main> */}
       </div>
     );
   }
