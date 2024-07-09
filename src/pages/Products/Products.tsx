@@ -53,55 +53,59 @@ const MemoProducts: React.FC = () => {
           curve
         />
         <main>
-          <h1 className=" text-[2.25rem] phone:text-[2.5rem] tablet:text-[2.75rem] laptop:text-5xl text-[--third] font-normal">
-            Base
-          </h1>
-          <section className="grid gap-10 xl:gap-20 py-2 phone:py-4 tablet:py-8 laptop:py-16 grid-cols-2 xl:grid-cols-4 justify-items-center">
-            <div className=" max-w-64 max-h-72 h-72 flex flex-col items-center rounded-xl overflow-hidden group shadow-sm hover:shadow-none cursor-pointer transition-700 outline-none">
-              <div className=" relative overflow-hidden w-full h-full">
-                <div className=" absolute h-full p-5 text-white bg-gradient-to-r from-black to-black z-10 flex flex-col justify-center opacity-0 group-hover:opacity-70 transition-700 ">
-                  <img
-                    src="https://i.postimg.cc/8PwYtjPT/IMPERIO-A50-BLACK.jpg"
-                    alt="A50 Image"
-                    title="A50 Image"
-                    className="w-full h-full object-cover group-hover:scale-x-[-1] transition-700"
-                  ></img>
+          <section className=" pb-24">
+            <div className="pt-5 phone:pt-12 laptop:pt-24 px-4 phone:px-8 tablet:px-16 laptop:px-24 xl:px-32 2xl:px-44">
+              <h1 className=" px-5 text-[2.25rem] phone:text-[2.5rem] tablet:text-[2.75rem] laptop:text-5xl text-[--third] font-normal">
+                Base
+              </h1>
+              <div className="grid gap-10 xl:gap-20 py-2 phone:py-4 tablet:py-8 laptop:py-16 grid-cols-2 xl:grid-cols-4 justify-items-center">
+                <div className=" max-w-60 max-h-64 h-64 flex flex-col items-center rounded-xl overflow-hidden group shadow-sm hover:shadow-none cursor-pointer transition-700 outline-none">
+                  <div className=" relative overflow-hidden w-full h-full">
+                    <div className=" absolute h-full p-5 text-white bg-gradient-to-r from-black to-black z-10 flex flex-col justify-center opacity-0 group-hover:opacity-70 transition-700 ">
+                      <img
+                        src="https://i.postimg.cc/8PwYtjPT/IMPERIO-A50-BLACK.jpg"
+                        alt="A50 Image"
+                        title="A50 Image"
+                        className="w-full h-full object-cover group-hover:scale-x-[-1] transition-700"
+                      ></img>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className=" max-w-64 max-h-72 h-72 flex flex-col items-center rounded-xl overflow-hidden group shadow-sm hover:shadow-none cursor-pointer transition-700 outline-none">
-              <div className=" relative overflow-hidden w-full h-full">
-                <div className=" absolute h-full p-5 text-white bg-gradient-to-r from-black to-black z-10 flex flex-col justify-center opacity-0 group-hover:opacity-70 transition-700 ">
-                  <img
-                    src="https://i.postimg.cc/8PwYtjPT/IMPERIO-A50-BLACK.jpg"
-                    alt="A50 Image"
-                    title="A50 Image"
-                    className="w-full h-full object-cover group-hover:scale-x-[-1] transition-700"
-                  ></img>
+                <div className=" max-w-64 max-h-72 h-72 flex flex-col items-center rounded-xl overflow-hidden group shadow-sm hover:shadow-none cursor-pointer transition-700 outline-none">
+                  <div className=" relative overflow-hidden w-full h-full">
+                    <div className=" absolute h-full p-5 text-white bg-gradient-to-r from-black to-black z-10 flex flex-col justify-center opacity-0 group-hover:opacity-70 transition-700 ">
+                      <img
+                        src="https://i.postimg.cc/8PwYtjPT/IMPERIO-A50-BLACK.jpg"
+                        alt="A50 Image"
+                        title="A50 Image"
+                        className="w-full h-full object-cover group-hover:scale-x-[-1] transition-700"
+                      ></img>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className=" max-w-64 max-h-72 h-72 flex flex-col items-center rounded-xl overflow-hidden group shadow-sm hover:shadow-none cursor-pointer transition-700 outline-none">
-              <div className=" relative overflow-hidden w-full h-full">
-                <div className=" absolute h-full p-5 text-white bg-gradient-to-r from-black to-black z-10 flex flex-col justify-center opacity-0 group-hover:opacity-70 transition-700 ">
-                  <img
-                    src="https://i.postimg.cc/8PwYtjPT/IMPERIO-A50-BLACK.jpg"
-                    alt="A50 Image"
-                    title="A50 Image"
-                    className="w-full h-full object-cover group-hover:scale-x-[-1] transition-700"
-                  ></img>
+                <div className=" max-w-64 max-h-72 h-72 flex flex-col items-center rounded-xl overflow-hidden group shadow-sm hover:shadow-none cursor-pointer transition-700 outline-none">
+                  <div className=" relative overflow-hidden w-full h-full">
+                    <div className=" absolute h-full p-5 text-white bg-gradient-to-r from-black to-black z-10 flex flex-col justify-center opacity-0 group-hover:opacity-70 transition-700 ">
+                      <img
+                        src="https://i.postimg.cc/8PwYtjPT/IMPERIO-A50-BLACK.jpg"
+                        alt="A50 Image"
+                        title="A50 Image"
+                        className="w-full h-full object-cover group-hover:scale-x-[-1] transition-700"
+                      ></img>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className=" max-w-64 max-h-72 h-72 flex flex-col items-center rounded-xl overflow-hidden group shadow-sm hover:shadow-none cursor-pointer transition-700 outline-none">
-              <div className=" relative overflow-hidden w-full h-full">
-                <div className=" absolute h-full p-5 text-white bg-gradient-to-r from-black to-black z-10 flex flex-col justify-center opacity-0 group-hover:opacity-70 transition-700 ">
-                  <img
-                    src="https://i.postimg.cc/8PwYtjPT/IMPERIO-A50-BLACK.jpg"
-                    alt="A50 Image"
-                    title="A50 Image"
-                    className="w-full h-full object-cover group-hover:scale-x-[-1] transition-700"
-                  ></img>
+                <div className=" max-w-64 max-h-72 h-72 flex flex-col items-center rounded-xl overflow-hidden group shadow-sm hover:shadow-none cursor-pointer transition-700 outline-none">
+                  <div className=" relative overflow-hidden w-full h-full">
+                    <div className=" absolute h-full p-5 text-white bg-gradient-to-r from-black to-black z-10 flex flex-col justify-center opacity-0 group-hover:opacity-70 transition-700 ">
+                      <img
+                        src="https://i.postimg.cc/8PwYtjPT/IMPERIO-A50-BLACK.jpg"
+                        alt="A50 Image"
+                        title="A50 Image"
+                        className="w-full h-full object-cover group-hover:scale-x-[-1] transition-700"
+                      ></img>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
