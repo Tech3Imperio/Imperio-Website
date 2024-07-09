@@ -52,7 +52,15 @@ const MemoProducts: React.FC = () => {
           subHeader="Discover the perfect blend of safety and sophistication with Imperio's glass railing systems."
           curve
         />
-        <h3 className=" text-2xl text-[--third]">Base</h3>
+        <section className="pb-24">
+          {productSections.map((section, index) => (
+            <ProductPanel
+              key={index}
+              header={section.header}
+              productDetail={section.products}
+            />
+          ))}
+        </section>
       </div>
     );
   }

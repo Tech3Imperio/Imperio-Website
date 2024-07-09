@@ -123,7 +123,7 @@ const MemoProduct: React.FC = () => {
   };
 
   return (
-    <main className="py-4 px-12 tablet:px-32 xl:px-44">
+    <main className="py-4 px-12 pb-28 tablet:px-32 xl:px-44">
       <header className="pb-8">
         <h3 className="YellowText text-[1.75rem] tablet:text-4xl xl:text-[2.5rem]">
           {productData["Product Category"]}
@@ -132,7 +132,7 @@ const MemoProduct: React.FC = () => {
           {productData["Product Name"] + " " + productData["Product Code"]}
         </h1>
       </header>
-      <section className="xl:h-screen  flex justify-between max-xl:flex-col max-xl:gap-6">
+      <section className="xl:h-[75vh]  flex justify-between max-xl:flex-col max-xl:gap-6">
         <aside className="flex flex-col justify-between gap-4 w-full xl:w-[18%] overflow-hidden max-xl:order-3">
           <div className="flex flex-col text-base gap-2 justify-center">
             {featureData.current.map((item, index) => (
@@ -180,7 +180,7 @@ const MemoProduct: React.FC = () => {
           </div> */}
           <div className="max-h-[70vh] max-w-[100vw] xl:h-[40.5rem] xl:w-[40.5rem] rounded-4xl overflow-hidden">
             <img
-              className="object-cover object-center"
+              className=" min-w-full min-h-full object-cover object-center"
               src={imageData[0].img}
               alt={imageData[0].alt}
               title={imageData[0].alt}
