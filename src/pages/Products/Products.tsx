@@ -52,40 +52,7 @@ const MemoProducts: React.FC = () => {
           subHeader="Discover the perfect blend of safety and sophistication with Imperio's glass railing systems."
           curve
         />
-        <div className=" flex tablet:flex-col laptop:flex-row xl:flex-row py-10">
-          <div className=" h-[150px] w-[150px] rounded-md">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc2dcXOTB1AuIDs16YLNb0SpYRkcu6efui-A&s"
-              alt="A50"
-              height={100}
-              width={100}
-            />
-          </div>
-          <div className=" h-[150px] w-[150px] rounded-md">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc2dcXOTB1AuIDs16YLNb0SpYRkcu6efui-A&s"
-              alt="L50"
-              height={100}
-              width={100}
-            />
-          </div>
-          <div className=" h-[150px] w-[150px] rounded-md">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc2dcXOTB1AuIDs16YLNb0SpYRkcu6efui-A&s"
-              alt="D55"
-              height={100}
-              width={100}
-            />
-          </div>
-          <div className=" h-[150px] w-[150px] rounded-md">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc2dcXOTB1AuIDs16YLNb0SpYRkcu6efui-A&s"
-              alt="A50"
-              height={100}
-              width={100}
-            />
-          </div>
-        </div>
+        <div className="h-[8rem] w-[8rem] border rounded-full justify-center flex items-center border-black animate-spin"></div>
       </div>
     );
   }
