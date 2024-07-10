@@ -10,6 +10,7 @@ import {
   About,
   Contact,
 } from "./pages";
+import { ThankYou } from "./pages/Getquote/ThankYou/Thankyou";
 
 export const routes = createBrowserRouter([
   {
@@ -27,6 +28,7 @@ export const routes = createBrowserRouter([
         element: <Product />,
       },
       { path: "quote", element: <GetQuote /> },
+      { path: "quote/thanks", element: <ThankYou /> },
       { path: "*", element: <NotFound /> },
     ],
   },

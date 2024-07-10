@@ -1,6 +1,7 @@
 import React from "react";
 import { QuoteFormProps } from "../../../types";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 // Functional component QuoteForm with props destructuring
 export const QuoteForm: React.FC<QuoteFormProps> = ({
@@ -84,7 +85,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
             type="submit"
             className="py-4 laptop:py-6 px-6 laptop:px-9 text-base laptop:text-lg font-semibold text-white bg-[--black] hover:text-[--black] hover:bg-[--secound] transition-500 rounded-full flex justify-center gap-2"
           >
-            GET THE ESTIMATE
+            <Link to="/quote/thanks">GET THE ESTIMATE</Link>
             <FaArrowRight className="text-xl laptop:text-2xl" />
           </button>
         </aside>
