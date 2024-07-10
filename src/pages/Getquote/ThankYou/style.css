@@ -33,25 +33,6 @@
   font-weight: 600;
   color: #f5ce02;
 }
-
-/* .home-btn {
-  padding: 10px 20px;
-  border-radius: 30px;
-  color: white;
-  background-color: #004aad;
-  border: 2px solid white;
-  font-size: large;
-  margin: 20px;
-  cursor: pointer;
-  transition: all 0.5s ease-in-out;
-} */
-
-/* .home-btn:hover {
-  border-color: #004aad;
-  color: #004aad;
-  background-color: white;
-} */
-
 .issue-msg {
   color: rgb(12, 12, 12);
   text-align: center;
