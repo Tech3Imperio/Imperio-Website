@@ -85,6 +85,14 @@ const MemoProducts: React.FC = () => {
               width={100}
             />
           </div>
+          <div className=" h-[150px] w-[150px] rounded-md">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc2dcXOTB1AuIDs16YLNb0SpYRkcu6efui-A&s"
+              alt="A50"
+              height={100}
+              width={100}
+            />
+          </div>
         </div>
       </div>
     );
