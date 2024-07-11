@@ -67,7 +67,7 @@ const MemoProducts: React.FC = () => {
           subHeader="Discover the perfect blend of safety and sophistication with Imperio's glass railing systems."
           curve
         />
-        <div className="flex flex-col items-center justify-center min-h-screen mb-[5rem]">
+        <div className="flex flex-col items-center justify-center min-h-screen -mt-[5rem]">
           <div className="w-[8rem] h-[8rem] border-8 border-gray-200 border-t-blue-500 rounded-full animate-spin"></div>
           <div className="mt-4 text-2xl">Loading...</div>
           {countdown > 0 && <div className="mt-2 text-xl">{countdown}</div>}
