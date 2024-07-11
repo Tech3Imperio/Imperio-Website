@@ -6,6 +6,7 @@ import { useEffect, useState, useCallback } from "react";
 import { ProductProps, ProductSection } from "../../types";
 import { getLocalStorageItem, setLocalStorageItem } from "../../utils";
 import { Product } from "./Product/Product";
+import "./style.css";
 
 const MemoProducts: React.FC = () => {
   const { data, error, loading } = useProduct(
@@ -21,6 +22,16 @@ const MemoProducts: React.FC = () => {
       products: data.filter((item) => item["Product Category"] === header),
     }));
   }, []);
+  const [countdown, setCountdown] = useState(15);
+  useEffect(() => {
+    if (countdown > 0) {
+      const timer = setInterval(() => {
+        setCountdown((prevCountdown) => prevCountdown - 1);
+      }, 1000);
+
+      return () => clearInterval(timer);
+    }
+  }, [countdown]);
 
   useEffect(() => {
     const localData = getLocalStorageItem<ProductProps[]>("ProductData");
@@ -52,7 +63,11 @@ const MemoProducts: React.FC = () => {
           subHeader="Discover the perfect blend of safety and sophistication with Imperio's glass railing systems."
           curve
         />
-        <div className="h-[8rem] w-[8rem] border rounded-full justify-center flex items-center border-black animate-spin"></div>
+        <div className="flex flex-col items-center justify-center min-h-screen">
+          <div className="w-[8rem] h-[8rem] border-8 border-gray-200 border-t-blue-500 rounded-full animate-spin"></div>
+          <div className="mt-4 text-2xl">Loading...</div>
+          {countdown > 0 && <div className="mt-2 text-xl">{countdown}</div>}
+        </div>
       </div>
     );
   }

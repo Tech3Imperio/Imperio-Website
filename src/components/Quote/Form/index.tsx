@@ -85,7 +85,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
             type="submit"
             className="py-4 laptop:py-6 px-6 laptop:px-9 text-base laptop:text-lg font-semibold text-white bg-[--black] hover:text-[--black] hover:bg-[--secound] transition-500 rounded-full flex justify-center gap-2"
           >
-            <Link to="/quote/thanks">GET THE ESTIMATE</Link>
+            GET THE ESTIMATE
             <FaArrowRight className="text-xl laptop:text-2xl" />
           </button>
         </aside>
