@@ -220,6 +220,8 @@
 
 // export const Product = React.memo(MemoProduct);
 
+// Image swiper in phone open code
+
 // import React, { useEffect, useRef, useCallback, useState } from "react";
 // import { useLocation } from "react-router-dom";
 // import { GoChevronLeft, GoChevronRight } from "react-icons/go";
@@ -279,6 +281,9 @@
 //   const [imageData, setImageData] = useState<ImageData[]>([]);
 //   const featureData = useRef<FeatureData[]>([]);
 
+//   const swipeRef = useRef<HTMLDivElement>(null);
+//   const startXRef = useRef<number | null>(null);
+
 //   const processData = useCallback(() => {
 //     if (productData) {
 //       const altTextArray = productData["Alternative text for other image"]
@@ -318,9 +323,24 @@
 //     processData();
 //   }, [processData]);
 
-//   if (!productData || !imageData.length) {
-//     return <div>Loading...</div>;
-//   }
+//   const handleSwipeStart = (e: React.TouchEvent<HTMLDivElement>) => {
+//     startXRef.current = e.touches[0].clientX;
+//   };
+
+//   const handleSwipeEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+//     if (startXRef.current && swipeRef.current) {
+//       const endX = e.changedTouches[0].clientX;
+//       const deltaX = endX - startXRef.current;
+
+//       if (deltaX > 50) {
+//         handleLeftClick();
+//       } else if (deltaX < -50) {
+//         handleRightClick();
+//       }
+
+//       startXRef.current = null;
+//     }
+//   };
 
 //   const handleLeftClick = () => {
 //     setImageData((prev) => {
@@ -344,6 +364,13 @@
 //     });
 //   };
 
+//   if (!productData || !imageData.length) {
+//     return <div>Loading...</div>;
+//   }
+
+//   // Determine if current device is mobile
+//   const isMobile = window.innerWidth < 768;
+
 //   return (
 //     <main className="py-4 px-12 pb-28 tablet:px-32 xl:px-44">
 //       <header className="pb-8">
@@ -359,10 +386,7 @@
 //           <div className="flex flex-col text-sm gap-2 justify-center">
 //             {featureData.current.map((item, index) => (
 //               <div key={index} className="flex flex-col gap-3">
-//                 <item.icon
-//                   size={window.innerWidth < 700 ? 24 : 36}
-//                   color="#03247b"
-//                 />
+//                 <item.icon size={isMobile ? 24 : 36} color="#03247b" />
 //                 <p className="text-sm font-semibold lg:text-[13px]">
 //                   {item.feature.toUpperCase()}
 //                 </p>
@@ -387,32 +411,33 @@
 //             />
 //           </div>
 //         </aside>
-//         <center className="flex w-screen  max-tablet:-mx-12 max-laptop:-mx-32 max-xl:mb-6 xl:w-[47.5rem] justify-between items-center text-2xl max-xl:order-1">
-//           <GoChevronLeft
-//             className="cursor-pointer lg:ml-3 text-8xl tablet:text-3xl laptop:text-3xl"
-//             onClick={handleLeftClick}
-//           />
-//           {/* <div className="max-h-[70vh] max-w-[70vw] rounded-4xl xl:max-h-[40.5rem] xl:max-w-[40.5rem] overflow-hidden">
-//             <img
-//               className="w-full h-full object-cover object-center"
-//               src={imageData[0].img}
-//               alt={imageData[0].alt}
-//               title={imageData[0].alt}
+//         <div
+//           ref={swipeRef}
+//           onTouchStart={handleSwipeStart}
+//           onTouchEnd={handleSwipeEnd}
+//           className="center flex w-screen  max-tablet:-mx-12 max-laptop:-mx-32 max-xl:mb-6 xl:w-[47.5rem] justify-between items-center text-2xl max-xl:order-1"
+//         >
+//           {!isMobile && (
+//             <GoChevronLeft
+//               className="cursor-pointer lg:ml-3 text-8xl tablet:text-3xl laptop:text-3xl"
+//               onClick={handleLeftClick}
 //             />
-//           </div> */}
-//           <div className="max-h-[75vh] max-w-[100vw] xl:h-[100%] xl:w-[69%] rounded-4xl overflow-hidden">
+//           )}
+//           <div className="max-h-[75vh] max-w-full xl:h-[100%] xl:w-[69%] rounded-4xl overflow-hidden">
 //             <img
-//               className=" min-w-full min-h-full object-cover object-center"
+//               className="min-h-full min-w-full object-cover object-center"
 //               src={imageData[0].img}
 //               alt={imageData[0].alt}
 //               title={imageData[0].alt}
 //             />
 //           </div>
-//           <GoChevronRight
-//             className="cursor-pointer text-8xl tablet:text-3xl laptop:text-3xl"
-//             onClick={handleRightClick}
-//           />
-//         </center>
+//           {!isMobile && (
+//             <GoChevronRight
+//               className="cursor-pointer text-8xl tablet:text-3xl laptop:text-3xl"
+//               onClick={handleRightClick}
+//             />
+//           )}
+//         </div>
 //         <aside className="flex flex-col gap-4 w-full xl:w-[20%] overflow-hidden justify-between max-xl:order-2">
 //           <div className="flex flex-col gap-6 xl:gap-8">
 //             <h1 className="text-[--third] Raleway text-2xl block xl:hidden">
@@ -441,6 +466,8 @@
 // };
 
 // export const Product = React.memo(MemoProduct);
+
+// image swiper close
 
 import React, { useEffect, useRef, useCallback, useState } from "react";
 import { useLocation } from "react-router-dom";
@@ -601,7 +628,7 @@ const MemoProduct: React.FC = () => {
           {productData["Product Name"] + " " + productData["Product Code"]}
         </h1>
       </header>
-      <section className="xl:h-[80vh]  flex justify-between max-xl:flex-col max-xl:gap-6">
+      <section className="xl:h-[80vh] flex justify-between max-xl:flex-col max-xl:gap-6">
         <aside className="flex flex-col justify-between gap-4 w-full xl:w-[18%] overflow-hidden max-xl:order-3">
           <div className="flex flex-col text-sm gap-2 justify-center">
             {featureData.current.map((item, index) => (
@@ -635,7 +662,7 @@ const MemoProduct: React.FC = () => {
           ref={swipeRef}
           onTouchStart={handleSwipeStart}
           onTouchEnd={handleSwipeEnd}
-          className="center flex w-screen  max-tablet:-mx-12 max-laptop:-mx-32 max-xl:mb-6 xl:w-[47.5rem] justify-between items-center text-2xl max-xl:order-1"
+          className="center flex w-screen max-tablet:-mx-12 max-laptop:-mx-32 max-xl:mb-6 xl:w-[47.5rem] justify-between items-center text-2xl max-xl:order-1"
         >
           {!isMobile && (
             <GoChevronLeft
@@ -643,9 +670,9 @@ const MemoProduct: React.FC = () => {
               onClick={handleLeftClick}
             />
           )}
-          <div className="max-h-[75vh] max-w-full xl:h-[100%] xl:w-[69%] rounded-4xl overflow-hidden">
+          <div className="middle-image-container xl:max-h-[75vh] xl:max-w-[33vw] xl:h-[40.5rem] xl:w-[40.5rem] rounded-4xl overflow-hidden">
             <img
-              className="min-h-full min-w-full object-cover object-center"
+              className="middle-image rounded-4xl"
               src={imageData[0].img}
               alt={imageData[0].alt}
               title={imageData[0].alt}
