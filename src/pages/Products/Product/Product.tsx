@@ -400,7 +400,7 @@ const MemoProduct: React.FC = () => {
               title={imageData[0].alt}
             />
           </div> */}
-          <div className="max-h-[75vh] max-w-[38vw] xl:h-[40.5rem] xl:w-[40.5rem] rounded-4xl overflow-hidden">
+          <div className="max-h-[75vh] max-w-[32vw] xl:h-[40.5rem] xl:w-[40.5rem] rounded-4xl overflow-hidden">
             <img
               className=" min-w-full min-h-full object-cover object-center"
               src={imageData[0].img}
