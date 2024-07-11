@@ -229,7 +229,7 @@ export const Home: React.FC = () => {
         text="With innovative designs, our products redefine modern spaces. Explore today."
         black
       >
-        {isDesktop ? (
+        {/* {isDesktop ? (
           <div className="flex justify-center px-10 phone:px-6 tablet:px-10 laptop:px-20 py-12 gap-32 items-center">
             <VerticalCarousel direction className="max-w-[40%] h-fit">
               {scrollData.map((item) => (
@@ -276,7 +276,67 @@ export const Home: React.FC = () => {
               </div>
             ))}
           </HorizontalCarousel>
+        )} */}
+
+        {isDesktop ? (
+          <div className="flex justify-center px-10 phone:px-6 tablet:px-10 laptop:px-20 py-12 gap-32 items-center h-fit">
+            <VerticalCarousel direction className="max-w-[40%]">
+              {scrollData.map((item) => (
+                <div key={item.img} className="aspect-w-1 aspect-h-1">
+                  <img
+                    src={item.img}
+                    alt={item.alt}
+                    className="rounded-4xl object-cover"
+                    title={item.alt}
+                  />
+                </div>
+              ))}
+            </VerticalCarousel>
+            <VerticalCarousel className="w-[60%]">
+              {scrollData.map((item, index) => (
+                <div key={index}>
+                  <div className="flex items-center gap-5 text-white">
+                    <h1 className="text-8xl laptop:text-6xl">{index + 1}.</h1>
+                    <div className="flex flex-col gap-5">
+                      <h1 className="Raleway text-5xl laptop:text-4xl">
+                        {item.header}
+                      </h1>
+                      <p className="text-2xl w-[38rem] laptop:w-[30rem] laptop:text-xl">
+                        {item.subheader}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </VerticalCarousel>
+          </div>
+        ) : (
+          <HorizontalCarousel className="pb-12">
+            {scrollData.map((item, index) => (
+              <div className="space-y-8" key={index}>
+                <div className="aspect-w-1 aspect-h-1">
+                  <img
+                    src={item.img}
+                    alt={item.alt}
+                    title={item.alt}
+                    className="rounded-4xl object-cover"
+                  />
+                </div>
+                <div className="flex flex-col text-white">
+                  <h1 className="text-4xl laptop:text-3xl">{index + 1}.</h1>
+                  <h1 className="Raleway text-[1.75rem] laptop:text-[1.5rem]">
+                    {item.header}
+                  </h1>
+                  <p className="text-xs w-11/12 italic laptop:text-sm">
+                    {item.subheader}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </HorizontalCarousel>
         )}
+
+        {/* end */}
       </Description>
       <TextComponent texts={text} />
       <Description
