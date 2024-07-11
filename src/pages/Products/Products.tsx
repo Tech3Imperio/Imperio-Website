@@ -22,7 +22,9 @@ const MemoProducts: React.FC = () => {
       products: data.filter((item) => item["Product Category"] === header),
     }));
   }, []);
-  const [countdown, setCountdown] = useState(15);
+
+  // countdown show after data feaching start
+  const [countdown, setCountdown] = useState(5);
   useEffect(() => {
     if (countdown > 0) {
       const timer = setInterval(() => {
@@ -32,6 +34,8 @@ const MemoProducts: React.FC = () => {
       return () => clearInterval(timer);
     }
   }, [countdown]);
+
+  // countdown show after data feaching end
 
   useEffect(() => {
     const localData = getLocalStorageItem<ProductProps[]>("ProductData");
