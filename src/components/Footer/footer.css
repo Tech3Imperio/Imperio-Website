@@ -1,0 +1,13 @@
+/* Add the following CSS to handle the address container width */
+
+@media (max-width: 1000px) {
+  .address-container p {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1001px) {
+  .address-container p {
+    width: 70%;
+  }
+}

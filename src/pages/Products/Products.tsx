@@ -68,7 +68,8 @@ const MemoProducts: React.FC = () => {
           curve
         />
         <div className="flex flex-col items-center justify-center min-h-screen -mt-[10rem]">
-          <div className="w-[8rem] h-[8rem] border-8 border-gray-200 border-t-blue-500 rounded-full animate-spin"></div>
+          {/* <div className="w-[8rem] h-[8rem] border-8 border-gray-200 border-t-blue-500 rounded-full animate-spin"></div> */}
+          <div className="w-16 h-16 border-t-4 border-b-4 border-blue-500 rounded-full animate-spin"></div>
           <div className="mt-4 text-2xl">Loading...</div>
           {countdown > 0 && <div className="mt-2 text-xl">{countdown}</div>}
         </div>
@@ -96,6 +97,9 @@ const MemoProducts: React.FC = () => {
         ))}
       </section>
       <Quote />
+      {/* <div className="flex justify-center items-center h-screen">
+        <div className="w-16 h-16 border-t-4 border-b-4 border-blue-500 rounded-full animate-spin"></div>
+      </div> */}
     </main>
   );
 };
