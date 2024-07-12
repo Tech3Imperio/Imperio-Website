@@ -236,8 +236,7 @@ export const Footer = () => {
           {/* Social media links and policies for larger screens */}
           <SocialLinks className="flex text-2xl gap-5" />
           <div className="flex gap-4 text-xs">
-            <p>Terms of Use</p>
-            <p>Privacy Policy</p>
+            <p>Terms of Use Privacy Policy</p>
           </div>
         </div>
       </aside>
@@ -261,7 +260,7 @@ export const Footer = () => {
           </div>
         </div>
         <div className="flex gap-4">
-          <IoLocationOutline className="text-[3.3rem] pb-8 -ml-2 phone:text-[3.2rem] tablet:text-[5.3rem] tablet:pl-1 tablet:pb-16 xl:-ml-8 xl:text-[5.5rem]" />{" "}
+          <IoLocationOutline className="text-[3.3rem] pb-8 -ml-2 phone:text-[3.2rem] tablet:text-[5.3rem] tablet:pl-1 tablet:pb-16 xl:-ml-9 xl:text-[5.5rem]" />{" "}
           {/* Location icon */}
           <div className="flex flex-col gap-1 text-xs tablet:text-sm laptop:text-base address-container">
             <h6 className="-ml-2.5 xl:-ml-8  tablet:-ml-2">Headquarters</h6>
