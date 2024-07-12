@@ -24,7 +24,7 @@ const MemoProducts: React.FC = () => {
   }, []);
 
   // countdown show after data feaching start
-  const [countdown, setCountdown] = useState(5);
+  const [countdown, setCountdown] = useState(7);
   useEffect(() => {
     if (countdown > 0) {
       const timer = setInterval(() => {
