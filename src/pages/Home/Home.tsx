@@ -292,7 +292,7 @@ export const Home: React.FC = () => {
                 </div>
               ))}
             </VerticalCarousel>
-            <VerticalCarousel className="w-[60%]">
+            <VerticalCarousel className="w-[50%]">
               {scrollData.map((item, index) => (
                 <div key={index}>
                   <div className="flex items-center gap-5 text-white">
