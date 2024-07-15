@@ -256,7 +256,7 @@ export const Footer = () => {
           {/* Email icon */}
           <div className="flex flex-col gap-1 text-xs tablet:text-sm laptop:text-base">
             <h6>Email</h6>
-            <p>info@imperiorailings.com</p>
+            <p>hello@imperiorailing.com</p>
           </div>
         </div>
         <div className="flex gap-4">

@@ -57,7 +57,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ cards }) => {
   return (
     <section className="mx-4 tablet:mx-12 laptop:mx-24 my-10 phone:my-36 px-3 phone:px-8 tablet:px-14 laptop:px-20 pt-9 phone:pt-14 tablet:pt-16 laptop:pt-24 pb-[25rem] h-80 phone:h-[28rem] tablet:h-[34rem] laptop:h-[40rem] flex flex-col justify-between rounded-4xl bg-[--black] 2xl:overflow-hidden">
       <h1 className="Raleway text-[1.75rem] phone:text-3xl tablet:text-4xl laptop:text-5xl text-white">
-        Client testimonials
+        Esteemed Clients
       </h1>
       <div className="relative flex justify-center w-full">
         {cards.map((card, index) => {
