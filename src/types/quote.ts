@@ -1,4 +1,4 @@
-export type Stage = "Base" | "Handrail" | "Endcap";
+export type Stage = "Base" | "Handrail" | "Glass" | "Height";
 
 export type QuoteData = Record<Stage, string>;
 
@@ -7,7 +7,8 @@ export type StagesContains = Record<Stage, string[]>;
 export type FetchInnerData = {
   Base?: string;
   Handrail?: string;
-  Endcap?: string;
+  Glass?: string;
+  Height?: string;
   Bhampagne: string;
   Sillack: string;
   Cver: string;

@@ -30,10 +30,10 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
       value: value.number,
       pattern: "\\d*", // Pattern to allow only digits
     },
-    { id: "pname", label: "Product Name", type: "text", value: value.pname },
+    { id: "pname", label: "Location", type: "text", value: value.pname },
     {
       id: "quantity",
-      label: "Quantity (ft²)",
+      label: "Quantity (RFT)",
       type: "text",
       value: value.quantity,
     },

@@ -10,7 +10,7 @@ import {
 } from "../../types";
 import { useNavigate } from "react-router-dom";
 
-const stages: Stage[] = ["Base", "Handrail", "Endcap"];
+const stages: Stage[] = ["Base", "Handrail", "Glass", "Height"];
 
 const StageNavigation: React.FC<StageNavigationProps> = ({
   stage,
@@ -45,7 +45,8 @@ export const GetQuote: React.FC = () => {
   const [data, setData] = useState<QuoteData>({
     Base: "A50",
     Handrail: "S17",
-    Endcap: "A50",
+    Glass: "A50",
+    Height: "12mm Toughened",
   });
   const [colors, setColors] = useState([0, 0, 0]);
   const [errors, setErrors] = useState<string[]>([]);
@@ -89,10 +90,15 @@ export const GetQuote: React.FC = () => {
             (data.Handrail !== "None"
               ? " - " + ["Black", "Champagne", "Wood", "Silver"][colors[1]]
               : ""),
-          endcap:
-            data.Endcap +
-            (data.Endcap !== "None"
+          glass:
+            data.Glass +
+            (data.Glass !== "None"
               ? " - " + ["Black", "Champagne", "Wood", "Silver"][colors[2]]
+              : ""),
+          height:
+            data.Height +
+            (data.Height !== "None"
+              ? " - " + ["Black", "Champagne", "Wood", "Silver"][colors[1]]
               : ""),
         }),
       }
