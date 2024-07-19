@@ -15,9 +15,9 @@ export const scrollData = [
     alt: "balcony image",
   },
   {
-    header: "Low Maintenance.",
+    header: "High Durability.",
     subheader:
-      "Our railings are designed to last, requiring minimal upkeep while maintaining their stunning appearance.",
+      "Built to last with robust materials, our glass railing ensures exceptional durability.",
     img: balcony,
     alt: "balcony image",
   },
