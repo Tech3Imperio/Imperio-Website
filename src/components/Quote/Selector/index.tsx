@@ -275,7 +275,7 @@ export const QuoteSelector: React.FC<QuoteSelectorProps> = ({
         );
         newImage = selectedImage[colorKeys[0]]; // Use the first available color image
       } else {
-        const colorKey = ["Black", "Champagne", "Wood", "Silver"][
+        const colorKey = ["Black", "Champagne", "Silver", "Wood"][
           colors[stage]
         ];
         newImage = selectedImage[colorKey as keyof FetchInnerData]; // Get image based on selected color
@@ -341,7 +341,7 @@ export const QuoteSelector: React.FC<QuoteSelectorProps> = ({
           </h2>
           <div className="flex items-center justify-center mt-4">
             <div className="flex items-center space-x-4 text-5xl text-[--secound]">
-              {["#4a4a4a", "#958061", "#a15a3e", "#e3e2dd"].map(
+              {["#e3e2dd", "#958061", "#4a4a4a", "#a15a3e"].map(
                 (colorHex, idx) => (
                   <div
                     key={idx}
@@ -351,7 +351,7 @@ export const QuoteSelector: React.FC<QuoteSelectorProps> = ({
                         : "cursor-not-allowed opacity-50"
                     }`}
                     style={{ backgroundColor: colorHex }}
-                    title={["Black", "Champagne", "Wood", "Silver"][idx]} // Display color options
+                    title={["Black", "Champagne", "Silver", "Wood"][idx]} // Display color options
                     onClick={() => isColorStage && setColor(idx)} // Set selected color if stage allows
                     role="button"
                     aria-pressed={colors[stage] === idx}

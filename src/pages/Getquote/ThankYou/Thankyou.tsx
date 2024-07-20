@@ -66,7 +66,7 @@ export const ThankYou = () => {
           <p className="short-msg">
             Thank you for visiting <span>Imperio Railing Systems</span> website.{" "}
             <br />
-            You will receive an email message shortly.
+            Will contact you within 24 hours.
           </p>
         </div>
         <BlackButton className="w-[12rem] h-[4rem] flex items-center justify-center mt-7">
