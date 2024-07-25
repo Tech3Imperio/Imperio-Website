@@ -12,7 +12,7 @@ export default function WhatsAppChat() {
         avatar={favicon}
         statusMessage="Online"
         chatMessage="Hello there! How can I assist you?"
-        defaultMessage="Hello How can i help you"
+        // defaultMessage="Hello How can i help you"
       />
     </div>
   );
