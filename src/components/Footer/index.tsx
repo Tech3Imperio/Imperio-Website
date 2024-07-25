@@ -359,7 +359,7 @@ export const Footer = () => {
                 name="phoneNumber"
                 value={value}
                 onChange={handleChange}
-                placeholder="Whatsapp -> +91 0123456789"
+                placeholder="Entre Whatsapp +91 0123456789"
                 className="border-2 border-white bg-[--black] rounded-l-full p-[0.65rem] tablet:p-4 pl-3 tablet:pl-6 max-tablet:h-8 w-40 phone:w-[13rem] tablet:w-[17rem] laptop:w-80 transition-700 group-hover:border-[--secound] group-focus-within:border-[--secound] outline-none"
                 disabled={isSubmitting} // Disable input field if submitting
               />

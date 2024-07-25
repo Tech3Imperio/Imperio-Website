@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import { Footer, Navbar } from "./components";
 import { useScrollToTop } from "./hooks";
 import Favicon from "react-favicon";
+import WhatsAppChat from "./pages/WhatsAppChat/WhatsAppChat";
 
 const getFaviconPath = (isDarkMode = false) => {
   return `/favicon-${isDarkMode ? "dark" : "light"}.ico`;
@@ -26,6 +27,7 @@ const App: React.FC = () => {
       <Favicon url={faviconUrl} />
       <Navbar />
       <Outlet />
+      <WhatsAppChat />
       <Footer />
     </>
   );
