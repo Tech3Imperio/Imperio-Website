@@ -282,6 +282,7 @@
 // this code is after data submitt scusessfully then clear input filed and button disable after one time click
 
 import { PopupMessage, SocialLinks } from "../../components"; // Import necessary components
+import { Link } from "react-router-dom";
 import { MdOutlineEmail } from "react-icons/md"; // Import email icon
 import { HiOutlinePhone } from "react-icons/hi2"; // Import phone icon
 import { IoLocationOutline } from "react-icons/io5"; // Import location icon
@@ -393,7 +394,9 @@ export const Footer = () => {
           {/* Social media links and policies for larger screens */}
           <SocialLinks className="flex text-2xl gap-5" />
           <div className="flex gap-4 text-xs">
-            <p>Terms of Use Privacy Policy</p>
+            <p>
+              <Link to="/PrivacyPolicy">Terms of Use Privacy Policy</Link>
+            </p>
           </div>
         </div>
       </aside>

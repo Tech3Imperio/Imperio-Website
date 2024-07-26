@@ -11,6 +11,7 @@ import {
   Contact,
 } from "./pages";
 import { ThankYou } from "./pages/Getquote/ThankYou/Thankyou";
+import { PrivacyPolicy } from "./pages/PrivacyPolicy/PrivacyPolicy";
 
 export const routes = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ export const routes = createBrowserRouter([
       },
       { path: "quote", element: <GetQuote /> },
       { path: "quote/thanks", element: <ThankYou /> },
+      {
+        path: "PrivacyPolicy",
+        element: <PrivacyPolicy />,
+      },
       { path: "*", element: <NotFound /> },
     ],
   },
