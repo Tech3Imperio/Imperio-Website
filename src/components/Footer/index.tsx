@@ -389,7 +389,8 @@ export const Footer = () => {
           </form>
         </div>
 
-        <div className="flex-col text-white hidden laptop:flex">
+        {/* if you want hide terms of use Privacy Policy in phone that time use this code[ className="flex-col text-white hidden laptop:flex" ] */}
+        <div className="flex-col text-white laptop:flex">
           {" "}
           {/* Social media links and policies for larger screens */}
           <SocialLinks className="flex text-2xl gap-5" />
