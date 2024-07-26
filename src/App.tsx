@@ -49,6 +49,7 @@
 // export default App;
 
 // below data is new change in this code
+import "../src/pages/App.css";
 import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Footer, Navbar } from "./components";
@@ -56,6 +57,8 @@ import { useScrollToTop } from "./hooks";
 // import Favicon from "react-favicon";
 import WhatsAppChat from "./pages/WhatsAppChat/WhatsAppChat";
 import { Toaster } from "react-hot-toast";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Ensure this is imported
 
 const getFaviconPath = (isDarkMode = false) => {
   return `/favicon-${isDarkMode ? "dark" : "light"}.ico`;
@@ -78,7 +81,7 @@ const App: React.FC = () => {
     };
   }, []);
 
-  // this is code is right click disable start
+  // Right-click disable code start
   useEffect(() => {
     const handleContextMenu = (e: MouseEvent) => {
       e.preventDefault();
@@ -90,8 +93,24 @@ const App: React.FC = () => {
       document.removeEventListener("contextmenu", handleContextMenu);
     };
   }, []);
-  // this is code is right click disable start
+  // Right-click disable code end
 
+  // Copy disable code start and add also app.css
+  useEffect(() => {
+    const handleCopy = (event: ClipboardEvent) => {
+      event.preventDefault();
+      // toast.error("Copying text is disabled");
+    };
+
+    document.addEventListener("copy", handleCopy);
+
+    return () => {
+      document.removeEventListener("copy", handleCopy);
+    };
+  }, []);
+  // Copy disable code end and add also app.css
+
+  // Favicon update
   useEffect(() => {
     const link = document.createElement("link");
     link.rel = "icon";
@@ -110,6 +129,7 @@ const App: React.FC = () => {
       <Outlet />
       <WhatsAppChat />
       <Footer />
+      <ToastContainer />
     </>
   );
 };
