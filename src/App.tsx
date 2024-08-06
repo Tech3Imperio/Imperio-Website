@@ -162,7 +162,7 @@ import WhatsAppChat from "./pages/WhatsAppChat/WhatsAppChat";
 import { Toaster } from "react-hot-toast";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Ensure this is imported
-import favicon from "../src/assets/Images/logo/favicon.ico";
+import favicondark from "../src/assets/Images/logo/favicondark.ico";
 
 const getFaviconPath = (isDarkMode = false) => {
   return `/favicon-${isDarkMode ? "dark" : "light"}.ico`;
@@ -240,7 +240,7 @@ const App: React.FC = () => {
           content="glass railings, glass balconies, stair railings, glass railing solutions, custom glass railings, home glass railings, building glass railings, modern glass railings, durable glass railings, stylish glass railings, glass railing installations, glass railing company, residential glass railings, commercial glass railings, glass railing designs"
         />
         <meta name="robots" content="index, follow" />
-        <link rel="icon" href={favicon} />
+        <link rel="icon" href={favicondark} />
       </Helmet>
       <Toaster />
       <Navbar />
