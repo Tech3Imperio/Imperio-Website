@@ -6,12 +6,12 @@ import { fileURLToPath } from "url";
 // URLs to include in the sitemap
 const urls = [
   { url: "/", changefreq: "daily", priority: 0.8 },
-  { url: "/aboutus", changefreq: "monthly", priority: 0.8 },
+  { url: "/aboutus", changefreq: "monthly", priority: 0.6 },
   { url: "/products", changefreq: "monthly", priority: 0.8 },
   { url: "/blog", changefreq: "monthly", priority: 0.8 },
-  { url: "/contactus", changefreq: "monthly", priority: 0.8 },
+  { url: "/contactus", changefreq: "monthly", priority: 0.6 },
   { url: "/quote", changefreq: "monthly", priority: 0.8 },
-  { url: "/privacypolicy", changefreq: "monthly", priority: 0.8 },
+  { url: "/privacypolicy", changefreq: "monthly", priority: 0.6 },
   // Add more URLs as needed
 ];
 
