@@ -629,9 +629,9 @@ const MemoProduct: React.FC = () => {
   return (
     <main className="py-4 px-12 pb-28 tablet:px-32 xl:px-44">
       <header className="pb-8">
-        <h3 className="YellowText text-[1.75rem] tablet:text-4xl xl:text-[2.5rem]">
+        <h2 className="YellowText text-[1.75rem] tablet:text-4xl xl:text-[2.5rem]">
           {productData["Product Category"]}
-        </h3>
+        </h2>
         <h1 className="Raleway text-[--third] text-xl tablet:text-[2.8rem] xl:text-xl">
           {productData["Product Name"] + " " + productData["Product Code"]}
         </h1>
@@ -651,9 +651,9 @@ const MemoProduct: React.FC = () => {
               <p className="text-sm font-semibold mt-2 lg:text-sm">
                 SUITABLE FOR GLASS UP TO
               </p>
-              <h5 className="text-5xl text-[--third] lg:text-3xl">
+              <h2 className="text-5xl text-[--third] lg:text-3xl">
                 {productData["Glass Thickness"]}
-              </h5>
+              </h2>
             </div>
           </div>
           <div>

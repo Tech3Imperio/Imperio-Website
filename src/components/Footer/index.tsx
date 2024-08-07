@@ -408,7 +408,7 @@ export const Footer = () => {
           <HiOutlinePhone className="text-lg phone:text-xl tablet:text-2xl laptop:text-base xl:text-xl" />{" "}
           {/* Phone icon */}
           <div className="flex flex-col gap-1 text-xs tablet:text-sm laptop:text-base">
-            <h6>Telephone</h6>
+            <h3>Telephone</h3>
             <p>+91 85919 53385</p>
           </div>
         </div>
@@ -416,7 +416,7 @@ export const Footer = () => {
           <MdOutlineEmail className="text-lg phone:text-xl tablet:text-2xl laptop:text-base xl:text-xl" />{" "}
           {/* Email icon */}
           <div className="flex flex-col gap-1 text-xs tablet:text-sm laptop:text-base">
-            <h6>Email</h6>
+            <h3>Email</h3>
             <p>hello@imperiorailing.com</p>
           </div>
         </div>
@@ -424,7 +424,7 @@ export const Footer = () => {
           <IoLocationOutline className="text-[3.3rem] pb-8 -ml-2 phone:text-[3.2rem] tablet:text-[5.3rem] tablet:pl-1 tablet:pb-16 xl:-ml-9 xl:text-[5.5rem]" />{" "}
           {/* Location icon */}
           <div className="flex flex-col gap-1 text-xs tablet:text-sm laptop:text-base address-container">
-            <h6 className="-ml-2.5 xl:-ml-8  tablet:-ml-2">Headquarters</h6>
+            <h3 className="-ml-2.5 xl:-ml-8  tablet:-ml-2">Headquarters</h3>
             <p className="-ml-2.5 xl:-ml-8  tablet:-ml-2">
               1, Aman Chambers, New Queens Rd, Charni Road, Mumbai Maharashtra -
               400004.

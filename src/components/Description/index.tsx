@@ -23,16 +23,16 @@ export const Description: React.FC<DescProps> = ({
       <div className="flex flex-col tablet:flex-row gap-3 tablet:justify-between">
         <div className="flex flex-col gap-1 tablet:gap-6">
           {/* YellowText class applies styles to yellowText */}
-          <h1 className="YellowText text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
+          <h2 className="YellowText text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
             {yellowText}
-          </h1>
-          <h1
+          </h2>
+          <h3
             className={`${
               black ? "text-white" : "text-[--third]"
             } Raleway tracking-wider w-4/5 tablet:w-11/12 text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] 2xl:text-5xl`}
           >
             {mainHeader}
-          </h1>
+          </h3>
         </div>
         <div
           className={`flex ${

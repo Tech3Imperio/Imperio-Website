@@ -26,7 +26,6 @@ const ImageScroll: React.FC<ImageScrollProps> = ({
 
   return (
     <div ref={scrollRef} className={className}>
-      {" "}
       {/* Container div with scrollRef and optional className */}
       <motion.div
         className="h-max" // Class to set the maximum height
