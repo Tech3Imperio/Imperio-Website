@@ -41,13 +41,13 @@ export const testimonialsData: TestimonialsData[] = [
   },
   {
     id: 3,
-    name: "Divyan kturakhia",
+    name: "Divyank Turakhia",
     add: "Mumbai, India.",
     stars: 5,
     quote:
-      "Divyan Kturakhia Indian billionaire entrepreneur, co-founder of Directi and Media.net, leading in web infrastructure and online advertising.",
+      "Divyank Turakhia Indian billionaire entrepreneur, co-founder of Directi and Media.net, leading in web infrastructure and online advertising.",
     img: divyankturakhia,
-    alt: "alt text",
+    alt: "Divyank Turakhia",
   },
   {
     id: 4,
