@@ -557,7 +557,7 @@ export function PrivacyPolicy() {
             Your continued use of our site after such changes constitutes your
             acceptance of the new terms.
           </p>
-          <h3 className="text-xl text-[#f5ce02] font-bold px-4 sm:px-8 md:px-40 lg:px-[16rem] text-center md:text-left">
+          {/* <h3 className="text-xl text-[#f5ce02] font-bold px-4 sm:px-8 md:px-40 lg:px-[16rem] text-center md:text-left">
             Contact Us
           </h3>
           <p className="px-4 sm:px-8 md:px-40 lg:px-[16rem] p-2 font-normal text-center md:text-left">
@@ -576,7 +576,7 @@ export function PrivacyPolicy() {
           <h3 className="font-normal text-black px-4 sm:px-8 md:px-40 lg:px-[16rem]  text-center md:text-left">
             <b>Address:</b> 1, Aman Chambers, New Queens Rd, Charni Road, Mumbai
             Maharashtra - 400004.
-          </h3>
+          </h3> */}
           <h3 className="text-xl text-[#f5ce02] px-4 sm:px-8 md:px-40 lg:px-[16rem]  p-5 font-semibold text-center md:text-left">
             By using our website, you consent to the terms of this Privacy
             Policy. Thank you for choosing Imperio Railing Systems.
