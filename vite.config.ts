@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   // server: {
   //   proxy: {
-  //     '/dealership': 'http://localhost:3001',
+  //     '/dealerships': 'http://localhost:3001',
   //   },
   // },
 });

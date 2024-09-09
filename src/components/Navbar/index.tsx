@@ -64,15 +64,16 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, handleClick }) => (
         <div className="flex justify-between items-center">
           {/* Social links component */}
           <SocialLinks className="flex justify-center gap-4 text-xs text-white" />
-          {/* Quote button component */}
+          <div className=" flex flex-col gap-8">
+        {/* Dealership button component */}
           <div onClick={handleClick}>
             <DealershipButton />
           </div>
-
+        {/* Quote button component */}
           <div onClick={handleClick}>
             <QuoteButton />
           </div>
-          {/* Dealership button component */}
+          </div>
         </div>
       </div>
     </section>

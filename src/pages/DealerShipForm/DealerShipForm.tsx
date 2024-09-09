@@ -130,7 +130,7 @@ export const DealerShipForm: React.FC = () => {
 
     try {
       const response = await axios.post(
-        `${BASE_URL}/dealership`, // Use the relative path for the proxy
+        `${BASE_URL}/dealerships`, // Use the relative path for the proxy
         formData,
         {
           headers: {
@@ -186,6 +186,26 @@ export const DealerShipForm: React.FC = () => {
   };
 
   return (
+    <>
+    <div>
+    <h2 className="  text-[#03237b] grid justify-start text-3xl mx-auto  px-[2rem] md:text-4xl  md:px-[5rem] lg:px-[8rem] lg:text-5xl xl:text-5xl xl:mx-[10.5rem] pt-12">
+           Why Choose Imperio ?
+         </h2>
+         <p className=" grid justify-center items-center text-[0.800rem] mx-12 md:base md:px-[5rem] lg:text-base lg:px-[12rem] xl:mx-[20rem] xl:ml-[7rem] py-4 text-[#8b939c]">
+           Why Choose Imperio Railing Systems? Imperio Railing Systems is a
+           leading provider of premium glass railings for balconies, terraces,
+           buildings, and staircases, delivering unmatched durability and safety.
+           With top-notch aluminum and high-durable glass, our railings are built
+           to withstand harsh weather conditions while enhancing aesthetics.
+           Available in a variety of colors, our aluminum products are
+           customizable to match your design preferences. We specialize in
+           providing sleek, modern solutions for hotels, residential, and
+           commercial buildings. Imperio offers innovative designs that combine
+           functionality with style, ensuring long-lasting quality and easy
+           maintenance. Choose Imperio for safety, elegance, and durability in
+           every project.
+         </p>
+    </div>
     <div className="p-6 rounded-lg md:mx-12 lg:mx-9 xl:mx-[17rem] overflow-hidden">
       <h2 className=" text-4xl text-[#03237b] text-center md:text-5xl my-6 mx-auto  md:-ml-[12.5rem] lg:-mx-28 xl:-ml-[59rem]">
         Dealer Details Form
@@ -488,5 +508,6 @@ export const DealerShipForm: React.FC = () => {
         </div>
       </form>
     </div>
+    </>
   );
 };

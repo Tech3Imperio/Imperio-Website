@@ -71,7 +71,11 @@ export type QuoteFormData = {
   name: string;
   email: string;
   number: number | string;
-  pname: string;
+  // pname: string;
+  pinCode:number | string;
+  city:string;
+  state:string;
+  location:string;
   quantity: number | string;
 };
 
