@@ -3,7 +3,6 @@ import axios from "axios";
 import { BASE_URL } from "../Service/Api/Api";
 
 export const DealerShipForm: React.FC = () => {
-  
   const [formData, setFormData] = useState({
     fullName: "",
     organizationName: "",
@@ -18,7 +17,7 @@ export const DealerShipForm: React.FC = () => {
     typeOfProductsOrIndustry: "",
     numberOfYearsInBusiness: "",
     HowMuchAmountcanyouinvestindealership: "",
-    Howmuchareacanyouprovidefordisplay:"",
+    Howmuchareacanyouprovidefordisplay: "",
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -73,7 +72,8 @@ export const DealerShipForm: React.FC = () => {
   const validate = (): boolean => {
     const newErrors: Record<string, string> = {};
 
-    if (!formData.fullName.trim()) newErrors.fullName = "Full Name is required.";
+    if (!formData.fullName.trim())
+      newErrors.fullName = "Full Name is required.";
     if (!formData.organizationName.trim())
       newErrors.organizationName = "Organization Name is required.";
     if (!formData.email.trim() || !/\S+@\S+\.\S+/.test(formData.email))
@@ -123,14 +123,14 @@ export const DealerShipForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-  
+
     if (!validate()) return;
-  
+
     setIsLoader(true);
-  
+
     try {
       const response = await axios.post(
-        `${ BASE_URL }/dealership`, // Use the relative path for the proxy
+        `${BASE_URL}/dealership`, // Use the relative path for the proxy
         formData,
         {
           headers: {
@@ -139,7 +139,7 @@ export const DealerShipForm: React.FC = () => {
         }
       );
       console.log(response);
-  
+
       if (response.status >= 200 && response.status < 300) {
         alert("Data submitted successfully!");
 
@@ -160,7 +160,7 @@ export const DealerShipForm: React.FC = () => {
           HowMuchAmountcanyouinvestindealership: "",
           Howmuchareacanyouprovidefordisplay: "",
         });
-        
+
         // Optionally remove or comment out the redirect line
         // window.location.href = "/quote/thanks";
       } else {
@@ -184,8 +184,6 @@ export const DealerShipForm: React.FC = () => {
       setIsLoader(false);
     }
   };
-
-  
 
   return (
     <div className="p-6 rounded-lg md:mx-12 lg:mx-9 xl:mx-[17rem] overflow-hidden">
@@ -320,7 +318,7 @@ export const DealerShipForm: React.FC = () => {
               <p className="text-red-500 text-sm">{errors.city}</p>
             )}
           </div> */}
-           <div>
+          <div>
             <label className="block text-base font-medium text-gray-700">
               ZIP/Postal Code <sup className="text-red-600">*</sup>
             </label>
@@ -373,7 +371,7 @@ export const DealerShipForm: React.FC = () => {
               <p className="text-red-500 text-sm">{errors.zipPostalCode}</p>
             )}
           </div> */}
-               <div>
+          <div>
             <label className="block text-base font-medium text-gray-700">
               City <sup className="text-red-600">*</sup>
             </label>
@@ -436,7 +434,7 @@ export const DealerShipForm: React.FC = () => {
           </div>
         </div>
         <div className="grid grid-cols-2 gap-4 mt-4">
-        <div>
+          <div>
             <label className="block text-base font-medium text-gray-700">
               How Much Amount can you invest in dealership?
             </label>
@@ -457,7 +455,7 @@ export const DealerShipForm: React.FC = () => {
               </p>
             )}
           </div>
-        <div>
+          <div>
             <label className="block text-base font-medium text-gray-700">
               How much area can you provide for display?
             </label>
@@ -480,7 +478,6 @@ export const DealerShipForm: React.FC = () => {
           </div>
         </div>
         <div className="mt-6">
-          
           <button
             type="submit"
             className="px-8 py-4 text-[--black] font-bold bg-[--secound] rounded-4xl transition-700 cursor-pointer border border-[--secound]  hover:bg-[--black] hover:text-[--secound]"
