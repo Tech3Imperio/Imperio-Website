@@ -15,3 +15,6 @@ export type WhiteButtonProps = {
 export type QuoteButtonProps = {
   className?: string;
 };
+export type DealershipButtonProps = {
+  className?: string;
+};

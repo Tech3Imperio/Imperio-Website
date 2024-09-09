@@ -12,6 +12,7 @@ import {
 } from "./pages";
 import { ThankYou } from "./pages/Getquote/ThankYou/Thankyou";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy/PrivacyPolicy";
+import { DealerShipForm } from "./pages/DealerShipForm/DealerShipForm";
 
 export const routes = createBrowserRouter([
   {
@@ -23,6 +24,7 @@ export const routes = createBrowserRouter([
       { path: "blog", element: <Blog /> },
       { path: "contactus", element: <Contact /> },
       { path: "aboutus", element: <About /> },
+      { path: "dealership", element: <DealerShipForm /> },
       { path: "products", element: <Products /> },
       {
         path: "products/:productID",

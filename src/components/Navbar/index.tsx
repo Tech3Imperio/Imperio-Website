@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { whiteLogo } from "../../assets/Images";
 import { MenuItemProps, MobileMenuProps, MenuItemsProps } from "../../types";
-import { SocialLinks, QuoteButton } from "..";
+import { QuoteButton, DealershipButton } from "../Quote/Button/index";
+import { SocialLinks } from "../SocialLinks/index";
 import styles from "./Navbar.module.css";
 
 // Logo component with a link to home
@@ -65,8 +66,13 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, handleClick }) => (
           <SocialLinks className="flex justify-center gap-4 text-xs text-white" />
           {/* Quote button component */}
           <div onClick={handleClick}>
+            <DealershipButton />
+          </div>
+
+          <div onClick={handleClick}>
             <QuoteButton />
           </div>
+          {/* Dealership button component */}
         </div>
       </div>
     </section>
@@ -147,6 +153,7 @@ export const Navbar: React.FC = () => {
                 <MenuItems type="desktop" />
               </ul>
             </div>
+            <DealershipButton />
             <QuoteButton />
           </>
         )}
