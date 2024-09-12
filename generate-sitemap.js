@@ -12,6 +12,7 @@ const urls = [
   { url: "/contactus", changefreq: "monthly", priority: 0.6 },
   { url: "/quote", changefreq: "monthly", priority: 0.8 },
   { url: "/privacypolicy", changefreq: "monthly", priority: 0.6 },
+  { url: "/dealership", changefreq: "monthly", priority: 0.6 },
   // Add more URLs as needed
 ];
 
