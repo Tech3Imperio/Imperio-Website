@@ -3,12 +3,12 @@ import axios from "axios";
 import { BASE_URL } from "../Service/Api/Api";
 // import "./dealershipform.css";
 export const DealerShipForm: React.FC = () => {
-  // const sortedTimeline = [
-  //   { title: "Dealers", description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui animi odit labore, vel fugiat, alias sunt, possimus dolor omnis magni eum unde rerum nobis eveniet perspiciatis autem. Aliquam, molestiae accusantium!', forEducation: true },
-  //   { title: "Dealers", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui animi odit labore, vel fugiat, alias sunt, possimus dolor omnis magni eum unde rerum nobis eveniet perspiciatis autem. Aliquam, molestiae accusantium!", forEducation: false },
-  //   { title: "Dealers", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui animi odit labore, vel fugiat, alias sunt, possimus dolor omnis magni eum unde rerum nobis eveniet perspiciatis autem. Aliquam, molestiae accusantium!", forEducation: true },
-  //   { title: "Dealers", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui animi odit labore, vel fugiat, alias sunt, possimus dolor omnis magni eum unde rerum nobis eveniet perspiciatis autem. Aliquam, molestiae accusantium!", forEducation: false },
-  // ];
+  const checkpoints = [
+    { day: "Dealers", description: "Partner with Imperio Railing Systems to elevate your dealership's offerings with premium, high-demand railingsolutions that drive growth and customer satisfaction." },
+    { day: "Mini Dealers", description: " Expand your business opportunities as an Imperio Railing Systems mini-dealer offering top-quality solutions and dedicated assistance to enhance your market reach." },
+    { day: "Micro Dealers", description: "Join the Imperio Railing Systems network as a micro-dealer and gain access to exclusive products and competitive margins that enhance your local market presence." },
+    { day: "Exclusive Dealers", description: "    As an exclusive dealer with Imperio Railing Systems, enjoy premium access to top-tier products, superior service, and priority support designed to elevate your business." },
+  ];
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -198,7 +198,7 @@ export const DealerShipForm: React.FC = () => {
         <h2 className="  text-[#03237b] text-3xl mx-auto xl:mx-[17rem] overflow-hidden md:text-5xl  px-[2rem] flex justify-start  pt-12">
           Why Choose Imperio ?
         </h2>
-        <p className=" grid justify-center items-center text-[0.800rem] mx-12 md:base md:px-[5rem] lg:text-base lg:px-[12rem] xl:mx-[20rem] xl:ml-[7rem] py-4 text-[#8b939c]">
+        <p className=" grid justify-center items-center text-[0.800rem] mx-12 md:base lg:text-base xl:px-[12rem] xl:ml-[7rem] py-4 text-[#8b939c]">
           Why Choose Imperio Railing Systems? Imperio Railing Systems is a
           leading provider of premium glass railings for balconies, terraces,
           buildings, and staircases, delivering unmatched durability and safety.
@@ -212,25 +212,56 @@ export const DealerShipForm: React.FC = () => {
           maintenance. Choose Imperio for safety, elegance, and durability in
           every project.
         </p>
-        {/* <div>
-          <ul className="timeline-holder">
-            {sortedTimeline?.map((exp, i: number) =>
-              exp.forEducation === false ? (
-                <li key={"exp-" + i} className="timeline-event">
-                  <span className="timeline-circle"></span>
-                  <p className="flex justify-center">{exp.title}</p>
-                  <p>{exp.description}</p>
-                </li>
-              ) : (
-                <li key={"exp-" + i} className="timeline-event-left">
-                  <span className="timeline-left-circle"></span>
-                  <p className=" -ml-[7rem]">{exp.title}</p>
-                  <p className=" left-text flex justify-start" >{exp.description}</p>
-                </li>
-              )
-            )}
-          </ul>
-        </div> */}
+    {/* timeline open */}
+    <div className="p-8">
+      <div className="text-center mb-12">
+        <h1 className="text-[#03237b] text-3xl mx-auto xl:mx-[17rem] overflow-hidden md:text-5xl flex justify-start  pt-12 ">Dealership Program </h1>
+        <p className="text-[#91908c] text-base py-2 tracking-wide flex justify-start md:px-[0.700rem] xl:px-[17rem] md:y-4">Benefits of Imperio Milestone Dealership Program :</p>
+      </div>
+
+      {/* Timeline wrapper */}
+      <div className="relative max-w-2xl mx-auto md:px-4 lg:px-0">
+        {/* Middle Line */}
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 bg-[#292929] h-full z-0"></div>
+
+        {/* Checkpoints */}
+        <div className="space-y-12 relative z-10">
+          {checkpoints.map((checkpoint, index) => (
+            <div
+              key={index}
+              className={`relative flex ${index % 2 === 0 ? "justify-start" : "justify-end"} items-center`}
+            >
+              {/* Line from circle to middle */}
+              <div
+                className={`absolute top-1/2 transform -translate-y-1/2 ${
+                  index % 2 === 0
+                    ? "left-1/2 -translate-x-full w-1/2"
+                    : "right-1/2 translate-x-full w-1/2"
+                } h-1 bg-[#292929]`}
+              ></div>
+
+              {/* Blue Circle indicator */}
+              <div
+                className={`w-4 h-4 hidden bg-[#f5ce02] rounded-full absolute top-1/2 transform -translate-y-1/2 z-10 ${
+                  index % 2 === 0 ? " md:left-[19.5rem] lg:left-[20.5rem]" : "right-[20.5rem] md:right-[19.5rem] lg:right-[20.5rem] "
+                }`}
+              ></div>
+
+              {/* Checkpoint content */}
+              <div
+                className={`w-full md:w-6/12 p-6 border-2 border-[#f5ce02] justify-center flex flex-col text-center rounded-xl bg-[#292929] relative shadow-lg ${
+                  index % 2 === 0 ? "-ml-1 md:-ml-14" : " -ml-1 md:-mr-14"
+                }`}
+              >
+                <h2 className="text-3xl Raleway mb-2 text-[#f5ce02]">{checkpoint.day}</h2>
+                <p className="text-[#cecdc8] text-[13px]">{checkpoint.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+    {/* timeline close */}
       </div>
       <div className="p-6 rounded-lg md:mx-12 lg:mx-9 xl:mx-[17rem] overflow-hidden">
         <h2 className=" text-4xl text-[#03237b] md:text-5xl text-center flex justify-start ">

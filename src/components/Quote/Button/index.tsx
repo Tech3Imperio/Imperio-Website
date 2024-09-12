@@ -56,7 +56,9 @@ export const QuoteButton: React.FC<QuoteButtonProps> = ({ className }) => {
 };
 
 // Dealership button
-export const DealershipButton: React.FC<DealershipButtonProps> = ({ className }) => {
+export const DealershipButton: React.FC<DealershipButtonProps> = ({
+  className,
+}) => {
   return (
     <Link
       to="/dealership"
@@ -69,4 +71,3 @@ export const DealershipButton: React.FC<DealershipButtonProps> = ({ className })
     </Link>
   );
 };
-
