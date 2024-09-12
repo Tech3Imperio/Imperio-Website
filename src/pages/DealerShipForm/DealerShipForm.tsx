@@ -537,7 +537,7 @@ export const DealerShipForm: React.FC = () => {
             </div>
             <div>
               <label className="block text-base font-medium text-gray-700">
-                How much area can you provide for display?
+              How much display area is available in SquareFit?
               </label>
               <input
                 type="text"
