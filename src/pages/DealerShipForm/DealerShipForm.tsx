@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../Service/Api/Api";
+import SalesChart from "./SalesChart";
 // import "./dealershipform.css";
 export const DealerShipForm: React.FC = () => {
   const checkpoints = [
@@ -198,7 +199,7 @@ export const DealerShipForm: React.FC = () => {
         <h2 className="  text-[#03237b] text-3xl mx-auto xl:mx-[17rem] overflow-hidden md:text-5xl  px-[2rem] flex justify-start  pt-12">
           Why Choose Imperio ?
         </h2>
-        <p className=" grid justify-center items-center text-[0.800rem] mx-12 md:base lg:text-base xl:px-[12rem] xl:ml-[7rem] py-4 text-[#8b939c]">
+        <p className=" grid justify-center items-center text-[0.800rem] mx-12 md:base lg:text-xl xl:px-[12rem] xl:ml-[7rem] py-4 text-[#8b939c]">
           Why Choose Imperio Railing Systems? Imperio Railing Systems is a
           leading provider of premium glass railings for balconies, terraces,
           buildings, and staircases, delivering unmatched durability and safety.
@@ -212,6 +213,11 @@ export const DealerShipForm: React.FC = () => {
           maintenance. Choose Imperio for safety, elegance, and durability in
           every project.
         </p>
+
+        {/* chart section open */}
+        <SalesChart/>
+        {/* chart section colse */}
+
     {/* timeline open */}
     <div className="p-8">
       <div className="text-center mb-12">

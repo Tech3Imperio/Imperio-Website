@@ -152,6 +152,7 @@ import {
   VerticalCarousel,
   ImageScrolls,
   Testimonials,
+  Dealers,
 } from "../../components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -347,6 +348,7 @@ export const Home: React.FC = () => {
       <div className="overflow-hidden">
         <Testimonials cards={testimonialsData} />
       </div>
+      <Dealers/>
       <Quote />
     </main>
   );
