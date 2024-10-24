@@ -5,6 +5,13 @@ export type ButtonProps = {
   path?: string;
   children: ReactNode;
 };
+
+export type Button2Props = {
+  className?: string;
+  children: ReactNode;
+  onClick?: () => void;
+};
+
 export type WhiteButtonProps = {
   className?: string;
   value?: boolean;

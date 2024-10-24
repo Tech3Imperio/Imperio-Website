@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ButtonProps, WhiteButtonProps } from "../../types";
+import { Button2Props, ButtonProps, WhiteButtonProps } from "../../types";
 
 // GreyButton component
 // This component renders a button styled as a link with a grey background.
@@ -47,6 +47,24 @@ export const BlackButton: React.FC<ButtonProps> = ({
     >
       {children}
     </Link>
+  );
+};
+
+export const BlackButton2: React.FC<Button2Props> = ({
+  children,
+  className,
+  onClick,
+}) => {
+  return (
+    <button
+      onClick={onClick}
+      className={
+        className +
+        ` w-max py-4 px-6 rounded-4xl text-[--white] bg-[--black] transition-700 hover:text-[--black] hover:bg-[--secound]`
+      }
+    >
+      {children}
+    </button>
   );
 };
 

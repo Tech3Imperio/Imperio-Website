@@ -468,7 +468,7 @@
 // THIS CODE IS NEVEGATING GESSURE FOR MOBILE USER
 
 import React, { useEffect, useRef, useCallback, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 import { ProductProps } from "../../../types";
 import { BlackButton } from "../../../components";
@@ -523,6 +523,9 @@ const ExpandableText: React.FC<ExpandableTextProps> = ({
 
 const MemoProduct: React.FC = () => {
   const location = useLocation();
+  // console.log(location);
+  const params = useParams();
+  console.log(params.productID);
   const [productData, setProductData] = useState<ProductProps | null>(null);
   const [imageData, setImageData] = useState<ImageData[]>([]);
   const featureData = useRef<FeatureData[]>([]);
@@ -618,6 +621,31 @@ const MemoProduct: React.FC = () => {
       return temp;
     });
   };
+
+  useEffect(() => {
+    fetch(
+      "https://script.google.com/macros/s/AKfycbwE-1Stl8t8_XrB5MuRPQ1hROKpo3mYynDPnI1vNX6U5vakITchmA6nfmzQt8sYpqFIjw/exec"
+    )
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        // Find the blog that matches the readableTitle
+        const foundProduct = data.find(
+          (product: ProductProps) =>
+            product["Random Code to link the product"] === params.productID
+        );
+        if (foundProduct) {
+          setProductData(foundProduct);
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching blog data:", error);
+      });
+  }, [params.productID]);
 
   if (!productData || !imageData.length) {
     return <div>Loading...</div>;
