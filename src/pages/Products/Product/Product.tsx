@@ -648,7 +648,11 @@ const MemoProduct: React.FC = () => {
   }, [params.productID]);
 
   if (!productData || !imageData.length) {
-    return <div>Loading...</div>;
+    return (
+      <div className="w-screen h-screen flex justify-center items-center">
+        <div className="w-16 h-16 border-t-4 border-b-4 border-blue-500 rounded-full animate-spin"></div>
+      </div>
+    );
   }
 
   // Determine if current device is mobile
