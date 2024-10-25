@@ -348,7 +348,7 @@ export const Home: React.FC = () => {
       <div className="overflow-hidden">
         <Testimonials cards={testimonialsData} />
       </div>
-      <Dealers/>
+      <Dealers />
       <Quote />
     </main>
   );
