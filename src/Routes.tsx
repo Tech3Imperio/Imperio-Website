@@ -13,6 +13,7 @@ import {
 import { ThankYou } from "./pages/Getquote/ThankYou/Thankyou";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy/PrivacyPolicy";
 import { DealerShipForm } from "./pages/DealerShipForm/DealerShipForm";
+import BlogDetails from "./pages/BlogDetails/BlogDetails";
 
 export const routes = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ export const routes = createBrowserRouter([
       { path: "", element: <Home /> },
       { path: "home", element: <Navigate to="/" replace={true} /> },
       { path: "blog", element: <Blog /> },
+      { path: "blog/:blogId", element: <BlogDetails /> },
       { path: "contactus", element: <Contact /> },
       { path: "aboutus", element: <About /> },
       { path: "dealership", element: <DealerShipForm /> },

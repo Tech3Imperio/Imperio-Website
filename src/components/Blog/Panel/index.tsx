@@ -1,10 +1,10 @@
 import React, { useState, useMemo } from "react";
-import { BlackButton, WhiteButton } from "../../Button";
+import { BlackButton2, WhiteButton } from "../../Button";
 import { BlogPanelProps, BlogType } from "../../../types";
 import { CiSearch } from "react-icons/ci";
 import { BlogCard } from "../Card";
 import { HiArrowRight } from "react-icons/hi2";
-
+import { useNavigate } from "react-router-dom";
 export const BlogPanel: React.FC<BlogPanelProps> = ({
   BlogData,
   Socials,
@@ -16,6 +16,7 @@ export const BlogPanel: React.FC<BlogPanelProps> = ({
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isSearchFocused, setIsSearchFocused] = useState<boolean>(false);
   const [selectedBlog, setSelectedBlog] = useState<BlogType | null>(null);
+  const navigate = useNavigate();
 
   const filteredBlogs = useMemo(() => {
     return BlogData.filter((blog) => {
@@ -24,7 +25,10 @@ export const BlogPanel: React.FC<BlogPanelProps> = ({
       );
       const matchesSearch =
         blog.header.toLowerCase().includes(searchQuery) ||
-        blog.tags.some((tag) => tag.toLowerCase().includes(searchQuery));
+        (Array.isArray(blog.tags)
+          ? blog.tags.some((tag) => tag.toLowerCase().includes(searchQuery))
+          : blog.tags.toLowerCase().includes(searchQuery));
+
       return (
         (filters.every((filter) => !filter) || matchesFilter) && matchesSearch
       );
@@ -46,7 +50,6 @@ export const BlogPanel: React.FC<BlogPanelProps> = ({
   const closePanel = () => {
     setSelectedBlog(null);
   };
-  console.log(filteredBlogs.length, cardsToShow);
   return (
     <section
       className={`py-20 px-4 tablet:px-12 lg:px-20 xl:px-28 2xl:px-36 ${className}`}
@@ -148,15 +151,27 @@ export const BlogPanel: React.FC<BlogPanelProps> = ({
                 {selectedBlog.header}
               </h3>
               <p className="text-[--grey]">{selectedBlog.details}</p>
-              <BlackButton
-                path={selectedBlog.socialMediaLink}
+              <BlackButton2
+                onClick={() =>
+                  navigate(
+                    `/blog/${selectedBlog.id
+                      ?.toLowerCase()
+                      .replace(/\s+/g, "-")
+                      .replace(/[^\w-]+/g, "")
+                      .replace(/--+/g, "-")
+                      .trim()}`,
+                    {
+                      state: selectedBlog,
+                    }
+                  )
+                }
                 className="flex gap-2"
               >
                 <div className="text-xs">VIEW FULL BLOG</div>
                 <div className="text-md">
                   <HiArrowRight />
                 </div>
-              </BlackButton>
+              </BlackButton2>
             </div>
             <div className="flex justify-center items-center overflow-hidden rounded-4xl ">
               <img
