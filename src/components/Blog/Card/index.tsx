@@ -49,19 +49,30 @@ export const BlogCard: React.FC<BlogCardProps> = ({
         </div>
         <div className="px-6 pb-2 flex justify-between h-max ">
           <div>
-            {blog.tags.map((tag, index) =>
-              index < 2 ? (
-                <span
-                  key={index}
-                  className="inline-block rounded-full px-3 py-1 text-xs font-normal text-gray-500 mr-2 mb-2"
-                >
-                  #{tag}
-                </span>
-              ) : (
-                ""
-              )
-            )}
+            {Array.isArray(blog.tags)
+              ? blog.tags.slice(0, 2).map((tag, index) => (
+                  <span
+                    key={index}
+                    className="inline-block rounded-full px-3 py-1 text-xs font-normal text-gray-500 mr-2 mb-2"
+                  >
+                    #{tag}
+                  </span>
+                ))
+              : typeof blog.tags === "string"
+              ? blog.tags
+                  .split(",")
+                  .slice(0, 2)
+                  .map((tag, index) => (
+                    <span
+                      key={index}
+                      className="inline-block rounded-full px-3 py-1 text-xs font-normal text-gray-500 mr-2 mb-2"
+                    >
+                      #{tag.trim()}
+                    </span>
+                  ))
+              : null}
           </div>
+
           <div>
             <span className="inline-block bg-gray-500 italic rounded-full px-3 py-1 text-sm font-semibold text-white mb-2">
               {blog.socialMedia}
