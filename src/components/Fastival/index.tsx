@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { diwaliImg1, diwaliImg2, diwaliImg3 } from "../../assets/Images";
 import { GreyButton } from "../../components";
