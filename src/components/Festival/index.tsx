@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { diwaliImg1, diwaliImg2, diwaliImg3 } from "../../assets/Images";
 import { GreyButton } from "../../components";
 
-export default function HeroSection() {
+export default function Festival() {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const slides = [
     {
@@ -100,13 +100,14 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-center"
         >
-          <h2 className="text-5xl sm:text-4xl md:text-[6rem] poppins-medium md:mb-10">
+          <h2 className="text-5xl sm:text-[5rem] lg:text-[6rem] poppins-light-italic md:mb-10">
             Diwali Special Offers
           </h2>
-          <p className="text-base sm:text-2xl md:text-2xl text-[#f5ce02] mb-8">
-            Celebrate Diwali with exclusive discounts on elegant glass railings!
+          <p className="text-base sm:text-2xl md:text-[25px] text-[#f5ce02] mb-8">
+            "Celebrate Diwali with up to 10% off glass railings, plus a <br />{" "}
+            complimentary design consultation!"
           </p>
-          <GreyButton path="/quote">Enjoy 10% Discount on Diwali </GreyButton>
+          <GreyButton path="/quote">Order now! </GreyButton>
         </motion.div>
       </div>
 
@@ -115,19 +116,7 @@ export default function HeroSection() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.8 }}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2"
-      >
-        {slides.map((_, index) => (
-          <motion.div
-            key={index}
-            className={`w-2 h-2 rounded-full ${
-              index === activeIndex ? "bg-white" : "bg-gray-500"
-            }`}
-            initial={false}
-            animate={index === activeIndex ? { scale: 1.5 } : { scale: 1 }}
-            transition={{ duration: 0.3 }}
-          />
-        ))}
-      </motion.div>
+      ></motion.div>
     </div>
   );
 }

@@ -140,11 +140,14 @@
 //   );
 // };
 import React, { useEffect, useState } from "react";
-import { heroImage, descImage } from "../../assets/Images";
+// import { heroImage, descImage } from "../../assets/Images";
+//Festival Time only on This belo code
+import { descImage } from "../../assets/Images";
+
 import {
-  Hero,
+  // Hero,
   Description,
-  GreyButton,
+  // GreyButton,
   TextComponent,
   BlackButton,
   Quote,
@@ -152,12 +155,13 @@ import {
   VerticalCarousel,
   ImageScrolls,
   Testimonials,
-  Dealers,
+  // Dealers,
 } from "../../components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { scrollData, testimonialsData } from "../../assets/Data";
 import Metadata from "../../components/Metatag/Metatag";
+import Festival from "../../components/Festival";
 
 const text =
   "Imperio offers exquisite glass railing systems blending safety and style. Explore innovative designs, LED options, and elegance. See our work, hear from satisfied clients, and take the next step with us.";
@@ -188,7 +192,7 @@ export const Home: React.FC = () => {
         }
       />
       <main>
-        <Hero
+        {/* <Hero
           img={heroImage}
           altText="hero for home"
           header={
@@ -204,7 +208,8 @@ export const Home: React.FC = () => {
           <div className="p-8 pl-0 w-max text-xs">
             <GreyButton path="/aboutus">KNOW MORE</GreyButton>
           </div>
-        </Hero>
+        </Hero> */}
+        <Festival />
 
         <section className="flex flex-col lg:flex-row justify-center gap-8 px-10 phone:px-20 tablet:px-32 xl:px-44 pb-9 phone:pb-16 tablet:pb-24 xl:pb-36 pt-6 phone:pt-14 tablet:pt-24 xl:pt-36">
           <div className="flex flex-col gap-2 phone:gap-4">
@@ -358,7 +363,7 @@ export const Home: React.FC = () => {
         <div className="overflow-hidden">
           <Testimonials cards={testimonialsData} />
         </div>
-        <Dealers />
+        {/* <Dealers /> */}
         <Quote />
       </main>
     </>

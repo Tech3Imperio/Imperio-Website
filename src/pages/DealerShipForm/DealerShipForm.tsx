@@ -1,14 +1,30 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../Service/Api/Api";
-import SalesChart from "./SalesChart";
+// import SalesChart from "./SalesChart";
 // import "./dealershipform.css";
 export const DealerShipForm: React.FC = () => {
   const checkpoints = [
-    { day: "Dealers", description: "Partner with Imperio Railing Systems to elevate your dealership's offerings with premium, high-demand railingsolutions that drive growth and customer satisfaction." },
-    { day: "Mini Dealers", description: " Expand your business opportunities as an Imperio Railing Systems mini-dealer offering top-quality solutions and dedicated assistance to enhance your market reach." },
-    { day: "Micro Dealers", description: "Join the Imperio Railing Systems network as a micro-dealer and gain access to exclusive products and competitive margins that enhance your local market presence." },
-    { day: "Exclusive Dealers", description: "    As an exclusive dealer with Imperio Railing Systems, enjoy premium access to top-tier products, superior service, and priority support designed to elevate your business." },
+    {
+      day: "Dealers",
+      description:
+        "Partner with Imperio Railing Systems to elevate your dealership's offerings with premium, high-demand railingsolutions that drive growth and customer satisfaction.",
+    },
+    {
+      day: "Mini Dealers",
+      description:
+        " Expand your business opportunities as an Imperio Railing Systems mini-dealer offering top-quality solutions and dedicated assistance to enhance your market reach.",
+    },
+    {
+      day: "Micro Dealers",
+      description:
+        "Join the Imperio Railing Systems network as a micro-dealer and gain access to exclusive products and competitive margins that enhance your local market presence.",
+    },
+    {
+      day: "Exclusive Dealers",
+      description:
+        "    As an exclusive dealer with Imperio Railing Systems, enjoy premium access to top-tier products, superior service, and priority support designed to elevate your business.",
+    },
   ];
 
   const [formData, setFormData] = useState({
@@ -104,26 +120,6 @@ export const DealerShipForm: React.FC = () => {
     )
       newErrors.numberOfYearsInBusiness =
         "Valid Number of Years in Business is required.";
-    // if (!formData.website.trim() || !/^https?:\/\/\S+$/.test(formData.website))
-    //   newErrors.website = "Valid Website URL is required.";
-    // if (
-    //   !formData.HowMuchAmountcanyouinvestindealership.trim() ||
-    //   isNaN(Number(formData.HowMuchAmountcanyouinvestindealership))
-    // )
-    //   newErrors.HowMuchAmountcanyouinvestindealership =
-    //     "How Much Amount can you invest in dealership?";
-    // if (!formData.website.trim() || !/^https?:\/\/\S+$/.test(formData.website))
-    //   newErrors.website = "Valid Website URL is required.";
-
-    // if (
-    //   !formData.Howmuchareacanyouprovidefordisplay.trim() ||
-    //   isNaN(Number(formData.Howmuchareacanyouprovidefordisplay))
-    // )
-    //   newErrors.Howmuchareacanyouprovidefordisplay =
-    //     "How much area can you provide for display?.";
-    // if (!formData.website.trim() || !/^https?:\/\/\S+$/.test(formData.website))
-    //   newErrors.website = "Valid Website URL is required.";
-
     setErrors(newErrors);
 
     return Object.keys(newErrors).length === 0;
@@ -215,59 +211,73 @@ export const DealerShipForm: React.FC = () => {
         </p>
 
         {/* chart section open */}
-        <SalesChart/>
+
+        {/* <SalesChart/> */}
+
         {/* chart section colse */}
 
-    {/* timeline open */}
-    <div className="p-8">
-      <div className="text-center mb-12">
-        <h1 className="text-[#03237b] text-3xl mx-auto xl:mx-[17rem] overflow-hidden md:text-5xl flex justify-start  pt-12 ">Dealership Program </h1>
-        <p className="text-[#91908c] text-base py-2 tracking-wide flex justify-start md:px-[0.700rem] xl:px-[17rem] md:y-4">Benefits of Imperio Milestone Dealership Program :</p>
-      </div>
+        {/* timeline open */}
+        <div className="p-8">
+          <div className="text-center mb-12">
+            <h1 className="text-[#03237b] text-3xl mx-auto xl:mx-[17rem] overflow-hidden md:text-5xl flex justify-start  pt-12 ">
+              Dealership Program{" "}
+            </h1>
+            <p className="text-[#91908c] text-base py-2 tracking-wide flex justify-start md:px-[0.700rem] xl:px-[17rem] md:y-4">
+              Benefits of Imperio Milestone Dealership Program :
+            </p>
+          </div>
 
-      {/* Timeline wrapper */}
-      <div className="relative max-w-2xl mx-auto md:px-4 lg:px-0">
-        {/* Middle Line */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 bg-[#292929] h-full z-0"></div>
+          {/* Timeline wrapper */}
+          <div className="relative max-w-2xl mx-auto md:px-4 lg:px-0">
+            {/* Middle Line */}
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 bg-[#292929] h-full z-0"></div>
 
-        {/* Checkpoints */}
-        <div className="space-y-12 relative z-10">
-          {checkpoints.map((checkpoint, index) => (
-            <div
-              key={index}
-              className={`relative flex ${index % 2 === 0 ? "justify-start" : "justify-end"} items-center`}
-            >
-              {/* Line from circle to middle */}
-              <div
-                className={`absolute top-1/2 transform -translate-y-1/2 ${
-                  index % 2 === 0
-                    ? "left-1/2 -translate-x-full w-1/2"
-                    : "right-1/2 translate-x-full w-1/2"
-                } h-1 bg-[#292929]`}
-              ></div>
+            {/* Checkpoints */}
+            <div className="space-y-12 relative z-10">
+              {checkpoints.map((checkpoint, index) => (
+                <div
+                  key={index}
+                  className={`relative flex ${
+                    index % 2 === 0 ? "justify-start" : "justify-end"
+                  } items-center`}
+                >
+                  {/* Line from circle to middle */}
+                  <div
+                    className={`absolute top-1/2 transform -translate-y-1/2 ${
+                      index % 2 === 0
+                        ? "left-1/2 -translate-x-full w-1/2"
+                        : "right-1/2 translate-x-full w-1/2"
+                    } h-1 bg-[#292929]`}
+                  ></div>
 
-              {/* Blue Circle indicator */}
-              <div
-                className={`w-4 h-4 hidden bg-[#f5ce02] rounded-full absolute top-1/2 transform -translate-y-1/2 z-10 ${
-                  index % 2 === 0 ? " md:left-[19.5rem] lg:left-[20.5rem]" : "right-[20.5rem] md:right-[19.5rem] lg:right-[20.5rem] "
-                }`}
-              ></div>
+                  {/* Blue Circle indicator */}
+                  <div
+                    className={`w-4 h-4 hidden bg-[#f5ce02] rounded-full absolute top-1/2 transform -translate-y-1/2 z-10 ${
+                      index % 2 === 0
+                        ? " md:left-[19.5rem] lg:left-[20.5rem]"
+                        : "right-[20.5rem] md:right-[19.5rem] lg:right-[20.5rem] "
+                    }`}
+                  ></div>
 
-              {/* Checkpoint content */}
-              <div
-                className={`w-full md:w-6/12 p-6 border-2 border-[#f5ce02] justify-center flex flex-col text-center rounded-xl bg-[#292929] relative shadow-lg ${
-                  index % 2 === 0 ? "-ml-1 md:-ml-14" : " -ml-1 md:-mr-14"
-                }`}
-              >
-                <h2 className="text-3xl Raleway mb-2 text-[#f5ce02]">{checkpoint.day}</h2>
-                <p className="text-[#cecdc8] text-[13px]">{checkpoint.description}</p>
-              </div>
+                  {/* Checkpoint content */}
+                  <div
+                    className={`w-full md:w-6/12 p-6 border-2 border-[#f5ce02] justify-center flex flex-col text-center rounded-xl bg-[#292929] relative shadow-lg ${
+                      index % 2 === 0 ? "-ml-1 md:-ml-14" : " -ml-1 md:-mr-14"
+                    }`}
+                  >
+                    <h2 className="text-3xl Raleway mb-2 text-[#f5ce02]">
+                      {checkpoint.day}
+                    </h2>
+                    <p className="text-[#cecdc8] text-[13px]">
+                      {checkpoint.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-    </div>
-    {/* timeline close */}
+        {/* timeline close */}
       </div>
       <div className="p-6 rounded-lg md:mx-12 lg:mx-9 xl:mx-[17rem] overflow-hidden">
         <h2 className=" text-4xl text-[#03237b] md:text-5xl text-center flex justify-start ">
@@ -543,7 +553,7 @@ export const DealerShipForm: React.FC = () => {
             </div>
             <div>
               <label className="block text-base font-medium text-gray-700">
-              How much display area is available in SquareFit?
+                How much display area is available in SquareFit?
               </label>
               <input
                 type="text"
