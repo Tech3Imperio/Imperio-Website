@@ -17,24 +17,22 @@ export type BlogType = {
   section4: string;
 };
 
-export type AllBlogType = [
-  {
-    id: string;
-    header: string;
-    img: string;
-    alt: string;
-    description: string;
-    details: string;
-    section1: string;
-    section2: string;
-    section3: string;
-    section4: string;
-    sectionTags: string;
-    socialMedia: string;
-    socialMediaLink: string;
-    tags: string;
-  }
-];
+export type AllBlogType = {
+  id: string;
+  header: string;
+  img: string;
+  alt: string;
+  description: string;
+  details: string;
+  section1: string;
+  section2: string;
+  section3: string;
+  section4: string;
+  sectionTags: string;
+  socialMedia: string;
+  socialMediaLink: string;
+  tags: string;
+}[];
 
 export type BlogCardProps = {
   blog: BlogType;

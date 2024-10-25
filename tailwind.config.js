@@ -32,6 +32,11 @@ export default {
         small: "0px 0px 7px 0px rgb(0,0,0)",
       },
     },
+    keyframes: {
+      shimmer: {
+        "100%": { transform: "translateX(100%)" },
+      },
+    },
   },
   plugins: [aspectRatio],
 };
