@@ -53,6 +53,14 @@ const BlogDetails: React.FC = () => {
     setBlogData(location.state as BlogType);
   }, [location.state]);
 
+  if (!blogData) {
+    return (
+      <div className="w-screen h-screen flex justify-center items-center">
+        <div className="w-16 h-16 border-t-4 border-b-4 border-blue-500 rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
   const fadeInUpVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },

@@ -127,10 +127,40 @@ export const BlogPanel: React.FC<BlogPanelProps> = ({
         </aside>
       </div>
       <div className="flex flex-wrap justify-center mt-10 gap-14">
-        {filteredBlogs.slice(0, cardsToShow).map((item, index) => (
-          <BlogCard key={index} blog={item} onClick={() => openPanel(item)} />
-        ))}
+        {filteredBlogs.length > 0
+          ? filteredBlogs
+              .slice(0, cardsToShow)
+              .map((item, index) => (
+                <BlogCard
+                  key={index}
+                  blog={item}
+                  onClick={() => openPanel(item)}
+                />
+              ))
+          : Array(cardsToShow)
+              .fill(0)
+              .map((_, index) => (
+                <div
+                  key={index}
+                  className="relative w-96 space-y-3 overflow-hidden rounded-4xl bg-[#292929]  shadow before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/20 hover:shadow-lg before:animate-[shimmer_1.5s_infinite]"
+                >
+                  <div className="h-56 w-full rounded-lg bg-neutral-600"></div>
+                  <div className="space-y-3 p-4">
+                    <div className="h-5 w-full rounded-full bg-neutral-600"></div>
+                    <div className="space-y-1">
+                      <div className="h-4 w-8/12 rounded-full bg-neutral-600 shadow"></div>
+                      <div className="h-4 w-8/12 rounded-full bg-neutral-600 shadow"></div>
+                      <div className="h-4 w-8/12 rounded-full bg-neutral-600 shadow"></div>
+                    </div>
+                    <div className="flex gap-4">
+                      <div className="h-5 w-16 rounded-full bg-neutral-600"></div>
+                      <div className="h-5 w-16 rounded-full bg-neutral-600"></div>
+                    </div>
+                  </div>
+                </div>
+              ))}
       </div>
+
       {selectedBlog && (
         <div
           className={`fixed inset-0 bg-gray-900 bg-opacity-50 z-50 transition-700 overflow-auto ${
