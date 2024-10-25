@@ -2,11 +2,11 @@ import { Hero, Description, BlogPanel } from "../../components";
 import { blogHero } from "../../assets/Images";
 import { useEffect, useState } from "react";
 import { BlogType } from "../../types";
-import { blogCards } from "../../assets/Data";
+// import { blogCards } from "../../assets/Data";
 
 export const Blog = () => {
   const [data, setData] = useState<BlogType[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  // const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     fetch(
@@ -28,10 +28,10 @@ export const Blog = () => {
       })
       .catch((error) => {
         console.error("Failed to fetch blog data", error);
-      })
-      .finally(() => {
-        setLoading(false);
       });
+    // .finally(() => {
+    //   setLoading(false);
+    // });
   }, []);
 
   return (
@@ -58,7 +58,8 @@ export const Blog = () => {
       />
       <BlogPanel
         Socials={["LinkedIn", "Twitter", "Quora", "Pinterest"]}
-        BlogData={loading ? blogCards : data}
+        // BlogData={loading ? blogCards : data}
+        BlogData={data}
       />
     </main>
   );
