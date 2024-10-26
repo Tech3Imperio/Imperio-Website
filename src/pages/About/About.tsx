@@ -304,8 +304,6 @@ export const About: React.FC = () => {
         keywords={
           "About Imperio Railing, Aluminum Glass Railings, Railing Solutions, Quality Craftsmanship, Innovative Designs, Residential Railings, Commercial Railings, Safety Standards, Durable Products, Stylish Aesthetics, Experience, Trust, Quality, Design, Innovation, Safety, Glass Railings, Aluminum Railings, Railing Systems, Outdoor Spaces, Home Improvement, Custom Designs, Stylish Solutions, Architectural Design, Premium Railing Solutions, Expert Installation Services, Reliable Railing Provider"
         }
-        ogTitle="About Us - Imperio Railing"
-        ogDescription="About Imperio Railing, Aluminum Glass Railings, Railing Solutions, Quality Craftsmanship, Innovative Designs, Residential Railings, Commercial Railings, Safety Standards, Durable Products, Stylish Aesthetics, Experience, Trust, Quality, Design, Innovation, Safety, Glass Railings, Aluminum Railings, Railing Systems, Outdoor Spaces, Home Improvement, Custom Designs, Stylish Solutions, Architectural Design, Premium Railing Solutions, Expert Installation Services, Reliable Railing Provider"
         ogImage={aboutHero}
         ogUrl={"https://www.imperiorailing.com/aboutus"}
       />
