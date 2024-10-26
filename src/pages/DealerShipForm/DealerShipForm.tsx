@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../Service/Api/Api";
 import Metadata from "../../components/Metatag/Metatag";
+import { Description, Hero } from "../../components";
+import bgDealers from "../../assets/Images/quote/bgDealers.webp";
 // import SalesChart from "./SalesChart";
-// import "./dealershipform.css";
 export const DealerShipForm: React.FC = () => {
   const checkpoints = [
     {
@@ -196,16 +197,32 @@ export const DealerShipForm: React.FC = () => {
         title="Dealership - Imperio Railing"
         description="Join Imperio Railing's dealership program to offer your customers premium aluminum glass railings. Partner with us to benefit from our high-quality products, comprehensive support, and attractive dealer incentives. Contact us to learn more about becoming an Imperio Railing dealer and elevating your business with our stylish and durable railing solutions."
         keywords="Imperio Railing Dealership, Aluminum Glass Railings Dealer, Premium Railings Partnership, Railing Dealer Support, Dealer Incentives, High-Quality Railings, Business Partnership, Commercial Railings, Residential Railings, Dealer Program, Premium Railing Solutions, Railing Dealer Network, Dealer Benefits, Custom Railing Solutions, Stylish Railings, Durable Railings, Railing Installation, Dealer Opportunities, Glass Railings, Aluminum Railings, Business Growth, Architectural Design, railing installation services, outdoor railings, modern railings, railing solutions, railing systems, glass railing installation, aluminum railing systems, premium railing products, stylish railing designs, durable railing options"
-        ogTitle="Dealership - Imperio Railing"
-        ogDescription="Join Imperio Railing's dealership program to offer your customers premium aluminum glass railings. Partner with us to benefit from our high-quality products, comprehensive support, and attractive dealer incentives. Contact us to learn more about becoming an Imperio Railing dealer and elevating your business with our stylish and durable railing solutions."
-        ogImage="" // Replace with the actual image path
+        ogImage={bgDealers} // Replace with the actual image path
         ogUrl="https://www.imperiorailing.com/dealership"
       />
+      <Hero
+        img={bgDealers}
+        altText="hero for blog"
+        header="Dealership"
+        subHeader="Premium Glass Railings for Every Architectural Vision."
+        curve
+      />
+      <Description
+        yellowText="Explore Our Offerings."
+        mainHeader="We Value Expertise in Glass Railings."
+        text={
+          <>
+            Join our dealership network for access to a wide range of glass
+            railing systems, and expert guidance to help your business thrive
+            and satisfy your customers.
+          </>
+        }
+      />
       <div>
-        <h2 className="  text-[#03237b] text-3xl mx-auto xl:mx-[17rem] overflow-hidden md:text-5xl  px-[2rem] flex justify-start  pt-12">
+        <h2 className="  text-[#03237b] text-3xl mx-auto xl:mx-[9rem] overflow-hidden md:text-5xl  px-[2rem] flex justify-start mt-20">
           Why Choose Imperio ?
         </h2>
-        <p className=" grid justify-center items-center text-[0.800rem] mx-12 md:base lg:text-xl xl:px-[12rem] xl:ml-[7rem] py-4 text-[#8b939c]">
+        <p className=" grid justify-center items-center text-justify text-[0.800rem] mx-12 md:base lg:text-xl xl:px-[4rem] xl:ml-[7rem] py-4 text-[#8b939c]">
           Why Choose Imperio Railing Systems? Imperio Railing Systems is a
           leading provider of premium glass railings for balconies, terraces,
           buildings, and staircases, delivering unmatched durability and safety.
@@ -229,10 +246,10 @@ export const DealerShipForm: React.FC = () => {
         {/* timeline open */}
         <div className="p-8">
           <div className="text-center mb-12">
-            <h1 className="text-[#03237b] text-3xl mx-auto xl:mx-[17rem] overflow-hidden md:text-5xl flex justify-start  pt-12 ">
+            <h1 className="text-[#03237b] text-3xl mx-auto xl:mx-[9rem] overflow-hidden md:text-5xl flex justify-start  pt-12 ">
               Dealership Program{" "}
             </h1>
-            <p className="text-[#91908c] text-base py-2 tracking-wide flex justify-start md:px-[0.700rem] xl:px-[17rem] md:y-4">
+            <p className="text-[#91908c] text-base py-2 tracking-wide flex justify-start md:px-[0.700rem] xl:px-[9rem] md:y-4">
               Benefits of Imperio Milestone Dealership Program :
             </p>
           </div>
@@ -289,7 +306,7 @@ export const DealerShipForm: React.FC = () => {
         </div>
         {/* timeline close */}
       </div>
-      <div className="p-6 rounded-lg md:mx-12 lg:mx-9 xl:mx-[17rem] overflow-hidden">
+      <div className="p-6 rounded-lg md:mx-12 lg:mx-9 xl:mx-[9rem] overflow-hidden">
         <h2 className=" text-4xl text-[#03237b] md:text-5xl text-center flex justify-start ">
           Dealer Details Form
         </h2>

@@ -344,7 +344,7 @@ export const About: React.FC = () => {
                     alt="Imperio Railing Systems"
                     // width={800}
                     // height={600}
-                    className="object-cover w-full h-[400px] md:h-[55rem] rounded-2xl md:w-auto lg:h-[43rem] lg:w-auto xl:w-[800px] xl:h-[600px] md:p-14 lg:rounded-[4rem]"
+                    className="object-cover w-full h-[400px] md:h-[55rem] p-4 rounded-3xl md:w-auto lg:h-[43rem] lg:w-auto xl:w-[800px] xl:h-[600px] md:p-14 lg:rounded-[4rem]"
                   />
                 </div>
               </motion.div>
