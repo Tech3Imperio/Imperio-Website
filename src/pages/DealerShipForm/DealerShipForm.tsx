@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../Service/Api/Api";
+import Metadata from "../../components/Metatag/Metatag";
 // import SalesChart from "./SalesChart";
 // import "./dealershipform.css";
 export const DealerShipForm: React.FC = () => {
@@ -191,6 +192,15 @@ export const DealerShipForm: React.FC = () => {
 
   return (
     <>
+      <Metadata
+        title="Dealership - Imperio Railing"
+        description="Join Imperio Railing's dealership program to offer your customers premium aluminum glass railings. Partner with us to benefit from our high-quality products, comprehensive support, and attractive dealer incentives. Contact us to learn more about becoming an Imperio Railing dealer and elevating your business with our stylish and durable railing solutions."
+        keywords="Imperio Railing Dealership, Aluminum Glass Railings Dealer, Premium Railings Partnership, Railing Dealer Support, Dealer Incentives, High-Quality Railings, Business Partnership, Commercial Railings, Residential Railings, Dealer Program, Premium Railing Solutions, Railing Dealer Network, Dealer Benefits, Custom Railing Solutions, Stylish Railings, Durable Railings, Railing Installation, Dealer Opportunities, Glass Railings, Aluminum Railings, Business Growth, Architectural Design, railing installation services, outdoor railings, modern railings, railing solutions, railing systems, glass railing installation, aluminum railing systems, premium railing products, stylish railing designs, durable railing options"
+        ogTitle="Dealership - Imperio Railing"
+        ogDescription="Join Imperio Railing's dealership program to offer your customers premium aluminum glass railings. Partner with us to benefit from our high-quality products, comprehensive support, and attractive dealer incentives. Contact us to learn more about becoming an Imperio Railing dealer and elevating your business with our stylish and durable railing solutions."
+        ogImage="" // Replace with the actual image path
+        ogUrl="https://www.imperiorailing.com/dealership"
+      />
       <div>
         <h2 className="  text-[#03237b] text-3xl mx-auto xl:mx-[17rem] overflow-hidden md:text-5xl  px-[2rem] flex justify-start  pt-12">
           Why Choose Imperio ?
