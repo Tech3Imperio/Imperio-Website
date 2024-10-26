@@ -142,7 +142,7 @@
 import React, { useEffect, useState } from "react";
 // import { heroImage, descImage } from "../../assets/Images";
 //Festival Time only on This belo code
-import { descImage } from "../../assets/Images";
+import { descImage, heroImage } from "../../assets/Images";
 
 import {
   // Hero,
@@ -190,6 +190,10 @@ export const Home: React.FC = () => {
         keywords={
           "glass balcony design,glass guardrail,railing with glass,glass with railing,design of glass railing,glass railing for balcony,glass for balcony railing,glass railing design for balcony,glass balcony handrail,glass handrail balcony,modern style glass railing design for balcony,balcony railings with glass,railing glass balcony,glass railing design balcony,steel with glass railing,staircase glass railing design,staircase railing design with glass,ss with glass railing,modern glass balcony,stainless and glass railings,stainless steel glass handrail,glass and stainless steel railings,tuffen glass railing,wooden railings with glass,tuffen glass design for balcony,frameless glass railing,modern balcony glass design,outdoor glass handrail"
         }
+        ogTitle="Imperio Railing Systems - Home"
+        ogDescription="Imperio Railing Systems offers premium glass railing solutions for homes and buildings. Enhance your space with our stylish and durable glass railings, glass balconies,stair railings,black railing with glass,glass handrail cost and glass parapet railing. Specializing in custom glass installations, our products ensure safety and elegance. Discover our range of glass railings and transform your home or building today."
+        ogImage={heroImage}
+        ogUrl={"https://www.imperiorailing.com/"}
       />
       <main>
         {/* <Hero

@@ -51,10 +51,8 @@ export const BlogPanel: React.FC<BlogPanelProps> = ({
     setSelectedBlog(null);
   };
   return (
-    <section
-      className={`py-20 px-4 tablet:px-12 lg:px-20 xl:px-28 2xl:px-36 ${className}`}
-    >
-      <div className="flex justify-between items-start max-lg:flex-col gap-4">
+    <section className={`py-20 mx-auto max-w-7xl ${className}`}>
+      <div className="flex justify-between items-start max-lg:flex-col gap-4 px-4">
         {/* THIS IS OLD CODE BUT NOT MOBILE RESPONSIVE */}
 
         {/* <aside className="flex items-center justify-center flex-wrap gap-2 tablet:space-x-8">
@@ -80,7 +78,7 @@ export const BlogPanel: React.FC<BlogPanelProps> = ({
 
         {/* FOR MOBILE AND ALL DEVICE RESPONSIVE */}
         <aside className="flex flex-col items-center justify-center gap-4 tablet:flex-row tablet:justify-center tablet:gap-8">
-          <div className="flex flex-wrap justify-center p-[0.50rem] gap-2 lg:gap-4 border border-gray-500 rounded-4xl mx-3 -mt-3 ml-2 sm:ml-0">
+          <div className="flex flex-wrap justify-center p-[0.50rem] gap-2 lg:gap-4 border border-gray-500 rounded-4xl -mt-3  sm:ml-0">
             {Socials.map((Social, index) => (
               <WhiteButton
                 key={index}
@@ -126,7 +124,7 @@ export const BlogPanel: React.FC<BlogPanelProps> = ({
           </label>
         </aside>
       </div>
-      <div className="flex flex-wrap justify-center mt-10 gap-14">
+      <div className="flex flex-wrap justify-center mt-10 gap-14 px-2 md:px-0">
         {filteredBlogs.length > 0
           ? filteredBlogs
               .slice(0, cardsToShow)
@@ -142,19 +140,20 @@ export const BlogPanel: React.FC<BlogPanelProps> = ({
               .map((_, index) => (
                 <div
                   key={index}
-                  className="relative w-96 space-y-3 overflow-hidden rounded-4xl bg-[#292929]  shadow before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/20 hover:shadow-lg before:animate-[shimmer_1.5s_infinite]"
+                  className="relative w-[22rem] space-y-3 overflow-hidden rounded-4xl bg-white  shadow-lg before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/20 hover:shadow-lg before:animate-[shimmer_1.5s_infinite]"
                 >
-                  <div className="h-56 w-full rounded-lg bg-neutral-600"></div>
+                  <div className="h-72 w-full rounded-4xl bg-neutral-400"></div>
                   <div className="space-y-3 p-4">
-                    <div className="h-5 w-full rounded-full bg-neutral-600"></div>
+                    <div className="h-5 w-full rounded-full bg-neutral-400"></div>
                     <div className="space-y-1">
-                      <div className="h-4 w-8/12 rounded-full bg-neutral-600 shadow"></div>
-                      <div className="h-4 w-8/12 rounded-full bg-neutral-600 shadow"></div>
-                      <div className="h-4 w-8/12 rounded-full bg-neutral-600 shadow"></div>
+                      <div className="h-4 w-8/12 rounded-full bg-neutral-400 shadow"></div>
                     </div>
-                    <div className="flex gap-4">
-                      <div className="h-5 w-16 rounded-full bg-neutral-600"></div>
-                      <div className="h-5 w-16 rounded-full bg-neutral-600"></div>
+                    <div className="flex justify-between gap-4">
+                      <div className="flex gap-4">
+                        <div className="h-5 w-16 rounded-full bg-neutral-400"></div>
+                        <div className="h-5 w-16 rounded-full bg-neutral-400"></div>
+                      </div>
+                      <div className="h-5 w-16 rounded-full bg-neutral-400"></div>
                     </div>
                   </div>
                 </div>

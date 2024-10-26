@@ -1,37 +1,36 @@
 // src/components/Metadata.tsx
-import React, { useEffect } from "react";
-
+import React from "react";
+import { Helmet } from "react-helmet-async";
 interface MetadataProps {
   title: string;
   description: string;
   keywords: string;
+  ogTitle: string;
+  ogDescription: string;
+  ogImage: string;
+  ogUrl: string;
 }
 
 const Metadata: React.FC<MetadataProps> = ({
   title,
   description,
   keywords,
+  ogTitle,
+  ogDescription,
+  ogImage,
+  ogUrl,
 }) => {
-  useEffect(() => {
-    document.title = title;
-
-    const metaDescription = document.createElement("meta");
-    metaDescription.name = "description";
-    metaDescription.content = description;
-    document.head.appendChild(metaDescription);
-
-    const metaKeywords = document.createElement("meta");
-    metaKeywords.name = "keywords";
-    metaKeywords.content = keywords;
-    document.head.appendChild(metaKeywords);
-
-    return () => {
-      document.head.removeChild(metaDescription);
-      document.head.removeChild(metaKeywords);
-    };
-  }, [title, description, keywords]);
-
-  return null;
+  return (
+    <Helmet>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="keywords" content={keywords} />
+      <meta property="og:title" content={ogTitle} />
+      <meta property="og:description" content={ogDescription} />
+      <meta property="og:image" content={ogImage} />
+      <meta property="og:url" content={ogUrl} />
+    </Helmet>
+  );
 };
 
 export default Metadata;
