@@ -60,6 +60,23 @@ body {
   font-family: "Raleway";
   font-weight: 600;
 }
+.Raleway-regular {
+  font-size: 1.5rem;
+  font-family: "Raleway";
+  font-weight: 400;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", serif;
+  font-weight: 300;
+  font-style: italic;
+}
+.playwrite-gb-s {
+  font-family: "Playwrite GB S", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: italic;
+}
 
 .transition-200 {
   @apply transition-all duration-200 ease-in-out;
