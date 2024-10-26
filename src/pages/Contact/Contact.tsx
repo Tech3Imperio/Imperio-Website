@@ -6,15 +6,13 @@ export const Contact = () => {
   return (
     <>
       <Metadata
-        title={"Contact Us - Imperio Railing"}
+        title={"Contact Us - Imperio Railing System"}
         description={
           "Get in touch with Imperio Railing System for all your inquiries about aluminum glass railings. Whether you have questions about our products, need installation advice, or want to discuss custom solutions, our team is here to help. Contact us today to learn more about how our durable and stylish railings can enhance your home or commercial space."
         }
         keywords={
           "Contact Imperio Railing, Aluminum Glass Railings, Railing Installation Advice, Custom Railing Solutions, Durable Railings, Stylish Railings, Residential Railing Inquiries, Commercial Railing Solutions, Railing Safety Features, Railing Design Consultation, Elegance, Safety, Design, Durability, Installation, Maintenance, Innovation, Aesthetics, Quality, Versatility, Glass Railings, Aluminum Railings, Railing Systems, Outdoor Spaces, Home Improvement, Custom Designs, Safety Features, Modern Railings, Stylish Solutions, Architectural Design"
         }
-        ogTitle="Contact Us - Imperio Railing"
-        ogDescription="Get in touch with Imperio Railing System for all your inquiries about aluminum glass railings. Whether you have questions about our products, need installation advice, or want to discuss custom solutions, our team is here to help. Contact us today to learn more about how our durable and stylish railings can enhance your home or commercial space."
         ogImage={contactHero}
         ogUrl={"https://www.imperiorailing.com/contactus"}
       />
