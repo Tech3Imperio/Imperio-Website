@@ -198,7 +198,7 @@ export const DealerShipForm: React.FC = () => {
         keywords="Imperio Railing Dealership, Aluminum Glass Railings Dealer, Premium Railings Partnership, Railing Dealer Support, Dealer Incentives, High-Quality Railings, Business Partnership, Commercial Railings, Residential Railings, Dealer Program, Premium Railing Solutions, Railing Dealer Network, Dealer Benefits, Custom Railing Solutions, Stylish Railings, Durable Railings, Railing Installation, Dealer Opportunities, Glass Railings, Aluminum Railings, Business Growth, Architectural Design, railing installation services, outdoor railings, modern railings, railing solutions, railing systems, glass railing installation, aluminum railing systems, premium railing products, stylish railing designs, durable railing options"
         ogTitle="Dealership - Imperio Railing"
         ogDescription="Join Imperio Railing's dealership program to offer your customers premium aluminum glass railings. Partner with us to benefit from our high-quality products, comprehensive support, and attractive dealer incentives. Contact us to learn more about becoming an Imperio Railing dealer and elevating your business with our stylish and durable railing solutions."
-        ogImage="/path/to/dealership-image.jpg" // Replace with the actual image path
+        ogImage="" // Replace with the actual image path
         ogUrl="https://www.imperiorailing.com/dealership"
       />
       <div>
