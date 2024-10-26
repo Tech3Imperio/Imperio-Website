@@ -42,7 +42,7 @@ export default function Festival() {
   }, [slides.length]);
 
   return (
-    <div className="relative w-full min-h-screen bg-black  text-white overflow-hidden -mt-7">
+    <div className="relative w-full min-h-screen bg-black text-white overflow-hidden -mt-7">
       <div className="absolute inset-0 z-0">
         <AnimatePresence initial={false}>
           <motion.img
@@ -100,10 +100,10 @@ export default function Festival() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-center"
         >
-          <h2 className="text-5xl sm:text-[5rem] lg:text-[6rem] poppins-light-italic md:mb-10">
+          <h2 className="text-5xl sm:text-[5rem] lg:text-[7rem] playwrite-gb-s md:mb-10">
             Diwali Special Offers
           </h2>
-          <p className="text-base sm:text-2xl md:text-[25px] text-[#f5ce02] mb-8">
+          <p className="text-base sm:text-2xl md:text-[25px] text-[#f5ce02]  mb-8">
             "Celebrate Diwali with up to 10% off glass railings, plus a <br />{" "}
             complimentary design consultation!"
           </p>
