@@ -474,7 +474,7 @@ import { ProductProps } from "../../../types";
 import { BlackButton } from "../../../components";
 import { iconsFeature } from "../../../assets/Data";
 import "./Product.css";
-import Metadata from "../../../components/Metatag/Metatag";
+// import Metadata from "../../../components/Metatag/Metatag";
 
 type ImageData = {
   img: string;
@@ -659,7 +659,7 @@ const MemoProduct: React.FC = () => {
 
   return (
     <>
-      <Metadata
+      {/* <Metadata
         title={`${
           productData["Product Name"] +
           " " +
@@ -671,7 +671,7 @@ const MemoProduct: React.FC = () => {
         keywords={""}
         ogImage={""}
         ogUrl={`https://www.imperiorailing.com/products/${params.productID}`}
-      />
+      /> */}
       <main className="py-4 px-12 pb-28 tablet:px-32 xl:px-44">
         <header className="pb-8">
           <h2 className="YellowText text-[1.75rem] tablet:text-4xl xl:text-[2.5rem]">

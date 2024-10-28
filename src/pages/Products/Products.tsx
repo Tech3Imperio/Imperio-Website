@@ -7,7 +7,7 @@ import { ProductProps, ProductSection } from "../../types";
 import { getLocalStorageItem, setLocalStorageItem } from "../../utils";
 import { Product } from "./Product/Product";
 import "./style.css";
-import Metadata from "../../components/Metatag/Metatag";
+// import Metadata from "../../components/Metatag/Metatag";
 
 const MemoProducts: React.FC = () => {
   const { data, error, loading } = useProduct(
@@ -82,7 +82,7 @@ const MemoProducts: React.FC = () => {
 
   return (
     <>
-      <Metadata
+      {/* <Metadata
         title={"Products - Imperio Railing Systems"}
         description={
           "Revitalize your space with Imperio Railing Systems, your go-to source for stunning glass and aluminum railings. Our expertly crafted, frameless glass railings enhance balconies and staircases, while our durable aluminum options withstand the elements. Built from premium materials, our railings offer exceptional corrosion and UV resistance, making them ideal for both residential and commercial use. Discover the perfect blend of style, safety, and innovation with Imperio Railing Systems—where elegance meets durability!"
@@ -92,7 +92,7 @@ const MemoProducts: React.FC = () => {
         }
         ogImage={productImage}
         ogUrl={"https://www.imperiorailing.com/products"}
-      />
+      /> */}
       <main>
         <Hero
           img={productImage}

@@ -1,11 +1,11 @@
 import { contactHero } from "../../assets/Images";
 import { Description, Hero, Quote } from "../../components";
-import Metadata from "../../components/Metatag/Metatag";
+// import Metadata from "../../components/Metatag/Metatag";
 
 export const Contact = () => {
   return (
     <>
-      <Metadata
+      {/* <Metadata
         title={"Contact Us - Imperio Railing System"}
         description={
           "Get in touch with Imperio Railing System for all your inquiries about aluminum glass railings. Whether you have questions about our products, need installation advice, or want to discuss custom solutions, our team is here to help. Contact us today to learn more about how our durable and stylish railings can enhance your home or commercial space."
@@ -15,7 +15,7 @@ export const Contact = () => {
         }
         ogImage={contactHero}
         ogUrl={"https://www.imperiorailing.com/contactus"}
-      />
+      /> */}
       <main>
         <Hero
           img={contactHero}
