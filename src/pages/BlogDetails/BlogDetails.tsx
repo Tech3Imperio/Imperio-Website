@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { FaTwitter, FaHeart, FaFacebook, FaLinkedin } from "react-icons/fa";
 import Logo from "../../assets/Images/logo/Blacklogo.png";
-import Metadata from "../../components/Metatag/Metatag";
+// import Metadata from "../../components/Metatag/Metatag";
 
 const BlogDetails: React.FC = () => {
   const location = useLocation();
@@ -103,7 +103,7 @@ const BlogDetails: React.FC = () => {
 
   return (
     <>
-      <Metadata
+      {/* <Metadata
         title={blogData ? `${blogData.id}` : "Blog - Imperio Railing System"}
         description={
           blogData
@@ -126,7 +126,7 @@ const BlogDetails: React.FC = () => {
                 .trim()
             : params
         }`}
-      />
+      /> */}
       {blogData ? (
         <div className="max-w-6xl mx-auto px-4 py-8">
           <motion.div

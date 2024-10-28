@@ -226,7 +226,7 @@
 import { useState } from "react";
 import { aboutHero, Middle } from "../../assets/Images";
 import { Description, Hero } from "../../components";
-import Metadata from "../../components/Metatag/Metatag";
+// import Metadata from "../../components/Metatag/Metatag";
 import { motion, AnimatePresence } from "framer-motion";
 // import { aboutData } from "../../assets/Data";
 
@@ -296,7 +296,7 @@ export const About: React.FC = () => {
 
   return (
     <>
-      <Metadata
+      {/* <Metadata
         title={"About Us - Imperio Railing"}
         description={
           " Learn more about Imperio Railing System, your trusted provider of aluminum glass railings. Our commitment to quality, safety, and innovative design sets us apart in the industry. With years of experience, we specialize in creating stylish and durable railing solutions for both residential and commercial properties. Discover how our passion for excellence drives us to deliver the best products and services to enhance your living spaces."
@@ -306,7 +306,7 @@ export const About: React.FC = () => {
         }
         ogImage={aboutHero}
         ogUrl={"https://www.imperiorailing.com/aboutus"}
-      />
+      /> */}
       <main>
         <Hero
           img={aboutHero}
