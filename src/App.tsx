@@ -157,7 +157,7 @@ import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Footer, Navbar } from "./components";
 import { useScrollToTop } from "./hooks";
-import { Helmet } from "react-helmet-async"; // Ensure this import is from 'react-helmet'
+import { Helmet } from "react-helmet"; // Ensure this import is from 'react-helmet'
 import WhatsAppChat from "./pages/WhatsAppChat/WhatsAppChat";
 import { Toaster } from "react-hot-toast";
 import { ToastContainer } from "react-toastify";
@@ -237,7 +237,7 @@ const App: React.FC = () => {
         />
         <meta
           name="keywords"
-          content="glass balcony design,glass guardrail,railing with glass,glass with railing,design of glass railing,glass railing for balcony,glass for balcony railing,glass railing design for balcony,glass balcony handrail,glass handrail balcony,modern style glass railing design for balcony,balcony railings with glass,railing glass balcony,glass railing design balcony,steel with glass railing,staircase glass railing design,staircase railing design with glass,ss with glass railing,modern glass balcony,stainless and glass railings,stainless steel glass handrail,glass and stainless steel railings,tuffen glass railing,wooden railings with glass,tuffen glass design for balcony,frameless glass railing,modern balcony glass design,outdoor glass handrail"
+          content="glass railing systems, glass balcony design,glass guardrail,railing with glass,glass with railing,design of glass railing,glass railing for balcony,glass for balcony railing,glass railing design for balcony,glass balcony handrail,glass handrail balcony,modern style glass railing design for balcony,balcony railings with glass,railing glass balcony,glass railing design balcony,steel with glass railing,staircase glass railing design,staircase railing design with glass,ss with glass railing,modern glass balcony,stainless and glass railings,stainless steel glass handrail,glass and stainless steel railings,tuffen glass railing,wooden railings with glass,tuffen glass design for balcony,frameless glass railing,modern balcony glass design,outdoor glass handrail"
         />
         <meta name="robots" content="index, follow" />
         <link rel="icon" href={favicondark} />

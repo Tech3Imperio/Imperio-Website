@@ -1,6 +1,6 @@
 // src/components/Metadata.tsx
 import React from "react";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 interface MetadataProps {
   title: string;
@@ -24,13 +24,13 @@ const Metadata: React.FC<MetadataProps> = ({
       <meta name="keywords" content={keywords} />
 
       {/* Open Graph */}
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={ogImage} />
-      <meta property="og:url" content={ogUrl} />
-      <meta property="og:type" content="website" />
-      <meta property="og:locale" content="en_US" />
-      <meta property="og:site_name" content="Imperio Railing" />
+      <meta name="og:title" content={title} />
+      <meta name="og:description" content={description} />
+      <meta name="og:image" content={ogImage} />
+      <meta name="og:url" content={ogUrl} />
+      <meta name="og:type" content="website" />
+      <meta name="og:locale" content="en_US" />
+      <meta name="og:site_name" content="Imperio Railing Systems" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
