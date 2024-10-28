@@ -13,6 +13,46 @@ const urls = [
   { url: "/quote", changefreq: "monthly", priority: 0.8 },
   { url: "/privacypolicy", changefreq: "monthly", priority: 0.6 },
   { url: "/dealership", changefreq: "monthly", priority: 0.6 },
+  {
+    url: "/blog/balcony-railing-safety-standards",
+    changefreq: "monthly",
+    priority: 0.6,
+  },
+  {
+    url: "/blog/exciting-new-glass-railings",
+    changefreq: "monthly",
+    priority: 0.6,
+  },
+  {
+    url: "/blog/unobstructed-pool-glass-railings",
+    changefreq: "monthly",
+    priority: 0.6,
+  },
+  {
+    url: "/blog/stylish-glass-functional-spaces",
+    changefreq: "monthly",
+    priority: 0.6,
+  },
+  {
+    url: "/blog/railings-meet-natures-embrace",
+    changefreq: "monthly",
+    priority: 0.6,
+  },
+  {
+    url: "/blog/modern-railings-aesthetic-appeal",
+    changefreq: "monthly",
+    priority: 0.6,
+  },
+  {
+    url: "/blog/seamless-views-modern-railings",
+    changefreq: "monthly",
+    priority: 0.6,
+  },
+  {
+    url: "/blog/handrails-key-benefits-considerations",
+    changefreq: "monthly",
+    priority: 0.6,
+  },
   // Add more URLs as needed
 ];
 

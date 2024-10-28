@@ -1,0 +1,6 @@
+# Allow all web crawlers access to everything
+User-agent: *
+Disallow:
+
+# Optional: Specify the sitemap
+Sitemap: https://imperiorailing.com/sitemap.xml
