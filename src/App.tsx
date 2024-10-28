@@ -229,17 +229,18 @@ const App: React.FC = () => {
     <>
       <Helmet>
         <title>
-          Imperio Railing Systems | Modern Glass Railings for Your Home
+          Imperio Railing Systems | Modern Glass Railings for Your Home |
+          Aluminum glass railing | railing systems | Glass Railing | Glass
+          Balcony Railing | Glass Balcony Handrail or Glass
         </title>
         <meta
           name="description"
-          content="Imperio Railing Systems offers premium glass railing solutions for homes and buildings. Enhance your space with our stylish and durable glass railings, glass balconies,stair railings,black railing with glass,glass handrail cost and glass parapet railing. Specializing in custom glass installations, our products ensure safety and elegance. Discover our range of glass railings and transform your home or building today."
+          content="Imperio Railing Systems offers premium glass railing solutions durable glass railing systems for homes and buildings. Enhance your space with our stylish and durable glass railings, glass balconies,stair railings,black railing with glass,glass handrail cost and glass parapet railing. Specializing in custom glass installations, our products ensure safety and elegance. Discover our range of glass railings and transform your home or building today.Explore our blog for insights and expertise on glass railing systems.Partner with us for growth opportunities."
         />
         <meta
           name="keywords"
-          content="glass railing systems, glass balcony design,glass guardrail,railing with glass,glass with railing,design of glass railing,glass railing for balcony,glass for balcony railing,glass railing design for balcony,glass balcony handrail,glass handrail balcony,modern style glass railing design for balcony,balcony railings with glass,railing glass balcony,glass railing design balcony,steel with glass railing,staircase glass railing design,staircase railing design with glass,ss with glass railing,modern glass balcony,stainless and glass railings,stainless steel glass handrail,glass and stainless steel railings,tuffen glass railing,wooden railings with glass,tuffen glass design for balcony,frameless glass railing,modern balcony glass design,outdoor glass handrail"
+          content="glass railing systems, aluminum glass railing,dealers,dealership,dealership in mumbai, alumium, glass, glass railing, railings, balcony glass, glas,raling,amazon,thikness,railng,amaza,flipkart,glass specialist,glass service,mumbai,india,pune,maharashtra,glass railing in mumbai,city,windows,stainless steel,railing aluminium,karnataka,railings steel design, glass balcony design,glass guardrail,railing with glass,glass with railing,design of glass railing,glass railing for balcony,glass for balcony railing,glass railing design for balcony,glass balcony handrail,glass handrail balcony,modern style glass railing design for balcony,balcony railings with glass,railing glass balcony,glass railing design balcony,steel with glass railing,staircase glass railing design,staircase railing design with glass,ss with glass railing,modern glass balcony,stainless and glass railings,stainless steel glass handrail,glass and stainless steel railings,tuffen glass railing,wooden railings with glass,tuffen glass design for balcony,frameless glass railing,modern balcony glass design,outdoor glass handrail"
         />
-        <meta name="robots" content="index, follow" />
         <link rel="icon" href={favicondark} />
       </Helmet>
       <Toaster />
