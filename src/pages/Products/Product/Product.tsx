@@ -474,6 +474,7 @@ import { ProductProps } from "../../../types";
 import { BlackButton } from "../../../components";
 import { iconsFeature } from "../../../assets/Data";
 import "./Product.css";
+import Metadata from "../../../components/Metatag/Metatag";
 
 type ImageData = {
   img: string;
@@ -523,9 +524,7 @@ const ExpandableText: React.FC<ExpandableTextProps> = ({
 
 const MemoProduct: React.FC = () => {
   const location = useLocation();
-  // console.log(location);
   const params = useParams();
-  console.log(params.productID);
   const [productData, setProductData] = useState<ProductProps | null>(null);
   const [imageData, setImageData] = useState<ImageData[]>([]);
   const featureData = useRef<FeatureData[]>([]);
@@ -659,101 +658,116 @@ const MemoProduct: React.FC = () => {
   const isMobile = window.innerWidth < 768;
 
   return (
-    <main className="py-4 px-12 pb-28 tablet:px-32 xl:px-44">
-      <header className="pb-8">
-        <h2 className="YellowText text-[1.75rem] tablet:text-4xl xl:text-[2.5rem]">
-          {productData["Product Category"]}
-        </h2>
-        <h1 className="Raleway text-[--third] text-xl tablet:text-[2.8rem] xl:text-xl">
-          {productData["Product Name"] + " " + productData["Product Code"]}
-        </h1>
-      </header>
-      <section className="xl:h-[80vh] flex justify-between max-xl:flex-col max-xl:gap-6">
-        <aside className="flex flex-col justify-between gap-4 w-full xl:w-[18%] overflow-hidden max-xl:order-3">
-          <div className="flex flex-col text-sm gap-2 justify-center">
-            {featureData.current.map((item, index) => (
-              <div key={index} className="flex flex-col gap-3">
-                <item.icon size={isMobile ? 24 : 36} color="#03247b" />
-                <p className="text-sm font-semibold lg:text-[13px]">
-                  {item.feature.toUpperCase()}
+    <>
+      <Metadata
+        title={`${
+          productData["Product Name"] +
+          " " +
+          productData["Product Code"] +
+          " - " +
+          productData["Random Code to link the product"]
+        }`}
+        description={""}
+        keywords={""}
+        ogImage={""}
+        ogUrl={`https://www.imperiorailing.com/products/${params.productID}`}
+      />
+      <main className="py-4 px-12 pb-28 tablet:px-32 xl:px-44">
+        <header className="pb-8">
+          <h2 className="YellowText text-[1.75rem] tablet:text-4xl xl:text-[2.5rem]">
+            {productData["Product Category"]}
+          </h2>
+          <h1 className="Raleway text-[--third] text-xl tablet:text-[2.8rem] xl:text-xl">
+            {productData["Product Name"] + " " + productData["Product Code"]}
+          </h1>
+        </header>
+        <section className="xl:h-[80vh] flex justify-between max-xl:flex-col max-xl:gap-6">
+          <aside className="flex flex-col justify-between gap-4 w-full xl:w-[18%] overflow-hidden max-xl:order-3">
+            <div className="flex flex-col text-sm gap-2 justify-center">
+              {featureData.current.map((item, index) => (
+                <div key={index} className="flex flex-col gap-3">
+                  <item.icon size={isMobile ? 24 : 36} color="#03247b" />
+                  <p className="text-sm font-semibold lg:text-[13px]">
+                    {item.feature.toUpperCase()}
+                  </p>
+                </div>
+              ))}
+              <div className="border-t-2 border-t-[--third] max-xl:space-y-8 max-xl:w-1/2">
+                <p className="text-sm font-semibold mt-2 lg:text-sm">
+                  SUITABLE FOR GLASS UP TO
                 </p>
+                <h2 className="text-5xl text-[--third] lg:text-3xl">
+                  {productData["Glass Thickness"]}
+                </h2>
               </div>
-            ))}
-            <div className="border-t-2 border-t-[--third] max-xl:space-y-8 max-xl:w-1/2">
-              <p className="text-sm font-semibold mt-2 lg:text-sm">
-                SUITABLE FOR GLASS UP TO
-              </p>
-              <h2 className="text-5xl text-[--third] lg:text-3xl">
-                {productData["Glass Thickness"]}
-              </h2>
             </div>
-          </div>
-          <div>
-            <img
-              className="rounded-4xl laptop:h-full cursor-pointer hidden xl:block"
-              onClick={handleLeftClick}
-              src={imageData[imageData.length - 1].img}
-              alt={imageData[imageData.length - 1].alt}
-              title={imageData[imageData.length - 1].alt}
-            />
-          </div>
-        </aside>
-        <div
-          ref={swipeRef}
-          onTouchStart={handleSwipeStart}
-          onTouchEnd={handleSwipeEnd}
-          className="center flex w-screen max-tablet:-mx-12 max-laptop:-mx-32 max-xl:mb-6 xl:w-[47.5rem] justify-between items-center text-2xl max-xl:order-1"
-        >
-          {!isMobile && (
-            <GoChevronLeft
-              className="cursor-pointer lg:ml-3 text-8xl tablet:text-3xl laptop:text-3xl"
-              onClick={handleLeftClick}
-            />
-          )}
-          <div className="middle-image-container xl:max-h-[75vh] xl:max-w-[33vw] xl:h-[40.5rem] xl:w-[40.5rem] rounded-4xl overflow-hidden relative">
-            {isMobile && showSwipeIndicator && (
-              <div className="swipe-indicator absolute top-0 left-0 w-full h-full flex items-center justify-center text-white font-bold animate-fade-in">
-                Swipe to navigate
-              </div>
+            <div>
+              <img
+                className="rounded-4xl laptop:h-full cursor-pointer hidden xl:block"
+                onClick={handleLeftClick}
+                src={imageData[imageData.length - 1].img}
+                alt={imageData[imageData.length - 1].alt}
+                title={imageData[imageData.length - 1].alt}
+              />
+            </div>
+          </aside>
+          <div
+            ref={swipeRef}
+            onTouchStart={handleSwipeStart}
+            onTouchEnd={handleSwipeEnd}
+            className="center flex w-screen max-tablet:-mx-12 max-laptop:-mx-32 max-xl:mb-6 xl:w-[47.5rem] justify-between items-center text-2xl max-xl:order-1"
+          >
+            {!isMobile && (
+              <GoChevronLeft
+                className="cursor-pointer lg:ml-3 text-8xl tablet:text-3xl laptop:text-3xl"
+                onClick={handleLeftClick}
+              />
             )}
-            <img
-              className="middle-image rounded-4xl"
-              src={imageData[0].img}
-              alt={imageData[0].alt}
-              title={imageData[0].alt}
-            />
+            <div className="middle-image-container xl:max-h-[75vh] xl:max-w-[33vw] xl:h-[40.5rem] xl:w-[40.5rem] rounded-4xl overflow-hidden relative">
+              {isMobile && showSwipeIndicator && (
+                <div className="swipe-indicator absolute top-0 left-0 w-full h-full flex items-center justify-center text-white font-bold animate-fade-in">
+                  Swipe to navigate
+                </div>
+              )}
+              <img
+                className="middle-image rounded-4xl"
+                src={imageData[0].img}
+                alt={imageData[0].alt}
+                title={imageData[0].alt}
+              />
+            </div>
+            {!isMobile && (
+              <GoChevronRight
+                className="cursor-pointer text-8xl tablet:text-3xl laptop:text-3xl"
+                onClick={handleRightClick}
+              />
+            )}
           </div>
-          {!isMobile && (
-            <GoChevronRight
-              className="cursor-pointer text-8xl tablet:text-3xl laptop:text-3xl"
-              onClick={handleRightClick}
-            />
-          )}
-        </div>
-        <aside className="flex flex-col gap-4 w-full xl:w-[20%] overflow-hidden justify-between max-xl:order-2">
-          <div className="flex flex-col gap-6 xl:gap-8">
-            <h1 className="text-[--third] Raleway text-2xl block xl:hidden">
-              Detailed Description.
-            </h1>
-            <ExpandableText maxLength={100} className="text-[--third]">
-              {productData["Short Description"]}
-            </ExpandableText>
-            <BlackButton className="hidden xl:block" path="/products">
-              View other products
-            </BlackButton>
-          </div>
-          <div>
-            <img
-              className="rounded-4xl cursor-pointer hidden xl:block"
-              onClick={handleRightClick}
-              src={imageData[1].img}
-              alt={imageData[1].alt}
-              title={imageData[1].alt}
-            />
-          </div>
-        </aside>
-      </section>
-    </main>
+          <aside className="flex flex-col gap-4 w-full xl:w-[20%] overflow-hidden justify-between max-xl:order-2">
+            <div className="flex flex-col gap-6 xl:gap-8">
+              <h1 className="text-[--third] Raleway text-2xl block xl:hidden">
+                Detailed Description.
+              </h1>
+              <ExpandableText maxLength={100} className="text-[--third]">
+                {productData["Short Description"]}
+              </ExpandableText>
+              <BlackButton className="hidden xl:block" path="/products">
+                View other products
+              </BlackButton>
+            </div>
+            <div>
+              <img
+                className="rounded-4xl cursor-pointer hidden xl:block"
+                onClick={handleRightClick}
+                src={imageData[1].img}
+                alt={imageData[1].alt}
+                title={imageData[1].alt}
+              />
+            </div>
+          </aside>
+        </section>
+      </main>
+    </>
   );
 };
 
