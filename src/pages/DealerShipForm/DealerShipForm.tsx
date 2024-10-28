@@ -209,7 +209,7 @@ export const DealerShipForm: React.FC = () => {
       />
       <Description
         yellowText="Explore Our Offerings."
-        mainHeader="We Value Expertise in Glass Railings."
+        mainHeader="Partner with us for growth opportunities."
         text={
           <>
             Join our dealership network for access to a wide range of glass
@@ -220,21 +220,20 @@ export const DealerShipForm: React.FC = () => {
       />
       <div>
         <h2 className="  text-[#03237b] text-3xl mx-auto xl:mx-[9rem] overflow-hidden md:text-5xl  px-[2rem] flex justify-start mt-20">
-          Why Choose Imperio ?
+          Why Choose Imperio Railing Systems?
         </h2>
         <p className=" grid justify-center items-center text-justify text-[0.800rem] mx-12 md:base lg:text-xl xl:px-[4rem] xl:ml-[7rem] py-4 text-[#8b939c]">
-          Why Choose Imperio Railing Systems? Imperio Railing Systems is a
-          leading provider of premium glass railings for balconies, terraces,
-          buildings, and staircases, delivering unmatched durability and safety.
-          With top-notch aluminum and high-durable glass, our railings are built
-          to withstand harsh weather conditions while enhancing aesthetics.
-          Available in a variety of colors, our aluminum products are
-          customizable to match your design preferences. We specialize in
-          providing sleek, modern solutions for hotels, residential, and
-          commercial buildings. Imperio offers innovative designs that combine
-          functionality with style, ensuring long-lasting quality and easy
-          maintenance. Choose Imperio for safety, elegance, and durability in
-          every project.
+          Imperio Railing Systems is a leading provider of premium glass
+          railings for balconies, terraces, buildings, and staircases,
+          delivering unmatched durability and safety. With top-notch aluminum
+          and high-durable glass, our railings are built to withstand harsh
+          weather conditions while enhancing aesthetics. Available in a variety
+          of colors, our aluminum products are customizable to match your design
+          preferences. We specialize in providing sleek, modern solutions for
+          hotels, residential, and commercial buildings. Imperio offers
+          innovative designs that combine functionality with style, ensuring
+          long-lasting quality and easy maintenance. Choose Imperio for safety,
+          elegance, and durability in every project.
         </p>
 
         {/* chart section open */}
