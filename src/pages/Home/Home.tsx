@@ -219,9 +219,9 @@ export const Home: React.FC = () => {
             <h1 className="YellowText text-lg tablet:text-4xl lg:text-5xl max-xl:text-3xl max-2xl:text-4xl">
               Our Vision
             </h1>
-            <h1 className="text-3xl tablet:text-4xl lg:text-5xl Raleway max-xl:text-4xl text-[--third]">
+            <h2 className="text-3xl tablet:text-4xl lg:text-5xl Raleway max-xl:text-4xl text-[--third]">
               Crafting Excellence in Glass Railings.
-            </h1>
+            </h2>
             <p className="w-full lg:w-[37rem] text-xs tablet:text-base lg:text-lg xl:text-xl italic text-[--grey]">
               At Imperio, we specialize in creating beautiful, durable glass
               railing systems that enhance any space. With a focus on innovation
@@ -317,9 +317,9 @@ export const Home: React.FC = () => {
                     <div className="flex items-center gap-5 text-white">
                       <h1 className="text-8xl laptop:text-6xl">{index + 1}.</h1>
                       <div className="flex flex-col gap-5">
-                        <h1 className="Raleway text-5xl laptop:text-4xl">
+                        <h2 className="Raleway text-5xl laptop:text-4xl">
                           {item.header}
-                        </h1>
+                        </h2>
                         <p className="text-2xl w-[38rem] laptop:w-[30rem] laptop:text-xl">
                           {item.subheader}
                         </p>
@@ -342,10 +342,10 @@ export const Home: React.FC = () => {
                     />
                   </div>
                   <div className="flex flex-col text-white">
-                    <h1 className="text-4xl laptop:text-3xl">{index + 1}.</h1>
-                    <h1 className="Raleway text-[1.75rem] laptop:text-[1.5rem]">
+                    <h2 className="text-4xl laptop:text-3xl">{index + 1}.</h2>
+                    <h3 className="Raleway text-[1.75rem] laptop:text-[1.5rem]">
                       {item.header}
-                    </h1>
+                    </h3>
                     <p className="text-xs w-11/12 italic laptop:text-sm">
                       {item.subheader}
                     </p>
