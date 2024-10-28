@@ -142,7 +142,8 @@
 import React, { useEffect, useState } from "react";
 // import { heroImage, descImage } from "../../assets/Images";
 //Festival Time only on This belo code
-import { descImage, heroImage } from "../../assets/Images";
+// import { descImage, heroImage } from "../../assets/Images";
+import { descImage } from "../../assets/Images";
 
 import {
   // Hero,
@@ -160,7 +161,7 @@ import {
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { scrollData, testimonialsData } from "../../assets/Data";
-import Metadata from "../../components/Metatag/Metatag";
+// import Metadata from "../../components/Metatag/Metatag";
 import Festival from "../../components/Festival";
 
 const text =
@@ -182,7 +183,7 @@ export const Home: React.FC = () => {
 
   return (
     <>
-      <Metadata
+      {/* <Metadata
         title={"Imperio Railing Systems - Home"}
         description={
           "Imperio Railing Systems offers premium glass railing solutions for homes and buildings. Enhance your space with our stylish and durable glass railings, glass balconies,stair railings,black railing with glass,glass handrail cost and glass parapet railing. Specializing in custom glass installations, our products ensure safety and elegance. Discover our range of glass railings and transform your home or building today."
@@ -192,7 +193,7 @@ export const Home: React.FC = () => {
         }
         ogImage={heroImage}
         ogUrl={"https://www.imperiorailing.com/"}
-      />
+      /> */}
       <main>
         {/* <Hero
           img={heroImage}

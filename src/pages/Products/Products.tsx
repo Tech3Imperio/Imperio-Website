@@ -7,6 +7,7 @@ import { ProductProps, ProductSection } from "../../types";
 import { getLocalStorageItem, setLocalStorageItem } from "../../utils";
 import { Product } from "./Product/Product";
 import "./style.css";
+import Metadata from "../../components/Metatag/Metatag";
 
 const MemoProducts: React.FC = () => {
   const { data, error, loading } = useProduct(
@@ -80,29 +81,41 @@ const MemoProducts: React.FC = () => {
   }
 
   return (
-    <main>
-      <title>Products - Imperio Railing Systems</title>
-      <Hero
-        img={productImage}
-        altText="Hero image for product"
-        header="Our Products"
-        subHeader="Discover the perfect blend of safety and sophistication with Imperio's glass railing systems."
-        curve
+    <>
+      <Metadata
+        title={"Products - Imperio Railing Systems"}
+        description={
+          "Revitalize your space with Imperio Railing Systems, your go-to source for stunning glass and aluminum railings. Our expertly crafted, frameless glass railings enhance balconies and staircases, while our durable aluminum options withstand the elements. Built from premium materials, our railings offer exceptional corrosion and UV resistance, making them ideal for both residential and commercial use. Discover the perfect blend of style, safety, and innovation with Imperio Railing Systems—where elegance meets durability!"
+        }
+        keywords={
+          "glass, railing, aluminum, glass railing, aluminum railing, frameless glass, durable railings, modern railing systems, corrosion resistant railings, UV resistant glass railings, residential glass railings, commercial aluminum railings, stylish railing solutions, high-quality glass railings, elegant railing designs, safety and functionality, innovative railing systems, custom glass railings, architectural railing solutions"
+        }
+        ogImage={productImage}
+        ogUrl={"https://www.imperiorailing.com/products"}
       />
-      <section className="pb-24">
-        {productSections.map((section, index) => (
-          <ProductPanel
-            key={index}
-            header={section.header}
-            productDetail={section.products}
-          />
-        ))}
-      </section>
-      <Quote />
-      {/* <div className="flex justify-center items-center h-screen">
-        <div className="w-16 h-16 border-t-4 border-b-4 border-blue-500 rounded-full animate-spin"></div>
-      </div> */}
-    </main>
+      <main>
+        <Hero
+          img={productImage}
+          altText="Hero image for product"
+          header="Our Products"
+          subHeader="Discover the perfect blend of safety and sophistication with Imperio's glass railing systems."
+          curve
+        />
+        <section className="pb-24">
+          {productSections.map((section, index) => (
+            <ProductPanel
+              key={index}
+              header={section.header}
+              productDetail={section.products}
+            />
+          ))}
+        </section>
+        <Quote />
+        {/* <div className="flex justify-center items-center h-screen">
+      <div className="w-16 h-16 border-t-4 border-b-4 border-blue-500 rounded-full animate-spin"></div>
+    </div> */}
+      </main>
+    </>
   );
 };
 export const Products = React.memo(MemoProducts);
