@@ -6,3 +6,4 @@ export * from "./scroller";
 export * from "./imagesidler";
 export * from "./about";
 export * from "./testimonials";
+export * from "./festival";

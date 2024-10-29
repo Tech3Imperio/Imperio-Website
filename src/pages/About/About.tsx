@@ -360,7 +360,7 @@ export const About: React.FC = () => {
                         className={`py-2 px-4 text-lg font-semibold transition-all duration-300 border-b-2 ${
                           activeTab === tab
                             ? "text-[#f5ce02] border-[#03237b]"
-                            : "text-gray-400 border-transparent hover:text-gray-600"
+                            : "text-gray-600 border-transparent hover:text-gray-600"
                         }`}
                         onClick={() => setActiveTab(tab)}
                       >
@@ -413,7 +413,7 @@ export const About: React.FC = () => {
                       <h3 className="text-xl Raleway-regular text-[#03237b] mb-2">
                         {point.title}
                       </h3>
-                      <p className="text-[#7a8088] text-sm md:text-base leading-relaxed text-justify">
+                      <p className="text-[--grey] text-sm md:text-base leading-relaxed text-justify">
                         {point.description}
                       </p>
                     </div>

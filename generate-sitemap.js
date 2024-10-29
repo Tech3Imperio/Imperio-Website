@@ -53,6 +53,11 @@ const urls = [
     changefreq: "monthly",
     priority: 0.6,
   },
+  {
+    url: "/blog/happy-diwali-from-imperio-railing-systems",
+    changefreq: "monthly",
+    priority: 0.6,
+  },
   // Add more URLs as needed
 ];
 

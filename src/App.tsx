@@ -229,17 +229,34 @@ const App: React.FC = () => {
     <>
       <Helmet>
         <title>
-          Imperio Railing Systems | Modern Glass Railings for Your Home |
-          Aluminum glass railing | railing systems | Glass Railing | Glass
-          Balcony Railing | Glass Balcony Handrail or Glass
+          Imperio Railing Systems | Stylish Glass Railings Systems & Custom
+          Solutions
         </title>
         <meta
           name="description"
-          content="Imperio Railing Systems offers premium glass railing solutions durable glass railing systems for homes and buildings. Enhance your space with our stylish and durable glass railings, glass balconies, stair railings, black railing with glass, glass handrail cost and glass parapet railing. Specializing in custom glass installations, our products ensure safety and elegance. Discover our range of glass railings and transform your home or building today. Explore our blog for insights and expertise on glass railing systems. Partner with us for growth opportunities."
+          content="Discover premium glass railing solutions with Imperio Railing Systems. Our durable and stylish railings, including glass balconies and stair railings, enhance safety and elegance for homes and buildings. Specializing in custom installations, we offer competitive pricing and expert insights. Transform your space with our high-quality glass railings today!"
         />
+
         <meta
           name="keywords"
-          content="premium glass railings, durable glass railing systems, glass balconies, stair railings, black railing with glass, glass handrail cost, glass parapet railing, custom glass installations, glass railing solutions, stylish glass railings, residential glass railings, architectural glass designs, sleek railing options, modern glass guardrails, safety glass railings, weather-resistant railings, decorative glass railings, high-quality glass finishes, aluminum and glass combinations, glass railing system, anodized aluminum railings, lightweight glass systems, outdoor glass railings, contemporary balcony designs"
+          content="premium glass railings, toughened glass manufacture, durable glass railing systems, modern glass guardrails, stylish glass railings, residential glass railings, glass balcony designs, glass handrail cost, custom glass installations, architectural glass designs, safety glass railings"
+        />
+
+        <meta name="robots" content="index, follow" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.imperiorailing.com/" />
+        <meta
+          name="instagram:url"
+          content="https://www.instagram.com/imperio.railings/?igsh=OWlmaXB6NnJpcWJ0"
+        />
+        <meta name="twitter:url" content="https://x.com/ImperioRailing" />
+        <meta
+          name="facebook:url"
+          content="https://www.facebook.com/imperiorailingsystem"
+        />
+        <meta
+          name="twitter:title"
+          content="glass railing supplier in mumbai and manufacturing"
         />
         <link rel="icon" href={favicondark} />
       </Helmet>
