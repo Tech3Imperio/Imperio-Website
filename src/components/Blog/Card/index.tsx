@@ -50,7 +50,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
         <div className="px-6 pb-2 flex justify-between h-max ">
           <div>
             {Array.isArray(blog.tags)
-              ? blog.tags.slice(0, 2).map((tag, index) => (
+              ? blog.tags.slice(0, 3).map((tag, index) => (
                   <span
                     key={index}
                     className="inline-block rounded-full px-3 py-1 text-xs font-normal text-gray-500 mr-2 mb-2"
