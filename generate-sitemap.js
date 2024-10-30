@@ -6,57 +6,58 @@ import { fileURLToPath } from "url";
 // URLs to include in the sitemap
 const urls = [
   { url: "/", changefreq: "daily", priority: 0.8 },
-  { url: "/aboutus", changefreq: "monthly", priority: 0.6 },
+  { url: "/aboutus", changefreq: "monthly", priority: 0.8 },
   { url: "/products", changefreq: "monthly", priority: 0.8 },
   { url: "/blog", changefreq: "monthly", priority: 0.8 },
   { url: "/contactus", changefreq: "monthly", priority: 0.6 },
   { url: "/quote", changefreq: "monthly", priority: 0.8 },
   { url: "/privacypolicy", changefreq: "monthly", priority: 0.6 },
-  { url: "/dealership", changefreq: "monthly", priority: 0.6 },
+  { url: "/dealership", changefreq: "monthly", priority: 0.8 },
+  { url: "/projects", changefreq: "monthly", priority: 0.8 },
   {
     url: "/blog/balcony-railing-safety-standards",
     changefreq: "monthly",
-    priority: 0.6,
+    priority: 0.8,
   },
   {
     url: "/blog/exciting-new-glass-railings",
     changefreq: "monthly",
-    priority: 0.6,
+    priority: 0.8,
   },
   {
     url: "/blog/unobstructed-pool-glass-railings",
     changefreq: "monthly",
-    priority: 0.6,
+    priority: 0.8,
   },
   {
     url: "/blog/stylish-glass-functional-spaces",
     changefreq: "monthly",
-    priority: 0.6,
+    priority: 0.8,
   },
   {
     url: "/blog/railings-meet-natures-embrace",
     changefreq: "monthly",
-    priority: 0.6,
+    priority: 0.8,
   },
   {
     url: "/blog/modern-railings-aesthetic-appeal",
     changefreq: "monthly",
-    priority: 0.6,
+    priority: 0.8,
   },
   {
     url: "/blog/seamless-views-modern-railings",
     changefreq: "monthly",
-    priority: 0.6,
+    priority: 0.8,
   },
   {
     url: "/blog/handrails-key-benefits-considerations",
     changefreq: "monthly",
-    priority: 0.6,
+    priority: 0.8,
   },
   {
     url: "/blog/happy-diwali-from-imperio-railing-systems",
     changefreq: "monthly",
-    priority: 0.6,
+    priority: 0.8,
   },
   // Add more URLs as needed
 ];
