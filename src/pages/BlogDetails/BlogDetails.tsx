@@ -280,21 +280,30 @@ const BlogDetails: React.FC = () => {
                       whileHover={{ scale: 1.1, rotate: 15 }}
                       whileTap={{ scale: 0.9 }}
                     >
-                      <FaTwitter size={24} />
+                      <Link to="https://x.com/ImperioRailing">
+                        {" "}
+                        <FaTwitter size={24} />{" "}
+                      </Link>
                     </motion.button>
                     <motion.button
                       className="p-2 bg-gray-200 rounded-full"
                       whileHover={{ scale: 1.1, rotate: -15 }}
                       whileTap={{ scale: 0.9 }}
                     >
-                      <FaFacebook size={24} />
+                      <Link to="https://www.facebook.com/imperiorailingsyste">
+                        {" "}
+                        <FaFacebook size={24} />
+                      </Link>
                     </motion.button>
                     <motion.button
                       className="p-2 bg-gray-200 rounded-full"
                       whileHover={{ scale: 1.1, rotate: 15 }}
                       whileTap={{ scale: 0.9 }}
                     >
-                      <FaLinkedin size={24} />
+                      <Link to="https://www.linkedin.com/company/imperiorailingsystems">
+                        {" "}
+                        <FaLinkedin size={24} />
+                      </Link>
                     </motion.button>
                   </div>
                 </div>
