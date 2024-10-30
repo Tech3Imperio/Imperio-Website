@@ -46,13 +46,13 @@ export const Hero: React.FC<HeroProps> = ({
           {header}
         </h1>
         {/* Subheader element with dynamic width and responsive text size */}
-        <div
+        <h4
           className={`text-xs phone:text-base ${
             condition ? "w-4/5" : "w-full"
           }`}
         >
           {subHeader}
-        </div>
+        </h4>
         {/* Container for child elements with padding-top */}
         <div className="pt-8">{children}</div>
       </div>

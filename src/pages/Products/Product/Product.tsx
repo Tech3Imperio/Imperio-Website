@@ -751,9 +751,20 @@ const MemoProduct: React.FC = () => {
               <ExpandableText maxLength={100} className="text-[--third]">
                 {productData["Short Description"]}
               </ExpandableText>
-              <BlackButton className="hidden xl:block" path="/products">
-                View other products
-              </BlackButton>
+              <div className="flex flex-col gap-4 max-w-48">
+                <BlackButton
+                  className="hidden xl:block max-w-48"
+                  path="/products"
+                >
+                  View other products
+                </BlackButton>
+                <BlackButton
+                  className="hidden xl:block w-full"
+                  path="/projects"
+                >
+                  View Projects
+                </BlackButton>
+              </div>
             </div>
             <div>
               <img

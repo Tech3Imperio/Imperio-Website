@@ -97,7 +97,7 @@ const MemoProducts: React.FC = () => {
         <Hero
           img={productImage}
           altText="Hero image for product"
-          header="Our Products"
+          header="Glass Railing Products"
           subHeader="Discover the perfect blend of safety and sophistication with Imperio's glass railing systems."
           curve
         />
