@@ -42,7 +42,7 @@ export const BlackButton: React.FC<ButtonProps> = ({
       to={path}
       className={
         className +
-        ` w-max py-4 px-6 rounded-4xl text-[--white] bg-[--black] transition-700 hover:text-[--black] hover:bg-[--secound]`
+        ` py-4 px-6 rounded-4xl text-[--white] bg-[--black] transition-700 hover:text-[--black] hover:bg-[--secound] text-center`
       }
     >
       {children}

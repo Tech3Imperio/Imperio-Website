@@ -14,6 +14,7 @@ import { ThankYou } from "./pages/Getquote/ThankYou/Thankyou";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy/PrivacyPolicy";
 import { DealerShipForm } from "./pages/DealerShipForm/DealerShipForm";
 import BlogDetails from "./pages/BlogDetails/BlogDetails";
+import Projects from "./pages/Projects/Projects";
 
 export const routes = createBrowserRouter([
   {
@@ -32,6 +33,7 @@ export const routes = createBrowserRouter([
         path: "products/:productID",
         element: <Product />,
       },
+      { path: "projects", element: <Projects /> },
       { path: "quote", element: <GetQuote /> },
       { path: "quote/thanks", element: <ThankYou /> },
       {

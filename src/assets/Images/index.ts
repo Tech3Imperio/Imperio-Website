@@ -7,3 +7,4 @@ export * from "./imagesidler";
 export * from "./about";
 export * from "./testimonials";
 export * from "./festival";
+export * from "./projectImage";
