@@ -4,7 +4,7 @@ export type HeroProps = {
   img: string;
   altText?: string;
   header: string | ReactNode;
-  subHeader: string;
+  subHeader: string | ReactNode;
   height?: boolean;
   curve?: boolean;
   children?: ReactNode;

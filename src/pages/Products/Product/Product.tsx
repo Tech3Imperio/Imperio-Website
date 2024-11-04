@@ -758,10 +758,7 @@ const MemoProduct: React.FC = () => {
                 >
                   View other products
                 </BlackButton>
-                <BlackButton
-                  className="hidden xl:block w-full"
-                  path="/projects"
-                >
+                <BlackButton className="w-full" path="/projects">
                   View Projects
                 </BlackButton>
               </div>
