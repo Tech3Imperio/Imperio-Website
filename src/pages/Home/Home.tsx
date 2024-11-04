@@ -140,15 +140,15 @@
 //   );
 // };
 import React, { useEffect, useState } from "react";
-// import { heroImage, descImage } from "../../assets/Images";
+import { heroImage, descImage } from "../../assets/Images";
 //Festival Time only on This belo code
 // import { descImage, heroImage } from "../../assets/Images";
-import { descImage } from "../../assets/Images";
+// import { descImage } from "../../assets/Images";
 
 import {
-  // Hero,
+  Hero,
   Description,
-  // GreyButton,
+  GreyButton,
   TextComponent,
   BlackButton,
   Quote,
@@ -162,7 +162,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { scrollData, testimonialsData } from "../../assets/Data";
 // import Metadata from "../../components/Metatag/Metatag";
-import Festival from "../../components/Festival";
+
+//import for the Festival Component
+// import Festival from "../../components/Festival";
 
 const text =
   "Imperio offers exquisite glass railing systems blending safety and style. Explore innovative designs, LED options, and elegance. See our work, hear from satisfied clients, and take the next step with us.";
@@ -195,7 +197,7 @@ export const Home: React.FC = () => {
         ogUrl={"https://www.imperiorailing.com/"}
       /> */}
       <main>
-        {/* <Hero
+        <Hero
           img={heroImage}
           altText="hero for home"
           header={
@@ -205,20 +207,22 @@ export const Home: React.FC = () => {
               Ultimate Style.
             </>
           }
-          subHeader="Discover the perfect blend of safety and sophistication with Imperio's glass railing systems."
+          subHeader="Sleek and Durable Glass Railing System Perfect for Enhancing, Securing, and Styling Your Balcony, Indoor, and Outdoor Spaces"
           height
         >
           <div className="p-8 pl-0 w-max text-xs">
             <GreyButton path="/aboutus">KNOW MORE</GreyButton>
           </div>
-        </Hero> */}
-        <Festival />
+        </Hero>
+
+        {/* Use this Component in Festive Season only */}
+        {/* <Festival /> */}
 
         <section className="flex flex-col lg:flex-row justify-center gap-8 px-10 phone:px-20 tablet:px-32 xl:px-44 pb-9 phone:pb-16 tablet:pb-24 xl:pb-36 pt-6 phone:pt-14 tablet:pt-24 xl:pt-36">
           <div className="flex flex-col gap-2 phone:gap-4">
-            <h1 className="YellowText text-lg tablet:text-4xl lg:text-5xl max-xl:text-3xl max-2xl:text-4xl">
+            <h2 className="YellowText text-lg tablet:text-4xl lg:text-5xl max-xl:text-3xl max-2xl:text-4xl">
               Our Vision
-            </h1>
+            </h2>
             <h2 className="text-3xl tablet:text-4xl lg:text-5xl Raleway max-xl:text-4xl text-[--third]">
               Crafting Excellence in Glass Railings.
             </h2>
@@ -315,7 +319,7 @@ export const Home: React.FC = () => {
                 {scrollData.map((item, index) => (
                   <div key={index}>
                     <div className="flex items-center gap-5 text-white">
-                      <h1 className="text-8xl laptop:text-6xl">{index + 1}.</h1>
+                      <h2 className="text-8xl laptop:text-6xl">{index + 1}.</h2>
                       <div className="flex flex-col gap-5">
                         <h2 className="Raleway text-5xl laptop:text-4xl">
                           {item.header}

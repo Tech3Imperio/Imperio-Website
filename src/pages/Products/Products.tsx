@@ -7,7 +7,7 @@ import { ProductProps, ProductSection } from "../../types";
 import { getLocalStorageItem, setLocalStorageItem } from "../../utils";
 import { Product } from "./Product/Product";
 import "./style.css";
-// import Metadata from "../../components/Metatag/Metatag";
+import Metadata from "../../components/Metatag/Metatag";
 
 const MemoProducts: React.FC = () => {
   const { data, error, loading } = useProduct(
@@ -82,23 +82,23 @@ const MemoProducts: React.FC = () => {
 
   return (
     <>
-      {/* <Metadata
+      <Metadata
         title={"Products - Imperio Railing Systems"}
         description={
-          "Revitalize your space with Imperio Railing Systems, your go-to source for stunning glass and aluminum railings. Our expertly crafted, frameless glass railings enhance balconies and staircases, while our durable aluminum options withstand the elements. Built from premium materials, our railings offer exceptional corrosion and UV resistance, making them ideal for both residential and commercial use. Discover the perfect blend of style, safety, and innovation with Imperio Railing Systems—where elegance meets durability!"
+          "Imperio’s Glass Railing Systems in India offer durable balcony railings, staircase railings, and aluminum glass railings, merging modern aesthetics with lasting safety. We offer aluminum glass railings all over India, with a strong presence in states like Maharashtra, Goa, Gujarat, etc and cities including Mumbai, Pune, Alibaug, Bangluru, etc"
         }
         keywords={
-          "glass, railing, aluminum, glass railing, aluminum railing, frameless glass, durable railings, modern railing systems, corrosion resistant railings, UV resistant glass railings, residential glass railings, commercial aluminum railings, stylish railing solutions, high-quality glass railings, elegant railing designs, safety and functionality, innovative railing systems, custom glass railings, architectural railing solutions"
+          "glass railings, aluminum railings, frameless glass, durable railings, modern railing systems, corrosion-resistant railings, UV-resistant glass railings, residential glass railings, commercial aluminum railings, stylish railing solutions, high-quality glass railings, elegant railing designs, safety and functionality, innovative railing systems, custom glass railings, architectural railing solutions"
         }
         ogImage={productImage}
         ogUrl={"https://www.imperiorailing.com/products"}
-      /> */}
+      />
       <main>
         <Hero
           img={productImage}
           altText="Hero image for product"
-          header="Glass Railing Products"
-          subHeader="Discover the perfect blend of safety and sophistication with Imperio's glass railing systems."
+          header="Glass Railings Systems"
+          subHeader="Imperio’s Glass Railing Systems in India deliver high-durability balcony, staircase, and aluminum glass railings, blending modern style with lasting safety for any space."
           curve
         />
         <section className="pb-24">

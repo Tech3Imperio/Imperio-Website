@@ -38,21 +38,21 @@ export const Hero: React.FC<HeroProps> = ({
         } text-white pl-9 phone:pl-16 tablet:pl-24 laptop:pl-32 xl:pl-44`}
       >
         {/* Header element with dynamic width and responsive text size */}
-        <h1
+        <h2
           className={`text-[2.7rem] phone:text-[3rem] tablet:text-[3.3rem] laptop:text-[3.5rem] xl:text-[3.8rem] Raleway ${
             condition ? "w-4/5" : "w-full"
           }`}
         >
           {header}
-        </h1>
+        </h2>
         {/* Subheader element with dynamic width and responsive text size */}
-        <h4
+        <h1
           className={`text-xs phone:text-base ${
             condition ? "w-4/5" : "w-full"
           }`}
         >
           {subHeader}
-        </h4>
+        </h1>
         {/* Container for child elements with padding-top */}
         <div className="pt-8">{children}</div>
       </div>

@@ -9,16 +9,16 @@ export const ProductPanel: React.FC<ProductPanelProps> = ({
 }) => {
   return (
     <>
-      <div className="max-w-6xl flex mx-auto mt-24">
-        <div className="flex flex-col w-[60%] gap-1 tablet:gap-6">
+      <div className="max-w-6xl flex flex-col md:flex-row mx-auto mt-10 md:mt-24 gap-8 p-4">
+        <div className="flex flex-col md:w-[60%] gap-1 tablet:gap-6">
           <h2 className="YellowText text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
             Glass Railing {header}
           </h2>
-          <h3 className="text-[--third] flex flex-wrap max-w-2xl Raleway tracking-wider w-4/5 tablet:w-11/12 text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] 2xl:text-5xl">
-            Explore Glass Railing {header} variants we offer
+          <h3 className="text-[--third] flex flex-wrap md:max-w-2xl Raleway tracking-wider w-full text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] 2xl:text-5xl">
+            High Quality & Premium Aluminium {header} variants.
           </h3>
         </div>
-        <div className="w-[40%]">
+        <div className="md:w-[40%]">
           {header === "Base" ? (
             <p className="text-justify italic text-[--grey]">
               "Discover our premium aluminum glass railing bases, customizable
