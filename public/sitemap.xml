@@ -6,92 +6,97 @@
     xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
     <url>
         <loc>https://imperiorailing.com/</loc>
-        <changefreq>daily</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://imperiorailing.com/aboutus</loc>
-        <changefreq>monthly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://imperiorailing.com/products</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://imperiorailing.com/blog</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://imperiorailing.com/contactus</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://imperiorailing.com/quote</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://imperiorailing.com/privacypolicy</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://imperiorailing.com/dealership</loc>
-        <changefreq>monthly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://imperiorailing.com/projects</loc>
-        <changefreq>monthly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://imperiorailing.com/blog/balcony-railing-safety-standards</loc>
-        <changefreq>monthly</changefreq>
+        <loc>https://imperiorailing.com/dealership</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://imperiorailing.com/blog</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://imperiorailing.com/quote</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://imperiorailing.com/contactus</loc>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://imperiorailing.com/privacypolicy</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://imperiorailing.com/blog/balcony-railing-safety-standards</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://imperiorailing.com/blog/exciting-new-glass-railings</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://imperiorailing.com/blog/unobstructed-pool-glass-railings</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://imperiorailing.com/blog/stylish-glass-functional-spaces</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://imperiorailing.com/blog/railings-meet-natures-embrace</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://imperiorailing.com/blog/modern-railings-aesthetic-appeal</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://imperiorailing.com/blog/seamless-views-modern-railings</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://imperiorailing.com/blog/handrails-key-benefits-considerations</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://imperiorailing.com/blog/happy-diwali-from-imperio-railing-systems</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://imperiorailing.com/blog/elevate-your-space-with-sleek-glass-railings</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
     </url>
 </urlset>

@@ -18,14 +18,14 @@ export const DealerShipForm: React.FC = () => {
         " Expand your business opportunities as an Imperio Railing Systems mini-dealer offering top-quality solutions and dedicated assistance to enhance your market reach.",
     },
     {
-      day: "Micro Dealers",
+      day: "Exclusive Dealership",
       description:
-        "Join the Imperio Railing Systems network as a micro-dealer and gain access to exclusive products and competitive margins that enhance your local market presence.",
+        "Join the Imperio Railing Systems network as a Eexclusive Dealership and gain access to exclusive products and competitive margins that enhance your local market presence.",
     },
     {
-      day: "Exclusive Dealers",
+      day: "Exclusive Distributors",
       description:
-        "    As an exclusive dealer with Imperio Railing Systems, enjoy premium access to top-tier products, superior service, and priority support designed to elevate your business.",
+        "As an exclusive dealer with Imperio Railing Systems, enjoy premium access to top-tier products, superior service, and priority support designed to elevate your business.",
     },
   ];
 
