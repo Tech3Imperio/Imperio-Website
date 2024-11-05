@@ -203,8 +203,8 @@ export const DealerShipForm: React.FC = () => {
       <Hero
         img={bgDealers}
         altText="hero for blog"
-        header="Dealership"
-        subHeader="Premium Glass Railings for Every Architectural Vision."
+        header="Dealership with Imperio Glass Railings Systems"
+        subHeader="Premium Glass Railings Solutions and Exclusive Dealership Opportunities Across India."
         curve
       />
       <Description
@@ -224,11 +224,11 @@ export const DealerShipForm: React.FC = () => {
         </h2>
         <p className=" grid justify-center items-center text-justify text-[0.800rem] mx-12 md:base lg:text-xl xl:px-[4rem] xl:ml-[7rem] py-4 text-[#8b939c]">
           Imperio Railing Systems is a leading provider of premium glass
-          railings for balconies, terraces, buildings, and staircases,
-          delivering unmatched durability and safety. With top-notch aluminum
-          and high-durable glass, our railings are built to withstand harsh
-          weather conditions while enhancing aesthetics. Available in a variety
-          of colors, our aluminum products are customizable to match your design
+          railings for balcony, terrace , buildings, and staircases, delivering
+          unmatched durability and safety. With top-notch aluminum and
+          high-durable glass, our railings are built to withstand harsh weather
+          conditions while enhancing aesthetics. Available in a variety of
+          colors, our aluminum products are customizable to match your design
           preferences. We specialize in providing sleek, modern solutions for
           hotels, residential, and commercial buildings. Imperio offers
           innovative designs that combine functionality with style, ensuring
