@@ -229,19 +229,17 @@ const App: React.FC = () => {
     <>
       <Helmet>
         <title>
-          Imperio Railing Systems | Stylish Glass Railings Systems & Custom
-          Solutions
+          Imperio Railing Systems | Glass Railing | Balcony Glass Railings |
+          Staircase Glass Railings | Glass Railing Handrails
         </title>
         <meta
           name="description"
-          content="Discover premium glass railing solutions with Imperio Railing Systems. Our durable and stylish railings, including glass balconies and stair railings, enhance safety and elegance for homes and buildings. Specializing in custom installations, we offer competitive pricing and expert insights. Transform your space with our high-quality glass railings today!"
+          content="Discover glass railing solutions with Imperio Railing Systems in Mumbai, Maharashtra, India. Our durable and stylish glass railings, including balcony glass railings and staircase railings, for any space. Various accessories available like base, handrails, brackets, spigots, etc. Transform your space with our high-quality glass railings today!. Best suppliers and dealers in India for glass railing"
         />
-
         <meta
           name="keywords"
-          content="premium glass railings, toughened glass manufacture, durable glass railing systems, modern glass guardrails, stylish glass railings, residential glass railings, glass balcony designs, glass handrail cost, custom glass installations, architectural glass designs, safety glass railings"
+          content="premium glass railings, toughened glass manufacturer, durable glass railing systems, modern glass guardrails, stylish glass railings, residential glass railings, glass balcony designs, glass handrail cost, custom glass installations, architectural glass designs, safety glass railings"
         />
-
         <meta name="robots" content="index, follow" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.imperiorailing.com/" />

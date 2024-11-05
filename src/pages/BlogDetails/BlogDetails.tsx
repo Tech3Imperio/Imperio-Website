@@ -33,7 +33,6 @@ const BlogDetails: React.FC = () => {
       })
       .then((data) => {
         // Find the blog that matches the readableTitle
-        setAllData(data);
         const foundBlog = data.find(
           (blog: BlogType) =>
             blog.id
@@ -42,6 +41,7 @@ const BlogDetails: React.FC = () => {
               .replace(/[^\w-]+/g, "") === readableTitle
         );
         if (foundBlog) {
+          setAllData(data.filter((blog: BlogType) => blog !== foundBlog));
           setBlogData(foundBlog);
         }
       })
@@ -204,7 +204,7 @@ const BlogDetails: React.FC = () => {
               <main className="flex flex-col  items-start justify-start">
                 <AnimatedSection>
                   <div
-                    className="mb-24 mt-10"
+                    className="my-10"
                     id={sectionTagArray ? sectionTagArray[0] : ""}
                   >
                     <h2 className="text-black text-4xl mb-4 Raleway">
@@ -308,6 +308,7 @@ const BlogDetails: React.FC = () => {
                   </div>
                 </div>
               </AnimatedSection>
+
               <AnimatedSection>
                 <div className="border-t pt-8">
                   <h2 className="text-2xl font-bold mb-4">Related Articles</h2>
