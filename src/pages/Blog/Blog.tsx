@@ -52,8 +52,8 @@ export const Blog = () => {
         <Hero
           img={blogHero}
           altText="hero for blog"
-          header="Blog"
-          subHeader="Check out our blogs. We post daily!"
+          header="Glass Railing Blogs"
+          subHeader="Check out our blogs. Grow your knowledge with Imperio Railing System in Glass Railings."
           curve
         />
         <Description

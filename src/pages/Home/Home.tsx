@@ -167,7 +167,7 @@ import { scrollData, testimonialsData } from "../../assets/Data";
 // import Festival from "../../components/Festival";
 
 const text =
-  "Imperio offers exquisite glass railing systems blending safety and style. Explore innovative designs, LED options, and elegance. See our work, hear from satisfied clients, and take the next step with us.";
+  "Imperio offers exquisite glass railing systems that blend safety and style. Explore innovative designs, LED options, and elegance. We also provide dealership opportunities for those looking to partner with us. See our work, hear from satisfied clients, and take the next step with us.";
 
 export const Home: React.FC = () => {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1000);
@@ -228,9 +228,11 @@ export const Home: React.FC = () => {
             </h2>
             <p className="w-full lg:w-[37rem] text-xs tablet:text-base lg:text-lg xl:text-xl italic text-[--grey]">
               At Imperio, we specialize in creating beautiful, durable glass
-              railing systems that enhance any space. With a focus on innovation
-              and quality, our team is dedicated to delivering top-notch
-              solutions for both residential and commercial projects.
+              railing systems, including aluminum glass railings, balcony glass
+              railings and staircase glass railings, that enhance any space.
+              Based in Mumbai, Maharashtra, India, our focus on innovation and
+              quality ensures that our team delivers top-notch solutions for
+              both residential and commercial projects.
             </p>
             <div className="pt-8 text-[9px] phone:text-xs">
               <BlackButton path="/aboutus">KNOW MORE</BlackButton>

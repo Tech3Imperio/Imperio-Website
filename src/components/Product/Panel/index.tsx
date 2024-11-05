@@ -9,7 +9,7 @@ export const ProductPanel: React.FC<ProductPanelProps> = ({
 }) => {
   return (
     <>
-      <div className="max-w-6xl flex flex-col md:flex-row mx-auto mt-10 md:mt-24 gap-8 p-4">
+      <div className="max-w-7xl flex flex-col md:flex-row mx-auto mt-10 md:mt-24 gap-8 p-4">
         <div className="flex flex-col md:w-[60%] gap-1 tablet:gap-6">
           <h2 className="YellowText text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
             Glass Railing {header}
