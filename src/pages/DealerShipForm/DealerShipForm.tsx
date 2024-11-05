@@ -203,8 +203,8 @@ export const DealerShipForm: React.FC = () => {
       <Hero
         img={bgDealers}
         altText="hero for blog"
-        header="Dealership"
-        subHeader="Premium Glass Railings for Every Architectural Vision."
+        header="Dealership with Imperio Glass Railings Systems"
+        subHeader="Premium Glass Railings Solutions and Exclusive Dealership Opportunities Across India."
         curve
       />
       <Description
