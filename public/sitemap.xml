@@ -10,6 +10,11 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://www.imperiorailing.com/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://imperiorailing.com/aboutus</loc>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
