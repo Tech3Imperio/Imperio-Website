@@ -63,6 +63,19 @@ const MemoProducts: React.FC = () => {
   if (problem) {
     return (
       <>
+        <Metadata
+          title={
+            "Glass Railing Systems Products | Aluminium Glass railing Base |  Aluminium Glass railing Handrail"
+          }
+          description={
+            "Imperio’s glass railing systems in india offer durable balcony glass railings, staircase glass railings, and aluminum glass railings, merging modern aesthetics with lasting safety. We offer glass railings all over India, with a strong presence in states like Maharashtra, Goa, Gujarat, etc and cities including Mumbai, Pune, Alibaug, Bangluru, etc"
+          }
+          keywords={
+            "glass railings, aluminum railings, frameless glass, durable railings, modern railing systems, corrosion-resistant railings, UV-resistant glass railings, residential glass railings, commercial aluminum railings, stylish railing solutions, high-quality glass railings, elegant railing designs, safety and functionality, innovative railing systems, custom glass railings, architectural railing solutions"
+          }
+          ogImage={productImage}
+          ogUrl={"https://www.imperiorailing.com/products"}
+        />
         <Hero
           img={productImage}
           altText="Hero image for product"
@@ -130,7 +143,9 @@ const MemoProducts: React.FC = () => {
   return (
     <>
       <Metadata
-        title={"Glass Railings Systems Products - Imperio Railing Systems"}
+        title={
+          "Glass Railing Systems Products | Aluminium Glass railing Base |  Aluminium Glass railing Handrail"
+        }
         description={
           "Imperio’s glass railing systems in india offer durable balcony glass railings, staircase glass railings, and aluminum glass railings, merging modern aesthetics with lasting safety. We offer glass railings all over India, with a strong presence in states like Maharashtra, Goa, Gujarat, etc and cities including Mumbai, Pune, Alibaug, Bangluru, etc"
         }
