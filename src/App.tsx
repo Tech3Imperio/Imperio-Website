@@ -238,7 +238,7 @@ const App: React.FC = () => {
         />
         <meta
           name="keywords"
-          content="premium glass railings, toughened glass manufacturer, durable glass railing systems, modern glass guardrails, stylish glass railings, residential glass railings, glass balcony designs, glass handrail cost, custom glass installations, architectural glass designs, safety glass railings"
+          content="premium glass railings, toughened glass manufacturer, durable glass railing systems, modern glass railing, stylish glass railing, balcony glass railing, balcony glass design, glass handrail price, custom glass installation,custom glass railing, Architectural Glass Design, Glass Railing Safety & Maintenance"
         />
         <meta name="robots" content="index, follow" />
         <meta property="og:type" content="website" />

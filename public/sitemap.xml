@@ -40,6 +40,11 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://imperiorailing.com/blog/ModernTerrace</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://imperiorailing.com/quote</loc>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>

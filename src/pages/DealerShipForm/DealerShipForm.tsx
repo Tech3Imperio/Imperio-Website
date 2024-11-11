@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../Service/Api/Api";
 // import Metadata from "../../components/Metatag/Metatag";
-import { Description, Hero } from "../../components";
+import { Hero } from "../../components";
 import bgDealers from "../../assets/Images/quote/bgDealers.webp";
+import Metadata from "../../components/Metatag/Metatag";
+import { motion } from "framer-motion";
 // import SalesChart from "./SalesChart";
 export const DealerShipForm: React.FC = () => {
   const checkpoints = [
@@ -26,6 +28,33 @@ export const DealerShipForm: React.FC = () => {
       day: "Exclusive Distributors",
       description:
         "As an exclusive dealer with Imperio Railing Systems, enjoy premium access to top-tier products, superior service, and priority support designed to elevate your business.",
+    },
+  ];
+  const DealershipKeys: { title: string; Description: string }[] = [
+    {
+      title: "High-Quality Products",
+      Description:
+        "Our state-of-the-art manufacturing facility produces durable and stylish glass and aluminum railings, designed to enhance the beauty and security of any space. From modern minimalist designs to traditional elegance, we offer a wide range of options to suit your unique needs.",
+    },
+    {
+      title: "Comprehensive Support",
+      Description:
+        "Our dedicated team provides comprehensive support, including training programs, marketing materials, and technical assistance, to ensure your success. We're committed to helping you grow your business and achieve your goals.",
+    },
+    {
+      title: "Strong Brand Reputation",
+      Description:
+        "With a strong brand reputation and excellent customer service, Imperio Railing is a trusted name in the industry. Our commitment to quality and innovation has helped us build a loyal customer base and a network of satisfied dealers.",
+    },
+    {
+      title: "Exclusive Dealer Benefits",
+      Description:
+        "As an Imperio Railing dealer, you'll enjoy exclusive benefits such as priority shipping, personalized marketing support, and competitive pricing. We're dedicated to helping you maximize your profits and minimize your costs.",
+    },
+    {
+      title: "Customizable Solutions",
+      Description:
+        "We offer a wide range of customizable railing solutions to meet the unique needs of your customers. Whether you're looking for a simple, functional railing or a complex, bespoke design, we can deliver.",
     },
   ];
 
@@ -193,49 +222,105 @@ export const DealerShipForm: React.FC = () => {
 
   return (
     <>
-      {/* <Metadata
-        title="Dealership - Imperio Railing"
-        description="Join Imperio Railing's dealership program to offer your customers premium aluminum glass railings. Partner with us to benefit from our high-quality products, comprehensive support, and attractive dealer incentives. Contact us to learn more about becoming an Imperio Railing dealer and elevating your business with our stylish and durable railing solutions."
-        keywords="Imperio Railing Dealership, Aluminum Glass Railings Dealer, Premium Railings Partnership, Railing Dealer Support, Dealer Incentives, High-Quality Railings, Business Partnership, Commercial Railings, Residential Railings, Dealer Program, Premium Railing Solutions, Railing Dealer Network, Dealer Benefits, Custom Railing Solutions, Stylish Railings, Durable Railings, Railing Installation, Dealer Opportunities, Glass Railings, Aluminum Railings, Business Growth, Architectural Design, railing installation services, outdoor railings, modern railings, railing solutions, railing systems, glass railing installation, aluminum railing systems, premium railing products, stylish railing designs, durable railing options"
+      <Metadata
+        title="Dealership | Dealers | glass railing dealer"
+        description="Join Imperio Railing's dealership program to offer your customers premium glass railing solutions, including stylish aluminum glass railings. Partner with us to benefit from our high-quality products, comprehensive support, and the exclusive opportunities glass railing market to become a top glass railing dealer in Mumbai. Contact us to learn more about becoming an Imperio Railing dealer and elevating your business with our durable railing solutions that deliver exceptional glass railing options to your customers."
+        keywords="Glass Railing Dealers, manufacturer & supplier,Top Glass Railing Dealers in Mumbai,Top Balcony Glass Railing Dealers in Mumbai, Aluminum Glass Railings Dealer, Premium Railings distributor, Railing Dealer Support, Dealer, High-Quality Railings, Commercial Railings, Residential Railings, Dealer Program, Premium Railing Solutions, Railing Dealer Network, Dealer Benefits, Custom Railing Solutions, Stylish glass Railing, Railing Installation, Dealer Opportunities, Glass Railings, Aluminum Railings, Business Growth, Architectural Design, railing installation services, outdoor railings, modern railings, glass railing, glass railing installation, aluminum railing systems, premium railing products, stylish railing designs, durable glass railing"
         ogImage={bgDealers} // Replace with the actual image path
         ogUrl="https://www.imperiorailing.com/dealership"
-      /> */}
+      />
       <Hero
         img={bgDealers}
         altText="hero for blog"
-        header="Dealership with Imperio Glass Railings Systems"
-        subHeader="Premium Glass Railings Solutions and Exclusive Dealership Opportunities Across India."
+        header="Dealership with Imperio Glass Railing Systems"
+        subHeader="Premium Glass Railings Solutions  We are proud to partner with leading dealers and distributors in Mumbai, Maharashtra, ensuring that our high-quality glass railings are accessible to all. Exclusive Dealership Opportunities Across India."
         curve
       />
-      <Description
+      {/* <Description
         yellowText="Explore Our Offerings."
         mainHeader="Partner with us for growth opportunities."
         text={
           <>
-            Join our dealership network for access to a wide range of glass
-            railing systems, and expert guidance to help your business thrive
-            and satisfy your customers.
+            Join Imperio Railing's dealer network and access a wide range of
+            premium glass railing dealers. As a leading Glass Railing
+            Manufacturer & Supplier in India, we offer high-quality Aluminum
+            Glass Railings that blend style, durability, and safety. Our
+            comprehensive dealer support, attractive incentives, and expert
+            guidance will help you thrive in the market.
+            <br />
+            <br />
+            Whether you're looking to become a Top Glass Railing Dealer in
+            Mumbai, Delhi, Bengaluru, Chennai, Pune or any other city in India,
+            or even expand your business globally, Imperio Railing is your ideal
+            partner. Our stylish glass railing designs, durable construction,
+            and efficient railing installation services will help you deliver
+            exceptional solutions to your customers.
           </>
         }
-      />
-      <div>
-        <h2 className="  text-[#03237b] text-3xl mx-auto xl:mx-[9rem] overflow-hidden md:text-5xl  px-[2rem] flex justify-start mt-20">
-          Why Choose Imperio Railing Systems?
-        </h2>
-        <p className=" grid justify-center items-center text-justify text-[0.800rem] mx-12 md:base lg:text-xl xl:px-[4rem] xl:ml-[7rem] py-4 text-[#8b939c]">
-          Imperio Railing Systems is a leading provider of premium glass
-          railings for balcony, terrace , buildings, and staircases, delivering
-          unmatched durability and safety. With top-notch aluminum and
-          high-durable glass, our railings are built to withstand harsh weather
-          conditions while enhancing aesthetics. Available in a variety of
-          colors, our aluminum products are customizable to match your design
-          preferences. We specialize in providing sleek, modern solutions for
-          hotels, residential, and commercial buildings. Imperio offers
-          innovative designs that combine functionality with style, ensuring
-          long-lasting quality and easy maintenance. Choose Imperio for safety,
-          elegance, and durability in every project.
-        </p>
+      /> */}
+      <div className="max-w-7xl flex flex-col md:flex-row mx-auto mt-10 md:mt-24 gap-8 p-4">
+        <div className="flex flex-col md:w-[60%] gap-1 tablet:gap-6">
+          <h2 className="YellowText text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
+            Explore Our Offerings.
+          </h2>
+          <h3 className="text-[--third] flex flex-wrap md:max-w-2xl Raleway tracking-wider w-full text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] 2xl:text-5xl">
+            Partner with us for growth opportunities.
+          </h3>
+        </div>
+        <div className="md:w-[40%]">
+          <p className="text-justify italic text-[--grey]">
+            Join Imperio Railing's dealer network and access a wide range of
+            premium glass railing dealers. As a leading Glass Railing
+            Manufacturer & Supplier in India, we offer high-quality Aluminum
+            Glass Railings that blend style, durability, and safety. Our
+            comprehensive dealer support, attractive incentives, and expert
+            guidance will help you thrive in the market.
+            <br />
+            <br />
+            Whether you're looking to become a Top Glass Railing Dealer in
+            Mumbai, Delhi, Bengaluru, Chennai, Pune or any other city in India,
+            or even expand your business globally, Imperio Railing is your ideal
+            partner. Our stylish glass railing designs, durable construction,
+            and efficient railing installation services will help you deliver
+            exceptional solutions to your customers.
+          </p>
+        </div>
+      </div>
 
+      <div className="max-w-7xl flex flex-col  mx-auto mt-10 md:mt-24 gap-8 p-7">
+        <h2 className="  text-[#03237b] text-3xl  overflow-hidden md:text-5xl   flex justify-start mt-20">
+          Why Choose Imperio Railing Dealership?
+        </h2>
+        <p className="flex justify-center text-justify  py-4 text-[#7d7f81]">
+          Elevate Your Business with Imperio Railing Become a Top Glass Railing
+          Dealer in India and offer your customers premium, stylish, and durable
+          glass railing solutions. Partner with us to leverage our expertise,
+          high-quality products, and extensive support network. Expand your
+          business reach across India and globally, targeting key cities like
+          Bengaluru, Pune, Mumbai, Punjab, and Andhra Pradesh. Our premium glass
+          railing solutions are designed to enhance any space, providing both
+          safety and elegance. By partnering with Imperio Railing, you'll
+          benefit from expert support, exclusive dealer advantages, and
+          customizable options tailored to meet your customers' needs.
+        </p>
+        {/* <div className="container mx-auto py-12"> */}
+        <div className="grid md:grid-cols-2  gap-4">
+          {DealershipKeys.map((point, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="flex justify-center text-justify py-4"
+            >
+              <div className="bg-white rounded-lg shadow-lg p-6 w-full">
+                <h3 className="text-xl text-[#03237b] mb-2">{point.title}</h3>
+                <p className="text-[#7d7f81]">{point.Description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+        {/* </div> */}
         {/* chart section open */}
 
         {/* <SalesChart/> */}
@@ -244,17 +329,17 @@ export const DealerShipForm: React.FC = () => {
 
         {/* timeline open */}
         <div className="p-8">
-          <div className="text-center mb-12">
-            <h1 className="text-[#03237b] text-3xl mx-auto xl:mx-[9rem] overflow-hidden md:text-5xl flex justify-start  pt-12 ">
+          <div className="text-center mb-12 ">
+            <h1 className="text-[#03237b] text-3xl mx-auto  overflow-hidden md:text-5xl flex justify-start  pt-12 ">
               Dealership Program{" "}
             </h1>
-            <p className="text-[#91908c] text-base py-2 tracking-wide flex justify-start md:px-[0.700rem] xl:px-[9rem] md:y-4">
+            <p className="text-[#91908c] text-base py-2 tracking-wide flex justify-start  md:y-4">
               Benefits of Imperio Milestone Dealership Program :
             </p>
           </div>
 
           {/* Timeline wrapper */}
-          <div className="relative max-w-2xl mx-auto md:px-4 lg:px-0">
+          <div className="relative max-w-2xl mx-auto md:px-4 lg:px-0 ">
             {/* Middle Line */}
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 bg-[#292929] h-full z-0"></div>
 
@@ -305,10 +390,21 @@ export const DealerShipForm: React.FC = () => {
         </div>
         {/* timeline close */}
       </div>
-      <div className="p-6 rounded-lg md:mx-12 lg:mx-9 xl:mx-[9rem] overflow-hidden">
+      <div className="max-w-7xl  flex flex-col  mx-auto mt-10 md:mt-24 gap-8 p-4">
         <h2 className=" text-4xl text-[#03237b] md:text-5xl text-center flex justify-start ">
           Dealer Details Form
         </h2>
+        <p>
+          Join the Imperio Dealership Family! Are you a dealer looking to expand
+          your business and unlock new opportunities? Fill out our registration
+          form today and become part of the Imperio family. Together, we can
+          grow your business and explore exciting avenues for success! Grow Your
+          Business with Us! Interested in taking your dealership to the next
+          level? Complete our registration form to join the Imperio Dealership
+          family. By partnering with us, you’ll gain access to exclusive
+          opportunities and resources designed to help you thrive in the
+          automotive market.
+        </p>
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-2 gap-4 mx-auto">
             <div>

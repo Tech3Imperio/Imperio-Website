@@ -225,9 +225,10 @@
 
 import { useState } from "react";
 import { aboutHero, Middle } from "../../assets/Images";
-import { Description, Hero } from "../../components";
+import { Hero } from "../../components";
 // import Metadata from "../../components/Metatag/Metatag";
 import { motion, AnimatePresence } from "framer-motion";
+import Metadata from "../../components/Metatag/Metatag";
 // import { aboutData } from "../../assets/Data";
 
 interface TabContent {
@@ -266,7 +267,7 @@ export const About: React.FC = () => {
       content: {
         short:
           "At Imperio Railing Systems, our vision is to lead the industry through innovation and sustainability, delivering eco-friendly glass railing solutions that prioritize customer satisfaction. We strive to set the standard for quality and safety, ensuring our products not only enhance aesthetics but also contribute to a sustainable future.",
-        long: "Our vision is to become the global leader in advanced glass railing solutions, known for our relentless pursuit of innovation and excellence. We aspire to set the standard for superior design and unmatched craftsmanship in the glass railing industry. By focusing on delivering cutting-edge, high-quality glass railings for residential and commercial spaces, including balconies, staircases, and building facades, we aim to elevate the aesthetic and safety of every project. We are committed to utilizing the latest technology and sustainable practices to offer durable and stylish glass railings. Our goal is to be the preferred choice for customers seeking elegant and reliable glass railing systems that enhance their spaces and exceed their expectations.",
+        long: "Imperio Glass Railing offers cutting-edge, frameless glass railing systems that combine safety, style, and durability. Our innovative designs and commitment to quality make us the preferred choice for residential and commercial projects worldwide. Imperio Glass Railing is a global leader in advanced glass railing solutions. We specialize in designing, manufacturing, and installing high-quality, frameless glass railings for a wide range of applications, including balconies, staircases, and building facades. Our products are engineered to the highest standards, ensuring safety and longevity. With a focus on innovation and sustainability, we offer a diverse range of styles and finishes to complement any architectural vision.",
       },
     },
   };
@@ -296,31 +297,57 @@ export const About: React.FC = () => {
 
   return (
     <>
-      {/* <Metadata
-        title={"About Us - Imperio Railing"}
+      <Metadata
+        title={"About Us - Imperio Railing | balcony glass railing"}
         description={
-          " Learn more about Imperio Railing System, your trusted provider of aluminum glass railings. Our commitment to quality, safety, and innovative design sets us apart in the industry. With years of experience, we specialize in creating stylish and durable railing solutions for both residential and commercial properties. Discover how our passion for excellence drives us to deliver the best products and services to enhance your living spaces."
+          "aluminum glass railings in Mumbai, Maharashtra in India. Our commitment to quality, safety, and innovative design sets us apart. With years of experience, we specialize in creating stylish and durable railing solutions for both residential and commercial properties. Discover how our passion for excellence drives us to deliver the best products and services to enhance your living spaces. Architectural Glass is your premier online resource for glass fabrication including architectural glass, textured glass, & decorative glass."
         }
         keywords={
           "About Imperio Railing, Aluminum Glass Railings, Railing Solutions, Quality Craftsmanship, Innovative Designs, Residential Railings, Commercial Railings, Safety Standards, Durable Products, Stylish Aesthetics, Experience, Trust, Quality, Design, Innovation, Safety, Glass Railings, Aluminum Railings, Railing Systems, Outdoor Spaces, Home Improvement, Custom Designs, Stylish Solutions, Architectural Design, Premium Railing Solutions, Expert Installation Services, Reliable Railing Provider"
         }
         ogImage={aboutHero}
         ogUrl={"https://www.imperiorailing.com/aboutus"}
-      /> */}
+      />
       <main>
         <Hero
           img={aboutHero}
           header="About us"
           altText="hero for aboutus"
-          subHeader="Discover the perfect blend of safety and sophistication with Imperio's glass railing systems."
+          subHeader="Elevate your space with Imperio's elegant, frameless glass railing systems, offering unparalleled security and a sleek, minimalist look."
           curve
         />
         <section className="max-h-screen overflow-hidden px-4 md:px-8 mb-24">
-          <Description
+          {/* <Description
             yellowText="Our Company."
             mainHeader="Crafting Excellence in Glass Railings."
-            text="At Imperio, we specialize in creating beautiful, glass railing systems that enhance any space. With a focus on innovation and quality, our team is dedicated to delivering top-notch solutions for both residential and commercial projects."
-          />
+            text={`Transform your living spaces with our premium balcony and staircase glass railings, expertly crafted for modern aesthetics in Delhi, Karnataka, Rajasthan, Jharkhand, Uttar Pradesh, Mumbai, and Maharashtra. Our durable and stylish glass railing systems ensure safety while enhancing the elegance of your home or business. With custom installation options and competitive prices, we provide architectural designs that blend functionality with beauty. Proudly supplying products globally, including Dubai and across India, we are your trusted partner for innovative and secure glass railing solutions. Experience the perfect fusion of style and safety with our exquisite glass railing offerings.`}
+          /> */}
+          <div className="max-w-7xl flex flex-col md:flex-row mx-auto mt-10 md:mt-24 gap-4">
+            <div className="flex flex-col md:w-[60%] gap-1 tablet:gap-6">
+              <h2 className="YellowText text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
+                Imperio Glass Railings
+              </h2>
+              <h3 className="text-[--third] flex flex-wrap md:max-w-2xl Raleway tracking-wider w-full text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] 2xl:text-5xl">
+                High-Quality Glass Railing Solutions for Your Home
+              </h3>
+            </div>
+            <div className="md:w-[40%]">
+              <p className="text-justify italic text-[--grey]">
+                "Enhance your living spaces with our premium balcony and
+                staircase glass railings, designed for modern aesthetics in
+                Delhi, Karnataka, Rajasthan, Jharkhand, Uttar Pradesh, Mumbai,
+                and Maharashtra. Our stylish and durable glass railing systems
+                ensure safety while adding elegance to your home or business.
+                <br />
+                <br />
+                With custom installation options and competitive pricing, we
+                offer innovative architectural designs. Proudly supplying
+                globally, including Dubai and across India, we are your trusted
+                partner for secure glass railing solutions that blend style and
+                safety."
+              </p>
+            </div>
+          </div>
         </section>
         <div className="min-h-screen bg-white text-gray-800">
           <motion.div

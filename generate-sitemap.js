@@ -11,6 +11,7 @@ const urls = [
   { url: "/projects", changefreq: "yearly", priority: 0.8 },
   { url: "/dealership", changefreq: "yearly", priority: 0.8 },
   { url: "/blog", changefreq: "weekly", priority: 0.8 },
+  { url: "/blog/ModernTerrace", changefreq: "weekly", priority: 0.8 },
   { url: "/quote", changefreq: "yearly", priority: 0.8 },
   { url: "/contactus", changefreq: "yearly", priority: 0.6 },
   { url: "/privacypolicy", changefreq: "yearly", priority: 0.6 },
