@@ -164,3 +164,9 @@ a {
     font-size: 1.5rem;
   }
 }
+
+canvas {
+  height: 100vh !important;
+  width: 50vw !important;
+  background-color: #03237b;
+}
