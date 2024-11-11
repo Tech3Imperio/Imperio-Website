@@ -1,5 +1,6 @@
 import React from "react";
-
+import { FaBalanceScale } from "react-icons/fa";
+import { GiArrowsShield } from "react-icons/gi";
 const IconBase = ({
   size = 24,
   children,
@@ -13,7 +14,7 @@ const IconBase = ({
     height={size}
     viewBox="0 0 24 24"
     fill="none"
-    xmlns="http://www.w3.org/2000/IconBase"
+    xmlns="http://www.w3.org/2000/svg"
   >
     {children}
   </svg>
@@ -360,6 +361,39 @@ export const icon17 = ({ size, color }: { size?: number; color?: string }) => (
       d="M13.4138 10.5862C14.1948 11.3673 15.4612 11.3673 16.2422 10.5862C17.0233 9.80516 17.0233 8.53883 16.2422 7.75778C15.4612 6.97673 14.1948 6.97673 13.4138 7.75778C12.6327 8.53883 12.6327 9.80516 13.4138 10.5862Z"
       stroke={color || "#000000"}
       strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </IconBase>
+);
+export const icon18 = ({ size, color }: { size?: number; color?: string }) => (
+  <IconBase size={size}>
+    <path
+      d="M22.7 5.3c.4-.4.4-1 0-1.4l-2.6-2.6c-.4-.4-1-.4-1.4 0l-2.8 2.8a5.002 5.002 0 0 0-6.5 6.5l-8.3 8.3a3 3 0 1 0 4.2 4.2l8.3-8.3a5.002 5.002 0 0 0 6.5-6.5l2.6-2.6zm-7.9 9.9L7.5 22a1 1 0 0 1-1.4 0L3 18.9a1 1 0 0 1 0-1.4l7.2-7.2a3 3 0 1 1 4.2 4.2z"
+      stroke={color || "#000000"}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </IconBase>
+);
+export const icon19 = ({ size, color }: { size?: number; color?: string }) => (
+  <IconBase size={size}>
+    <FaBalanceScale
+      size={24}
+      stroke={color || "#000000"}
+      style={{ color: "#03247b" }}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </IconBase>
+);
+export const icon20 = ({ size, color }: { size?: number; color?: string }) => (
+  <IconBase size={size}>
+    <GiArrowsShield
+      size={24}
+      stroke={color || "#000000"}
+      style={{ color: "#03247b" }}
       strokeLinecap="round"
       strokeLinejoin="round"
     />
