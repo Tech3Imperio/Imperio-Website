@@ -16,6 +16,9 @@ import {
   icon15,
   icon16,
   icon17,
+  icon18,
+  icon19,
+  icon20,
 } from "./icons";
 
 export const iconsFeature = {
@@ -39,4 +42,7 @@ export const iconsFeature = {
   "Lighting below eye level": icon16,
   "Led Provision on side": icon17,
   "Led Provision on both side": icon17,
+  "Quick Setup": icon18,
+  "Versatile and Balanced": icon19,
+  "Safe and Protective": icon20,
 };

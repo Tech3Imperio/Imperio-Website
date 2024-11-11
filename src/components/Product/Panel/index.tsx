@@ -9,26 +9,28 @@ export const ProductPanel: React.FC<ProductPanelProps> = ({
 }) => {
   return (
     <>
-      <div className="max-w-[85rem] flex flex-col md:flex-row mx-auto mt-10 md:mt-24 gap-8 p-4">
-        <div className="flex flex-col md:w-[60%] gap-1 tablet:gap-6">
-          <h2 className="YellowText text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
-            Glass Railing {header}
-          </h2>
-          <h3 className="text-[--third] flex flex-wrap md:max-w-2xl Raleway tracking-wider w-full text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] 2xl:text-5xl">
-            High Quality & Premium Aluminium Glass Railing {header} variants.
+      <div className="max-w-5xl flex flex-col md:flex-row mx-auto mt-8 gap-8 p-4">
+        <div className="flex flex-col md:w-[55%] gap-4">
+          {header ? (
+            <h2 className="YellowText text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
+              Glass Railing {header}
+            </h2>
+          ) : (
+            <></>
+          )}
+          <h3 className="text-[--third] flex flex-wrap Raleway tracking-wider w-full text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] 2xl:text-5xl">
+            Aluminium Glass Railing {header} variants.
           </h3>
         </div>
-        <div className="md:w-[40%]">
+        <div className="md:w-[45%]">
           {header === "Base" ? (
             <p className="text-justify italic text-[--grey]">
               "Discover our premium aluminum glass railing bases, customizable
-              in matte and glossy finishes to suit any style. Crafted for
-              durability and elegance, our weather-resistant bases combine
-              safety with innovation. With quick service and fast quotations, we
-              proudly deliver across India, including cities like Mumbai, Pune,
-              Hyderabad, and Kolkata."
+              in matte and glossy finishes to suit any style. With quick service
+              and fast quotations, we proudly deliver across India, including
+              cities like Mumbai, Pune, Hyderabad, and Kolkata."
             </p>
-          ) : (
+          ) : header === "Height" ? (
             <p className="text-justify italic text-[--grey]">
               "Explore our premium aluminum glass railing handrail options,
               featuring customizable finishes to suit any style. Choose from
@@ -38,17 +40,26 @@ export const ProductPanel: React.FC<ProductPanelProps> = ({
               India, enhancing glass railing systems nationwide with style and
               safety."
             </p>
+          ) : (
+            <p className="text-justify italic text-[--grey]">
+              "Explore our premium glass railing height options, designed to
+              meet diverse safety and style requirements. Choose from heights
+              ranging from 900mm to 1200mm, each crafted for durability and
+              sophistication. Available in major cities like Mumbai, Pune,
+              Hyderabad, and Kolkata, we deliver across India, enhancing glass
+              railing systems nationwide with style, safety, and functionality."
+            </p>
           )}
         </div>
       </div>
-      <div className="pt-5 px-4 phone:px-8 tablet:px-16 laptop:px-24 xl:px-32 2xl:px-44">
+      <div className="pt-5 px-4 phone:px-8 tablet:px-12">
         {/* Header */}
         {/* <h2 className="text-[2.25rem] phone:text-[2.5rem] tablet:text-[2.75rem] laptop:text-5xl text-[--third] font-normal">
       Glass Railing {header}
     </h2> */}
 
         {/* Product Grid */}
-        <div className="grid gap-10 xl:gap-20 py-2 phone:py-4 tablet:py-8 laptop:py-12 grid-cols-2 xl:grid-cols-4 justify-items-center">
+        <div className="grid gap-6 py-2 phone:py-4 tablet:py-8 laptop:py-12 grid-cols-2 xl:grid-cols-4 justify-items-center">
           {/* Mapping through each product detail */}
           {productDetail.map((product) => (
             <ProductCard
