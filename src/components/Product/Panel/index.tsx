@@ -9,15 +9,6 @@ export const ProductPanel: React.FC<ProductPanelProps> = ({
 }) => {
   return (
     <>
-<<<<<<< HEAD
-      <div className="max-w-7xl flex flex-col md:flex-row mx-auto mt-10 md:mt-24 gap-8 p-4">
-        <div className="flex flex-col md:w-[60%] gap-1 tablet:gap-6">
-          <h2 className="YellowText text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
-            Glass Railing {header}
-          </h2>
-          <h3 className="text-[--third] flex flex-wrap md:max-w-2xl Raleway tracking-wider w-full text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] 2xl:text-5xl">
-            High Quality & Premium Aluminium Glass Railing {header} variants.
-=======
       <div className="max-w-5xl flex flex-col md:flex-row mx-auto mt-8 gap-8 p-4">
         <div className="flex flex-col md:w-[55%] gap-4">
           {header ? (
@@ -29,7 +20,6 @@ export const ProductPanel: React.FC<ProductPanelProps> = ({
           )}
           <h3 className="text-[--third] flex flex-wrap Raleway tracking-wider w-full text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] 2xl:text-5xl">
             Aluminium Glass Railing {header} variants.
->>>>>>> 2297a3a500065357633c99a4630f20cfe1c61f1d
           </h3>
         </div>
         <div className="md:w-[45%]">
