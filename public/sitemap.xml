@@ -45,6 +45,11 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://imperiorailing.com/blog/ModernStaircase</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://imperiorailing.com/quote</loc>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
@@ -56,6 +61,26 @@
     </url>
     <url>
         <loc>https://imperiorailing.com/privacypolicy</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.facebook.com/imperiorailingsystem</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.instagram.com/imperio.railings/?igsh=OWlmaXB6NnJpcWJ0</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.youtube.com/channel/UCfc7xvEAq7E1KPy6xFA_msg</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://x.com/ImperioRailing</loc>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>

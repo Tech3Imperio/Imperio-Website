@@ -38,17 +38,17 @@ export const Hero: React.FC<HeroProps> = ({
         } text-white pl-9 phone:pl-16 tablet:pl-24 laptop:pl-32 xl:pl-44`}
       >
         {/* Header element with dynamic width and responsive text size */}
-        <h2
-          className={`text-[2.7rem] phone:text-[3rem] tablet:text-[3.3rem] laptop:text-[3.5rem] xl:text-[3.8rem] Raleway ${
+        <h4
+          className={`text-[2rem] phone:text-[3rem] tablet:text-[3.3rem] laptop:text-[3.5rem] xl:text-[3.8rem] Raleway ${
             condition ? "w-4/5" : "w-full"
           }`}
         >
           {header}
-        </h2>
+        </h4>
         {/* Subheader element with dynamic width and responsive text size */}
         <h1
           className={`text-xs phone:text-base ${
-            condition ? "w-4/5" : "w-full"
+            condition ? "w-4/5" : "w-full py-4"
           }`}
         >
           {subHeader}

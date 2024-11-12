@@ -234,7 +234,7 @@ const App: React.FC = () => {
         </title>
         <meta
           name="description"
-          content="Discover glass railing solutions with Imperio Railing Systems in Mumbai, Maharashtra, India. Our durable, modern and stylish glass railings, including balcony glass railings and staircase glass railing, for any space. Various aluminium accessories available like base, handrails, brackets, spigots, etc. Transform your space with our high-quality glass railings today!. Best suppliers and dealers in India for glass railing"
+          content="Discover glass railing aluminium glass railing, balcony glass railing solutions with Imperio Railing Systems in Mumbai, Maharashtra,Punjab, Uttar Pradesh, Jharkhand, Karnataka, Andhra Pradesh India. Our durable, modern and stylish glass railing, including balcony glass railings and staircase glass railing, for any space. Various aluminium accessories available like base, handrails, brackets, spigots, etc. Transform your space with our high-quality glass railings today!. Best suppliers and dealers in India for glass railing"
         />
         <meta
           name="keywords"

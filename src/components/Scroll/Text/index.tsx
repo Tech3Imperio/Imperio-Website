@@ -73,14 +73,19 @@ export const TextComponent = ({
   return (
     <section
       id="textscroller"
-      className={` h-auto py-4 md:py-0 md:h-[82.5vh] w-screen flex flex-col justify-center items-center text-2xl tablet:text-5xl gap-4 ${
+      className={` h-auto py-4 md:py-0 md:h-[65rem] lg:h-[42rem] w-screen flex flex-col justify-center items-center text-2xl tablet:text-5xl gap-4 ${
         inner ? "" : className
       }`}
     >
       {textList.map((text, index) => (
-        <TextWrapper key={index} className={inner ? className : ""}>
-          {text}
-        </TextWrapper>
+        // <TextWrapper key={index} className={inner ? className : ""}>
+        //   {text}
+        // </TextWrapper>
+        <li key={index} className=" list-none">
+          <TextWrapper key={index} className={inner ? className : ""}>
+            {text}
+          </TextWrapper>
+        </li>
       ))}
     </section>
   );

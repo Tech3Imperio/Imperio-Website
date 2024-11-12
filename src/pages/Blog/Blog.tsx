@@ -126,16 +126,17 @@ export const Blog = () => {
             and Maharashtra for their sleek, modern look and functional
             benefits. Whether it's for a staircase, balcony, or deck, these
             railings provide an unobstructed view while adding a touch of
-            elegance to any space. Not only are they visually appealing, but
-            they are also durable, safe, and low-maintenance. In this blog, we
-            explore the advantages of glass railings, the installation process,
-            and how they can elevate the design of homes and commercial
-            properties in your city.
+            elegance to any space. <br />
+            <br />
+            Not only are they visually appealing, but they are also durable,
+            safe, and low-maintenance. In this blog, we explore the advantages
+            of glass railings, the installation process, and how they can
+            elevate the design of homes and commercial properties in your city.
             <br />
           </p>
         </div>
       </div>
-      <div className="max-w-7xl flex mx-auto mt-10 md:mt-24 gap-[15rem] p-4">
+      <div className="max-w-7xl flex flex-col lg:flex-row mx-auto mt-10 md:mt-24 gap-10 xl:gap-[15rem] p-6">
         <div>
           <h3 className=" text-3xl text-[--third]">
             <Link to="ModernTerrace">

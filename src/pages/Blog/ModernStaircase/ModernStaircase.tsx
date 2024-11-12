@@ -23,24 +23,24 @@ const blogPosts: BlogPost[] = [
     id: 1,
     title: "Elegant Staircase Glass Railings",
     excerpt:
-      "Transform your staircase with elegant glass railings that add sophistication and modern appeal in Mumbai, Pune, Dehradun, and Kolkata. Our premium glass railing systems offer a seamless blend of style and safety, ideal for any home or office. The frameless glass railings provide an unobstructed view, making your staircase appear open and airy. Whether you prefer a minimalist or contemporary look, our solutions enhance the aesthetic appeal of your space. We use high-quality tempered glass to ensure durability and safety. Our staircase railings are easy to maintain, resistant to wear and weather conditions, and add lasting value to your property. Whether for residential or commercial spaces, these railings guarantee peace of mind with their sturdy, safe design. Trust us for bespoke glass railing solutions tailored to your specific needs.",
+      "Transform your staircase with elegant glass railings that add sophistication and modern appeal in Mumbai, Pune, Dehradun, and Kolkata. Our premium glass railing systems offer a seamless blend of style and safety, ideal for any home or office. The frameless glass stair railings provide an unobstructed view, making your staircase appear open and airy. Whether you prefer a minimalist or contemporary look, our solutions enhance the aesthetic appeal of your space. We use high-quality tempered glass to ensure durability and safety. Our staircase glass design is easy to maintain, resistant to wear and weather conditions, and adds lasting value to your property. Whether for residential or commercial spaces, these railings guarantee peace of mind with their sturdy, safe design. Trust us for bespoke glass railing solutions tailored to your specific needs.",
 
     imageUrl: glassStaircase,
-    location: "Mumbai, Maharashtra",
+    location: "Mysuru, Mysuru",
   },
   {
     id: 2,
     title: "Modern Staircase Glass Railing Solutions for Homes and Offices",
     excerpt:
-      "Elevate the design of your home or office with our modern staircase glass railing systems in Madhya Pradesh, Punjab, Bangalore, and Chennai. Offering the perfect combination of safety, aesthetics, and functionality, these railings create an open and inviting atmosphere. Our frameless glass stair railings provide an elegant and seamless look, suitable for any type of interior design. High-quality tempered glass ensures durability and strength, and we offer customized solutions to match your décor and personal preferences. Whether you’re looking to add a luxurious touch or maintain a minimalist aesthetic, our glass staircases offer versatility. Our railings are easy to clean and maintain, making them a practical choice for both residential and commercial properties. Experience the blend of form and function with our premium staircase glass railings.",
+      "Elevate the design of your home or office with our modern staircase glass railing systems in Madhya Pradesh, Punjab, Bangalore, and Chennai. Offering the perfect combination of safety, aesthetics, and functionality, these railings create an open and inviting atmosphere. Our frameless glass stair railings provide an elegant and seamless look, suitable for any type of interior design. High-quality tempered glass ensures durability and strength, and we offer customized solutions to match your décor and personal preferences. Whether you’re looking to add a luxurious touch or maintain a minimalist aesthetic, our glass staircase designs offer versatility. Our staircase glass railings are easy to clean and maintain, making them a practical choice for both residential and commercial properties. Experience the blend of form and function with our premium staircase glass railing solutions.",
     imageUrl: staricaseImg,
-    location: "Mumbai, Maharashtra",
+    location: "Bengaluru, Bengaluru",
   },
   {
     id: 3,
     title: "Durable Staircase Glass Railings",
     excerpt:
-      "Upgrade your staircase with our durable glass railing systems in Jharkhand, Nagpur, Varanasi, Goa, and Surat. Our frameless glass railings provide a sleek, contemporary look that enhances any interior design style. Made from premium, high-quality glass, our stair railings are built to withstand wear and tear while offering clear, unobstructed views. These railings create a sense of openness and light, making your staircase feel inviting and spacious. With weather-resistant, low-maintenance properties, our glass railings maintain their clarity and beauty for years. Whether you are renovating or designing a new space, our stair railing solutions provide both safety and elegance. Trust our team to deliver bespoke glass railing designs that match your unique style and needs. Create a stylish, safe, and functional staircase with our premium glass railings.",
+      "Upgrade your staircase with our durable glass railing systems in Jharkhand, Nagpur, Varanasi, Goa, and Surat. Our frameless glass railings provide a sleek, contemporary look that enhances any interior design style. Made from premium, high-quality glass, our stair railings are built to withstand wear and tear while offering clear, unobstructed views. These railings create a sense of openness and light, making your staircase feel inviting and spacious. With weather-resistant, low-maintenance properties, our glass railings for staircase maintain their clarity and beauty for years. Whether you are renovating or designing a new space, our staircase railing designs provide both safety and elegance. Trust our team to deliver bespoke glass railing designs that match your unique style and needs. Create a stylish, safe, and functional staircase with our premium staircase glass railings.",
     imageUrl: whitestaircase,
     location: "Mumbai, Maharashtra",
   },
@@ -48,9 +48,9 @@ const blogPosts: BlogPost[] = [
     id: 4,
     title: "Premium Staircase Glass Railings for Luxury Homes ",
     excerpt:
-      "Add a touch of luxury to your home with our premium staircase glass railing systems in Karnataka, Maharashtra, Nashik, and Jodhpur. Our railings offer maximum safety with an elegant, sleek design that complements modern architecture. Specializing in frameless glass staircases, we create a seamless transition between floors while allowing natural light to flow freely. The use of high-quality tempered glass ensures your staircase is not only beautiful but built to last. Whether it’s for a grand entryway or a more subtle interior, our glass railings add sophistication and functionality. Designed to be easy to maintain and resistant to scratches, our railing solutions provide long-term durability. The clean lines and transparent design will make your staircase the focal point of your home. Invest in a modern, high-performance staircase railing system that enhances both the safety and beauty of your living space.",
+      "Add a touch of luxury to your home with our premium staircase glass railing systems in Karnataka, Maharashtra, Nashik, and Jodhpur. Our railings offer maximum safety with an elegant, sleek design that complements modern architecture. Specializing in frameless glass staircases, we create a seamless transition between floors while allowing natural light to flow freely. The use of high-quality tempered glass ensures your staircase is not only beautiful but built to last. Whether it’s for a grand entryway or a more subtle interior, our glass railings add sophistication and functionality. Designed to be easy to maintain and resistant to scratches, our stainless steel glass staircase railing solutions provide long-term durability. The clean lines and transparent design will make your staircase the focal point of your home. Invest in a modern, high-performance glass railing for your staircase that enhances both the safety and beauty of your living space.",
     imageUrl: glassstair,
-    location: "Solapur,Maharashtra",
+    location: "Pathankot, Pathankot",
   },
 ];
 
@@ -61,13 +61,13 @@ export default function ModernStaircase() {
     <>
       <Metadata
         title={
-          "Blogs - terrace glass railing | balcony glass railing | Modern design glass railing | premium glass railing | quality glass railing"
+          "Blogs - staircase glass railing design | staircase glass railing | modern staircase railing ideas | premium glass railing | quality glass railing"
         }
         description={
           "Explore premium staircase glass railings in Mumbai, Pune, Nagpur, Jodhpur, and Maharashtra. Our modern, durable frameless glass railings offer safety, aesthetics, and easy maintenance. Perfect for luxury homes and commercial spaces, our high-quality tempered glass railings provide unobstructed views and long-lasting beauty."
         }
         keywords={
-          "Staircase Glass Railings,Frameless Glass Railings,Premium Glass Railing Systems,Modern Staircase Railings,Durable Glass Railings,Luxury Staircase RailingsHigh-Quality Glass Railing,afety Glass Railings for Stairs, Glass Railings for Homes and Offices,Seamless Staircase Glass Railings, glass railing in mumbai"
+          "Staircase Glass Railings,Frameless Glass Railings,Premium Glass Railing Systems,Modern Staircase Railings,Durable Glass Railings,Luxury Staircase RailingsHigh-Quality Glass Railing,afety Glass Railings for Stairs, Glass Railings for Homes and Offices,Seamless Staircase Glass Railings,glass handrails for stairs, glass railing in mumbai"
         }
         ogImage={glassStaircase}
         ogUrl={"https://www.imperiorailing.com/blog/ModernTerrace"}
@@ -76,7 +76,8 @@ export default function ModernStaircase() {
         img={whitestaircase}
         altText="hero for blog"
         header="Staircase Glass Railing"
-        subHeader="Explore premium staircase glass railings in Mumbai, Maharashtra, Delhi, Madhya Pradesh, and Karnataka. Our frameless glass railings offer a perfect blend of safety, aesthetics, and durability, ideal for both luxury homes and commercial spaces."
+        subHeader="Explore Premium Staircase Glass Railings in Mumbai, Delhi, Maharashtra, Madhya Pradesh, and Karnataka
+Elevate your space with our frameless glass railings, perfect for stainless steel glass staircase railings, balcony railings with glass, and modern staircase glass railing designs and ideas. Ideal for both luxury homes and commercial spaces."
         curve
       />
       <div className="min-h-screen bg-white p-8">
@@ -86,7 +87,7 @@ export default function ModernStaircase() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className=" text-3xl text-nowrap md:text-nowrap md:text-3xl YellowText Raleway tracking-widest mb-4">
+          <h2 className=" text-3xl md:text-normal YellowText Raleway tracking-widest mb-4">
             Premium Staircase Glass Railing Systems in Mumbai & Maharashtra
           </h2>
           <h3 className="text-xl italic text-[--third]">
@@ -131,9 +132,9 @@ export default function ModernStaircase() {
                   <p className="text-[18px] text-gray-500 text-justify ">
                     {post.excerpt}
                   </p>
-                  {/* <p className="text-sm uppercase text-[--third]">
+                  <p className="text-sm uppercase text-[--third]">
                     {post.location}
-                  </p> */}
+                  </p>
                 </div>
               </div>
               <motion.div

@@ -8,35 +8,37 @@ import {
 
 export const scrollData = [
   {
-    header: "Low Maintenance.",
+    header: "Stylish Balcony Glass Railings",
     subheader:
-      "Our railings are designed to last, requiring minimal upkeep while maintaining their stunning appearance.",
+      "Enhance your space with balcony glass railings and staircase glass railing systems.",
     img: penthouse,
-    alt: "balcony image",
+    alt: "balcony-railing",
   },
   {
-    header: "High Durability.",
+    header: "Unmatched Durability for Glass Railings",
     subheader:
-      "Built to last with robust materials, our glass railing ensures exceptional durability.",
+      "Built to last with terrace aluminum railings and modern railing for balcony long-term durability.",
     img: balcony,
-    alt: "balcony image",
+    alt: "terrace-railing",
   },
   {
-    header: "Frameless Elegance.",
-    subheader: "Enjoy uninterrupted views with our sleek, frame-less designs.",
+    header: "Frameless Glass Railings.",
+    subheader:
+      " Enjoy Clear views with frameless glass railings and  best glass railing supplier in india.",
     img: stairs,
     alt: "stairs image",
   },
   {
-    header: "Minimalist Aesthetic.",
-    subheader: "Clean lines and understated designs that complement any decor.",
+    header: "Stylish and Modern glass railings",
+    subheader:
+      "stylish, modern glass design with glass and Aluminum Handrails for any space.",
     img: terracefloor,
-    alt: "terracefloor image",
+    alt: "outdoor-railing",
   },
   {
-    header: "Complete Accessories.",
+    header: "Railing Accessories for Customization",
     subheader:
-      "Customize your railing with our comprehensive selection of accessories.",
+      "Customize your glass railing with stylish accessories, including aluminum Bases and LED Handrails.",
     img: terresrailing,
     alt: "terresrailing image",
   },
