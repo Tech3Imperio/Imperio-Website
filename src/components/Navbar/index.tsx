@@ -65,14 +65,14 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, handleClick }) => (
           {/* Social links component */}
           <SocialLinks className="flex justify-center gap-4 text-xs text-white" />
           <div className=" flex flex-col gap-8">
-        {/* Dealership button component */}
-          <div onClick={handleClick}>
-            <DealershipButton />
-          </div>
-        {/* Quote button component */}
-          <div onClick={handleClick}>
-            <QuoteButton />
-          </div>
+            {/* Dealership button component */}
+            <div onClick={handleClick}>
+              <DealershipButton />
+            </div>
+            {/* Quote button component */}
+            <div onClick={handleClick}>
+              <QuoteButton />
+            </div>
           </div>
         </div>
       </div>
@@ -126,7 +126,7 @@ export const Navbar: React.FC = () => {
         !isMenuOpen ? "rounded-b-4xl" : "rounded-b-[0px]"
       }`}
     >
-      <div className="w-full m-auto pt-2 pb-4 flex gap-0 xl:gap-10 items-center px-8 tablet:px-20 laptop:px-28 xl:px-[13rem] 2xl:px-64 justify-between">
+      <div className="max-w-7xl mx-auto px-4 pt-2 pb-4 flex gap-0 xl:gap-10 items-center justify-between">
         {/* Logo component */}
         <Logo />
         {/* Render hamburger menu icon for mobile view */}

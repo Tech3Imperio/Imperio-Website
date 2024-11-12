@@ -11,7 +11,6 @@ import Metadata from "../../components/Metatag/Metatag";
 
 const MemoProducts: React.FC = () => {
   const [selectedSection, setSelectedSection] = useState<string | null>(null);
-
   const { data, error, loading } = useProduct(
     "https://script.google.com/macros/s/AKfycbwE-1Stl8t8_XrB5MuRPQ1hROKpo3mYynDPnI1vNX6U5vakITchmA6nfmzQt8sYpqFIjw/exec"
   );
@@ -19,6 +18,10 @@ const MemoProducts: React.FC = () => {
   // https://script.googleusercontent.com/a/macros/imperiorailing.com/echo?user_content_key=Ay_XW6emxmiwQ7Lncs10OYWdnFeTW0upS6uckktFqOCWvYse7Um3IucncElvDr3F6e1U0oIbcefbm_KsKRb7lGfzRJKfhSKKOJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMi80zadyHLKC1zka5stJV6CJ8rbxa1V-UsEmAp_psx4LPWV2VVapqoanwc9S-o8wsibsbmz75VIWJ6s0UnHNjn57l_O834N2gmbbRpWFxXoNaVLQCjst0OCroO14vipAt9G3wLhldpT5hqak0MdSxiw&lib=McNTorF1LzcGC_6h_0B7S9zQVEnUvMwCs
   const [productSections, setProductSections] = useState<ProductSection[]>([]);
   const [problem, setProblem] = useState<boolean>(false);
+
+  const filteredProductSections = selectedSection
+    ? productSections.filter((section) => section.header === selectedSection)
+    : productSections;
 
   const dataBuilder = useCallback((data: ProductProps[]): ProductSection[] => {
     const headers = [...new Set(data.map((item) => item["Product Category"]))];
@@ -168,12 +171,6 @@ const MemoProducts: React.FC = () => {
     );
   }
 
-  console.log(productSections);
-  console.log(selectedSection);
-  const filteredProductSections = selectedSection
-    ? productSections.filter((section) => section.header === selectedSection)
-    : productSections;
-
   return (
     <>
       <Metadata
@@ -192,15 +189,15 @@ const MemoProducts: React.FC = () => {
       <Hero
         img={productImage}
         altText="Hero image for product"
-        header="Glass Railings Systems"
+        header="Glass Railing Systems"
         subHeader="Imperio’s Glass Railing Systems in India deliver high-durability balcony, staircase, and aluminum glass railings, blending modern style with lasting safety for any space."
         curve
       />
-      <main className="flex max-w-[85rem] mx-auto">
-        <aside className="flex flex-col sticky top-28 mt-10 self-start gap-4">
-          <ul className="flex flex-row md:flex-col gap-4 border p-2 rounded-xl">
+      <main className="flex flex-col md:flex-row max-w-[85rem] mx-auto">
+        <aside className="flex flex-col text-center md:sticky md:top-32 md:mt-10 self-start gap-4 p-4 lg:p-0 w-[80%] md:w-auto mx-auto">
+          <ul className="flex flex-col md:gap-4 border p-2 rounded-xl w-full">
             <li
-              className={`list-none whitespace-nowrap cursor-pointer p-2 rounded-lg ${
+              className={`list-none md:whitespace-nowrap cursor-pointer p-2 rounded-lg ${
                 selectedSection === "Base" ? "bg-[#f5ce02]" : ""
               }`}
               onClick={() => setSelectedSection("Base")}
@@ -208,7 +205,7 @@ const MemoProducts: React.FC = () => {
               Glass Railing Base
             </li>
             <li
-              className={`list-none whitespace-nowrap cursor-pointer p-2 rounded-lg ${
+              className={`list-none md:whitespace-nowrap cursor-pointer p-2 rounded-lg ${
                 selectedSection === "Handrail" ? "bg-[#f5ce02]" : ""
               }`}
               onClick={() => setSelectedSection("Handrail")}
@@ -216,37 +213,38 @@ const MemoProducts: React.FC = () => {
               Glass Railing Handrail
             </li>
             <li
-              className={`list-none whitespace-nowrap cursor-pointer p-2 rounded-lg ${
-                selectedSection === "Glass" ? "bg-[#f5ce02]" : ""
+              className={`list-none md:whitespace-nowrap cursor-pointer p-2 rounded-lg ${
+                selectedSection === "Glass Type" ? "bg-[#f5ce02]" : ""
               }`}
-              onClick={() => setSelectedSection("Glass")}
+              onClick={() => setSelectedSection("Glass Type")}
             >
-              Railing System Glasses
+              Glass Types
             </li>
             <li
-              className={`list-none whitespace-nowrap cursor-pointer p-2 rounded-lg ${
+              className={`list-none md:whitespace-nowrap cursor-pointer p-2 rounded-lg ${
                 selectedSection === "Height" ? "bg-[#f5ce02]" : ""
               }`}
               onClick={() => setSelectedSection("Height")}
             >
-              Glass Railing Heights
+              Glass Railing Heights <sup>RFT</sup>
             </li>
           </ul>
           <button
             onClick={() => setSelectedSection(null)}
-            className="min-w-fit py-3 mb-3 tablet:py-4 px-5 laptop:px-6 text-sm text-white bg-[--black] font-normal rounded-4xl transition-700 hover:text-[--black] hover:bg-[--secound]"
+            className=" py-3 mb-3 tablet:py-4 px-5 laptop:px-6 text-sm text-white bg-[--black] font-normal rounded-4xl transition-700 hover:text-[--black] hover:bg-[--secound]"
           >
             Reset Filters
           </button>
         </aside>
         <section className="pb-24">
-          {filteredProductSections.map((section, index) => (
-            <ProductPanel
-              key={index}
-              header={section.header}
-              productDetail={section.products}
-            />
-          ))}
+          {filteredProductSections &&
+            filteredProductSections.map((section, index) => (
+              <ProductPanel
+                key={index}
+                header={section.header}
+                productDetail={section.products}
+              />
+            ))}
         </section>
         {/* <div className="flex justify-center items-center h-screen">
       <div className="w-16 h-16 border-t-4 border-b-4 border-blue-500 rounded-full animate-spin"></div>
