@@ -9,7 +9,7 @@ export const ProductPanel: React.FC<ProductPanelProps> = ({
 }) => {
   return (
     <>
-      <div className="max-w-5xl flex flex-col md:flex-row mx-auto mt-8 gap-8 p-4">
+      <div className="max-w-6xl flex flex-col md:flex-row mx-auto mt-2 md:mt-8 gap-6 px-2 md:px-8 py-4">
         <div className="flex flex-col md:w-[55%] gap-4">
           {header ? (
             <h2 className="YellowText text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
@@ -30,7 +30,7 @@ export const ProductPanel: React.FC<ProductPanelProps> = ({
               and fast quotations, we proudly deliver across India, including
               cities like Mumbai, Pune, Hyderabad, and Kolkata."
             </p>
-          ) : header === "Height" ? (
+          ) : header === "Handrail" ? (
             <p className="text-justify italic text-[--grey]">
               "Explore our premium aluminum glass railing handrail options,
               featuring customizable finishes to suit any style. Choose from
@@ -52,14 +52,14 @@ export const ProductPanel: React.FC<ProductPanelProps> = ({
           )}
         </div>
       </div>
-      <div className="pt-5 px-4 phone:px-8 tablet:px-12">
+      <div className="pt-5 px-2 md:px-8">
         {/* Header */}
         {/* <h2 className="text-[2.25rem] phone:text-[2.5rem] tablet:text-[2.75rem] laptop:text-5xl text-[--third] font-normal">
       Glass Railing {header}
     </h2> */}
 
         {/* Product Grid */}
-        <div className="grid gap-6 py-2 phone:py-4 tablet:py-8 laptop:py-12 grid-cols-2 xl:grid-cols-4 justify-items-center">
+        <div className="grid gap-6 py-2 phone:py-4 grid-cols-2 xl:grid-cols-4 justify-items-center">
           {/* Mapping through each product detail */}
           {productDetail.map((product) => (
             <ProductCard
