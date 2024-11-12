@@ -569,7 +569,6 @@ const MemoProduct: React.FC = () => {
     }
   }, [location.state]);
 
-  console.log(location);
   useEffect(() => {
     processData();
   }, [processData]);
