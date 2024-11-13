@@ -136,7 +136,7 @@ export const Blog = () => {
           </p>
         </div>
       </div>
-      <div className="max-w-7xl grid md:  grid-cols-2 mx-auto mt-10 md:mt-24 gap-10 xl:gap-[10rem] p-6">
+      <div className="max-w-7xl grid md:grid-cols-2 mx-auto mt-10 md:mt-24 gap-10 xl:gap-[10rem] p-6">
         <div>
           <h3 className=" text-3xl text-[--third]">
             <Link to="modernterrace">
