@@ -9,6 +9,8 @@ import {
   //   heroImg,
 } from "../../../assets/Images";
 import Metadata from "../../../components/Metatag/Metatag";
+import { Link } from "react-router-dom";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 type BlogPost = {
   id: number;
@@ -70,24 +72,47 @@ export default function ModernStaircase() {
           "Staircase Glass Railings,Frameless Glass Railings,Premium Glass Railing Systems,Modern Staircase Railings,Durable Glass Railings,Luxury Staircase RailingsHigh-Quality Glass Railing,afety Glass Railings for Stairs, Glass Railings for Homes and Offices,Seamless Staircase Glass Railings,glass handrails for stairs, glass railing in mumbai"
         }
         ogImage={glassStaircase}
-        ogUrl={"https://www.imperiorailing.com/blog/ModernTerrace"}
+        ogUrl={"https://www.imperiorailing.com/blog/ModernStaircase"}
       />
       <Hero
         img={whitestaircase}
-        altText="hero for blog"
+        altText="staircase-image"
         header="Staircase Glass Railing"
-        subHeader="Explore Premium Staircase Glass Railings in Mumbai, Delhi, Maharashtra, Madhya Pradesh, and Karnataka
-Elevate your space with our frameless glass railings, perfect for stainless steel glass staircase railings, balcony railings with glass, and modern staircase glass railing designs and ideas. Ideal for both luxury homes and commercial spaces."
+        subHeader="Explore Premium Staircase Glass Railings in Mumbai, Delhi, Maharashtra, Madhya Pradesh, and Karnataka Elevate your space with our frameless glass railings, perfect for stainless steel glass staircase railings, balcony railings with glass, and modern staircase glass railing designs and ideas. Ideal for both luxury homes and commercial spaces."
         curve
       />
-      <div className="min-h-screen bg-white p-8">
+      <div className="min-h-screen bg-white p-4 md:p-8">
+        <span className="flex flex-wrap gap-2 pb-4 items-center">
+          <Link
+            to="/blog/modernterrace"
+            className="hover:text-[#f5ce02] text-base sm:text-lg md:text-xl"
+          >
+            Terrace Railing
+          </Link>
+          <MdKeyboardArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
+
+          <Link
+            to="/blog/modernhandrail"
+            className="hover:text-[#f5ce02] text-base sm:text-lg md:text-xl"
+          >
+            Handrail Railing
+          </Link>
+          <MdKeyboardArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
+
+          <Link
+            to="/blog/modernbalcony"
+            className="hover:text-[#f5ce02] text-base sm:text-lg md:text-xl"
+          >
+            Balcony Railing
+          </Link>
+        </span>
         <motion.header
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className=" text-3xl md:text-normal YellowText Raleway tracking-widest mb-4">
+          <h2 className=" text-xl md:text-3xl YellowText Raleway tracking-widest mb-4">
             Premium Staircase Glass Railing Systems in Mumbai & Maharashtra
           </h2>
           <h3 className="text-xl italic text-[--third]">
@@ -124,12 +149,12 @@ Elevate your space with our frameless glass railings, perfect for stainless stee
                 </motion.div>
                 <div className="w-full md:w-1/2 space-y-4">
                   <motion.h2
-                    className="text-4xl text-[--third]"
+                    className="text-3xl text-[--third]"
                     animate={{ x: hoveredPost === post.id ? 20 : 0 }}
                   >
                     {post.title}
                   </motion.h2>
-                  <p className="text-[18px] text-gray-500 text-justify ">
+                  <p className="text-[16px] text-gray-500 text-justify ">
                     {post.excerpt}
                   </p>
                   <p className="text-sm uppercase text-[--third]">

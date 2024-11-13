@@ -10,3 +10,5 @@ export * from "./festival";
 export * from "./projectImage";
 export * from "./modernterrace";
 export * from "./modernstaircase";
+export * from "./Handrails";
+export * from "./Balcony";
