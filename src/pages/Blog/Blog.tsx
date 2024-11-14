@@ -136,9 +136,9 @@ export const Blog = () => {
           </p>
         </div>
       </div>
-      <div className="max-w-7xl grid md:grid-cols-2 mx-auto mt-10 md:mt-24 gap-10 xl:gap-[10rem] p-6">
+      <div className="max-w-7xl grid md:grid-cols-2 mx-auto mt-10 md:mt-24 gap-10 xl:gap-[3rem] p-6 pb-14">
         <div>
-          <h3 className=" text-3xl text-[--third]">
+          <h3 className=" text-3xl text-[--third] pb-2">
             <Link to="modernterrace">
               {" "}
               <b className=" flex gap-2">
@@ -160,7 +160,7 @@ export const Blog = () => {
           </p>
         </div>
         <div>
-          <h3 className=" text-3xl text-[--third]">
+          <h3 className=" text-3xl text-[--third] pb-2">
             <Link to="modernstaircase">
               {" "}
               <b className=" flex gap-2">
@@ -186,7 +186,7 @@ export const Blog = () => {
           <h3 className=" text-3xl text-[--third]">
             <Link to="modernhandrail">
               {" "}
-              <b className=" flex gap-2">
+              <b className=" flex gap-2 pb-2">
                 Aluminium Handrail Glass Railing{" "}
                 <sup>
                   <LiaExternalLinkAltSolid />
@@ -204,7 +204,7 @@ export const Blog = () => {
           </p>
         </div>
         <div>
-          <h3 className=" text-3xl text-[--third]">
+          <h3 className=" text-3xl text-[--third] pb-2">
             <Link to="modernbalcony">
               {" "}
               <b className=" flex gap-2">

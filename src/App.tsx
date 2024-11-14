@@ -157,12 +157,11 @@ import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Footer, Navbar } from "./components";
 import { useScrollToTop } from "./hooks";
-import { Helmet } from "react-helmet"; // Ensure this import is from 'react-helmet'
+// Ensure this import is from 'react-helmet'
 import WhatsAppChat from "./pages/WhatsAppChat/WhatsAppChat";
 import { Toaster } from "react-hot-toast";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Ensure this is imported
-import favicondark from "../src/assets/Images/logo/favicondark.ico";
 
 const getFaviconPath = (isDarkMode = false) => {
   return `/favicon-${isDarkMode ? "dark" : "light"}.ico`;
@@ -227,38 +226,6 @@ const App: React.FC = () => {
 
   return (
     <>
-      <Helmet>
-        <title>
-          Imperio Railing Systems | Glass Railing | Balcony Glass Railings |
-          Staircase Glass Railings | Glass Railing Handrails
-        </title>
-        <meta
-          name="description"
-          content="Discover glass railing aluminium glass railing, balcony glass railing solutions with Imperio Railing Systems in Mumbai, Maharashtra,Punjab, Uttar Pradesh, Jharkhand, Karnataka, Andhra Pradesh India. Our durable, modern and stylish glass railing, including balcony glass railings and staircase glass railing, for any space. Various aluminium accessories available like base, handrails, brackets, spigots, etc. Transform your space with our high-quality glass railings today!. Best suppliers and dealers in India for glass railing"
-        />
-        <meta
-          name="keywords"
-          content="premium glass railings, toughened glass manufacturer, durable glass railing systems, modern glass railing, stylish glass railing, balcony glass railing, balcony glass design, glass handrail price, custom glass installation,custom glass railing, Architectural Glass Design, Glass Railing Safety & Maintenance"
-        />
-        <meta name="robots" content="index, follow" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.imperiorailing.com/" />
-        <meta
-          name="instagram:url"
-          content="https://www.instagram.com/imperio.railings/?igsh=OWlmaXB6NnJpcWJ0"
-        />
-        <meta name="twitter:url" content="https://x.com/ImperioRailing" />
-        <meta
-          name="facebook:url"
-          content="https://www.facebook.com/imperiorailingsystem"
-        />
-        <meta
-          name="twitter:title"
-          content="glass railing supplier in mumbai and manufacturing"
-        />
-        <link rel="icon" href={favicondark} />
-      </Helmet>
-
       <Toaster />
       <Navbar />
       <Outlet />

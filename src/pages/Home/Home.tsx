@@ -144,6 +144,8 @@ import { heroImage, descImage } from "../../assets/Images";
 //Festival Time only on This belo code
 // import { descImage, heroImage } from "../../assets/Images";
 // import { descImage } from "../../assets/Images";
+import { Helmet } from "react-helmet";
+import favicondark from "../../assets/Images/logo/favicondark.ico";
 
 import {
   Hero,
@@ -185,17 +187,37 @@ export const Home: React.FC = () => {
 
   return (
     <>
-      {/* <Metadata
-        title={"Imperio Railing Systems - Home"}
-        description={
-          "Imperio Railing Systems offers premium glass railing solutions for homes and buildings. Enhance your space with our stylish and durable glass railings, glass balconies,stair railings,black railing with glass,glass handrail cost and glass parapet railing. Specializing in custom glass installations, our products ensure safety and elegance. Discover our range of glass railings and transform your home or building today."
-        }
-        keywords={
-          "glass balcony design,glass guardrail,railing with glass,glass with railing,design of glass railing,glass railing for balcony,glass for balcony railing,glass railing design for balcony,glass balcony handrail,glass handrail balcony,modern style glass railing design for balcony,balcony railings with glass,railing glass balcony,glass railing design balcony,steel with glass railing,staircase glass railing design,staircase railing design with glass,ss with glass railing,modern glass balcony,stainless and glass railings,stainless steel glass handrail,glass and stainless steel railings,tuffen glass railing,wooden railings with glass,tuffen glass design for balcony,frameless glass railing,modern balcony glass design,outdoor glass handrail"
-        }
-        ogImage={heroImage}
-        ogUrl={"https://www.imperiorailing.com/"}
-      /> */}
+      <Helmet>
+        <title>
+          Glass Railing Systems | Imperio Railing Systems | Balcony Glass
+          Railings | Staircase Glass Railings | Glass Railing Handrails
+        </title>
+        <meta
+          name="description"
+          content="Discover glass railing, aluminium glass railing, balcony glass railing solutions with Imperio Railing Systems in near me  Mumbai, Maharashtra,Punjab, Uttar Pradesh, Jharkhand, Karnataka, Andhra Pradesh India. Our durable, modern and stylish glass railing, including balcony glass railings and staircase glass railing, for any space. Various aluminium accessories available like base, handrails, brackets, spigots, etc. Transform your space with our high-quality glass railings today!. Best suppliers and dealers in India for glass railing. Transform your space with our top Quality glass railing systems today. We are one of the best suppliers and dealers in India for glass railings."
+        />
+        <meta
+          name="keywords"
+          content="premium glass railings, toughened glass manufacturer, durable glass railing systems, modern glass railing, stylish glass railing, balcony glass railing, balcony glass design, glass handrail price, custom glass installation,custom glass railing, Architectural Glass Design, Glass Railing Safety & Maintenance"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.imperiorailing.com/" />
+        <meta
+          name="instagram:url"
+          content="https://www.instagram.com/imperio.railings/?igsh=OWlmaXB6NnJpcWJ0"
+        />
+        <meta name="twitter:url" content="https://x.com/ImperioRailing" />
+        <meta
+          name="facebook:url"
+          content="https://www.facebook.com/imperiorailingsystem"
+        />
+        <meta
+          name="twitter:title"
+          content="glass railing supplier in mumbai and manufacturing"
+        />
+        <link rel="icon" href={favicondark} />
+      </Helmet>
       <main>
         <Hero
           img={heroImage}
@@ -324,7 +346,7 @@ export const Home: React.FC = () => {
 
           {isDesktop ? (
             <div className="flex justify-center px-10 phone:px-6 tablet:px-10 laptop:px-20 py-12 gap-32 items-center h-fit">
-              <VerticalCarousel direction className="max-w-[40%]">
+              <VerticalCarousel direction className="w-[40%]">
                 {scrollData.map((item) => (
                   <div key={item.img} className="aspect-w-1 aspect-h-1 ">
                     <img
@@ -336,16 +358,16 @@ export const Home: React.FC = () => {
                   </div>
                 ))}
               </VerticalCarousel>
-              <VerticalCarousel className="w-[58%]">
+              <VerticalCarousel className="w-[54%]">
                 {scrollData.map((item, index) => (
                   <div key={index}>
-                    <div className="flex items-center gap-5 text-white">
+                    <div className="flex items-center gap-5 text-white h-[20rem]">
                       <h4 className="text-8xl laptop:text-6xl">{index + 1}.</h4>
                       <div className="flex flex-col gap-5">
                         <h2 className="Raleway text-5xl laptop:text-4xl">
                           {item.header}
                         </h2>
-                        <p className="text-2xl w-[38rem] laptop:w-[30rem] laptop:text-xl">
+                        <p className="text-2xl w-[38rem] laptop:w-[30rem] laptop:text-lg">
                           {item.subheader}
                         </p>
                       </div>
