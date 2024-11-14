@@ -9,11 +9,11 @@ export const ProductPanel: React.FC<ProductPanelProps> = ({
 }) => {
   return (
     <>
-      <div className="max-w-6xl flex flex-col md:flex-row mx-auto mt-2 md:mt-8 gap-6 px-2 md:px-8 py-4">
+      <div className="max-w-5xl flex flex-col md:flex-row mx-auto mt-2 md:mt-8 gap-6 px-4 md:px-8 py-4">
         <div className="flex flex-col md:w-[55%] gap-4">
           {header ? (
             <h2 className="YellowText text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
-              Glass Railing {header}
+              {header}
             </h2>
           ) : (
             <></>
@@ -40,7 +40,7 @@ export const ProductPanel: React.FC<ProductPanelProps> = ({
               India, enhancing glass railing systems nationwide with style and
               safety."
             </p>
-          ) : (
+          ) : header === "Height" ? (
             <p className="text-justify italic text-[--grey]">
               "Explore our premium glass railing height options, designed to
               meet diverse safety and style requirements. Choose from heights
@@ -48,6 +48,16 @@ export const ProductPanel: React.FC<ProductPanelProps> = ({
               sophistication. Available in major cities like Mumbai, Pune,
               Hyderabad, and Kolkata, we deliver across India, enhancing glass
               railing systems nationwide with style, safety, and functionality."
+            </p>
+          ) : (
+            <p className="text-justify italic text-[--grey]">
+              "Discover our versatile glass types for railing systems, tailored
+              to fit various aesthetic and functional needs. Choose from clear,
+              tinted, frosted, or tempered glass options, each crafted for
+              strength and visual appeal. Available for installation in major
+              cities such as Mumbai, Pune, Hyderabad, and Kolkata, we deliver
+              nationwide, enhancing spaces with modern style, durability, and
+              safety in every glass railing system."
             </p>
           )}
         </div>
@@ -59,7 +69,7 @@ export const ProductPanel: React.FC<ProductPanelProps> = ({
     </h2> */}
 
         {/* Product Grid */}
-        <div className="grid gap-6 py-2 phone:py-4 grid-cols-2 xl:grid-cols-4 justify-items-center">
+        <div className="grid gap-6 py-2 phone:py-4 grid-cols-2 xl:grid-cols-3 justify-items-center">
           {/* Mapping through each product detail */}
           {productDetail.map((product) => (
             <ProductCard
