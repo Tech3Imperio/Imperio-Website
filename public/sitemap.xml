@@ -40,12 +40,22 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://imperiorailing.com/blog/ModernTerrace</loc>
+        <loc>https://imperiorailing.com/blog/modernterrace</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://imperiorailing.com/blog/ModernStaircase</loc>
+        <loc>https://imperiorailing.com/blog/modernstaircase</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://imperiorailing.com/blog/modernhandrail</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://imperiorailing.com/blog/modernbalcony</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>

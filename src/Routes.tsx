@@ -17,6 +17,8 @@ import BlogDetails from "./pages/BlogDetails/BlogDetails";
 import Projects from "./pages/Projects/Projects";
 import ModernTerrace from "./pages/Blog/ModernTerrace/ModernTerrace";
 import ModernStaircase from "./pages/Blog/ModernStaircase/ModernStaircase";
+import ModernHandrail from "./pages/Blog/ModernHandrail/ModernHandrail";
+import ModernBalcony from "./pages/Blog/ModernBalcony/ModernBalcony";
 
 export const routes = createBrowserRouter([
   {
@@ -26,8 +28,10 @@ export const routes = createBrowserRouter([
       { path: "", element: <Home /> },
       { path: "home", element: <Navigate to="/" replace={true} /> },
       { path: "blog", element: <Blog /> },
-      { path: "blog/ModernTerrace", element: <ModernTerrace /> },
-      { path: "blog/ModernStaircase", element: <ModernStaircase /> },
+      { path: "blog/modernterrace", element: <ModernTerrace /> },
+      { path: "blog/modernstaircase", element: <ModernStaircase /> },
+      { path: "blog/modernhandrail", element: <ModernHandrail /> },
+      { path: "blog/modernbalcony", element: <ModernBalcony /> },
       { path: "blog/:blogId", element: <BlogDetails /> },
       { path: "contactus", element: <Contact /> },
       { path: "aboutus", element: <About /> },

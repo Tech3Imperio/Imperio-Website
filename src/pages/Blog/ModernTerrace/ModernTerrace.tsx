@@ -9,7 +9,8 @@ import {
   heroImg,
 } from "../../../assets/Images";
 import Metadata from "../../../components/Metatag/Metatag";
-
+import { Link } from "react-router-dom";
+import { MdKeyboardArrowRight } from "react-icons/md";
 type BlogPost = {
   id: number;
   title: string;
@@ -81,14 +82,38 @@ export default function ModernTerrace() {
         subHeader="Discover premium terrace glass railing systems in Mumbai, Pune, Delhi, Varanasi, Kolkata, and across Maharashtra and beyond.  Our modern, stylish, and durable top-quality glass railings Frameless Glass Railings for Terraces and Balcony"
         curve
       />
-      <div className="min-h-screen bg-white p-8">
+      <div className="min-h-screen bg-white p-4 md:p-8">
+        <span className="flex flex-wrap gap-2 pb-4 items-center">
+          <Link
+            to="/blog/ModernStaircase"
+            className="hover:text-[#f5ce02] text-base sm:text-lg md:text-xl"
+          >
+            Staircase Railing
+          </Link>
+          <MdKeyboardArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
+
+          <Link
+            to="/blog/modernhandrail"
+            className="hover:text-[#f5ce02] text-base sm:text-lg md:text-xl"
+          >
+            Handrail Railing
+          </Link>
+          <MdKeyboardArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
+
+          <Link
+            to="/blog/modernbalcony"
+            className="hover:text-[#f5ce02] text-base sm:text-lg md:text-xl"
+          >
+            Balcony Railing
+          </Link>
+        </span>
         <motion.header
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className=" text-3xl md:text-normal md:text-3xl YellowText Raleway tracking-widest mb-4">
+          <h2 className=" text-xl md:text-3xl  YellowText Raleway tracking-widest mb-4">
             Premium Terrace Glass Railing Systems in Mumbai & Maharashtra
           </h2>
           <h3 className="text-xl italic text-[--third]">
@@ -125,12 +150,12 @@ export default function ModernTerrace() {
                 </motion.div>
                 <div className="w-full md:w-1/2 space-y-4">
                   <motion.h2
-                    className="text-4xl text-[--third]"
+                    className="text-3xl text-[--third]"
                     animate={{ x: hoveredPost === post.id ? 20 : 0 }}
                   >
                     {post.title}
                   </motion.h2>
-                  <p className="text-[18px] text-gray-500 text-justify ">
+                  <p className="text-[16px] text-gray-500 text-justify ">
                     {post.excerpt}
                   </p>
                   <p className="text-sm uppercase text-[--third]">

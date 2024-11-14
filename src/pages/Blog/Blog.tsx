@@ -42,10 +42,10 @@ export const Blog = () => {
     <>
       <Metadata
         title={
-          "Blogs - glass railing | balcony glass railing | Modern Staircase Glass Railing"
+          "Blogs - glass railing | balcony glass railing | Modern Staircase Glass Railing | Aluminium Handrail"
         }
         description={
-          "Elevate your space with our expert advice on modern glass railings in cities like Delhi, Mumbai, Bangalore, Pune, Hyderabad, Karnataka, And Maharashtra. Explore design inspiration for balcony glass railings, staircase glass railings, and more. From frameless glass railings to aluminum glass railings, laminated glass, and stainless steel, our blogs offer tips on installation, maintenance, and stylish glass railing designs for your home or commercial property."
+          "Elevate your space with our expert advice on modern glass railings, handrail in cities like Delhi, Mumbai, Bangalore, Pune, Hyderabad, Karnataka, And Maharashtra. Explore design inspiration for balcony glass railings, staircase glass railings, and more. From frameless glass railings to aluminum glass railings, laminated glass, and stainless steel, our blogs offer tips on installation, maintenance, and stylish glass railing designs for your home or commercial property."
         }
         keywords={
           "glass railings, aluminum glass railings, Laminated Glass, stainless steel railing, modern glass railings, frameless glass railings, Modern Aesthetic, Classic Look, Minimalist Style, safety glass railings, high durable glass railings, Weather Resistant, Low Maintenance, Customizable Options, balcony glass railing, best glass railing systems in Mumbai, Commercial Spaces, modern glass railing designs for homes, Balcony Railings, Staircase glass Railings, stylish glass railings for commercial buildings, transfrom your home decor, seamless glass railing, elegant glass railing"
@@ -136,10 +136,10 @@ export const Blog = () => {
           </p>
         </div>
       </div>
-      <div className="max-w-7xl flex flex-col lg:flex-row mx-auto mt-10 md:mt-24 gap-10 xl:gap-[15rem] p-6">
+      <div className="max-w-7xl grid md:grid-cols-2 mx-auto mt-10 md:mt-24 gap-10 xl:gap-[10rem] p-6">
         <div>
           <h3 className=" text-3xl text-[--third]">
-            <Link to="ModernTerrace">
+            <Link to="modernterrace">
               {" "}
               <b className=" flex gap-2">
                 Modern Terrace Glass Railing{" "}
@@ -161,7 +161,7 @@ export const Blog = () => {
         </div>
         <div>
           <h3 className=" text-3xl text-[--third]">
-            <Link to="ModernStaircase">
+            <Link to="modernstaircase">
               {" "}
               <b className=" flex gap-2">
                 Modern Staircase Glass Railing{" "}
@@ -180,6 +180,48 @@ export const Blog = () => {
             Whether for a grand staircase or a minimalist design, glass railings
             offer durability, low maintenance, and a sophisticated aesthetic
             that elevates the look of your space. space.
+          </p>
+        </div>
+        <div>
+          <h3 className=" text-3xl text-[--third]">
+            <Link to="modernhandrail">
+              {" "}
+              <b className=" flex gap-2">
+                Aluminium Handrail Glass Railing{" "}
+                <sup>
+                  <LiaExternalLinkAltSolid />
+                </sup>
+              </b>
+            </Link>
+          </h3>
+          <p className="text-justify italic text-[--grey]">
+            Looking for high-quality Aluminium Handrails and Glass Railings in
+            Mumbai, Delhi, Bangalore, and Chennai? We specialize in LED
+            handrails, sleek handrails, and modern handrail ideas, with custom
+            finishes including wooden finishes for your balcony handrails. As a
+            leading stair handrail supplier and manufacturer, we provide durable
+            and stylish railing solutions for both indoor and outdoor spaces.
+          </p>
+        </div>
+        <div>
+          <h3 className=" text-3xl text-[--third]">
+            <Link to="modernbalcony">
+              {" "}
+              <b className=" flex gap-2">
+                Balcony Glass Railing Idea{" "}
+                <sup>
+                  <LiaExternalLinkAltSolid />
+                </sup>
+              </b>
+            </Link>
+          </h3>
+          <p className="text-justify italic text-[--grey]">
+            Looking for high-quality Aluminium Handrails and Glass Railings in
+            Mumbai, Delhi, Bangalore, and Chennai? We specialize in LED
+            handrails, sleek handrails, and modern handrail ideas, with custom
+            finishes including wooden finishes for your balcony handrails. As a
+            leading stair handrail supplier and manufacturer, we provide durable
+            and stylish railing solutions for both indoor and outdoor spaces.
           </p>
         </div>
       </div>
