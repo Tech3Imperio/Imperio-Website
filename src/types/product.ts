@@ -32,4 +32,5 @@ export type ProductProps = {
   "Alternative text": string;
   "Min 3 Extra images": string;
   "Alternative text for other image": string;
+  Types: string;
 };
