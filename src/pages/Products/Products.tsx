@@ -303,11 +303,11 @@ const MemoProducts: React.FC = () => {
         </button>
       </div>
       <div
-        className={`fixed right-0 top-0 h-screen w-[300px] bg-[--black] rounded-l-2xl shadow-md transition-transform duration-700 z-50 overflow-y-scroll sidebar-container ${
-          sidebarOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed right-0 top-0 h-screen w-[280px] bg-[--black] border-l-[3px] hover:border-white rounded-l-[2rem] shadow-2xl transition-transform duration-700 z-50 overflow-y-scroll sidebar-container ${
+          sidebarOpen ? "translate-x-0 shadow-yellow-500" : "translate-x-full"
         }`}
       >
-        <div className="flex justify-between items-center m-4 ">
+        <div className="flex justify-between items-center m-4 pt-5">
           <h2 className="text-2xl YellowText whitespace-nowrap">
             Filter Products
           </h2>
@@ -363,8 +363,10 @@ const MemoProducts: React.FC = () => {
             </div>
           ))}
           <button
-            onClick={() => setSelectedTypes([])}
-            className="py-3 mb-3 tablet:py-4 px-5 laptop:px-6 text-sm text-white bg-[--black] font-normal rounded-4xl transition-700 hover:text-[--black] hover:bg-[--secound]"
+            onClick={() => {
+              setSelectedTypes([]), setSidebarOpen(false);
+            }}
+            className=" px-6 py-4 text-[--black] font-bold bg-[--secound] text-xs rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap "
           >
             Reset Filters
           </button>
