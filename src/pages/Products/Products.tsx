@@ -10,7 +10,9 @@ import "./style.css";
 import Metadata from "../../components/Metatag/Metatag";
 import ShimmerCard from "../../components/Shimmer/ShimmerCard";
 import { SlArrowDown } from "react-icons/sl";
-import { SlArrowUp } from "react-icons/sl";
+import { LuFilter } from "react-icons/lu";
+import { IoIosClose } from "react-icons/io";
+
 export type ProductDescription = {
   heading: string;
   subheading: string;
@@ -106,6 +108,8 @@ const MemoProducts: React.FC = () => {
       });
     }
   }, [selectedSection]);
+
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const dataBuilder = useCallback((data: ProductProps[]): ProductSection[] => {
     const headers = [...new Set(data.map((item) => item["Product Category"]))];
@@ -279,7 +283,7 @@ const MemoProducts: React.FC = () => {
     <>
       <Metadata
         title={
-          "Glass Railing Systems Products | Aluminium Glass railing Base |  Aluminium Glass railing Handrail"
+          "Glass Railing System | Aluminium Glass Railing Base |  Aluminium Glass Railing Handrail"
         }
         description={
           "Imperio’s glass railing systems in india offer durable balcony glass railings, staircase glass railings, and aluminum glass railings, merging modern aesthetics with lasting safety. We offer glass railings all over India, with a strong presence in states like Maharashtra, Goa, Gujarat, etc and cities including Mumbai, Pune, Alibaug, Bangluru, etc"
@@ -290,28 +294,46 @@ const MemoProducts: React.FC = () => {
         ogImage={productImage}
         ogUrl={"https://imperiorailing.com/products"}
       />
-      <Hero
-        img={productImage}
-        altText="Hero image for product"
-        header="Glass Railing Systems"
-        subHeader="Imperio’s Glass Railing Systems in India deliver high-durability balcony, staircase, and aluminum glass railings, blending modern style with lasting safety for any space."
-        curve
-      />
-      <main className="flex flex-col md:flex-row max-w-[85rem] mx-auto">
-        <div className="hidden md:flex flex-col text-center md:top-32 md:mt-10 self-start p-4 w-[80%] md:w-[18%] mx-auto border rounded-xl mb-6">
+      <div className="lg:hidden flex top-[0%] fixed right-0 z-40 h-screen ">
+        <button onClick={() => setSidebarOpen(!sidebarOpen)}>
+          <LuFilter
+            className=" bg-yellow-500 text-black z-40 p-2 rounded-l-md"
+            size={45}
+          />
+        </button>
+      </div>
+      <div
+        className={`fixed right-0 top-0 h-screen w-[300px] bg-[--black] rounded-l-2xl shadow-md transition-transform duration-700 z-50 overflow-y-scroll sidebar-container ${
+          sidebarOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="flex justify-between items-center m-4 ">
+          <h2 className="text-2xl YellowText whitespace-nowrap">
+            Filter Products
+          </h2>
+          <button
+            onClick={() => setSidebarOpen(false)}
+            className="flex -text--grey"
+          >
+            <IoIosClose size={36} />
+          </button>
+        </div>
+        <div className="p-4">
           {filterCategories.map((category) => (
-            <div key={category.name} className="p-2  mb-4">
+            <div key={category.name} className="p-2 mb-4">
               <div
                 onClick={() => toggleSection(category.name)}
                 className="flex justify-between items-center cursor-pointer"
               >
-                <h3 className="-text--third font-semibold">{category.name}</h3>
+                <h3 className="-text--grey font-semibold">{category.name}</h3>
                 <span>
-                  {openSections.includes(category.name) ? (
-                    <SlArrowDown />
-                  ) : (
-                    <SlArrowUp />
-                  )}
+                  <SlArrowDown
+                    className={`-text--grey ${
+                      openSections.includes(category.name)
+                        ? "rotate-180 transition-all duration-500"
+                        : " transition-all duration-500"
+                    }`}
+                  />
                 </span>
               </div>
               {openSections.includes(category.name) && (
@@ -326,7 +348,61 @@ const MemoProducts: React.FC = () => {
                         id={option}
                         checked={selectedTypes.includes(option)}
                         onChange={() => handleTypeChange(option)}
-                        className="cursor-pointer bg-yellow-500"
+                        className="cursor-pointer"
+                      />
+                      <label
+                        htmlFor={option}
+                        className="cursor-pointer rounded-lg whitespace-nowrap -text--grey"
+                      >
+                        {option}
+                      </label>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+      <Hero
+        img={productImage}
+        altText="Hero image for product"
+        header="Glass Railing Systems"
+        subHeader="Imperio’s Glass Railing Systems in India deliver high-durability balcony, staircase, and aluminum glass railings, blending modern style with lasting safety for any space."
+        curve
+      />
+      <main className="flex flex-col md:flex-row max-w-[85rem] mx-auto">
+        <aside className="hidden lg:flex flex-col text-center md:top-32 md:mt-10 self-start p-4 w-[80%] md:w-[18%] mx-auto border rounded-xl mb-6">
+          {filterCategories.map((category) => (
+            <div key={category.name} className="p-2  mb-4">
+              <div
+                onClick={() => toggleSection(category.name)}
+                className="flex justify-between items-center cursor-pointer"
+              >
+                <h3 className="-text--third font-semibold">{category.name}</h3>
+                <span>
+                  <SlArrowDown
+                    className={`${
+                      openSections.includes(category.name)
+                        ? "rotate-180 transition-all duration-500"
+                        : " transition-all duration-500"
+                    }`}
+                  />
+                </span>
+              </div>
+              {openSections.includes(category.name) && (
+                <ul className="flex flex-col">
+                  {category.options.map((option) => (
+                    <li
+                      key={option}
+                      className="list-none flex items-center gap-3 p-2"
+                    >
+                      <input
+                        type="checkbox"
+                        id={option}
+                        checked={selectedTypes.includes(option)}
+                        onChange={() => handleTypeChange(option)}
+                        className="cursor-pointer"
                       />
                       <label
                         htmlFor={option}
@@ -346,7 +422,7 @@ const MemoProducts: React.FC = () => {
           >
             Reset Filters
           </button>
-        </div>
+        </aside>
         <section className="pb-24">
           {filteredProductSections &&
             filteredProductSections.map((section, index) => (
@@ -366,6 +442,7 @@ const MemoProducts: React.FC = () => {
               </div>
             ))}
         </section>
+
         {/* <div className="flex justify-center items-center h-screen">
       <div className="w-16 h-16 border-t-4 border-b-4 border-blue-500 rounded-full animate-spin"></div>
       </div> */}
