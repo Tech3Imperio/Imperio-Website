@@ -189,8 +189,8 @@ export const Home: React.FC = () => {
     <>
       <Helmet>
         <title>
-          Glass Railing Systems | Imperio Railing Systems | Balcony Glass
-          Railings | Staircase Glass Railings | Glass Railing Handrails
+          Glass Railing | Aluminium Glass Railing | Balcony Glass Railings |
+          Staircase Glass Railings | Glass Railing Dealers
         </title>
         <meta
           name="description"
