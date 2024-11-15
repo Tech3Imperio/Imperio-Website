@@ -362,6 +362,12 @@ const MemoProducts: React.FC = () => {
               )}
             </div>
           ))}
+          <button
+            onClick={() => setSelectedTypes([])}
+            className="py-3 mb-3 tablet:py-4 px-5 laptop:px-6 text-sm text-white bg-[--black] font-normal rounded-4xl transition-700 hover:text-[--black] hover:bg-[--secound]"
+          >
+            Reset Filters
+          </button>
         </div>
       </div>
       <Hero
