@@ -189,8 +189,8 @@ export const Home: React.FC = () => {
     <>
       <Helmet>
         <title>
-          Glass Railing | Aluminium Glass Railing | Balcony Glass Railings |
-          Staircase Glass Railings | Glass Railing Dealers
+          Glass Railing Systems | Aluminium Glass Railing | Balcony Glass
+          Railings | Staircase Glass Railings | Glass Railing Dealers
         </title>
         <meta
           name="description"
@@ -248,7 +248,7 @@ export const Home: React.FC = () => {
             <h2 className="text-3xl tablet:text-4xl lg:text-5xl Raleway max-xl:text-4xl text-[--third]">
               Crafting Excellence in Glass Railings.
             </h2>
-            <p className="w-full lg:w-[37rem] text-xs tablet:text-base lg:text-lg xl:text-xl italic text-[--grey]">
+            <p className="w-full lg:w-[37rem] text-xs tablet:text-base lg:text-lg xl:text-xl italic text-[--grey] text-justify">
               At Imperio, we specialize in creating beautiful, durable glass
               railing systems, including aluminum glass railings, custom glass
               railings, balcony glass railings, and staircase glass railings,
