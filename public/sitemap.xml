@@ -5,11 +5,6 @@
     xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
     xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
     <url>
-        <loc>https://imperiorailing.com/</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://www.imperiorailing.com/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
@@ -141,31 +136,6 @@
     </url>
     <url>
         <loc>https://imperiorailing.com/blog/elevate-your-space-with-sleek-glass-railings</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://x.com/ImperioRailing/status/1808033329280962746</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.quora.com/profile/Imperio-Railing-Systems/Should-I-use-handrails-for-the-railing-Using-handrails-for-a-railing-is-a-common-and-practical-choice-especially-for?ch=10&oid=169337263&share=b5e7413f&srid=hSCksl&target_type=post</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://in.pinterest.com/pin/1121396375954180491/</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.linkedin.com/feed/update/urn:li:activity:7214207095657664512/</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.linkedin.com/feed/update/urn:li:activity:7216756439954931713/</loc>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>

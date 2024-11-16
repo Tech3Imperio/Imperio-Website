@@ -1,21 +1,21 @@
 import { contactHero } from "../../assets/Images";
 import { Description, Hero, Quote } from "../../components";
-// import Metadata from "../../components/Metatag/Metatag";
+import Metadata from "../../components/Metatag/Metatag";
 
 export const Contact = () => {
   return (
     <>
-      {/* <Metadata
-        title={"Contact Us - Imperio Railing System"}
+      <Metadata
+        title={"Contact Us - Imperio Railing System | Aluminum Glass Railings"}
         description={
-          "Get in touch with Imperio Railing System for all your inquiries about aluminum glass railings. Whether you have questions about our products, need installation advice, or want to discuss custom solutions, our team is here to help. Contact us today to learn more about how our durable and stylish railings can enhance your home or commercial space."
+          "Contact Imperio Railing System for inquiries about aluminum glass railings, custom solutions, and installation advice. Serving homes and businesses across India, our durable and stylish railings are designed to enhance your space. Get in touch today!"
         }
         keywords={
-          "Contact Imperio Railing, Aluminum Glass Railings, Railing Installation Advice, Custom Railing Solutions, Durable Railings, Stylish Railings, Residential Railing Inquiries, Commercial Railing Solutions, Railing Safety Features, Railing Design Consultation, Elegance, Safety, Design, Durability, Installation, Maintenance, Innovation, Aesthetics, Quality, Versatility, Glass Railings, Aluminum Railings, Railing Systems, Outdoor Spaces, Home Improvement, Custom Designs, Safety Features, Modern Railings, Stylish Solutions, Architectural Design"
+          "Contact Imperio Railing, Aluminum Glass Railings, Railing Installation Support, Custom Railing Designs, Residential Railing Solutions, Commercial Railings, Durable Glass Railings, Stylish Railing Systems, Glass Railing Installation, Maintenance Advice, Modern Aluminum Railings, Outdoor Railing Design, Home Improvement Solutions, Safety Railings, Innovative Railings"
         }
         ogImage={contactHero}
         ogUrl={"https://www.imperiorailing.com/contactus"}
-      /> */}
+      />
       <main>
         <Hero
           img={contactHero}
@@ -24,7 +24,7 @@ export const Contact = () => {
           subHeader="Discover the perfect blend of safety and sophistication with Imperio's glass railing systems."
           curve
         />
-        <section className="h-screen overflow-hidden mb-16">
+        <section className="h-full overflow-hidden mb-16">
           <Description
             yellowText="Contact Information."
             mainHeader="Mumbai,IN."

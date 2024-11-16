@@ -25,39 +25,56 @@ export const ProductPanel: React.FC<ProductPanelProps> = ({
         <div className="md:w-[45%]">
           {header === "Base" ? (
             <p className="text-justify italic text-[--grey]">
-              "Discover our premium aluminum glass railing bases, customizable
-              in matte and glossy finishes to suit any style. With quick service
-              and fast quotations, we proudly deliver across India, including
-              cities like Mumbai, Pune, Hyderabad, and Kolkata."
+              "Discover our premium <strong>glass railing bases</strong> in
+              India, made of durable aluminum and customizable in matte or
+              glossy finishes to match any style. With quick service and fast
+              quotations, we proudly deliver nationwide, including{" "}
+              <strong>Mumbai</strong>, <strong>Pune</strong>,{" "}
+              <strong>Hyderabad</strong>, and <strong>Kolkata</strong>. Contact
+              us for a free quote today!"
             </p>
           ) : header === "Handrail" ? (
             <p className="text-justify italic text-[--grey]">
-              "Explore our premium aluminum glass railing handrail options,
+              "Explore our premium{" "}
+              <strong>aluminum glass railing handrail</strong> options,
               featuring customizable finishes to suit any style. Choose from
-              matte and glossy color finishes, plus a brighter handrail LED
-              strip to elegantly illuminate your space. Available in major
-              cities like Mumbai, Pune, Hyderabad, Kolkata, we deliver all over
-              India, enhancing glass railing systems nationwide with style and
-              safety."
+              matte and glossy color finishes, plus a brighter{" "}
+              <strong>handrail LED strip</strong> to elegantly illuminate your
+              space. Available in major cities like <strong>Mumbai</strong>,{" "}
+              <strong>Pune</strong>, <strong>Hyderabad</strong>, and{" "}
+              <strong>Kolkata</strong>, we deliver all over{" "}
+              <strong>India</strong>, enhancing{" "}
+              <strong>glass railing systems</strong> nationwide with unmatched
+              style and safety. Contact us today to transform your space!"
             </p>
-          ) : header === "Height" ? (
+          ) : header === "Glass Height" ? (
             <p className="text-justify italic text-[--grey]">
-              "Explore our premium glass railing height options, designed to
-              meet diverse safety and style requirements. Choose from heights
-              ranging from 900mm to 1200mm, each crafted for durability and
-              sophistication. Available in major cities like Mumbai, Pune,
-              Hyderabad, and Kolkata, we deliver across India, enhancing glass
-              railing systems nationwide with style, safety, and functionality."
+              "Explore our premium <strong>glass railing height options</strong>
+              , designed to meet diverse safety and style requirements. Choose
+              from <strong>custom heights</strong> ranging from 900mm to 1200mm,
+              each crafted for <strong>durability and sophistication</strong>.
+              Available in major cities like <strong>Mumbai</strong>,{" "}
+              <strong>Pune</strong>, <strong>Hyderabad</strong>, and{" "}
+              <strong>Kolkata</strong>, we deliver across <strong>India</strong>
+              , enhancing <strong>glass railing systems</strong> nationwide with
+              unmatched style, safety, and functionality.{" "}
+              <strong>Contact us today to find your perfect fit!</strong>"
             </p>
           ) : (
             <p className="text-justify italic text-[--grey]">
-              "Discover our versatile glass types for railing systems, tailored
-              to fit various aesthetic and functional needs. Choose from clear,
-              tinted, frosted, or tempered glass options, each crafted for
-              strength and visual appeal. Available for installation in major
-              cities such as Mumbai, Pune, Hyderabad, and Kolkata, we deliver
-              nationwide, enhancing spaces with modern style, durability, and
-              safety in every glass railing system."
+              "Discover our versatile{" "}
+              <strong>glass types for railing systems</strong>, tailored to fit
+              various aesthetic and functional needs. Choose from{" "}
+              <strong>clear</strong>, <strong>tinted</strong>,{" "}
+              <strong>frosted</strong>, or <strong>tempered glass</strong>{" "}
+              options, each crafted for <strong>strength</strong> and{" "}
+              <strong>visual appeal</strong>. Available for installation in
+              major cities such as <strong>Delhi</strong>,{" "}
+              <strong>Bangalore</strong>, <strong>Chennai</strong>, and{" "}
+              <strong>Ahmedabad</strong>, we deliver nationwide, enhancing
+              spaces with modern style, durability, and safety in every{" "}
+              <strong>glass railing system</strong>. Contact us to elevate your
+              space today!"
             </p>
           )}
         </div>

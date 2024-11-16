@@ -189,17 +189,20 @@ export const Home: React.FC = () => {
     <>
       <Helmet>
         <title>
-          Glass Railing Systems | Aluminium Glass Railing | Balcony Glass
-          Railings | Staircase Glass Railings | Glass Railing Dealers
+          Glass Railing Systems | Best Dealers in India | Imperio Railing
+          Systems
         </title>
+
         <meta
           name="description"
-          content="Discover glass railing, aluminium glass railing, balcony glass railing solutions with Imperio Railing Systems in near me  Mumbai, Maharashtra,Punjab, Uttar Pradesh, Jharkhand, Karnataka, Andhra Pradesh India. Our durable, modern and stylish glass railing, including balcony glass railings and staircase glass railing, for any space. Various aluminium accessories available like base, handrails, brackets, spigots, etc. Transform your space with our high-quality glass railings today!. Best suppliers and dealers in India for glass railing. Transform your space with our top Quality glass railing systems today. We are one of the best suppliers and dealers in India for glass railings."
+          content="Explore premium glass railings, aluminium and balcony designs in Mumbai, Maharashtra, and across India. Durable, stylish glass railings for balconies, stairs, and more. Contact the best dealers and manufacturers of aluminium glass railings!"
         />
+
         <meta
           name="keywords"
-          content="premium glass railings, toughened glass manufacturer, durable glass railing systems, modern glass railing, stylish glass railing, balcony glass railing, balcony glass design, glass handrail price, custom glass installation,custom glass railing, Architectural Glass Design, Glass Railing Safety & Maintenance"
+          content="glass railings India, aluminium glass railing Mumbai, balcony glass design, custom glass railing installation, modern glass handrails, premium toughened glass, glass railing systems India, stylish balcony railings, aluminium glass railing manufacturer in mumbai"
         />
+
         <meta name="robots" content="index, follow" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.imperiorailing.com/" />
@@ -249,12 +252,19 @@ export const Home: React.FC = () => {
               Crafting Excellence in Glass Railings.
             </h2>
             <p className="w-full lg:w-[37rem] text-xs tablet:text-base lg:text-lg xl:text-xl italic text-[--grey] text-justify">
-              At Imperio, we specialize in creating beautiful, durable glass
-              railing systems, including aluminum glass railings, custom glass
-              railings, balcony glass railings, and staircase glass railings,
-              that enhance any space. Based in Mumbai, Maharashtra, India, our
-              focus on innovation and quality ensures that our team delivers
-              top-notch solutions for both residential and commercial projects.
+              At <strong>Imperio Railing Systems</strong>, we specialize in
+              creating beautiful and durable{" "}
+              <strong>glass railing systems</strong>, including{" "}
+              <strong>aluminium glass railings</strong>,{" "}
+              <strong>custom glass railings</strong>,{" "}
+              <strong>balcony glass railings</strong>, and{" "}
+              <strong>staircase glass railings</strong> that enhance any space.
+              Based in <strong>Mumbai, Maharashtra, India</strong>, our focus on
+              innovation and quality ensures that our team delivers top-notch
+              solutions for both residential and commercial projects. As trusted{" "}
+              <strong>dealers of aluminium glass railings</strong> in India, we
+              are committed to providing high-quality, stylish, and functional
+              glass railing systems that meet the needs of every client.
             </p>
             <div className="pt-8 text-[9px] phone:text-xs">
               <BlackButton path="/aboutus">KNOW MORE</BlackButton>
@@ -287,10 +297,17 @@ export const Home: React.FC = () => {
             </div>
             <div className="md:w-[40%]">
               <p className="text-justify italic text-gray-300">
-                Explore our blog for insights on glass railing systems. Elevate
-                your home's aesthetic appeal with modern aluminum glass
-                railings, sleek glass railings. Whether you're in Mumbai, Delhi,
-                Hyderabad, or any other city in India, we've got you covered.
+                Explore our blog for expert insights on{" "}
+                <strong>glass railing systems</strong>, including modern{" "}
+                <strong>aluminium glass railings</strong>,{" "}
+                <strong>balcony glass railings</strong>, and{" "}
+                <strong>staircase glass railings</strong>. Elevate your home's
+                aesthetic appeal with sleek, durable{" "}
+                <strong>glass railing solutions</strong> that are perfect for
+                any space. Whether you're in <strong>Mumbai</strong>,{" "}
+                <strong>Delhi</strong>, <strong>Hyderabad</strong>, or any other
+                city in <strong>India</strong>, we've got you covered with
+                top-quality products and expert installation services.
                 <br />
               </p>
             </div>
@@ -405,10 +422,35 @@ export const Home: React.FC = () => {
           {/* end */}
         </Description>
         <TextComponent texts={text} />
-        <Description
+        {/* <Description
           mainHeader="Work Showcase."
-          text="Our portfolio showcases a wide range of projects, from luxury residential balconies to modern commercial spaces, emphasizing our commitment to quality and precision. We specialize in modern glass railings, including frameless glass stair railings, glass stair panels, and balcony glass railings. Whether you're searching for glass railing near me or high-quality glass handrails for decks, our glass railing systems are designed to enhance safety, style, and functionality."
-        />
+          text="Our portfolio showcases a wide range of glass railing projects, from luxury residential balconies to modern commercial spaces, highlighting our commitment to quality and precision. We specialize in modern <strong>glass railings</strong>, including <strong>frameless glass stair railings</strong>, <strong>glass stair panels</strong>, and <strong>balcony glass railings</strong>. Whether you're searching for <strong>glass railing near me</strong> in <strong>Mumbai</strong>, <strong>Delhi</strong>, or anywhere in <strong>India</strong>, or need high-quality <strong>glass handrails for decks</strong>, our <strong>custom glass railing systems</strong> are designed to enhance safety, style, and functionality. Contact us today to learn more about how we can transform your space."
+        /> */}
+        <div className=" max-w-auto flex flex-col md:flex-row  pt-12 sm:pt-24 tablet:pt-20 xl:pt-28 px-9 sm:px-16 lg:px-28 2xl:px-44">
+          <div className="flex flex-col md:w-[80%] gap-1 tablet:gap-6">
+            <h3 className="text-[--third] flex flex-wrap md:max-w-2xl Raleway tracking-wider w-full text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] 2xl:text-5xl">
+              Work <br /> Showcase.
+            </h3>
+          </div>
+          <div className="md:w-[50%]">
+            <p className="text-justify italic text-[--grey]">
+              Our portfolio showcases a wide range of glass railing projects,
+              from luxury residential balconies to modern commercial spaces,
+              highlighting our commitment to quality and precision. We
+              specialize in modern <strong>glass railings</strong>, including{" "}
+              <strong>frameless glass stair railings</strong>,{" "}
+              <strong>glass stair panels</strong>, and{" "}
+              <strong>balcony glass railings</strong>. Whether you're searching
+              for <strong>glass railing near me</strong> in{" "}
+              <strong>Mumbai</strong>, <strong>Delhi</strong>, or anywhere in{" "}
+              <strong>India</strong>, or need high-quality{" "}
+              <strong>glass handrails for decks</strong>, our{" "}
+              <strong>custom glass railing systems</strong> are designed to
+              enhance safety, style, and functionality. Contact us today to
+              learn more about how we can transform your space.
+            </p>
+          </div>
+        </div>
         <ImageScrolls className="py-14 overflow-hidden" />
         <div className="overflow-hidden">
           <Testimonials cards={testimonialsData} />
