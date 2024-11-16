@@ -250,48 +250,48 @@ export const About: React.FC = () => {
       title: "Our Mission",
       content: {
         short:
-          "At Imperio Railing Systems, we specialize in delivering high-quality glass railings that seamlessly blend safety, durability, and style. Our innovative and sustainable solutions are designed to enhance any space, from balconies to facades, ensuring that your property not only looks stunning but also meets the highest safety standards.",
-        long: "At Imperio Railing Systems, our mission is to design and deliver cutting-edge, high-quality glass railing systems that enhance safety and elevate the aesthetic appeal of any space. We specialize in creating elegant and durable railings for balconies, staircases, and building facades. Our commitment to innovation ensures that each system not only meets but exceeds industry standards. By integrating advanced technology with sustainable practices, we aim to provide environmentally friendly and long-lasting solutions. Our goal is to transform spaces with stylish and secure glass railings, fostering a culture of excellence and customer satisfaction. Trust us to deliver the perfect railing system for your home or building project.",
+          "At Imperio Railing Systems, we are dedicated to providing high-quality glass railings that seamlessly blend safety, durability, and style. Our innovative solutions are crafted to enhance any space, from balconies to facades, ensuring your property looks stunning while adhering to the highest safety standards.",
+        long: "At Imperio Railing Systems, our mission is to revolutionize the railing industry with cutting-edge glass railing systems that prioritize safety and elevate the aesthetic appeal of any environment. We specialize in designing elegant and durable railings for balconies, staircases, and building facades. Our commitment to innovation drives us to exceed industry standards, integrating advanced technology with sustainable practices to create environmentally friendly solutions. We aim to transform spaces with stylish and secure glass railings, fostering a culture of excellence and unwavering customer satisfaction. Trust us to deliver the perfect railing system that complements your home or building project.",
       },
     },
     values: {
       title: "Our Values",
       content: {
         short:
-          "At Imperio Railing Systems, we prioritize reliability in our glass railing solutions, ensuring long-lasting performance and customer satisfaction. Our commitment to quality craftsmanship and safety standards guarantees that every installation enhances your space while providing peace of mind.",
-        long: "At Imperio Railing Systems, our core values—integrity, reliability, and accountability—form the foundation of our business. We are committed to delivering high-quality glass railings for residential and commercial applications, emphasizing trust and transparency in our customer relationships. Our dedication to product quality and durability sets the standard for excellence in glass railing solutions. Our mission is to provide elegant railings that enhance safety and aesthetics, ensuring outstanding performance and lasting durability in every space. We believe that our innovative designs and customer-centric approach will continue to redefine the industry standards and elevate our clients' experiences.",
+          "At Imperio Railing Systems, we prioritize reliability and quality in our glass railing solutions, ensuring long-lasting performance and customer satisfaction. Our commitment to craftsmanship and adherence to safety standards guarantees that every installation enhances your space while providing peace of mind.",
+        long: "At Imperio Railing Systems, our core values—integrity, reliability, and accountability—are the foundation of our business. We are dedicated to delivering high-quality glass railings for both residential and commercial applications, emphasizing trust and transparency in our customer relationships. Our unwavering dedication to product quality and durability sets the standard for excellence in glass railing solutions. We strive to provide elegant railings that enhance safety and aesthetics, ensuring outstanding performance and lasting durability in every space. Our innovative designs and customer-centric approach are key to redefining industry standards and elevating our clients' experiences.",
       },
     },
     vision: {
       title: "Our Vision",
       content: {
         short:
-          "At Imperio Railing Systems, our vision is to lead the industry through innovation and sustainability, delivering eco-friendly glass railing solutions that prioritize customer satisfaction. We strive to set the standard for quality and safety, ensuring our products not only enhance aesthetics but also contribute to a sustainable future.",
-        long: "Imperio Glass Railing offers cutting-edge, frameless glass railing systems that combine safety, style, and durability. Our innovative designs and commitment to quality make us the preferred choice for residential and commercial projects worldwide. Imperio Glass Railing is a global leader in advanced glass railing solutions. We specialize in designing, manufacturing, and installing high-quality, frameless glass railings for a wide range of applications, including balconies, staircases, and building facades. Our products are engineered to the highest standards, ensuring safety and longevity. With a focus on innovation and sustainability, we offer a diverse range of styles and finishes to complement any architectural vision.",
+          "At Imperio Railing Systems, we envision leading the industry through innovation and sustainability. We aim to deliver eco-friendly glass railing solutions that prioritize customer satisfaction while setting the standard for quality and safety in every project.",
+        long: "Imperio Railing Systems is at the forefront of the railing industry, offering cutting-edge, frameless glass railing systems that harmoniously combine safety, style, and durability. Our innovative designs and unwavering commitment to quality make us the preferred choice for residential and commercial projects worldwide. We specialize in designing, manufacturing, and installing high-quality, frameless glass railings for a diverse range of applications, including balconies, staircases, and building facades. Our products are engineered to meet the highest standards, ensuring safety and longevity. With a strong focus on innovation and sustainability, we provide a variety of styles and finishes that complement any architectural vision, paving the way for a more beautiful and secure future.",
       },
     },
   };
 
   const valuePoints: { title: string; description: string }[] = [
     {
-      title: "Elevated Aesthetic Appeal",
+      title: "Unmatched Quality Craftsmanship",
       description:
-        "Imperio Railing Systems offers contemporary balcony railings that elevate the aesthetic appeal of your home. Our glass railings provide a seamless look, creating an open and inviting outdoor space. Experience the perfect blend of style and sophistication with our modern designs.",
+        "Discover the art of premium craftsmanship with Imperio Railing Systems. Our aluminum and glass railings are not just products; they are masterpieces designed to enhance your residential or commercial spaces. Experience durability and style like never before, as our innovative designs transform your outdoor areas into stunning showcases of elegance.",
     },
     {
-      title: "Safety Without Compromise",
+      title: "Safety First: Your Peace of Mind",
       description:
-        "Built with high-quality materials, our glass railings ensure maximum safety without compromising style. Engineered to withstand harsh weather conditions, they provide long-lasting performance for any residential building. Enjoy peace of mind with railings that prioritize your family's safety.",
+        "At Imperio Railing Systems, safety is our top priority. Our glass railings are engineered to meet the highest safety standards without compromising on aesthetics. Enjoy the perfect blend of beauty and security, knowing that our durable products provide robust protection for your family and guests. Elevate your space with confidence!",
     },
     {
-      title: "Customized to Your Unique Vision",
+      title: "Tailored Solutions for Unique Spaces",
       description:
-        "We understand that every home is unique, which is why we offer customizable balcony railings. Tailor our designs to fit your specific style and functional needs, providing a personalized touch to your property. Transform your outdoor area with solutions that reflect your vision.",
+        "Every home and business is unique, and so are our railing solutions. With Imperio, you can customize your balcony and staircase railings to match your specific style and functional needs. Let our expert team bring your vision to life, creating personalized designs that enhance the beauty and functionality of your outdoor spaces.",
     },
     {
-      title: "Effortless Installation & Maintenance",
+      title: "Seamless Installation & Low Maintenance",
       description:
-        "Our balcony railing systems are designed for easy installation, making the process hassle-free for homeowners and contractors alike. Additionally, our glass materials require minimal maintenance, ensuring they remain pristine for years to come. Enjoy elegance and convenience with every railing solution.",
+        "Say goodbye to installation headaches! Our railing systems are designed for effortless installation, making it a breeze for homeowners and contractors alike. Plus, our glass materials require minimal maintenance, ensuring your railings stay pristine for years to come. Enjoy the perfect combination of elegance and convenience with Imperio Railing Systems.",
     },
   ];
 
