@@ -41,14 +41,12 @@ export const Blog = () => {
   return (
     <>
       <Metadata
-        title={
-          "Blogs - glass railing | balcony glass railing | Modern Staircase Glass Railing | Aluminium Handrail"
-        }
+        title={"Glass Railing Blogs | Imperio Glass Railing Blogs"}
         description={
-          "Elevate your space with our expert advice on modern glass railings, handrail in cities like Delhi, Mumbai, Bangalore, Pune, Hyderabad, Karnataka, And Maharashtra. Explore design inspiration for balcony glass railings, staircase glass railings, and more. From frameless glass railings to aluminum glass railings, laminated glass, and stainless steel, our blogs offer tips on installation, maintenance, and stylish glass railing designs for your home or commercial property."
+          "Discover Blogs for stylish and durable glass railings in India. Get expert tips and a free quote! Know more about Imperio & Gain the knwoledge for glass railing systems"
         }
         keywords={
-          "glass railings, aluminum glass railings, Laminated Glass, stainless steel railing, modern glass railings, frameless glass railings, Modern Aesthetic, Classic Look, Minimalist Style, safety glass railings, high durable glass railings, Weather Resistant, Low Maintenance, Customizable Options, balcony glass railing, best glass railing systems in Mumbai, Commercial Spaces, modern glass railing designs for homes, Balcony Railings, Staircase glass Railings, stylish glass railings for commercial buildings, transfrom your home decor, seamless glass railing, elegant glass railing"
+          "glass railings, balcony glass railing, Balcony Railings, Staircase glass Railings, commercial buildings, seamless glass railing, aluminum glass railings, Laminated Glass, modern glass railings, frameless glass railings, Aesthetic glass railing, Classic Look, Minimalist Style, safety glass railings, high durable glass railings, Weather Resistant, Low Maintenance, Customizable Options"
         }
         ogImage={blogHero}
         ogUrl={"https://www.imperiorailing.com/blog"}
@@ -58,7 +56,7 @@ export const Blog = () => {
           img={blogHero}
           altText="hero for blog"
           header="Glass Railing Blogs"
-          subHeader="Check out our blogs. Grow your knowledge with Imperio Railing System in best glass railing systems in Mumbai, balcony railings, staircase railings, durable railings, safety glass railings, and frameless glass railings."
+          subHeader="Check out our blogs. Unlock the Secrets to Stunning Glass Railings: Your Ultimate Guide to Stylish and Safe Balcony and Staircase Solutions in India!"
           curve
         />
         {/* <Description
