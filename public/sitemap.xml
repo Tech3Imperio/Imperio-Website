@@ -5,7 +5,7 @@
     xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
     xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
     <url>
-        <loc>https://www.imperiorailing.com/</loc>
+        <loc>https://imperiorailing.com/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
