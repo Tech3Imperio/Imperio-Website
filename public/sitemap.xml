@@ -5,7 +5,7 @@
     xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
     xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
     <url>
-        <loc>https://www.imperiorailing.com/</loc>
+        <loc>https://imperiorailing.com/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -66,26 +66,6 @@
     </url>
     <url>
         <loc>https://imperiorailing.com/privacypolicy</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://www.facebook.com/imperiorailingsystem</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://www.instagram.com/imperio.railings/?igsh=OWlmaXB6NnJpcWJ0</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://www.youtube.com/channel/UCfc7xvEAq7E1KPy6xFA_msg</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://x.com/ImperioRailing</loc>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
