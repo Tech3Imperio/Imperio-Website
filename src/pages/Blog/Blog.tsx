@@ -140,7 +140,7 @@ export const Blog = () => {
             <Link to="modernterrace">
               {" "}
               <b className=" flex gap-2">
-                Modern Terrace Glass Railing{" "}
+                Terrace Glass Railing{" "}
                 <sup>
                   <LiaExternalLinkAltSolid />
                 </sup>
@@ -162,7 +162,7 @@ export const Blog = () => {
             <Link to="modernstaircase">
               {" "}
               <b className=" flex gap-2">
-                Modern Staircase Glass Railing{" "}
+                Staircase Glass Railing{" "}
                 <sup>
                   <LiaExternalLinkAltSolid />
                 </sup>
@@ -206,7 +206,7 @@ export const Blog = () => {
             <Link to="modernbalcony">
               {" "}
               <b className=" flex gap-2">
-                Balcony Glass Railing Idea{" "}
+                Balcony Glass Railing{" "}
                 <sup>
                   <LiaExternalLinkAltSolid />
                 </sup>

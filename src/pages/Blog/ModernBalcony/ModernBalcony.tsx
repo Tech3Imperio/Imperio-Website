@@ -63,7 +63,7 @@ export default function ModernBalcony() {
     <>
       <Metadata
         title={
-          "Blogs - Baclcony Glass Railing | Balcony Aluminium Glass Railing | Balcony Railing | Aluminium Handrail"
+          "Blogs - Balcony Glass Railing | Aluminium Balcony Glass Railing | Balcony Railing"
         }
         description={
           "Explore high-quality aluminum balcony glass railings, frameless glass balcony systems, and spigot glass railing solutions for residential and commercial projects. Serving Mumbai, Delhi, Bangalore, Kolkata and all of India, we offer custom glass designs and railing, modern balcony glass railings, and professional glass railing installations. Enhance your space with durable glass balcony systems, tailored to your needs for both outdoor and indoor areas. Reliable supply and installation by trusted dealers in mumbai, maharashtra and all over india."
@@ -78,7 +78,7 @@ export default function ModernBalcony() {
         img={modernBalcony}
         altText="balcony-railing"
         header="Balcony Glass Railing"
-        subHeader="Enhance your space with premium glass balcony railings at affordable prices. We offer spigot glass railing systems, frameless designs, and durable aluminum channel railings in Kolkata, Maharashtra, Bangalore, Karnataka and nearby cities or states, with expert installation and reliable glass balcony solutions."
+        subHeader="Enhance your space with premium balcony glass railing at affordable prices. We offer spigot glass railing systems, frameless designs, and durable aluminum channel railings in Kolkata, Maharashtra, Bangalore, Karnataka and nearby cities or states, with expert installation and reliable glass balcony solutions."
         curve
       />
       <div className="min-h-screen bg-white p-4 md:p-8">
