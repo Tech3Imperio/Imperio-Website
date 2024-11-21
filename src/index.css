@@ -167,8 +167,7 @@ a {
 
 canvas {
   height: 100vh !important;
-  width: 50vw !important;
-  background-color: #03237b;
+  width: 100% !important;
 }
 
 /* for hiding the product page scrollbar in mobile view */
