@@ -475,6 +475,7 @@ import { BlackButton } from "../../../components";
 import { iconsFeature } from "../../../assets/Data";
 import "./Product.css";
 // import NewProducts from "../NewProducts";
+// import NewProducts from "../NewProducts";
 // import Metadata from "../../../components/Metatag/Metatag";
 
 type ImageData = {
@@ -776,7 +777,11 @@ const MemoProduct: React.FC = () => {
           </aside>
         </section>
       </main>
-      {/* <NewProducts /> */}
+      {/* <NewProducts
+        productData={productData}
+        featureData={featureData}
+        imageData={imageData}
+      /> */}
     </>
   );
 };

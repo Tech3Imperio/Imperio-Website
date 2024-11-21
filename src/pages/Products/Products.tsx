@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { ReactNode } from "react";
 import { Hero, ProductPanel, Quote } from "../../components";
 import { productImage } from "../../assets/Images";
 import { useProduct } from "../../hooks";
@@ -16,7 +16,7 @@ import { IoIosClose } from "react-icons/io";
 export type ProductDescription = {
   heading: string;
   subheading: string;
-  description: string;
+  description: string | ReactNode;
 };
 
 const ProductDescription: React.FC<ProductDescription> = ({
@@ -26,7 +26,7 @@ const ProductDescription: React.FC<ProductDescription> = ({
 }) => {
   return (
     <>
-      <div className="max-w-6xl flex flex-col md:flex-row mx-auto mt-2 md:mt-8 gap-6 px-4 md:px-8 py-4">
+      <div className="max-w-5xl flex flex-col md:flex-row mx-auto mt-2 md:mt-8 gap-6 px-4 md:px-8 py-4">
         <div className="flex flex-col md:w-[60%] gap-1 tablet:gap-6">
           <h2 className="YellowText text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
             {heading}
@@ -73,23 +73,6 @@ const MemoProducts: React.FC = () => {
 
   const [problem, setProblem] = useState<boolean>(false);
 
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  const [selectedSection, setSelectedSection] = useState<string | null>(null);
-
-  const sectionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
-
   const filteredProductSections = selectedTypes.length
     ? productSections
         .map((section) => ({
@@ -100,14 +83,6 @@ const MemoProducts: React.FC = () => {
         }))
         .filter((section) => section.products.length > 0)
     : productSections;
-
-  useEffect(() => {
-    if (selectedSection && sectionRefs.current[selectedSection]) {
-      sectionRefs.current[selectedSection]?.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  }, [selectedSection]);
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -201,17 +176,95 @@ const MemoProducts: React.FC = () => {
       <>
         <Metadata
           title={
-            "Glass Railing Systems | Aluminium Accessories & Handrails - Durable & Modern"
+            "Glass Railing System | Aluminium Glass Railing Base |  Aluminium Glass Railing Handrail"
           }
           description={
-            "Imperio’s durable glass railing systems in India, including balcony and staircase railings, combine modern aesthetics with safety. Available nationwide, with a strong presence in Maharashtra, Goa, Gujarat, and cities like Mumbai, Pune, and Bangalore. Explore our premium solutions today!"
+            "Imperio’s glass railing systems in india offer durable balcony glass railings, staircase glass railings, and aluminum glass railings, merging modern aesthetics with lasting safety. We offer glass railings all over India, with a strong presence in states like Maharashtra, Goa, Gujarat, etc and cities including Mumbai, Pune, Alibaug, Bangluru, etc"
           }
           keywords={
-            "glass railings, aluminum railings, frameless glass railings, durable railing systems, modern balcony railings, corrosion-resistant railings, UV-resistant glass railings, residential balcony railings, commercial staircase railings, stylish railing designs, high-quality aluminum railings, elegant glass railing solutions, safety and functionality, innovative railing designs, custom glass railings, architectural railing systems, aluminium glass railing solutions in India"
+            "glass railings, aluminum railings, frameless glass, durable railings, modern railing systems, corrosion-resistant railings, UV-resistant glass railings, residential glass railings, commercial aluminum railings, stylish railing solutions, high-quality glass railings, elegant railing designs, safety and functionality, innovative railing systems, custom glass railings, architectural railing solutions"
           }
           ogImage={productImage}
-          ogUrl={"https://www.imperiorailing.com/products"}
+          ogUrl={"https://imperiorailing.com/products"}
         />
+        <div className="lg:hidden flex top-[0%] fixed right-0 z-40 h-screen ">
+          <button onClick={() => setSidebarOpen(!sidebarOpen)}>
+            <LuFilter
+              className=" bg-yellow-500 text-black z-40 p-2 rounded-l-md"
+              size={45}
+            />
+          </button>
+        </div>
+        <div
+          className={`fixed right-0 top-0 h-screen w-[280px] bg-[--black] border-l-[3px] hover:border-white rounded-l-[2rem] shadow-2xl transition-transform duration-700 z-50 overflow-y-scroll sidebar-container ${
+            sidebarOpen ? "translate-x-0 shadow-yellow-500" : "translate-x-full"
+          }`}
+        >
+          <div className="flex justify-between items-center m-4 pt-5">
+            <h2 className="text-2xl YellowText whitespace-nowrap">
+              Filter Products
+            </h2>
+            <button
+              onClick={() => setSidebarOpen(false)}
+              className="flex -text--grey"
+            >
+              <IoIosClose size={36} />
+            </button>
+          </div>
+          <div className="p-4">
+            {filterCategories.map((category) => (
+              <div key={category.name} className="p-2 mb-4">
+                <div
+                  onClick={() => toggleSection(category.name)}
+                  className="flex justify-between items-center cursor-pointer"
+                >
+                  <h3 className="-text--grey font-semibold">{category.name}</h3>
+                  <span>
+                    <SlArrowDown
+                      className={`-text--grey ${
+                        openSections.includes(category.name)
+                          ? "rotate-180 transition-all duration-500"
+                          : " transition-all duration-500"
+                      }`}
+                    />
+                  </span>
+                </div>
+                {openSections.includes(category.name) && (
+                  <ul className="flex flex-col">
+                    {category.options.map((option) => (
+                      <li
+                        key={option}
+                        className="list-none flex items-center gap-3 p-2"
+                      >
+                        <input
+                          type="checkbox"
+                          id={option}
+                          checked={selectedTypes.includes(option)}
+                          onChange={() => handleTypeChange(option)}
+                          className="cursor-pointer"
+                        />
+                        <label
+                          htmlFor={option}
+                          className="cursor-pointer rounded-lg whitespace-nowrap -text--grey"
+                        >
+                          {option}
+                        </label>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+            <button
+              onClick={() => {
+                setSelectedTypes([]), setSidebarOpen(false);
+              }}
+              className=" px-6 py-4 text-[--black] font-bold bg-[--secound] text-xs rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap "
+            >
+              Reset Filters
+            </button>
+          </div>
+        </div>
         <Hero
           img={productImage}
           altText="Hero image for product"
@@ -220,26 +273,55 @@ const MemoProducts: React.FC = () => {
           curve
         />
         <main className="flex flex-col md:flex-row max-w-[85rem] mx-auto">
-          <aside className="hidden md:flex flex-col text-center md:sticky md:top-32 md:mt-10 self-start gap-4 p-4 xl:p-0 w-[80%] md:w-auto mx-auto ">
-            <ul className="flex flex-col md:gap-4 border p-2 rounded-xl w-full overflow-y-visible">
-              {["Base", "Handrail", "Glass Type", "Height"].map((section) => (
-                <li
-                  key={section}
-                  className={`list-none md:whitespace-nowrap cursor-pointer p-2 rounded-lg ${
-                    selectedSection === section ? "bg-[#f5ce02]" : ""
-                  }`}
-                  onClick={() => setSelectedSection(isMobile ? null : section)}
+          <aside className="hidden lg:flex flex-col text-center md:top-32 md:mt-10 self-start p-4 w-[80%] md:w-[18%] mx-auto border rounded-xl mb-6">
+            {filterCategories.map((category) => (
+              <div key={category.name} className="p-2  mb-4">
+                <div
+                  onClick={() => toggleSection(category.name)}
+                  className="flex justify-between items-center cursor-pointer"
                 >
-                  {section === "Height"
-                    ? "Glass Railing Heights"
-                    : `Glass Railing ${section}`}
-                  {section === "Height" && <sup>RFT</sup>}
-                </li>
-              ))}
-            </ul>
+                  <h3 className="-text--third font-semibold">
+                    {category.name}
+                  </h3>
+                  <span>
+                    <SlArrowDown
+                      className={`${
+                        openSections.includes(category.name)
+                          ? "rotate-180 transition-all duration-500"
+                          : " transition-all duration-500"
+                      }`}
+                    />
+                  </span>
+                </div>
+                {openSections.includes(category.name) && (
+                  <ul className="flex flex-col">
+                    {category.options.map((option) => (
+                      <li
+                        key={option}
+                        className="list-none flex items-center gap-3 p-2"
+                      >
+                        <input
+                          type="checkbox"
+                          id={option}
+                          checked={selectedTypes.includes(option)}
+                          onChange={() => handleTypeChange(option)}
+                          className="cursor-pointer"
+                        />
+                        <label
+                          htmlFor={option}
+                          className="cursor-pointer rounded-lg whitespace-nowrap"
+                        >
+                          {option}
+                        </label>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
             <button
-              onClick={() => setSelectedSection(null)}
-              className=" py-3 mb-3 tablet:py-4 px-5 laptop:px-6 text-sm text-white bg-[--black] font-normal rounded-4xl transition-700 hover:text-[--black] hover:bg-[--secound]"
+              onClick={() => setSelectedTypes([])}
+              className="py-3 mb-3 tablet:py-4 px-5 laptop:px-6 text-sm text-white bg-[--black] font-normal rounded-4xl transition-700 hover:text-[--black] hover:bg-[--secound]"
             >
               Reset Filters
             </button>
@@ -247,30 +329,81 @@ const MemoProducts: React.FC = () => {
 
           <section>
             <ProductDescription
-              heading={"Aluminium Glass Railing Base"}
-              subheading={
-                "High Quality & Premium Aluminium Glass Railing Base variants."
-              }
+              heading={"Base"}
+              subheading={"Premium Aluminium Glass Railing Base variants."}
               description={
-                "Discover our premium aluminum glass railing bases, customizable in matte and glossy finishes to suit any style. Crafted for durability and elegance, our weather-resistant bases combine safety with innovation. With quick service and fast quotations, we proudly deliver across India, including cities like Mumbai, Pune, Hyderabad, and Kolkata."
+                <>
+                  "Discover our premium{" "}
+                  <strong>aluminium glass railing bases</strong> in India, made
+                  of durable aluminum and customizable in matte or glossy
+                  finishes to match any style. With quick service and fast
+                  quotations, we proudly deliver nation wide, including{" "}
+                  <strong>Mumbai</strong>, <strong>Pune</strong>,{" "}
+                  <strong>Hyderabad</strong>, and <strong>Kolkata</strong>.
+                  Contact us for a free quote today!"
+                </>
               }
             />
             <ProductDescription
-              heading={"Aluminium Glass Railing Handrail"}
-              subheading={
-                " High Quality & Premium Aluminium Glass Railing Handrail variants."
-              }
+              heading={"Handrail"}
+              subheading={" Premium Aluminium Glass Railing Handrail variants."}
               description={
-                "Explore our premium aluminum glass railing handrail options, featuring customizable finishes to suit any style. Choose from matte and glossy color finishes, plus a brighter handrail LED strip to elegantly illuminate your space. Available in major cities like Mumbai, Pune, Hyderabad, Kolkata, we deliver all over India, enhancing glass railing systems nationwide with style and safety."
+                <>
+                  "Explore our premium{" "}
+                  <strong>aluminum glass railing handrail</strong> options,{" "}
+                  featuring customizable finishes to suit any style. Choose from
+                  matte and glossy color finishes, plus a brighter{" "}
+                  <strong>handrail LED strip</strong> to elegantly illuminate
+                  your space. Available in major cities like{" "}
+                  <strong>Mumbai</strong>, <strong>Pune</strong>,{" "}
+                  <strong>Hyderabad</strong>, and <strong>Kolkata</strong>, we
+                  deliver all over <strong>India</strong>, enhancing{" "}
+                  <strong>glass railing systems</strong> nation wide with
+                  unmatched style and safety. Contact us today to transform your
+                  space!"
+                </>
               }
             />
             <ProductDescription
-              heading={"Aluminium Glass Railing Height"}
-              subheading={
-                "High Quality & Premium Aluminium Glass Railing Height variants."
-              }
+              heading={"Height"}
+              subheading={"Premium Aluminium Glass Railing Height variants."}
               description={
-                "Explore our premium glass railing height options, designed to meet diverse safety and style requirements. Choose from  heights ranging from 900mm to 1200mm, each crafted for durability and sophistication. Available in major cities like Mumbai, Pune, Hyderabad, and Kolkata, we deliver across India, enhancing glass railing systems nationwide with style, safety, and functionality."
+                <>
+                  "Explore our premium{" "}
+                  <strong>glass railing height options</strong>, designed to
+                  meet diverse safety and style requirements. Choose from{" "}
+                  <strong>custom heights</strong> ranging from 900mm to 1200mm,
+                  each crafted for{" "}
+                  <strong>durability and sophistication</strong>. Available in
+                  major cities like <strong>Mumbai</strong>,{" "}
+                  <strong>Pune</strong>, <strong>Hyderabad</strong>, and{" "}
+                  <strong>Kolkata</strong>, we deliver across{" "}
+                  <strong>India</strong>, enhancing{" "}
+                  <strong>glass railing systems</strong> nationwide with
+                  unmatched style, safety, and functionality.{" "}
+                  <strong>Contact us today to find your perfect fit!</strong>"
+                </>
+              }
+            />
+            <ProductDescription
+              heading={"Height"}
+              subheading={"Premium Aluminium Glass Railing Height variants."}
+              description={
+                <>
+                  "Discover our versatile{" "}
+                  <strong>glass types for railing systems</strong>, tailored to
+                  fit various aesthetic and functional needs. Choose from{" "}
+                  <strong>clear</strong>, <strong>tinted</strong>,{" "}
+                  <strong>frosted</strong>, or <strong>tempered glass</strong>{" "}
+                  options, each crafted for <strong>strength</strong> and{" "}
+                  <strong>visual appeal</strong>. Available for installation in
+                  major cities such as <strong>Delhi</strong>,{" "}
+                  <strong>Bangalore</strong>, <strong>Chennai</strong>, and{" "}
+                  <strong>Ahmedabad</strong>, we deliver nation wide, enhancing
+                  spaces with modern style, durability, and safety in every{" "}
+                  <strong>glass railing system</strong>. Contact us to elevate
+                  your space today!"
+                </>
               }
             />
           </section>
@@ -283,7 +416,7 @@ const MemoProducts: React.FC = () => {
     <>
       <Metadata
         title={
-          "Glass Railing Systems | Aluminium Accessories & Handrails - Durable & Modern"
+          "Glass Railing System | Aluminium Glass Railing Base |  Aluminium Glass Railing Handrail"
         }
         description={
           "Imperio’s glass railing systems in india offer durable balcony glass railings, staircase glass railings, and aluminum glass railings, merging modern aesthetics with lasting safety. We offer glass railings all over India, with a strong presence in states like Maharashtra, Goa, Gujarat, etc and cities including Mumbai, Pune, Alibaug, Bangluru, etc"
@@ -374,9 +507,9 @@ const MemoProducts: React.FC = () => {
       </div>
       <Hero
         img={productImage}
-        altText="Aluminum-Glass-Railing"
+        altText="Hero image for product"
         header="Glass Railing Systems"
-        subHeader="Imperio’s Glass Railing Systems in India deliver high-durability balcony, staircase, and aluminum glass railings, blending modern style with lasting safety for homes and commercial for any space."
+        subHeader="Imperio’s Glass Railing Systems in India deliver high-durability balcony, staircase, and aluminum glass railings, blending modern style with lasting safety for any space."
         curve
       />
       <main className="flex flex-col md:flex-row max-w-[85rem] mx-auto">
@@ -434,15 +567,7 @@ const MemoProducts: React.FC = () => {
         <section className="pb-24">
           {filteredProductSections &&
             filteredProductSections.map((section, index) => (
-              <div
-                key={index}
-                ref={
-                  isMobile
-                    ? (el) => (sectionRefs.current[section.header] = el)
-                    : null
-                }
-                className={`${selectedSection && isMobile ? "pt-24" : ""}`}
-              >
+              <div key={index}>
                 <ProductPanel
                   header={section.header}
                   productDetail={section.products}
