@@ -35,6 +35,11 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://imperiorailing.com/career</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://imperiorailing.com/blog/modernterrace</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>

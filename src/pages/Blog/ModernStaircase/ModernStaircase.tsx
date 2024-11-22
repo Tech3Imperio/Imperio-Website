@@ -63,7 +63,7 @@ export default function ModernStaircase() {
     <>
       <Metadata
         title={
-          "Blogs - staircase glass railing design | staircase glass railing | modern staircase railing ideas | premium glass railing | quality glass railing"
+          "staircase glass railing design | staircase glass railing | modern staircase railing ideas | premium glass railing | quality glass railing"
         }
         description={
           "Explore premium staircase glass railings in Mumbai, Pune, Nagpur, Jodhpur, and Maharashtra. Our modern, durable frameless glass railings offer safety, aesthetics, and easy maintenance. Perfect for luxury homes and commercial spaces, our high-quality tempered glass railings provide unobstructed views and long-lasting beauty."

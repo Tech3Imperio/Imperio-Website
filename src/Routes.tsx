@@ -19,6 +19,7 @@ import ModernTerrace from "./pages/Blog/ModernTerrace/ModernTerrace";
 import ModernStaircase from "./pages/Blog/ModernStaircase/ModernStaircase";
 import ModernHandrail from "./pages/Blog/ModernHandrail/ModernHandrail";
 import ModernBalcony from "./pages/Blog/ModernBalcony/ModernBalcony";
+import Career from "./pages/Career/Career";
 
 export const routes = createBrowserRouter([
   {
@@ -36,6 +37,7 @@ export const routes = createBrowserRouter([
       { path: "contactus", element: <Contact /> },
       { path: "aboutus", element: <About /> },
       { path: "dealership", element: <DealerShipForm /> },
+      { path: "career", element: <Career /> },
       { path: "products", element: <Products /> },
       {
         path: "products/:productID",

@@ -5,7 +5,7 @@
 .Link::before {
   content: "";
   position: absolute;
-  bottom: 12px;
+  bottom: 1px;
   left: 50%;
   width: 0%;
   height: 1.5px;

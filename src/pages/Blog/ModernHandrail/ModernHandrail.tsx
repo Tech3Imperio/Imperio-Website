@@ -63,7 +63,7 @@ export default function ModernHandrail() {
     <>
       <Metadata
         title={
-          "Blogs - Premium Handrail Designs | Top Quality Glass Railings | Handrails | Aluminium Handrail"
+          "Premium Aluminium Handrail  | Top Quality Glass Railings | Handrails | Aluminium Handrail"
         }
         description={
           "Find premium handrails and railings for indoor and outdoor staircases, including aluminum, stainless steel, and glass options. We specialize in handrail profiles, LED-lit handrails, and custom finishes, offering competitive prices per foot. Browse sleek, oval, and round handrails, as well as frameless glass railings. Trusted handrail suppliers near you with high-quality metal, glass, and aluminum railing solutions. glass railing near me"

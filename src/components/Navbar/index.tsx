@@ -20,7 +20,7 @@ const Logo: React.FC = () => (
 
 // Individual menu item component
 const MenuItem: React.FC<MenuItemProps> = ({ to, label, handleClick }) => (
-  <div className="py-2 relative w-max">
+  <div className="py-0 relative w-max">
     <Link to={to} className={styles.Link} onClick={handleClick}>
       {label}
     </Link>
@@ -35,6 +35,7 @@ const MenuItems: React.FC<MenuItemsProps> = ({ handleClick, type }) => (
       { to: "/products", label: "Our Products" },
       { to: "/aboutus", label: "About Us" },
       { to: "/blog", label: "Blog" },
+      { to: "/career", label: "Career" },
       { to: "/contactus", label: "Contact Us" },
     ].map((item) => (
       <MenuItem
@@ -50,7 +51,7 @@ const MenuItems: React.FC<MenuItemsProps> = ({ handleClick, type }) => (
 // Mobile menu component
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, handleClick }) => (
   <div
-    className={`fixed z-10 w-screen h-fit left-0 bg-[--black] rounded-b-4xl text-white transition-700 overflow-hidden border-b-4 ${
+    className={`fixed z-10 w-screen h-auto left-0 bg-[--black] rounded-b-4xl text-white transition-700 overflow-hidden border-b-4 ${
       isOpen
         ? "top-[5.5rem] pb-6 border-[#f1efe7] shadow-navmobile"
         : "-top-[25rem] pb-0"
@@ -58,7 +59,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, handleClick }) => (
     aria-hidden={!isOpen}
   >
     <section className="px-8">
-      <div className="flex flex-col gap-4 text-lg font-light">
+      <div className="flex flex-col pt-4 gap-5 text-lg font-light">
         {/* Render mobile menu items */}
         <MenuItems handleClick={handleClick} type="mobile" />
         <div className="flex justify-between items-center">
@@ -108,7 +109,7 @@ export const Navbar: React.FC = () => {
     const handleResize = () => {
       setState((prevState) => ({
         ...prevState,
-        isMobileView: window.innerWidth < 1000,
+        isMobileView: window.innerWidth < 1024,
       }));
     };
     window.addEventListener("resize", handleResize as EventListener);
@@ -126,7 +127,7 @@ export const Navbar: React.FC = () => {
         !isMenuOpen ? "rounded-b-4xl" : "rounded-b-[0px]"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 pt-2 pb-4 flex gap-0 xl:gap-10 items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 pt-2 pb-4 flex gap-0 xl:gap-1 items-center justify-between">
         {/* Logo component */}
         <Logo />
         {/* Render hamburger menu icon for mobile view */}
@@ -150,7 +151,7 @@ export const Navbar: React.FC = () => {
           // Render desktop menu items and quote button
           <>
             <div className="flex-grow flex justify-center">
-              <ul className="text-base flex gap-6 laptop:gap-10 xl:gap-16 text-white my-auto px-7 rounded-4xl border border-transparent transition-700 hover:shadow-small hover:shadow-white hover:border-white">
+              <ul className="text-base flex gap-6 h-11 laptop:gap-10 xl:gap- justify-center items-center text-white my-auto px-7 rounded-4xl border border-transparent transition-700 hover:shadow-small hover:shadow-white hover:border-white">
                 <MenuItems type="desktop" />
               </ul>
             </div>
