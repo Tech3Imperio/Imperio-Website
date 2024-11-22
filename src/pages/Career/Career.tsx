@@ -216,7 +216,7 @@
 
 // import React from "react";
 import { Hero } from "../../components";
-import { careersecondImg } from "../../assets/Images";
+import { careerTeamImg } from "../../assets/Images";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
 
 export default function Career() {
@@ -278,7 +278,7 @@ export default function Career() {
         </div>
         <div className="max-w-7xl  mx-auto mt-10 md:mt-24 gap-8 p-4">
           <img
-            src={careersecondImg}
+            src={careerTeamImg}
             alt="Career Team"
             className="w-full h-auto object-cover"
           />

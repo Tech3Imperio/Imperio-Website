@@ -1,4 +1,3 @@
-import careerHeroImg from "./careerHeroImg.png";
-import careersecondImg from "./careerSecond.png";
+import careerTeamImg from "./careersecond.png";
 
-export { careerHeroImg, careersecondImg };
+export { careerTeamImg };
