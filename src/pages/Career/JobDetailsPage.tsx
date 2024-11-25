@@ -10,10 +10,8 @@ interface Job {
   type: string;
   others: {
     Duration: string;
-    Stipend: string;
     Expriance: string;
     join: string;
-    openings: number;
   }[];
   responsibilities: string[];
   skills: string[];
@@ -36,11 +34,9 @@ export default function JobDetailsPage() {
         type: "Internship",
         others: [
           {
-            Duration: "3 Months",
-            Stipend: "₹ 5,000-10,000 /month",
-            Expriance: "0 - 1 year",
+            Duration: "3 - 6 Months",
+            Expriance: "Fresher also can apply",
             join: "Immediately",
-            openings: 2,
           },
         ],
         responsibilities: [
@@ -77,10 +73,8 @@ export default function JobDetailsPage() {
         others: [
           {
             Duration: "3 Months",
-            Stipend: "₹ 8,000 /month",
-            Expriance: "0 - 1 year",
+            Expriance: "Fresher also can apply",
             join: "Immediately",
-            openings: 3,
           },
         ],
         responsibilities: [
@@ -117,10 +111,8 @@ export default function JobDetailsPage() {
         others: [
           {
             Duration: "3 Months",
-            Stipend: "₹ 5,000-10,000 /month",
-            Expriance: "0 - 1 year",
+            Expriance: "Fresher also can apply",
             join: "Immediately",
-            openings: 2,
           },
         ],
         responsibilities: [
@@ -148,10 +140,8 @@ export default function JobDetailsPage() {
         others: [
           {
             Duration: "3 Months",
-            Stipend: "₹ 5,000-10,000 /month",
-            Expriance: "0 - 1 year",
+            Expriance: "Fresher also can apply",
             join: "Immediately",
-            openings: 2,
           },
         ],
         responsibilities: [

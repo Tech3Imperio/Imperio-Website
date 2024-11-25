@@ -9,10 +9,8 @@ interface JobDetailsProps {
     type: string;
     others: {
       Duration: string;
-      Stipend: string;
       Expriance: string;
       join: string;
-      openings: number;
     }[];
     responsibilities: string[];
     skills: string[];
@@ -32,6 +30,17 @@ export function JobDetails({ job }: JobDetailsProps) {
       />
       <section className="max-w-7xl mx-auto mt-7 md:mt-0 p-4">
         <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+          <div className="flex md:-mb-14 justify-end  ">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdrrSxeynFblPDGHE2oGyxvZepg8h4xu-c9bOklF-XcBDyzjg/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="md:w-max py-2 px-3 md:py-3 md:px-5 border-2 rounded-3xl md:rounded-4xl text-white bg-[#000000] bg-opacity-60 transition-700 hover:border-[--secound] hover:text-[--black] hover:bg-[--secound] hover:bg-opacity-100"
+            >
+              Apply Now
+            </a>
+          </div>
+
           <h2 className="text-3xl font-semibold mb-4 text-[#03237b]">
             {job.title}
           </h2>
@@ -43,6 +52,7 @@ export function JobDetails({ job }: JobDetailsProps) {
               {job.type}
             </span>
           </div>
+
           {/* <div className=" flex gap-2">
             <h3>Duration : </h3>
             <span>{job.others[0].Duration}</span>
@@ -64,12 +74,6 @@ export function JobDetails({ job }: JobDetailsProps) {
               ))}
               {job.others.map((data, index) => (
                 <li key={index} className="flex gap-2">
-                  <h3 className=" text-[#03237b] font-medium">Stipend :</h3>
-                  <span>{data.Stipend}</span>
-                </li>
-              ))}
-              {job.others.map((data, index) => (
-                <li key={index} className="flex gap-2">
                   <h3 className=" text-[#03237b] font-medium">Experience :</h3>
                   <span>{data.Expriance}</span>
                 </li>
@@ -78,14 +82,6 @@ export function JobDetails({ job }: JobDetailsProps) {
                 <li key={index} className="flex gap-2">
                   <h3 className=" text-[#03237b] font-medium">Joining :</h3>
                   <span>{data.join}</span>
-                </li>
-              ))}
-              {job.others.map((data, index) => (
-                <li key={index} className="flex gap-2">
-                  <h3 className=" text-[#03237b] font-medium">
-                    Job Positions :
-                  </h3>
-                  <span>{data.openings}</span>
                 </li>
               ))}
             </ul>
