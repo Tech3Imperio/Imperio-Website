@@ -40,6 +40,16 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://imperiorailing.com/career/Animation%20Intern</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://imperiorailing.com/career/Field%20Sales%20Executive</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://imperiorailing.com/blog/modernterrace</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>

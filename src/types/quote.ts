@@ -9,7 +9,7 @@
 //   Handrail?: string;
 //   Glass?: string;
 //   Height?: string;
-//   Bhampagne: string;
+//   Champagne: string;
 //   Sillack: string;
 //   Cver: string;
 //   Wood: string;
@@ -47,20 +47,21 @@
 //   setContact: React.Dispatch<React.SetStateAction<boolean>>;
 // };
 
-export type Stage = "Base" | "Handrail" | "Glass" | "Height";
+export type Stage = "Types" | "Base" | "Handrail" | "Glass" | "Height";
 
 export type QuoteData = Record<Stage, string>;
 
 export type StagesContains = Record<Stage, string[]>;
 
 export type FetchInnerData = {
+  Types?: string;
   Base?: string;
   Handrail?: string;
   Glass?: string;
   Height?: string;
-  Bhampagne: string;
-  Sillack: string;
-  Cver: string;
+  Champagne: string;
+  Silver: string;
+  Black: string;
   Wood: string;
   [key: string]: string | undefined; // Add this line
 };
@@ -72,10 +73,10 @@ export type QuoteFormData = {
   email: string;
   number: number | string;
   // pname: string;
-  pinCode:number | string;
-  city:string;
-  state:string;
-  location:string;
+  pinCode: number | string;
+  city: string;
+  state: string;
+  location: string;
   quantity: number | string;
 };
 

@@ -215,24 +215,144 @@
 // PART 2
 
 // import React from "react";
+// import { Hero } from "../../components";
+// import { careerTeamImg } from "../../assets/Images";
+// import { LiaExternalLinkAltSolid } from "react-icons/lia";
+
+// export default function Career() {
+//   const jobs = [
+//     {
+//       title: "Software Engineer",
+//       description: "Develop and maintain our core railing design software.",
+//       location: "Mumbai",
+//       type: "Internship",
+//     },
+//     {
+//       title: "Sales Representative",
+//       description:
+//         "Promote and sell our innovative railing systems to clients.",
+//       location: "Mumbai",
+//       type: "Full-time",
+//     },
+//     {
+//       title: "Product Designer",
+//       description:
+//         "Create stunning and functional railing designs for our clients.",
+//       location: "Mumbai",
+//       type: "Full-time",
+//     },
+//     {
+//       title: "Marketing Specialist",
+//       description: "Develop and execute marketing strategies for our products.",
+//       location: "Mumbai",
+//       type: "Full-time",
+//     },
+//   ];
+//   return (
+//     <>
+//       <Hero
+//         img="https://www.valmet.com/globalassets/about-us/careers/careers-hero_1280x720.jpg?format=webp&width=1290&quality=85"
+//         altText="hero for blog"
+//         header="Career"
+//         subHeader="Explore exciting career opportunities at Imperio Railing Systems and join a team committed to growth and innovation. We offer a collaborative work environment where you can thrive. Apply today and take the next step in your professional journey."
+//         curve
+//       />
+//       <section className=" ">
+//         <div className="max-w-7xl flex flex-col md:flex-row mx-auto mt-10 md:mt-24 gap-8 p-4">
+//           <div className="flex flex-col md:w-[60%] gap-1 tablet:gap-6">
+//             <h2 className="YellowText text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
+//               Join Our Team
+//             </h2>
+//             <h3 className="text-[--third] flex flex-wrap md:max-w-2xl Raleway tracking-wider w-full text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] 2xl:text-5xl">
+//               Empowering Your Career Growth
+//             </h3>
+//           </div>
+//           <div className="md:w-[40%]">
+//             <p className="text-justify italic text-[--grey]">
+//               At Imperio Railing Systems, we believe in fostering a culture of
+//               innovation, collaboration, and continuous growth. Explore exciting
+//               career opportunities where your skills and passion can make a real
+//               impact!
+//             </p>
+//           </div>
+//         </div>
+//         <div className="max-w-7xl  mx-auto mt-10 md:mt-24 gap-8 p-4">
+//           <img
+//             src={careerTeamImg}
+//             alt="Career Team"
+//             className="w-full h-auto object-cover"
+//           />
+//         </div>
+//         <hr className=" mt-10 mb-2"></hr>
+//         <div className="max-w-7xl  mx-auto  gap-8 p-4">
+//           <h2 className=" justify-center text-center text-5xl text-[#03237b]">
+//             Open Positions
+//           </h2>
+//           <div className="max-w-7xl mx-auto mt-10 gap-8 p-4">
+//             <div className="grid grid-cols-1 md:grid-cols-2 gap-14">
+//               {jobs.map((job, index) => (
+//                 <div
+//                   key={index}
+//                   className="bg-gray-100 p-6 rounded-lg shadow-md relative"
+//                 >
+//                   <a
+//                     href={`https://docs.google.com/forms/d/e/1FAIpQLSdrrSxeynFblPDGHE2oGyxvZepg8h4xu-c9bOklF-XcBDyzjg/viewform`}
+//                     target="_blank"
+//                     rel="noopener noreferrer"
+//                     className="absolute top-2 right-2 text-blue-500 hover:text-blue-700"
+//                   >
+//                     <LiaExternalLinkAltSolid className="h-8 w-7 text-[#03237b]" />
+//                   </a>
+//                   <h3 className="text-xl font-semibold mb-2 text-blue-900">
+//                     {job.title}
+//                   </h3>
+//                   <p className="text-gray-600 mb-4">{job.description}</p>
+//                   <div className="flex justify-between items-center">
+//                     <span className="text-sm text-gray-500">
+//                       {job.location}
+//                     </span>
+//                     <span className="text-sm font-medium text-[#292929]">
+//                       {job.type}
+//                     </span>
+//                   </div>
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+//     </>
+//   );
+// }
+
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Hero } from "../../components";
 import { careerTeamImg } from "../../assets/Images";
-import { LiaExternalLinkAltSolid } from "react-icons/lia";
+// import { LiaExternalLinkAltSolid } from "react-icons/lia";
+
+interface Job {
+  title: string;
+  description: string;
+  location: string;
+  type: string;
+}
 
 export default function Career() {
-  const jobs = [
+  const [jobs] = useState<Job[]>([
     {
-      title: "Software Engineer",
-      description: "Develop and maintain our core railing design software.",
+      title: "Animation Intern",
+      description:
+        "Create captivating animations to showcase innovative products in a dynamic, creative environment.",
       location: "Mumbai",
       type: "Internship",
     },
     {
-      title: "Sales Representative",
+      title: "Field Sales Executive",
       description:
-        "Promote and sell our innovative railing systems to clients.",
+        "Drive business growth by building relationships and closing sales in the field, delivering tailored solutions to clients.",
       location: "Mumbai",
-      type: "Full-time",
+      type: "Internship",
     },
     {
       title: "Product Designer",
@@ -247,14 +367,15 @@ export default function Career() {
       location: "Mumbai",
       type: "Full-time",
     },
-  ];
+  ]);
+
   return (
     <>
       <Hero
         img="https://www.valmet.com/globalassets/about-us/careers/careers-hero_1280x720.jpg?format=webp&width=1290&quality=85"
         altText="hero for blog"
-        header="Career"
-        subHeader="We're on a mission to revolutionize technology. Are you ready to be part of something extraordinary?"
+        header="Career Opportunities at Imperio"
+        subHeader="Explore exciting career opportunities at Imperio Railing Systems and join a team committed to growth and innovation. We offer a collaborative work environment where you can thrive. Apply today and take the next step in your professional journey."
         curve
       />
       <section className=" ">
@@ -286,36 +407,30 @@ export default function Career() {
         <hr className=" mt-10 mb-2"></hr>
         <div className="max-w-7xl  mx-auto  gap-8 p-4">
           <h2 className=" justify-center text-center text-5xl text-[#03237b]">
-            Open Positions
+            Explore Job Opportunitie
           </h2>
           <div className="max-w-7xl mx-auto mt-10 gap-8 p-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-14">
               {jobs.map((job, index) => (
-                <div
+                <Link
+                  to={`/career/${encodeURIComponent(job.title)}`}
                   key={index}
-                  className="bg-gray-100 p-6 rounded-lg shadow-md relative"
                 >
-                  <a
-                    href={`https://docs.google.com/forms/d/e/1FAIpQLSdrrSxeynFblPDGHE2oGyxvZepg8h4xu-c9bOklF-XcBDyzjg/viewform`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="absolute top-2 right-2 text-blue-500 hover:text-blue-700"
-                  >
-                    <LiaExternalLinkAltSolid className="h-8 w-7 text-[#03237b]" />
-                  </a>
-                  <h3 className="text-xl font-semibold mb-2 text-blue-900">
-                    {job.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4">{job.description}</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-500">
-                      {job.location}
-                    </span>
-                    <span className="text-sm font-medium text-[#292929]">
-                      {job.type}
-                    </span>
+                  <div className="bg-gray-100 p-6 rounded-lg shadow-md relative hover:shadow-lg transition-shadow">
+                    <h3 className="text-xl font-semibold mb-2 text-blue-900">
+                      {job.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4">{job.description}</p>
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-gray-500">
+                        {job.location}
+                      </span>
+                      <span className="text-sm font-medium text-[#292929]">
+                        {job.type}
+                      </span>
+                    </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

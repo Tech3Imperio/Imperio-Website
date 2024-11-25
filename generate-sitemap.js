@@ -12,6 +12,12 @@ const urls = [
   { url: "/dealership", changefreq: "yearly", priority: 0.8 },
   { url: "/blog", changefreq: "weekly", priority: 0.8 },
   { url: "/career", changefreq: "weekly", priority: 0.8 },
+  { url: "/career/Animation%20Intern", changefreq: "weekly", priority: 0.8 },
+  {
+    url: "/career/Field%20Sales%20Executive",
+    changefreq: "weekly",
+    priority: 0.8,
+  },
   { url: "/blog/modernterrace", changefreq: "weekly", priority: 0.8 },
   { url: "/blog/modernstaircase", changefreq: "weekly", priority: 0.8 },
   { url: "/blog/modernhandrail", changefreq: "weekly", priority: 0.8 },

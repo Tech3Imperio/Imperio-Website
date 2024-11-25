@@ -155,8 +155,10 @@ export const Navbar: React.FC = () => {
                 <MenuItems type="desktop" />
               </ul>
             </div>
-            <DealershipButton />
-            <QuoteButton />
+            <div className=" flex gap-6">
+              <DealershipButton />
+              <QuoteButton />
+            </div>
           </>
         )}
       </div>
