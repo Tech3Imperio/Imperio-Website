@@ -47,14 +47,13 @@
 //   setContact: React.Dispatch<React.SetStateAction<boolean>>;
 // };
 
-export type Stage = "Types" | "Base" | "Handrail" | "Glass" | "Height";
+export type Stage = "Base" | "Handrail" | "Glass" | "Height";
 
 export type QuoteData = Record<Stage, string>;
 
 export type StagesContains = Record<Stage, string[]>;
 
 export type FetchInnerData = {
-  Types?: string;
   Base?: string;
   Handrail?: string;
   Glass?: string;

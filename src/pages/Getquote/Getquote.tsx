@@ -388,7 +388,6 @@ export const GetQuote: React.FC = () => {
   });
   const [stage, setStage] = useState(0);
   const [data, setData] = useState<QuoteData>({
-    Types: "Continouse Railing",
     Base: "A50",
     Handrail: "S17",
     Glass: "A50",
@@ -416,9 +415,7 @@ export const GetQuote: React.FC = () => {
     if (!validate()) return;
 
     fetch(
-      " https://script.google.com/macros/s/AKfycby42s7fS3M8-toUDfTVgRzWz7AB4zPjbxiIWsi0l1VDC6dzwMJ0nuA7DFX_bA91BjUs/exec",
-
-      // https://script.google.com/macros/s/AKfycby42s7fS3M8-toUDfTVgRzWz7AB4zPjbxiIWsi0l1VDC6dzwMJ0nuA7DFX_bA91BjUs/exec
+      "https://script.google.com/macros/s/AKfycby42s7fS3M8-toUDfTVgRzWz7AB4zPjbxiIWsi0l1VDC6dzwMJ0nuA7DFX_bA91BjUs/exec",
       {
         method: "POST",
         body: JSON.stringify({
