@@ -21,6 +21,8 @@ import ModernHandrail from "./pages/Blog/ModernHandrail/ModernHandrail";
 import ModernBalcony from "./pages/Blog/ModernBalcony/ModernBalcony";
 import Career from "./pages/Career/Career";
 import JobDetailsPage from "./pages/Career/JobDetailsPage";
+import DealerLogin from "./pages/DealerOnlineStore/DealerLogin/DealerLogin";
+import DealerRegistration from "./pages/DealerOnlineStore/DealerRegistration/DealerRegistration";
 
 export const routes = createBrowserRouter([
   {
@@ -45,6 +47,8 @@ export const routes = createBrowserRouter([
         path: "products/:productID",
         element: <Product />,
       },
+      { path: "dealerlogin", element: <DealerLogin /> },
+      { path: "dealerregistration", element: <DealerRegistration /> },
       { path: "projects", element: <Projects /> },
       { path: "quote", element: <GetQuote /> },
       { path: "quote/thanks", element: <ThankYou /> },

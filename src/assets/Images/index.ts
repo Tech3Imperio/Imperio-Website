@@ -13,3 +13,4 @@ export * from "./modernstaircase";
 export * from "./Handrails";
 export * from "./Balcony";
 export * from "./career";
+export * from "./dealerstore";
