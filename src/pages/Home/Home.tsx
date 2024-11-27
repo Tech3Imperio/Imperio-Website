@@ -140,7 +140,7 @@
 //   );
 // };
 import React, { useEffect, useState } from "react";
-import { HeromainImg, descImage } from "../../assets/Images";
+import { heroImage, descImage } from "../../assets/Images";
 //Festival Time only on This belo code
 // import { descImage, heroImage } from "../../assets/Images";
 // import { descImage } from "../../assets/Images";
@@ -223,7 +223,7 @@ export const Home: React.FC = () => {
       </Helmet>
       <main>
         <Hero
-          img={HeromainImg}
+          img={heroImage}
           altText="hero for home"
           header={
             <>
