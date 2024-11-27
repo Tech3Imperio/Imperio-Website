@@ -39,7 +39,7 @@ export default function DealerRegistration() {
     // console.log(dealer);
     try {
       const response = await axios.post(
-        `${BASE_URL}/product/dealerregistration`, // Fix route path
+        `${BASE_URL}/dealerregistration`, // Fix route path
         dealer,
         {
           headers: {
