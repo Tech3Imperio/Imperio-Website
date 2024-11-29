@@ -7,9 +7,10 @@ export default defineConfig({
   //use server only localhost testing
   // server: {
   //   proxy: {
+  //     "/product/admin/accept-dealer": "http://localhost:3001",
   //     "/dealerships": "http://localhost:3001",
-  //     "/dealerregistration": "http://localhost:3001",
-  //     "/dealerlogin": "http://localhost:3001",
+  //     "/product/dealerregistration": "http://localhost:3001",
+  //     "/product/dealerlogin": "http://localhost:3001",
   //   },
   // },
 });

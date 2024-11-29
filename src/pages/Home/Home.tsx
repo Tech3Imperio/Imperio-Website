@@ -188,10 +188,7 @@ export const Home: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>
-          Glass Railing Systems | Best Dealers in India | Imperio Railing
-          Systems
-        </title>
+        <title>Glass Railing Systems | railing | Imperio Railing Systems</title>
 
         <meta
           name="description"
@@ -274,8 +271,11 @@ export const Home: React.FC = () => {
             <img
               src={descImage}
               alt="Description Image"
+              loading="lazy"
               className="w-full h-auto object-cover"
               title="Description Image"
+              width="800"
+              height="400"
             />
           </div>
         </section>

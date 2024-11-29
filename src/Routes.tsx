@@ -23,6 +23,9 @@ import Career from "./pages/Career/Career";
 import JobDetailsPage from "./pages/Career/JobDetailsPage";
 import DealerLogin from "./pages/DealerOnlineStore/DealerLogin/DealerLogin";
 import DealerRegistration from "./pages/DealerOnlineStore/DealerRegistration/DealerRegistration";
+// import DealerAcceptRoute from "./pages/DealerOnlineStore/DealerOnlineStore";
+import DealerAccept from "./pages/DealerOnlineStore/DealerAccept/DealerAccept";
+import DealerOnlineStore from "./pages/DealerOnlineStore/DealerOnlineStore";
 
 export const routes = createBrowserRouter([
   {
@@ -48,7 +51,12 @@ export const routes = createBrowserRouter([
         element: <Product />,
       },
       { path: "dealer-login", element: <DealerLogin /> },
-      { path: "dealer-registrations", element: <DealerRegistration /> },
+      { path: "dealer-registration", element: <DealerRegistration /> },
+      {
+        path: "/product/admin/accept-dealer/:email",
+        element: <DealerAccept />,
+      },
+      { path: "dealer-authorization", element: <DealerOnlineStore /> },
       { path: "projects", element: <Projects /> },
       { path: "quote", element: <GetQuote /> },
       { path: "quote/thanks", element: <ThankYou /> },

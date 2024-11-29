@@ -272,7 +272,7 @@ export default function DealerRegistration() {
 
     try {
       const response = await axios.post(
-        `${BASE_URL}/dealerregistration`, // API endpoint for registration
+        `${BASE_URL}/product/dealerregistration`, // API endpoint for registration
         dealer,
         {
           headers: {

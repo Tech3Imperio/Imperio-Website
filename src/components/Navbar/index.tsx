@@ -127,7 +127,7 @@ export const Navbar: React.FC = () => {
         !isMenuOpen ? "rounded-b-4xl" : "rounded-b-[0px]"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 pt-2 pb-4 flex gap-0 xl:gap-1 items-center justify-between">
+      <div className="max-w-7xl mx-auto px-14 pt-2 pb-4 flex gap-0 xl:gap-1 items-center justify-between">
         {/* Logo component */}
         <Logo />
         {/* Render hamburger menu icon for mobile view */}
@@ -151,7 +151,7 @@ export const Navbar: React.FC = () => {
           // Render desktop menu items and quote button
           <>
             <div className="flex-grow flex justify-center">
-              <ul className="text-base flex gap-6 h-11 laptop:gap-10 xl:gap- justify-center items-center text-white my-auto px-7 rounded-4xl border border-transparent transition-700 hover:shadow-small hover:shadow-white hover:border-white">
+              <ul className="text-base flex gap-6 h-11 laptop:gap-10 xl:gap-7 justify-center items-center text-white my-auto px-7 rounded-4xl border border-transparent transition-700 hover:shadow-small hover:shadow-white hover:border-white">
                 <MenuItems type="desktop" />
               </ul>
             </div>

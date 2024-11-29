@@ -196,7 +196,7 @@ export default function DealerLogin() {
 
     try {
       const response = await axios.post(
-        `${BASE_URL}/dealerlogin`, // Use the relative path for the proxy
+        `${BASE_URL}/product/dealerlogin`, // Use the relative path for the proxy
         dealer,
         {
           headers: {
