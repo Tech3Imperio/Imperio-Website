@@ -3,14 +3,14 @@
 // import axios from "axios";
 // import { BASE_URL } from "../../Service/Api/Api"; // Your backend base URL
 
-// const DealerAccept: React.FC = () => {
+// const DealerReject: React.FC = () => {
 //   const { email } = useParams(); // Access the dynamic email parameter from the URL
 //   const [loading, setLoading] = useState(false);
 //   const [message, setMessage] = useState<string>("");
 //   const navigate = useNavigate(); // For redirection
 
 //   // Function to accept the dealer
-//   const acceptDealer = async () => {
+//   const declineDealer = async () => {
 //     if (!email) return; // Exit if email is not found
 
 //     setLoading(true);
@@ -19,17 +19,17 @@
 //       const encodedEmail = encodeURIComponent(email);
 //       console.log("encodedEmail = ", encodedEmail);
 
-//       // Make the API request to accept the dealer
+//       // Make the API request to decline the dealer
 //       const response = await axios.get(
-//         `${BASE_URL}/product/admin/accept-dealer/${encodedEmail}`
+//         `${BASE_URL}/product/admin/decline-dealer/${encodedEmail}`
 //       );
 //       console.log(response);
 
-//       setMessage(response.data.message || "Dealer accepted successfully!");
+//       setMessage(response.data.message || "Dealer decline successfully!");
 
 //       // Redirect the admin to the dealer authorization page after success
 //       setTimeout(() => {
-//         navigate("/dealer-authorization"); // Redirect to dealer authorization page
+//         navigate("/dealer-decline"); // Redirect to dealer authorization page
 //       }, 2000); // Wait 2 seconds to show the success message before redirecting
 //     } catch (error) {
 //       console.error("Error accepting dealer:", error);
@@ -41,26 +41,26 @@
 
 //   useEffect(() => {
 //     if (email) {
-//       acceptDealer(); // Automatically accept the dealer when the component mounts
+//       declineDealer(); // Automatically accept the dealer when the component mounts
 //     }
 //   }, [email]);
 
 //   return (
 //     <div className="max-w-lg mx-auto p-5 bg-white shadow-md rounded-md">
-//       <h1 className="text-2xl font-semibold text-center">Accept Dealer</h1>
+//       <h1 className="text-2xl font-semibold text-center">Decline Dealer</h1>
 //       <div className="mt-4">
 //         <p className="text-gray-600">
-//           Do you want to accept the dealer with email:
+//           Do you want to decline the dealer with email:
 //         </p>
 //         <p className="font-bold text-blue-600">{email}</p>
 //       </div>
 //       <div className="mt-6 flex justify-center gap-4">
 //         <button
 //           className="bg-green-500 text-white px-6 py-2 rounded-md hover:bg-green-600"
-//           onClick={acceptDealer}
+//           onClick={declineDealer}
 //           disabled={loading}
 //         >
-//           {loading ? "Processing..." : "Accept"}
+//           {loading ? "Processing..." : "Decline"}
 //         </button>
 //       </div>
 //       {message && (
@@ -76,90 +76,96 @@
 //   );
 // };
 
-// export default DealerAccept;
+// export default DealerReject;
 
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../../Service/Api/Api";
 
-const DealerAccept: React.FC = () => {
+const DealerReject: React.FC = () => {
   const { email } = useParams();
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState<string>("");
+  const [showConfirmation, setShowConfirmation] = useState(false);
   const navigate = useNavigate();
 
-  const acceptDealer = async () => {
+  const declineDealer = async () => {
     if (!email) return;
 
     setLoading(true);
     try {
       const encodedEmail = encodeURIComponent(email);
-      console.log("encodedEmail = ", encodedEmail);
-
       const response = await axios.get(
-        `${BASE_URL}/product/admin/accept-dealer/${encodedEmail}`
+        `${BASE_URL}/product/admin/decline-dealer/${encodedEmail}`
       );
-      console.log(response);
-
-      setMessage(response.data.message || "Dealer accepted successfully!");
-
-      setTimeout(() => {
-        navigate("/dealer-authorization");
-      }, 2000);
+      setMessage(response.data.message || "Dealer declined successfully!");
+      setTimeout(() => navigate("/dealer-decline"), 2000);
     } catch (error) {
-      console.error("Error accepting dealer:", error);
-      setMessage("Error accepting dealer. Please try again.");
+      console.error("Error declining dealer:", error);
+      setMessage("Error declining dealer. Please try again.");
     } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    if (email) {
-      acceptDealer();
+    if (email && showConfirmation) {
+      declineDealer();
     }
-  }, [email]);
+  }, [email, showConfirmation]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-100 to-green-100 p-4">
-      <div className="max-w-md w-full bg-white shadow-lg rounded-lg overflow-hidden">
-        <div className="p-8">
-          <div className="flex justify-center mb-6">
-            <svg
-              className="w-16 h-16 text-green-500"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-              ></path>
-            </svg>
-          </div>
-          <h1 className="text-3xl font-bold text-center text-gray-800 mb-4">
-            Accept Dealer
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-100 to-purple-100 p-4">
+      <div className="bg-white shadow-lg rounded-lg w-full max-w-md overflow-hidden">
+        <div className="p-6">
+          <h1 className="text-2xl font-semibold text-center text-gray-800 mb-4">
+            Decline Dealer
           </h1>
-          <div className="mt-4 text-center">
-            <p className="text-gray-600 mb-2">
-              Do you want to accept the dealer with email:
-            </p>
-            <p className="font-bold text-blue-600 break-all mb-6">{email}</p>
-          </div>
-          <div className="flex justify-center">
-            <button
-              className={`w-full max-w-xs bg-green-500 text-white px-6 py-3 rounded-lg font-semibold text-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg ${
-                loading ? "opacity-50 cursor-not-allowed" : "hover:bg-green-600"
+          <p className="text-gray-600 mb-2">
+            Are you sure you want to decline the dealer with email:
+          </p>
+          <p className="font-bold text-blue-600 break-all mb-4">{email}</p>
+          {message && (
+            <div
+              className={`p-4 rounded-md mt-4 ${
+                message.includes("Error")
+                  ? "bg-red-100 text-red-700"
+                  : "bg-green-100 text-green-700"
               }`}
-              onClick={acceptDealer}
+            >
+              <p className="font-semibold">
+                {message.includes("Error") ? "Error" : "Success"}
+              </p>
+              <p>{message}</p>
+            </div>
+          )}
+        </div>
+        <div className="bg-gray-50 px-6 py-4 flex justify-center gap-4">
+          {!showConfirmation ? (
+            <>
+              <button
+                className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
+                onClick={() => setShowConfirmation(true)}
+                disabled={loading}
+              >
+                Decline
+              </button>
+              <button
+                className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
+                onClick={() => navigate(-1)}
+              >
+                Cancel
+              </button>
+            </>
+          ) : (
+            <button
+              className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-150 ease-in-out disabled:opacity-50"
+              onClick={declineDealer}
               disabled={loading}
             >
               {loading ? (
-                <span className="flex items-center justify-center">
+                <span className="flex items-center">
                   <svg
                     className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
                     xmlns="http://www.w3.org/2000/svg"
@@ -183,31 +189,14 @@ const DealerAccept: React.FC = () => {
                   Processing...
                 </span>
               ) : (
-                "Accept"
+                "Confirm Decline"
               )}
             </button>
-          </div>
-          {message && (
-            <div
-              className={`mt-6 text-center p-3 rounded-lg ${
-                message.includes("Error")
-                  ? "bg-red-100 text-red-700"
-                  : "bg-green-100 text-green-700"
-              }`}
-            >
-              {message}
-            </div>
           )}
-        </div>
-        <div className="bg-gray-50 px-8 py-4">
-          <p className="text-center text-gray-500 text-sm">
-            By accepting this dealer, you are granting them access to the online
-            store platform.
-          </p>
         </div>
       </div>
     </div>
   );
 };
 
-export default DealerAccept;
+export default DealerReject;
