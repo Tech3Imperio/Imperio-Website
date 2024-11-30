@@ -23,9 +23,12 @@ import Career from "./pages/Career/Career";
 import JobDetailsPage from "./pages/Career/JobDetailsPage";
 import DealerLogin from "./pages/DealerOnlineStore/DealerLogin/DealerLogin";
 import DealerRegistration from "./pages/DealerOnlineStore/DealerRegistration/DealerRegistration";
-// import DealerAcceptRoute from "./pages/DealerOnlineStore/DealerOnlineStore";
 import DealerAccept from "./pages/DealerOnlineStore/DealerAccept/DealerAccept";
-import DealerOnlineStore from "./pages/DealerOnlineStore/DealerOnlineStore";
+import DealerReject from "./pages/DealerOnlineStore/DealerReject/DealerReject";
+import DealerDeclineUi from "./pages/DealerOnlineStore/DealerReject/DealerDeclineUi";
+import DealerAcceptUi from "./pages/DealerOnlineStore/DealerAccept/DealerAcceptUi";
+import DealerLogout from "./pages/DealerOnlineStore/DealerLogout/DealerLogout";
+// import ForgotPassword from "./pages/DealerOnlineStore/ForgotPassword/ForgotPassword";
 
 export const routes = createBrowserRouter([
   {
@@ -53,10 +56,16 @@ export const routes = createBrowserRouter([
       { path: "dealer-login", element: <DealerLogin /> },
       { path: "dealer-registration", element: <DealerRegistration /> },
       {
-        path: "/product/admin/accept-dealer/:email",
+        path: "dealer-authorization/:email",
         element: <DealerAccept />,
       },
-      { path: "dealer-authorization", element: <DealerOnlineStore /> },
+      {
+        path: "dealer-decline/:email",
+        element: <DealerReject />,
+      },
+      { path: "dealer-authorization", element: <DealerAcceptUi /> },
+      { path: "dealer-decline", element: <DealerDeclineUi /> },
+      { path: "dealer-logout", element: <DealerLogout /> },
       { path: "projects", element: <Projects /> },
       { path: "quote", element: <GetQuote /> },
       { path: "quote/thanks", element: <ThankYou /> },

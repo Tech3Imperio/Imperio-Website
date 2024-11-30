@@ -167,6 +167,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import axios from "axios";
 import { BASE_URL } from "../../Service/Api/Api";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { Link } from "react-router-dom";
 
 interface DealerState {
   email: string;
@@ -204,7 +205,8 @@ export default function DealerLogin() {
           },
         }
       );
-      console.log(response);
+      // console.log(response.data.token);
+      localStorage.setItem("token", response.data.token);
 
       if (response.status >= 200 && response.status < 300) {
         alert("Login successful!");
@@ -215,8 +217,7 @@ export default function DealerLogin() {
           password: "",
         });
 
-        // Redirect to another page, for example to the dashboard
-        navigate("/products"); // Redirect to the dashboard page after successful login
+        navigate("/home"); // Redirect to the dashboard page after successful login
       } else {
         alert("Error logging in. Please try again.");
       }
@@ -319,6 +320,7 @@ export default function DealerLogin() {
               >
                 Login
               </button>
+              <Link to="/forgot-password">Forgot Password</Link>
             </form>
           </motion.div>
         </div>
