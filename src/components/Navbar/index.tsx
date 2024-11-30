@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { whiteLogo } from "../../assets/Images";
 import { MenuItemProps, MobileMenuProps, MenuItemsProps } from "../../types";
 import { QuoteButton, DealershipButton } from "../Quote/Button/index";
 import { SocialLinks } from "../SocialLinks/index";
 import styles from "./Navbar.module.css";
-
+import { SlHandbag } from "react-icons/sl";
 // Logo component with a link to home
 const Logo: React.FC = () => (
   <Link to="/" className="navbar-brand" aria-label="PowerHouse Home">
@@ -89,6 +89,19 @@ export const Navbar: React.FC = () => {
     isMenuOpen: false,
   });
 
+  const navigate = useNavigate();
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      localStorage.removeItem("LoginToken");
+    }, 1200);
+
+    timer !== null ? navigate("/dealer-login") : navigate("/products");
+
+    return () => clearTimeout(timer);
+  }, [navigate]);
+
+  const isDealerLogedIn = localStorage.getItem("LoginToken");
+
   // Ref for handling hidden class toggle
   const hidden = useRef("hidden");
 
@@ -155,9 +168,16 @@ export const Navbar: React.FC = () => {
                 <MenuItems type="desktop" />
               </ul>
             </div>
-            <div className=" flex gap-6">
+            <div className=" flex gap-6 justify-center items-center">
               <DealershipButton />
               <QuoteButton />
+              {isDealerLogedIn ? (
+                <button className="rounded-full h-10 w-10 p-2 text-black bg-white flex justify-center items-center">
+                  <SlHandbag size={28} />
+                </button>
+              ) : (
+                <></>
+              )}
             </div>
           </>
         )}

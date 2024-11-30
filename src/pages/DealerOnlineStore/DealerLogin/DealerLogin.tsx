@@ -216,7 +216,7 @@ export default function DealerLogin() {
         });
 
         // Redirect to another page, for example to the dashboard
-        navigate("/home"); // Redirect to the dashboard page after successful login
+        navigate("/products"); // Redirect to the dashboard page after successful login
       } else {
         alert("Error logging in. Please try again.");
       }
