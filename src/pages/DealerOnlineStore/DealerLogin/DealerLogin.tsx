@@ -168,20 +168,25 @@ import axios from "axios";
 import { BASE_URL } from "../../Service/Api/Api";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import { Link } from "react-router-dom";
+import { FaUserPlus } from "react-icons/fa";
+import { ErrorPopup } from "../../../components";
 
 interface DealerState {
-  email: string;
+  phone: string;
   password: string;
 }
 
 export default function DealerLogin() {
+  const [errorMessage, setErrorMessage] = useState<string>("");
+  const [showErrorPopup, setShowErrorPopup] = useState(false);
   const [dealer, setDealer] = useState<DealerState>({
-    email: "",
+    phone: "",
     password: "",
   });
+  const [isLoader, setIsLoader] = useState(false);
 
   const [showPassword, setShowPassword] = useState(false);
-  const navigate = useNavigate(); // Initialize the useNavigate hook
+  const navigate = useNavigate();
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -194,10 +199,10 @@ export default function DealerLogin() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
+    setIsLoader(true);
     try {
       const response = await axios.post(
-        `${BASE_URL}/product/dealerlogin`, // Use the relative path for the proxy
+        `${BASE_URL}/product/dealerlogin`,
         dealer,
         {
           headers: {
@@ -206,36 +211,36 @@ export default function DealerLogin() {
         }
       );
       // console.log(response.data.token);
+
       localStorage.setItem("token", response.data.token);
 
       if (response.status >= 200 && response.status < 300) {
-        alert("Login successful!");
+        // alert("Login successful!");
 
-        // Reset form data
         setDealer({
-          email: "",
+          phone: "",
           password: "",
         });
 
-        navigate("/home"); // Redirect to the dashboard page after successful login
+        navigate("/home");
       } else {
         alert("Error logging in. Please try again.");
       }
     } catch (error) {
-      // Type guard to handle error safely
       if (axios.isAxiosError(error)) {
         console.error("Axios Error:", error.message);
-        alert(`An unexpected error occurred: ${error.message}`);
-      } else if (error instanceof Error) {
-        // Error is an instance of Error
-        console.error("Error:", error.message);
-        alert(`An unexpected error occurred: ${error.message}`);
+        setErrorMessage("Please check your credentials.");
+        setShowErrorPopup(true);
       } else {
-        // Handle unexpected error types
-        console.error("Unexpected Error:", error);
-        alert("An unexpected error occurred. Please try again.");
+        setErrorMessage("An unexpected error occurred.");
+        setShowErrorPopup(true);
       }
+    } finally {
+      setIsLoader(false);
     }
+  };
+  const closeErrorPopup = () => {
+    setShowErrorPopup(false);
   };
 
   const togglePasswordVisibility = () => {
@@ -271,18 +276,18 @@ export default function DealerLogin() {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label
-                  htmlFor="email"
+                  htmlFor="phone"
                   className="block text-sm font-medium text-gray-600"
                 >
-                  Email <span className="text-red-500">*</span>
+                  Phone <span className="text-red-500">*</span>
                 </label>
                 <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={dealer.email}
+                  type="phone"
+                  id="phone"
+                  name="phone"
+                  value={dealer.phone}
                   onChange={handleInput}
-                  placeholder="Enter your email"
+                  placeholder="Enter your Register Phone No"
                   required
                   className="w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:outline-none focus:ring focus:ring-blue-300"
                 />
@@ -312,15 +317,29 @@ export default function DealerLogin() {
                   >
                     {showPassword ? <FaEye /> : <FaEyeSlash />}
                   </button>
+                  {showErrorPopup && (
+                    <ErrorPopup
+                      message={errorMessage}
+                      onClose={closeErrorPopup}
+                    />
+                  )}
                 </div>
               </div>
-              <button
-                type="submit"
-                className="w-full px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-md focus:outline-none focus:ring focus:ring-blue-300"
+              <div className=" flex justify-center p-4">
+                <button
+                  type="submit"
+                  className="px-12 py-3 text-[--black] font-bold bg-[--secound] rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound]"
+                  disabled={isLoader}
+                >
+                  {isLoader ? "Loging..." : "Log In"}
+                </button>
+              </div>
+              <Link
+                to="/dealer-registration"
+                className="flex items-center justify-center text-[#03237b] text-lg font-semibold hover:[#03237b] hover:underline transition-all duration-300"
               >
-                Login
-              </button>
-              <Link to="/forgot-password">Forgot Password</Link>
+                <FaUserPlus className="mr-2" /> New Dealer Registration!
+              </Link>
             </form>
           </motion.div>
         </div>

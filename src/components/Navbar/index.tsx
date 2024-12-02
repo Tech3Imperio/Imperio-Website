@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { whiteLogo } from "../../assets/Images";
 import { MenuItemProps, MobileMenuProps, MenuItemsProps } from "../../types";
 import { QuoteButton, DealershipButton } from "../Quote/Button/index";
 import { SocialLinks } from "../SocialLinks/index";
 import styles from "./Navbar.module.css";
-import { SlHandbag } from "react-icons/sl";
+// import { SlHandbag } from "react-icons/sl";
+import { FaUserCircle } from "react-icons/fa";
 // Logo component with a link to home
 const Logo: React.FC = () => (
   <Link to="/" className="navbar-brand" aria-label="PowerHouse Home">
@@ -54,7 +55,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, handleClick }) => (
     className={`fixed z-10 w-screen h-auto left-0 bg-[--black] rounded-b-4xl text-white transition-700 overflow-hidden border-b-4 ${
       isOpen
         ? "top-[5.5rem] pb-6 border-[#f1efe7] shadow-navmobile"
-        : "-top-[25rem] pb-0"
+        : "-top-[30rem] pb-0"
     }`}
     aria-hidden={!isOpen}
   >
@@ -74,6 +75,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, handleClick }) => (
             <div onClick={handleClick}>
               <QuoteButton />
             </div>
+            <FaUserCircle />
           </div>
         </div>
       </div>
@@ -89,18 +91,18 @@ export const Navbar: React.FC = () => {
     isMenuOpen: false,
   });
 
-  const navigate = useNavigate();
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      localStorage.removeItem("LoginToken");
-    }, 1200);
+  // const navigate = useNavigate();
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     localStorage.removeItem("LoginToken");
+  //   }, 1200);
 
-    timer !== null ? navigate("/dealer-login") : navigate("/products");
+  //   timer !== null ? navigate("/") : navigate("/products");
 
-    return () => clearTimeout(timer);
-  }, [navigate]);
+  //   return () => clearTimeout(timer);
+  // }, [navigate]);
 
-  const isDealerLogedIn = localStorage.getItem("LoginToken");
+  // const isDealerLogedIn = localStorage.getItem("LoginToken");
 
   // Ref for handling hidden class toggle
   const hidden = useRef("hidden");
@@ -171,13 +173,20 @@ export const Navbar: React.FC = () => {
             <div className=" flex gap-6 justify-center items-center">
               <DealershipButton />
               <QuoteButton />
-              {isDealerLogedIn ? (
+              <Link
+                to="/dealer-login"
+                className=" flex justify-center flex-col pt-2"
+              >
+                <FaUserCircle className="h-auto w-6 ml-[6px] bg-white rounded-full flex items-center justify-center" />{" "}
+                <span className="text-white">Login</span>{" "}
+              </Link>
+              {/* {isDealerLogedIn ? (
                 <button className="rounded-full h-10 w-10 p-2 text-black bg-white flex justify-center items-center">
                   <SlHandbag size={28} />
                 </button>
               ) : (
                 <></>
-              )}
+              )} */}
             </div>
           </>
         )}
