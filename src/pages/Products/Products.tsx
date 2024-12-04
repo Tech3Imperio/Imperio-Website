@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { Hero, ProductPanel, Quote } from "../../components";
+import { ErrorPopup, Hero, ProductPanel, Quote } from "../../components";
 import { productImage } from "../../assets/Images";
 import { useProduct } from "../../hooks";
 import { useEffect, useState, useCallback } from "react";
@@ -7,14 +7,17 @@ import { ProductProps, ProductSection } from "../../types";
 import { getLocalStorageItem, setLocalStorageItem } from "../../utils";
 import { Product } from "./Product/Product";
 import "./style.css";
+
 import Metadata from "../../components/Metatag/Metatag";
+
 import ShimmerCard from "../../components/Shimmer/ShimmerCard";
+
 import { SlArrowDown } from "react-icons/sl";
 import { LuFilter } from "react-icons/lu";
 import { IoIosClose } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+
 import DealerProductsPage from "./DealerProductsPage";
-import CustomModal from "../../components/CustomModal/CustomModal";
 
 export type ProductDescription = {
   heading: string;
@@ -211,7 +214,7 @@ const MemoProducts: React.FC = () => {
               setModal(true);
               // navigate("/");
             }
-          }, 60000);
+          }, 1800000);
         } else {
           console.error("Invalid token format");
           // Handle invalid token (e.g., clear local storage, redirect to login)
@@ -577,14 +580,14 @@ const MemoProducts: React.FC = () => {
       />
       {localStorage.getItem("token") ? <DealerProductsPage /> : <></>}
       {isModal && (
-        <CustomModal
+        <ErrorPopup
           onClose={handleModalChange}
           message={
             "Your Session is Expired! We Kindly request you to please Login again!"
           }
         />
       )}
-      <main className="flex flex-col md:flex-row max-w-[85rem] mx-auto">
+      <main className="flex flex-col md:flex-row max-w-[85rem] mx-auto justify-center">
         {localStorage.getItem("token") ? (
           <></>
         ) : (
@@ -645,7 +648,7 @@ const MemoProducts: React.FC = () => {
         <section className="pb-24">
           {filteredProductSections &&
             filteredProductSections.map((section, index) => (
-              <div key={index}>
+              <div key={index} className="w-full">
                 <ProductPanel
                   header={section.header}
                   productDetail={section.products}

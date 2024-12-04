@@ -1,20 +1,3 @@
-// import React from "react";
-
-// const DealerDeclineUi: React.FC = () => {
-//   return (
-//     <div className="max-w-lg h-screen mx-auto p-5 bg-white shadow-md rounded-md">
-//       <h1 className="text-2xl font-semibold text-center">
-//         Dealer Authorized Decline
-//       </h1>
-//       <p className="mt-4 text-gray-600">
-//         You are now authorized to decline the dealer's online store.
-//       </p>
-//     </div>
-//   );
-// };
-
-// export default DealerDeclineUi;
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 

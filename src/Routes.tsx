@@ -28,6 +28,7 @@ import DealerReject from "./pages/DealerOnlineStore/DealerReject/DealerReject";
 import DealerDeclineUi from "./pages/DealerOnlineStore/DealerReject/DealerDeclineUi";
 import DealerAcceptUi from "./pages/DealerOnlineStore/DealerAccept/DealerAcceptUi";
 import DealerLogout from "./pages/DealerOnlineStore/DealerLogout/DealerLogout";
+import DealerMessagePage from "./pages/DealerOnlineStore/DealerRegistration/DealerMessagePage";
 // import ForgotPassword from "./pages/DealerOnlineStore/ForgotPassword/ForgotPassword";
 
 export const routes = createBrowserRouter([
@@ -55,6 +56,10 @@ export const routes = createBrowserRouter([
       },
       { path: "dealer-login", element: <DealerLogin /> },
       { path: "dealer-registration", element: <DealerRegistration /> },
+      {
+        path: "dealer-registration/dealer-message/:username",
+        element: <DealerMessagePage />,
+      },
       {
         path: "dealer-authorization/:email",
         element: <DealerAccept />,

@@ -10,3 +10,4 @@ export * from "./Quote";
 export * from "./Scroll";
 export * from "./SocialLinks";
 export * from "./PopUp";
+export * from "./ErrorPopupProps/ErrorPopupProps";

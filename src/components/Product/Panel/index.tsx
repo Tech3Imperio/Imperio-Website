@@ -86,7 +86,7 @@ export const ProductPanel: React.FC<ProductPanelProps> = ({
         </div>
       )}
 
-      <div className="pt-5 px-2 md:px-8">
+      <div className="pt-5">
         {/* Header */}
         {/* <h2 className="text-[2.25rem] phone:text-[2.5rem] tablet:text-[2.75rem] laptop:text-5xl text-[--third] font-normal">
       Glass Railing {header}
@@ -94,9 +94,9 @@ export const ProductPanel: React.FC<ProductPanelProps> = ({
 
         {/* Product Grid */}
         <div
-          className={`grid py-2 phone:py-4 grid-cols-2 w-full ${
+          className={`grid py-2 phone:py-4 grid-cols-2  ${
             localStorage.getItem("token")
-              ? "xl:grid-cols-4 gap-12"
+              ? "xl:grid-cols-4 gap-20"
               : "xl:grid-cols-3 gap-6"
           } justify-items-center`}
         >
