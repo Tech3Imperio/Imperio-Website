@@ -345,9 +345,16 @@ export default function DealerRegistration() {
     } catch (error) {
       // Handle errors
       if (axios.isAxiosError(error)) {
-        console.error("Check email Id", error.message);
-        setErrorMessage(`This email id already exists`);
-        setShowErrorPopup(true);
+        const errorResponse = error.response?.data;
+        console.log(errorResponse);
+
+        if (errorResponse.message === "Email already exists") {
+          setErrorMessage("Email already exists");
+          setShowErrorPopup(true);
+        } else if (errorResponse.message === "Phone number already exists") {
+          setErrorMessage("Phone number already exists");
+          setShowErrorPopup(true);
+        }
       } else if (error instanceof Error) {
         console.error("Error:", error.message);
         setErrorMessage(`An unexpected error occurred: ${error.message}`);
