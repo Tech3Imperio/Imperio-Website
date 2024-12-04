@@ -207,7 +207,6 @@ export default function DealerLogin() {
       );
       // console.log(response.data.token);
       localStorage.setItem("token", response.data.token);
-
       if (response.status >= 200 && response.status < 300) {
         alert("Login successful!");
 
@@ -217,7 +216,7 @@ export default function DealerLogin() {
           password: "",
         });
 
-        navigate("/home"); // Redirect to the dashboard page after successful login
+        navigate("/products"); // Redirect to the dashboard page after successful login
       } else {
         alert("Error logging in. Please try again.");
       }

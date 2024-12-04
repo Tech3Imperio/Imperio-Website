@@ -12,6 +12,9 @@ import ShimmerCard from "../../components/Shimmer/ShimmerCard";
 import { SlArrowDown } from "react-icons/sl";
 import { LuFilter } from "react-icons/lu";
 import { IoIosClose } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
+import DealerProductsPage from "./DealerProductsPage";
+import CustomModal from "../../components/CustomModal/CustomModal";
 
 export type ProductDescription = {
   heading: string;
@@ -45,6 +48,8 @@ const ProductDescription: React.FC<ProductDescription> = ({
 };
 
 const MemoProducts: React.FC = () => {
+  const navigate = useNavigate();
+
   const { data, error, loading } = useProduct(
     "https://script.google.com/macros/s/AKfycbwE-1Stl8t8_XrB5MuRPQ1hROKpo3mYynDPnI1vNX6U5vakITchmA6nfmzQt8sYpqFIjw/exec"
   );
@@ -171,6 +176,55 @@ const MemoProducts: React.FC = () => {
     },
   ];
 
+  // Optional: Log token for debugging (uncomment if needed)
+  // console.log(encodedToken);
+
+  const encodedToken = localStorage.getItem("token");
+
+  const [isModal, setModal] = useState(false);
+
+  const handleModalChange = () => {
+    localStorage.removeItem("token");
+    setModal(false);
+    navigate("/");
+  };
+  useEffect(() => {
+    if (encodedToken) {
+      try {
+        // Split the token into its three parts
+        const parts = encodedToken.split(".");
+
+        if (parts.length === 3) {
+          // Decode the payload (the second part of the JWT)
+          const decodedPayload = JSON.parse(atob(parts[1]));
+
+          // Check for token expiration
+          // const currentTime = Math.floor(Date.now() / 1000); // Convert milliseconds to seconds
+          const expirationTime = decodedPayload.exp;
+
+          const intervalId = setInterval(() => {
+            const currentTime = Math.floor(Date.now() / 1000);
+            if (expirationTime <= currentTime) {
+              // localStorage.removeItem("token");
+              // Token expired, log out the user
+              clearInterval(intervalId); // Stop the timer
+              setModal(true);
+              // navigate("/");
+            }
+          }, 60000);
+        } else {
+          console.error("Invalid token format");
+          // Handle invalid token (e.g., clear local storage, redirect to login)
+        }
+      } catch (error) {
+        console.error("Error checking token:", error);
+        // Handle errors gracefully (e.g., clear local storage, redirect to login)
+      }
+    } else {
+      console.log("No token found");
+    }
+  }, [encodedToken, navigate]);
+
   if (problem) {
     return (
       <>
@@ -272,6 +326,7 @@ const MemoProducts: React.FC = () => {
           subHeader="Imperio’s Glass Railing Systems in India deliver high-durability balcony, staircase, and aluminum glass railings, blending modern style with lasting safety for any space."
           curve
         />
+
         <main className="flex flex-col md:flex-row max-w-[85rem] mx-auto">
           <aside className="hidden lg:flex flex-col text-center md:top-32 md:mt-10 self-start p-4 w-[80%] md:w-[18%] mx-auto border rounded-xl mb-6">
             {filterCategories.map((category) => (
@@ -427,14 +482,22 @@ const MemoProducts: React.FC = () => {
         ogImage={productImage}
         ogUrl={"https://imperiorailing.com/products"}
       />
-      <div className="lg:hidden flex top-[0%] fixed right-0 z-40 h-screen ">
-        <button onClick={() => setSidebarOpen(!sidebarOpen)}>
-          <LuFilter
-            className=" bg-yellow-500 text-black z-40 p-2 rounded-l-md"
-            size={45}
-          />
-        </button>
-      </div>
+      {localStorage.getItem("token") ? (
+        <></>
+      ) : (
+        <div className="flex top-[0%] fixed right-0 z-40 h-screen">
+          <button
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+            className="lg:hidden"
+          >
+            <LuFilter
+              className=" bg-yellow-500 text-black z-40 p-2 rounded-l-md"
+              size={45}
+            />
+          </button>
+        </div>
+      )}
+
       <div
         className={`fixed right-0 top-0 h-screen w-[280px] bg-[--black] border-l-[3px] hover:border-white rounded-l-[2rem] shadow-2xl transition-transform duration-700 z-50 overflow-y-scroll sidebar-container ${
           sidebarOpen ? "translate-x-0 shadow-yellow-500" : "translate-x-full"
@@ -512,58 +575,73 @@ const MemoProducts: React.FC = () => {
         subHeader="Imperio’s Glass Railing Systems in India deliver high-durability balcony, staircase, and aluminum glass railings, blending modern style with lasting safety for any space."
         curve
       />
+      {localStorage.getItem("token") ? <DealerProductsPage /> : <></>}
+      {isModal && (
+        <CustomModal
+          onClose={handleModalChange}
+          message={
+            "Your Session is Expired! We Kindly request you to please Login again!"
+          }
+        />
+      )}
       <main className="flex flex-col md:flex-row max-w-[85rem] mx-auto">
-        <aside className="hidden lg:flex flex-col text-center md:top-32 md:mt-10 self-start p-4 w-[80%] md:w-[18%] mx-auto border rounded-xl mb-6">
-          {filterCategories.map((category) => (
-            <div key={category.name} className="p-2  mb-4">
-              <div
-                onClick={() => toggleSection(category.name)}
-                className="flex justify-between items-center cursor-pointer"
-              >
-                <h3 className="-text--third font-semibold">{category.name}</h3>
-                <span>
-                  <SlArrowDown
-                    className={`${
-                      openSections.includes(category.name)
-                        ? "rotate-180 transition-all duration-500"
-                        : " transition-all duration-500"
-                    }`}
-                  />
-                </span>
-              </div>
-              {openSections.includes(category.name) && (
-                <ul className="flex flex-col">
-                  {category.options.map((option) => (
-                    <li
-                      key={option}
-                      className="list-none flex items-center gap-3 p-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id={option}
-                        checked={selectedTypes.includes(option)}
-                        onChange={() => handleTypeChange(option)}
-                        className="cursor-pointer"
-                      />
-                      <label
-                        htmlFor={option}
-                        className="cursor-pointer rounded-lg whitespace-nowrap"
+        {localStorage.getItem("token") ? (
+          <></>
+        ) : (
+          <aside className="hidden lg:flex flex-col text-center md:top-32 md:mt-10 self-start p-4 w-[80%] md:w-[18%] mx-auto border rounded-xl mb-6">
+            {filterCategories.map((category) => (
+              <div key={category.name} className="p-2  mb-4">
+                <div
+                  onClick={() => toggleSection(category.name)}
+                  className="flex justify-between items-center cursor-pointer"
+                >
+                  <h3 className="-text--third font-semibold">
+                    {category.name}
+                  </h3>
+                  <span>
+                    <SlArrowDown
+                      className={`${
+                        openSections.includes(category.name)
+                          ? "rotate-180 transition-all duration-500"
+                          : " transition-all duration-500"
+                      }`}
+                    />
+                  </span>
+                </div>
+                {openSections.includes(category.name) && (
+                  <ul className="flex flex-col">
+                    {category.options.map((option) => (
+                      <li
+                        key={option}
+                        className="list-none flex items-center gap-3 p-2"
                       >
-                        {option}
-                      </label>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          ))}
-          <button
-            onClick={() => setSelectedTypes([])}
-            className="py-3 mb-3 tablet:py-4 px-5 laptop:px-6 text-sm text-white bg-[--black] font-normal rounded-4xl transition-700 hover:text-[--black] hover:bg-[--secound]"
-          >
-            Reset Filters
-          </button>
-        </aside>
+                        <input
+                          type="checkbox"
+                          id={option}
+                          checked={selectedTypes.includes(option)}
+                          onChange={() => handleTypeChange(option)}
+                          className="cursor-pointer"
+                        />
+                        <label
+                          htmlFor={option}
+                          className="cursor-pointer rounded-lg whitespace-nowrap"
+                        >
+                          {option}
+                        </label>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+            <button
+              onClick={() => setSelectedTypes([])}
+              className="py-3 mb-3 tablet:py-4 px-5 laptop:px-6 text-sm text-white bg-[--black] font-normal rounded-4xl transition-700 hover:text-[--black] hover:bg-[--secound]"
+            >
+              Reset Filters
+            </button>
+          </aside>
+        )}
         <section className="pb-24">
           {filteredProductSections &&
             filteredProductSections.map((section, index) => (
