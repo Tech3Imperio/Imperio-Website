@@ -33,6 +33,7 @@ const DealerReject: React.FC = () => {
     if (email && showConfirmation) {
       declineDealer();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [email, showConfirmation]);
 
   return (
