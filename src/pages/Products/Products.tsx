@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { ErrorPopup, Hero, ProductPanel, Quote } from "../../components";
+import { Hero, ProductPanel, Quote } from "../../components";
 import { productImage } from "../../assets/Images";
 import { useProduct } from "../../hooks";
 import { useEffect, useState, useCallback } from "react";
@@ -15,9 +15,13 @@ import ShimmerCard from "../../components/Shimmer/ShimmerCard";
 import { SlArrowDown } from "react-icons/sl";
 import { LuFilter } from "react-icons/lu";
 import { IoIosClose } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { RxCross2 } from "react-icons/rx";
+import { CiFilter } from "react-icons/ci";
+import { IoSearchOutline } from "react-icons/io5";
+import { BsHandbag } from "react-icons/bs";
 
-import DealerProductsPage from "./DealerProductsPage";
+// import DealerProductsPage from "./DealerProductsPage";
 
 export type ProductDescription = {
   heading: string;
@@ -51,8 +55,6 @@ const ProductDescription: React.FC<ProductDescription> = ({
 };
 
 const MemoProducts: React.FC = () => {
-  const navigate = useNavigate();
-
   const { data, error, loading } = useProduct(
     "https://script.google.com/macros/s/AKfycbwE-1Stl8t8_XrB5MuRPQ1hROKpo3mYynDPnI1vNX6U5vakITchmA6nfmzQt8sYpqFIjw/exec"
   );
@@ -62,6 +64,22 @@ const MemoProducts: React.FC = () => {
 
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [openSections, setOpenSections] = useState<string[]>([]);
+
+  const [icon, setIcon] = useState("");
+  const encodedToken = localStorage.getItem("token");
+
+  useEffect(() => {
+    if (encodedToken) {
+      const parts = encodedToken.split(".");
+      if (parts.length === 3) {
+        const TokenData = JSON.parse(atob(parts[1]));
+        // console.log(TokenData);
+        setIcon(TokenData.username.split("")[0]); // This will run only once when the component mounts
+      }
+    }
+  }, [encodedToken]);
+
+  const [filterSidebar, setFilterSidebar] = useState(false);
 
   const handleTypeChange = (type: string) => {
     setSelectedTypes((prevSelectedTypes) =>
@@ -94,14 +112,6 @@ const MemoProducts: React.FC = () => {
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const dataBuilder = useCallback((data: ProductProps[]): ProductSection[] => {
-    const headers = [...new Set(data.map((item) => item["Product Category"]))];
-    return headers.map((header) => ({
-      header,
-      products: data.filter((item) => item["Product Category"] === header),
-    }));
-  }, []);
-
   // countdown show after data feaching start
   const [countdown, setCountdown] = useState(7);
   useEffect(() => {
@@ -116,6 +126,35 @@ const MemoProducts: React.FC = () => {
 
   // countdown show after data feaching end
 
+  const dataBuilder = useCallback((data: ProductProps[]): ProductSection[] => {
+    const AllFiltered = [
+      ...data.slice(0, 92).filter((_, index) => index % 4 === 0),
+      ...data.slice(92, 102),
+    ];
+    const headers = [
+      ...new Set(AllFiltered.map((item) => item["Product Category"])),
+    ];
+    return headers.map((header) => ({
+      header,
+      products: AllFiltered.filter(
+        (item) => item["Product Category"] === header
+      ),
+    }));
+  }, []);
+
+  // const StructureData = useCallback(
+  //   (data: ProductProps[]): ProductSection[] => {
+  //     const headers = [
+  //       ...new Set(data.map((item) => item["Product Category"])),
+  //     ];
+  //     return headers.map((header) => ({
+  //       header,
+  //       products: data.filter((item) => item["Product Category"] === header),
+  //     }));
+  //   },
+  //   []
+  // );
+
   useEffect(() => {
     const localData = getLocalStorageItem<ProductProps[]>("ProductData");
     if (localData) {
@@ -124,7 +163,6 @@ const MemoProducts: React.FC = () => {
     } else if (data) {
       const sections = dataBuilder(data);
       setProductSections(sections);
-
       if (loading || error) {
         setProblem(true);
       } else {
@@ -181,52 +219,6 @@ const MemoProducts: React.FC = () => {
 
   // Optional: Log token for debugging (uncomment if needed)
   // console.log(encodedToken);
-
-  const encodedToken = localStorage.getItem("token");
-
-  const [isModal, setModal] = useState(false);
-
-  const handleModalChange = () => {
-    localStorage.removeItem("token");
-    setModal(false);
-    navigate("/");
-  };
-  useEffect(() => {
-    if (encodedToken) {
-      try {
-        // Split the token into its three parts
-        const parts = encodedToken.split(".");
-
-        if (parts.length === 3) {
-          // Decode the payload (the second part of the JWT)
-          const decodedPayload = JSON.parse(atob(parts[1]));
-
-          // Check for token expiration
-          // const currentTime = Math.floor(Date.now() / 1000); // Convert milliseconds to seconds
-          const expirationTime = decodedPayload.exp;
-
-          const intervalId = setInterval(() => {
-            const currentTime = Math.floor(Date.now() / 1000);
-            if (expirationTime <= currentTime) {
-              // localStorage.removeItem("token");
-              // Token expired, log out the user
-              clearInterval(intervalId); // Stop the timer
-              setModal(true);
-              // navigate("/");
-            }
-          }, 1800000);
-        } else {
-          console.error("Invalid token format");
-          // Handle invalid token (e.g., clear local storage, redirect to login)
-        }
-      } catch (error) {
-        console.error("Error checking token:", error);
-        // Handle errors gracefully (e.g., clear local storage, redirect to login)
-      }
-    } else {
-      console.log("No token found");
-    }
-  }, [encodedToken, navigate]);
 
   if (problem) {
     return (
@@ -388,7 +380,7 @@ const MemoProducts: React.FC = () => {
           <section>
             <ProductDescription
               heading={"Base"}
-              subheading={"Premium Aluminium Glass Railing Base variants."}
+              subheading={"Aluminium Glass Railing Base variants."}
               description={
                 <>
                   "Discover our premium{" "}
@@ -404,7 +396,7 @@ const MemoProducts: React.FC = () => {
             />
             <ProductDescription
               heading={"Handrail"}
-              subheading={" Premium Aluminium Glass Railing Handrail variants."}
+              subheading={"Aluminium Glass Railing Handrail variants."}
               description={
                 <>
                   "Explore our premium{" "}
@@ -424,7 +416,7 @@ const MemoProducts: React.FC = () => {
             />
             <ProductDescription
               heading={"Height"}
-              subheading={"Premium Aluminium Glass Railing Height variants."}
+              subheading={"Aluminium Glass Railing Height variants."}
               description={
                 <>
                   "Explore our premium{" "}
@@ -445,7 +437,7 @@ const MemoProducts: React.FC = () => {
             />
             <ProductDescription
               heading={"Height"}
-              subheading={"Premium Aluminium Glass Railing Height variants."}
+              subheading={"Aluminium Glass Railing Height variants."}
               description={
                 <>
                   "Discover our versatile{" "}
@@ -485,7 +477,7 @@ const MemoProducts: React.FC = () => {
         ogImage={productImage}
         ogUrl={"https://imperiorailing.com/products"}
       />
-      {localStorage.getItem("token") ? (
+      {encodedToken ? (
         <></>
       ) : (
         <div className="flex top-[0%] fixed right-0 z-40 h-screen">
@@ -578,18 +570,113 @@ const MemoProducts: React.FC = () => {
         subHeader="Imperio’s Glass Railing Systems in India deliver high-durability balcony, staircase, and aluminum glass railings, blending modern style with lasting safety for any space."
         curve
       />
-      {localStorage.getItem("token") ? <DealerProductsPage /> : <></>}
-      {isModal && (
-        <ErrorPopup
-          onClose={handleModalChange}
-          message={
-            "Your Session is Expired! We Kindly request you to please Login again!"
-          }
-        />
+      {encodedToken ? (
+        <div
+          className={`fixed left-0 top-0 h-screen w-[280px] bg-[--black] rounded-r-[2rem] border-r-[3px] shadow-2xl transition-transform duration-700 z-50 overflow-y-scroll sidebar-container ${
+            filterSidebar
+              ? "translate-x-0 shadow-yellow-500 "
+              : "-translate-x-full"
+          }`}
+        >
+          <div className="flex justify-between items-center m-4 pt-5">
+            <h2 className="text-2xl YellowText whitespace-nowrap">
+              Filter Products
+            </h2>
+            <button
+              onClick={() => setFilterSidebar(false)}
+              className="flex -text--grey"
+            >
+              <RxCross2 size={32} />
+            </button>
+          </div>
+          <div className="p-4">
+            {filterCategories.map((category) => (
+              <div key={category.name} className="p-2 mb-4">
+                <div
+                  onClick={() => toggleSection(category.name)}
+                  className="flex justify-between items-center cursor-pointer"
+                >
+                  <h3 className="-text--grey font-semibold">{category.name}</h3>
+                  <span>
+                    <SlArrowDown
+                      className={`-text--grey ${
+                        openSections.includes(category.name)
+                          ? "rotate-180 transition-all duration-500"
+                          : " transition-all duration-500"
+                      }`}
+                    />
+                  </span>
+                </div>
+                {openSections.includes(category.name) && (
+                  <ul className="flex flex-col">
+                    {category.options.map((option) => (
+                      <li
+                        key={option}
+                        className="list-none flex items-center gap-3 p-2"
+                      >
+                        <input
+                          type="checkbox"
+                          id={option}
+                          checked={selectedTypes.includes(option)}
+                          onChange={() => handleTypeChange(option)}
+                          className="cursor-pointer"
+                        />
+                        <label
+                          htmlFor={option}
+                          className="cursor-pointer rounded-lg whitespace-nowrap -text--grey"
+                        >
+                          {option}
+                        </label>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+            <button
+              onClick={() => {
+                setSelectedTypes([]), setFilterSidebar(false);
+              }}
+              className=" px-6 py-4 text-[--black] font-bold bg-[--secound] text-xs rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap "
+            >
+              Reset Filters
+            </button>
+          </div>
+        </div>
+      ) : (
+        <></>
       )}
-      <main className="flex flex-col md:flex-row max-w-[85rem] mx-auto justify-center">
-        {localStorage.getItem("token") ? (
-          <></>
+
+      <main
+        className={`flex ${
+          encodedToken ? "flex-col" : "flex-row"
+        } max-w-[85rem] mx-auto justify-center`}
+      >
+        {encodedToken ? (
+          <nav className=" flex justify-between items-center py-3 px-2 lg:px-6 shadow-sm rounded-2xl border mx-2">
+            <button onClick={() => setFilterSidebar(!filterSidebar)}>
+              <CiFilter size={32} />
+            </button>
+
+            <div className="flex justify-center items-center gap-4 rounded-3xl shadow-2xl border px-4 focus:border-0">
+              <IoSearchOutline size={20} />
+              <input
+                placeholder="Search..."
+                type="text"
+                className="h-8 w-[8rem] lg:w-[30rem] focus:outline-none"
+              />
+            </div>
+            <Link
+              id="icon"
+              className="flex justify-center items-center gap-2 lg:gap-6"
+              to="/cart"
+            >
+              <BsHandbag size={24} />
+              <p className="h-8 w-8 rounded-full text-2xl bg-yellow-400 text-[#03237b] uppercase flex justify-center items-center Raleway">
+                {icon}
+              </p>
+            </Link>
+          </nav>
         ) : (
           <aside className="hidden lg:flex flex-col text-center md:top-32 md:mt-10 self-start p-4 w-[80%] md:w-[18%] mx-auto border rounded-xl mb-6">
             {filterCategories.map((category) => (
@@ -645,7 +732,7 @@ const MemoProducts: React.FC = () => {
             </button>
           </aside>
         )}
-        <section className="pb-24">
+        <section className="pb-24 mx-2">
           {filteredProductSections &&
             filteredProductSections.map((section, index) => (
               <div key={index} className="w-full">

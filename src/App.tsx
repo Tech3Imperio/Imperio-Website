@@ -154,8 +154,8 @@
 
 import "../src/pages/App.css";
 import React, { useEffect, useState } from "react";
-import { Outlet } from "react-router-dom";
-import { Footer, Navbar } from "./components";
+import { Outlet, useNavigate } from "react-router-dom";
+import { ErrorPopup, Footer, Navbar } from "./components";
 import { useScrollToTop } from "./hooks";
 // Ensure this import is from 'react-helmet'
 import WhatsAppChat from "./pages/WhatsAppChat/WhatsAppChat";
@@ -168,7 +168,9 @@ const getFaviconPath = (isDarkMode = false) => {
 };
 
 const App: React.FC = () => {
+  const navigate = useNavigate();
   const [faviconUrl, setFaviconUrl] = useState(getFaviconPath());
+  const encodedToken = localStorage.getItem("token");
 
   useScrollToTop();
 
@@ -224,8 +226,51 @@ const App: React.FC = () => {
     };
   }, [faviconUrl]);
 
+  const [isModal, setModal] = useState(false);
+
+  const handleModalChange = () => {
+    localStorage.removeItem("token");
+    setModal(false);
+    navigate("/");
+  };
+
+  useEffect(() => {
+    if (encodedToken) {
+      try {
+        const parts = encodedToken.split(".");
+        if (parts.length === 3) {
+          // Decode the payload
+          const decodedPayload = JSON.parse(atob(parts[1]));
+          const expirationTime = decodedPayload.exp;
+
+          const intervalId = setInterval(() => {
+            const currentTime = Math.floor(Date.now() / 1000);
+            if (expirationTime <= currentTime) {
+              clearInterval(intervalId); // Stop the timer
+              setModal(true);
+            }
+          }, 1800000); // 30 mins timer
+        } else {
+          console.error("Invalid token format");
+        }
+      } catch (error) {
+        console.error("Error checking token:", error);
+      }
+    } else {
+      console.log("No token found");
+    }
+  }, [encodedToken, navigate]);
+
   return (
     <>
+      {isModal && (
+        <ErrorPopup
+          onClose={handleModalChange}
+          message={
+            "Your Session is Expired! We Kindly request you to please Login again!"
+          }
+        />
+      )}
       <Toaster />
       <Navbar />
       <Outlet />
