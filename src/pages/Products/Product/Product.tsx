@@ -467,15 +467,15 @@
 
 // THIS CODE IS NEVEGATING GESSURE FOR MOBILE USER
 
-import React, { useEffect, useRef, useCallback, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 import { ProductProps } from "../../../types";
 import { BlackButton } from "../../../components";
 import { iconsFeature } from "../../../assets/Data";
 import "./Product.css";
 // import NewProducts from "../NewProducts";
-import NewProducts from "../NewProducts";
 // import Metadata from "../../../components/Metatag/Metatag";
 
 type ImageData = {
@@ -488,13 +488,17 @@ type FeatureData = {
   feature: string;
 };
 
-interface ExpandableTextProps {
+type DecodedToken = {
+  username: string;
+};
+
+type ExpandableTextProps = {
   className?: string;
   maxLength: number;
   children: string;
-}
+};
 
-const ExpandableText: React.FC<ExpandableTextProps> = ({
+export const ExpandableText: React.FC<ExpandableTextProps> = ({
   className = "",
   children,
   maxLength,
@@ -527,13 +531,23 @@ const ExpandableText: React.FC<ExpandableTextProps> = ({
 const MemoProduct: React.FC = () => {
   const location = useLocation();
   const params = useParams();
+  const navigate = useNavigate();
+
+  const [selectedImage, setSelectedImage] = useState(0);
   const [productData, setProductData] = useState<ProductProps | null>(null);
   const [imageData, setImageData] = useState<ImageData[]>([]);
+
+  const [allProductData, setAllProductData] = useState<ProductProps[]>([]);
+
+  const [selectedColor, setSelectedColor] = useState<string | null>(null);
+
   const featureData = useRef<FeatureData[]>([]);
 
   const swipeRef = useRef<HTMLDivElement>(null);
   const startXRef = useRef<number | null>(null);
   const [showSwipeIndicator, setShowSwipeIndicator] = useState(true);
+
+  const encodedToken = localStorage.getItem("token");
 
   const processData = useCallback(() => {
     if (productData) {
@@ -634,19 +648,102 @@ const MemoProduct: React.FC = () => {
         return response.json();
       })
       .then((data) => {
+        setAllProductData(data);
         // Find the blog that matches the readableTitle
-        const foundProduct = data.find(
-          (product: ProductProps) =>
-            product["Random Code to link the product"] === params.productID
-        );
-        if (foundProduct) {
-          setProductData(foundProduct);
+        if (selectedColor) {
+          const findProduct = allProductData.find(
+            (product) =>
+              product["Product Finish"] === selectedColor &&
+              product["Product Code"] === productData?.["Product Code"]
+          ) as ProductProps; // Type assertion (use with caution)
+          if (findProduct) {
+            setProductData(findProduct);
+            navigate(
+              `/products/${findProduct["Random Code to link the product"]}`,
+              { state: findProduct }
+            );
+          }
+        } else {
+          const foundProduct = data.find(
+            (product: ProductProps) =>
+              product["Random Code to link the product"] === params.productID
+          );
+          if (foundProduct) {
+            setProductData(foundProduct);
+          }
         }
       })
       .catch((error) => {
         console.error("Error fetching blog data:", error);
       });
-  }, [params.productID]);
+  }, [allProductData, navigate, params.productID, productData, selectedColor]);
+
+  const [decodedToken, setDecodedToken] = useState<DecodedToken | null>(null);
+
+  useEffect(() => {
+    const parts = encodedToken?.split(".");
+
+    if (parts?.length === 3) {
+      setDecodedToken(JSON.parse(atob(parts[1])));
+    }
+  }, [encodedToken]);
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+
+    const newCartData: Record<string, string> = {};
+    formData.forEach((value, key) => {
+      newCartData[key] = value.toString();
+    });
+    newCartData["color"] = `${location.state["Product Finish"]}`;
+    newCartData[
+      "productname"
+    ] = `${location.state["Product Name"]}${location.state["Product Code"]}`;
+    newCartData["description"] = `${location.state["Short Description"]}`;
+    newCartData["img"] = `${location.state["Main Image"]}`;
+    newCartData["price"] = `${location.state["Price"]}`;
+
+    const cartItems = localStorage.getItem(
+      `${decodedToken?.username}_CartItems`
+    );
+
+    let updatedCartItems = cartItems ? JSON.parse(cartItems) : [];
+
+    updatedCartItems = [...updatedCartItems, newCartData];
+
+    localStorage.setItem(
+      `${decodedToken?.username}_CartItems`,
+      JSON.stringify(updatedCartItems)
+    );
+    navigate("/cart");
+  };
+
+  const renderStars = (rating: number) => {
+    const stars = [];
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 !== 0;
+
+    for (let i = 0; i < 5; i++) {
+      if (i < fullStars) {
+        stars.push(<FaStar key={i} className="text-yellow-400" />);
+      } else if (i === fullStars && hasHalfStar) {
+        stars.push(<FaStarHalfAlt key={i} className="text-yellow-400" />);
+      } else {
+        stars.push(<FaRegStar key={i} className="text-yellow-400" />);
+      }
+    }
+    return stars;
+  };
+
+  const colorOptions = [
+    { name: "Silver", code: "#C0C0C0" },
+    { name: "Champagne", code: "#F7E7CE" },
+    { name: "Wood", code: "#8B4513" },
+    { name: "Black", code: "#000000" },
+  ];
+  // Determine if current device is mobile
+  const isMobile = window.innerWidth < 768;
 
   if (!productData || !imageData.length) {
     return (
@@ -656,134 +753,329 @@ const MemoProduct: React.FC = () => {
     );
   }
 
-  // Determine if current device is mobile
-  const isMobile = window.innerWidth < 768;
-
-  return (
-    <>
-      {/* <Metadata
-        title={`${
-          productData["Product Name"] +
-          " " +
-          productData["Product Code"] +
-          " - " +
-          productData["Random Code to link the product"]
-        }`}
-        description={""}
-        keywords={""}
-        ogImage={""}
-        ogUrl={`https://www.imperiorailing.com/products/${params.productID}`}
-      /> */}
-      <main className="py-4 px-12 pb-28 tablet:px-32 xl:px-44">
-        <header className="pb-8">
-          <h2 className="YellowText text-[1.75rem] tablet:text-4xl xl:text-[2.5rem]">
-            {productData["Product Category"]}
-          </h2>
-          <h1 className="Raleway text-[--third] text-xl tablet:text-[2.8rem] xl:text-xl">
-            {productData["Product Name"] + " " + productData["Product Code"]}
-          </h1>
-        </header>
-        <section className="xl:h-[80vh] flex justify-between max-xl:flex-col max-xl:gap-6">
-          <aside className="flex flex-col justify-between gap-4 w-full xl:w-[18%] overflow-hidden max-xl:order-3">
-            <div className="flex flex-col text-sm gap-2 justify-center">
-              {featureData.current.map((item, index) => (
-                <div key={index} className="flex flex-col gap-3">
-                  <item.icon size={isMobile ? 24 : 36} color="#03247b" />
-                  <p className="text-sm font-semibold lg:text-[13px]">
-                    {item.feature.toUpperCase()}
-                  </p>
-                </div>
-              ))}
-              <div className="border-t-2 border-t-[--third] max-xl:space-y-8 max-xl:w-1/2">
-                <p className="text-sm font-semibold mt-2 lg:text-sm">
-                  SUITABLE FOR GLASS UP TO
+  return !encodedToken ? (
+    <main className="py-4 px-12 pb-28 tablet:px-32 xl:px-44">
+      <header className="pb-8">
+        <h2 className="YellowText text-[1.75rem] tablet:text-4xl xl:text-[2.5rem]">
+          {productData["Product Category"]}
+        </h2>
+        <h1 className="Raleway text-[--third] text-xl tablet:text-[2.8rem] xl:text-xl">
+          {productData["Product Name"] + " " + productData["Product Code"]}
+        </h1>
+      </header>
+      <section className="xl:h-[80vh] flex justify-between max-xl:flex-col max-xl:gap-6">
+        <aside className="flex flex-col justify-between gap-4 w-full xl:w-[18%] overflow-hidden max-xl:order-3">
+          <div className="flex flex-col text-sm gap-2 justify-center">
+            {featureData.current.map((item, index) => (
+              <div key={index} className="flex flex-col gap-3">
+                <item.icon size={isMobile ? 24 : 36} color="#03247b" />
+                <p className="text-sm font-semibold lg:text-[13px]">
+                  {item.feature.toUpperCase()}
                 </p>
-                <h2 className="text-5xl text-[--third] lg:text-3xl">
-                  {productData["Glass Thickness"]}
-                </h2>
               </div>
+            ))}
+            <div className="border-t-2 border-t-[--third] max-xl:space-y-8 max-xl:w-1/2">
+              <p className="text-sm font-semibold mt-2 lg:text-sm">
+                SUITABLE FOR GLASS UP TO
+              </p>
+              <h2 className="text-5xl text-[--third] lg:text-3xl">
+                {productData["Glass Thickness"]}
+              </h2>
             </div>
-            <div>
-              <img
-                className="rounded-4xl laptop:h-full cursor-pointer hidden xl:block"
-                onClick={handleLeftClick}
-                src={imageData[imageData.length - 1].img}
-                alt={imageData[imageData.length - 1].alt}
-                title={imageData[imageData.length - 1].alt}
-              />
-            </div>
-          </aside>
-          <div
-            ref={swipeRef}
-            onTouchStart={handleSwipeStart}
-            onTouchEnd={handleSwipeEnd}
-            className="center flex w-screen max-tablet:-mx-12 max-laptop:-mx-32 max-xl:mb-6 xl:w-[47.5rem] justify-between items-center text-2xl max-xl:order-1"
-          >
-            {!isMobile && (
-              <GoChevronLeft
-                className="cursor-pointer lg:ml-3 text-8xl tablet:text-3xl laptop:text-3xl"
-                onClick={handleLeftClick}
-              />
+          </div>
+          <div>
+            <img
+              className="rounded-4xl laptop:h-full cursor-pointer hidden xl:block"
+              onClick={handleLeftClick}
+              src={imageData[imageData.length - 1].img}
+              alt={imageData[imageData.length - 1].alt}
+              title={imageData[imageData.length - 1].alt}
+            />
+          </div>
+        </aside>
+        <div
+          ref={swipeRef}
+          onTouchStart={handleSwipeStart}
+          onTouchEnd={handleSwipeEnd}
+          className="center flex w-screen max-tablet:-mx-12 max-laptop:-mx-32 max-xl:mb-6 xl:w-[47.5rem] justify-between items-center text-2xl max-xl:order-1"
+        >
+          {!isMobile && (
+            <GoChevronLeft
+              className="cursor-pointer lg:ml-3 text-8xl tablet:text-3xl laptop:text-3xl"
+              onClick={handleLeftClick}
+            />
+          )}
+          <div className="middle-image-container xl:max-h-[75vh] xl:max-w-[33vw] xl:h-[40.5rem] xl:w-[40.5rem] rounded-4xl overflow-hidden relative">
+            {isMobile && showSwipeIndicator && (
+              <div className="swipe-indicator absolute top-0 left-0 w-full h-full flex items-center justify-center text-white font-bold animate-fade-in">
+                Swipe to navigate
+              </div>
             )}
-            <div className="middle-image-container xl:max-h-[75vh] xl:max-w-[33vw] xl:h-[40.5rem] xl:w-[40.5rem] rounded-4xl overflow-hidden relative">
-              {isMobile && showSwipeIndicator && (
-                <div className="swipe-indicator absolute top-0 left-0 w-full h-full flex items-center justify-center text-white font-bold animate-fade-in">
-                  Swipe to navigate
-                </div>
-              )}
-              <img
-                className="middle-image rounded-4xl"
-                src={imageData[0].img}
-                alt={imageData[0].alt}
-                title={imageData[0].alt}
-              />
+            <img
+              className="middle-image rounded-4xl"
+              src={imageData[0].img}
+              alt={imageData[0].alt}
+              title={imageData[0].alt}
+            />
+          </div>
+          {!isMobile && (
+            <GoChevronRight
+              className="cursor-pointer text-8xl tablet:text-3xl laptop:text-3xl"
+              onClick={handleRightClick}
+            />
+          )}
+        </div>
+        <aside className="flex flex-col gap-4 w-full xl:w-[20%] overflow-hidden justify-between max-xl:order-2">
+          <div className="flex flex-col gap-6 xl:gap-8">
+            <h1 className="text-[--third] Raleway text-2xl block xl:hidden">
+              Detailed Description.
+            </h1>
+            <ExpandableText maxLength={100} className="text-[--third]">
+              {productData["Short Description"]}
+            </ExpandableText>
+            <div className="flex flex-col gap-4 max-w-48">
+              <BlackButton
+                className="hidden xl:block max-w-48"
+                path="/products"
+              >
+                View other products
+              </BlackButton>
+              <BlackButton className="w-full" path="/projects">
+                View Projects
+              </BlackButton>
             </div>
-            {!isMobile && (
-              <GoChevronRight
-                className="cursor-pointer text-8xl tablet:text-3xl laptop:text-3xl"
-                onClick={handleRightClick}
+          </div>
+          <div>
+            <img
+              className="rounded-4xl cursor-pointer hidden xl:block"
+              onClick={handleRightClick}
+              src={imageData[1].img}
+              alt={imageData[1].alt}
+              title={imageData[1].alt}
+            />
+          </div>
+        </aside>
+      </section>
+    </main>
+  ) : (
+    <div className="max-w-7xl mx-auto p-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Product imageData */}
+        <div className="space-y-4">
+          <div className="aspect-square border rounded-lg overflow-hidden">
+            {imageData[selectedImage] && (
+              <img
+                src={imageData[selectedImage].img}
+                alt="Product"
+                className="w-full h-full object-cover"
               />
             )}
           </div>
-          <aside className="flex flex-col gap-4 w-full xl:w-[20%] overflow-hidden justify-between max-xl:order-2">
-            <div className="flex flex-col gap-6 xl:gap-8">
-              <h1 className="text-[--third] Raleway text-2xl block xl:hidden">
-                Detailed Description.
-              </h1>
-              <ExpandableText maxLength={100} className="text-[--third]">
+          <div className="flex gap-4">
+            {imageData.map((src, index) => (
+              <button
+                key={index}
+                onClick={() => setSelectedImage(index)}
+                className={`w-20 h-20 border rounded-lg overflow-hidden ${
+                  selectedImage === index
+                    ? "border-gray-800"
+                    : "border-gray-200"
+                }`}
+              >
+                <img
+                  src={src.img}
+                  alt={`Product thumbnail ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Product Info */}
+        <section className="space-y-6">
+          <div className="space-y-2">
+            <h1 className="YellowText text-[1.75rem] tablet:text-4xl xl:text-[2.5rem]">
+              {productData["Product Name"] + " " + productData["Product Code"]}
+            </h1>
+            <div className="flex flex-col items-start gap-2">
+              <ExpandableText
+                maxLength={130}
+                className="text-[--third] text-justify"
+              >
                 {productData["Short Description"]}
               </ExpandableText>
-              <div className="flex flex-col gap-4 max-w-48">
-                <BlackButton
-                  className="hidden xl:block max-w-48"
-                  path="/products"
-                >
-                  View other products
-                </BlackButton>
-                <BlackButton className="w-full" path="/projects">
-                  View Projects
-                </BlackButton>
+              <div className="flex text-gray-600 items-center gap-1">
+                {renderStars(4.5)} 4.2K
               </div>
             </div>
+          </div>
+
+          <div className="border rounded-lg p-4">
+            <h2 className="font-semibold mb-2">Product dimantions</h2>
+            {/* Add product dimensions content here */}
+          </div>
+
+          <div className="flex justify-between items-center">
+            <p className="text-3xl font-bold text-left">$ 255</p>
+            <div className="flex gap-2 items-center">
+              <p>Select Color:</p>
+              {colorOptions.map((color) => (
+                <button
+                  key={color.name}
+                  style={{ backgroundColor: color.code }}
+                  className={`w-6 h-6 rounded-full border border-gray-300 hover:bg-opacity-75 focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
+                    selectedColor === color.name ? "border-blue-500" : ""
+                  }`}
+                  onClick={() => setSelectedColor(color.name)}
+                />
+              ))}
+            </div>
+          </div>
+
+          <form
+            className="grid grid-cols-2 gap-4"
+            onSubmit={(e) => handleFormSubmit(e)}
+            action="/cart"
+          >
             <div>
-              <img
-                className="rounded-4xl cursor-pointer hidden xl:block"
-                onClick={handleRightClick}
-                src={imageData[1].img}
-                alt={imageData[1].alt}
-                title={imageData[1].alt}
+              <label className="block text-sm font-medium text-gray-600">
+                Quantity:
+              </label>
+              <input
+                type="number"
+                name="quantity"
+                className="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none"
+                required
               />
             </div>
-          </aside>
+            <div>
+              <label className="block text-sm font-medium text-gray-600">
+                Rubber:
+              </label>
+              <input
+                type="number"
+                name="rubber"
+                className="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none"
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-600">
+                Nut Bolt:
+              </label>
+              <input
+                type="number"
+                name="nutbolt"
+                className="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none"
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-600">
+                End Cap:
+              </label>
+              <input
+                type="number"
+                name="endcap"
+                className="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              className="flex-1 bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 text-center"
+            >
+              Add to cart
+            </button>
+
+            <button className="flex-1 bg-blue-100 text-blue-600 py-3 rounded-md hover:bg-blue-200">
+              Buy Now
+            </button>
+          </form>
         </section>
-      </main>
-      <NewProducts
-        productData={productData}
-        featureData={featureData}
-        imageData={imageData}
-      />
-    </>
+      </div>
+    </div>
   );
 };
+
+// // import React, { useState } from 'react';
+
+// const MemoProduct2: React.FC = () => {
+//   const location = useLocation();
+//   const params = useParams();
+
+//   const [productData, setProductData] = useState<ProductProps | null>(null);
+
+//   const featureData = useRef<FeatureData[]>([]);
+
+//   useEffect(() => {
+//     if (location.state) {
+//       setProductData(location.state as ProductProps);
+//     }
+//   }, [location.state]);
+
+//   const processData = useCallback(() => {
+//     if (productData) {
+//       const altTextArray = productData["Alternative text for other image"]
+//         .split(",")
+//         .map((text) => text.trim());
+
+//       const images = productData["Min 3 Extra images"]
+//         .split(",")
+//         .map((img, index) => ({ img: img.trim(), alt: altTextArray[index] }));
+
+//       images.unshift({
+//         img: productData["Main Image"],
+//         alt: productData["Alternative text"],
+//       });
+
+//       setImageData(images);
+
+//       featureData.current = productData["Features (Min 3)"]
+//         .split(",")
+//         .map((feature) => {
+//           const trimmedFeature = feature.trim() as keyof typeof iconsFeature;
+//           return {
+//             icon: iconsFeature[trimmedFeature],
+//             feature: trimmedFeature,
+//           };
+//         });
+//     }
+//   }, [productData]);
+
+//   useEffect(() => {
+//     fetch(
+//       "https://script.google.com/macros/s/AKfycbwE-1Stl8t8_XrB5MuRPQ1hROKpo3mYynDPnI1vNX6U5vakITchmA6nfmzQt8sYpqFIjw/exec"
+//     )
+//       .then((response) => {
+//         if (!response.ok) {
+//           throw new Error("Network response was not ok");
+//         }
+//         return response.json();
+//       })
+//       .then((data) => {
+//         // Find the blog that matches the readableTitle
+//         const foundProduct = data.find(
+//           (product: ProductProps) =>
+//             product["Random Code to link the product"] === params.productID
+//         );
+//         if (foundProduct) {
+//           setProductData(foundProduct);
+//         }
+//       })
+//       .catch((error) => {
+//         console.error("Error fetching blog data:", error);
+//       });
+//   }, [params.productID]);
+
+//   useEffect(() => {
+//     processData();
+//   }, [processData]);
+
+//   return (
+
+//   );
+// };
 
 export const Product = React.memo(MemoProduct);

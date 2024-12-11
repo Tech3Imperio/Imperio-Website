@@ -29,6 +29,7 @@ import DealerDeclineUi from "./pages/DealerOnlineStore/DealerReject/DealerDeclin
 import DealerAcceptUi from "./pages/DealerOnlineStore/DealerAccept/DealerAcceptUi";
 import DealerLogout from "./pages/DealerOnlineStore/DealerLogout/DealerLogout";
 import DealerMessagePage from "./pages/DealerOnlineStore/DealerRegistration/DealerMessagePage";
+import CartProdcut from "./pages/CartDetails/CartProduct";
 // import ForgotPassword from "./pages/DealerOnlineStore/ForgotPassword/ForgotPassword";
 
 export const routes = createBrowserRouter([
@@ -50,6 +51,7 @@ export const routes = createBrowserRouter([
       { path: "career", element: <Career /> },
       { path: "/career/:title", element: <JobDetailsPage /> },
       { path: "products", element: <Products /> },
+      { path: "cart", element: <CartProdcut /> },
       {
         path: "products/:productID",
         element: <Product />,
