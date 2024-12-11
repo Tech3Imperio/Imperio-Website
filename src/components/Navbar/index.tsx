@@ -6,7 +6,7 @@ import { QuoteButton, DealershipButton } from "../Quote/Button/index";
 import { SocialLinks } from "../SocialLinks/index";
 import styles from "./Navbar.module.css";
 // import { SlHandbag } from "react-icons/sl";
-import { FaUserCircle } from "react-icons/fa";
+import { PiUserCircle } from "react-icons/pi";
 // Logo component with a link to home
 const Logo: React.FC = () => (
   <Link to="/" className="navbar-brand" aria-label="PowerHouse Home">
@@ -63,19 +63,19 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, handleClick }) => (
       <div className="flex flex-col pt-4 gap-5 text-lg font-light">
         {/* Render mobile menu items */}
         <MenuItems handleClick={handleClick} type="mobile" />
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col justi">
           {/* Social links component */}
-          <SocialLinks className="flex justify-center gap-4 text-xs text-white" />
-          <div className=" flex flex-col gap-8">
-            {/* Dealership button component */}
+          <SocialLinks className="flex py-4 gap-4 text-xs text-white" />
+          <div className=" flex items-center gap-2">
             <div onClick={handleClick}>
               <DealershipButton />
             </div>
-            {/* Quote button component */}
             <div onClick={handleClick}>
               <QuoteButton />
             </div>
-            <FaUserCircle />
+            <Link to="/dealer-login">
+              <PiUserCircle size={50} />
+            </Link>
           </div>
         </div>
       </div>
@@ -173,12 +173,12 @@ export const Navbar: React.FC = () => {
             <div className=" flex gap-6 justify-center items-center">
               <DealershipButton />
               <QuoteButton />
-              <Link
-                to="/dealer-login"
-                className=" flex justify-center flex-col pt-2"
-              >
-                <FaUserCircle className="h-auto w-6 ml-[6px] bg-white rounded-full flex items-center justify-center" />{" "}
-                <span className="text-white">Login</span>{" "}
+              <Link to="/dealer-login" className=" flex justify-center pt-2">
+                {/* <span className="text-white">Login</span>{" "} */}
+                <PiUserCircle
+                  size={50}
+                  className="text-white rounded-full flex items-center justify-center hover:bg-[--black] hover:text-[--secound] transition-700 cursor-pointer"
+                />{" "}
               </Link>
               {/* {isDealerLogedIn ? (
                 <button className="rounded-full h-10 w-10 p-2 text-black bg-white flex justify-center items-center">
