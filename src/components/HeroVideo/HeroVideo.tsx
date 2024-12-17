@@ -65,7 +65,7 @@ const HeroVideo: React.FC<VideoProps> = ({ posterSrc, altText }) => {
         className="absolute -top-[24px] left-0 w-full h-full object-cover"
         poster={posterSrc} // Image to show before the video plays
       >
-        <source src={isDesktop ? desktopvideo : phonevideo} type="video/mp4" />
+        <source src={isDesktop ? phonevideo : desktopvideo} type="video/mp4" />
       </video>
 
       {/* Black gradient overlay */}
