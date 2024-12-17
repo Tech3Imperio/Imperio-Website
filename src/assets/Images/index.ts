@@ -13,3 +13,4 @@ export * from "./Handrails";
 export * from "./Balcony";
 export * from "./career";
 export * from "./dealerstore";
+export * from "./PVBSGP/index";

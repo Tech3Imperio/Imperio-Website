@@ -140,7 +140,7 @@
 //   );
 // };
 import React, { useEffect, useState } from "react";
-import { heroImage, descImage } from "../../assets/Images";
+import { descImage } from "../../assets/Images";
 //Festival Time only on This belo code
 // import { descImage, heroImage } from "../../assets/Images";
 // import { descImage } from "../../assets/Images";
@@ -148,9 +148,9 @@ import { Helmet } from "react-helmet";
 import favicondark from "../../assets/Images/logo/favicondark.ico";
 
 import {
-  Hero,
+  // Hero,
   Description,
-  GreyButton,
+  // GreyButton,
   TextComponent,
   BlackButton,
   Quote,
@@ -163,6 +163,8 @@ import {
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { scrollData, testimonialsData } from "../../assets/Data";
+import HeroVideo from "../../components/HeroVideo/HeroVideo";
+
 // import Metadata from "../../components/Metatag/Metatag";
 
 //import for the Festival Component
@@ -174,6 +176,18 @@ const text =
 export const Home: React.FC = () => {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1024);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 1000);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  // Resize handling to adjust for screen size (desktop or mobile)
   useEffect(() => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth > 1000);
@@ -219,7 +233,7 @@ export const Home: React.FC = () => {
         <link rel="icon" href={favicondark} />
       </Helmet>
       <main>
-        <Hero
+        {/* <Hero
           img={heroImage}
           altText="hero for home"
           header={
@@ -235,8 +249,9 @@ export const Home: React.FC = () => {
           <div className="p-8 pl-0 w-max text-xs">
             <GreyButton path="/aboutus">KNOW MORE</GreyButton>
           </div>
-        </Hero>
+        </Hero> */}
 
+        <HeroVideo posterSrc={descImage} altText="" />
         {/* Use this Component in Festive Season only */}
         {/* <Festival /> */}
 

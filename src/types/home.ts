@@ -8,6 +8,7 @@ export type HeroProps = {
   height?: boolean;
   curve?: boolean;
   children?: ReactNode;
+  VideoProps: string;
 };
 export type ScrollData = {
   id: number;
