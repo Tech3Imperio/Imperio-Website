@@ -231,7 +231,7 @@ const MemoProducts: React.FC = () => {
             "Imperio’s glass railing systems in india offer durable balcony glass railings, staircase glass railings, and aluminum glass railings, merging modern aesthetics with lasting safety. We offer glass railings all over India, with a strong presence in states like Maharashtra, Goa, Gujarat, etc and cities including Mumbai, Pune, Alibaug, Bangluru, etc"
           }
           keywords={
-            "glass railings, aluminum railings, frameless glass, durable railings, modern railing systems, corrosion-resistant railings, UV-resistant glass railings, residential glass railings, commercial aluminum railings, stylish railing solutions, high-quality glass railings, elegant railing designs, safety and functionality, innovative railing systems, custom glass railings, architectural railing solutions"
+            "glass railing, aluminum railing, frameless glass, durable railings, modern railing systems, balcony glass railing, modern glass railing design, stariracse glass railing, mdern balcony glass designs, corrosion-resistant railings, UV-resistant glass railing, sgp and pvb glass, residential glass railing, commercial aluminum railings, stylish railing solutions, high-quality glass railings, elegant railing designs, safety and functionality, innovative railing systems, custom glass railings, architectural railing solutions"
           }
           ogImage={productImage}
           ogUrl={"https://imperiorailing.com/products"}
@@ -384,13 +384,13 @@ const MemoProducts: React.FC = () => {
               description={
                 <>
                   "Discover our premium{" "}
-                  <strong>aluminium glass railing bases</strong> in India, made
-                  of durable aluminum and customizable in matte or glossy
-                  finishes to match any style. With quick service and fast
-                  quotations, we proudly deliver nation wide, including{" "}
-                  <strong>Mumbai</strong>, <strong>Pune</strong>,{" "}
-                  <strong>Hyderabad</strong>, and <strong>Kolkata</strong>.
-                  Contact us for a free quote today!"
+                  <strong>aluminium glass railing bases</strong> and{" "}
+                  <strong>balcony glass railings</strong> in India, made from
+                  durable aluminum and customizable in matte or glossy finishes
+                  to match any style. With quick service and fast quotations, we
+                  proudly deliver nationwide, including <strong>Mumbai</strong>,{" "}
+                  <strong>Pune</strong>, <strong>Hyderabad</strong>, and{" "}
+                  <strong>Kolkata</strong>. Contact us for a free quote today!"
                 </>
               }
             />

@@ -206,12 +206,12 @@ export const Home: React.FC = () => {
 
         <meta
           name="description"
-          content="Explore premium glass railings, aluminium and balcony designs in Mumbai, Maharashtra, and across India. Durable, stylish glass railings for balconies, stairs, and more. Contact the best dealers and manufacturers of aluminium glass railings!"
+          content="Explore premium glass railing, aluminium, modern balcony glass railing and balcony designs in Mumbai, Maharashtra, and across India. Durable, stylish glass railings for balcony, stairs, PVB & SGP glass and more. Contact the best dealers and manufacturers of aluminium glass railings!"
         />
 
         <meta
           name="keywords"
-          content="glass railings India, aluminium glass railing Mumbai, balcony glass design, custom glass railing installation, modern glass handrails, premium toughened glass, glass railing systems India, stylish balcony railings, aluminium glass railing manufacturer in mumbai"
+          content="glass railings India, modern balcony glass railing, aluminium glass railing Mumbai, balcony glass design, custom glass railing installation, modern glass handrails, premium toughened glass, glass railing systems India, stylish balcony railings, aluminium glass railing manufacturer in mumbai"
         />
 
         <meta name="robots" content="index, follow" />
@@ -251,7 +251,7 @@ export const Home: React.FC = () => {
           </div>
         </Hero> */}
 
-        <HeroVideo posterSrc={descImage} altText="" />
+        <HeroVideo altText="" />
         {/* Use this Component in Festive Season only */}
         {/* <Festival /> */}
 
@@ -269,14 +269,17 @@ export const Home: React.FC = () => {
               <strong>glass railing systems</strong>, including{" "}
               <strong>aluminium glass railings</strong>,{" "}
               <strong>custom glass railings</strong>,{" "}
-              <strong>balcony glass railings</strong>, and{" "}
-              <strong>staircase glass railings</strong> that enhance any space.
-              Based in <strong>Mumbai, Maharashtra, India</strong>, our focus on
-              innovation and quality ensures that our team delivers top-notch
-              solutions for both residential and commercial projects. As trusted{" "}
-              <strong>dealers of aluminium glass railings</strong> in India, we
-              are committed to providing high-quality, stylish, and functional
-              glass railing systems that meet the needs of every client.
+              <strong>
+                modern balcony glass railing, balcony glass design
+              </strong>
+              , and <strong>staircase glass railing</strong> that enhance any
+              space. Based in <strong>Mumbai, Maharashtra, India</strong>, our
+              focus on innovation and quality ensures that our team delivers
+              top-notch solutions for both residential and commercial projects.
+              As trusted <strong>dealers of aluminium glass railings</strong> in
+              India, we are committed to providing high-quality, stylish, and
+              functional glass railing systems that meet the needs of every
+              client.
             </p>
             <div className="pt-8 text-[9px] phone:text-xs">
               <BlackButton path="/aboutus">KNOW MORE</BlackButton>
