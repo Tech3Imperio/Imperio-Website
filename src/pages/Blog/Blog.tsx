@@ -46,7 +46,7 @@ export const Blog = () => {
           "Discover Blogs for stylish and durable glass railings in India. Get expert tips and a free quote! Know more about Imperio & Gain the knwoledge for glass railing systems"
         }
         keywords={
-          "pvb glass, sgp glass, laminated glass, PVB vs SGP differance, glass railings, balcony glass railing, Balcony Railings, Staircase glass Railings, commercial buildings, seamless glass railing, aluminum glass railings, Laminated Glass, modern glass railings, frameless glass railings, Aesthetic glass railing, Classic Look, Minimalist Style, safety glass railings, high durable glass railings, Weather Resistant, Low Maintenance, Customizable Options"
+          "pvb glass, sgp glass, laminated glass, pvb vs sgp differance,pvb vs sgp glass, glass railings, balcony glass railing, Balcony Railings, Staircase glass Railings, commercial buildings, seamless glass railing, aluminum glass railings, Laminated Glass, modern glass railings, frameless glass railings, Aesthetic glass railing, Classic Look, Minimalist Style, safety glass railings, high durable glass railings, Weather Resistant, Low Maintenance, Customizable Options"
         }
         ogImage={blogHero}
         ogUrl={"https://www.imperiorailing.com/blog"}
@@ -224,7 +224,7 @@ export const Blog = () => {
         </div>
         <div>
           <h3 className=" text-3xl text-[--third] pb-2">
-            <Link to="SGP&PVB-Difference">
+            <Link to="sgp-pvb/glass/difference">
               {" "}
               <b className=" flex gap-2">
                 PVB vs SGP Glass{" "}
@@ -235,7 +235,7 @@ export const Blog = () => {
             </Link>
           </h3>
           <p className="text-justify italic text-[--grey]">
-            Comparing SGP vs PVB glass for railings? We offer high-performance
+            Comparing PVB vs SGP glass for railings? We offer high-performance
             laminated glass solutions, including SGP's superior clarity and
             strength for glass railings. Choose PVB or SGP for durable, safe,
             and aesthetic balcony and staircase railings in Mumbai, Delhi,

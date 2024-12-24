@@ -474,9 +474,8 @@ import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 import { ProductProps } from "../../../types";
 import { BlackButton } from "../../../components";
 import { iconsFeature } from "../../../assets/Data";
+
 import "./Product.css";
-// import NewProducts from "../NewProducts";
-// import Metadata from "../../../components/Metatag/Metatag";
 
 type ImageData = {
   img: string;
@@ -703,6 +702,7 @@ const MemoProduct: React.FC = () => {
     newCartData["description"] = `${location.state["Short Description"]}`;
     newCartData["img"] = `${location.state["Main Image"]}`;
     newCartData["price"] = `${location.state["Price"]}`;
+    newCartData["blocks"] = `${location.state["Blocks"]}`;
 
     const cartItems = localStorage.getItem(
       `${decodedToken?.username}_CartItems`
@@ -918,6 +918,7 @@ const MemoProduct: React.FC = () => {
 
           <div className="flex justify-between items-center">
             <p className="text-3xl font-bold text-left">$ 255</p>
+
             <div className="flex gap-2 items-center">
               <p>Select Color:</p>
               {colorOptions.map((color) => (
@@ -984,14 +985,14 @@ const MemoProduct: React.FC = () => {
             </div>
             <button
               type="submit"
-              className="flex-1 bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 text-center"
+              className="flex-1  bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 text-center"
             >
               Add to cart
             </button>
 
-            <button className="flex-1 bg-blue-100 text-blue-600 py-3 rounded-md hover:bg-blue-200">
+            {/* <button className="flex-1 bg-blue-100 text-blue-600 py-3 rounded-md hover:bg-blue-200">
               Buy Now
-            </button>
+            </button> */}
           </form>
         </section>
       </div>

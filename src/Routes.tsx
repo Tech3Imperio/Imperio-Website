@@ -31,6 +31,8 @@ import DealerLogout from "./pages/DealerOnlineStore/DealerLogout/DealerLogout";
 import DealerMessagePage from "./pages/DealerOnlineStore/DealerRegistration/DealerMessagePage";
 import CartProdcut from "./pages/CartDetails/CartProduct";
 import PVBSGP from "./pages/Blog/PVBSGP/PVBSGP";
+import BillingAddress from "./pages/BillingAddress/BillingAddress";
+
 // import ForgotPassword from "./pages/DealerOnlineStore/ForgotPassword/ForgotPassword";
 
 export const routes = createBrowserRouter([
@@ -45,7 +47,7 @@ export const routes = createBrowserRouter([
       { path: "blog/modernstaircase", element: <ModernStaircase /> },
       { path: "blog/modernhandrail", element: <ModernHandrail /> },
       { path: "blog/modernbalcony", element: <ModernBalcony /> },
-      { path: "blog/SGP&PVB-Difference", element: <PVBSGP /> },
+      { path: "blog/sgp-pvb/glass/difference", element: <PVBSGP /> },
       { path: "blog/:blogId", element: <BlogDetails /> },
       { path: "contactus", element: <Contact /> },
       { path: "aboutus", element: <About /> },
@@ -77,7 +79,10 @@ export const routes = createBrowserRouter([
       { path: "dealer-logout", element: <DealerLogout /> },
       { path: "projects", element: <Projects /> },
       { path: "quote", element: <GetQuote /> },
+      { path: "billing-address", element: <BillingAddress /> },
+
       { path: "quote/thanks", element: <ThankYou /> },
+
       {
         path: "PrivacyPolicy",
         element: <PrivacyPolicy />,

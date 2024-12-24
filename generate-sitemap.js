@@ -22,7 +22,11 @@ const urls = [
   { url: "/blog/modernstaircase", changefreq: "weekly", priority: 0.8 },
   { url: "/blog/modernhandrail", changefreq: "weekly", priority: 0.8 },
   { url: "/blog/modernbalcony", changefreq: "weekly", priority: 0.8 },
-  { url: "/blog/SGP&PVB-Difference", changefreq: "weekly", priority: 0.8 },
+  {
+    url: "/blog/sgp-pvb/glass/difference",
+    changefreq: "weekly",
+    priority: 0.8,
+  },
   { url: "/quote", changefreq: "yearly", priority: 0.8 },
   { url: "/contactus", changefreq: "yearly", priority: 0.6 },
   { url: "/privacypolicy", changefreq: "yearly", priority: 0.6 },

@@ -15,6 +15,7 @@ interface JobDetailsProps {
     responsibilities: string[];
     skills: string[];
     whocanapply: string[];
+    applyLink: string; // Add this property to store the unique application link
   };
 }
 
@@ -30,9 +31,9 @@ export function JobDetails({ job }: JobDetailsProps) {
       />
       <section className="max-w-7xl mx-auto mt-7 md:mt-0 p-4">
         <div className="bg-gray-100 p-6 rounded-lg shadow-md">
-          <div className="flex md:-mb-14 justify-end  ">
+          <div className="flex md:-mb-14 justify-end">
             <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdrrSxeynFblPDGHE2oGyxvZepg8h4xu-c9bOklF-XcBDyzjg/viewform"
+              href={job.applyLink} // Use the unique apply link for each job
               target="_blank"
               rel="noopener noreferrer"
               className="md:w-max py-2 px-3 md:py-3 md:px-5 border-2 rounded-3xl md:rounded-4xl text-white bg-[#000000] bg-opacity-60 transition-700 hover:border-[--secound] hover:text-[--black] hover:bg-[--secound] hover:bg-opacity-100"
@@ -52,17 +53,6 @@ export function JobDetails({ job }: JobDetailsProps) {
               {job.type}
             </span>
           </div>
-
-          {/* <div className=" flex gap-2">
-            <h3>Duration : </h3>
-            <span>{job.others[0].Duration}</span>
-            <h3>Stipend : </h3>
-            <span>{job.others[0].Stipend}</span>
-            <h3>Expriance : </h3>
-            <span>{job.others[0].Expriance}</span>
-            <h3>join : </h3>
-            <span>{job.others[0].join}</span>
-          </div> */}
 
           <div className="flex flex-col mb-4 py-2 gap-4">
             <ul>
@@ -98,11 +88,11 @@ export function JobDetails({ job }: JobDetailsProps) {
               </li>
             ))}
           </ul>
-          <div className=" mb-4">
+          <div className="mb-4">
             <h3 className="text-xl justify-start font-semibold mb-2 text-[#03237b]">
               Skills Required:
             </h3>
-            <ul className=" pl-5 mb-6  lg:flex gap-8">
+            <ul className="pl-5 mb-6 lg:flex gap-8">
               {job.skills.map((skills, index) => (
                 <li key={index} className="text-gray-700 mb-2">
                   {`${index + 1}.  `}
@@ -114,7 +104,7 @@ export function JobDetails({ job }: JobDetailsProps) {
           <h3 className="text-xl font-semibold mb-3 text-[#03237b]">
             Only those candidates can apply who:
           </h3>
-          <ul className=" pl-5 mb-7">
+          <ul className="pl-5 mb-7">
             {job.whocanapply.map((whocanapply, index) => (
               <li key={index} className="text-gray-700 mb-2">
                 {index + 1}. {whocanapply}
@@ -123,7 +113,7 @@ export function JobDetails({ job }: JobDetailsProps) {
           </ul>
 
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSdrrSxeynFblPDGHE2oGyxvZepg8h4xu-c9bOklF-XcBDyzjg/viewform"
+            href={job.applyLink} // Use the unique apply link for each job
             target="_blank"
             rel="noopener noreferrer"
             className="w-max py-3 px-5 border-2 rounded-4xl text-white bg-[#000000] bg-opacity-60 transition-700 hover:border-[--secound] hover:text-[--black] hover:bg-[--secound] hover:bg-opacity-100"

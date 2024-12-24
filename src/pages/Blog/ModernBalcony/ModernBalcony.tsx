@@ -63,13 +63,13 @@ export default function ModernBalcony() {
     <>
       <Metadata
         title={
-          "Balcony Glass Railing in India | Aluminium Balcony Glass Railing | Balcony Glass Railing"
+          "Balcony Glass Railing | Aluminium Balcony Glass Railing | Balcony Glass Railing in Mumbai"
         }
         description={
           "Explore high-quality aluminum balcony glass railings, frameless glass balcony systems, and spigot glass railing solutions for residential and commercial projects. Serving Mumbai, Delhi, Bangalore, Kolkata and all of India, we offer custom glass designs and railing, modern balcony glass railings, and professional glass railing installations. Enhance your space with durable glass balcony systems, tailored to your needs for both outdoor and indoor areas. Reliable supply and installation by trusted dealers in mumbai, maharashtra and all over india."
         }
         keywords={
-          "glass balcony railing, aluminum glass railing, glass stair railing, glass supplier Mumbai, frameless glass railing, balcony glass railing, stainless steel glass railing, spigot glass railing, modern balcony design, tempered glass stair railing, glass handrail, glass railing indoor, glass balcony cost, glass supplier India, glass railing near me"
+          "balcony glass railing , aluminum glass railing, glass stair railing, glass supplier Mumbai, frameless glass railing, balcony glass railing, stainless steel glass railing, spigot glass railing, modern balcony design, tempered glass stair railing, glass handrail, glass railing indoor, glass balcony cost, glass supplier India, glass railing near me"
         }
         ogImage={customBalcony}
         ogUrl={"https://www.imperiorailing.com/blog/modernhandrail"}

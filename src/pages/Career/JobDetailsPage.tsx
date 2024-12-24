@@ -16,6 +16,7 @@ interface Job {
   responsibilities: string[];
   skills: string[];
   whocanapply: string[];
+  applyLink: string; // Add this property to store the unique application link
 }
 
 export default function JobDetailsPage() {
@@ -43,9 +44,9 @@ export default function JobDetailsPage() {
           "Collaborate with our design team to create engaging animations for marketing materials",
           "Assist in video editing to produce high-quality videos showcasing our products",
           "Use Adobe After Effects to create dynamic motion graphics for various projects",
-          " Work closely with our marketing team to develop animated content for social media platforms",
-          " Utilize Adobe Illustrator to design graphics and assets for animations",
-          " Help maintain and organize our animation and video files for easy accessibility",
+          "Work closely with our marketing team to develop animated content for social media platforms",
+          "Utilize Adobe Illustrator to design graphics and assets for animations",
+          "Help maintain and organize our animation and video files for easy accessibility",
           "Stay up-to-date on industry trends and techniques to continuously improve your skills.",
         ],
         skills: [
@@ -60,8 +61,9 @@ export default function JobDetailsPage() {
           "are available for duration of 3 months",
           "have relevant skills and interests",
         ],
+        applyLink:
+          "https://docs.google.com/forms/d/e/1FAIpQLSdrrSxeynFblPDGHE2oGyxvZepg8h4xu-c9bOklF-XcBDyzjg/viewform", // Unique apply link
       },
-
       {
         title: "Field Sales Executive",
         subtitle:
@@ -99,6 +101,8 @@ export default function JobDetailsPage() {
           "are from or open to relocate to Mumbai and neighboring cities",
           "have relevant skills and interests",
         ],
+        applyLink:
+          "https://docs.google.com/forms/d/e/1FAIpQLSdrrSxeynFblPDGHE2oGyxvZepg8h4xu-c9bOklF-XcBDyzjg/viewform", // Unique apply link
       },
 
       {
@@ -129,6 +133,8 @@ export default function JobDetailsPage() {
           "are from or open to relocate to Mumbai and neighboring cities",
           "have relevant skills and interests",
         ],
+        applyLink:
+          "https://docs.google.com/forms/d/e/1FAIpQLSdrrSxeynFblPDGHE2oGyxvZepg8h4xu-c9bOklF-XcBDyzjg/viewform", // Unique apply link
       },
 
       {
@@ -152,6 +158,7 @@ export default function JobDetailsPage() {
         ],
         skills: [],
         whocanapply: [],
+        applyLink: "https://docs.google.com", // Unique apply link
       },
     ];
 
