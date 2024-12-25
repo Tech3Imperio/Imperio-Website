@@ -50,4 +50,5 @@ export type ProductProps = {
   "Product Finish": string;
   "Random Code to link the product": string;
   Price: string; // Add this line
+  Types: string;
 };
