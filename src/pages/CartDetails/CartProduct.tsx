@@ -566,6 +566,7 @@ type ProductCardProps = {
   endcap: number;
   nutbolt: number;
   img: string;
+  blocks: { type: string; quantity: number }[];
   onRemove: () => void;
 };
 
@@ -577,6 +578,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   endcap,
   nutbolt,
   img,
+  color,
   onRemove,
 }) => {
   return (
@@ -605,7 +607,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 {productname}
               </h3>
               <p className="text-[#03237b] font-semibold text-2xl pl-2">
-                ₹<span className="pl-1 text-2xl">{price}</span>
+                ₹
+                <span className="pl-1 text-2xl">
+                  {price} {color}
+                </span>
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">

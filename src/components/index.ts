@@ -18,4 +18,3 @@ export * from "./PVBSGP/LoadCapability";
 export * from "./PVBSGP/PostBreakageStrength";
 export * from "./PVBSGP/SafetyFeatures";
 export * from "./HeroVideo/HeroVideo";
-export * from "./Blockdropdown/Blackdropdown";
