@@ -234,9 +234,7 @@ export default function PVBSGP() {
   return (
     <>
       <Metadata
-        title={
-          "Glass Railing: PVB vs SGP Glass for Glass Railing | Difference Between PVB and SGP Laminated Glass"
-        }
+        title={"PVB vs SGP Laminated Glass for Railing | Glass Railing Types"}
         description={
           "Compare PVB and SGP glass interlayers for glass railings, balcony glass railings, and staircase glass railings. Discover which glass is best for durability, clarity, and safety in Mumbai, Bangalore, Karnataka, Uttar Pradesh, and India. Learn more about the advantages of PVB and SGP laminated glass for modern glass railing designs."
         }

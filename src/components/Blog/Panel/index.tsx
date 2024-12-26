@@ -186,7 +186,7 @@ export const BlogPanel: React.FC<BlogPanelProps> = ({
                     `/blog/${selectedBlog.id
                       ?.toLowerCase()
                       .replace(/\s+/g, "-")
-                      .replace(/[^\w-]+/g, "")
+                      .replace(/[^\w-]+/g, "/")
                       .replace(/--+/g, "-")
                       .trim()}`,
                     {

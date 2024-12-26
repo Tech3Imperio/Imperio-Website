@@ -63,7 +63,7 @@ export default function ModernTerrace() {
   return (
     <>
       <Metadata
-        title={"Terrace Glass Railing | balcony glass railing"}
+        title={"Terrace Glass Railing | Modern Terrace Glass Railing Designs"}
         description={
           "Explore durable terrace glass railing systems in Mumbai, Pune, and Nagpur, Maharashtra. Our premium glass railing solutions offer safety, aesthetics, and low maintenance, enhancing your outdoor space with style and functionality."
         }

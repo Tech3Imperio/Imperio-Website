@@ -41,7 +41,7 @@ export const Blog = () => {
   return (
     <>
       <Metadata
-        title={"Glass Railing Blogs | Imperio Glass Railing Blogs"}
+        title={"Glass Railing Blogs | Balcony Glass Railing"}
         description={
           "Discover Blogs for stylish and durable glass railings in India. Get expert tips and a free quote! Know more about Imperio & Gain the knwoledge for glass railing systems"
         }
@@ -137,7 +137,7 @@ export const Blog = () => {
       <div className="max-w-7xl grid md:grid-cols-2 mx-auto mt-10 md:mt-24 gap-10 xl:gap-[3rem] p-6 pb-14">
         <div>
           <h3 className=" text-3xl text-[--third] pb-2">
-            <Link to="modernterrace">
+            <Link to="modern/terrace/glass/railing">
               {" "}
               <b className=" flex gap-2">
                 Terrace Glass Railing{" "}
@@ -159,7 +159,7 @@ export const Blog = () => {
         </div>
         <div>
           <h3 className=" text-3xl text-[--third] pb-2">
-            <Link to="modernstaircase">
+            <Link to="modern/staircase">
               {" "}
               <b className=" flex gap-2">
                 Staircase Glass Railing{" "}
@@ -182,7 +182,7 @@ export const Blog = () => {
         </div>
         <div>
           <h3 className=" text-3xl text-[--third]">
-            <Link to="modernhandrail">
+            <Link to="modern/handrail">
               {" "}
               <b className=" flex gap-2 pb-2">
                 Aluminium Handrail Glass Railing{" "}
@@ -203,7 +203,7 @@ export const Blog = () => {
         </div>
         <div>
           <h3 className=" text-3xl text-[--third] pb-2">
-            <Link to="modernbalcony">
+            <Link to="modern/balcony">
               {" "}
               <b className=" flex gap-2">
                 Balcony Glass Railing{" "}
@@ -214,17 +214,18 @@ export const Blog = () => {
             </Link>
           </h3>
           <p className="text-justify italic text-[--grey]">
-            Looking for high-quality Aluminium Handrails and Glass Railings in
-            Mumbai, Delhi, Bangalore, and Chennai? We specialize in LED
-            handrails, sleek handrails, and modern handrail ideas, with custom
-            finishes including wooden finishes for your balcony handrails. As a
-            leading stair handrail supplier and manufacturer, we provide durable
-            and stylish railing solutions for both indoor and outdoor spaces.
+            Looking for high-quality Aluminium Handrails and Balcony Glass
+            Railing in Mumbai, Delhi, Bangalore, and Chennai? We specialize in
+            LED handrails, sleek handrails, and modern handrail ideas, with
+            custom finishes including wooden finishes for your balcony
+            handrails. As a leading stair handrail supplier and manufacturer, we
+            provide durable and stylish railing solutions for both indoor and
+            outdoor spaces.
           </p>
         </div>
         <div>
           <h3 className=" text-3xl text-[--third] pb-2">
-            <Link to="sgp-pvb/glass/difference">
+            <Link to="sgp/pvb/glass/difference">
               {" "}
               <b className=" flex gap-2">
                 PVB vs SGP Glass{" "}

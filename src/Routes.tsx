@@ -32,6 +32,7 @@ import DealerMessagePage from "./pages/DealerOnlineStore/DealerRegistration/Deal
 import CartProdcut from "./pages/CartDetails/CartProduct";
 import PVBSGP from "./pages/Blog/PVBSGP/PVBSGP";
 import BillingAddress from "./pages/BillingAddress/BillingAddress";
+import InstagramForm from "./pages/InstagramForm/InstagramForm";
 
 // import ForgotPassword from "./pages/DealerOnlineStore/ForgotPassword/ForgotPassword";
 
@@ -43,11 +44,11 @@ export const routes = createBrowserRouter([
       { path: "", element: <Home /> },
       { path: "home", element: <Navigate to="/" replace={true} /> },
       { path: "blog", element: <Blog /> },
-      { path: "blog/modernterrace", element: <ModernTerrace /> },
-      { path: "blog/modernstaircase", element: <ModernStaircase /> },
-      { path: "blog/modernhandrail", element: <ModernHandrail /> },
-      { path: "blog/modernbalcony", element: <ModernBalcony /> },
-      { path: "blog/sgp-pvb/glass/difference", element: <PVBSGP /> },
+      { path: "blog/modern/terrace/glass/railing", element: <ModernTerrace /> },
+      { path: "blog/modern/staircase", element: <ModernStaircase /> },
+      { path: "blog/modern/handrail", element: <ModernHandrail /> },
+      { path: "blog/modern/balcony", element: <ModernBalcony /> },
+      { path: "blog/sgp/pvb/glass/difference", element: <PVBSGP /> },
       { path: "blog/:blogId", element: <BlogDetails /> },
       { path: "contactus", element: <Contact /> },
       { path: "aboutus", element: <About /> },
@@ -82,6 +83,7 @@ export const routes = createBrowserRouter([
       { path: "billing-address", element: <BillingAddress /> },
 
       { path: "quote/thanks", element: <ThankYou /> },
+      { path: "instagram/inquiry/form", element: <InstagramForm /> },
 
       {
         path: "PrivacyPolicy",

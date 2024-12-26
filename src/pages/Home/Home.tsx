@@ -63,10 +63,7 @@ export const Home: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>
-          Glass Railing Systems | balcony glass railing | Imperio Railing
-          Systems
-        </title>
+        <title>Glass Railing Systems | railing | Balcony glass railing</title>
 
         <meta
           name="description"
