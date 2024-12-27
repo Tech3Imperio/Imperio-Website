@@ -67,7 +67,7 @@ export const Home: React.FC = () => {
 
         <meta
           name="description"
-          content="Explore premium glass railing, aluminium, modern balcony glass railing and balcony designs in Mumbai, Maharashtra, and across India. Durable, stylish glass railings for balcony, stairs, PVB & SGP glass and more. Contact the best dealers and manufacturers of aluminium glass railings!"
+          content="Explore premium glass and aluminium railings, balcony designs, and more in Mumbai, Maharashtra, and across India. Durable and stylish glass railings!"
         />
 
         <meta
@@ -112,7 +112,7 @@ export const Home: React.FC = () => {
           </div>
         </Hero> */}
 
-        <Suspense>
+        <Suspense fallback={<span>Loading video</span>}>
           <HeroVideo altText="" />
         </Suspense>
 
@@ -149,17 +149,19 @@ export const Home: React.FC = () => {
               <BlackButton path="/aboutus">KNOW MORE</BlackButton>
             </div>
           </div>
-          <div className="w-full lg:w-3/5">
-            <img
-              src={descImage}
-              alt="Description Image"
-              loading="lazy"
-              className="w-full h-auto object-cover"
-              title="Description Image"
-              width="800"
-              height="400"
-            />
-          </div>
+          <Suspense fallback={<h1>Loading Image</h1>}>
+            <div className="w-full lg:w-3/5">
+              <img
+                src={descImage}
+                alt="Description Image"
+                loading="lazy"
+                className="w-full h-auto object-cover"
+                title="Description Image"
+                width="800"
+                height="400"
+              />
+            </div>
+          </Suspense>
         </section>
 
         <Description
@@ -194,54 +196,6 @@ export const Home: React.FC = () => {
               </p>
             </div>
           </div>
-          {/* {isDesktop ? (
-      <div className="flex justify-center px-10 phone:px-6 tablet:px-10 laptop:px-20 py-12 gap-32 items-center">
-        <VerticalCarousel direction className="max-w-[40%] h-fit">
-          {scrollData.map((item) => (
-            <img
-              src={item.img}
-              alt={item.alt}
-              key={item.img}
-              className="rounded-4xl max-w-[30rem] h-[30rem] object-cover"
-              title={item.alt}
-            />
-          ))}
-        </VerticalCarousel>
-        <VerticalCarousel className="w-[60%]">
-          {scrollData.map((item, index) => (
-            <div key={index}>
-              <div className="flex items-center gap-5 text-white">
-                <h1 className="text-8xl">{index + 1}.</h1>
-                <div className="flex flex-col gap-5">
-                  <h1 className="Raleway text-5xl">{item.header}</h1>
-                  <p className="text-2xl w-[38rem]">{item.subheader}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </VerticalCarousel>
-      </div>
-    ) : (
-      <HorizontalCarousel className="pb-12">
-        {scrollData.map((item, index) => (
-          <div className="space-y-8" key={index}>
-            <div>
-              <img
-                src={item.img}
-                alt={item.alt}
-                title={item.alt}
-                className="rounded-4xl w-[20rem] h-[22rem] object-cover"
-              />
-            </div>
-            <div className="flex flex-col text-white">
-              <h1 className="text-4xl">{index + 1}.</h1>
-              <h1 className="Raleway text-[1.75rem]">{item.header}</h1>
-              <p className="text-xs w-11/12 italic">{item.subheader}</p>
-            </div>
-          </div>
-        ))}
-      </HorizontalCarousel>
-    )} */}
 
           {isDesktop ? (
             <div className="flex justify-center px-10 phone:px-6 tablet:px-10 laptop:px-20 py-12 gap-32 items-center h-fit">

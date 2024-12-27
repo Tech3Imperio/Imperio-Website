@@ -51,6 +51,7 @@ const HeroVideo: React.FC<VideoProps> = ({ altText }) => {
         muted
         playsInline
         loop
+        preload="auto"
       />
 
       {/* Desktop Video */}
@@ -63,6 +64,7 @@ const HeroVideo: React.FC<VideoProps> = ({ altText }) => {
         muted
         playsInline
         loop
+        preload="auto"
       />
 
       {/* Black gradient overlay */}
