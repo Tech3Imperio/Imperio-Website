@@ -12,9 +12,28 @@ const urls = [
   { url: "/dealership", changefreq: "yearly", priority: 0.8 },
   { url: "/blog", changefreq: "weekly", priority: 0.8 },
   { url: "/career", changefreq: "weekly", priority: 0.8 },
-  { url: "/career/Animation%20Intern", changefreq: "weekly", priority: 0.8 },
   {
-    url: "/career/Field%20Sales%20Executive",
+    url: "/career/Business%20Development%20Executive",
+    changefreq: "weekly",
+    priority: 0.8,
+  },
+  {
+    url: "/career/Digital%20Marketing%20Executive",
+    changefreq: "weekly",
+    priority: 0.8,
+  },
+  {
+    url: "/career/Inside%20Sales%20Executive",
+    changefreq: "weekly",
+    priority: 0.8,
+  },
+  {
+    url: "/career/Business%20Development%20(Sales)",
+    changefreq: "weekly",
+    priority: 0.8,
+  },
+  {
+    url: "/career/Architecture",
     changefreq: "weekly",
     priority: 0.8,
   },
