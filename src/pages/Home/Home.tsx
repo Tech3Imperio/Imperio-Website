@@ -1,15 +1,15 @@
 import React, { useEffect, useState, Suspense } from "react";
-import { descImage } from "../../assets/Images";
+// import { heroImage } from "../../assets/Images";
 //Festival Time only on This belo code
-// import { descImage, heroImage } from "../../assets/Images";
+import { descImage, heroImage } from "../../assets/Images";
 // import { descImage } from "../../assets/Images";
 import { Helmet } from "react-helmet";
 import favicondark from "../../assets/Images/logo/favicondark.ico";
 
 import {
-  // Hero,
+  Hero,
   Description,
-  // GreyButton,
+  GreyButton,
   TextComponent,
   BlackButton,
   Quote,
@@ -22,9 +22,9 @@ import {
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { scrollData, testimonialsData } from "../../assets/Data";
-const HeroVideo = React.lazy(
-  () => import("../../components/HeroVideo/HeroVideo")
-);
+// const HeroVideo = React.lazy(
+//   () => import("../../components/HeroVideo/HeroVideo")
+// );
 
 // import Metadata from "../../components/Metatag/Metatag";
 
@@ -64,17 +64,14 @@ export const Home: React.FC = () => {
     <>
       <Helmet>
         <title>Glass Railing Systems | railing | Balcony glass railing</title>
-
         <meta
           name="description"
           content="Explore premium glass and aluminium railings, balcony designs, and more in Mumbai, Maharashtra, and across India. Durable and stylish glass railings!"
         />
-
         <meta
           name="keywords"
           content="glass railings India, modern balcony glass railing, aluminium glass railing Mumbai, balcony glass design, custom glass railing installation, modern glass handrails, premium toughened glass, glass railing systems India, stylish balcony railings, aluminium glass railing manufacturer in mumbai"
         />
-
         <meta name="robots" content="index, follow" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.imperiorailing.com/" />
@@ -94,7 +91,7 @@ export const Home: React.FC = () => {
         <link rel="icon" href={favicondark} />
       </Helmet>
       <main>
-        {/* <Hero
+        <Hero
           img={heroImage}
           altText="hero for home"
           header={
@@ -110,11 +107,11 @@ export const Home: React.FC = () => {
           <div className="p-8 pl-0 w-max text-xs">
             <GreyButton path="/aboutus">KNOW MORE</GreyButton>
           </div>
-        </Hero> */}
+        </Hero>
 
-        <Suspense fallback={<span>Loading video</span>}>
+        {/* <Suspense fallback={<span>Loading video</span>}>
           <HeroVideo altText="" />
-        </Suspense>
+        </Suspense> */}
 
         {/* Use this Component in Festive Season only */}
         {/* <Festival /> */}
@@ -207,6 +204,7 @@ export const Home: React.FC = () => {
                       alt={item.alt}
                       className="rounded-4xl object-cover"
                       title={item.alt}
+                      loading="lazy"
                     />
                   </div>
                 ))}
@@ -238,6 +236,7 @@ export const Home: React.FC = () => {
                       src={item.img}
                       alt={item.alt}
                       title={item.alt}
+                      loading="lazy"
                       className="rounded-4xl object-cover"
                     />
                   </div>
@@ -258,10 +257,6 @@ export const Home: React.FC = () => {
           {/* end */}
         </Description>
         <TextComponent texts={text} />
-        {/* <Description
-          mainHeader="Work Showcase."
-          text="Our portfolio showcases a wide range of glass railing projects, from luxury residential balconies to modern commercial spaces, highlighting our commitment to quality and precision. We specialize in modern <strong>glass railings</strong>, including <strong>frameless glass stair railings</strong>, <strong>glass stair panels</strong>, and <strong>balcony glass railings</strong>. Whether you're searching for <strong>glass railing near me</strong> in <strong>Mumbai</strong>, <strong>Delhi</strong>, or anywhere in <strong>India</strong>, or need high-quality <strong>glass handrails for decks</strong>, our <strong>custom glass railing systems</strong> are designed to enhance safety, style, and functionality. Contact us today to learn more about how we can transform your space."
-        /> */}
         <div className=" max-w-auto flex flex-col md:flex-row  pt-12 sm:pt-24 tablet:pt-20 xl:pt-28 px-9 sm:px-16 lg:px-28 2xl:px-44">
           <div className="flex flex-col md:w-[80%] gap-1 tablet:gap-6">
             <h3 className="text-[--third] flex flex-wrap md:max-w-2xl Raleway tracking-wider w-full text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] 2xl:text-5xl">

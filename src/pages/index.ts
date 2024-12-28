@@ -6,3 +6,6 @@ export * from "./Getquote/Getquote";
 export * from "./About/About";
 export * from "./Contact/Contact";
 export * from "./Blog/ModernTerrace/ModernTerrace";
+export * from "./Getquote/ThankYou/Thankyou";
+export * from "./PrivacyPolicy/PrivacyPolicy";
+export * from "./DealerShipForm/DealerShipForm";

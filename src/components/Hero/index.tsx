@@ -9,6 +9,7 @@ export const Hero: React.FC<HeroProps> = ({
   height = false, // Determines if the section should have full height
   curve = false, // Determines if the section should have a curve at the bottom
   children,
+
   // Any additional child elements
 }) => {
   // Condition for applying styles based on height and curve props

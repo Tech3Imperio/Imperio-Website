@@ -8,28 +8,6 @@ import Metadata from "../../components/Metatag/Metatag";
 import { motion } from "framer-motion";
 // import SalesChart from "./SalesChart";
 export const DealerShipForm: React.FC = () => {
-  // const checkpoints = [
-  //   {
-  //     day: "Dealers",
-  //     description:
-  //       "Partner with Imperio Railing Systems to elevate your dealership's offerings with premium, high-demand railingsolutions that drive growth and customer satisfaction.",
-  //   },
-  //   {
-  //     day: "Mini Dealers",
-  //     description:
-  //       " Expand your business opportunities as an Imperio Railing Systems mini-dealer offering top-quality solutions and dedicated assistance to enhance your market reach.",
-  //   },
-  //   {
-  //     day: "Exclusive Dealership",
-  //     description:
-  //       "Join the Imperio Railing Systems network as a Eexclusive Dealership and gain access to exclusive products and competitive margins that enhance your local market presence.",
-  //   },
-  //   {
-  //     day: "Exclusive Distributors",
-  //     description:
-  //       "As an exclusive dealer with Imperio Railing Systems, enjoy premium access to top-tier products, superior service, and priority support designed to elevate your business.",
-  //   },
-  // ];
   const checkpoints = [
     {
       day: "Authorized Dealers",

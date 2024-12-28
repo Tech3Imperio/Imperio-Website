@@ -9,10 +9,11 @@ import {
   GetQuote,
   About,
   Contact,
+  ThankYou,
+  PrivacyPolicy,
+  DealerShipForm,
 } from "./pages";
-import { ThankYou } from "./pages/Getquote/ThankYou/Thankyou";
-import { PrivacyPolicy } from "./pages/PrivacyPolicy/PrivacyPolicy";
-import { DealerShipForm } from "./pages/DealerShipForm/DealerShipForm";
+
 import BlogDetails from "./pages/BlogDetails/BlogDetails";
 import Projects from "./pages/Projects/Projects";
 import ModernTerrace from "./pages/Blog/ModernTerrace/ModernTerrace";
