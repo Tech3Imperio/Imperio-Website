@@ -1,35 +1,25 @@
-import React, {
-  useEffect,
-  useRef,
-  useState,
-  useCallback,
-  Suspense,
-} from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 
 import { MenuItemProps, MobileMenuProps, MenuItemsProps } from "../../types";
 import { QuoteButton, DealershipButton } from "../Quote/Button/index";
 import { SocialLinks } from "../SocialLinks/index";
 import styles from "./Navbar.module.css";
+import { whiteLogo } from "../../assets/Images";
 // import { SlHandbag } from "react-icons/sl";
 import { PiUserCircle } from "react-icons/pi";
-const Logocomponent = React.lazy(
-  () => import("../Logocomponent/Logocomponent")
-);
+
 // Logo component with a link to home
 const Logo: React.FC = () => (
-  <Suspense
-    fallback={
-      <div className="flex justify-center items-center w-full h-full">
-        {/* Tailwind Spinner */}
-        <div className="border border-gray-300 border-t-blue-400  w-4 h-4 rounded-full animate-spin"></div>
-      </div>
-    }
-  >
-    <Link to="/" className="navbar-brand" aria-label="PowerHouse Home">
-      <Logocomponent />
-    </Link>
-  </Suspense>
+  <Link to="/" className="navbar-brand" aria-label="PowerHouse Home">
+    <img
+      src={whiteLogo}
+      className="max-w-28 transition ease-out duration-500 hover:translate-y-1 hover:scale-125"
+      alt="Imperio Logo"
+      title="Imperio Logo"
+      loading="lazy"
+    />
+  </Link>
 );
 
 // Individual menu item component

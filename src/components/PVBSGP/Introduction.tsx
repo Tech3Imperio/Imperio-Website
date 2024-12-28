@@ -10,15 +10,15 @@ export default function Introduction() {
     >
       <h3 className="text-4xl text-[#03237b] mb-4">What are PVB and SGP?</h3>
       <p className="mb-4 text-justify text-[#7d7f81]">
-        <b>PVB (Polyvinyl Butyral)</b> and <b>SGP (SentryGlas Plus)</b> are two
-        top interlayers used in laminated glass production.{" "}
-        <b>PVB laminated glass</b> is popular for its excellent adhesion,{" "}
-        <b>UV-blocking windows</b>, and soundproof properties, making it ideal
-        for applications like <b>automotive windows</b> and{" "}
-        <b>architectural glass</b>. On the other hand,{" "}
-        <b>SGP laminated glass</b> offers superior strength, clarity, and impact
-        resistance, making it perfect for <b>high-rise building facades</b> and{" "}
-        <b>security glass</b>.
+        <b>PVB Laminated Glass (Polyvinyl Butyral)</b> and{" "}
+        <b>SGP Laminated Glass (SentryGlas Plus)</b> are two top interlayers
+        used in laminated glass production. <b>PVB laminated glass</b> is
+        popular for its excellent adhesion, <b>UV-blocking windows</b>, and
+        soundproof properties, making it ideal for applications like{" "}
+        <b>automotive windows</b> and <b>architectural glass</b>. On the other
+        hand, <b>SGP laminated glass</b> offers superior strength, clarity, and
+        impact resistance, making it perfect for{" "}
+        <b>high-rise building facades</b> and <b>security glass</b>.
       </p>
 
       <p className="text-justify text-[#7d7f81]">
