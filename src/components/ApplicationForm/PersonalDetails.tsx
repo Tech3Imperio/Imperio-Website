@@ -1,4 +1,3 @@
-import React from "react";
 import { FormData } from "./ApplicationForm";
 
 interface PersonalDetailsProps {

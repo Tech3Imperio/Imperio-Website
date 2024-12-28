@@ -195,7 +195,7 @@
 //   );
 // }
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useMultiStepForm } from "../../hooks/useMultiStepForm/useMultiStepForm";
 import { PersonalDetails } from "./PersonalDetails";
 import { ExperienceDetails } from "./ExperienceDetails";

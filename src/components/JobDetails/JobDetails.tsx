@@ -125,7 +125,7 @@
 //     </>
 //   );
 // }
-import React, { useState } from "react";
+import { useState } from "react";
 import { Hero } from "../../components";
 import { ApplicationForm } from "../ApplicationForm/ApplicationForm";
 
