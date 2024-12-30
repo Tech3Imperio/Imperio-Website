@@ -11,7 +11,6 @@ export default function WhatsAppChat() {
         darkMode={true}
         avatar={favicon}
         statusMessage="Online"
-        alt="whatsappButton"
         chatMessage="Hello there! How can I assist you?"
         // defaultMessage="Hello How can i help you"
       />
