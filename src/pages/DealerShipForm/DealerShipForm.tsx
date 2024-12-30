@@ -276,7 +276,7 @@ export const DealerShipForm: React.FC = () => {
         <h2 className="  text-[#03237b] text-3xl  overflow-hidden md:text-5xl   flex justify-start mt-20">
           Why Partner with Imperio Railing as Your Glass Railing Dealer?
         </h2>
-        <p className="justify-center text-justify py-4 text-[#7d7f81]">
+        <p className="justify-center text-justify py-4 text-[#393939]">
           Elevate your business by becoming a top{" "}
           <strong>glass railing dealer</strong> with{" "}
           <strong>Imperio Railing</strong>. Offer your customers premium,
@@ -307,7 +307,7 @@ export const DealerShipForm: React.FC = () => {
             >
               <div className="bg-white rounded-lg shadow-lg p-6 w-full">
                 <h3 className="text-xl text-[#03237b] mb-2">{point.title}</h3>
-                <p className="text-[#7d7f81] text-justify">
+                <p className="text-[#393939] text-justify">
                   {point.Description}
                 </p>
               </div>
@@ -359,7 +359,7 @@ export const DealerShipForm: React.FC = () => {
 
                   {/* Blue Circle indicator */}
                   <div
-                    className={`w-4 h-4 hidden bg-[#f5ce02] rounded-full absolute top-1/2 transform -translate-y-1/2 z-10 ${
+                    className={`w-4 h-4 hidden bg-[#fad000] rounded-full absolute top-1/2 transform -translate-y-1/2 z-10 ${
                       index % 2 === 0
                         ? " md:left-[19.5rem] lg:left-[20.5rem]"
                         : "right-[20.5rem] md:right-[19.5rem] lg:right-[20.5rem] "
@@ -368,11 +368,11 @@ export const DealerShipForm: React.FC = () => {
 
                   {/* Checkpoint content */}
                   <div
-                    className={`max-w-auto md:w-[53%] p-6 border-2 border-[#f5ce02] justify-center flex flex-col text-center rounded-xl bg-[#292929] relative shadow-lg ${
+                    className={`max-w-auto md:w-[53%] p-6 border-2 border-[#fad000] justify-center flex flex-col text-center rounded-xl bg-[#292929] relative shadow-lg ${
                       index % 2 === 0 ? "-ml-1 md:-ml-14" : " -ml-1 md:-mr-14"
                     }`}
                   >
-                    <h2 className="text-3xl Raleway mb-2 text-[#f5ce02]">
+                    <h2 className="text-3xl Raleway mb-2 text-[#fad000]">
                       {checkpoint.day}
                     </h2>
                     <p className="text-[#cecdc8] md:text-justify text-[14px]">

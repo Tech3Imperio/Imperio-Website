@@ -10,7 +10,7 @@ export default function PostBreakageStrength() {
       className="mb-6"
     >
       <h2 className="text-4xl text-[#03237b] mb-4 ">Post-breakage Strength:</h2>
-      <p className="mb-2 text-justify text-[#7d7f81]">
+      <p className="mb-2 text-justify text-[#393939]">
         <b>SGP (SentryGlas Plus)</b> interlayers offer superior post-breakage
         strength, making them ideal for <b>glass railings</b>,{" "}
         <b>balcony glass railing</b>, and <b>staircase glass railing</b>, where
@@ -20,7 +20,7 @@ export default function PostBreakageStrength() {
         suitable for high-risk applications like <b>glass balustrades</b>.
       </p>
 
-      <p className="mb-12 text-justify text-[#7d7f81]">
+      <p className="mb-12 text-justify text-[#393939]">
         The enhanced strength of <b>SGP laminated glass</b> also makes it
         perfect for <b>hurricane-resistant windows</b> and{" "}
         <b>overhead glazing</b>, offering high performance and safety. Both{" "}

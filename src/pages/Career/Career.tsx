@@ -79,11 +79,25 @@ export default function Career() {
           </div>
         </div>
         <div className="max-w-7xl  mx-auto mt-10 md:mt-24 gap-8 p-4">
-          <img
-            src={careerTeamImg}
-            alt="Career Team"
-            className="w-full h-auto object-cover"
-          />
+          <picture>
+            <source
+              srcSet={`
+      ${careerTeamImg} 400w,
+      ${careerTeamImg} 800w,
+      ${careerTeamImg} 1200w
+    `}
+              sizes="(max-width: 480px) 400px, 
+           (max-width: 768px) 800px, 
+           1200px"
+              type="image/webp"
+            />
+            <img
+              src={`${careerTeamImg}-800.webp`} // You can change this to the appropriate image URL for fallbacks.
+              alt="Career Team"
+              loading="lazy"
+              className="w-full h-auto object-cover transition-transform duration-300"
+            />
+          </picture>
         </div>
         <hr className=" mt-10 mb-2"></hr>
         <div className="max-w-7xl  mx-auto  gap-8 p-4">

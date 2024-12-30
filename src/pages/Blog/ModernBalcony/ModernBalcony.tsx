@@ -6,7 +6,6 @@ import {
   customBalcony,
   LEDHandrail,
   modernBalcony,
-  //   heroImg,
 } from "../../../assets/Images";
 import Metadata from "../../../components/Metatag/Metatag";
 import { Link } from "react-router-dom";
@@ -25,8 +24,7 @@ const blogPosts: BlogPost[] = [
     id: 1,
     title: "Modern Glass Balcony Railings for Elegant & Secure Spaces.",
     excerpt:
-      "Enhance the beauty and safety of your balcony with our modern glass railing solutions. Our high-quality glass balcony railings provide both elegance and security, offering a sleek, contemporary design. Whether you're upgrading an existing property or building a new home, our frameless glass balcony systems are the ideal choice for a stylish, open feel. We also offer durable aluminum channel railings that provide both strength and aesthetic appeal. Our spigot glass railing systems deliver maximum support and an uninterrupted view, perfect for balconies of all sizes. Serving Mumbai, Delhi, Bangalore, and all of India, we are your trusted supplier for top-tier glass balcony solutions. Our custom glass designs are tailored to meet your specific needs, ensuring a perfect fit for your space. With competitive pricing and reliable supply through experienced dealers, we make glass railing installations easy and affordable. Choose our company for premium glass balcony railings at affordable costs and excellent service. Whether you're installing a balcony for a residential or commercial project, our products are designed to elevate your space. We provide professional installation services that ensure long-lasting durability and security. Enhance the curb appeal of your home with our frameless and spigot glass balcony railings, and enjoy a safe, stylish, and modern look. Let our glass railing systems be the centerpiece of your balcony’s transformation.",
-
+      "Enhance the beauty and safety of your balcony with our modern glass railing solutions. Our high-quality glass balcony railings provide both elegance and security, offering a sleek, contemporary design. Whether you're upgrading an existing property or building a new home, our frameless glass balcony systems are the ideal choice for a stylish, open feel. We also offer durable aluminum channel railings that provide both strength and aesthetic appeal. Our spigot glass railing systems deliver maximum support and an uninterrupted view, perfect for balconies of all sizes. Serving Mumbai, Delhi, Bangalore, and all of India, we are your trusted supplier for top-tier glass balcony solutions. Our custom glass designs are tailored to meet your specific needs, ensuring a perfect fit for your space. With competitive pricing and reliable supply through experienced dealers, we make glass railing installations easy and affordable. Choose our company for premium glass balcony railings at affordable costs and excellent service. Whether you're installing a balcony for a residential or commercial project, our products are designed to elevate your space. We provide professional installation services that ensure long-lasting durability and security. Enhance the curb appeal of your home with our frameless and spigot glass balcony railings, and enjoy a safe, stylish, and modern look. Let our glass railing systems be the centerpiece of your balcony's transformation.",
     imageUrl: modernBalcony,
     location: "Mysuru, Mysuru",
   },
@@ -82,24 +80,24 @@ export default function ModernBalcony() {
       <div className="min-h-screen bg-white p-4 md:p-8">
         <span className="flex flex-wrap gap-2 pb-4 items-center">
           <Link
-            to="/blog/modernterrace"
-            className="hover:text-[#f5ce02] text-base sm:text-lg md:text-xl"
+            to="/blog/modern/terrace/glass/railing"
+            className="hover:text-[#fad000] text-base sm:text-lg md:text-xl"
           >
             Terrace Railing
           </Link>
           <MdKeyboardArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
 
           <Link
-            to="/blog/modernstaircase"
-            className="hover:text-[#f5ce02] text-base sm:text-lg md:text-xl"
+            to="/blog/modern/staircase"
+            className="hover:text-[#fad000] text-base sm:text-lg md:text-xl"
           >
             Staircase Railing
           </Link>
           <MdKeyboardArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
 
           <Link
-            to="/blog/modernhandrail"
-            className="hover:text-[#f5ce02] text-base sm:text-lg md:text-xl"
+            to="/blog/modern/handrail"
+            className="hover:text-[#fad000] text-base sm:text-lg md:text-xl"
           >
             Handrail Railing
           </Link>
@@ -149,14 +147,28 @@ export default function ModernBalcony() {
             >
               <div className="flex flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0 md:space-x-12">
                 <motion.div
-                  className="w-full md:w-1/2 aspect-video relative overflow-hidden"
+                  className=" md:w-1/2 aspect-video relative overflow-hidden"
                   whileHover={{ scale: 1.05 }}
                 >
-                  <img
-                    src={post.imageUrl}
-                    alt={post.title}
-                    className="transition-transform duration-300 object-contain"
-                  />
+                  <picture>
+                    <source
+                      srcSet={`
+      ${post.imageUrl} 400w,
+      ${post.imageUrl} 800w,
+      ${post.imageUrl} 1200w
+    `}
+                      sizes="(max-width: 480px) 400px, 
+           (max-width: 768px) 800px, 
+           1200px"
+                      type="image/webp"
+                    />
+                    <img
+                      src={`${post.imageUrl}-800.webp`}
+                      alt={post.title}
+                      loading="lazy"
+                      className="w-full h-auto object-contain transition-transform duration-300 rounded-4xl"
+                    />
+                  </picture>
                 </motion.div>
                 <div className="w-full md:w-1/2 space-y-4">
                   <motion.h2
@@ -168,9 +180,6 @@ export default function ModernBalcony() {
                   <p className="text-[16px] text-gray-500 text-justify ">
                     {post.excerpt}
                   </p>
-                  {/* <p className="text-sm uppercase text-[--third]">
-                    {post.location}
-                  </p> */}
                 </div>
               </div>
               <motion.div

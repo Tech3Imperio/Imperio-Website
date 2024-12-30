@@ -158,7 +158,7 @@ export const About: React.FC = () => {
                         key={tab}
                         className={`py-2 px-4 text-lg font-semibold transition-all duration-300 border-b-2 ${
                           activeTab === tab
-                            ? "text-[#f5ce02] border-[#03237b]"
+                            ? "text-[#fad000] border-[#03237b]"
                             : "text-gray-600 border-transparent hover:text-gray-600"
                         }`}
                         onClick={() => setActiveTab(tab)}
@@ -193,7 +193,7 @@ export const About: React.FC = () => {
               transition={{ duration: 0.8 }}
               className=""
             >
-              <h2 className=" text-center Raleway text-[35px] md:text-[4rem] text-[#f5ce02]">
+              <h2 className=" text-center Raleway text-[35px] md:text-[4rem] text-[#fad000]">
                 Our Value Proposition
               </h2>
               <div className="grid md:grid-cols-2 gap-12 p-4 md:p-14 lg:p-24 ">

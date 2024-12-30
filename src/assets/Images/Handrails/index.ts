@@ -1,6 +1,6 @@
-import ovalWoodenHandrail from "./ovalWoddenHandrail.jpg";
-import squareBalconyHandrail from "./squareBalconyHandrail.jpg";
-import ovalHandrail from "./ovalHandrail.jpg";
-import LEDHandrail from "./LEDHandrail.jpg";
+import ovalWoodenHandrail from "./ovalWoddenHandrail.webp";
+import squareBalconyHandrail from "./squareBalconyHandrail.webp";
+import ovalHandrail from "./ovalHandrail.webp";
+import LEDHandrail from "./LEDHandrail.webp";
 
 export { ovalWoodenHandrail, squareBalconyHandrail, ovalHandrail, LEDHandrail };

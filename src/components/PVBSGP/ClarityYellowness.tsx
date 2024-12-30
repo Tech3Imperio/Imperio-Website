@@ -12,35 +12,59 @@ export default function ClarityYellowness() {
       <h2 className="text-4xl text-[#03237b] mb-4">Clarity & Yellowness:</h2>
       <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-4">
         <div className="text-center">
-          <img
-            src={pvbGlass}
-            alt="PVB Glass"
-            width={250}
-            height={300}
-            loading="lazy"
-            className="rounded-lg shadow-lg"
-          />
+          <picture>
+            <source
+              srcSet={`
+      ${pvbGlass} 400w,
+      ${pvbGlass} 800w,
+      ${pvbGlass} 1200w
+    `}
+              sizes="(max-width: 480px) 600px, 
+           (max-width: 768px) 800px, 
+           1200px"
+              type="image/webp"
+            />
+            <img
+              src={`${pvbGlass}-800.webp`} // You can change this to the appropriate image URL for fallbacks.
+              alt="Career Team"
+              loading="lazy"
+              className="w-full h-auto object-cover transition-transform duration-300 rounded-4xl"
+            />
+          </picture>
+
           <span className="mt-2 block text-xl text-[#03237b] font-semibold">
             PVB Glass
           </span>
         </div>
 
         <div className="text-center">
-          <img
-            src={sgpGlass}
-            alt="SGP Glass"
-            width={250}
-            height={300}
-            loading="lazy"
-            className="rounded-lg shadow-lg"
-          />
+          <picture>
+            <source
+              srcSet={`
+      ${sgpGlass} 400w,
+      ${sgpGlass} 800w,
+      ${sgpGlass} 1200w
+    `}
+              sizes="(max-width: 450px) 370px, 
+           (max-width: 768px) 600px, 
+           600px"
+              type="image/webp"
+            />
+            <img
+              src={`${sgpGlass}-800.webp`} // You can change this to the appropriate image URL for fallbacks.
+              alt="Career Team"
+              loading="lazy"
+              className="w-full h-auto object-cover transition-transform duration-300 rounded-4xl"
+            />
+          </picture>
+
           <span className="mt-2 block text-xl text-[#03237b] font-semibold">
             SGP Glass
           </span>
         </div>
       </div>
 
-      <p className="mb-2 text-justify text-[#7d7f81]">
+      <p className="mb-2 text-justify text-[#393939]">
         <b>SGP (SentryGlas Plus)</b> interlayers offer superior <b>clarity</b>{" "}
         and resistance to <b>yellowing</b> compared to{" "}
         <b>PVB (Polyvinyl Butyral)</b>. SentryGlas maintains its transparency
@@ -51,7 +75,7 @@ export default function ClarityYellowness() {
         clear and free from discoloration, enhancing both aesthetics and
         performance.
       </p>
-      <p className="text-justify mb-6 text-[#7d7f81]">
+      <p className="text-justify mb-6 text-[#393939]">
         <b>PVB laminated glass</b>, while still providing good optical{" "}
         <b>clarity</b>, may develop a slight yellow tint over time, particularly
         in applications exposed to prolonged sunlight. This{" "}

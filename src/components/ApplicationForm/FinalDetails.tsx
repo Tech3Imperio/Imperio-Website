@@ -37,14 +37,14 @@ export function FinalDetails({
           htmlFor="resume"
           className="block text-sm font-medium text-gray-700 mb-1"
         >
-          Resume (PDF or DOC, max 2MB)
+          Resume (PDF max 2MB)
         </label>
         <input
           type="file"
           id="resume"
           name="resume"
           onChange={handleFileChange}
-          accept=".pdf,.doc,.docx"
+          accept="application/pdf"
           required
           className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
         />

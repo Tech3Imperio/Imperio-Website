@@ -18,6 +18,8 @@ const Logo: React.FC = () => (
       alt="Imperio Logo"
       title="Imperio Logo"
       loading="lazy"
+      height={150}
+      width={150}
     />
   </Link>
 );

@@ -1,4 +1,4 @@
-import phoneview from "./phone.mp4";
-import laptopview from "./laptop.mp4";
+import phoneview from "./phone.webm";
+import laptopview from "./laptop.webm";
 
 export { phoneview, laptopview };

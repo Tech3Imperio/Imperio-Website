@@ -1,6 +1,6 @@
-import glassStaircase from "./glassStaircase.jpg";
-import staricaseImg from "./staricaseImg.jpg";
-import whitestaircase from "./whitestaircase.jpg";
-import glassstair from "./glassstaris.jpg";
+import glassStaircase from "./glassStaircase.webp";
+import staricaseImg from "./staricaseImg.webp";
+import whitestaircase from "./whitestaircase.webp";
+import glassstair from "./glassstaris.webp";
 
 export { glassStaircase, staricaseImg, whitestaircase, glassstair };

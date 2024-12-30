@@ -62,7 +62,7 @@ export default function BillingAddress() {
       className="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8"
     >
       <h1 className="text-5xl font-bold text-[#03237b] mb-8 text-center">
-        <span className="text-[#f5ce02]">Billing</span> Details
+        <span className="text-[#fad000]">Billing</span> Details
       </h1>
 
       <div className="flex flex-col lg:flex-row gap-8">

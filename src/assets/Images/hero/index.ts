@@ -1,7 +1,6 @@
 import tempHeroImage from "./hero.webp";
 import blogHero from "./blog.webp";
 import contactHero from "./contact.webp";
-import productImage from "./product.png";
-import HeromainImg from "./hero.jpg";
+import productImage from "./product.webp";
 
-export { tempHeroImage, blogHero, contactHero, productImage, HeromainImg };
+export { tempHeroImage, blogHero, contactHero, productImage };

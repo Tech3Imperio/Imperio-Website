@@ -74,7 +74,8 @@ export const GetQuote: React.FC = () => {
     if (!validate()) return;
 
     fetch(
-      "https://script.google.com/macros/s/AKfycby42s7fS3M8-toUDfTVgRzWz7AB4zPjbxiIWsi0l1VDC6dzwMJ0nuA7DFX_bA91BjUs/exec",
+      "https://script.google.com/macros/s/AKfycbwNxer8GuQT83Orw9z-ghMpayTQ3y31ioHzhg7xJr6aqyAw3Rttm7o7paO6zvrf3SYv/exec",
+
       {
         method: "POST",
         body: JSON.stringify({

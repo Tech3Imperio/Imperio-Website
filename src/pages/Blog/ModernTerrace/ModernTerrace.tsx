@@ -83,24 +83,24 @@ export default function ModernTerrace() {
       <div className="min-h-screen bg-white p-4 md:p-8">
         <span className="flex flex-wrap gap-2 pb-4 items-center">
           <Link
-            to="/blog/ModernStaircase"
-            className="hover:text-[#f5ce02] text-base sm:text-lg md:text-xl"
+            to="/blog/Modern/Staircase"
+            className="hover:text-[#fad000] text-base sm:text-lg md:text-xl"
           >
             Staircase Railing
           </Link>
           <MdKeyboardArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
 
           <Link
-            to="/blog/modernhandrail"
-            className="hover:text-[#f5ce02] text-base sm:text-lg md:text-xl"
+            to="/blog/modern/handrail"
+            className="hover:text-[#fad000] text-base sm:text-lg md:text-xl"
           >
             Handrail Railing
           </Link>
           <MdKeyboardArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
 
           <Link
-            to="/blog/modernbalcony"
-            className="hover:text-[#f5ce02] text-base sm:text-lg md:text-xl"
+            to="/blog/modern/balcony"
+            className="hover:text-[#fad000] text-base sm:text-lg md:text-xl"
           >
             Balcony Railing
           </Link>
@@ -140,11 +140,25 @@ export default function ModernTerrace() {
                   className="w-full md:w-1/2 aspect-video relative overflow-hidden"
                   whileHover={{ scale: 1.05 }}
                 >
-                  <img
-                    src={post.imageUrl}
-                    alt={post.title}
-                    className="transition-transform duration-300 object-contain"
-                  />
+                  <picture>
+                    <source
+                      srcSet={`
+      ${post.imageUrl} 400w,
+      ${post.imageUrl} 800w,
+      ${post.imageUrl} 1200w
+    `}
+                      sizes="(max-width: 480px) 400px, 
+           (max-width: 768px) 800px, 
+           1200px"
+                      type="image/webp"
+                    />
+                    <img
+                      src={`${post.imageUrl}-800.webp`}
+                      alt={post.title}
+                      loading="lazy"
+                      className="w-full h-auto object-contain transition-transform duration-300 rounded-4xl"
+                    />
+                  </picture>
                 </motion.div>
                 <div className="w-full md:w-1/2 space-y-4">
                   <motion.h2

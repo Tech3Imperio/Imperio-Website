@@ -107,7 +107,7 @@
 //           <h2 className="text-5xl sm:text-[5rem] lg:text-[7rem] playwrite-gb-s md:mb-10">
 //             Diwali Special Offers
 //           </h2>
-//           <p className="text-base sm:text-2xl md:text-[25px] text-[#f5ce02]  mb-8">
+//           <p className="text-base sm:text-2xl md:text-[25px] text-[#fad000]  mb-8">
 //             "Celebrate Diwali with up to 10% off glass railings, plus a <br />{" "}
 //             complimentary design consultation!"
 //           </p>
@@ -234,7 +234,7 @@
 //           <h2 className="text-5xl sm:text-[5rem] lg:text-[6.5rem] poppins-light-italic md:mb-10">
 //             Diwali Special Offers
 //           </h2>
-//           <p className="text-base sm:text-2xl md:text-[25px] text-[#f5ce02] mb-8">
+//           <p className="text-base sm:text-2xl md:text-[25px] text-[#fad000] mb-8">
 //             "Celebrate Diwali with up to 10% off glass railings, plus a <br />
 //             complimentary design consultation!"
 //           </p>

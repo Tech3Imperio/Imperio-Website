@@ -132,7 +132,7 @@ export default function DealerRegistration() {
               <h1 className="text-4xl font-bold text-white mb-4">
                 Join Imperio Store
               </h1>
-              <p className="text-[#f5ce02] mb-8">
+              <p className="text-[#fad000] mb-8">
                 Register as a dealer and start your journey with us
               </p>
               <img

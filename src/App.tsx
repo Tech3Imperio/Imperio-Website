@@ -162,6 +162,7 @@ import WhatsAppChat from "./pages/WhatsAppChat/WhatsAppChat";
 import { Toaster } from "react-hot-toast";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Ensure this is imported
+import EnquiryButton from "./components/EnquiryButton/EnquiryButton";
 
 const getFaviconPath = (isDarkMode = false) => {
   return `/favicon-${isDarkMode ? "dark" : "light"}.ico`;
@@ -275,6 +276,7 @@ const App: React.FC = () => {
       <Navbar />
       <Outlet />
       <WhatsAppChat />
+      <EnquiryButton />
       <Footer />
       <ToastContainer />
     </>

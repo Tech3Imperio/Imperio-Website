@@ -16,7 +16,7 @@ export function PrivacyPolicy() {
               // width={500}
             ></img>
           </div>
-          <h1 className="text-4xl text-center font-semibold pt-[1rem] pb-2 text-[#f5ce02]">
+          <h1 className="text-4xl text-center font-semibold pt-[1rem] pb-2 text-[#fad000]">
             Privacy Policy
           </h1>
           <p className="text-base px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64 p-3 font-medium text-center md:text-left">
@@ -29,7 +29,7 @@ export function PrivacyPolicy() {
             </Link>{" "}
             and interact with our services.
           </p>
-          <h3 className="text-xl text-[#f5ce02] font-bold px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64 text-center md:text-left">
+          <h3 className="text-xl text-[#fad000] font-bold px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64 text-center md:text-left">
             Information Collection
           </h3>
           <p className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64 p-3 font-normal text-center md:text-left">
@@ -97,7 +97,7 @@ export function PrivacyPolicy() {
             </li>
           </ul>
 
-          <h3 className="text-xl text-[#f5ce02] font-bold px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64 mt-6 text-center md:text-left">
+          <h3 className="text-xl text-[#fad000] font-bold px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64 mt-6 text-center md:text-left">
             Use of Information
           </h3>
           <p className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64 p-2 font-normal text-center md:text-left">
@@ -146,7 +146,7 @@ export function PrivacyPolicy() {
               </li>
             </ul>
           </ul>
-          <h3 className="text-xl text-[#f5ce02] font-bold px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64 mt-6 text-center md:text-left">
+          <h3 className="text-xl text-[#fad000] font-bold px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64 mt-6 text-center md:text-left">
             Cookies and Tracking Technologies
           </h3>
           <p className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64 p-3 font-normal text-center md:text-left">
@@ -157,7 +157,7 @@ export function PrivacyPolicy() {
             settings. Please note that disabling cookies may affect the
             functionality of our website.
           </p>
-          <h3 className="text-xl text-[#f5ce02] font-bold px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64 mt-6 text-center md:text-left">
+          <h3 className="text-xl text-[#fad000] font-bold px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64 mt-6 text-center md:text-left">
             Data Sharing and Disclosure
           </h3>
           <p className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64 p-2 font-normal text-center md:text-left">
@@ -193,7 +193,7 @@ export function PrivacyPolicy() {
               </li>
             </ul>
           </ul>
-          <h3 className="text-xl text-[#f5ce02] font-bold px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64 mt-6 text-center md:text-left">
+          <h3 className="text-xl text-[#fad000] font-bold px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64 mt-6 text-center md:text-left">
             Data Security
           </h3>
           <p className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64 p-2 font-normal text-center md:text-left">
@@ -203,7 +203,7 @@ export function PrivacyPolicy() {
             secure. While we strive to protect your information, we cannot
             guarantee its absolute security.
           </p>
-          <h3 className="text-xl text-[#f5ce02] font-bold px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64 mt-6 text-center md:text-left">
+          <h3 className="text-xl text-[#fad000] font-bold px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64 mt-6 text-center md:text-left">
             Your Choices
           </h3>
           <p className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64 p-2 font-normal text-center md:text-left">
@@ -238,7 +238,7 @@ export function PrivacyPolicy() {
             To exercise these rights, please contact us at{" "}
             <b className="text-[#03237b]">www.imperiorailing.com</b>.
           </p>
-          <h3 className="text-xl text-[#f5ce02] font-bold px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64 mt-6 text-center md:text-left">
+          <h3 className="text-xl text-[#fad000] font-bold px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64 mt-6 text-center md:text-left">
             Changes to This Privacy Policy
           </h3>
           <p className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64 p-2 font-normal text-center md:text-left">
@@ -247,7 +247,7 @@ export function PrivacyPolicy() {
             Your continued use of our site after such changes constitutes your
             acceptance of the new terms.
           </p>
-          {/* <h3 className="text-xl text-[#f5ce02] font-bold px-4 sm:px-8 md:px-40 lg:px-[16rem] text-center md:text-left">
+          {/* <h3 className="text-xl text-[#fad000] font-bold px-4 sm:px-8 md:px-40 lg:px-[16rem] text-center md:text-left">
             Contact Us
           </h3>
           <p className="px-4 sm:px-8 md:px-40 lg:px-[16rem] p-2 font-normal text-center md:text-left">
@@ -267,7 +267,7 @@ export function PrivacyPolicy() {
             <b>Address:</b> 1, Aman Chambers, New Queens Rd, Charni Road, Mumbai
             Maharashtra - 400004.
           </h3> */}
-          <h3 className="text-xl text-[#f5ce02] px-4 sm:px-8 md:px-40 lg:px-[16rem]  p-5 font-semibold text-center md:text-left">
+          <h3 className="text-xl text-[#fad000] px-4 sm:px-8 md:px-40 lg:px-[16rem]  p-5 font-semibold text-center md:text-left">
             By using our website, you consent to the terms of this Privacy
             Policy. Thank you for choosing Imperio Railing Systems.
           </h3>

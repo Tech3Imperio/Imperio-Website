@@ -10,7 +10,7 @@ export default function LoadCapability() {
     >
       <div className="md:w-full">
         <h2 className="text-4xl text-[#03237b] mb-4">Load Capability:</h2>
-        <p className="mb-2 text-justify text-[#7d7f81]">
+        <p className="mb-2 text-justify text-[#393939]">
           <b>SGP (SentryGlas Plus)</b> interlayers exhibit superior load-bearing
           capacity compared to <b>PVB (Polyvinyl Butyral)</b> interlayers. This
           enhanced strength allows for the use of thinner{" "}
@@ -23,7 +23,7 @@ export default function LoadCapability() {
           durability in commercial and residential projects.
         </p>
 
-        <p className="mb-2 text-justify text-[#7d7f81]">
+        <p className="mb-2 text-justify text-[#393939]">
           While <b>PVB laminated glass</b> still provides good load capability,
           it may require thicker glass or additional layers to achieve the same
           strength as <b>SGP laminated glass</b> in high-load applications. This
@@ -35,7 +35,7 @@ export default function LoadCapability() {
           designs.
         </p>
 
-        <p className="text-justify text-[#7d7f81]">
+        <p className="text-justify text-[#393939]">
           The enhanced load-bearing capacity of <b>SGP laminated glass</b> makes
           it ideal for <b>structural glazing</b>, <b>balustrades</b>, and other
           critical applications where maximum strength and safety are essential.

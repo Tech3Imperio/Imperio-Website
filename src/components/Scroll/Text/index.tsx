@@ -77,16 +77,13 @@ export const TextComponent = ({
         inner ? "" : className
       }`}
     >
-      {textList.map((text, index) => (
-        // <TextWrapper key={index} className={inner ? className : ""}>
-        //   {text}
-        // </TextWrapper>
-        <li key={index} className=" list-none">
-          <TextWrapper key={index} className={inner ? className : ""}>
-            {text}
-          </TextWrapper>
-        </li>
-      ))}
+      <ul>
+        {textList.map((text, index) => (
+          <li key={index} className="list-none flex justify-center py-2">
+            <TextWrapper className={inner ? className : ""}>{text}</TextWrapper>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 };

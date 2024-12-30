@@ -19,7 +19,7 @@ export default {
         "--black": "#292929",
         "--grey": "#8b939c",
         "--first": "#f1efe7",
-        "--secound": "#f5ce02",
+        "--secound": "#fad000",
         "--third": "#03247b",
       },
       borderRadius: {

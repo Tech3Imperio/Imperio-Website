@@ -1,15 +1,15 @@
 import React, { useEffect, useState, Suspense } from "react";
 // import { heroImage } from "../../assets/Images";
 //Festival Time only on This belo code
-import { descImage, heroImage } from "../../assets/Images";
-// import { descImage } from "../../assets/Images";
+// import { descImage, heroImage } from "../../assets/Images";
+import { descImage } from "../../assets/Images";
 import { Helmet } from "react-helmet";
 import favicondark from "../../assets/Images/logo/favicondark.ico";
 
 import {
-  Hero,
+  // Hero,
   Description,
-  GreyButton,
+  // GreyButton,
   TextComponent,
   BlackButton,
   Quote,
@@ -22,9 +22,9 @@ import {
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { scrollData, testimonialsData } from "../../assets/Data";
-// const HeroVideo = React.lazy(
-//   () => import("../../components/HeroVideo/HeroVideo")
-// );
+const HeroVideo = React.lazy(
+  () => import("../../components/HeroVideo/HeroVideo")
+);
 
 // import Metadata from "../../components/Metatag/Metatag";
 
@@ -91,7 +91,7 @@ export const Home: React.FC = () => {
         <link rel="icon" href={favicondark} />
       </Helmet>
       <main>
-        <Hero
+        {/* <Hero
           img={heroImage}
           altText="hero for home"
           header={
@@ -107,11 +107,11 @@ export const Home: React.FC = () => {
           <div className="p-8 pl-0 w-max text-xs">
             <GreyButton path="/aboutus">KNOW MORE</GreyButton>
           </div>
-        </Hero>
+        </Hero> */}
 
-        {/* <Suspense fallback={<span>Loading video</span>}>
+        <Suspense fallback={<span>Loading video</span>}>
           <HeroVideo altText="" />
-        </Suspense> */}
+        </Suspense>
 
         {/* Use this Component in Festive Season only */}
         {/* <Festival /> */}

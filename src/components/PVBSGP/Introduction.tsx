@@ -9,7 +9,7 @@ export default function Introduction() {
       className="mb-14"
     >
       <h3 className="text-4xl text-[#03237b] mb-4">What are PVB and SGP?</h3>
-      <p className="mb-4 text-justify text-[#7d7f81]">
+      <p className="mb-4 text-justify text-[#393939]">
         <b>PVB Laminated Glass (Polyvinyl Butyral)</b> and{" "}
         <b>SGP Laminated Glass (SentryGlas Plus)</b> are two top interlayers
         used in laminated glass production. <b>PVB laminated glass</b> is
@@ -21,7 +21,7 @@ export default function Introduction() {
         <b>high-rise building facades</b> and <b>security glass</b>.
       </p>
 
-      <p className="text-justify text-[#7d7f81]">
+      <p className="text-justify text-[#393939]">
         Both <b>PVB laminated glass</b> and <b>SGP laminated glass</b> are used
         for creating <b>glass railing systems</b> and other{" "}
         <b>glass structural applications</b>. The <b>strength of SGP</b> makes
@@ -33,7 +33,7 @@ export default function Introduction() {
         for residential projects across <b>Mumbai</b> and <b>Bangalore</b>.
       </p>
 
-      <p className="text-justify  text-[#7d7f81]">
+      <p className="text-justify  text-[#393939]">
         Choosing the right laminated glass is crucial for achieving the desired
         balance of strength, clarity, and safety. Whether you’re looking for{" "}
         <b>frameless glass railings</b> with a minimalist design or{" "}

@@ -437,7 +437,7 @@
 //               <button
 //                 key={coupon.code}
 //                 onClick={() => applyCoupon(coupon.code)}
-//                 className="border rounded-2xl hover:text-[#f5ce02] px-4 py-2 transition duration-700 hover:bg-[#292929] "
+//                 className="border rounded-2xl hover:text-[#fad000] px-4 py-2 transition duration-700 hover:bg-[#292929] "
 //               >
 //                 {coupon.code}
 //               </button>
@@ -767,7 +767,7 @@ const PriceDetails: React.FC<{ items: ProductCardProps[] }> = ({ items }) => {
               <button
                 key={coupon.code}
                 onClick={() => applyCoupon(coupon.code)}
-                className="border rounded-2xl hover:text-[#f5ce02] px-4 py-2 transition duration-700 hover:bg-[#292929] "
+                className="border rounded-2xl hover:text-[#fad000] px-4 py-2 transition duration-700 hover:bg-[#292929] "
               >
                 {coupon.code}
               </button>

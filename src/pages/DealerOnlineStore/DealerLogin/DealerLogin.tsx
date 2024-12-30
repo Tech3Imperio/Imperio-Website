@@ -82,7 +82,7 @@ export default function DealerLogin() {
               <h1 className="text-4xl font-bold text-white mb-4">
                 Welcome Back!
               </h1>
-              <p className="text-[#f5ce02] mb-8">
+              <p className="text-[#fad000] mb-8">
                 Log in to access your Imperio Store account
               </p>
               <img

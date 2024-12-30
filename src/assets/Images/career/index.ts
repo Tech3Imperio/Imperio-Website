@@ -1,3 +1,3 @@
-import careerTeamImg from "./careersecond.png";
+import careerTeamImg from "./careersecond.webp";
 
 export { careerTeamImg };

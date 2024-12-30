@@ -57,7 +57,7 @@ const InstagramAdForm: React.FC = () => {
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-[#7d7f81]"
+                  className="block text-sm font-medium text-[#393939]"
                 >
                   Name
                 </label>
@@ -74,7 +74,7 @@ const InstagramAdForm: React.FC = () => {
               <div>
                 <label
                   htmlFor="contactNo"
-                  className="block text-sm font-medium text-[#7d7f81]"
+                  className="block text-sm font-medium text-[#393939]"
                 >
                   Contact Number
                 </label>
@@ -91,7 +91,7 @@ const InstagramAdForm: React.FC = () => {
               <div>
                 <label
                   htmlFor="source"
-                  className="block text-sm font-medium text-[#7d7f81]"
+                  className="block text-sm font-medium text-[#393939]"
                 >
                   Source
                 </label>
