@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button2Props, ButtonProps, WhiteButtonProps } from "../../types";
+import {
+  Button2Props,
+  ButtonProps,
+  WhiteButtonProps,
+  CTAButtonProps,
+  CTAButtonProps2,
+  CTAButtonProps3,
+} from "../../types";
 
-// GreyButton component
-// This component renders a button styled as a link with a grey background.
-// Props:
-// - path: the URL path the button links to.
-// - children: the content inside the button.
-// - className: additional CSS classes for the button.
 export const GreyButton: React.FC<ButtonProps> = ({
   path = "",
   children,
@@ -15,6 +16,7 @@ export const GreyButton: React.FC<ButtonProps> = ({
 }) => {
   return (
     <Link
+      aria-label="know moew btn gray"
       to={path}
       className={
         className +
@@ -26,12 +28,6 @@ export const GreyButton: React.FC<ButtonProps> = ({
   );
 };
 
-// BlackButton component
-// This component renders a button styled as a link with a black background.
-// Props:
-// - path: the URL path the button links to.
-// - children: the content inside the button.
-// - className: additional CSS classes for the button.
 export const BlackButton: React.FC<ButtonProps> = ({
   path = "",
   children,
@@ -39,6 +35,7 @@ export const BlackButton: React.FC<ButtonProps> = ({
 }) => {
   return (
     <Link
+      aria-label="know moew btn black"
       to={path}
       className={
         className +
@@ -57,6 +54,7 @@ export const BlackButton2: React.FC<Button2Props> = ({
 }) => {
   return (
     <button
+      aria-label="know moew btn black2"
       onClick={onClick}
       className={
         className +
@@ -68,13 +66,6 @@ export const BlackButton2: React.FC<Button2Props> = ({
   );
 };
 
-// WhiteButton component
-// This component renders a button with a white or transparent background based on the value prop.
-// Props:
-// - className: additional CSS classes for the button.
-// - value: boolean to determine the background color of the button (true for [--secound] color, false for transparent).
-// - children: the content inside the button.
-// - onClick: function to handle the click event.
 export const WhiteButton: React.FC<WhiteButtonProps> = ({
   className = "",
   value = false,
@@ -83,6 +74,7 @@ export const WhiteButton: React.FC<WhiteButtonProps> = ({
 }) => {
   return (
     <button
+      aria-label="dealer white"
       onClick={onClick}
       className={
         `w-max py-2 px-6 border-black rounded-4xl ${
@@ -93,5 +85,60 @@ export const WhiteButton: React.FC<WhiteButtonProps> = ({
     >
       {children}
     </button>
+  );
+};
+
+export const CTAButton: React.FC<CTAButtonProps> = ({
+  phoneNumber,
+  children,
+  className = "",
+}) => {
+  return (
+    <Link
+      aria-label="CTA btn gray"
+      to={`tel:${phoneNumber}`} // Using "tel:" scheme for phone call
+      className={
+        className +
+        ` w-max py-4 px-4 border-2 rounded-4xl bg-gray-500 bg-opacity-60 transition-700 hover:border-[--secound] hover:text-[--black] hover:bg-[--secound] hover:bg-opacity-100`
+      }
+    >
+      {children}
+    </Link>
+  );
+};
+export const CTAButton2: React.FC<CTAButtonProps2> = ({
+  phoneNumber,
+  children,
+  className = "",
+}) => {
+  return (
+    <Link
+      aria-label="CTA btn black"
+      to={`tel:${phoneNumber}`} // Using "tel:" scheme for phone call
+      className={
+        className +
+        `w-max py-4 px-4 rounded-4xl text-[--white] bg-[--black] transition-700 hover:text-[--black] hover:bg-[--secound]`
+      }
+    >
+      {children}
+    </Link>
+  );
+};
+export const CTAButton3: React.FC<CTAButtonProps3> = ({
+  phoneNumber,
+  children,
+  className = "",
+}) => {
+  return (
+    <Link
+      aria-label="CTA btn white"
+      to={`tel:${phoneNumber}`} // Using "tel:" scheme for phone call
+      className={
+        className +
+        `py-[15px] px-4 text-[--black] font-bold bg-white text-[9px] md:text-xs rounded-4xl transition-700 cursor-pointer border border-white hover:bg-[--black] hover:text-[--secound] whitespace-nowrap`
+      }
+    >
+      {children}
+    </Link>
   );
 };

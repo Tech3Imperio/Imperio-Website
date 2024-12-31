@@ -167,9 +167,10 @@ const EnquiryButton: React.FC = () => {
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         onClick={handleOpenForm}
-        className="fixed top-1/2 w-12 py-12 text-[--black] font-bold  left-0 transform -translate-y-1/2  bg-[--secound] transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] text-center flex items-center justify-center rounded-4xl z-50 whitespace-nowrap"
+        aria-label="Contact button"
+        className="fixed top-[42%] w-11 py-11 text-[--black] font-bold  -left-1 transform -translate-y-1/2  bg-[--secound] transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] text-center flex items-center justify-center rounded-4xl z-50 whitespace-nowrap"
       >
-        <span className="transform -rotate-90">Contact now</span>
+        <span className="transform -rotate-90 text-[14px]">Contact now</span>
       </motion.button>
 
       <AnimatePresence>

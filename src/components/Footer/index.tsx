@@ -83,6 +83,7 @@ export const Footer = () => {
               />
               <button
                 type="submit"
+                aria-label="Submit button"
                 className={`${
                   isSubmitting ? "bg-gray-500 cursor-not-allowed" : "bg-white"
                 } rounded-r-4xl h-full p-[0.65rem] tablet:p-5 transition duration-700 group-hover:bg-[--secound] group-focus-within:bg-[--secound] outline-none`}
@@ -152,6 +153,16 @@ export const Footer = () => {
       {message /* Conditional rendering of the popup message */ && (
         <PopupMessage message={message} onClose={() => setMessage("")} />
       )}
+      <div className="flex-col text-white xl:hidden laptop:flex">
+        {" "}
+        {/* Social media links and policies for larger screens */}
+        <SocialLinks className="flex text-2xl gap-5" />
+        <div className="flex gap-4 text-xs">
+          <p>
+            <Link to="/PrivacyPolicy">Terms of Use Privacy Policy</Link>
+          </p>
+        </div>
+      </div>
     </footer>
   );
 };

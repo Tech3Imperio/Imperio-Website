@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../Service/Api/Api";
 // import Metadata from "../../components/Metatag/Metatag";
-import { Hero } from "../../components";
+import { Hero, CTAButton2 } from "../../components";
 import bgDealers from "../../assets/Images/quote/bgDealers.webp";
 import Metadata from "../../components/Metatag/Metatag";
 import { motion } from "framer-motion";
@@ -246,6 +246,11 @@ export const DealerShipForm: React.FC = () => {
           <h3 className="text-[--third] flex flex-wrap md:max-w-2xl Raleway tracking-wider w-full text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] 2xl:text-5xl">
             Partner with us for growth opportunities.
           </h3>
+          <span className="text-xs my-4">
+            <CTAButton2 phoneNumber="+91 85919 53385">
+              CALL TO ACTION
+            </CTAButton2>
+          </span>
         </div>
         <div className="md:w-[40%]">
           <p className="text-justify italic text-[--grey]">

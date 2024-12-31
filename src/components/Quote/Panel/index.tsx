@@ -1,5 +1,6 @@
 import { QuoteButton, DealershipButton } from "../.."; // Importing the QuoteButton component
 import { bgQuote, bgDealers } from "../../../assets/Images"; // Importing the background image
+import { CTAButton3 } from "../../../components";
 
 export const Dealers = () => {
   return (
@@ -76,8 +77,11 @@ export const Quote = () => {
               quote for your glass railing system. Request a quote directly via
               WhatsApp – quick, easy, and convenient.
             </div>
-            <div>
+            <div className=" flex h-4 w-14 text-center items-center gap-2">
               <QuoteButton className="max-tablet:text-[0.5rem]" />{" "}
+              <CTAButton3 phoneNumber="+91 85919 53385">
+                CALL TO ACTION
+              </CTAButton3>
               {/* QuoteButton component */}
             </div>
           </div>

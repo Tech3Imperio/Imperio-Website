@@ -239,14 +239,14 @@ const MemoProducts: React.FC = () => {
         <div className="lg:hidden flex top-[0%] fixed right-0 z-40 h-screen ">
           <button onClick={() => setSidebarOpen(!sidebarOpen)}>
             <LuFilter
-              className=" bg-yellow-500 text-black z-40 p-2 rounded-l-md"
+              className=" bg-[#fad000] text-black z-40 p-2 rounded-l-md"
               size={45}
             />
           </button>
         </div>
         <div
           className={`fixed right-0 top-0 h-screen w-[280px] bg-[--black] border-l-[3px] hover:border-white rounded-l-[2rem] shadow-2xl transition-transform duration-700 z-50 overflow-y-scroll sidebar-container ${
-            sidebarOpen ? "translate-x-0 shadow-yellow-500" : "translate-x-full"
+            sidebarOpen ? "translate-x-0 shadow-[#fad000]" : "translate-x-full"
           }`}
         >
           <div className="flex justify-between items-center m-4 pt-5">
@@ -333,6 +333,7 @@ const MemoProducts: React.FC = () => {
                   <h3 className="-text--third font-semibold">
                     {category.name}
                   </h3>
+
                   <span>
                     <SlArrowDown
                       className={`${
@@ -394,6 +395,7 @@ const MemoProducts: React.FC = () => {
                 </>
               }
             />
+
             <ProductDescription
               heading={"Handrail"}
               subheading={"Aluminium Glass Railing Handrail variants."}
@@ -414,6 +416,7 @@ const MemoProducts: React.FC = () => {
                 </>
               }
             />
+
             <ProductDescription
               heading={"Height"}
               subheading={"Aluminium Glass Railing Height variants."}
@@ -486,7 +489,7 @@ const MemoProducts: React.FC = () => {
             className="lg:hidden"
           >
             <LuFilter
-              className=" bg-yellow-500 text-black z-40 p-2 rounded-l-md"
+              className=" bg-[#fad000] text-black z-40 p-2 rounded-l-md"
               size={45}
             />
           </button>
@@ -672,7 +675,7 @@ const MemoProducts: React.FC = () => {
               to="/cart"
             >
               <BsHandbag size={24} />
-              <p className="h-8 w-8 rounded-full text-2xl bg-yellow-400 text-[#03237b] uppercase flex justify-center items-center Raleway">
+              <p className="h-8 w-8 rounded-full text-2xl bg-[#fad000] text-[#03237b] uppercase flex justify-center items-center Raleway">
                 {icon}
               </p>
             </Link>

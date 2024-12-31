@@ -10,6 +10,8 @@ import {
   Hero,
   Description,
   GreyButton,
+  CTAButton,
+  CTAButton2,
   TextComponent,
   BlackButton,
   Quote,
@@ -104,8 +106,9 @@ export const Home: React.FC = () => {
           subHeader="Sleek and durable glass railing systems, perfect for balconies and staircases. Enhance safety and style with frameless glass railings, aluminum options, and more to elevate your indoor and outdoor spaces."
           height
         >
-          <div className="p-8 pl-0 w-max text-xs">
+          <div className="p-8 pl-0 w-max text-xs gap-2 flex">
             <GreyButton path="/aboutus">KNOW MORE</GreyButton>
+            <CTAButton phoneNumber="+91 85919 53385">CALL TO ACTION</CTAButton>
           </div>
         </Hero>
 
@@ -142,8 +145,11 @@ export const Home: React.FC = () => {
               functional glass railing systems that meet the needs of every
               client.
             </p>
-            <div className="pt-8 text-[9px] phone:text-xs">
+            <div className="pt-8 text-[9px] phone:text-xs flex gap-2">
               <BlackButton path="/aboutus">KNOW MORE</BlackButton>
+              <CTAButton2 phoneNumber="+91 85919 53385">
+                CALL TO ACTION
+              </CTAButton2>
             </div>
           </div>
           <Suspense fallback={<h1>Loading Image...</h1>}>
@@ -199,7 +205,7 @@ export const Home: React.FC = () => {
             </div>
           </div>
 
-          {/* {isDesktop ? (
+          {isDesktop ? (
             <div className="flex justify-center px-10 phone:px-6 tablet:px-10 laptop:px-20 py-12 gap-32 items-center h-fit">
               <VerticalCarousel direction className="w-[40%]">
                 {scrollData.map((item) => (
@@ -257,8 +263,8 @@ export const Home: React.FC = () => {
                 </div>
               ))}
             </HorizontalCarousel>
-          )} */}
-          {isDesktop ? (
+          )}
+          {/* {isDesktop ? (
             <div className="flex justify-center px-10 phone:px-6 tablet:px-10 laptop:px-20 py-12 gap-32 items-center h-fit">
               <VerticalCarousel direction className="w-[40%]">
                 {scrollData.map((item) => (
@@ -324,7 +330,7 @@ export const Home: React.FC = () => {
                 </div>
               ))}
             </HorizontalCarousel>
-          )}
+          )} */}
 
           {/* end */}
         </Description>

@@ -85,6 +85,7 @@ export const BlogPanel: React.FC<BlogPanelProps> = ({
                 value={filters[index]}
                 onClick={() => toggleFilter(index)}
                 className="text-base"
+                aria-label="social button"
               >
                 {Social}
               </WhiteButton>
