@@ -258,7 +258,7 @@ const App: React.FC = () => {
         console.error("Error checking token:", error);
       }
     } else {
-      console.log("No token found");
+      // console.log("No token found");
     }
   }, [encodedToken, navigate]);
 

@@ -70,7 +70,9 @@ export const ImageScrolls: React.FC<ImageScrollsProps> = ({
           // Map through the cards array
           return (
             <img
-              src={card.img} // Image source
+              srcSet={`${card.img} 400w, ${card.img} 800w, ${card.img} 1200w`} // Different resolutions
+              sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1200px" // Define sizes for each screen
+              src={card.img} // Fallback for browsers that don't support srcSet
               alt={card.alt} // Alt text
               loading="lazy"
               key={index} // Unique key for each image

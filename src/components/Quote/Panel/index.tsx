@@ -21,11 +21,11 @@ export const Dealers = () => {
           <div className="bg-[--black] h-[60.75%]  md:h-[53.75%] w-[90%] phone:w-[83%] tablet:w-[75%] laptop:w-[68.48%] laptop:h-[42.48%] text-white rounded-4xl overflow-hidden flex flex-col gap-3 tablet:gap-6 xl:gap-8 px-7 tablet:px-12 xl:px-16 justify-center">
             {" "}
             {/* Content container */}
-            <h1 className="Raleway text-[22px] tablet:text-[1.75rem] xl:text-5xl">
+            <span className="Raleway text-[22px] tablet:text-[1.75rem] xl:text-5xl">
               {" "}
               {/* Heading */}
               Ideal Dealership with Imperio.
-            </h1>
+            </span>
             <div className="text-[10px] lg:text-base pb-2 phone:pb-8 w-full tablet:w-3/5">
               {" "}
               {/* Description text */}
@@ -64,11 +64,11 @@ export const Quote = () => {
           <div className="bg-[--black] h-[65.75%] w-[90%] phone:w-[83%] tablet:w-[75%] laptop:w-[68.48%] text-white rounded-4xl overflow-hidden flex flex-col gap-3 tablet:gap-6 xl:gap-8 px-7 tablet:px-12 xl:px-16 justify-center">
             {" "}
             {/* Content container */}
-            <h4 className="Raleway text-2xl tablet:text-[1.75rem] xl:text-5xl">
+            <span className="Raleway text-2xl tablet:text-[1.75rem] xl:text-5xl">
               {" "}
               {/* Heading */}
               Get an instant quote.
-            </h4>
+            </span>
             <div className="text-xs lg:text-base pb-2 phone:pb-8 w-full tablet:w-3/5">
               {" "}
               {/* Description text */}

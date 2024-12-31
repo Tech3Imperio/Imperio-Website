@@ -13,13 +13,15 @@ import { PiUserCircle } from "react-icons/pi";
 const Logo: React.FC = () => (
   <Link to="/" className="navbar-brand" aria-label="PowerHouse Home">
     <img
-      src={whiteLogo}
+      srcSet={`${whiteLogo} 300w, ${whiteLogo} 600w, ${whiteLogo} 1200w`} // Use imported image for responsive sizes
+      sizes="(max-width: 640px) 150px, (max-width: 1024px) 200px, 150px" // Define appropriate sizes for different screen widths
+      src={whiteLogo} // Fallback image (in case srcSet isn't supported)
       className="max-w-28 transition ease-out duration-500 hover:translate-y-1 hover:scale-125"
       alt="Imperio Logo"
       title="Imperio Logo"
       loading="lazy"
-      height={150}
-      width={150}
+      height="150" // Ensure width and height are declared for CLS prevention
+      width="150"
     />
   </Link>
 );
@@ -143,9 +145,9 @@ export const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`bg-[--black] sticky top-0 z-50 transition-700 border-b-4 border-transparent hover:border-[#f1efe7] hover:shadow-navbar ${
+      className={`bg-[--black] sticky top-0 z-50 border-b-4 border-transparent hover:border-[#f1efe7] hover:shadow-navbar ${
         !isMenuOpen ? "rounded-b-4xl" : "rounded-b-[0px]"
-      }`}
+      } transition-all duration-300 ease-out`}
     >
       <div className="max-w-7xl mx-auto px-14 pt-2 pb-4 flex gap-0 xl:gap-1 items-center justify-between">
         {/* Logo component */}
@@ -179,19 +181,11 @@ export const Navbar: React.FC = () => {
               <DealershipButton />
               <QuoteButton />
               <Link to="/dealer-login" className=" flex justify-center pt-2">
-                {/* <span className="text-white">Login</span>{" "} */}
                 <PiUserCircle
                   size={50}
                   className="text-white rounded-full flex items-center justify-center hover:bg-[--black] hover:text-[--secound] transition-700 cursor-pointer"
                 />{" "}
               </Link>
-              {/* {isDealerLogedIn ? (
-                <button className="rounded-full h-10 w-10 p-2 text-black bg-white flex justify-center items-center">
-                  <SlHandbag size={28} />
-                </button>
-              ) : (
-                <></>
-              )} */}
             </div>
           </>
         )}
