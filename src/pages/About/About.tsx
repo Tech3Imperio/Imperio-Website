@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { aboutHero, Middle } from "../../assets/Images";
-import { CTAButton2, Hero } from "../../components";
+import { Hero, CTAButton } from "../../components";
 // import Metadata from "../../components/Metatag/Metatag";
 import { motion, AnimatePresence } from "framer-motion";
 import Metadata from "../../components/Metatag/Metatag";
 // import { aboutData } from "../../assets/Data";
-
+import { MdAddCall } from "react-icons/md";
 interface TabContent {
   title: string;
   content: {
@@ -102,12 +102,14 @@ export const About: React.FC = () => {
               <h3 className="text-[--third] flex flex-wrap md:max-w-2xl Raleway tracking-wider w-full text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] 2xl:text-5xl">
                 High-Quality Glass Railing Solutions for Your Home
               </h3>
-              <span className="text-xs my-4">
-                <CTAButton2 phoneNumber="+91 85919 53385">
-                  CALL TO ACTION
-                </CTAButton2>
+              <span className="text-xs my-4 w-32">
+                <CTAButton phoneNumber="+91 8591953385">
+                  <MdAddCall size={16} />
+                  CALL NOW
+                </CTAButton>
               </span>
             </div>
+
             <div className="md:w-[40%]">
               <p className="text-justify italic text-[--grey]">
                 "Enhance your living spaces with our premium balcony and

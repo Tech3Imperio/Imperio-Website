@@ -31,11 +31,11 @@ export type CTAButtonProps = {
   children: React.ReactNode;
   className?: string;
 };
-export type CTAButtonProps2 = {
-  phoneNumber: string; // Prop to receive the phone number
-  children: React.ReactNode;
-  className?: string;
-};
+// export type CTAButtonProps2 = {
+//   phoneNumber: string; // Prop to receive the phone number
+//   children: React.ReactNode;
+//   className?: string;
+// };
 export type CTAButtonProps3 = {
   phoneNumber: string; // Prop to receive the phone number
   children: React.ReactNode;

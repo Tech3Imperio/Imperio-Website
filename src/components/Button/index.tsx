@@ -5,7 +5,7 @@ import {
   ButtonProps,
   WhiteButtonProps,
   CTAButtonProps,
-  CTAButtonProps2,
+  // CTAButtonProps2,
   CTAButtonProps3,
 } from "../../types";
 
@@ -95,35 +95,35 @@ export const CTAButton: React.FC<CTAButtonProps> = ({
 }) => {
   return (
     <Link
-      aria-label="CTA btn gray"
+      aria-label="CTA btn gold"
       to={`tel:${phoneNumber}`} // Using "tel:" scheme for phone call
       className={
         className +
-        ` w-max py-4 px-4 border-2 rounded-4xl bg-gray-500 bg-opacity-60 transition-700 hover:border-[--secound] hover:text-[--black] hover:bg-[--secound] hover:bg-opacity-100`
+        `px-5 justify-center items-center py-4 text-[--black] flex gap-2 font-bold bg-[--secound] text-xs rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap`
       }
     >
       {children}
     </Link>
   );
 };
-export const CTAButton2: React.FC<CTAButtonProps2> = ({
-  phoneNumber,
-  children,
-  className = "",
-}) => {
-  return (
-    <Link
-      aria-label="CTA btn black"
-      to={`tel:${phoneNumber}`} // Using "tel:" scheme for phone call
-      className={
-        className +
-        `w-max py-4 px-4 rounded-4xl text-[--white] bg-[--black] transition-700 hover:text-[--black] hover:bg-[--secound]`
-      }
-    >
-      {children}
-    </Link>
-  );
-};
+// export const CTAButton2: React.FC<CTAButtonProps2> = ({
+//   phoneNumber,
+//   children,
+//   className = "",
+// }) => {
+//   return (
+//     <Link
+//       aria-label="CTA btn black"
+//       to={`tel:${phoneNumber}`} // Using "tel:" scheme for phone call
+//       className={
+//         className +
+//         `w-max py-4 px-4 rounded-4xl text-[--white] bg-[--black] transition-700 hover:text-[--black] hover:bg-[--secound]`
+//       }
+//     >
+//       {children}
+//     </Link>
+//   );
+// };
 export const CTAButton3: React.FC<CTAButtonProps3> = ({
   phoneNumber,
   children,

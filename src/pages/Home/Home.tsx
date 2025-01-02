@@ -11,7 +11,6 @@ import {
   Description,
   GreyButton,
   CTAButton,
-  CTAButton2,
   TextComponent,
   BlackButton,
   Quote,
@@ -24,6 +23,7 @@ import {
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { scrollData, testimonialsData } from "../../assets/Data";
+import { MdAddCall } from "react-icons/md";
 // const HeroVideo = React.lazy(
 //   () => import("../../components/HeroVideo/HeroVideo")
 // );
@@ -108,7 +108,11 @@ export const Home: React.FC = () => {
         >
           <div className="p-8 pl-0 w-max text-xs gap-2 flex">
             <GreyButton path="/aboutus">KNOW MORE</GreyButton>
-            <CTAButton phoneNumber="+91 85919 53385">CALL TO ACTION</CTAButton>
+
+            <CTAButton phoneNumber="+91 8591953385">
+              <MdAddCall size={16} />
+              CALL NOW
+            </CTAButton>
           </div>
         </Hero>
 
@@ -147,9 +151,10 @@ export const Home: React.FC = () => {
             </p>
             <div className="pt-8 text-[9px] phone:text-xs flex gap-2">
               <BlackButton path="/aboutus">KNOW MORE</BlackButton>
-              <CTAButton2 phoneNumber="+91 85919 53385">
-                CALL TO ACTION
-              </CTAButton2>
+              <CTAButton phoneNumber="+91 8591953385">
+                <MdAddCall size={16} />
+                CALL NOW
+              </CTAButton>
             </div>
           </div>
           <Suspense fallback={<h1>Loading Image...</h1>}>

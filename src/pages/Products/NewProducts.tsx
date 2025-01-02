@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
-import A50Product from "../../components/A50Product"; // your 3D model component
+// import A50Product from "../../components/A50Product"; // your 3D model component
 import { Suspense, useState } from "react";
 import { ProductProps } from "../../types";
 import { BlackButton, BlackButton2 } from "../../components";
@@ -16,9 +16,7 @@ const CanvaComponent = () => {
     >
       <ambientLight />
       <OrbitControls />
-      <Suspense fallback={null}>
-        <A50Product />
-      </Suspense>
+      <Suspense fallback={null}>{/* <A50Product /> */}</Suspense>
       <Environment preset="sunset" />
     </Canvas>
   );
