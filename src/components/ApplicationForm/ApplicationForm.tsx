@@ -145,7 +145,7 @@
 //           <h1 className="text-2xl font-bold">Job Application: {position}</h1>
 //           <button
 //             onClick={handleClose}
-//             className="text-gray-500 hover:text-gray-700"
+//             className="text-[#393939] hover:text-[#393939]"
 //           >
 //             <IoMdClose size={24} />
 //           </button>
@@ -193,7 +193,7 @@
 //                 <button
 //                   type="button"
 //                   onClick={back}
-//                   className="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition-colors"
+//                   className="px-4 py-2 bg-gray-200 text-[#393939] rounded hover:bg-gray-300 transition-colors"
 //                 >
 //                   Back
 //                 </button>
@@ -219,13 +219,15 @@
 //   );
 // }
 
-// import { useState } from "react";
+// import React, { useState } from "react";
 // import { motion, AnimatePresence } from "framer-motion";
 // import { FiUser, FiBriefcase, FiFileText, FiX } from "react-icons/fi";
 // import { PersonalDetails } from "./PersonalDetails";
 // import { ExperienceDetails } from "./ExperienceDetails";
 // import { FinalDetails } from "./FinalDetails";
 // import { ThankYouMessage } from "./ThankYouPopup";
+// import axios from "axios";
+// import { BASE_URL } from "../../pages/Service/Api/Api";
 
 // export interface FormData {
 //   name: string;
@@ -303,10 +305,35 @@
 //     e.preventDefault();
 //     if (currentStep === 3) {
 //       setIsSubmitting(true);
-//       // Simulating API call
-//       await new Promise((resolve) => setTimeout(resolve, 2000));
-//       setShowThankYou(true);
-//       setIsSubmitting(false);
+//       try {
+//         const formDataToSend = new FormData();
+//         Object.entries(formData).forEach(([key, value]) => {
+//           if (value !== null) {
+//             if (key === "resume" && value instanceof File) {
+//               formDataToSend.append("resume", value, value.name);
+//             } else {
+//               formDataToSend.append(key, value as string);
+//             }
+//           }
+//         });
+
+//         const response = await axios.post(`${BASE_URL}/apply`, formDataToSend, {
+//           headers: {
+//             "Content-Type": "multipart/form-data",
+//           },
+//         });
+
+//         if (response.data && response.data.status === "success") {
+//           setShowThankYou(true);
+//         } else {
+//           alert("Failed to submit application. Please try again.");
+//         }
+//       } catch (error) {
+//         console.error("Error submitting application:", error);
+//         alert("Failed to submit application. Please try again.");
+//       } finally {
+//         setIsSubmitting(false);
+//       }
 //     } else {
 //       setCurrentStep((prev) => prev + 1);
 //     }
@@ -329,15 +356,15 @@
 //         initial={{ y: 50, opacity: 0 }}
 //         animate={{ y: 0, opacity: 1 }}
 //         exit={{ y: 50, opacity: 0 }}
-//         className="bg-white rounded-4xl shadow-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto"
+//         className="bg-white rounded-lg shadow-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto"
 //       >
 //         <div className="sticky top-0 bg-white p-6 border-b flex justify-between items-center">
-//           <h1 className="text-3xl font-bold text-[#03237b]">
+//           <h1 className="text-3xl font-bold text-[#393939]">
 //             Apply for {position}
 //           </h1>
 //           <button
 //             onClick={onClose}
-//             className="text-gray-500 hover:text-gray-700 transition-colors"
+//             className="text-[#393939] hover:text-[#393939] transition-colors"
 //           >
 //             <FiX size={24} />
 //           </button>
@@ -354,7 +381,7 @@
 //                     className={`w-12 h-12 rounded-full flex items-center justify-center ${
 //                       index + 1 <= currentStep
 //                         ? "bg-[#fad000] text-[#03237b]"
-//                         : "bg-gray-200 text-gray-500"
+//                         : "bg-gray-200 text-[#393939]"
 //                     }`}
 //                   >
 //                     {step.icon}
@@ -401,7 +428,7 @@
 //                 <button
 //                   type="button"
 //                   onClick={() => setCurrentStep((prev) => prev - 1)}
-//                   className="px-8 py-3 text-[--secound] font-bold bg-[--black] text-base rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--secound] hover:text-[--black] whitespace-nowrap"
+//                   className="px-7 py-3 text-[--secound] font-bold bg-[--black] text-base rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--secound] hover:text-[--black] whitespace-nowrap"
 //                 >
 //                   Back
 //                 </button>
@@ -409,7 +436,7 @@
 //               <button
 //                 type="submit"
 //                 disabled={isSubmitting}
-//                 className={`px-8 py-3 text-[--black] font-bold bg-[--secound] text-base rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap ${
+//                 className={`px-7 py-3 text-[--black] font-bold bg-[--secound] text-base rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap ${
 //                   isSubmitting ? "opacity-50 cursor-not-allowed" : ""
 //                 }`}
 //               >
@@ -494,7 +521,9 @@ export function ApplicationForm({
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -502,10 +531,10 @@ export function ApplicationForm({
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-    if (file && file.size <= 2 * 1024 * 1024) {
+    if (file && file.size <= 5 * 1024 * 1024) {
       setFormData((prev) => ({ ...prev, resume: file }));
     } else {
-      alert("File size should not exceed 2MB");
+      alert("File size should not exceed 5MB");
     }
   };
 
@@ -567,12 +596,12 @@ export function ApplicationForm({
         className="bg-white rounded-lg shadow-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto"
       >
         <div className="sticky top-0 bg-white p-6 border-b flex justify-between items-center">
-          <h1 className="text-3xl font-bold text-gray-800">
+          <h1 className="text-3xl font-bold text-[#393939]">
             Apply for {position}
           </h1>
           <button
             onClick={onClose}
-            className="text-gray-500 hover:text-gray-700 transition-colors"
+            className="text-[#393939] hover:text-[#393939] transition-colors"
           >
             <FiX size={24} />
           </button>
@@ -589,12 +618,12 @@ export function ApplicationForm({
                     className={`w-12 h-12 rounded-full flex items-center justify-center ${
                       index + 1 <= currentStep
                         ? "bg-[#fad000] text-[#03237b]"
-                        : "bg-gray-200 text-gray-500"
+                        : "bg-gray-200 text-[#393939]"
                     }`}
                   >
                     {step.icon}
                   </div>
-                  <span className="mt-2 text-sm font-medium text-gray-600">
+                  <span className="mt-2 text-sm font-medium text-[#393939]">
                     {step.title}
                   </span>
                 </div>
@@ -636,7 +665,7 @@ export function ApplicationForm({
                 <button
                   type="button"
                   onClick={() => setCurrentStep((prev) => prev - 1)}
-                  className="px-8 py-3 text-[--secound] font-bold bg-[--black] text-base rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--secound] hover:text-[--black] whitespace-nowrap"
+                  className="px-7 py-3 text-[--secound] font-bold bg-[--black] text-base rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--secound] hover:text-[--black] whitespace-nowrap"
                 >
                   Back
                 </button>
@@ -644,7 +673,7 @@ export function ApplicationForm({
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`px-8 py-3 text-[--black] font-bold bg-[--secound] text-base rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap ${
+                className={`px-7 py-3 text-[--black] font-bold bg-[--secound] text-base rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap ${
                   isSubmitting ? "opacity-50 cursor-not-allowed" : ""
                 }`}
               >

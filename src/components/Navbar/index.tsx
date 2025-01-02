@@ -43,8 +43,8 @@ const MenuItems: React.FC<MenuItemsProps> = ({ handleClick, type }) => (
       { to: "/products", label: "Our Products" },
       { to: "/aboutus", label: "About Us" },
       { to: "/blog", label: "Blog" },
-      { to: "/career", label: "Career" },
       { to: "/contactus", label: "Contact Us" },
+      { to: "/career", label: "Careers" },
     ].map((item) => (
       <MenuItem
         key={item.to}

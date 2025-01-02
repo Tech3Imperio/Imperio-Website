@@ -121,7 +121,7 @@ export function FinalDetails({
         <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
           <div className="space-y-1 text-center">
             <FiUpload className="mx-auto h-12 w-12 text-gray-400" />
-            <div className="flex text-sm text-gray-600">
+            <div className="flex text-sm text-[#393939]">
               <label
                 htmlFor="resume"
                 className="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500"
@@ -138,7 +138,7 @@ export function FinalDetails({
               </label>
               <p className="pl-1">or drag and drop</p>
             </div>
-            <p className="text-xs text-gray-500">PDF, DOC, DOCX up to 2MB</p>
+            <p className="text-xs text-gray-500">PDF, DOC, DOCX up to 5MB</p>
           </div>
         </div>
       </div>
