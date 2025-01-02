@@ -35,23 +35,27 @@ export const SocialLinks: React.FC<SocialLinksProps> = ({
   className = "", // Additional CSS classes for container
   objectClassName = "", // Additional CSS classes for individual social link
 }) => (
-  <div className={className}>
+  <div className={className} aria-label="social-links">
     <SocialLink
+      aria-label="facebook btn"
       to="https://www.facebook.com/imperiorailingsystem" // Facebook URL
       icon={Facebook} // Facebook icon component
       className={objectClassName + "text-3xl pb-2"} // Additional styling for Facebook link
     />
     <SocialLink
+      aria-label="instagram btn"
       to="https://www.instagram.com/imperio.railings/?igsh=OWlmaXB6NnJpcWJ0" // Instagram URL
       icon={Instagram} // Instagram icon component
       className={objectClassName + "text-2xl pt-1"} // Additional styling for Instagram link
     />
     <SocialLink
+      aria-label="youtube btn"
       to="https://www.youtube.com/channel/UCfc7xvEAq7E1KPy6xFA_msg" // YouTube URL
       icon={Youtube} // YouTube icon component
       className={objectClassName + "text-2xl pt-1"} // Additional styling for YouTube link
     />
     <SocialLink
+      aria-label="x btn"
       to="https://x.com/ImperioRailing" // Twitter URL
       icon={Twitter} // Twitter icon component
       className={objectClassName + "text-2xl pt-1"} // Additional styling for Twitter link

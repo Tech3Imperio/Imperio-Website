@@ -45,6 +45,7 @@ export const QuoteButton: React.FC<QuoteButtonProps> = ({ className }) => {
   return (
     <Link
       to="/quote"
+      aria-label="qoute btn"
       className={
         "px-6 py-4 text-[--black] font-bold bg-[--secound] text-xs rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap " +
         className
@@ -62,6 +63,7 @@ export const DealershipButton: React.FC<DealershipButtonProps> = ({
   return (
     <Link
       to="/dealership"
+      aria-label="dealership btn"
       className={
         "py-4 px-6 text-[--black] font-bold bg-white text-xs rounded-4xl transition-700 cursor-pointer border border-white hover:bg-[--black] hover:text-[--secound] " +
         className

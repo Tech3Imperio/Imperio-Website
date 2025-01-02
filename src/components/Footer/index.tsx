@@ -108,7 +108,10 @@ export const Footer = () => {
         </div>
 
         {/* if you want hide terms of use Privacy Policy in phone that time use this code[ className="flex-col text-white hidden laptop:flex" ] */}
-        <div className="flex-col text-white hidden laptop:flex">
+        <div
+          className="flex-col text-white hidden laptop:flex"
+          aria-label="social-links"
+        >
           {" "}
           {/* Social media links and policies for larger screens */}
           <SocialLinks className="flex text-2xl gap-5" />
@@ -153,7 +156,10 @@ export const Footer = () => {
       {message /* Conditional rendering of the popup message */ && (
         <PopupMessage message={message} onClose={() => setMessage("")} />
       )}
-      <div className="flex-col text-white xl:hidden laptop:flex">
+      <div
+        className="flex-col text-white xl:hidden laptop:flex"
+        aria-label="social-links"
+      >
         {" "}
         {/* Social media links and policies for larger screens */}
         <SocialLinks className="flex text-2xl gap-5" />

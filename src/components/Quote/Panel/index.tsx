@@ -1,7 +1,7 @@
 import { QuoteButton, DealershipButton } from "../.."; // Importing the QuoteButton component
 import { bgQuote, bgDealers } from "../../../assets/Images"; // Importing the background image
 import { CTAButton3 } from "../../../components";
-
+import { MdAddCall } from "react-icons/md";
 export const Dealers = () => {
   return (
     <section className="relative mb-2">
@@ -79,8 +79,9 @@ export const Quote = () => {
             </div>
             <div className=" flex h-4 w-14 text-center items-center gap-2">
               <QuoteButton className="max-tablet:text-[0.5rem]" />{" "}
-              <CTAButton3 phoneNumber="+91 85919 53385">
-                CALL TO ACTION
+              <CTAButton3 phoneNumber="+91 8591953385">
+                <MdAddCall size={16} />
+                CALL NOW
               </CTAButton3>
               {/* QuoteButton component */}
             </div>

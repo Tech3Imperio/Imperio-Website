@@ -135,7 +135,7 @@ export const CTAButton3: React.FC<CTAButtonProps3> = ({
       to={`tel:${phoneNumber}`} // Using "tel:" scheme for phone call
       className={
         className +
-        `py-[15px] px-4 text-[--black] font-bold bg-white text-[9px] md:text-xs rounded-4xl transition-700 cursor-pointer border border-white hover:bg-[--black] hover:text-[--secound] whitespace-nowrap`
+        `py-[15px] justify-center items-center flex gap-2 px-5 text-[--black] font-bold bg-white text-[9px] md:text-xs rounded-4xl transition-700 cursor-pointer border border-white hover:bg-[--black] hover:text-[--secound] whitespace-nowrap`
       }
     >
       {children}
