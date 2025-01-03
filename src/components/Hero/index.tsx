@@ -127,18 +127,18 @@ export const Hero: React.FC<HeroProps> = ({
           } text-white pl-9 phone:pl-16 tablet:pl-24 laptop:pl-32 xl:pl-44`}
         >
           {/* Main header */}
-          <h2
+          <p
             className={`text-[2rem] phone:text-[3rem] tablet:text-[3.3rem] laptop:text-[3.5rem] xl:text-[3.8rem] Raleway ${
               condition ? "w-4/5" : "w-full"
             }`}
           >
             {header}
-          </h2>
+          </p>
 
           {/* Subheader */}
           <h1
             className={`text-xs phone:text-base ${
-              condition ? "w-4/5" : "w-full py-4"
+              condition ? "lg:w-[52%]" : "lg:w-[52%] py-4"
             }`}
           >
             {subHeader}

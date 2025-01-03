@@ -72,7 +72,7 @@ export default function ModernHandrail() {
           "handrails staircase,stair handrail,Premium Glass Railing, handrail supplier,Modern Staircase Railings,Durable Glass Railings, handrail profile,LED handrail, aluminium handrail,sleek handrail,round handrail, glass railing near me, stainless steel handrail, aluminum handrail cost per foot, handrail in mumbai"
         }
         ogImage={squareBalconyHandrail}
-        ogUrl={"https://www.imperiorailing.com/blog/modernhandrail"}
+        ogUrl={"https://www.imperiorailing.com/blog/aluminum-handrail"}
       />
       <Hero
         img={squareBalconyHandrail}
@@ -84,7 +84,7 @@ export default function ModernHandrail() {
       <div className="min-h-screen bg-white p-4 md:p-8">
         <span className="flex flex-wrap gap-2 pb-4 items-center">
           <Link
-            to="/blog/modern/terrace/glass/railing"
+            to="/blog/terrace/glass-railing"
             className="hover:text-[#fad000] text-base sm:text-lg md:text-xl"
           >
             Terrace Railing
@@ -92,7 +92,7 @@ export default function ModernHandrail() {
           <MdKeyboardArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
 
           <Link
-            to="/blog/modern/staircase"
+            to="/blog/modern/staircase-glass-railing"
             className="hover:text-[#fad000] text-base sm:text-lg md:text-xl"
           >
             Staircase Railing
@@ -100,7 +100,7 @@ export default function ModernHandrail() {
           <MdKeyboardArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
 
           <Link
-            to="/blog/modern/balcony"
+            to="/blog/modern/balcony-glass-railing"
             className="hover:text-[#fad000] text-base sm:text-lg md:text-xl"
           >
             Balcony Railing

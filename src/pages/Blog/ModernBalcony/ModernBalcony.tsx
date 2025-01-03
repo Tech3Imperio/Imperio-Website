@@ -68,7 +68,9 @@ export default function ModernBalcony() {
           "balcony glass railing , aluminum glass railing, glass stair railing, glass supplier Mumbai, frameless glass railing, balcony glass railing, stainless steel glass railing, spigot glass railing, modern balcony design, tempered glass stair railing, glass handrail, glass railing indoor, glass balcony cost, glass supplier India, glass railing near me"
         }
         ogImage={customBalcony}
-        ogUrl={"https://www.imperiorailing.com/blog/modernhandrail"}
+        ogUrl={
+          "https://www.imperiorailing.com/blog/modern/balcony-glass-railing"
+        }
       />
       <Hero
         img={modernBalcony}
@@ -80,7 +82,7 @@ export default function ModernBalcony() {
       <div className="min-h-screen bg-white p-4 md:p-8">
         <span className="flex flex-wrap gap-2 pb-4 items-center">
           <Link
-            to="/blog/modern/terrace/glass/railing"
+            to="/blog/terrace/glass-railing"
             className="hover:text-[#fad000] text-base sm:text-lg md:text-xl"
           >
             Terrace Railing
@@ -88,7 +90,7 @@ export default function ModernBalcony() {
           <MdKeyboardArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
 
           <Link
-            to="/blog/modern/staircase"
+            to="/blog/modern/staircase-glass-railing"
             className="hover:text-[#fad000] text-base sm:text-lg md:text-xl"
           >
             Staircase Railing
@@ -96,7 +98,7 @@ export default function ModernBalcony() {
           <MdKeyboardArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
 
           <Link
-            to="/blog/modern/handrail"
+            to="/blog/aluminum-handrail"
             className="hover:text-[#fad000] text-base sm:text-lg md:text-xl"
           >
             Handrail Railing

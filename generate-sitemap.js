@@ -38,15 +38,23 @@ const urls = [
     priority: 0.8,
   },
   {
-    url: "/blog/modern/terrace/glass/railing",
+    url: "/blog/terrace/glass-railing",
     changefreq: "weekly",
     priority: 0.8,
   },
-  { url: "/blog/modern/staircase", changefreq: "weekly", priority: 0.8 },
-  { url: "/blog/modern/handrail", changefreq: "weekly", priority: 0.8 },
-  { url: "/blog/modern/balcony", changefreq: "weekly", priority: 0.8 },
   {
-    url: "/blog/sgp/pvb/glass/difference",
+    url: "/blog/modern/staircase-glass-railing",
+    changefreq: "weekly",
+    priority: 0.8,
+  },
+  { url: "/blog/aluminum-handrail", changefreq: "weekly", priority: 0.8 },
+  {
+    url: "/blog/modern/balcony-glass-railing",
+    changefreq: "weekly",
+    priority: 0.8,
+  },
+  {
+    url: "/blog/pvb-sgp/glass-difference",
     changefreq: "weekly",
     priority: 0.8,
   },

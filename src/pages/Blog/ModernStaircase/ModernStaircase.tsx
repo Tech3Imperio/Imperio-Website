@@ -70,7 +70,9 @@ export default function ModernStaircase() {
           "Staircase Glass Railings,Frameless Glass Railings,Premium Glass Railing Systems,Modern Staircase Railings,Durable Glass Railings,Luxury Staircase RailingsHigh-Quality Glass Railing,afety Glass Railings for Stairs, Glass Railings for Homes and Offices,Seamless Staircase Glass Railings,glass handrails for stairs, glass railing in mumbai"
         }
         ogImage={glassStaircase}
-        ogUrl={"https://www.imperiorailing.com/blog/ModernStaircase"}
+        ogUrl={
+          "https://www.imperiorailing.com/blog/modern/staircase-glass-railing"
+        }
       />
       <Hero
         img={whitestaircase}
@@ -82,7 +84,7 @@ export default function ModernStaircase() {
       <div className="min-h-screen bg-white p-4 md:p-8">
         <span className="flex flex-wrap gap-2 pb-4 items-center">
           <Link
-            to="/blog/modern/terrace/glass/railing"
+            to="/blog/terrace/glass-railing"
             className="hover:text-[#fad000] text-base sm:text-lg md:text-xl"
           >
             Terrace Railing
@@ -90,7 +92,7 @@ export default function ModernStaircase() {
           <MdKeyboardArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
 
           <Link
-            to="/blog/modern/handrail"
+            to="/blog/aluminum-handrail"
             className="hover:text-[#fad000] text-base sm:text-lg md:text-xl"
           >
             Handrail Railing
@@ -98,7 +100,7 @@ export default function ModernStaircase() {
           <MdKeyboardArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
 
           <Link
-            to="/blog/modern/balcony"
+            to="/blog/modern/balcony-glass-railing"
             className="hover:text-[#fad000] text-base sm:text-lg md:text-xl"
           >
             Balcony Railing

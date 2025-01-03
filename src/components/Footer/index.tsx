@@ -156,10 +156,7 @@ export const Footer = () => {
       {message /* Conditional rendering of the popup message */ && (
         <PopupMessage message={message} onClose={() => setMessage("")} />
       )}
-      <div
-        className="flex-col text-white xl:hidden laptop:flex"
-        aria-label="social-links"
-      >
+      <div className="flex-col text-white md:hidden" aria-label="social-links">
         {" "}
         {/* Social media links and policies for larger screens */}
         <SocialLinks className="flex text-2xl gap-5" />

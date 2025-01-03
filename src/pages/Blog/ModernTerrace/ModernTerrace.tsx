@@ -71,7 +71,7 @@ export default function ModernTerrace() {
           "glass railings, aluminum glass railings, Laminated Glass,Terrace glass railing systems, modern glass railings, frameless glass railings,Balcony glass railings, Premium glass railing systems, Minimalist Style, safety glass railings, high durable glass railings, Weather Resistant, Low Maintenance, Customizable Options, Best glass railing systems for terraces in Mumbai, best glass railing systems in Mumbai, Commercial Spaces, modern glass railing designs for homes, Balcony Railings, Staircase glass Railings, stylish glass railings for commercial buildings, transfrom your home decor, seamless glass railing, elegant glass railing, Affordable glass balcony railings in Mumbai"
         }
         ogImage={jogeswariterrace}
-        ogUrl={"https://www.imperiorailing.com/blog/ModernTerrace"}
+        ogUrl={"https://www.imperiorailing.com/blog/terrace/glass-railing"}
       />
       <Hero
         img={heroImg}
@@ -83,7 +83,7 @@ export default function ModernTerrace() {
       <div className="min-h-screen bg-white p-4 md:p-8">
         <span className="flex flex-wrap gap-2 pb-4 items-center">
           <Link
-            to="/blog/Modern/Staircase"
+            to="/blog/modern/staircase-glass-railing"
             className="hover:text-[#fad000] text-base sm:text-lg md:text-xl"
           >
             Staircase Railing
@@ -91,7 +91,7 @@ export default function ModernTerrace() {
           <MdKeyboardArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
 
           <Link
-            to="/blog/modern/handrail"
+            to="/blog/aluminum-handrail"
             className="hover:text-[#fad000] text-base sm:text-lg md:text-xl"
           >
             Handrail Railing
@@ -99,7 +99,7 @@ export default function ModernTerrace() {
           <MdKeyboardArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
 
           <Link
-            to="/blog/modern/balcony"
+            to="/blog/modern/balcony-glass-railing"
             className="hover:text-[#fad000] text-base sm:text-lg md:text-xl"
           >
             Balcony Railing

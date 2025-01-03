@@ -137,7 +137,7 @@ export const Blog = () => {
       <div className="max-w-7xl grid md:grid-cols-2 mx-auto mt-10 md:mt-24 gap-10 xl:gap-[3rem] p-6 pb-14">
         <div>
           <h3 className=" text-3xl text-[--third] pb-2">
-            <Link to="modern/terrace/glass/railing">
+            <Link to="terrace/glass-railing">
               {" "}
               <b className=" flex gap-2">
                 Terrace Glass Railing{" "}
@@ -159,7 +159,7 @@ export const Blog = () => {
         </div>
         <div>
           <h3 className=" text-3xl text-[--third] pb-2">
-            <Link to="modern/staircase">
+            <Link to="modern/staircase-glass-railing">
               {" "}
               <b className=" flex gap-2">
                 Staircase Glass Railing{" "}
@@ -182,7 +182,7 @@ export const Blog = () => {
         </div>
         <div>
           <h3 className=" text-3xl text-[--third]">
-            <Link to="modern/handrail">
+            <Link to="aluminum-handrail">
               {" "}
               <b className=" flex gap-2 pb-2">
                 Aluminium Handrail Glass Railing{" "}
@@ -203,7 +203,7 @@ export const Blog = () => {
         </div>
         <div>
           <h3 className=" text-3xl text-[--third] pb-2">
-            <Link to="modern/balcony">
+            <Link to="modern/balcony-glass-railing">
               {" "}
               <b className=" flex gap-2">
                 Balcony Glass Railing{" "}
@@ -225,7 +225,7 @@ export const Blog = () => {
         </div>
         <div>
           <h3 className=" text-3xl text-[--third] pb-2">
-            <Link to="sgp/pvb/glass/difference">
+            <Link to="pvb-sgp/glass-difference">
               {" "}
               <b className=" flex gap-2">
                 PVB vs SGP Glass{" "}

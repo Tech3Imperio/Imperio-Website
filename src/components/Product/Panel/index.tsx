@@ -15,7 +15,7 @@ export const ProductPanel: React.FC<ProductPanelProps> = ({
         <div className="max-w-[85rem] flex flex-col md:flex-row mx-auto mt-2 md:mt-8 gap-6 px-4 md:px-8 py-4">
           <div className="flex flex-col md:w-[55%] gap-4">
             {header ? (
-              <h2 className="YellowText text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
+              <h2 className=" text-[#fad000] text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
                 {header}
               </h2>
             ) : (
@@ -28,58 +28,73 @@ export const ProductPanel: React.FC<ProductPanelProps> = ({
           <div className="md:w-[45%]">
             {header === "Base" ? (
               <p className="text-justify italic text-[--grey]">
-                "Discover our premium <strong>glass railing bases</strong> in
-                India, made of durable aluminum and customizable in matte or
-                glossy finishes to match any style. With quick service and fast
-                quotations, we proudly deliver nationwide, including{" "}
-                <strong>Mumbai</strong>, <strong>Pune</strong>,{" "}
-                <strong>Hyderabad</strong>, and <strong>Kolkata</strong>.
-                Contact us for a free quote today!"
+                "Explore our premium{" "}
+                <strong>aluminium glass railing bases</strong> and
+                <strong> balcony glass railings</strong>, designed for
+                durability and style. Customizable in matte or glossy finishes,
+                our <strong>aluminum railings</strong> are perfect for both
+                residential and commercial spaces. Proudly serving{" "}
+                <strong>Mumbai</strong>, <strong>Pune</strong>,
+                <strong>Hyderabad</strong>, <strong>Kolkata</strong>, and
+                beyond, we offer fast service and quick quotes. Get in touch for
+                a free consultation on <strong>glass railing systems</strong>{" "}
+                and <strong>custom railing designs</strong> today!"
               </p>
             ) : header === "Handrail" ? (
               <p className="text-justify italic text-[--grey]">
-                "Explore our premium{" "}
-                <strong>aluminum glass railing handrail</strong> options,
-                featuring customizable finishes to suit any style. Choose from
-                matte and glossy color finishes, plus a brighter{" "}
-                <strong>handrail LED strip</strong> to elegantly illuminate your
-                space. Available in major cities like <strong>Mumbai</strong>,{" "}
-                <strong>Pune</strong>, <strong>Hyderabad</strong>, and{" "}
-                <strong>Kolkata</strong>, we deliver all over{" "}
-                <strong>India</strong>, enhancing{" "}
-                <strong>glass railing systems</strong> nationwide with unmatched
-                style and safety. Contact us today to transform your space!"
+                "Discover our premium{" "}
+                <strong>aluminum glass railing handrails</strong>, available in
+                a variety of customizable finishes to suit any aesthetic. Choose
+                from sleek matte or glossy color finishes, and add a modern
+                touch with our <strong>handrail LED strip</strong> to
+                beautifully illuminate your space. Whether you are in{" "}
+                <strong>Mumbai</strong>, <strong>Pune</strong>,
+                <strong>Hyderabad</strong>, or <strong>Kolkata</strong>, we
+                offer fast delivery across <strong>India</strong>, elevating
+                your <strong>glass railing systems</strong> with both style and
+                unmatched safety. Contact us today for a free consultation and
+                transform your space with our premium
+                <strong>aluminium railing solutions</strong>."
               </p>
             ) : header === "Glass Height" ? (
               <p className="text-justify italic text-[--grey]">
-                "Explore our premium{" "}
-                <strong>glass railing height options</strong>, designed to meet
-                diverse safety and style requirements. Choose from{" "}
+                "Discover our premium{" "}
+                <strong>glass railing height options</strong>, expertly designed
+                to meet various <strong>style</strong> and{" "}
+                <strong>safety requirements</strong>. Select from{" "}
                 <strong>custom heights</strong> ranging from 900mm to 1200mm,
-                each crafted for <strong>durability and sophistication</strong>.
-                Available in major cities like <strong>Mumbai</strong>,{" "}
-                <strong>Pune</strong>, <strong>Hyderabad</strong>, and{" "}
-                <strong>Kolkata</strong>, we deliver across{" "}
-                <strong>India</strong>, enhancing{" "}
-                <strong>glass railing systems</strong> nationwide with unmatched
-                style, safety, and functionality.{" "}
-                <strong>Contact us today to find your perfect fit!</strong>"
+                tailored for durability and sophistication. Whether you're in{" "}
+                <strong>Mumbai</strong>, <strong>Pune</strong>,{" "}
+                <strong>Hyderabad</strong>, or <strong>Kolkata</strong>, we
+                proudly serve all over <strong>India</strong>, offering
+                customized <strong>glass railing systems</strong> that elevate
+                your space. Perfect for residential and commercial projects, our
+                railings combine <strong>strength, functionality,</strong> and
+                <strong>elegance</strong>.{" "}
+                <strong>Contact us today to find your perfect fit</strong> and
+                enhance your property with our premium solutions."
               </p>
             ) : (
               <p className="text-justify italic text-[--grey]">
                 "Discover our versatile{" "}
-                <strong>glass types for railing systems</strong>, tailored to
-                fit various aesthetic and functional needs. Choose from{" "}
-                <strong>clear</strong>, <strong>tinted</strong>,{" "}
-                <strong>frosted</strong>, or <strong>tempered glass</strong>{" "}
-                options, each crafted for <strong>strength</strong> and{" "}
-                <strong>visual appeal</strong>. Available for installation in
-                major cities such as <strong>Delhi</strong>,{" "}
-                <strong>Bangalore</strong>, <strong>Chennai</strong>, and{" "}
-                <strong>Ahmedabad</strong>, we deliver nationwide, enhancing
-                spaces with modern style, durability, and safety in every{" "}
-                <strong>glass railing system</strong>. Contact us to elevate
-                your space today!"
+                <strong>glass types for railing systems</strong>, designed to
+                meet both <strong>aesthetic</strong> and{" "}
+                <strong>functional needs</strong>. Choose from a variety of
+                options including <strong>clear glass</strong>,
+                <strong>tinted glass</strong>, <strong>frosted glass</strong>,
+                and <strong>tempered glass</strong>, or opt for our enhanced{" "}
+                <strong>PVB</strong> and <strong>SGP laminated glass</strong>,
+                each crafted for <strong>strength</strong>,{" "}
+                <strong>visual appeal</strong>, and superior{" "}
+                <strong>impact resistance</strong>. Available for installation
+                in major cities such as <strong>Delhi</strong>,{" "}
+                <strong>Bangalore</strong>,<strong>Chennai</strong>, and{" "}
+                <strong>Ahmedabad</strong>, we proudly serve customers
+                nationwide. Our <strong>glass railing systems</strong> are
+                designed to enhance your space with{" "}
+                <strong>modern style</strong>, <strong>durability</strong>, and{" "}
+                <strong>maximum safety</strong>. Contact us today to elevate
+                your space with our custom solutions!"
               </p>
             )}
           </div>

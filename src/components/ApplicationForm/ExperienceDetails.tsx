@@ -210,7 +210,7 @@ export function ExperienceDetails({
             htmlFor="companyName"
             className="block text-sm font-medium text-[#393939] mb-1"
           >
-            Company Name
+            Company Name (Optional)
           </label>
           <input
             type="text"
@@ -226,7 +226,7 @@ export function ExperienceDetails({
             htmlFor="designation"
             className="block text-sm font-medium text-[#393939] mb-1"
           >
-            Designation
+            Designation (Optional)
           </label>
           <input
             type="text"

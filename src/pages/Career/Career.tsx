@@ -55,7 +55,13 @@ export default function Career() {
       <Hero
         img="https://www.valmet.com/globalassets/about-us/careers/careers-hero_1280x720.jpg?format=webp&width=1290&quality=85"
         altText="hero for blog"
-        header="Explore Career Opportunities at Imperio"
+        header={
+          <>
+            Explore Career Opportunities at,
+            <br />
+            Imperio
+          </>
+        }
         subHeader="Explore exciting Explore Career Opportunities at Imperio Railing Systems and join a team committed to growth and innovation. We offer a collaborative work environment where you can thrive. Apply today and take the next step in your professional journey."
         curve
       />
