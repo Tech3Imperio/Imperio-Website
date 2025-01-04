@@ -1,26 +1,7 @@
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Environment } from "@react-three/drei";
-// import A50Product from "../../components/A50Product"; // your 3D model component
-import { Suspense, useState } from "react";
+import { useState } from "react";
 import { ProductProps } from "../../types";
 import { BlackButton, BlackButton2 } from "../../components";
-import { FaArrowLeft, FaArrowRight, FaMinus, FaPlus } from "react-icons/fa6";
-
-const CanvaComponent = () => {
-  return (
-    <Canvas
-      camera={{
-        position: [-500, 300, 50],
-        fov: 30,
-      }}
-    >
-      <ambientLight />
-      <OrbitControls />
-      <Suspense fallback={null}>{/* <A50Product /> */}</Suspense>
-      <Environment preset="sunset" />
-    </Canvas>
-  );
-};
+import { FaMinus, FaPlus } from "react-icons/fa6";
 
 type ImageData = {
   img: string;
@@ -38,64 +19,11 @@ interface NewProductsProps {
   imageData: ImageData[];
 }
 
-const NewProducts = ({
-  productData,
-  featureData,
-  imageData,
-}: NewProductsProps) => {
-  const [CarouselData] = useState([
-    { img: "canvas", alt: "3D Canvas" },
-    ...imageData,
-  ]);
-
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  // Move to next image
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % CarouselData.length); // Looping carousel
-  };
-
-  // Move to previous image
-  const prevSlide = () => {
-    setCurrentSlide(
-      (prev) => (prev - 1 + CarouselData.length) % CarouselData.length
-    ); // Looping carousel
-  };
-
+const NewProducts = ({ productData, featureData }: NewProductsProps) => {
   const [addToCart, setCartCounter] = useState(0);
 
   return (
     <main className="flex w-screen gap-10">
-      <aside className="sticky left-0 w-[70vw] h-screen flex justify-center items-center">
-        <div className="w-full h-screen flex justify-center items-center">
-          <div className="flex justify-center w-full h-full">
-            {/* Render the current image */}
-            {CarouselData[currentSlide].img === "canvas" ? (
-              <CanvaComponent />
-            ) : (
-              <img
-                src={CarouselData[currentSlide].img}
-                alt={CarouselData[currentSlide].alt}
-                className="object-cover h-[100vh] w-auto"
-              />
-            )}
-
-            {/* Carousel Controls */}
-            <button
-              onClick={prevSlide}
-              className="absolute top-[50%] left-4 transform -translate-y-1/2 bg-[--secound] p-2 rounded-full"
-            >
-              <FaArrowLeft />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="absolute top-[50%] right-4 transform -translate-y-1/2 bg-[--secound] p-2 rounded-full"
-            >
-              <FaArrowRight />
-            </button>
-          </div>
-        </div>
-      </aside>
       <section className="flex flex-col w-[25vw] relative items-center justify-around h-screen px-4 overflow-y-scroll sidebar-container">
         <header className="pb-8 w-full ">
           <h2 className="YellowText text-[1.75rem] tablet:text-4xl xl:text-[2.5rem]">
