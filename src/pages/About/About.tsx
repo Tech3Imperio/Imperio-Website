@@ -89,11 +89,6 @@ export const About: React.FC = () => {
           curve
         />
         <section className="max-h-screen overflow-hidden px-4 md:px-8 mb-24">
-          {/* <Description
-            yellowText="Our Company."
-            mainHeader="Crafting Excellence in Glass Railings."
-            text={`Transform your living spaces with our premium balcony and staircase glass railings, expertly crafted for modern aesthetics in Delhi, Karnataka, Rajasthan, Jharkhand, Uttar Pradesh, Mumbai, and Maharashtra. Our durable and stylish glass railing systems ensure safety while enhancing the elegance of your home or business. With custom installation options and competitive prices, we provide architectural designs that blend functionality with beauty. Proudly supplying products globally, including Dubai and across India, we are your trusted partner for innovative and secure glass railing solutions. Experience the perfect fusion of style and safety with our exquisite glass railing offerings.`}
-          /> */}
           <div className="max-w-7xl flex flex-col md:flex-row mx-auto mt-10 md:mt-24 gap-4">
             <div className="flex flex-col md:w-[60%] gap-1 tablet:gap-6">
               <h2 className="YellowText text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
@@ -212,9 +207,6 @@ export const About: React.FC = () => {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="flex items-start space-x-2"
                   >
-                    {/* <div className="flex-shrink-0 w-8 h-8 bg-[#03237b] text-white rounded-full flex items-center justify-center text-xl font-semibold">
-                      {index + 1}
-                    </div> */}
                     <div>
                       <h3 className="text-xl Raleway-regular text-[#03237b] mb-2">
                         {point.title}

@@ -60,18 +60,13 @@ export default function ModernBalcony() {
   return (
     <>
       <Metadata
-        title={"Balcony Glass Railing | Aluminium Railing in Mumbai"}
-        description={
-          "Explore high-quality aluminum balcony glass railings, frameless glass balcony systems, and spigot glass railing solutions for residential and commercial projects. Serving Mumbai, Delhi, Bangalore, Kolkata and all of India, we offer custom glass designs and railing, modern balcony glass railings, and professional glass railing installations. Enhance your space with durable glass balcony systems, tailored to your needs for both outdoor and indoor areas. Reliable supply and installation by trusted dealers in mumbai, maharashtra and all over india."
-        }
-        keywords={
-          "balcony glass railing , aluminum glass railing, glass stair railing, glass supplier Mumbai, frameless glass railing, balcony glass railing, stainless steel glass railing, spigot glass railing, modern balcony design, tempered glass stair railing, glass handrail, glass railing indoor, glass balcony cost, glass supplier India, glass railing near me"
-        }
+        title="Balcony Glass Railing | Frameless & Aluminum Railings in Mumbai"
+        description="Explore premium quality glass balcony railings, frameless, and spigot designs in Mumbai, Maharashtra, India. Affordable aluminum railing systems for residential and commercial projects."
+        keywords="balcony glass railing, aluminum glass railing, glass stair railing, frameless glass railing, spigot glass systems, modern balcony design, aluminum railings, glass handrails, balcony railing systems"
         ogImage={customBalcony}
-        ogUrl={
-          "https://www.imperiorailing.com/blog/modern/balcony-glass-railing"
-        }
+        ogUrl="https://www.imperiorailing.com/blog/modern/balcony-glass-railing"
       />
+
       <Hero
         img={modernBalcony}
         altText="balcony-railing"
@@ -111,7 +106,7 @@ export default function ModernBalcony() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className=" text-xl md:text-3xl pt-4  YellowText Raleway tracking-widest mb-4">
+          <h2 className=" text-xl md:text-3xl pt-4  text-[#fad000] Raleway tracking-widest mb-4">
             Premium Balcony Glass Railing Dealer and Supplier in Mumbai,
             Maharashtra, and All Over India – Offering Frameless Glass Railing,
             Spigot Glass Systems, and Customizable Designs at Competitive
@@ -159,8 +154,8 @@ export default function ModernBalcony() {
       ${post.imageUrl} 800w,
       ${post.imageUrl} 1200w
     `}
-                      sizes="(max-width: 480px) 400px, 
-           (max-width: 768px) 800px, 
+                      sizes="(max-width: 480px) 400px,
+           (max-width: 768px) 800px,
            1200px"
                       type="image/webp"
                     />

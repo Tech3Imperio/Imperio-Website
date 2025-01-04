@@ -17,7 +17,6 @@ export * from "./PVBSGP/Introduction";
 export * from "./PVBSGP/LoadCapability";
 export * from "./PVBSGP/PostBreakageStrength";
 export * from "./PVBSGP/SafetyFeatures";
-export * from "./HeroVideo/HeroVideo";
 export * from "./Map/Map";
 export * from "./JobDetails/JobDetails";
 export * from "./ApplicationForm/ApplicationForm";

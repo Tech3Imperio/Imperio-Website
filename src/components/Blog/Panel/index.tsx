@@ -53,29 +53,6 @@ export const BlogPanel: React.FC<BlogPanelProps> = ({
   return (
     <section className={`py-20 mx-auto max-w-7xl ${className}`}>
       <div className="flex justify-between items-start max-lg:flex-col gap-4 px-4">
-        {/* THIS IS OLD CODE BUT NOT MOBILE RESPONSIVE */}
-
-        {/* <aside className="flex items-center justify-center flex-wrap gap-2 tablet:space-x-8">
-          <div className="flex gap-2 lg:gap-4 border border-gray-500 rounded-4xl p-2 -ml-2 sm:ml-0">
-            {Socials.map((Social, index) => (
-              <WhiteButton
-                key={index}
-                value={filters[index]}
-                onClick={() => toggleFilter(index)}
-                className="text-base"
-              >
-                {Social}
-              </WhiteButton>
-            ))}
-          </div>
-          <button
-            onClick={resetFilters}
-            className="w-max py-3 laptop:py-4 px-5 laptop:px-6 text-base text-white bg-[--black] font-normal rounded-4xl transition-700 hover:text-[--black] hover:bg-[--secound]"
-          >
-            Reset Filters
-          </button>
-        </aside> */}
-
         {/* FOR MOBILE AND ALL DEVICE RESPONSIVE */}
         <aside className="flex flex-col items-center justify-center gap-4 tablet:flex-row tablet:justify-center tablet:gap-8">
           <div className="flex flex-wrap justify-center p-[0.50rem] gap-2 lg:gap-4 border border-gray-500 rounded-4xl -mt-3  sm:ml-0">

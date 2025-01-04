@@ -5,8 +5,6 @@ import { BlogType } from "../../types";
 import { Link } from "react-router-dom";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
 import Metadata from "../../components/Metatag/Metatag";
-// import Metadata from "../../components/Metatag/Metatag";
-// import { blogCards } from "../../assets/Data";
 
 export const Blog = () => {
   const [data, setData] = useState<BlogType[]>([]);
@@ -59,27 +57,10 @@ export const Blog = () => {
           subHeader="Check out our blogs. Unlock the Secrets to Stunning Glass Railings: Your Ultimate Guide to Stylish and Safe Balcony and Staircase Solutions in India!"
           curve
         />
-        {/* <Description
-          yellowText="Check out these."
-          mainHeader="We acknowledge knowledge."
-          text={
-            <>
-              Explore our blog for insights on glass railing systems. Elevate
-              your home's aesthetic appeal with modern aluminum glass railings,
-              sleek glass railings. Whether you're in Mumbai, Delhi, Hyderabad,
-              or any other city in India, we've got you covered.
-              <br />
-              Experience the future of modern design with Imperio's sleek,
-              frameless glass railings. Our innovative solutions offer
-              uninterrupted views and unparalleled safety. From the stunning
-              coastal vistas of Goa to the bustling urban landscapes of Mumbai,
-              our railings enhance the beauty of every space.
-            </>
-          }
-        /> */}
+
         <div className="max-w-7xl flex flex-col md:flex-row mx-auto mt-10 md:mt-24 gap-8 p-4">
           <div className="flex flex-col md:w-[60%] gap-1 tablet:gap-6">
-            <h2 className="YellowText text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
+            <h2 className="text-[#fad000] text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
               Glass Railing Systems
             </h2>
             <h3 className="text-[--third] flex flex-wrap md:max-w-2xl Raleway tracking-wider w-full text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] 2xl:text-5xl">

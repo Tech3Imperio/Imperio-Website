@@ -1,6 +1,4 @@
 import React, { useEffect, useState, Suspense } from "react";
-// import { heroImage } from "../../assets/Images";
-//Festival Time only on This belo code
 import { heroImage } from "../../assets/Images";
 import descImage from "../../assets/Images/home/desc.webp";
 import { Helmet } from "react-helmet";
@@ -18,21 +16,11 @@ import {
   VerticalCarousel,
   ImageScrolls,
   Testimonials,
-  // Dealers,
 } from "../../components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { scrollData, testimonialsData } from "../../assets/Data";
 import { MdAddCall } from "react-icons/md";
-// import ProjectSlider from "../../components/ProjectSlider/ProjectSlider";
-// const HeroVideo = React.lazy(
-//   () => import("../../components/HeroVideo/HeroVideo")
-// );
-
-// import Metadata from "../../components/Metatag/Metatag";
-
-//import for the Festival Component
-// import Festival from "../../components/Festival";
 
 const text =
   "Imperio offers premium glass railing systems that combine safety and style. Explore our innovative designs, including elegant balcony railings, custom solutions, and LED options. Serving Mumbai, Delhi, Hyderabad, and all of India, we also offer exclusive dealership opportunities. Check out our portfolio and transform your space with our top-quality glass railings.";
@@ -116,13 +104,6 @@ export const Home: React.FC = () => {
           </div>
         </Hero>
 
-        {/* <Suspense fallback={<span>Loading video</span>}>
-          <HeroVideo altText="" />
-        </Suspense> */}
-
-        {/* Use this Component in Festive Season only */}
-        {/* <Festival /> */}
-
         <section className="flex flex-col lg:flex-row justify-center gap-8 px-5 phone:px-20 tablet:px-32 xl:px-44 pb-9 phone:pb-16 tablet:pb-24 xl:pb-36 pt-6 phone:pt-14 tablet:pt-24 xl:pt-36">
           <div className="flex flex-col gap-2 phone:gap-4">
             <span className=" text-[#fad000] text-xl tablet:text-4xl lg:text-5xl max-xl:text-3xl max-2xl:text-4xl">
@@ -131,24 +112,6 @@ export const Home: React.FC = () => {
             <h2 className="text-3xl tablet:text-4xl lg:text-5xl Raleway max-xl:text-4xl text-[--third]">
               Crafting Excellence in Glass Railings.
             </h2>
-            {/* <p className="w-full lg:w-[37rem] text-xs tablet:text-base lg:text-lg xl:text-xl italic text-[--grey] text-justify">
-              At <strong>Imperio Railing Systems</strong>, we specialize in
-              creating beautiful and durable{" "}
-              <strong>glass railing systems</strong>, including{" "}
-              <strong>aluminium glass railings</strong>,{" "}
-              <strong>custom glass railings</strong>,{" "}
-              <strong>
-                modern balcony glass railing, balcony glass design
-              </strong>
-              , and <strong>staircase glass railing</strong> that enhance any
-              space. Based in <strong>Mumbai, Maharashtra, India</strong>, our
-              focus on innovation and quality ensures that our team delivers
-              top-notch solutions for both residential and commercial projects.
-              As trusted <strong>dealers of aluminium glass railings</strong> in
-              India, we are committed to providing high-quality, stylish, and
-              functional glass railing systems that meet the needs of every
-              client.
-            </p> */}
             <p className="w-full lg:w-[37rem] text-xs tablet:text-base lg:text-lg xl:text-xl italic text-[--grey] text-justify">
               At <strong>Imperio Railing Systems</strong>, we take pride in
               crafting exceptional glass railing solutions that combine
@@ -201,12 +164,7 @@ export const Home: React.FC = () => {
           </Suspense>
         </section>
         {/* <ProjectSlider /> */}
-        <Description
-          // yellowText="Feature with future."
-          // mainHeader="Innovative Designs for Every Need."
-          // text="With innovative glass railing designs, our products redefine modern spaces. As trusted glass railing suppliers and dealers in Maharashtra, Rajasthan, Uttar Pradesh, Mohali, Uttarakhand, Bengaluru, and across India, explore our premium glass handrails and railing systems today"
-          black
-        >
+        <Description black>
           <div className="max-w-max flex flex-col md:flex-row mx-auto -mt-16 gap-8 ">
             <div className="flex flex-col md:w-[70%] gap-1 tablet:gap-6">
               <p className="text-[#fad000] text-xl sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
@@ -237,7 +195,7 @@ export const Home: React.FC = () => {
               </p>
             </div>
           </div>
-
+          {/* 
           {isDesktop ? (
             <div className="flex justify-center px-10 phone:px-6 tablet:px-10 laptop:px-20 py-12 gap-32 items-center h-fit">
               <VerticalCarousel direction className="w-[35%]">
@@ -296,8 +254,8 @@ export const Home: React.FC = () => {
                 </div>
               ))}
             </HorizontalCarousel>
-          )}
-          {/* {isDesktop ? (
+          )} */}
+          {isDesktop ? (
             <div className="flex justify-center px-10 phone:px-6 tablet:px-10 laptop:px-20 py-12 gap-32 items-center h-fit">
               <VerticalCarousel direction className="w-[40%]">
                 {scrollData.map((item) => (
@@ -363,7 +321,7 @@ export const Home: React.FC = () => {
                 </div>
               ))}
             </HorizontalCarousel>
-          )} */}
+          )}
 
           {/* end */}
         </Description>

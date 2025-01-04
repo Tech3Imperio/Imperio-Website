@@ -69,14 +69,4 @@ export const testimonialsData: TestimonialsData[] = [
     img: cyrusmistry,
     alt: "cyrusmistry",
   },
-  // {
-  //   id: 6,
-  //   name: "Jayadeep H.",
-  //   add: "Mumbai, India.",
-  //   stars: 5,
-  //   quote:
-  //     "Lorem ipsum dolor sit amet consectetur. Enim cursus aenean pretium est in quis nisl leo. Diam bibendum congue varius penatibus odio turpis. Nunc dictumst non in ipsum cursus ac tortor.",
-  //   img: testimonial1,
-  //   alt: "alt text",
-  // },
 ];

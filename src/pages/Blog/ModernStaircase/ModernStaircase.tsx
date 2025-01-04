@@ -112,7 +112,7 @@ export default function ModernStaircase() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className=" text-xl md:text-3xl YellowText Raleway tracking-widest mb-4">
+          <h2 className=" text-xl md:text-3xl text-[#fad000] Raleway tracking-widest mb-4">
             Premium Staircase Glass Railing Systems in Mumbai & Maharashtra
           </h2>
           <h3 className="text-xl italic text-[--third]">
@@ -168,7 +168,7 @@ export default function ModernStaircase() {
                   >
                     {post.title}
                   </motion.h2>
-                  <p className="text-[16px] text-gray-500 text-justify ">
+                  <p className="text-[16px] text-[#393939] text-justify ">
                     {post.excerpt}
                   </p>
                   <p className="text-sm uppercase text-[--third]">
