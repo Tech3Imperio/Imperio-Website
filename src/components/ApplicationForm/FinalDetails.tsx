@@ -10,7 +10,7 @@ interface FinalDetailsProps {
   handleFileChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export function FinalDetails({
+function FinalDetails({
   formData,
   handleInputChange,
   handleFileChange,
@@ -90,3 +90,4 @@ export function FinalDetails({
     </motion.div>
   );
 }
+export default FinalDetails;

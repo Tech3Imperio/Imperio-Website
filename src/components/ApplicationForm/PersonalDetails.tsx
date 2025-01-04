@@ -8,7 +8,7 @@ interface PersonalDetailsProps {
   ) => void;
 }
 
-export function PersonalDetails({
+function PersonalDetails({
   formData,
   handleInputChange,
 }: PersonalDetailsProps) {
@@ -111,3 +111,4 @@ export function PersonalDetails({
     </motion.div>
   );
 }
+export default PersonalDetails;

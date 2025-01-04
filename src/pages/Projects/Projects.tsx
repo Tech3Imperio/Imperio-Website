@@ -155,9 +155,6 @@ export default function Projects() {
                   <div className="flex items-center text-sm text-gray-600 mb-4">
                     <FiMapPin className="h-4 w-4 mr-1" />
                     {project.location}
-                    {/* <span className="mx-2">•</span> */}
-                    {/* <CiCalendar className="h-4 w-4 mr-1" /> */}
-                    {/* {project.completionDate} */}
                   </div>
                   <p className="text-gray-600">{project.description}</p>
                 </div>

@@ -7,10 +7,7 @@ type PopupMessageProps = {
 };
 
 // Define the PopupMessage component using React functional component syntax
-export const PopupMessage: React.FC<PopupMessageProps> = ({
-  message,
-  onClose,
-}) => {
+const PopupMessage: React.FC<PopupMessageProps> = ({ message, onClose }) => {
   return (
     // Wrap the popup in AnimatePresence to handle the mounting and unmounting animations
     <AnimatePresence>
@@ -41,3 +38,4 @@ export const PopupMessage: React.FC<PopupMessageProps> = ({
     </AnimatePresence>
   );
 };
+export default PopupMessage;

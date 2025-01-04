@@ -3,7 +3,7 @@ type ErrorPopupProps = {
   onClose: () => void;
 };
 
-export const ErrorPopup = ({ message, onClose }: ErrorPopupProps) => {
+const ErrorPopup = ({ message, onClose }: ErrorPopupProps) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="bg-white p-10 rounded-lg shadow-lg max-w-sm w-full">
@@ -19,3 +19,4 @@ export const ErrorPopup = ({ message, onClose }: ErrorPopupProps) => {
     </div>
   );
 };
+export default ErrorPopup;

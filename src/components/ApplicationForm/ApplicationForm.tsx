@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiUser, FiBriefcase, FiFileText, FiX } from "react-icons/fi";
-import { PersonalDetails } from "./PersonalDetails";
-import { ExperienceDetails } from "./ExperienceDetails";
-import { FinalDetails } from "./FinalDetails";
-import { ThankYouMessage } from "./ThankYouPopup";
+const PersonalDetails = React.lazy(
+  () => import("../ApplicationForm/PersonalDetails")
+);
+const ExperienceDetails = React.lazy(
+  () => import("../ApplicationForm/ExperienceDetails")
+);
+const FinalDetails = React.lazy(
+  () => import("../ApplicationForm/FinalDetails")
+);
+const ThankYouMessage = React.lazy(() => import("./ThankYouPopup"));
 import axios from "axios";
 import { BASE_URL } from "../../pages/Service/Api/Api";
 
@@ -152,7 +158,9 @@ export function ApplicationForm({
         </div>
 
         {showThankYou ? (
-          <ThankYouMessage onClose={onClose} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <ThankYouMessage onClose={onClose} />
+          </Suspense>
         ) : (
           <form onSubmit={handleSubmit} className="p-6">
             <div className="flex justify-between mb-8">
@@ -183,23 +191,29 @@ export function ApplicationForm({
                 transition={{ duration: 0.3 }}
               >
                 {currentStep === 1 && (
-                  <PersonalDetails
-                    formData={formData}
-                    handleInputChange={handleInputChange}
-                  />
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <PersonalDetails
+                      formData={formData}
+                      handleInputChange={handleInputChange}
+                    />
+                  </Suspense>
                 )}
                 {currentStep === 2 && (
-                  <ExperienceDetails
-                    formData={formData}
-                    handleInputChange={handleInputChange}
-                  />
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <ExperienceDetails
+                      formData={formData}
+                      handleInputChange={handleInputChange}
+                    />
+                  </Suspense>
                 )}
                 {currentStep === 3 && (
-                  <FinalDetails
-                    formData={formData}
-                    handleInputChange={handleInputChange}
-                    handleFileChange={handleFileChange}
-                  />
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <FinalDetails
+                      formData={formData}
+                      handleInputChange={handleInputChange}
+                      handleFileChange={handleFileChange}
+                    />
+                  </Suspense>
                 )}
               </motion.div>
             </AnimatePresence>

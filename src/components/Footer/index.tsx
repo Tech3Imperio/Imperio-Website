@@ -1,9 +1,10 @@
-import { PopupMessage, SocialLinks } from "../../components"; // Import necessary components
+import React, { useState, Suspense } from "react";
+import { SocialLinks } from "../../components"; // Import necessary components
+const PopupMessage = React.lazy(() => import("../../components/PopUp/index"));
 import { Link } from "react-router-dom";
 import { MdOutlineEmail } from "react-icons/md"; // Import email icon
 import { HiOutlinePhone } from "react-icons/hi2"; // Import phone icon
 import { IoLocationOutline } from "react-icons/io5"; // Import location icon
-import React, { useState } from "react"; // Import React and useState hook
 import "./footer.css";
 
 export const Footer = () => {
@@ -154,7 +155,9 @@ export const Footer = () => {
         </div>
       </aside>
       {message /* Conditional rendering of the popup message */ && (
-        <PopupMessage message={message} onClose={() => setMessage("")} />
+        <Suspense fallback={<div>Loading...</div>}>
+          <PopupMessage message={message} onClose={() => setMessage("")} />
+        </Suspense>
       )}
       <div className="flex-col text-white md:hidden" aria-label="social-links">
         {" "}

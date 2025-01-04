@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { GoDot, GoDotFill } from "react-icons/go";
 import Blacklogo from "../../assets/Images/logo/Blacklogo.png";
 
-export function PrivacyPolicy() {
+function PrivacyPolicy() {
   return (
     <>
       <section className="p-4">
@@ -256,3 +256,4 @@ export function PrivacyPolicy() {
     </>
   );
 }
+export default PrivacyPolicy;

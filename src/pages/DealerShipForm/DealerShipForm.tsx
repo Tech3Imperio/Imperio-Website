@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../Service/Api/Api";
-// import Metadata from "../../components/Metatag/Metatag";
+
 import { Hero, CTAButton } from "../../components";
 import bgDealers from "../../assets/Images/quote/bgDealers.webp";
 import Metadata from "../../components/Metatag/Metatag";
 import { motion } from "framer-motion";
-// import SalesChart from "./SalesChart";
+
 import { MdAddCall } from "react-icons/md";
 export const DealerShipForm: React.FC = () => {
   const checkpoints = [

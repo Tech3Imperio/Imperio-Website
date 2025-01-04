@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import { motion } from "framer-motion";
 import {
   FaEye,
@@ -12,7 +12,9 @@ import {
 import axios from "axios";
 import { BASE_URL } from "../../Service/Api/Api";
 import { useNavigate } from "react-router-dom";
-import { ErrorPopup } from "../../../components";
+const ErrorPopup = React.lazy(
+  () => import("../../../components/ErrorPopupProps/ErrorPopupProps")
+);
 import { whiteLogo } from "../../../assets/Images";
 
 interface DealerState {
@@ -249,7 +251,9 @@ export default function DealerRegistration() {
         </div>
       </motion.main>
       {showErrorPopup && (
-        <ErrorPopup message={errorMessage} onClose={closeErrorPopup} />
+        <Suspense fallback={<div>Loading...</div>}>
+          <ErrorPopup message={errorMessage} onClose={closeErrorPopup} />
+        </Suspense>
       )}
     </section>
   );

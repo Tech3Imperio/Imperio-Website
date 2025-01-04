@@ -5,7 +5,7 @@ import { CiSearch } from "react-icons/ci";
 import { BlogCard } from "../Card";
 import { HiArrowRight } from "react-icons/hi2";
 import { useNavigate } from "react-router-dom";
-export const BlogPanel: React.FC<BlogPanelProps> = ({
+const BlogPanel: React.FC<BlogPanelProps> = ({
   BlogData,
   Socials,
   className,
@@ -206,3 +206,4 @@ export const BlogPanel: React.FC<BlogPanelProps> = ({
     </section>
   );
 };
+export default BlogPanel;

@@ -1,3 +1,4 @@
+import React, { Suspense } from "react";
 import { Navigate, createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import {
@@ -10,11 +11,13 @@ import {
   About,
   Contact,
   ThankYou,
-  PrivacyPolicy,
   DealerShipForm,
 } from "./pages";
 
-import BlogDetails from "./pages/BlogDetails/BlogDetails";
+const BlogDetails = React.lazy(() => import("./pages/BlogDetails/BlogDetails"));
+const PrivacyPolicy = React.lazy(
+  () => import("./pages/PrivacyPolicy/PrivacyPolicy")
+);
 import Projects from "./pages/Projects/Projects";
 import ModernTerrace from "./pages/Blog/ModernTerrace/ModernTerrace";
 import ModernStaircase from "./pages/Blog/ModernStaircase/ModernStaircase";
@@ -23,7 +26,11 @@ import ModernBalcony from "./pages/Blog/ModernBalcony/ModernBalcony";
 import Career from "./pages/Career/Career";
 import JobDetailsPage from "./pages/Career/JobDetailsPage";
 import DealerLogin from "./pages/DealerOnlineStore/DealerLogin/DealerLogin";
-import DealerRegistration from "./pages/DealerOnlineStore/DealerRegistration/DealerRegistration";
+
+const DealerRegistration = React.lazy(
+  () =>
+    import("./pages/DealerOnlineStore/DealerRegistration/DealerRegistration")
+);
 import DealerAccept from "./pages/DealerOnlineStore/DealerAccept/DealerAccept";
 import DealerReject from "./pages/DealerOnlineStore/DealerReject/DealerReject";
 import DealerDeclineUi from "./pages/DealerOnlineStore/DealerReject/DealerDeclineUi";
@@ -52,7 +59,14 @@ export const routes = createBrowserRouter([
       { path: "blog/aluminum-handrail", element: <ModernHandrail /> },
       { path: "blog/modern/balcony-glass-railing", element: <ModernBalcony /> },
       { path: "blog/pvb-sgp/glass-difference", element: <PVBSGP /> },
-      { path: "blog/:blogId", element: <BlogDetails /> },
+      {
+        path: "blog/:blogId",
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <BlogDetails />
+          </Suspense>
+        ),
+      },
       { path: "contactus", element: <Contact /> },
       { path: "aboutus", element: <About /> },
       { path: "dealership", element: <DealerShipForm /> },
@@ -65,7 +79,15 @@ export const routes = createBrowserRouter([
         element: <Product />,
       },
       { path: "dealer-login", element: <DealerLogin /> },
-      { path: "dealer-registration", element: <DealerRegistration /> },
+      {
+        path: "dealer-registration",
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            {" "}
+            <DealerRegistration />{" "}
+          </Suspense>
+        ),
+      },
       {
         path: "dealer-registration/dealer-message/:username",
         element: <DealerMessagePage />,
@@ -89,7 +111,12 @@ export const routes = createBrowserRouter([
 
       {
         path: "PrivacyPolicy",
-        element: <PrivacyPolicy />,
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            {" "}
+            <PrivacyPolicy />
+          </Suspense>
+        ),
       },
       { path: "*", element: <NotFound /> },
     ],

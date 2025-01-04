@@ -1,7 +1,10 @@
 import "../src/pages/App.css";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import { ErrorPopup, Footer, Navbar } from "./components";
+import { Footer, Navbar } from "./components";
+const ErrorPopup = React.lazy(
+  () => import("./components/ErrorPopupProps/ErrorPopupProps")
+);
 import { useScrollToTop } from "./hooks";
 // Ensure this import is from 'react-helmet'
 import WhatsAppChat from "./pages/WhatsAppChat/WhatsAppChat";
@@ -111,12 +114,14 @@ const App: React.FC = () => {
   return (
     <>
       {isModal && (
-        <ErrorPopup
-          onClose={handleModalChange}
-          message={
-            "Your Session is Expired! We Kindly request you to please Login again!"
-          }
-        />
+        <Suspense fallback={<div>Loading...</div>}>
+          <ErrorPopup
+            onClose={handleModalChange}
+            message={
+              "Your Session is Expired! We Kindly request you to please Login again!"
+            }
+          />
+        </Suspense>
       )}
       <Toaster />
       <Navbar />

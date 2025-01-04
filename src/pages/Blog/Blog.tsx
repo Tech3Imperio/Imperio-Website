@@ -1,10 +1,12 @@
-import { Hero, BlogPanel } from "../../components";
+import React, { Suspense } from "react";
+import { Hero } from "../../components";
 import { blogHero } from "../../assets/Images";
 import { useEffect, useState } from "react";
 import { BlogType } from "../../types";
 import { Link } from "react-router-dom";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
 import Metadata from "../../components/Metatag/Metatag";
+const BlogPanel = React.lazy(() => import("../../components/Blog/Panel/index"));
 
 export const Blog = () => {
   const [data, setData] = useState<BlogType[]>([]);
@@ -83,11 +85,13 @@ export const Blog = () => {
             </p>
           </div>
         </div>
-        <BlogPanel
-          Socials={["LinkedIn", "Twitter", "Quora", "Pinterest"]}
-          // BlogData={loading ? blogCards : data}
-          BlogData={data}
-        />
+        <Suspense fallback={<div>Loading...</div>}>
+          <BlogPanel
+            Socials={["LinkedIn", "Twitter", "Quora", "Pinterest"]}
+            // BlogData={loading ? blogCards : data}
+            BlogData={data}
+          />
+        </Suspense>
       </main>
       <div className=" max-w-7xl flex flex-col md:flex-row mx-auto mt-10 md:mt-24 gap-8 p-4">
         <div className="flex flex-col md:w-[60%] gap-1 tablet:gap-6">

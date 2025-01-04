@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import { motion } from "framer-motion";
 import { tempHeroImage } from "../../assets/Images";
-import { Hero, PopupMessage, QuoteForm, QuoteSelector } from "../../components";
+import { Hero, QuoteForm } from "../../components";
+const PopupMessage = React.lazy(() => import("../../components/PopUp/index"));
+const QuoteSelector = React.lazy(
+  () => import("../../components/Quote/Selector/index")
+);
 import {
   Stage,
   QuoteData,
@@ -151,12 +155,14 @@ export const GetQuote: React.FC = () => {
         }`}
       >
         <StageNavigation stage={stage} handleStage={handleStage} />
-        <QuoteSelector
-          stagesprops={[stages, stage, setStage]}
-          dataprops={[data, handleData]}
-          colorsprops={[colors, handleColor]}
-          setContact={setContact}
-        />
+        <Suspense fallback={<div>Loading...</div>}>
+          <QuoteSelector
+            stagesprops={[stages, stage, setStage]}
+            dataprops={[data, handleData]}
+            colorsprops={[colors, handleColor]}
+            setContact={setContact}
+          />
+        </Suspense>
       </motion.section>
       <motion.section
         animate={{ x: contact ? 0 : 2000 }}
@@ -170,7 +176,9 @@ export const GetQuote: React.FC = () => {
         />
       </motion.section>
       {errors.length !== 0 && (
-        <PopupMessage message={errors[0]} onClose={() => setErrors([])} />
+        <Suspense fallback={<div>Loading...</div>}>
+          <PopupMessage message={errors[0]} onClose={() => setErrors([])} />
+        </Suspense>
       )}
     </main>
   );

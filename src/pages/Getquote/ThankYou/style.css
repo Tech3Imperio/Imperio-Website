@@ -45,9 +45,6 @@
 }
 
 @media (max-width: 768px) {
-  .thanks-msg {
-    font-size: 80px;
-  }
   .mail-img {
     width: 80%;
     margin-top: 20%;

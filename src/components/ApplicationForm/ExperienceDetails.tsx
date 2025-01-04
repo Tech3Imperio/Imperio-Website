@@ -11,7 +11,7 @@ interface ExperienceDetailsProps {
   ) => void;
 }
 
-export function ExperienceDetails({
+function ExperienceDetails({
   formData,
   handleInputChange,
 }: ExperienceDetailsProps) {
@@ -115,3 +115,4 @@ export function ExperienceDetails({
     </motion.div>
   );
 }
+export default ExperienceDetails;

@@ -7,7 +7,6 @@ import { ProductProps, ProductSection } from "../../types";
 import { getLocalStorageItem, setLocalStorageItem } from "../../utils";
 import { Product } from "./Product/Product";
 import "./style.css";
-
 import Metadata from "../../components/Metatag/Metatag";
 
 import ShimmerCard from "../../components/Shimmer/ShimmerCard";
@@ -58,8 +57,7 @@ const MemoProducts: React.FC = () => {
   const { data, error, loading } = useProduct(
     "https://script.google.com/macros/s/AKfycbwE-1Stl8t8_XrB5MuRPQ1hROKpo3mYynDPnI1vNX6U5vakITchmA6nfmzQt8sYpqFIjw/exec"
   );
-  // old Api link if current link is not working then use below Api link
-  // https://script.googleusercontent.com/a/macros/imperiorailing.com/echo?user_content_key=Ay_XW6emxmiwQ7Lncs10OYWdnFeTW0upS6uckktFqOCWvYse7Um3IucncElvDr3F6e1U0oIbcefbm_KsKRb7lGfzRJKfhSKKOJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMi80zadyHLKC1zka5stJV6CJ8rbxa1V-UsEmAp_psx4LPWV2VVapqoanwc9S-o8wsibsbmz75VIWJ6s0UnHNjn57l_O834N2gmbbRpWFxXoNaVLQCjst0OCroO14vipAt9G3wLhldpT5hqak0MdSxiw&lib=McNTorF1LzcGC_6h_0B7S9zQVEnUvMwCs
+
   const [productSections, setProductSections] = useState<ProductSection[]>([]);
 
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
@@ -142,19 +140,6 @@ const MemoProducts: React.FC = () => {
     }));
   }, []);
 
-  // const StructureData = useCallback(
-  //   (data: ProductProps[]): ProductSection[] => {
-  //     const headers = [
-  //       ...new Set(data.map((item) => item["Product Category"])),
-  //     ];
-  //     return headers.map((header) => ({
-  //       header,
-  //       products: data.filter((item) => item["Product Category"] === header),
-  //     }));
-  //   },
-  //   []
-  // );
-
   useEffect(() => {
     const localData = getLocalStorageItem<ProductProps[]>("ProductData");
     if (localData) {
@@ -216,9 +201,6 @@ const MemoProducts: React.FC = () => {
       ],
     },
   ];
-
-  // Optional: Log token for debugging (uncomment if needed)
-  // console.log(encodedToken);
 
   if (problem) {
     return (
@@ -769,10 +751,6 @@ const MemoProducts: React.FC = () => {
               </div>
             ))}
         </section>
-
-        {/* <div className="flex justify-center items-center h-screen">
-      <div className="w-16 h-16 border-t-4 border-b-4 border-blue-500 rounded-full animate-spin"></div>
-      </div> */}
       </main>
       <Quote />
     </>

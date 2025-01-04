@@ -61,12 +61,6 @@ body {
   font-weight: 400;
 }
 
-.poppins-light-italic {
-  font-family: "Poppins", serif;
-  font-weight: 300;
-  font-style: italic;
-}
-
 .transition-200 {
   @apply transition-all duration-200 ease-in-out;
 }
