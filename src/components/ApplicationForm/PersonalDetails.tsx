@@ -27,7 +27,7 @@ function PersonalDetails({
             htmlFor="name"
             className="block text-sm font-medium text-[#393939] mb-1"
           >
-            First Name
+            First Name <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
@@ -44,7 +44,7 @@ function PersonalDetails({
             htmlFor="surname"
             className="block text-sm font-medium text-[#393939] mb-1"
           >
-            Last Name
+            Last Name <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
@@ -61,7 +61,7 @@ function PersonalDetails({
             htmlFor="email"
             className="block text-sm font-medium text-[#393939] mb-1"
           >
-            Email
+            Email <span className="text-red-500">*</span>
           </label>
           <input
             type="email"
@@ -78,7 +78,7 @@ function PersonalDetails({
             htmlFor="mobile"
             className="block text-sm font-medium text-[#393939] mb-1"
           >
-            Phone Number
+            Phone Number <span className="text-red-500">*</span>
           </label>
           <input
             type="tel"
@@ -95,7 +95,7 @@ function PersonalDetails({
             htmlFor="location"
             className="block text-sm font-medium text-[#393939] mb-1"
           >
-            Location
+            Location <span className="text-red-500">*</span>
           </label>
           <input
             type="text"

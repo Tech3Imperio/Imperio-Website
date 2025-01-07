@@ -62,7 +62,7 @@ function ExperienceDetails({
             htmlFor="experienceYears"
             className="block text-sm font-medium text-[#393939] mb-1"
           >
-            Years of Experience
+            Years of Experience <span className="text-red-500">*</span>
           </label>
           <input
             type="number"
@@ -78,7 +78,7 @@ function ExperienceDetails({
             htmlFor="highestQualification"
             className="block text-sm font-medium text-[#393939] mb-1"
           >
-            Qualification
+            Qualification <span className="text-red-500">*</span>
           </label>
           <select
             id="highestQualification"
@@ -101,7 +101,7 @@ function ExperienceDetails({
           htmlFor="skills"
           className="block text-sm font-medium text-[#393939] mb-1"
         >
-          Skills
+          Skills <span className="text-red-500">*</span>
         </label>
         <textarea
           id="skills"
