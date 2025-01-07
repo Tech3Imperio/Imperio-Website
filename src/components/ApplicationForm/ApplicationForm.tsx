@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from "react";
+import React, { useState, Suspense, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiUser, FiBriefcase, FiFileText, FiX } from "react-icons/fi";
 const PersonalDetails = React.lazy(
@@ -69,6 +69,11 @@ export function ApplicationForm({
   const [currentStep, setCurrentStep] = useState(1);
   const [showThankYou, setShowThankYou] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string>("");
+
+  useEffect(() => {
+    setFormData((prev) => ({ ...prev, position, jobType }));
+  }, [position, jobType]);
 
   const handleInputChange = (
     e: React.ChangeEvent<
@@ -84,12 +89,13 @@ export function ApplicationForm({
     if (file && file.size <= 5 * 1024 * 1024) {
       setFormData((prev) => ({ ...prev, resume: file }));
     } else {
-      alert("File size should not exceed 5MB");
+      setErrorMessage("File size should not exceed 5MB");
     }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     if (currentStep === 3) {
       setIsSubmitting(true);
       try {
@@ -105,19 +111,19 @@ export function ApplicationForm({
         });
 
         const response = await axios.post(`${BASE_URL}/apply`, formDataToSend, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
+          headers: { "Content-Type": "multipart/form-data" },
         });
 
-        if (response.data && response.data.status === "success") {
+        if (response.data.status === "success") {
           setShowThankYou(true);
         } else {
-          alert("Failed to submit application. Please try again.");
+          setErrorMessage("Failed to submit application. Please try again.");
         }
       } catch (error) {
+        setErrorMessage(
+          "An error occurred while submitting the form. Please try again."
+        );
         console.error("Error submitting application:", error);
-        alert("Failed to submit application. Please try again.");
       } finally {
         setIsSubmitting(false);
       }
@@ -181,6 +187,10 @@ export function ApplicationForm({
                 </div>
               ))}
             </div>
+
+            {errorMessage && (
+              <div className="text-red-500 mb-4">{errorMessage}</div>
+            )}
 
             <AnimatePresence mode="wait">
               <motion.div

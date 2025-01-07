@@ -12,8 +12,6 @@ import {
   TextComponent,
   BlackButton,
   Quote,
-  // HorizontalCarousel,
-  // VerticalCarousel,
   ImageScrolls,
   Testimonials,
 } from "../../components";
@@ -151,24 +149,23 @@ export const Home: React.FC = () => {
               </CTAButton>
             </div>
           </div>
-          <Suspense fallback={<h1>Loading Image...</h1>}>
-            <div className="w-full lg:w-3/5">
-              <picture>
-                <source srcSet={descImage} type="image/webp" />
-                <img
-                  srcSet={`${descImage} 400w, ${descImage} 800w, ${descImage} 1200w`}
-                  sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1200px"
-                  src={descImage} // Correct image path
-                  alt="Description Image"
-                  loading="lazy"
-                  className="w-full h-auto object-cover"
-                  title="Description Image"
-                  width="800"
-                  height="400"
-                />
-              </picture>
-            </div>
-          </Suspense>
+
+          <div className="w-full lg:w-3/5">
+            <picture>
+              <source srcSet={descImage} type="image/webp" />
+              <img
+                srcSet={`${descImage} 400w, ${descImage} 800w, ${descImage} 1200w`}
+                sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1200px"
+                src={descImage} // Correct image path
+                alt="Description Image"
+                loading="lazy"
+                className="w-full h-auto object-cover"
+                title="Description Image"
+                width="800"
+                height="400"
+              />
+            </picture>
+          </div>
         </section>
 
         <Description black>
