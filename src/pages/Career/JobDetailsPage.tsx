@@ -199,6 +199,169 @@ export default function JobDetailsPage() {
           "* Women wanting to start/restart their career can also apply.",
         ],
       },
+      {
+        title: "Video Editing/Making",
+        subtitle:
+          "Imperio Railing Systems is seeking a creative Video Editing/Making intern skilled in Photoshop, After Effects, Final Cut Pro, and Canva to create engaging visual content.",
+        about:
+          "Are you a creative individual with a passion for video editing, photography, and design? Do you have experience with Adobe Photoshop, Adobe After Effects, Final Cut Pro, and Canva? Imperio Railing Systems is seeking a talented Video Editing/Making intern to join our team and help us create compelling visual content.",
+        location: "Mumbai",
+        type: "Internship",
+        others: [
+          {
+            Duration: "6 Months ",
+            Expriance: "1 year - Fresher also can apply",
+            join: "Immediately",
+          },
+        ],
+        responsibilities: [
+          "Collaborate with our marketing team to develop engaging video content for our website and social media platforms.",
+          "Edit and enhance raw footage to create high-quality videos that showcase our products and services.",
+          "Assist with photography and videography projects, including shooting and editing images and videos.",
+          "Design visually appealing UI & UX elements for our website and digital marketing materials.",
+          "Utilize your skills in Adobe Creative Suite to create graphics, animations, and other visual assets.",
+          "Work closely with our creative team to bring innovative ideas to life through video editing and design.",
+          "Stay up-to-date on industry trends and best practices to continuously improve the quality of our visual content.",
+        ],
+        skills: [
+          "Adobe After Effects",
+          "Adobe Photoshop",
+          "Canva",
+          "Final Cut Pro",
+          "Photography",
+          "UI & UX Design",
+          "Video Editing",
+          "Video Making",
+        ],
+        whocanapply: [
+          "are available for full time (in-office) internship",
+          "can start the internship between 5th Dec'24 and 9th Jan'25",
+          "are available for duration of 6 months",
+          "have relevant skills and interests",
+          "* Women wanting to start/restart their career can also apply.",
+        ],
+      },
+      {
+        title: "Interior Design",
+        subtitle:
+          "Imperio Railing Systems is looking for a skilled Interior Design intern with proficiency in 3ds Max, AutoCAD, and Google SketchUp to gain hands-on industry experience.",
+        about:
+          "Are you a talented Interior Design student looking to gain hands-on experience in the industry? Imperio Railing Systems is seeking a dynamic intern with a keen eye for design and proficiency in 3ds Max, AutoCAD, and Google SketchUp to join our team!",
+        location: "Mumbai",
+        type: "Internship",
+        others: [
+          {
+            Duration: "6 Months ",
+            Expriance: "1 year - Fresher also can apply",
+            join: "Immediately",
+          },
+        ],
+        responsibilities: [
+          "Collaborate with our design team to create innovative railing system designs for various projects.",
+          "Utilize 3ds Max, AutoCAD, and Google SketchUp to produce detailed renderings and technical drawings.",
+          "Assist in material selection and sourcing for projects, ensuring quality and functionality.",
+          "Participate in client meetings and presentations to showcase design concepts and solutions.",
+          "Conduct research on industry trends and competitor products to stay current and competitive.",
+          "Support the team in project coordination, including site visits and installations.",
+          "Contribute creative ideas and solutions to enhance the overall design process.",
+        ],
+        skills: ["3ds Max", "AutoCAD", "Google SketchUp"],
+        whocanapply: [
+          "are available for full time (in-office) internship",
+          "can start the internship between 5th Dec'24 and 9th Jan'25",
+          "are available for duration of 6 months",
+          "have relevant skills and interests",
+          "* Women wanting to start/restart their career can also apply.",
+        ],
+      },
+      {
+        title: "Brand Management",
+        subtitle:
+          "Imperio Railing Systems is seeking a creative Brand Management intern with skills in digital marketing, social media, photography, video editing, Canva, Figma, and UI/UX design.",
+        about:
+          "Are you a creative and driven individual looking to kickstart your career in brand management? Look no further than Imperio Railing Systems! As a Brand Management intern, you will have the opportunity to utilize your skills in digital marketing, social media marketing, photography, video making, video editing, Canva, Figma, UI & UX design, and English proficiency (written and spoken) to help elevate our brand to new heights.",
+        location: "Mumbai",
+        type: "Internship",
+        others: [
+          {
+            Duration: "6 Months ",
+            Expriance: "1 year - Fresher also can apply",
+            join: "Immediately",
+          },
+        ],
+        responsibilities: [
+          "Develop and execute innovative digital marketing strategies to increase brand awareness and engagement.",
+          "Create captivating social media content to attract and retain followers across all platforms.",
+          "Use your photography and video skills to produce high-quality visual assets for marketing campaigns.",
+          "Collaborate with the design team to create visually appealing graphics using Canva and Figma.",
+          "Assist in the development of user-friendly UI & UX designs for our online platforms.",
+          "Monitor and analyze brand performance metrics to identify areas for improvement.",
+          "Contribute fresh ideas and perspectives to help shape the future of our brand.",
+        ],
+        skills: [
+          "Canva",
+          "Digital Marketing",
+          "Figma",
+          "Photography",
+          "Social Media Marketing",
+          "UI & UX Design",
+          "Video Editing",
+          "Video Making",
+        ],
+        whocanapply: [
+          "are available for full time (in-office) internship",
+          "can start the internship between 19th Dec'24 and 23rd Jan'25",
+          "are available for duration of 6 months",
+          "are from or open to relocate to Mumbai and neighboring cities",
+          "have relevant skills and interests",
+          "* Women wanting to start/restart their career can also apply.",
+        ],
+      },
+      {
+        title: "Social Media Marketing",
+        subtitle:
+          "Join Imperio Railing Systems as a Social Media Marketing intern and gain hands-on experience in marketing strategies while showcasing your skills.",
+        about:
+          "Join Imperio Railing Systems as a Social Media Marketing intern and gain hands-on experience in marketing strategies while showcasing your skills.",
+        location: "Mumbai",
+        type: "Internship",
+        others: [
+          {
+            Duration: "6 Months ",
+            Expriance: "1 year - Fresher also can apply",
+            join: "Immediately",
+          },
+        ],
+        responsibilities: [
+          "Create engaging content for social media platforms such as Instagram and Facebook to attract and engage our target audience.",
+          "Implement email marketing campaigns to promote our products and services to our subscribers.",
+          "Optimize our website through SEO and SEM techniques to improve our online visibility and drive traffic.",
+          "Utilize video editing and photography skills to create visually appealing and informative content for our audience.",
+          "Collaborate with the marketing team to develop creative campaigns that align with our brand image.",
+          "Utilize Canva and Figma to design eye-catching graphics for social media posts and marketing materials.",
+          "Communicate effectively in English, both written and spoken, to convey our brand message clearly to our audience.",
+          "Taking Photos & Videos of projects done by us. Open to Travel for the same.",
+        ],
+        skills: [
+          "Canva",
+          "Creative Writing",
+          "Email Marketing",
+          "Instagram Marketing",
+          "Digital Marketing",
+          "Figma",
+          "Search Engine Marketing (SEM)",
+          "Search Engine Optimization (SEO)",
+          "Social Media Marketing",
+        ],
+        whocanapply: [
+          "are available for full time (in-office) internship",
+          "can start the internship between 19th Dec'24 and 23rd Jan'25",
+          "are available for duration of 6 months",
+          "are from or open to relocate to Mumbai and neighboring cities",
+          "have relevant skills and interests",
+          "* Women wanting to start/restart their career can also apply.",
+        ],
+      },
     ];
 
     const foundJob = jobs.find(

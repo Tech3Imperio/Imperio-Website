@@ -70,8 +70,8 @@ export const routes = createBrowserRouter([
       { path: "contactus", element: <Contact /> },
       { path: "aboutus", element: <About /> },
       { path: "dealership", element: <DealerShipForm /> },
-      { path: "career", element: <Career /> },
-      { path: "/career/:title", element: <JobDetailsPage /> },
+      { path: "careers", element: <Career /> },
+      { path: "/careers/:title", element: <JobDetailsPage /> },
       { path: "products", element: <Products /> },
       { path: "cart", element: <CartProdcut /> },
       {

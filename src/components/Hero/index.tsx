@@ -62,12 +62,12 @@ export const Hero: React.FC<HeroProps> = ({
         {/* Content positioned inside the Hero section */}
         <div
           className={`relative z-10 h-full leading-snug phone:leading-normal flex flex-col justify-center phone:justify-start ${
-            condition ? "phone:pt-72" : "phone:pt-60"
+            condition ? "phone:pt-72" : "phone:pt-48"
           } text-white pl-9 phone:pl-16 tablet:pl-24 laptop:pl-32 xl:pl-44`}
         >
           {/* Main header */}
           <p
-            className={`text-[2rem] phone:text-[3rem] tablet:text-[3.3rem] laptop:text-[3.5rem] xl:text-[3.8rem] Raleway ${
+            className={`text-[1.5rem] phone:text-[1.8rem] tablet:text-[2rem] laptop:text-[2.5rem] xl:text-[3rem] Raleway ${
               condition ? "w-4/5" : "w-full"
             }`}
           >
@@ -76,8 +76,8 @@ export const Hero: React.FC<HeroProps> = ({
 
           {/* Subheader */}
           <h1
-            className={`text-xs phone:text-base ${
-              condition ? "lg:w-[52%]" : "lg:w-[52%] py-4"
+            className={`text-xs phone:text-lg ${
+              condition ? "lg:w-[52%]" : "lg:w-[70%] py-4 "
             }`}
           >
             {subHeader}

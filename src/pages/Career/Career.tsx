@@ -48,6 +48,34 @@ export default function Career() {
       location: "Mumbai",
       type: "Internship",
     },
+    {
+      title: "Video Editing/Making",
+      description:
+        "Imperio Railing Systems is looking for a creative Video Editing intern skilled in Photoshop, After Effects, Final Cut Pro, and Canva.",
+      location: "Mumbai",
+      type: "Internship",
+    },
+    {
+      title: "Interior Design",
+      description:
+        "Imperio Railing Systems is seeking an Interior Design intern skilled in 3ds Max, AutoCAD, and Google SketchUp.",
+      location: "Mumbai",
+      type: "Internship",
+    },
+    {
+      title: "Brand Management",
+      description:
+        "Imperio Railing Systems is hiring a Brand Management intern with skills in digital marketing, social media, video editing, and UI/UX design.",
+      location: "Mumbai",
+      type: "Internship",
+    },
+    {
+      title: "Social Media Marketing",
+      description:
+        "Join Imperio Railing Systems as a Social Media Marketing intern and gain hands-on experience in marketing strategies while showcasing your skills.",
+      location: "Mumbai",
+      type: "Internship",
+    },
   ]);
 
   return (
@@ -62,13 +90,13 @@ export default function Career() {
             Imperio
           </>
         }
-        subHeader="Explore exciting Explore Career Opportunities at Imperio Railing Systems and join a team committed to growth and innovation. We offer a collaborative work environment where you can thrive. Apply today and take the next step in your professional journey."
+        subHeader="Explore career opportunities at Imperio Railing Systems. Join a team focused on growth, innovation, and collaboration. Apply today to advance your professional journey."
         curve
       />
       <section className=" ">
         <div className="max-w-7xl flex flex-col md:flex-row mx-auto mt-10 md:mt-24 gap-8 p-4">
           <div className="flex flex-col md:w-[60%] gap-1 tablet:gap-6">
-            <h2 className="YellowText text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
+            <h2 className=" text-[#fad000] text-lg font-medium sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
               Join Our Team
             </h2>
             <h3 className="text-[--third] flex flex-wrap md:max-w-2xl Raleway tracking-wider w-full text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] 2xl:text-5xl">
@@ -114,7 +142,7 @@ export default function Career() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-14">
               {jobs.map((job, index) => (
                 <Link
-                  to={`/career/${encodeURIComponent(job.title)}`}
+                  to={`/careers/${encodeURIComponent(job.title)}`}
                   key={index}
                 >
                   <div className="bg-gray-100 p-6 rounded-lg shadow-md relative hover:shadow-lg transition-shadow">

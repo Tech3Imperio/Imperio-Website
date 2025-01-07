@@ -100,7 +100,7 @@ export default function Projects() {
       />
       <div className="max-w-6xl flex flex-col md:flex-row mx-auto mt-10">
         <div className="flex flex-col w-full md:w-[60%] gap-1 tablet:gap-6 p-4">
-          <h2 className="YellowText text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
+          <h2 className=" text-[#fad000] text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
             Our Glass Railing Projects
           </h2>
           <h3 className="text-[--third] flex flex-wrap max-w-2xl Raleway tracking-wider w-4/5 tablet:w-11/12 text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] 2xl:text-5xl">

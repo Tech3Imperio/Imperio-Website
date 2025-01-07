@@ -35,32 +35,52 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://imperiorailing.com/career</loc>
+        <loc>https://imperiorailing.com/careers</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://imperiorailing.com/career/Business%20Development%20Executive</loc>
+        <loc>https://imperiorailing.com/careers/Business%20Development%20Executive</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://imperiorailing.com/career/Digital%20Marketing%20Executive</loc>
+        <loc>https://imperiorailing.com/careers/Digital%20Marketing%20Executive</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://imperiorailing.com/career/Inside%20Sales%20Executive</loc>
+        <loc>https://imperiorailing.com/careers/Inside%20Sales%20Executive</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://imperiorailing.com/career/Business%20Development%20(Sales)</loc>
+        <loc>https://imperiorailing.com/careers/Business%20Development%20(Sales)</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://imperiorailing.com/career/Architecture</loc>
+        <loc>https://imperiorailing.com/careers/Architecture</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://imperiorailing.com/careers/Video%20Editing%2FMaking</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://imperiorailing.com/careers/Interior%20Design</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://imperiorailing.com/careers/Brand%20Management</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://imperiorailing.com/careers/Social%20Media%20Marketing</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>

@@ -234,14 +234,8 @@ export const DealerShipForm: React.FC = () => {
       <Hero
         img={bgDealers}
         altText="Imperio Glass Railing Systems - Premium Glass Railing Solutions"
-        header={
-          <>
-            Partner with Imperio Glass Railing,
-            <br />
-            Become a Dealer Now!
-          </>
-        }
-        subHeader="Join Imperio Glass Railing Systems as a dealer. We offer exclusive opportunities across India to distribute premium glass railings for residential and commercial spaces."
+        header={<>Become an Imperio Glass Railing Dealer!</>}
+        subHeader="Become an Imperio Glass Railing dealer and distribute premium glass railings across India for residential and commercial spaces."
         curve
       />
 
