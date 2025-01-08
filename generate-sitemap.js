@@ -58,6 +58,21 @@ const urls = [
     priority: 0.8,
   },
   {
+    url: "/careers/Sales%20Manager",
+    changefreq: "weekly",
+    priority: 0.8,
+  },
+  {
+    url: "/careers/Field%20Sales%20Executive",
+    changefreq: "weekly",
+    priority: 0.8,
+  },
+  {
+    url: "/careers/Aluminium%20Window%20Sales%20Executive",
+    changefreq: "weekly",
+    priority: 0.8,
+  },
+  {
     url: "/blog/terrace/glass-railing",
     changefreq: "weekly",
     priority: 0.8,
