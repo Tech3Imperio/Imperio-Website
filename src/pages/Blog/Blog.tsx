@@ -221,11 +221,15 @@ export const Blog = () => {
             </Link>
           </h3>
           <p className="text-justify italic text-[--grey]">
-            Comparing PVB vs SGP glass for railings? We offer high-performance
-            laminated glass solutions, including SGP's superior clarity and
-            strength for glass railings. Choose PVB or SGP for durable, safe,
-            and aesthetic balcony and staircase railings in Mumbai, Delhi,
-            Bangalore, and Chennai.
+            PVB and SGP are interlayers used in laminated glass with distinct
+            properties. PVB is cost-effective and commonly used in residential
+            and commercial applications but is sensitive to moisture, which can
+            cause decay over time. SGP, on the other hand, is more rigid,
+            durable, and resistant to moisture, UV rays, and yellowing, making
+            it ideal for high-strength applications like glass flooring and
+            hurricane-resistant windows. SGP is five times stronger, 100 times
+            more rigid, and offers superior edge stability and structural
+            performance compared to PVB.
           </p>
         </div>
       </div>

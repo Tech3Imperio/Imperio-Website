@@ -95,10 +95,10 @@ export function JobDetails({ job }: JobDetailsProps) {
             ))}
           </ul>
           <div className="mb-4">
-            <h3 className="text-xl justify-start font-semibold mb-2 text-[#03237b]">
+            <h3 className="text-xl  justify-start font-semibold mb-2 text-[#03237b]">
               Skills Required:
             </h3>
-            <ul className="pl-5 mb-6 lg:flex gap-8">
+            <ul className="pl-5 mb-6 xl:grid grid-cols-3 gap-2">
               {job.skills.map((skill, index) => (
                 <li key={index} className="text-gray-700 mb-2">
                   {`${index + 1}. `}

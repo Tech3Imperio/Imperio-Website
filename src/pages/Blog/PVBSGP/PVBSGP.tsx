@@ -142,10 +142,21 @@ export default function BlogPost() {
               </span>
               <p className="mb-4 py-2">
                 When it comes to designing and installing glass railings, the
-                material used plays a crucial role in ensuring safety, strength,
-                and aesthetics. Among the various options available, PVB
-                laminated glass and SGP laminated glass are two popular choices.
-                Both offer unique advantages depending on your specific needs.
+                material chosen is crucial for ensuring safety, strength, and
+                aesthetics. PVB laminated glass and SGP laminated glass are two
+                popular options, each offering distinct advantages. PVB is often
+                favored for its cost-effectiveness and suitability for
+                residential and commercial applications, providing adequate
+                safety and strength. However, it may not perform as well in
+                demanding environments due to its susceptibility to moisture and
+                hydrolysis over time. In contrast, SGP laminated glass is
+                renowned for its exceptional durability, rigidity, and
+                resistance to moisture, UV rays, and yellowing. These qualities
+                make it ideal for high-strength applications like glass railings
+                in high-traffic areas or locations exposed to harsh weather
+                conditions. Choosing the right glass for your railing system
+                depends on the level of strength, clarity, and long-term
+                performance required, ensuring both safety and visual appeal.
               </p>
             </section>
 
