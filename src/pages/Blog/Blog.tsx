@@ -234,6 +234,30 @@ export const Blog = () => {
             performance compared to PVB.
           </p>
         </div>
+        <div>
+          <h3 className=" text-3xl text-[--third] pb-2">
+            <Link to="framed-vs-frameless-glass-railings">
+              {" "}
+              <b className=" flex gap-2">
+                Framed vs Frameless{" "}
+                <sup>
+                  <LiaExternalLinkAltSolid />
+                </sup>
+              </b>
+            </Link>
+          </h3>
+          <p className="text-justify italic text-[--grey]">
+            PVB and SGP are interlayers used in laminated glass with distinct
+            properties. PVB is cost-effective and commonly used in residential
+            and commercial applications but is sensitive to moisture, which can
+            cause decay over time. SGP, on the other hand, is more rigid,
+            durable, and resistant to moisture, UV rays, and yellowing, making
+            it ideal for high-strength applications like glass flooring and
+            hurricane-resistant windows. SGP is five times stronger, 100 times
+            more rigid, and offers superior edge stability and structural
+            performance compared to PVB.
+          </p>
+        </div>
       </div>
     </>
   );

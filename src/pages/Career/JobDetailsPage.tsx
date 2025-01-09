@@ -111,45 +111,7 @@ export default function JobDetailsPage() {
           "Social Media Marketing",
         ],
         whocanapply: ["Candidates with minimum 1 years of experience."],
-        applyLink: "https://www.google.com",
-      },
-      {
-        title: "Inside Sales Executive",
-        subtitle:
-          "Create captivating animations to showcase innovative products in a dynamic, creative environment.",
-        about:
-          "Are you a passionate and creative individual with a love for animation and design? Do you have experience with Adobe After Effects, Video Editing, and Adobe Illustrator? If so, we have the perfect opportunity for you! Imperio Railing Systems is seeking a talented Animation intern to join our team and help bring our products to life through captivating animations and videos.",
-        location: "Mumbai",
-        type: "Internship",
-        others: [
-          {
-            Duration: "6 Months ",
-            Expriance: "1 year - Fresher also can apply",
-            join: "Immediately",
-          },
-        ],
-        responsibilities: [
-          "Conduct product demonstrations and presentations to potential clients.",
-          "Assist in generating and qualifying leads through various outreach efforts.",
-          "Collaborate with the sales team to create customized solutions for clients.",
-          "Follow up with leads and maintain relationships with existing customers.",
-          "Provide exceptional customer service and support to ensure client satisfaction.",
-          "Utilize CRM software to track sales activities and analyze data.",
-          "Participate in training sessions and workshops to enhance sales skills and knowledge .",
-        ],
-        skills: [
-          "English Proficiency (Written)",
-          "English Proficiency (Spoke)",
-        ],
-        whocanapply: [
-          "are available for full time (in-office) internship.",
-          "can start the internship between 16th Dec'24 and 20th Jan'25",
-          "are available for duration of 6 months",
-          "are from or open to relocate to Mumbai and neighboring cities",
-          "have relevant skills and interests",
-          "Women wanting to start/restart their career can also apply.",
-        ],
-        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
+        applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
       },
       {
         title: "Business Development (Sales)",

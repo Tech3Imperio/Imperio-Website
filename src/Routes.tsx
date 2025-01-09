@@ -40,6 +40,7 @@ import DealerMessagePage from "./pages/DealerOnlineStore/DealerRegistration/Deal
 import CartProdcut from "./pages/CartDetails/CartProduct";
 import PVBSGP from "./pages/Blog/PVBSGP/PVBSGP";
 import BillingAddress from "./pages/BillingAddress/BillingAddress";
+import FramedFrameless from "./pages/Blog/FramedFrameless/FramedFrameless";
 
 // import ForgotPassword from "./pages/DealerOnlineStore/ForgotPassword/ForgotPassword";
 
@@ -59,6 +60,10 @@ export const routes = createBrowserRouter([
       { path: "blog/aluminum-handrail", element: <ModernHandrail /> },
       { path: "blog/modern/balcony-glass-railing", element: <ModernBalcony /> },
       { path: "blog/pvb-sgp/glass-difference", element: <PVBSGP /> },
+      {
+        path: "blog/framed-vs-frameless-glass-railings",
+        element: <FramedFrameless />,
+      },
       {
         path: "blog/:blogId",
         element: (

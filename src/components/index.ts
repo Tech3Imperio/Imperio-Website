@@ -23,3 +23,5 @@ export * from "./ApplicationForm/ApplicationForm";
 export * from "./PVBSGP/ComparisonTable";
 export * from "./PVBSGP/Infographic";
 export * from "./PVBSGP/TableOfContents";
+
+export * from "./FramedVSFrameless/MainContent";

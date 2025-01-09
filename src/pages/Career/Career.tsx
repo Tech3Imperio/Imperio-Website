@@ -220,12 +220,28 @@ export default function Career() {
       applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     },
     {
-      title: "Inside Sales Executive",
+      title: "Aluminium Window Sales Executive",
       description:
-        "The role involves generating leads, collaborating on client solutions, and nurturing relationships with leads and customers.",
+        "We are looking for a motivated Aluminium Window Sales Executive to generate leads, build relationships, and close sales in the construction sector.",
       location: "Mumbai",
-      type: "Internship",
-      applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9", // Apply link
+      type: "Full-Time",
+      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    },
+    {
+      title: "Sales Manager",
+      description:
+        "We are seeking a results-driven Sales Manager to lead our team, drive revenue, and develop strategies while building strong client relationships.",
+      location: "Mumbai",
+      type: "Full-Time",
+      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    },
+    {
+      title: "Field Sales Executive",
+      description:
+        "We are seeking a results-driven Field Sales Executive to generate leads, close sales, and expand our customer base through face-to-face interactions.",
+      location: "Mumbai",
+      type: "Full-Time",
+      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     },
     {
       title: "Business Development (Sales)",
@@ -274,30 +290,6 @@ export default function Career() {
       location: "Mumbai",
       type: "Internship",
       applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9", // Apply link
-    },
-    {
-      title: "Sales Manager",
-      description:
-        "We are seeking a results-driven Sales Manager to lead our team, drive revenue, and develop strategies while building strong client relationships.",
-      location: "Mumbai",
-      type: "Full-Time",
-      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
-    },
-    {
-      title: "Field Sales Executive",
-      description:
-        "We are seeking a results-driven Field Sales Executive to generate leads, close sales, and expand our customer base through face-to-face interactions.",
-      location: "Mumbai",
-      type: "Full-Time",
-      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
-    },
-    {
-      title: "Aluminium Window Sales Executive",
-      description:
-        "We are looking for a motivated Aluminium Window Sales Executive to generate leads, build relationships, and close sales in the construction sector.",
-      location: "Mumbai",
-      type: "Full-Time",
-      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     },
   ]);
 
