@@ -78,6 +78,11 @@ const urls = [
     priority: 0.8,
   },
   {
+    url: "/blog/framed-vs-frameless-glass-railings",
+    changefreq: "weekly",
+    priority: 0.8,
+  },
+  {
     url: "/blog/modern/staircase-glass-railing",
     changefreq: "weekly",
     priority: 0.8,

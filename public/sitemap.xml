@@ -125,6 +125,11 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://imperiorailing.com/blog/framed-vs-frameless-glass-railings</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://imperiorailing.com/quote</loc>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>

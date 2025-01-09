@@ -47,7 +47,7 @@ export const Blog = () => {
           "Discover Blogs for stylish and durable glass railings in India. Get expert tips and a free quote! Know more about Imperio & Gain the knwoledge for glass railing systems"
         }
         keywords={
-          "pvb glass, sgp glass, laminated glass, pvb vs sgp differance,pvb vs sgp glass, glass railings, balcony glass railing, Balcony Railings, Staircase glass Railings, commercial buildings, seamless glass railing, aluminum glass railings, Laminated Glass, modern glass railings, frameless glass railings, Aesthetic glass railing, Classic Look, Minimalist Style, safety glass railings, high durable glass railings, Weather Resistant, Low Maintenance, Customizable Options"
+          "pvb glass, sgp glass,framed vs frameless glass railings, framed glass railings vs frameless, frameless glass railings, pvb vs sgp differance,pvb vs sgp glass, glass railings, balcony glass railing, Balcony Railings, Staircase glass Railings, commercial buildings, seamless glass railing, aluminum glass railings, Laminated Glass, modern glass railings, frameless glass railings, Aesthetic glass railing, Classic Look, Minimalist Style, safety glass railings, high durable glass railings, Weather Resistant, Low Maintenance, Customizable Options"
         }
         ogImage={blogHero}
         ogUrl={"https://www.imperiorailing.com/blog"}
@@ -247,15 +247,14 @@ export const Blog = () => {
             </Link>
           </h3>
           <p className="text-justify italic text-[--grey]">
-            PVB and SGP are interlayers used in laminated glass with distinct
-            properties. PVB is cost-effective and commonly used in residential
-            and commercial applications but is sensitive to moisture, which can
-            cause decay over time. SGP, on the other hand, is more rigid,
-            durable, and resistant to moisture, UV rays, and yellowing, making
-            it ideal for high-strength applications like glass flooring and
-            hurricane-resistant windows. SGP is five times stronger, 100 times
-            more rigid, and offers superior edge stability and structural
-            performance compared to PVB.
+            Getting to know the differences between{" "}
+            <strong>framed glass and frameless glass railings</strong> will help
+            you decide which type of deck railing will work best for your
+            particular wants and needs. At Imperio Railings, we understand how
+            important it is to choose the right railing for your deck. That is
+            why we carry a wide selection of different railing types, including
+            <strong>framed glass railings</strong> and{" "}
+            <strong>frameless glass railings.</strong>
           </p>
         </div>
       </div>
