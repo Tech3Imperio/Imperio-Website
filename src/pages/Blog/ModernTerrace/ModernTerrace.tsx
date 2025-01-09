@@ -11,6 +11,7 @@ import {
 import Metadata from "../../../components/Metatag/Metatag";
 import { Link } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import EnquiryButton from "../../../components/EnquiryButton/EnquiryButton";
 type BlogPost = {
   id: number;
   title: string;
@@ -118,7 +119,7 @@ export default function ModernTerrace() {
             Modern, Stylish, and Durable Glass Railings for Terraces
           </h3>
         </motion.header>
-
+        <EnquiryButton />
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

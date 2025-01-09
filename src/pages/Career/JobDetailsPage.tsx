@@ -2,6 +2,21 @@ import { useParams } from "react-router-dom";
 import { JobDetails } from "../../components";
 import { useState, useEffect } from "react";
 
+// interface Job {
+//   title: string;
+//   subtitle: string;
+//   about: string;
+//   location: string;
+//   type: string;
+//   others: {
+//     Duration: string;
+//     Expriance: string;
+//     join: string;
+//   }[];
+//   responsibilities: string[];
+//   skills: string[];
+//   whocanapply: string[];
+// }
 interface Job {
   title: string;
   subtitle: string;
@@ -16,6 +31,7 @@ interface Job {
   responsibilities: string[];
   skills: string[];
   whocanapply: string[];
+  applyLink: string; // Added applyLink
 }
 
 export default function JobDetailsPage() {
@@ -59,6 +75,7 @@ export default function JobDetailsPage() {
           "Candidates with minimum 1 years of experience.",
           "Those who are from or open to relocate to Mumbai and neighboring cities",
         ],
+        applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
       },
       {
         title: "Digital Marketing Executive",
@@ -94,6 +111,7 @@ export default function JobDetailsPage() {
           "Social Media Marketing",
         ],
         whocanapply: ["Candidates with minimum 1 years of experience."],
+        applyLink: "https://www.google.com",
       },
       {
         title: "Inside Sales Executive",
@@ -131,6 +149,7 @@ export default function JobDetailsPage() {
           "have relevant skills and interests",
           "Women wanting to start/restart their career can also apply.",
         ],
+        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
       },
       {
         title: "Business Development (Sales)",
@@ -164,6 +183,7 @@ export default function JobDetailsPage() {
           "are from or open to relocate to Mumbai and neighboring cities",
           "have relevant skills and interests",
         ],
+        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
       },
       {
         title: "Architecture",
@@ -198,6 +218,7 @@ export default function JobDetailsPage() {
           "have relevant skills and interests",
           "* Women wanting to start/restart their career can also apply.",
         ],
+        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
       },
       {
         title: "Video Editing/Making",
@@ -240,6 +261,7 @@ export default function JobDetailsPage() {
           "have relevant skills and interests",
           "* Women wanting to start/restart their career can also apply.",
         ],
+        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
       },
       {
         title: "Interior Design",
@@ -273,6 +295,7 @@ export default function JobDetailsPage() {
           "have relevant skills and interests",
           "* Women wanting to start/restart their career can also apply.",
         ],
+        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
       },
       {
         title: "Brand Management",
@@ -316,6 +339,7 @@ export default function JobDetailsPage() {
           "have relevant skills and interests",
           "* Women wanting to start/restart their career can also apply.",
         ],
+        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
       },
       {
         title: "Social Media Marketing",
@@ -358,6 +382,7 @@ export default function JobDetailsPage() {
           "have relevant skills and interests",
           "* Women wanting to start/restart their career can also apply.",
         ],
+        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
       },
       {
         title: "Sales Manager",
@@ -402,6 +427,7 @@ export default function JobDetailsPage() {
           "Individuals with the ability to seek out new business opportunities, build relationships, and expand a company's client base.",
           "Individuals with 3+ years of experience in sales or sales management, particularly in a leadership or team management role, are encouraged to apply.",
         ],
+        applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
       },
       {
         title: "Field Sales Executive",
@@ -446,6 +472,7 @@ export default function JobDetailsPage() {
           " Have strong communication, negotiation, and problem-solving skills.",
           "Have prior experience in field sales or direct client interactions.",
         ],
+        applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
       },
       {
         title: "Aluminium Window Sales Executive",
@@ -487,6 +514,7 @@ export default function JobDetailsPage() {
           "Individuals with excellent communication and negotiation skills.",
           "Professionals who are goal-oriented and have a passion for delivering excellent customer service.",
         ],
+        applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
       },
     ];
 
@@ -499,6 +527,14 @@ export default function JobDetailsPage() {
   if (!job) {
     return <div>Job not found</div>;
   }
-
-  return <JobDetails job={job} />;
+  return (
+    <div>
+      <JobDetails job={job} />
+      {/* Displaying the Apply button */}
+      <a href={job.applyLink} target="_blank" rel="noopener noreferrer">
+        {/* <button>Apply Now</button> */}
+      </a>
+    </div>
+  );
+  // return <JobDetails job={job} />;
 }

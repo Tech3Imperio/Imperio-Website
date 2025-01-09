@@ -10,6 +10,7 @@ import {
 import Metadata from "../../../components/Metatag/Metatag";
 import { Link } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import EnquiryButton from "../../../components/EnquiryButton/EnquiryButton";
 
 type BlogPost = {
   id: number;
@@ -95,7 +96,7 @@ export default function ModernHandrail() {
             </a>
           </Link>
         </span>
-
+        <EnquiryButton />
         <motion.header
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}

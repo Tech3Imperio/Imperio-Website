@@ -3,6 +3,7 @@ import { contactHero } from "../../assets/Images";
 import { Description, Hero, Quote } from "../../components";
 const Map = React.lazy(() => import("../../components/Map/Map"));
 import Metadata from "../../components/Metatag/Metatag";
+import EnquiryButton from "../../components/EnquiryButton/EnquiryButton";
 
 export const Contact = () => {
   return (
@@ -34,6 +35,7 @@ export const Contact = () => {
             <Suspense fallback={<div>Loading...</div>}>
               <Map />
             </Suspense>
+            <EnquiryButton />
           </Description>
         </section>
         <Quote />

@@ -19,6 +19,7 @@ import { RxCross2 } from "react-icons/rx";
 import { CiFilter } from "react-icons/ci";
 import { IoSearchOutline } from "react-icons/io5";
 import { BsHandbag } from "react-icons/bs";
+import EnquiryButton from "../../components/EnquiryButton/EnquiryButton";
 
 // import DealerProductsPage from "./DealerProductsPage";
 
@@ -641,6 +642,7 @@ const MemoProducts: React.FC = () => {
                 )}
               </div>
             ))}
+
             <button
               onClick={() => {
                 setSelectedTypes([]), setFilterSidebar(false);
@@ -740,6 +742,7 @@ const MemoProducts: React.FC = () => {
             </button>
           </aside>
         )}
+        <EnquiryButton />
         <section className="pb-24 mx-2">
           {filteredProductSections &&
             filteredProductSections.map((section, index) => (

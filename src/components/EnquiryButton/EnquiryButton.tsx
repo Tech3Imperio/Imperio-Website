@@ -59,7 +59,7 @@ const EnquiryButton: React.FC = () => {
   useEffect(() => {
     const openFormTimer = setTimeout(() => {
       setIsOpen(true);
-    }, 1000);
+    }, 2000);
 
     const savedFormState = localStorage.getItem("formOpen");
     if (savedFormState === "true") {
@@ -197,7 +197,7 @@ const EnquiryButton: React.FC = () => {
               </button>
 
               <h2 className="text-3xl font-bold mb-6 text-center text-[#03237b]">
-                Contact Form
+                Get Special Offer
               </h2>
 
               {showThankYou ? (

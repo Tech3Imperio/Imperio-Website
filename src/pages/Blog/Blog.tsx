@@ -6,6 +6,7 @@ import { BlogType } from "../../types";
 import { Link } from "react-router-dom";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
 import Metadata from "../../components/Metatag/Metatag";
+import EnquiryButton from "../../components/EnquiryButton/EnquiryButton";
 const BlogPanel = React.lazy(() => import("../../components/Blog/Panel/index"));
 
 export const Blog = () => {
@@ -132,6 +133,7 @@ export const Blog = () => {
               </b>
             </Link>
           </h3>
+          <EnquiryButton />
           <p className="text-justify italic text-[--grey]">
             Transform your terrace with modern glass railing in cities like
             Jodhpur, Mohali, Varanasi, Allahabad, Dehradun, Pune, Maharashtra
