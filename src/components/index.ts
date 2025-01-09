@@ -11,11 +11,7 @@ export * from "./Scroll";
 export * from "./SocialLinks";
 export * from "./PopUp";
 export * from "./ErrorPopupProps/ErrorPopupProps";
-// export * from "./PVBSGP/ClarityYellowness";
-// export * from "./PVBSGP/ComparisonChart";
-// export * from "./PVBSGP/Introduction";
-// export * from "./PVBSGP/LoadCapability";
-// export * from "./PVBSGP/PostBreakageStrength";
+
 export * from "./PVBSGP/SafetyFeatures";
 export * from "./Map/Map";
 export * from "./JobDetails/JobDetails";
