@@ -41,6 +41,8 @@ import CartProdcut from "./pages/CartDetails/CartProduct";
 import PVBSGP from "./pages/Blog/PVBSGP/PVBSGP";
 import BillingAddress from "./pages/BillingAddress/BillingAddress";
 import FramedFrameless from "./pages/Blog/FramedFrameless/FramedFrameless";
+import FulltimeHiringForm from "./pages/FulltimeHiringForm/FulltimeHiringForm";
+import AlumiumVsStainless from "./pages/Blog/AlumiumVsStainless/AlumiumVsStainless";
 
 // import ForgotPassword from "./pages/DealerOnlineStore/ForgotPassword/ForgotPassword";
 
@@ -63,6 +65,10 @@ export const routes = createBrowserRouter([
       {
         path: "blog/framed-vs-frameless-glass-railings",
         element: <FramedFrameless />,
+      },
+      {
+        path: "blog/aluminum-vs-stainless-steel-glass-railings",
+        element: <AlumiumVsStainless />,
       },
       {
         path: "blog/:blogId",
@@ -111,6 +117,7 @@ export const routes = createBrowserRouter([
       { path: "projects", element: <Projects /> },
       { path: "quote", element: <GetQuote /> },
       { path: "billing-address", element: <BillingAddress /> },
+      { path: "careers/full-time-form", element: <FulltimeHiringForm /> },
 
       { path: "quote/thanks", element: <ThankYou /> },
 

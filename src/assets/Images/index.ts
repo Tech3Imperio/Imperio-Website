@@ -13,3 +13,4 @@ export * from "./Handrails";
 export * from "./Balcony";
 export * from "./career";
 export * from "./PVBSGP/index";
+export * from "./StainlessSteel/index";

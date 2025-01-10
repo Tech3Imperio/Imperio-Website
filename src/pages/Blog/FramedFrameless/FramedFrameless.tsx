@@ -31,7 +31,7 @@ const FramedFrameless: React.FC = () => {
         subHeader="Framed and frameless glass railings differ in appearance, cost, durability, and maintenance requirements. Explore the pros and cons of framed vs frameless glass railings for your next project."
         curve
       />
-      <div className="min-h-screen ">
+      <div className=" max-w-7xl mx-auto">
         <motion.div
           className="container mx-auto px-4 py-8"
           initial={{ opacity: 0, y: 20 }}

@@ -244,6 +244,14 @@ export default function Career() {
       applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     },
     {
+      title: "Logistics and Back office Coordinator",
+      description:
+        "The Back Office and Logistics Coordinator manages logistics support, administrative tasks, and record-keeping for smooth operations.",
+      location: "Mumbai",
+      type: "Full-Time",
+      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    },
+    {
       title: "Business Development (Sales)",
       description:
         "As a Business Development intern at Imperio Railing Systems, you'll generate leads, build relationships, and drive growth.",

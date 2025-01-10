@@ -59,7 +59,7 @@ const EnquiryButton: React.FC = () => {
   useEffect(() => {
     const openFormTimer = setTimeout(() => {
       setIsOpen(true);
-    }, 2000);
+    }, 10000);
 
     const savedFormState = localStorage.getItem("formOpen");
     if (savedFormState === "true") {

@@ -23,11 +23,6 @@ const urls = [
     priority: 0.8,
   },
   {
-    url: "/careers/Inside%20Sales%20Executive",
-    changefreq: "weekly",
-    priority: 0.8,
-  },
-  {
     url: "/careers/Business%20Development%20(Sales)",
     changefreq: "weekly",
     priority: 0.8,
@@ -69,6 +64,11 @@ const urls = [
   },
   {
     url: "/careers/Aluminium%20Window%20Sales%20Executive",
+    changefreq: "weekly",
+    priority: 0.8,
+  },
+  {
+    url: "/careers/Logistics%20and%20Back%20office%20Coordinator",
     changefreq: "weekly",
     priority: 0.8,
   },

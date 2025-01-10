@@ -114,6 +114,52 @@ export default function JobDetailsPage() {
         applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
       },
       {
+        title: "Logistics and Back office Coordinator",
+        subtitle:
+          "Create captivating animations to showcase innovative products in a dynamic, creative environment.",
+        about:
+          "Are you a passionate and creative individual with a love for animation and design? Do you have experience with Adobe After Effects, Video Editing, and Adobe Illustrator? If so, we have the perfect opportunity for you! Imperio Railing Systems is seeking a talented Animation intern to join our team and help bring our products to life through captivating animations and videos.",
+        location: "Mumbai",
+        type: "Full-Time",
+        others: [
+          {
+            Duration: "NA",
+            Expriance: "2+ years",
+            join: "Immediately / Female Candidate Only",
+          },
+        ],
+        responsibilities: [
+          " Plan and coordinate shipments to ensure timely delivery.",
+          "Maintain accurate records for shipments, inventory, and vendors.",
+          "Process invoices, purchase orders, and shipping documents.",
+          "Communicate with carriers, vendors, and clients to resolve issues.",
+          "Track and monitor shipments, updating stakeholders as needed.",
+          "Ensure compliance with shipping regulations and company policies.",
+          "Analyze logistics data to improve efficiency and reduce costs.",
+          " Support interdepartmental communication and back-office tasks.",
+          " Address and resolve shipment delays or discrepancies.",
+          "Optimize logistics processes to meet operational goals.",
+        ],
+        skills: [
+          "Organizational skills",
+          "Communication skills (written and verbal)",
+          "Attention to detail",
+          "Time management",
+          "Problem-solving and decision-making",
+          "Proficiency in logistics and office software (e.g. Excel)",
+          "Multitasking and adaptability",
+          "Knowledge of shipping regulations and compliance.",
+        ],
+        whocanapply: [
+          "Only Female Candidate",
+          "2+ years of experience in logistics or back-office roles",
+          "Proficiency in logistics software and Microsoft Office.",
+          "Strong organizational and communication skills",
+          "Knowledge of shipping regulations and inventory management.",
+        ],
+        applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
+      },
+      {
         title: "Business Development (Sales)",
         subtitle:
           "As a Business Development intern at Imperio Railing Systems, you'll assist in lead generation, client relationship building, and revenue growth while gaining marketing experience.",
