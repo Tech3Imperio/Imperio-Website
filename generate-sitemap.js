@@ -87,6 +87,11 @@ const urls = [
     changefreq: "weekly",
     priority: 0.8,
   },
+  {
+    url: "/blog/aluminum-vs-stainless-steel-glass-railings",
+    changefreq: "weekly",
+    priority: 0.8,
+  },
   { url: "/blog/aluminum-handrail", changefreq: "weekly", priority: 0.8 },
   {
     url: "/blog/modern/balcony-glass-railing",
