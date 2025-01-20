@@ -73,6 +73,16 @@ const urls = [
     priority: 0.8,
   },
   {
+    url: "/careers/Full%20Stack%20Developer%20Intern",
+    changefreq: "weekly",
+    priority: 0.8,
+  },
+  {
+    url: "/careers/Full%20Stack%20Developer",
+    changefreq: "weekly",
+    priority: 0.8,
+  },
+  {
     url: "/blog/terrace/glass-railing",
     changefreq: "weekly",
     priority: 0.8,
