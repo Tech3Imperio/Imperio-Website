@@ -524,6 +524,98 @@ export default function JobDetailsPage() {
         ],
         applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
       },
+      {
+        title: "Full Stack Developer Intern",
+        subtitle:
+          "We are seeking a Full Stack Developer Intern to assist in building scalable web applications, contributing to both front-end and back-end development. This is a great opportunity to gain hands-on experience and enhance your skills.",
+        about:
+          "We are seeking a motivated and tech-savvy Full Stack Developer Intern to join our team. In this role, you will support the development of scalable web applications by contributing to both front-end and back-end development. This internship provides a fantastic opportunity to gain hands-on experience in web application development, enhance your technical skills, and collaborate with experienced developers.",
+        location: "Mumbai",
+        type: "Internship",
+        others: [
+          {
+            Duration: "6 Months",
+            Expriance: "Fresher",
+            join: "Immediately",
+          },
+        ],
+        responsibilities: [
+          "Assist in developing responsive front-end interfaces using technologies like React and Next.js",
+          "Support back-end development tasks, including building APIs and database management.",
+          "Write clean, maintainable, and efficient code under the guidance of senior developers.",
+          "Debug and resolve issues in existing applications.",
+          "Collaborate with designers and other developers to implement new features.",
+          "Participate in code reviews and contribute to team discussions.",
+          "Research and incorporate new technologies and best practices into development workflows.",
+          "Document technical processes and ensure knowledge sharing within the team.",
+        ],
+        skills: [
+          "CSS",
+          "HTML",
+          "JavaScript",
+          "React.JS",
+          "Next.Js",
+          "TypeScript",
+          "Node.js",
+          "MongoDB",
+        ],
+        whocanapply: [
+          "are available for full time (in-office) internship",
+          "can start the internship between 18th Jan'25 and 22nd Feb'25",
+          "are available for duration of 6 months",
+          "have relevant skills and interests",
+        ],
+        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
+      },
+      {
+        title: "Full Stack Developer",
+        subtitle:
+          "We are seeking a Full Stack Developer Intern to assist in building scalable web applications, contributing to both front-end and back-end development. This is a great opportunity to gain hands-on experience and enhance your skills.",
+        about:
+          "We are looking for a skilled web developer who will be responsible for developing and/or designing websites for our company. You will be working alongside a team of other developers in creating, maintaining, and updating our websites. In order for you to succeed in this role, you will need to be proficient in NextJS, ReactJS, AWS, MongoDB, JavaScript, HTML, CSS, and have solid knowledge and experience in programming applications.",
+        location: "Mumbai",
+        type: "Full-Time",
+        others: [
+          {
+            Duration: "NA",
+            Expriance: "2-5 years",
+            join: "Immediately",
+          },
+        ],
+        responsibilities: [
+          "Build and maintain websites and applications",
+          "Advanced proficiency in using different markup and programming languages, such as CSS, HTML, Python, JavaScript and React/Next js.",
+          "Evaluate code to make sure that it is properly structured and compatible with different devices, browsers, and operating systems",
+          "Develop solutions that meet industry standards.",
+          "Be responsible for maintaining, expanding, and scaling our site.",
+          "Proven working experience in web programming.",
+          "High level of experience with web standards, website interfaces, and cross-browser compatibility",
+          "Assess customer feedback to identify problems and correct them.",
+          "Manage, scale, and expand the company’s website",
+        ],
+        skills: [
+          "CSS",
+          "HTML",
+          "JavaScript",
+          "React.JS",
+          "Next.Js",
+          "TypeScript",
+          "Node.js",
+          "MongoDB",
+          "Python",
+          "MySql",
+          "Cloud Knowledge",
+          "SEO Knowledge",
+        ],
+        whocanapply: [
+          "Bachelor’s degree in Computer Science, Engineering, or a related field.",
+          "Proven experience (2–5 years) in full stack development.",
+          "Strong understanding of software development life cycle and best practices.",
+          "Excellent problem-solving and communication skills.",
+          "Ability to work independently and in a team-oriented environment.",
+        ],
+        applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
+      },
     ];
 
     const foundJob = jobs.find(

@@ -211,14 +211,14 @@ export default function Career() {
       type: "Full-Time",
       applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     },
-    {
-      title: "Digital Marketing Executive",
-      description:
-        "We are looking for a skilled individual with expertise in Digital Marketing, SEO, Social Media (Facebook & Instagram), and Email Marketing.",
-      location: "Mumbai",
-      type: "Full-Time",
-      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
-    },
+    // {
+    //   title: "Digital Marketing Executive",
+    //   description:
+    //     "We are looking for a skilled individual with expertise in Digital Marketing, SEO, Social Media (Facebook & Instagram), and Email Marketing.",
+    //   location: "Mumbai",
+    //   type: "Full-Time",
+    //   applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    // },
     {
       title: "Aluminium Window Sales Executive",
       description:
@@ -250,6 +250,22 @@ export default function Career() {
       location: "Mumbai",
       type: "Full-Time",
       applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    },
+    {
+      title: "Full Stack Developer",
+      description:
+        "We are seeking a Full Stack Developer to assist in building scalable web applications, contributing to both front-end and back-end development.",
+      location: "Mumbai",
+      type: "Full-Time",
+      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    },
+    {
+      title: "Full Stack Developer Intern",
+      description:
+        "We are seeking a Full Stack Developer Intern to assist in building scalable web applications, contributing to both front-end and back-end development.",
+      location: "Mumbai",
+      type: "Internship",
+      applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9", // Apply link
     },
     {
       title: "Business Development (Sales)",
@@ -345,11 +361,11 @@ export default function Career() {
                   </div>
                   <div className="flex justify-between items-center mt-4">
                     {/* Link to apply directly */}
-                    <a href={job.applyLink} target="_blank">
+                    {/* <a href={job.applyLink} target="_blank">
                       <button className="px-4 py-3 text-[--black] font-bold bg-[--secound] text-xs rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap">
                         Apply Now
                       </button>
-                    </a>
+                    </a> */}
                     {/* Link to Job details page */}
                     <Link to={`/careers/${encodeURIComponent(job.title)}`}>
                       <button className="px-4 py-3 text-[--secound] font-bold bg-[--black] text-xs rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--secound] hover:text-[--black] whitespace-nowrap">
