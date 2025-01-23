@@ -222,7 +222,7 @@ export default function Career() {
     {
       title: "Aluminium Window Sales Executive",
       description:
-        "We are looking for a motivated Aluminium Window Sales Executive to generate leads, build relationships, and close sales in the construction sector.",
+        "We are looking for a motivated Aluminium Window Sales Executive to generate leads, build relationships, and close sales in the construction.",
       location: "Mumbai",
       type: "Full-Time",
       applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
@@ -275,14 +275,14 @@ export default function Career() {
       type: "Internship",
       applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9", // Apply link
     },
-    {
-      title: "Architecture",
-      description:
-        "As an Architecture intern at Imperio Railing Systems, you'll use AutoCAD, 3ds Max, and Google SketchUp to help design innovative railing systems.",
-      location: "Mumbai",
-      type: "Internship",
-      applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9", // Apply link
-    },
+    // {
+    //   title: "Architecture",
+    //   description:
+    //     "As an Architecture intern at Imperio Railing Systems, you'll use AutoCAD, 3ds Max, and Google SketchUp to help design innovative railing systems.",
+    //   location: "Mumbai",
+    //   type: "Internship",
+    //   applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9", // Apply link
+    // },
     {
       title: "Video Editing/Making",
       description:
@@ -291,30 +291,30 @@ export default function Career() {
       type: "Internship",
       applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9", // Apply link
     },
-    {
-      title: "Interior Design",
-      description:
-        "Imperio Railing Systems is seeking an Interior Design intern skilled in 3ds Max, AutoCAD, and Google SketchUp.",
-      location: "Mumbai",
-      type: "Internship",
-      applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9", // Apply link
-    },
-    {
-      title: "Brand Management",
-      description:
-        "Imperio Railing Systems is hiring a Brand Management intern with skills in digital marketing, social media, video editing, and UI/UX design.",
-      location: "Mumbai",
-      type: "Internship",
-      applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9", // Apply link
-    },
-    {
-      title: "Social Media Marketing",
-      description:
-        "Join Imperio Railing Systems as a Social Media Marketing intern and gain hands-on experience in marketing strategies while showcasing your skills.",
-      location: "Mumbai",
-      type: "Internship",
-      applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9", // Apply link
-    },
+    // {
+    //   title: "Interior Design",
+    //   description:
+    //     "Imperio Railing Systems is seeking an Interior Design intern skilled in 3ds Max, AutoCAD, and Google SketchUp.",
+    //   location: "Mumbai",
+    //   type: "Internship",
+    //   applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9", // Apply link
+    // },
+    // {
+    //   title: "Brand Management",
+    //   description:
+    //     "Imperio Railing Systems is hiring a Brand Management intern with skills in digital marketing, social media, video editing, and UI/UX design.",
+    //   location: "Mumbai",
+    //   type: "Internship",
+    //   applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9", // Apply link
+    // },
+    // {
+    //   title: "Social Media Marketing",
+    //   description:
+    //     "Join Imperio Railing Systems as a Social Media Marketing intern and gain hands-on experience in marketing strategies while showcasing your skills.",
+    //   location: "Mumbai",
+    //   type: "Internship",
+    //   applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9", // Apply link
+    // },
   ]);
 
   return (
@@ -352,14 +352,14 @@ export default function Career() {
                   </h3>
                   <p className="text-gray-600 mb-4">{job.description}</p>
                   <div className="flex justify-between items-center mb-4">
-                    <span className="text-sm text-[#292929]">
+                    <span className="text-sm font-medium text-[#292929]">
                       {job.location}
                     </span>
-                    <span className="text-sm font-medium text-[#292929]">
+                    <span className="text-sm font-bold text-[#292929] uppercase">
                       {job.type}
                     </span>
                   </div>
-                  <div className="flex justify-between items-center mt-4">
+                  <div className="flex justify-end items-center mt-4">
                     {/* Link to apply directly */}
                     {/* <a href={job.applyLink} target="_blank">
                       <button className="px-4 py-3 text-[--black] font-bold bg-[--secound] text-xs rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap">
