@@ -4,16 +4,16 @@ import classNames from "classnames";
 const Map = React.memo(() => {
   // Class names for sections and iframe
   const containerClassNames = classNames(
-    "bg-[--black] -mx-9 tablet:-mx-16 laptop:-mx-28 2xl:-mx-44 px-4 phone:px-9 tablet:px-16 laptop:px-28 2xl:px-44 pt-10"
+    "bg-[--black] -mx-9 tablet:-mx-16 laptop:-mx-28 2xl:-mx-44 px-4 phone:px-9 tablet:px- laptop:px- 2xl:px- pt- p-4"
   );
 
   const iframeClassNames = classNames(
-    "w-full rounded-2xl h-[52.75vh] outline-none"
+    "w-full rounded-2xl h-[65.75vh] outline-none"
   );
 
-  const contactClassNames = classNames(
-    "flex flex-col gap-2 text-base w-[17rem] text-white p-5"
-  );
+  // const contactClassNames = classNames(
+  //   "flex flex-col gap-2 text-base w-[17rem] text-white p-5"
+  // );
 
   return (
     <div className={containerClassNames}>
@@ -23,14 +23,14 @@ const Map = React.memo(() => {
         allowFullScreen
         loading="lazy" // Lazy load the iframe
       />
-      <div className={contactClassNames}>
+      {/* <div className={contactClassNames}>
         <p>+91 8591953385</p>
-        <p>sale@imperiorailing.com</p>
+        <p>sales@imperiorailing.com</p>
         <p>
           1, Aman Chambers, New Queens Rd, Charni Road, Mumbai, Maharashtra -
           400004.
         </p>
-      </div>
+      </div> */}
     </div>
   );
 });

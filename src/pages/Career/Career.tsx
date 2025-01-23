@@ -251,22 +251,22 @@ export default function Career() {
       type: "Full-Time",
       applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     },
-    {
-      title: "Full Stack Developer",
-      description:
-        "We are seeking a Full Stack Developer to assist in building scalable web applications, contributing to both front-end and back-end development.",
-      location: "Mumbai",
-      type: "Full-Time",
-      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
-    },
-    {
-      title: "Full Stack Developer Intern",
-      description:
-        "We are seeking a Full Stack Developer Intern to assist in building scalable web applications, contributing to both front-end and back-end development.",
-      location: "Mumbai",
-      type: "Internship",
-      applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9", // Apply link
-    },
+    // {
+    //   title: "Full Stack Developer",
+    //   description:
+    //     "We are seeking a Full Stack Developer to assist in building scalable web applications, contributing to both front-end and back-end development.",
+    //   location: "Mumbai",
+    //   type: "Full-Time",
+    //   applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    // },
+    // {
+    //   title: "Full Stack Developer Intern",
+    //   description:
+    //     "We are seeking a Full Stack Developer Intern to assist in building scalable web applications, contributing to both front-end and back-end development.",
+    //   location: "Mumbai",
+    //   type: "Internship",
+    //   applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9", // Apply link
+    // },
     {
       title: "Business Development (Sales)",
       description:

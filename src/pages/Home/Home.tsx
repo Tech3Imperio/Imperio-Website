@@ -119,27 +119,18 @@ export const Home: React.FC = () => {
               Crafting Excellence in Glass Railings.
             </h2>
             <p className="w-full lg:w-[37rem] text-base tablet:text-base lg:text-lg xl:text-xl italic text-[--grey] text-justify">
-              At <strong>Imperio Railing Systems</strong>, we take pride in
-              crafting exceptional glass railing solutions that combine
-              elegance, durability, and safety. Our wide range of offerings
-              includes high-quality <strong>glass railing systems</strong>,{" "}
-              <strong>aluminium glass railings</strong>, and{" "}
-              <strong>customized glass railings</strong> designed to suit
-              various aesthetic preferences and functional needs. From sleek{" "}
-              <strong>modern balcony glass railings</strong> to stylish{" "}
-              <strong>staircase glass railings</strong>, we provide products
-              that enhance both residential and commercial spaces.
-              <br />
-              Based in <strong>Mumbai, Maharashtra, India</strong>, we are
-              committed to pushing the boundaries of design and innovation.
-              Whether you’re looking for a contemporary{" "}
-              <strong>balcony glass design</strong> or a bespoke{" "}
-              <strong>glass railing solution</strong>, our team ensures that
-              every project meets the highest standards of quality, safety, and
-              design. As trusted{" "}
-              <strong>aluminium glass railing dealers</strong> in India, we
-              deliver solutions that are as beautiful as they are functional,
-              ensuring long-lasting performance and timeless appeal.
+              At <strong>Imperio Railing Systems</strong>, we specialize in
+              premium <strong>glass railing systems</strong>, including{" "}
+              <strong>aluminum glass railings</strong> and{" "}
+              <strong>customized balcony glass railings</strong>. Our solutions
+              blend elegance, durability, and safety, perfect for both
+              residential and commercial spaces. Based in{" "}
+              <strong>Mumbai, Maharashtra</strong>, we offer sleek{" "}
+              <strong>balcony glass railings</strong> and{" "}
+              <strong>modern staircase glass railings</strong>, designed to
+              elevate any space. Trust us for high-quality{" "}
+              <strong>aluminum glass railings</strong> that ensure long-lasting
+              performance and style.
             </p>
 
             <div className="pt-8 text-[9px] phone:text-xs flex gap-2">

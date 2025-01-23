@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from "react";
+import React, { useState } from "react";
 import { SocialLinks } from "../../components"; // Import necessary components
 const PopupMessage = React.lazy(() => import("../../components/PopUp/index"));
 import { Link } from "react-router-dom";
@@ -60,9 +60,9 @@ export const Footer = () => {
   return (
     <footer className="bg-[--black] tablet:min-h-[35rem] py-6 phone:py-10 tablet:py-14 laptop:py-20 xl:py-24 px-9 phone:px-[4.5rem] tablet:px-[6.65rem] laptop:px-[8.75rem] xl:px-44 flex flex-col tablet:flex-row justify-between max-tablet:gap-6">
       <aside className="flex flex-col justify-between min-h-full max-tablet:gap-6">
-        <h2 className="Raleway text-[1.75rem] phone:text-3xl tablet:text-4xl laptop:text-5xl text-white pt-4 tablet:pt-0">
+        <p className="Raleway text-[1.75rem] phone:text-3xl tablet:text-4xl laptop:text-5xl text-white pt-4 tablet:pt-0">
           Let’s keep in touch!
-        </h2>
+        </p>
         <div className="flex flex-col gap-5 text-white">
           <div className="flex flex-col gap-[2.5px] tablet:gap-3 text-xs tablet:text-sm laptop:text-base w-fit">
             <p className="font-medium">Request a CallBack</p>
@@ -130,23 +130,23 @@ export const Footer = () => {
           <HiOutlinePhone className="text-lg phone:text-xl tablet:text-2xl laptop:text-base xl:text-xl" />{" "}
           {/* Phone icon */}
           <div className="flex flex-col gap-1 text-xs tablet:text-sm laptop:text-base">
-            <h3>Telephone</h3>
-            <p>+91 85919 53385</p>
+            <p>Telephone</p>
+            <p>022-66362506</p>
           </div>
         </div>
         <div className="flex gap-4">
           <MdOutlineEmail className="text-lg phone:text-xl tablet:text-2xl laptop:text-base xl:text-xl" />{" "}
           {/* Email icon */}
           <div className="flex flex-col gap-1 text-xs tablet:text-sm laptop:text-base">
-            <h3>Email</h3>
-            <p>hello@imperiorailing.com</p>
+            <p>Email</p>
+            <p>sales@imperiorailing.com</p>
           </div>
         </div>
         <div className="flex gap-4">
           <IoLocationOutline className="text-[3.3rem] pb-8 -ml-2 phone:text-[3.2rem] tablet:text-[5.3rem] tablet:pl-1 tablet:pb-16 xl:-ml-9 xl:text-[5.5rem]" />{" "}
           {/* Location icon */}
           <div className="flex flex-col gap-1 text-xs tablet:text-sm laptop:text-base address-container">
-            <h3 className="-ml-2.5 xl:-ml-8  tablet:-ml-2">Headquarters</h3>
+            <p className="-ml-2.5 xl:-ml-8  tablet:-ml-2">Headquarters</p>
             <p className="-ml-2.5 xl:-ml-8  tablet:-ml-2">
               1, Aman Chambers, New Queens Rd, Charni Road, Mumbai Maharashtra -
               400004.
@@ -155,9 +155,7 @@ export const Footer = () => {
         </div>
       </aside>
       {message /* Conditional rendering of the popup message */ && (
-        <Suspense fallback={<div>Loading...</div>}>
-          <PopupMessage message={message} onClose={() => setMessage("")} />
-        </Suspense>
+        <PopupMessage message={message} onClose={() => setMessage("")} />
       )}
       <div className="flex-col text-white md:hidden" aria-label="social-links">
         {" "}
