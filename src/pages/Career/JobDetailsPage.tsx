@@ -393,6 +393,45 @@ export default function JobDetailsPage() {
         applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
       },
       {
+        title: "Cinematographer Intern",
+        subtitle:
+          "Imperio Railing systems, a leader in innovative glass railing solutions, is seeking a talented and motivated Cinematographer Intern to join our creative team.",
+        about:
+          "Imperio Railing systems, a leader in innovative glass railing solutions, is seeking a talented and motivated Cinematographer Intern to join our creative team. This internship offers the opportunity to gain hands-on experience in product-focused videography, including visiting installation sites to capture high-quality footage of our glass railing products.",
+        location: "Mumbai",
+        type: "Internship",
+        others: [
+          {
+            Duration: "6 Months ",
+            Expriance: "Fresher",
+            join: "Immediately",
+          },
+        ],
+        responsibilities: [
+          "Visit installation sites to capture high-quality footage of glass railing installations and product features.",
+          "Use your own cinematography equipment (cameras, lenses, lighting, and audio gear) to capture footage in alignment with the creative vision.",
+          "to create visually compelling content that highlights our glass railing products and their unique features.",
+          "Stay updated on industry trends, emerging technologies, and cinematography techniques relevant to product and architectural videography.",
+          "Work closely with the marketing and sales teams to understand the company’s brand identity and ensure visual content aligns with our vision.",
+          "Contribute to problem-solving during filming to ensure smooth production processes, especially when filming on-site.",
+          "Assist in post-production work, including editing and providing input to enhance the final product.",
+        ],
+        skills: [
+          "Proficiency in using cinematography equipment (camera, lenses, lighting, and audio gear).",
+          "Basic understanding of cinematography and video production.",
+          "Creativity and fresh ideas for visual storytelling.",
+          "Willingness to travel to different installation sites for videography.",
+        ],
+        whocanapply: [
+          "Currently enrolled in a degree program in Cinematography, Media Production, or a related field.",
+          "Passion for cinematography, product videography, and visual storytelling.",
+          "Must own and be proficient in using cinematography equipment.",
+          "Comfortable with site visits and filming in diverse environments.",
+          "Eagerness to learn and adapt in a fast-paced, product-focused media environment.",
+        ],
+        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
+      },
+      {
         title: "Sales Manager",
         subtitle:
           "We are seeking a results-driven Sales Manager to lead our team, drive revenue, and develop sales strategies while building strong client relationships.",

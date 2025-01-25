@@ -20,3 +20,5 @@ export * from "./PVBSGP/Infographic";
 export * from "./PVBSGP/TableOfContents";
 export * from "./FramedVSFrameless/MainContent";
 export * from "./BlogpostsUI/BlogpostsUI";
+export * from "./RecommendationForm/RecommendationForm";
+export * from "./RecommendationForm/RecommendationResult";

@@ -275,6 +275,14 @@ export default function Career() {
       type: "Internship",
       applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9", // Apply link
     },
+    {
+      title: "Cinematographer Intern",
+      description:
+        "Imperio Railing systems, a leader in innovative glass railing solutions, is seeking a talented and motivated Cinematographer Intern to join our creative team.",
+      location: "Mumbai",
+      type: "Internship",
+      applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9", // Apply link
+    },
     // {
     //   title: "Architecture",
     //   description:

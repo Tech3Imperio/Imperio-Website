@@ -43,6 +43,7 @@ import BillingAddress from "./pages/BillingAddress/BillingAddress";
 import FramedFrameless from "./pages/Blog/FramedFrameless/FramedFrameless";
 import FulltimeHiringForm from "./pages/FulltimeHiringForm/FulltimeHiringForm";
 import AlumiumVsStainless from "./pages/Blog/AlumiumVsStainless/AlumiumVsStainless";
+import Recommendation from "./pages/Recommendation/Recommendation";
 
 // import ForgotPassword from "./pages/DealerOnlineStore/ForgotPassword/ForgotPassword";
 
@@ -120,6 +121,7 @@ export const routes = createBrowserRouter([
       { path: "careers/full-time-form", element: <FulltimeHiringForm /> },
 
       { path: "quote/thanks", element: <ThankYou /> },
+      { path: "recommendation", element: <Recommendation /> },
 
       {
         path: "PrivacyPolicy",
