@@ -90,7 +90,7 @@ export const Home: React.FC = () => {
       <main>
         <Hero
           img={heroImage}
-          altText="hero for home"
+          altText="Hero Image"
           header={
             <>
               Premium Glass Railings,
