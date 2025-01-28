@@ -164,7 +164,7 @@ export default function JobDetailsPage() {
         subtitle:
           "As a Business Development intern at Imperio Railing Systems, you'll assist in lead generation, client relationship building, and revenue growth while gaining marketing experience.",
         about:
-          "Are you a passionate and creative individual with a love for animation and design? Do you have experience with Adobe After Effects, Video Editing, and Adobe Illustrator? If so, we have the perfect opportunity for you! Imperio Railing Systems is seeking a talented Animation intern to join our team and help bring our products to life through captivating animations and videos.",
+          "As a Business Development (Sales) intern at Imperio Railing Systems, you will have the opportunity to showcase your skills in Digital Marketing and Social Media Marketing while gaining valuable experience in the sales industry. Your role will involve working closely with the sales team to generate leads, build relationships with potential clients, and drive revenue growth for the company.",
         location: "Mumbai",
         type: "Internship",
         others: [
