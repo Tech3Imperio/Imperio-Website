@@ -36,8 +36,9 @@ const ProductDescription: React.FC<ProductDescription> = ({
 }) => {
   return (
     <>
-      <div className="max-w-5xl flex flex-col md:flex-row mx-auto mt-2 md:mt-8 gap-6 px-4 md:px-8 py-4">
-        <div className="flex flex-col md:w-[60%] gap-1 tablet:gap-6">
+      <div className="max-w-5xl flex flex-col mx-auto mt-2 md:mt-8 gap-6 px-4 md:px-8 py-4">
+        {/* Heading and Subheading in flex-col */}
+        <div className="flex flex-col gap-1 tablet:gap-6">
           <h2 className="YellowText text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
             {heading}
           </h2>
@@ -45,7 +46,9 @@ const ProductDescription: React.FC<ProductDescription> = ({
             {subheading}
           </h3>
         </div>
-        <div className="md:w-[40%]">
+
+        {/* Ensure description stays in a single column and takes full width */}
+        <div className="w-full">
           <p className="text-justify italic text-[--grey]">{description}</p>
         </div>
       </div>
