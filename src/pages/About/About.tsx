@@ -90,7 +90,7 @@ export const About: React.FC = () => {
           curve
         />
         <section className="max-h-screen overflow-hidden px-4 md:px-8 mb-24">
-          <div className="max-w-7xl flex flex-col md:flex-row mx-auto mt-10 md:mt-24 gap-4">
+          <div className="max-w-7xl flex flex-col  mx-auto mt-10 md:mt-24 gap-4">
             <div className="flex flex-col md:w-[60%] gap-1 tablet:gap-6">
               <h2 className="YellowText text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
                 Imperio Glass Railings
@@ -98,15 +98,9 @@ export const About: React.FC = () => {
               <h3 className="text-[--third] flex flex-wrap md:max-w-2xl Raleway tracking-wider w-full text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] 2xl:text-5xl">
                 High-Quality Glass Railing Solutions for Your Home
               </h3>
-              <span className="text-xs my-4 w-32">
-                <CTAButton phoneNumber="+91 8591953385">
-                  <MdAddCall size={16} />
-                  CALL NOW
-                </CTAButton>
-              </span>
             </div>
 
-            <div className="md:w-[40%]">
+            <div className="md:w-[100%]">
               <p className="text-justify italic text-[--grey]">
                 "Enhance your living spaces with our premium balcony and
                 staircase glass railings, designed for modern aesthetics in
@@ -122,6 +116,12 @@ export const About: React.FC = () => {
                 safety."
               </p>
             </div>
+            <span className="text-xs my-4 w-32">
+              <CTAButton phoneNumber="+91 8591953385">
+                <MdAddCall size={16} />
+                CALL NOW
+              </CTAButton>
+            </span>
           </div>
         </section>
         <div className="min-h-screen bg-white text-gray-800">

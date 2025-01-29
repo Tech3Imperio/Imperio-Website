@@ -80,7 +80,7 @@ export const Hero: React.FC<HeroProps> = ({
           <h1
             className={`text-xs phone:text-lg ${
               condition ? "lg:w-[52%]" : "lg:w-[40%] py-4 "
-            }`}
+            } `}
           >
             {subHeader}
           </h1>
