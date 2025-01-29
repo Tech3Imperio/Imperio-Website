@@ -61,7 +61,7 @@ export const Blog = () => {
           curve
         />
 
-        <div className="max-w-7xl flex flex-col md:flex-row mx-auto mt-10 md:mt-24 gap-8 p-4">
+        <div className="max-w-7xl flex flex-col mx-auto mt-10 md:mt-24 gap-8 p-4">
           <div className="flex flex-col md:w-[60%] gap-1 tablet:gap-6">
             <h2 className="text-[#fad000] text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
               Glass Railing Systems
@@ -70,7 +70,7 @@ export const Blog = () => {
               Modern Glass Railing Designs for Modern Homes
             </h3>
           </div>
-          <div className="md:w-[40%]">
+          <div className="md:w-[100%]">
             <p className="text-justify italic text-[--grey]">
               Explore our blog for insights on glass railing systems. Elevate
               your home's aesthetic appeal with modern aluminum glass railings,
