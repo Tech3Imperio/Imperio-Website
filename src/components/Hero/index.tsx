@@ -47,7 +47,9 @@ export const Hero: React.FC<HeroProps> = ({
           className="hidden"
           onLoad={() => setImageLoaded(true)}
           loading="lazy"
-          rel="preload"
+          width="100%"
+          height="auto"
+          style={{ aspectRatio: "16/9" }}
         />
 
         {/* Gradient overlay */}
