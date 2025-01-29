@@ -77,7 +77,7 @@ export const Hero: React.FC<HeroProps> = ({
           {/* Subheader */}
           <h1
             className={`text-xs phone:text-lg ${
-              condition ? "lg:w-[52%]" : "lg:w-[70%] py-4 "
+              condition ? "lg:w-[52%]" : "lg:w-[40%] py-4 "
             }`}
           >
             {subHeader}

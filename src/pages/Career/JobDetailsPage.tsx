@@ -655,6 +655,46 @@ export default function JobDetailsPage() {
         ],
         applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
       },
+      {
+        title: "Graphic Design Intern",
+        subtitle:
+          "As a Graphic Design Intern at Imperio Railing Systems, you will have the exciting opportunity to showcase your creativity and design skills across various projects. You will gain hands-on experience working with our marketing and design teams, contributing to the visual identity of our brand and supporting the creation of impactful marketing materials.",
+        about:
+          "As a Graphic Design Intern at Imperio Railing Systems, you will have the exciting opportunity to showcase your creativity and design skills across various projects. You will gain hands-on experience working with our marketing and design teams, contributing to the visual identity of our brand and supporting the creation of impactful marketing materials.",
+        location: "Mumbai",
+        type: "Full-Time",
+        others: [
+          {
+            Duration: "6 months",
+            Expriance: "Fresher",
+            join: "Immediately",
+          },
+        ],
+        responsibilities: [
+          "Catalog design.",
+          "Marketing collaterals.",
+          "Branding & communication.",
+          "Promotions.",
+          "Content development.",
+          "Video shooting & editing.",
+        ],
+        skills: [
+          "Adobe After Effects",
+          "Adobe Photoshop",
+          "Canva",
+          "Photography",
+          "UI & UX Design",
+          "Video Editing",
+          "Video Making",
+        ],
+        whocanapply: [
+          "Available for full time (in-office) internship",
+          "Can start the internship between 29th Jan'25 and 28th Feb'25",
+          "Available for the duration of 6 months",
+          "Relevant skills and interests",
+        ],
+        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
+      },
     ];
 
     const foundJob = jobs.find(

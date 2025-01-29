@@ -276,6 +276,14 @@ export default function Career() {
       applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9", // Apply link
     },
     {
+      title: "Graphic Design Intern",
+      description:
+        "As a Graphic Design intern at Imperio Railing Systems, you'll Design Catalogs, Content and Promote Branding",
+      location: "Mumbai",
+      type: "Internship",
+      applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9", // Apply link
+    },
+    {
       title: "Cinematographer Intern",
       description:
         "Imperio Railing systems, a leader in innovative glass railing solutions, is seeking a talented and motivated Cinematographer Intern to join our creative team.",
