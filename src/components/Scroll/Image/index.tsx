@@ -22,8 +22,8 @@ const ImageScroll: React.FC<ImageScrollProps> = ({
   // Create a transform for the horizontal translation based on scroll progress
   const xTransform = useTransform(
     scrollYProgress,
-    [0, 0.3, 1], // Input range
-    [1200, 0, direction] // Output range: initial, mid, and end positions
+    [0, 0.3, 0.6], // Input range
+    [400, 0, direction] // Output range: initial, mid, and end positions
   );
 
   // Handle smooth scroll initialization, runs only once after the component mounts
@@ -38,7 +38,7 @@ const ImageScroll: React.FC<ImageScrollProps> = ({
         className="h-max" // Class to set the maximum height
         style={{
           translateX: xTransform, // Apply the xTransform to translateX property
-          transition: isInitialScroll ? "none" : "transform 0.5s ease-out", // Avoid jump at the start, smooth transition later
+          transition: isInitialScroll ? "none" : "transform 10s ease-out", // Avoid jump at the start, smooth transition later
         }}
       >
         {children} {/* Render the children elements inside the motion.div */}
@@ -61,7 +61,7 @@ export const ImageScrolls: React.FC<ImageScrollsProps> = ({
 }) => {
   return (
     <ImageScroll
-      direction={window.innerWidth < 600 ? -2000 : -800} // Direction based on window width
+      direction={window.innerWidth < 600 ? -1600 : -800} // Direction based on window width
       className={className} // Optional className
     >
       <div className="flex gap-4" style={{ right: 0 }}>

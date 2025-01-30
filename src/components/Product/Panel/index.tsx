@@ -12,8 +12,8 @@ export const ProductPanel: React.FC<ProductPanelProps> = ({
       {localStorage.getItem("token") ? (
         <></>
       ) : (
-        <div className="max-w-[85rem] flex flex-col md:flex-row mx-auto mt-2 md:mt-8 gap-6 px-4 md:px-8 py-4">
-          <div className="flex flex-col md:w-[55%] gap-4">
+        <div className="max-w-[85rem] flex flex-col mx-auto mt-2 md:mt-8 gap-6 px-4 md:px-8 py-4">
+          <div className="flex flex-col md:w-full gap-4">
             {header ? (
               <h2 className=" text-[#fad000] text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
                 {header}
@@ -25,7 +25,7 @@ export const ProductPanel: React.FC<ProductPanelProps> = ({
               Aluminium Glass Railing {header} variants.
             </h3>
           </div>
-          <div className="md:w-[45%]">
+          <div className="md:w-full">
             {header === "Base" ? (
               <p className="text-justify italic text-[--grey]">
                 "Explore our premium{" "}
