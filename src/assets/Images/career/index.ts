@@ -1,9 +1,9 @@
-import careerTeamImg from "./careersecond.webp";
+// import careerTeamImg from "./careersecond.webp";
 
-export { careerTeamImg };
+// export { careerTeamImg };
 
-// import { IMAGE_URL } from "../../../config";
+import { IMAGE_URL } from "../../../config";
 
-// export const careerTeamImg = `${IMAGE_URL}/careersecond.webp`;
+export const careerTeamImg = `${IMAGE_URL}/careersecond.webp`;
 
-// console.log('')
+console.log("");
