@@ -1,5 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
+import dotenv from "dotenv";
+dotenv.config();
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -13,5 +15,8 @@ export default defineConfig({
       "/product/dealerlogin": "http://localhost:3001",
       "/product/dealerlogout": "http://localhost:3001",
     },
+  },
+  define: {
+    "process.env": process.env,
   },
 });
