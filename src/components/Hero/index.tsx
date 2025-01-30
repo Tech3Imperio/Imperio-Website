@@ -40,7 +40,7 @@ export const Hero: React.FC<HeroProps> = ({
         }}
       >
         {/* Hidden <img> to trigger loading and onLoad event */}
-        <img
+        {/* <img
           srcSet={`${img} 400w, ${img} 800w, ${img} 1200w`}
           sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1200px"
           src={img}
@@ -51,7 +51,7 @@ export const Hero: React.FC<HeroProps> = ({
           width="100%"
           height="auto"
           style={{ aspectRatio: "16/9" }}
-        />
+        /> */}
 
         {/* Gradient overlay */}
         <div
