@@ -54,13 +54,13 @@ export const Hero: React.FC<HeroProps> = ({
         /> */}
 
         {/* Gradient overlay */}
-        <div
+        {/* <div
           className={`absolute inset-0 ${
             condition
               ? "bg-gradient-to-r from-black from-10% via-[rgba(0,0,0,0.6)] via-75% to-transparent"
               : "bg-gradient-to-r from-black via-transparent via-90% to-[rgba(241,239,231,0.5)]"
           }`}
-        />
+        /> */}
 
         {/* Content positioned inside the Hero section */}
         <div
