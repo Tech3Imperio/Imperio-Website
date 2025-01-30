@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { HeroProps } from "../../types";
-import heroImage from "../../assets/Images/home/hero.webp"; // Main image
+// import heroImage from "../../assets/Images/home/hero.webp"; // Main image
 
 export const Hero: React.FC<HeroProps> = ({
-  img = heroImage, // Default to the high-res image
+  img = `${process.env.IMAGE_URL} + /hero.webp`, // Default to the high-res image
   header,
   subHeader,
   height = false,
