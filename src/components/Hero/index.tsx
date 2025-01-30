@@ -1,10 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
 import { HeroProps } from "../../types";
-// import heroImage from "../../assets/Images/home/hero.webp"; // Main image
 
 export const Hero: React.FC<HeroProps> = ({
-  // img = heroImage, // Default to the high-res image
-  img = `${process.env.IMAGE_URL}/hero.webp`, // Default to the high-res image
+  img = `${process.env.IMAGE_URL}/hero.webp`,
   header,
   subHeader,
   height = false,
@@ -13,11 +11,10 @@ export const Hero: React.FC<HeroProps> = ({
 }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
-  // Preload the high-resolution image as soon as the component mounts
   const preloadImage = useCallback(() => {
-    const imgage = new Image();
-    imgage.src = img;
-    imgage.onload = () => setImageLoaded(true);
+    const preload = new Image();
+    preload.src = img;
+    preload.onload = () => setImageLoaded(true);
   }, [img]);
 
   useEffect(() => {
@@ -26,54 +23,50 @@ export const Hero: React.FC<HeroProps> = ({
 
   const condition = height && !curve;
 
+  console.log(imageLoaded);
+
   return (
     <>
-      {/* Preload the main image to prioritize it */}
-      <link rel="preload" href={img} as="image" />
+      <link rel="preload" href={img} as="image" type="image/webp" />
 
       <section
         className={`relative -top-7 w-full ${
           condition
-            ? "h-screen max-phone:h-[60vh] overflow-hidden" // Full height without curve
-            : "h-[60vh] max-phone:h-[50vh] rounded-b-4xl overflow-hidden" // Specific height with curve
+            ? "h-screen max-phone:h-[60vh]"
+            : "h-[60vh] max-phone:h-[50vh] rounded-b-4xl"
         } bg-cover bg-center`}
-        style={{
-          backgroundImage: `url(${img})`, // Main image URL
-          filter: imageLoaded ? "none" : "blur(5px)", // Blur the image while loading
-          transition: imageLoaded ? "none" : "filter 0.3s ease-in-out", // Smooth transition once the image is loaded
-        }}
       >
-        {/* Hidden <img> to trigger loading and onLoad event */}
-        <img
-          srcSet={`${img} 400w, ${img.replace(
-            ".webp",
-            "-medium.webp"
-          )} 800w, ${img.replace(".webp", "-large.webp")} 1200w`}
-          sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1200px"
-          src={img}
-          alt="Hero background"
-          className="hidden"
-          loading="lazy"
-          width="100%"
-          height="auto"
-        />
+        {/* Use <picture> for AVIF & WebP support */}
+        <picture className="absolute inset-0 w-full h-full">
+          <source
+            srcSet={`${img.replace(".webp", ".avif")}`}
+            type="image/avif"
+          />
+          <source srcSet={img} type="image/webp" />
+          <img
+            src={img}
+            alt="Hero background"
+            className="w-full h-full object-cover"
+            loading="lazy"
+            onLoad={() => setImageLoaded(true)}
+          />
+        </picture>
 
         {/* Gradient overlay */}
         <div
-          className={`absolute inset-0 ${
+          className={`absolute inset-0 bg-gradient-to-r ${
             condition
-              ? "bg-gradient-to-r from-black from-10% via-[rgba(0,0,0,0.6)] via-75% to-transparent"
-              : "bg-gradient-to-r from-black via-transparent via-90% to-[rgba(241,239,231,0.5)]"
+              ? "from-black from-10% via-[rgba(0,0,0,0.6)] via-75% to-transparent"
+              : "from-black via-transparent via-90% to-[rgba(241,239,231,0.5)]"
           }`}
         />
 
-        {/* Content positioned inside the Hero section */}
+        {/* Content */}
         <div
-          className={`relative z-10 h-full leading-snug phone:leading-normal flex flex-col justify-center phone:justify-start ${
+          className={`relative z-10 h-full flex flex-col justify-center phone:justify-start ${
             condition ? "phone:pt-72" : "phone:pt-48"
           } text-white pl-9 phone:pl-16 tablet:pl-24 laptop:pl-32 xl:pl-44`}
         >
-          {/* Main header */}
           <p
             className={`text-[1.5rem] phone:text-[1.8rem] tablet:text-[2rem] laptop:text-[2.5rem] xl:text-[3rem] Raleway ${
               condition ? "w-4/5" : "w-full"
@@ -82,16 +75,14 @@ export const Hero: React.FC<HeroProps> = ({
             {header}
           </p>
 
-          {/* Subheader */}
           <h1
             className={`text-xs phone:text-lg ${
-              condition ? "lg:w-[52%]" : "lg:w-[40%] py-4 "
-            } `}
+              condition ? "lg:w-[52%]" : "lg:w-[40%] py-4"
+            }`}
           >
             {subHeader}
           </h1>
 
-          {/* Children content */}
           <div className="pt-8">{children}</div>
         </div>
       </section>
