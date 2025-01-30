@@ -1,6 +1,7 @@
-// import whiteLogo from "./White.webp";
+import whiteLogo from "./White.webp";
 
-// export { whiteLogo };
-import { IMAGE_URL } from "../../../config";
+export { whiteLogo };
 
-export const whiteLogo = `${IMAGE_URL}/White.webp`;
+// import { IMAGE_URL } from "../../../config";
+
+// export const whiteLogo = `${IMAGE_URL}/White.webp`;
