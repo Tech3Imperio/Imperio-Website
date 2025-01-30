@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { HeroProps } from "../../types";
 // import heroImage from "../../assets/Images/home/hero.webp"; // Main image
 
 export const Hero: React.FC<HeroProps> = ({
   // img = heroImage, // Default to the high-res image
-  img = `${process.env.IMAGE_URL} + /hero.webp`, // Default to the high-res image
+  img = `${process.env.IMAGE_URL}/hero.webp`, // Default to the high-res image
   header,
   subHeader,
   height = false,
@@ -14,11 +14,15 @@ export const Hero: React.FC<HeroProps> = ({
   const [imageLoaded, setImageLoaded] = useState(false);
 
   // Preload the high-resolution image as soon as the component mounts
-  useEffect(() => {
-    const preloadImage = new Image();
-    preloadImage.src = img;
-    preloadImage.onload = () => setImageLoaded(true); // Mark the image as loaded when ready
+  const preloadImage = useCallback(() => {
+    const imgage = new Image();
+    imgage.src = img;
+    imgage.onload = () => setImageLoaded(true);
   }, [img]);
+
+  useEffect(() => {
+    preloadImage();
+  }, [preloadImage]);
 
   const condition = height && !curve;
 
@@ -35,22 +39,23 @@ export const Hero: React.FC<HeroProps> = ({
         } bg-cover bg-center`}
         style={{
           backgroundImage: `url(${img})`, // Main image URL
-          filter: imageLoaded ? "none" : "blur(20px)", // Blur the image while loading
+          filter: imageLoaded ? "none" : "blur(5px)", // Blur the image while loading
           transition: imageLoaded ? "none" : "filter 0.3s ease-in-out", // Smooth transition once the image is loaded
         }}
       >
         {/* Hidden <img> to trigger loading and onLoad event */}
         <img
-          srcSet={`${img} 400w, ${img} 800w, ${img} 1200w`}
+          srcSet={`${img} 400w, ${img.replace(
+            ".webp",
+            "-medium.webp"
+          )} 800w, ${img.replace(".webp", "-large.webp")} 1200w`}
           sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1200px"
           src={img}
           alt="Hero background"
           className="hidden"
-          // onLoad={() => setImageLoaded(true)}
-          loading="eager"
+          loading="lazy"
           width="100%"
           height="auto"
-          style={{ aspectRatio: "16/9" }}
         />
 
         {/* Gradient overlay */}
