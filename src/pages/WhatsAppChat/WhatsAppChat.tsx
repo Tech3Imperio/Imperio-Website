@@ -12,9 +12,9 @@ export default function WhatsAppChat() {
         avatar={favicon}
         statusMessage="Online"
         chatMessage="Hello there! How can I assist you?"
-        buttonStyle={{
-          bottom: "7rem",
-        }}
+        // buttonStyle={{
+        //   bottom: "7rem",
+        // }}
       />
     </div>
   );
