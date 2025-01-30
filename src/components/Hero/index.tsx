@@ -35,8 +35,8 @@ export const Hero: React.FC<HeroProps> = ({
         } bg-cover bg-center`}
         style={{
           backgroundImage: `url(${img})`, // Main image URL
-          filter: imageLoaded ? "none" : "blur(20px)", // Blur the image while loading
-          transition: imageLoaded ? "none" : "filter 0.3s ease-in-out", // Smooth transition once the image is loaded
+          // filter: imageLoaded ? "none" : "blur(20px)", // Blur the image while loading
+          // transition: imageLoaded ? "none" : "filter 0.3s ease-in-out", // Smooth transition once the image is loaded
         }}
       >
         {/* Hidden <img> to trigger loading and onLoad event */}
