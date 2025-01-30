@@ -1,4 +1,4 @@
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { HeroProps } from "../../types";
 // import heroImage from "../../assets/Images/home/hero.webp"; // Main image
 
@@ -11,14 +11,14 @@ export const Hero: React.FC<HeroProps> = ({
   curve = false,
   children,
 }) => {
-  // const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   // Preload the high-resolution image as soon as the component mounts
-  // useEffect(() => {
-  //   const preloadImage = new Image();
-  //   preloadImage.src = img;
-  //   preloadImage.onload = () => setImageLoaded(true); // Mark the image as loaded when ready
-  // }, [img]);
+  useEffect(() => {
+    const preloadImage = new Image();
+    preloadImage.src = img;
+    preloadImage.onload = () => setImageLoaded(true); // Mark the image as loaded when ready
+  }, [img]);
 
   const condition = height && !curve;
 
@@ -35,32 +35,32 @@ export const Hero: React.FC<HeroProps> = ({
         } bg-cover bg-center`}
         style={{
           backgroundImage: `url(${img})`, // Main image URL
-          // filter: imageLoaded ? "none" : "blur(20px)", // Blur the image while loading
-          // transition: imageLoaded ? "none" : "filter 0.3s ease-in-out", // Smooth transition once the image is loaded
+          filter: imageLoaded ? "none" : "blur(20px)", // Blur the image while loading
+          transition: imageLoaded ? "none" : "filter 0.3s ease-in-out", // Smooth transition once the image is loaded
         }}
       >
         {/* Hidden <img> to trigger loading and onLoad event */}
-        {/* <img
+        <img
           srcSet={`${img} 400w, ${img} 800w, ${img} 1200w`}
           sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1200px"
           src={img}
           alt="Hero background"
           className="hidden"
-          onLoad={() => setImageLoaded(true)}
-          loading="lazy"
+          // onLoad={() => setImageLoaded(true)}
+          loading="eager"
           width="100%"
           height="auto"
           style={{ aspectRatio: "16/9" }}
-        /> */}
+        />
 
         {/* Gradient overlay */}
-        {/* <div
+        <div
           className={`absolute inset-0 ${
             condition
               ? "bg-gradient-to-r from-black from-10% via-[rgba(0,0,0,0.6)] via-75% to-transparent"
               : "bg-gradient-to-r from-black via-transparent via-90% to-[rgba(241,239,231,0.5)]"
           }`}
-        /> */}
+        />
 
         {/* Content positioned inside the Hero section */}
         <div
