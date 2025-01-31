@@ -25,7 +25,7 @@ export const Hero: React.FC<HeroProps> = ({
   return (
     <>
       {/* Preload the main image to prioritize it */}
-      <link rel="preload" href={img} as="image" />
+      {/* <link rel="preload" href={img} as="image" /> */}
 
       <section
         className={`relative -top-7 w-full ${
@@ -39,6 +39,8 @@ export const Hero: React.FC<HeroProps> = ({
           transition: imageLoaded ? "none" : "filter 0.3s ease-in-out", // Smooth transition once the image is loaded
         }}
       >
+        {/* <link rel="preload" href={img} as="image" /> */}
+
         {/* Hidden <img> to trigger loading and onLoad event */}
         <img
           srcSet={`${img} 400w, ${img} 800w, ${img} 1200w`}

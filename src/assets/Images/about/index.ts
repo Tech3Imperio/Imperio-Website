@@ -1,7 +1,8 @@
 import aboutHero from "./about.webp";
+import aboutHeroMobile from "./about-mobile.webp";
 import Middle from "./Middle.webp";
 
-export { aboutHero, Middle };
+export { aboutHero, Middle, aboutHeroMobile };
 
 // import { IMAGE_URL } from "../../../config";
 
