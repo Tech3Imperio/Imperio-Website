@@ -1,6 +1,7 @@
 import whiteLogo from "./White.webp";
+import whiteLogoMobile from "./White-mobile.webp";
 
-export { whiteLogo };
+export { whiteLogo, whiteLogoMobile };
 
 // import { IMAGE_URL } from "../../../config";
 

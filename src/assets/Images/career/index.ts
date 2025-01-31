@@ -1,6 +1,7 @@
 import careerTeamImg from "./careersecond.webp";
+import careerTeamImgMobile from "./careersecond-mobile.webp";
 
-export { careerTeamImg };
+export { careerTeamImg, careerTeamImgMobile };
 
 // import { IMAGE_URL } from "../../../config";
 
