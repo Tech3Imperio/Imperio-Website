@@ -1,9 +1,17 @@
 import pvbGlass from "./PVB-Glass.webp";
 import sgpGlass from "./SGP-Glass.webp";
-import loadCapabilityImage from "./loadCapabilityImage .webp";
+import loadCapabilityImage from "./loadCapabilityImage.webp";
 import clarityImage from "./clarityImage.webp";
 import postBreakageStrengthImage from "./postBreakageStrengthImage.webp";
 import pvbsgp from "./SGPvsPVB.webp";
+
+import pvbGlassMobile from "./PVB-Glass-mobile.webp";
+import sgpGlassMobile from "./SGP-Glass-mobile.webp";
+import loadCapabilityImageMobile from "./loadCapabilityImage-mobile.webp";
+import clarityImageMobile from "./clarityImage-mobile.webp";
+import postBreakageStrengthImageMobile from "./postBreakageStrengthImage-mobile.webp";
+import pvbsgpMobile from "./SGPvsPVB-mobile.webp";
+
 export {
   pvbGlass,
   sgpGlass,
@@ -11,6 +19,12 @@ export {
   clarityImage,
   postBreakageStrengthImage,
   pvbsgp,
+  pvbGlassMobile,
+  sgpGlassMobile,
+  loadCapabilityImageMobile,
+  clarityImageMobile,
+  postBreakageStrengthImageMobile,
+  pvbsgpMobile,
 };
 
 // import { IMAGE_URL } from "../../../config";

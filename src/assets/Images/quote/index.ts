@@ -2,7 +2,10 @@ import product from "./product.webp";
 import bgQuote from "./bgQuote.webp";
 import bgDealers from "./bgDealers.webp";
 
-export { product, bgQuote, bgDealers };
+import bgQuoteMobile from "./bgQuote-mobile.webp";
+import bgDealersMobile from "./bgDealers-mobile.webp";
+
+export { product, bgQuote, bgDealers, bgQuoteMobile, bgDealersMobile };
 
 // import { IMAGE_URL } from "../../../config";
 

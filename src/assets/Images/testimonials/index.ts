@@ -4,6 +4,14 @@ import salmankhan from "./salmankhan.webp";
 import divyankturakhia from "./divyankturakhia.webp";
 import ashabhosle from "./ashabhosle.webp";
 import cyrusmistry from "./cyrusmistry.webp";
+
+import mukeshambaniMobile from "./mukeshamban-mobilei.webp";
+import rakeshjhunjhunwalaMobile from "./rakeshjhunjhunwala-mobile.webp";
+import salmankhanMobile from "./salmankhan-mobile.webp";
+import divyankturakhiaMobile from "./divyankturakhia-mobile.webp";
+import ashabhosleMobile from "./ashabhosle-mobile.webp";
+import cyrusmistryMobile from "./cyrusmistry-mobile.webp";
+
 export {
   mukeshambani,
   rakeshjhunjhunwala,
@@ -11,6 +19,12 @@ export {
   divyankturakhia,
   ashabhosle,
   cyrusmistry,
+  mukeshambaniMobile,
+  rakeshjhunjhunwalaMobile,
+  salmankhanMobile,
+  divyankturakhiaMobile,
+  ashabhosleMobile,
+  cyrusmistryMobile,
 };
 
 // import { IMAGE_URL } from "../../../config";

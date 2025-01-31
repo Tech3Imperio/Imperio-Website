@@ -1,6 +1,15 @@
 import ssglassrailing from "./SSglassrailing.webp";
 import aluminiumglass from "./aluminiumglass.webp";
-export { ssglassrailing, aluminiumglass };
+
+import ssglassrailingMobile from "./SSglassrailing-mobile.webp";
+import aluminiumglassMobile from "./aluminiumglass-mobile.webp";
+
+export {
+  ssglassrailing,
+  aluminiumglass,
+  ssglassrailingMobile,
+  aluminiumglassMobile,
+};
 
 // import { IMAGE_URL } from "../../../config";
 

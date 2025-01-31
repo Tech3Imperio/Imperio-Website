@@ -4,6 +4,14 @@ import appartmentImg from "./appartmentImg.webp";
 import alibaugImg from "./alibaugImg.webp";
 import jamsedhpurImg from "./Jamsedhpur.webp";
 import goaImg from "./goaImg.webp";
+
+import costalImgMobile from "./costalImage-mobile.webp";
+import BuildingImgMobile from "./buildingImg-mobile.webp";
+import appartmentImgMobile from "./appartmentImg-mobile.webp";
+import alibaugImgMobile from "./alibaugImg-mobile.webp";
+import jamsedhpurImgMobile from "./Jamsedhpur-mobile.webp";
+import goaImgMobile from "./goaImg-mobile.webp";
+
 export {
   costalImg,
   BuildingImg,
@@ -11,6 +19,12 @@ export {
   alibaugImg,
   jamsedhpurImg,
   goaImg,
+  costalImgMobile,
+  BuildingImgMobile,
+  appartmentImgMobile,
+  alibaugImgMobile,
+  jamsedhpurImgMobile,
+  goaImgMobile,
 };
 
 // import { IMAGE_URL } from "../../../config";

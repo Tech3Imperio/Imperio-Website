@@ -4,12 +4,23 @@ import whitestaircase from "./whitestaircase.webp";
 import glassstair from "./glassstaris.webp";
 import modernstair from "./modernstaircase.webp";
 
+import glassStaircaseMobile from "./glassStaircase-mobile.webp";
+import staricaseImgMobile from "./staricaseImg-mobile.webp";
+import whitestaircaseMobile from "./whitestaircase-mobile.webp";
+import glassstairMobile from "./glassstaris-mobile.webp";
+import modernstairMobile from "./modernstaircase-mobile.webp";
+
 export {
   glassStaircase,
   staricaseImg,
   whitestaircase,
   glassstair,
   modernstair,
+  glassStaircaseMobile,
+  staricaseImgMobile,
+  whitestaircaseMobile,
+  glassstairMobile,
+  modernstairMobile,
 };
 
 // import { IMAGE_URL } from "../../../config";

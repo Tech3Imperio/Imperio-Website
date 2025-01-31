@@ -4,7 +4,24 @@ import sivanta from "./sivanta.webp";
 import solapur from "./solapur.webp";
 import heroImg from "./hero.webp";
 
-export { jogeswariterrace, juhusite, sivanta, solapur, heroImg };
+import jogeswariterraceMobile from "./jogeshwari-mobile.webp";
+import juhusiteMobile from "./jhusite-mobile.webp";
+import sivantaMobile from "./sivanta-mobile.webp";
+import solapurMobile from "./solapur-mobile.webp";
+import heroImgMobile from "./hero-mobile.webp";
+
+export {
+  jogeswariterrace,
+  juhusite,
+  sivanta,
+  solapur,
+  heroImg,
+  jogeswariterraceMobile,
+  juhusiteMobile,
+  sivantaMobile,
+  solapurMobile,
+  heroImgMobile,
+};
 
 // import { IMAGE_URL } from "../../../config";
 
