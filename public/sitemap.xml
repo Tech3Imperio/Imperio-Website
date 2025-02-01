@@ -116,6 +116,11 @@
     </url>
     <url>
         <loc>https://imperiorailing.com/blog/modern/balcony-glass-railing</loc>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/Balcony/CustomBalcony.webp</image:loc>
+            <image:caption>CustomBalcony</image:caption>
+        </image:image>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -199,4 +204,5 @@
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
+
 </urlset>
