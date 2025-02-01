@@ -25,7 +25,7 @@ export const Hero: React.FC<HeroProps> = ({
   return (
     <>
       {/* Preload the main image to prioritize it */}
-      {/* <link rel="preload" href={img} as="image" /> */}
+      <link rel="preload" href={img} as="image" />
 
       <section
         className={`relative -top-7 w-full ${
