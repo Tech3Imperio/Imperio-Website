@@ -1,6 +1,7 @@
 import React, { useEffect, useState, Suspense } from "react";
 import { heroImage } from "../../assets/Images";
-import descImage from "../../assets/Images/home/desc.webp";
+// import { heroImage, heroImageMobile } from "../../assets/Images";
+import { descImage } from "../../assets/Images";
 import { Helmet } from "react-helmet";
 import favicondark from "../../assets/Images/logo/favicondark.ico";
 
@@ -20,6 +21,11 @@ import "slick-carousel/slick/slick-theme.css";
 import { scrollData, testimonialsData } from "../../assets/Data";
 import { MdAddCall } from "react-icons/md";
 import EnquiryButton from "../../components/EnquiryButton/EnquiryButton";
+
+// const windowWidth = window.innerWidth;
+// console.log(windowWidth);
+// const isMobile = windowWidth <= 425;
+// console.log(isMobile);
 
 const HorizontalCarousel = React.lazy(
   () => import("../../components/Carousel/Image/HorizontalCarousel")
@@ -89,6 +95,7 @@ export const Home: React.FC = () => {
       </Helmet>
       <main>
         <Hero
+          // img={isMobile ? heroImageMobile : heroImage}
           img={heroImage}
           altText="Hero Image"
           header={

@@ -5,7 +5,7 @@ import divyankturakhia from "./divyankturakhia.webp";
 import ashabhosle from "./ashabhosle.webp";
 import cyrusmistry from "./cyrusmistry.webp";
 
-import mukeshambaniMobile from "./mukeshamban-mobilei.webp";
+import mukeshambaniMobile from "./mukeshambani-mobile.webp";
 import rakeshjhunjhunwalaMobile from "./rakeshjhunjhunwala-mobile.webp";
 import salmankhanMobile from "./salmankhan-mobile.webp";
 import divyankturakhiaMobile from "./divyankturakhia-mobile.webp";

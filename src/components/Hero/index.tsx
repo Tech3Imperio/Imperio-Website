@@ -4,6 +4,7 @@ import { HeroProps } from "../../types";
 
 export const Hero: React.FC<HeroProps> = ({
   // img = heroImage, // Default to the high-res image
+  // img,
   img = `${process.env.IMAGE_URL} + /hero.webp`, // Default to the high-res image
   header,
   subHeader,
