@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Hero } from "../../../components";
 import {
   villaBalcony,
-  customBalcony,
+  // customBalcony,
   LEDHandrail,
   modernBalcony,
 } from "../../../assets/Images";
@@ -34,7 +34,8 @@ const blogPosts: BlogPost[] = [
     title: "Affordable & Durable Glass Railings for Your Balcony.",
     excerpt:
       "Looking for affordable glass railings that combine style and durability? Our aluminum channel railings and modern glass balcony solutions are designed to offer strength, beauty, and functionality at competitive prices. We specialize in high-quality spigot glass railing systems that provide maximum stability while maintaining a sleek, transparent look. Our frameless glass balcony designs are perfect for homeowners and businesses looking to add an elegant touch to their outdoor spaces. Whether you are in Mumbai, Delhi, Bangalore, or anywhere across India, we provide reliable and fast glass railing supply through trusted dealers. Customization is our specialty, and we offer glass balcony systems tailored to meet the specific requirements of your project. With our extensive experience in the industry, we ensure that every glass railing installation is done with precision and care. Our competitive prices do not compromise on quality, making it easier for you to enhance the beauty and safety of your balcony. Choose from a variety of glass railing designs, including frameless and spigot systems, to create a modern and secure outdoor space. We cater to both residential and commercial properties, offering customized solutions that fit your style and budget. The glass balcony railing systems we offer provide a blend of contemporary aesthetics and long-lasting durability, ensuring your investment will stand the test of time. Trust our expert team to handle your installation with professionalism and care. Add a touch of sophistication to your balcony with our top-tier glass railings today.",
-    imageUrl: customBalcony,
+    imageUrl:
+      "https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/Balcony/CustomBalcony.webp",
     location: "Bengaluru, Bengaluru",
   },
   {
@@ -64,7 +65,9 @@ export default function ModernBalcony() {
         title="Balcony Glass Railing | Frameless & Aluminum Railings in Mumbai"
         description="Explore premium quality glass balcony railings, frameless, and spigot designs in Mumbai, Maharashtra, India. Affordable aluminum railing systems for residential and commercial projects."
         keywords="balcony glass railing, aluminum glass railing, glass stair railing, frameless glass railing, spigot glass systems, modern balcony design, aluminum railings, glass handrails, balcony railing systems"
-        ogImage={customBalcony}
+        ogImage={
+          "https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/Balcony/CustomBalcony.webp"
+        }
         ogUrl="https://www.imperiorailing.com/blog/modern/balcony-glass-railing"
       />
 
