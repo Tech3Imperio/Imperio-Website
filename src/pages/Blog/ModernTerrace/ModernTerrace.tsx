@@ -71,7 +71,9 @@ export default function ModernTerrace() {
         keywords={
           "glass railings, aluminum glass railings, Laminated Glass,Terrace glass railing systems, modern glass railings, frameless glass railings,Balcony glass railings, Premium glass railing systems, Minimalist Style, safety glass railings, high durable glass railings, Weather Resistant, Low Maintenance, Customizable Options, Best glass railing systems for terraces in Mumbai, best glass railing systems in Mumbai, Commercial Spaces, modern glass railing designs for homes, Balcony Railings, Staircase glass Railings, stylish glass railings for commercial buildings, transfrom your home decor, seamless glass railing, elegant glass railing, Affordable glass balcony railings in Mumbai"
         }
-        ogImage={jogeswariterrace}
+        ogImage={
+          "https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/modernterrace/heroImg.webp"
+        }
         ogUrl={"https://www.imperiorailing.com/blog/terrace/glass-railing"}
       />
       <Hero

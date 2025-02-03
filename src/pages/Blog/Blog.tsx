@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import { Hero } from "../../components";
-import { blogHero } from "../../assets/Images";
+import { blogHero1 } from "../../assets/Images";
+// import { blogHero, blogHero1 } from "../../assets/Images";
 import { useEffect, useState } from "react";
 import { BlogType } from "../../types";
 // import { Link } from "react-router-dom";
@@ -49,12 +50,14 @@ export const Blog = () => {
         keywords={
           "pvb glass, sgp glass,framed vs frameless glass railings, framed glass railings vs frameless, frameless glass railings, pvb vs sgp differance,pvb vs sgp glass, glass railings, balcony glass railing, Balcony Railings, Staircase glass Railings, commercial buildings, seamless glass railing, aluminum glass railings, Laminated Glass, modern glass railings, frameless glass railings, Aesthetic glass railing, Classic Look, Minimalist Style, safety glass railings, high durable glass railings, Weather Resistant, Low Maintenance, Customizable Options"
         }
-        ogImage={blogHero}
+        ogImage={
+          "https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/hero/blog.webp"
+        }
         ogUrl={"https://www.imperiorailing.com/blog"}
       />
       <main>
         <Hero
-          img={blogHero}
+          img={blogHero1}
           altText="hero for blog"
           header="Glass Railing Blogs"
           subHeader="Check out our blogs. Unlock the Secrets to Stunning Glass Railings: Your Ultimate Guide to Stylish and Safe Balcony and Staircase Solutions in India!"

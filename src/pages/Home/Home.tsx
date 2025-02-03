@@ -1,5 +1,6 @@
 import React, { useEffect, useState, Suspense } from "react";
-import { heroImage } from "../../assets/Images";
+import { hero1Image } from "../../assets/Images";
+// import { heroImage, heroImg } from "../../assets/Images";
 // import { heroImage, heroImageMobile } from "../../assets/Images";
 import { descImage } from "../../assets/Images";
 import { Helmet } from "react-helmet";
@@ -91,12 +92,13 @@ export const Home: React.FC = () => {
           name="twitter:title"
           content="glass railing supplier in mumbai and manufacturing"
         />
+
         <link rel="icon" href={favicondark} />
       </Helmet>
       <main>
         <Hero
           // img={isMobile ? heroImageMobile : heroImage}
-          img={heroImage}
+          img={hero1Image}
           altText="Hero Image"
           header={
             <>

@@ -6,7 +6,7 @@ import tempHeroImageMobile from "./hero-mobile.webp";
 import blogHeroMobile from "./blog-mobile.webp";
 import contactHeroMobile from "./contact-mobile.webp";
 import productImageMobile from "./product-mobile.webp";
-
+import blogHero1 from "./blogHero1.webp";
 export {
   tempHeroImage,
   blogHero,
@@ -16,6 +16,7 @@ export {
   blogHeroMobile,
   contactHeroMobile,
   productImageMobile,
+  blogHero1,
 };
 
 // import { IMAGE_URL } from "../../../config";

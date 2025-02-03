@@ -95,11 +95,32 @@
     </url>
     <url>
         <loc>https://imperiorailing.com/aboutus</loc>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/about/about.webp</image:loc>
+            <image:caption>about</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/about/Middle.webp</image:loc>
+            <image:caption>Middle</image:caption>
+        </image:image>
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/about/about.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/about/Middle.webp -->
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://imperiorailing.com/products</loc>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/hero/product.webp</image:loc>
+            <image:caption>product</image:caption>
+        </image:image>
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/hero/product.webp -->
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -314,9 +335,13 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <!-- https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/LEDHandrail.webp -->
-    <!-- https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/ovalHandrail.webp -->
-    <!-- http://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/squareBalconyHandrail.webp -->
+        <!--
+        https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/LEDHandrail.webp -->
+        <!--
+        https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/ovalHandrail.webp -->
+        <!--
+        http://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/squareBalconyHandrail.webp -->
+
         <loc>https://imperiorailing.com/blog/aluminum-handrail</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -373,8 +398,14 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <!-- https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Balcony/ModernBalcony.webp -->
+        <!--
+        https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Balcony/ModernBalcony.webp -->
         <loc>https://imperiorailing.com/blog/framed-vs-frameless-glass-railings</loc>
+        <image:image>
+            <image:loc>
+                https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Balcony/ModernBalcony.webp</image:loc>
+            <image:caption>ModernBalcony</image:caption>
+        </image:image>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -398,10 +429,28 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <!-- https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/hero/contact.webp -->
-    <!-- https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/quote/bgDealers.webp -->
-    <!-- https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/quote/bgQuote.webp -->
+        <!--
+        https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/hero/contact.webp -->
+        <!--
+        https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/quote/bgDealers.webp -->
+        <!--
+        https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/quote/bgQuote.webp -->
         <loc>https://imperiorailing.com/contactus</loc>
+        <image:image>
+            <image:loc>
+                https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/hero/contact.webp</image:loc>
+            <image:caption>contact</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/quote/bgDealers.webp</image:loc>
+            <image:caption>bgDealers</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/quote/bgQuote.webp</image:loc>
+            <image:caption>bgQuote</image:caption>
+        </image:image>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
@@ -412,57 +461,133 @@
     </url>
     <url>
         <loc>https://imperiorailing.com/blog/aluminium-glassrailings</loc>
-
+        <image:image>
+            <image:loc>
+                https://i.postimg.cc/DwKCBkQF/1.png</image:loc>
+            <image:caption>aluminium-glassrailings</image:caption>
+        </image:image>
+        <!-- https://i.postimg.cc/DwKCBkQF/1.png -->
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://imperiorailing.com/blog/modern-railings</loc>
+        <image:image>
+            <image:loc>
+                https://i.pinimg.com/736x/a5/70/4a/a5704a3867da62c88ea6ef9f9916b2de.jpg
+            </image:loc>
+            <image:caption>modern-railings</image:caption>
+        </image:image>
+        <!-- https://i.pinimg.com/736x/a5/70/4a/a5704a3867da62c88ea6ef9f9916b2de.jpg -->
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://imperiorailing.com/blog/pool-railing</loc>
+        <image:image>
+            <image:loc>
+                https://qph.cf2.quoracdn.net/main-qimg-71ac680e34449b41d728039d551e11ca
+            </image:loc>
+            <image:caption>pool-railing</image:caption>
+        </image:image>
+        <!-- https://qph.cf2.quoracdn.net/main-qimg-71ac680e34449b41d728039d551e11ca -->
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://imperiorailing.com/blog/stylish-glass</loc>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/Blogs/stylishGlass.webp
+            </image:loc>
+            <image:caption>stylishGlass</image:caption>
+        </image:image>
+        <!-- https://pbs.twimg.com/media/GP9BBNPWQAAihyZ?format=jpg&name=medium -->
+
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://imperiorailing.com/blog/premium-railings</loc>
+        <image:image>
+            <image:loc>
+                https://i.postimg.cc/GhBBDkJX/1720608815179.jpg
+            </image:loc>
+            <image:caption>premium-railings</image:caption>
+        </image:image>
+        <!-- https://i.postimg.cc/GhBBDkJX/1720608815179.jpg -->
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://imperiorailing.com/blog/aesthetic-railings</loc>
+        <image:image>
+            <image:loc>
+                https://i.postimg.cc/pLrtrZfd/1720001003331.jpg
+            </image:loc>
+            <image:caption>aesthetic-railings</image:caption>
+        </image:image>
+        <!-- https://i.postimg.cc/pLrtrZfd/1720001003331.jpg -->
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://imperiorailing.com/blog/seamless-railings</loc>
+        <image:image>
+            <image:loc>
+                https://i.postimg.cc/SNtDWbng/Seamless-Glass-Railing-for-uninterrupted-view.jpg
+            </image:loc>
+            <image:caption>seamless-railings</image:caption>
+        </image:image>
+        <!-- https://i.postimg.cc/SNtDWbng/Seamless-Glass-Railing-for-uninterrupted-view.jpg -->
+
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://imperiorailing.com/blog/handrails-benefits</loc>
+        <image:image>
+            <image:loc>
+                https://i.postimg.cc/pT79XCGX/quora.webp
+            </image:loc>
+            <image:caption>aesthetic-railings</image:caption>
+        </image:image>
+        <!-- https://i.postimg.cc/pT79XCGX/quora.webp -->
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://imperiorailing.com/blog/happy-diwali</loc>
+        <image:image>
+            <image:loc>
+                https://i.postimg.cc/zD6FHgLb/diwal-Slider-First.png
+            </image:loc>
+            <image:caption>happy-diwali</image:caption>
+        </image:image>
+        <!-- https://i.postimg.cc/zD6FHgLb/diwal-Slider-First.png -->
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://imperiorailing.com/blog/sleek-railings</loc>
+        <!-- https://i.postimg.cc/brgdqX7c/Gemini-Generated-Image-dm8m58dm8m58dm8m.jpg -->
+        <image:image>
+            <image:loc>
+                https://i.postimg.cc/brgdqX7c/Gemini-Generated-Image-dm8m58dm8m58dm8m.jpg
+            </image:loc>
+            <image:caption>sleek-railings</image:caption>
+        </image:image>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://imperiorailing.com/blog/aluminum-vs-stainless-steel-glass-railings</loc>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/StainlessSteel/aluminiumglass.webp</image:loc>
+            <image:caption>CustomBalcony</image:caption>
+        </image:image>
+
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>

@@ -60,7 +60,7 @@ export const Hero: React.FC<HeroProps> = ({
         <div
           className={`absolute inset-0 ${
             condition
-              ? "bg-gradient-to-r from-black from-10% via-[rgba(0,0,0,0.6)] via-75% to-transparent"
+              ? "bg-gradient-to-r from-[rgba(12,12,12,0.6)] from-10% via-[rgba(85,81,81,0.6)] via-30% to-transparent"
               : "bg-gradient-to-r from-black via-transparent via-90% to-[rgba(241,239,231,0.5)]"
           }`}
         />

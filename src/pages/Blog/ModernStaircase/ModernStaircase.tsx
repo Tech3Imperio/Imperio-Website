@@ -70,7 +70,9 @@ export default function ModernStaircase() {
         keywords={
           "Staircase Glass Railings,Frameless Glass Railings,Premium Glass Railing Systems,Modern Staircase Railings,Durable Glass Railings,Luxury Staircase RailingsHigh-Quality Glass Railing,afety Glass Railings for Stairs, Glass Railings for Homes and Offices,Seamless Staircase Glass Railings,glass handrails for stairs, glass railing in mumbai"
         }
-        ogImage={glassStaircase}
+        ogImage={
+          "https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/modernstaircase/glassStaircase.webp"
+        }
         ogUrl={
           "https://www.imperiorailing.com/blog/modern/staircase-glass-railing"
         }

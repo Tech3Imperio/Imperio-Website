@@ -66,7 +66,9 @@ export default function ModernHandrail() {
         title="Glass Railing Handrails & Premium Aluminium Handrails"
         description="Find premium handrails and railings for indoor and outdoor staircases, including aluminum, stainless steel, and glass options."
         keywords="handrails staircase, stair handrail, Premium Glass Railing"
-        ogImage={squareBalconyHandrail}
+        ogImage={
+          "https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/squareBalconyHandrail.webp"
+        }
         ogUrl="https://www.imperiorailing.com/blog/aluminum-handrail"
       />
       <Hero

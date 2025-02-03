@@ -5,7 +5,8 @@ import Infographic from "../../../components/PVBSGP/Infographic";
 import ComparisonTable from "../../../components/PVBSGP/ComparisonTable";
 import TableOfContents from "../../../components/PVBSGP/TableOfContents";
 import { CTAButton, Hero } from "../../../components";
-import { blogHero, pvbsgp } from "../../../assets/Images";
+// import { blogHero, pvbsgp } from "../../../assets/Images";
+import { blogHero } from "../../../assets/Images";
 import Metadata from "../../../components/Metatag/Metatag";
 import { MdAddCall } from "react-icons/md";
 import EnquiryButton from "../../../components/EnquiryButton/EnquiryButton";
@@ -59,7 +60,9 @@ export default function BlogPost() {
         keywords={
           "PVB vs SGP laminated glass, difference between PVB and SGP laminated glass, SGP laminated glass vs PVB, PVB laminated glass vs SGP laminated glass, SGP glass vs PVB glass, SGP laminated glass full form, PVB laminated glass full form, PVB laminated glass price, SGP laminated glass price, laminated glass PVB vs SGP, SGP interlayer laminated glass, SGP glass meaning, PVB laminated safety glass, laminated glass thickness, SGP glass laminating process, SGP laminated glass price in India, high-performance glass railing, glass railing systems, glass railing Mumbai, glass railing Bangalore, glass railing Karnataka, glass railing Uttar Pradesh, safety glass, durable glass railing, weather-resistant glass railing, frameless glass railing."
         }
-        ogImage={pvbsgp}
+        ogImage={
+          "https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/PVBSGP/PVB-Glass.webp"
+        }
         ogUrl={"https://www.imperiorailing.com/blog/sgp/pvb/glass/difference"}
       />
       <Hero
