@@ -88,7 +88,9 @@ export default function Projects() {
         title="Projects: Modern Balcony and Staircase Glass Railing | Top-quality Glass Railing Designs in Mumbai, Maharashtra, India"
         description="Discover premium glass railing solutions, including modern balcony glass railing, staircase glass railing, and custom designs. We offer the best glass railing systems in Mumbai, Maharashtra, using toughened laminated glass, PVB, and SGP for superior quality. Get the best prices and installation services across India. Our high-quality products ensure safety and aesthetic products."
         keywords="Modern Balcony Glass Railing, Staircase Glass Railing, Balcony Glass Railing Designs Ideas, Best Glass Railing in Mumbai Maharashtra India, Glass Railing Cost, Premium Glass Design, PVB Glass, SGP Toughened Laminated Glass, Glass Railing Systems, Glass Railing Installation Mumbai, Balcony Glass Railing Design, Modern Glass Railing Systems India, Premium Toughened Glass, Aluminum Glass Railings Mumbai, Stylish Balcony Railings India, Commercial Glass Railings, Residential Glass Railings, Railing Installation Mumbai, Modern Glass Handrails, Glass Railing Solutions, Railing Dealership provider in Mumbai"
-        ogImage={appartmentImg}
+        ogImage={
+          "https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/projectImage/appartmentImg.webp"
+        }
         ogUrl="https://www.imperiorailing.com/projects"
       />
 
