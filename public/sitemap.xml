@@ -314,6 +314,9 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <!-- https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/LEDHandrail.webp -->
+    <!-- https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/ovalHandrail.webp -->
+    <!-- http://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/squareBalconyHandrail.webp -->
         <loc>https://imperiorailing.com/blog/aluminum-handrail</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -370,6 +373,7 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <!-- https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Balcony/ModernBalcony.webp -->
         <loc>https://imperiorailing.com/blog/framed-vs-frameless-glass-railings</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -394,6 +398,9 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <!-- https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/hero/contact.webp -->
+    <!-- https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/quote/bgDealers.webp -->
+    <!-- https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/quote/bgQuote.webp -->
         <loc>https://imperiorailing.com/contactus</loc>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
