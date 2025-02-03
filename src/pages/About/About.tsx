@@ -78,7 +78,8 @@ export const About: React.FC = () => {
         description="Imperio Railing System is a stair and glass railing manufacturing company in Mumbai, Maharashtra. We're dedicated to creating premium glass railing parts for your home."
         keywords="About Imperio Railing, Aluminum Glass Railings, Railing Solutions, Quality Craftsmanship, Innovative Designs, Residential Railings, Commercial Railings, Safety Standards, Durable Products, Stylish Aesthetics, Experience, Trust, Quality, Design, Innovation, Safety, Glass Railings, Aluminum Railings, Railing Systems, Outdoor Spaces, Home Improvement, Custom Designs, Stylish Solutions, Architectural Design, Premium Railing Solutions, Expert Installation Services, Reliable Railing Provider"
         // ogImage={aboutHero}
-        ogImage="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/about/about.webp"
+        // ogImage="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/about/about.webp"
+        ogImage="https://res.cloudinary.com/dj2h9pj9i/image/upload/v1738388341/Images/Images/about/w0ocwhemkucot76cerz4.webp"
         ogUrl="https://www.imperiorailing.com/aboutus"
       />
 

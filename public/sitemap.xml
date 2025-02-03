@@ -97,7 +97,10 @@
         <loc>https://imperiorailing.com/aboutus</loc>
         <image:image>
             <image:loc>
-                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/about/about.webp</image:loc>
+                <!--
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/about/about.webp -->
+                https://res.cloudinary.com/dj2h9pj9i/image/upload/v1738388341/Images/Images/about/w0ocwhemkucot76cerz4.webp
+                </image:loc>
             <image:caption>about</image:caption>
         </image:image>
         <image:image>
