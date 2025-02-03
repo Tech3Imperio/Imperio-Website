@@ -6,8 +6,92 @@
     xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
     <url>
         <loc>https://imperiorailing.com/</loc>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/home/hero.webp</image:loc>
+            <image:caption>hero</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/home/desc.webp</image:loc>
+            <image:caption>desc</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/scroller/terresrailing.webp</image:loc>
+            <image:caption>terresrailing</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/scroller/terracefloor.webp</image:loc>
+            <image:caption>terracefloor</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/scroller/penthouse.webp</image:loc>
+            <image:caption>penthouse</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/scroller/balcony.webp</image:loc>
+            <image:caption>balcony</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/scroller/stairs.webp</image:loc>
+            <image:caption>stairs</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/imagesidler/big1.webp</image:loc>
+            <image:caption>big1</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/imagesidler/big2.webp</image:loc>
+            <image:caption>big2</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/imagesidler/img1.webp</image:loc>
+            <image:caption>img1</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/imagesidler/img2.webp</image:loc>
+            <image:caption>img2</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/quote/bgQuote.webp</image:loc>
+            <image:caption>bgQuote</image:caption>
+        </image:image>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/home/hero.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/home/desc.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/scroller/terresrailing.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/scroller/terracefloor.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/scroller/penthouse.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/scroller/balcony.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/scroller/stairs.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/imagesidler/big1.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/imagesidler/big2.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/imagesidler/img1.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/imagesidler/img2.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/quote/bgQuote.webp -->
     </url>
     <url>
         <loc>https://imperiorailing.com/aboutus</loc>
@@ -21,6 +105,49 @@
     </url>
     <url>
         <loc>https://imperiorailing.com/projects</loc>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/projectImage/Jamsedhpur.webp</image:loc>
+            <image:caption>Jamsedhpur</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/projectImage/alibaugImg.webp</image:loc>
+            <image:caption>alibaugImg</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/projectImage/appartmentImg.webp</image:loc>
+            <image:caption>appartmentImg</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/projectImage/buildingImg.webp</image:loc>
+            <image:caption>buildingImg</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/projectImage/costalImage.webp</image:loc>
+            <image:caption>costalImage</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/projectImage/goaImg.webp</image:loc>
+            <image:caption>goaImg</image:caption>
+        </image:image>
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/projectImage/Jamsedhpur.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/projectImage/alibaugImg.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/projectImage/appartmentImg.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/projectImage/buildingImg.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/projectImage/costalImage.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/projectImage/goaImg.webp -->
+
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -31,6 +158,13 @@
     </url>
     <url>
         <loc>https://imperiorailing.com/blog</loc>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/hero/blog.webp</image:loc>
+            <image:caption>blog</image:caption>
+        </image:image>
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/hero/blog.webp -->
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -101,11 +235,81 @@
     </url>
     <url>
         <loc>https://imperiorailing.com/blog/terrace/glass-railing</loc>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/modernterrace/hero.webp</image:loc>
+            <image:caption>hero</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/modernterrace/jhusite.webp</image:loc>
+            <image:caption>jhusite</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/modernterrace/jogeshwari.webp</image:loc>
+            <image:caption>jogeshwari</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/modernterrace/sivanta.webp</image:loc>
+            <image:caption>sivanta</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/modernterrace/solapur.webp</image:loc>
+            <image:caption>solapur</image:caption>
+        </image:image>
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/modernterrace/hero.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/modernterrace/jhusite.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/modernterrace/jogeshwari.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/modernterrace/sivanta.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/modernterrace/solapur.webp -->
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://imperiorailing.com/blog/modern/staircase-glass-railing</loc>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/modernstaircase/glassStaircase.webp</image:loc>
+            <image:caption>glassStaircase</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/modernstaircase/glassstaris.webp</image:loc>
+            <image:caption>glassstaris</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/modernstaircase/modernstaircase.webp</image:loc>
+            <image:caption>modernstaircase</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/modernstaircase/staricaseImg.webp</image:loc>
+            <image:caption>staricaseImg</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/modernstaircase/whitestaircase.webp</image:loc>
+            <image:caption>whitestaircase</image:caption>
+        </image:image>
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/modernstaircase/glassStaircase.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/modernstaircase/glassstaris.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/modernstaircase/modernstaircase.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/modernstaircase/staricaseImg.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/modernstaircase/whitestaircase.webp -->
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -121,11 +325,47 @@
                 https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/Balcony/CustomBalcony.webp</image:loc>
             <image:caption>CustomBalcony</image:caption>
         </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/Balcony/ModernBalcony.webp</image:loc>
+            <image:caption>ModernBalcony</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/Balcony/VillaBalcony.webp</image:loc>
+            <image:caption>VillaBalcony</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/Balcony/premiumbalcony.webp</image:loc>
+            <image:caption>premiumbalcony</image:caption>
+        </image:image>
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/Balcony/ModernBalcony.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/Balcony/VillaBalcony.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/Balcony/premiumbalcony.webp -->
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://imperiorailing.com/blog/pvb-sgp/glass-difference</loc>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/PVBSGP/PVB-Glass.webp</image:loc>
+            <image:caption>PVB-Glass</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/hero/blog.webp</image:loc>
+            <image:caption>blog</image:caption>
+        </image:image>
+
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/PVBSGP/SGP-Glass.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/hero/blog.webp -->
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -136,6 +376,20 @@
     </url>
     <url>
         <loc>https://imperiorailing.com/quote</loc>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/quote/product.webp</image:loc>
+            <image:caption>product</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/hero/hero.webp</image:loc>
+            <image:caption>hero</image:caption>
+        </image:image>
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/quote/product.webp -->
+        <!--
+        https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/hero/hero.webp -->
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -151,6 +405,7 @@
     </url>
     <url>
         <loc>https://imperiorailing.com/blog/aluminium-glassrailings</loc>
+
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
