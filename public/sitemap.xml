@@ -173,7 +173,7 @@
         <priority>0.8</priority>
     </url>
     <url>
-            <image:image>
+        <image:image>
             <image:loc>
                 https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/quote/bgDealers.webp</image:loc>
             <image:caption>blog</image:caption>
@@ -340,26 +340,29 @@
         <priority>0.8</priority>
     </url>
     <url>
-            <image:image>
+        <loc>https://imperiorailing.com/blog/modern/indoor-railing</loc>
+        <image:image>
             <image:loc>
                 https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/LEDHandrail.webp</image:loc>
             <image:caption>aluminum-handrail</image:caption>
         </image:image>
-                    <image:image>
+        <image:image>
             <image:loc>
                 https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/ovalHandrail.webp</image:loc>
             <image:caption>oval-handrail</image:caption>
         </image:image>
-                </image:image>
-                    <image:image>
+        <image:image>
             <image:loc>
                 http://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/squareBalconyHandrail.webp</image:loc>
             <image:caption>balcony-handrail</image:caption>
         </image:image>
-        <!-- https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/LEDHandrail.webp -->
-    <!-- https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/ovalHandrail.webp -->
-    <!-- http://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/squareBalconyHandrail.webp -->
-        <loc>https://imperiorailing.com/blog/aluminum-handrail</loc>
+        <!--
+        https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/LEDHandrail.webp -->
+        <!--
+        https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/ovalHandrail.webp -->
+        <!--
+        http://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/squareBalconyHandrail.webp -->
+
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
