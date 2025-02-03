@@ -370,7 +370,8 @@
         <loc>https://imperiorailing.com/blog/modern/balcony-glass-railing</loc>
         <image:image>
             <image:loc>
-                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/Balcony/CustomBalcony.webp</image:loc>
+                <!--
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/Balcony/CustomBalcony.webp --> https://www.imperiorailing.com/assets/ModernBalcony-U3MWa-oJ.webp </image:loc>
             <image:caption>CustomBalcony</image:caption>
         </image:image>
         <image:image>

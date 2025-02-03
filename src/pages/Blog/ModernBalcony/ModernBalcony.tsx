@@ -66,7 +66,8 @@ export default function ModernBalcony() {
         description="Explore premium quality glass balcony railings, frameless, and spigot designs in Mumbai, Maharashtra, India. Affordable aluminum railing systems for residential and commercial projects."
         keywords="balcony glass railing, aluminum glass railing, glass stair railing, frameless glass railing, spigot glass systems, modern balcony design, aluminum railings, glass handrails, balcony railing systems"
         ogImage={
-          "https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/Balcony/CustomBalcony.webp"
+          // "https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/Balcony/CustomBalcony.webp"
+          "https://www.imperiorailing.com/assets/ModernBalcony-U3MWa-oJ.webp"
         }
         ogUrl="https://www.imperiorailing.com/blog/modern/balcony-glass-railing"
       />
