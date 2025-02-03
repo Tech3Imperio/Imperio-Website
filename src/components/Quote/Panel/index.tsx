@@ -12,6 +12,7 @@ export const Dealers = () => {
         {/* Wrapper div with full width and height */}
         <img
           src={bgDealers} // Source of the background image
+          // src="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/quote/bgDealers.webp"
           alt="Backdrop for product" // Alt text for the image
           title="Backdrop for product" // Title text for the image
           className="w-screen h-[50vh] lg:h-full object-contain" // Image styling
@@ -55,6 +56,7 @@ export const Quote = () => {
         {/* Wrapper div with full width and height */}
         <img
           src={bgQuote} // Source of the background image
+          // src="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/quote/bgQuote.webp"
           alt="Backdrop for product" // Alt text for the image
           title="Backdrop for product" // Title text for the image
           className="w-screen h-[50vh] lg:h-full object-cover" // Image styling

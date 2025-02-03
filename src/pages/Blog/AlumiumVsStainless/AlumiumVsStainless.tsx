@@ -5,7 +5,7 @@ import { Hero } from "../../../components";
 import { modernBalcony } from "../../../assets/Images";
 import Metadata from "../../../components/Metatag/Metatag";
 import AluminumVSSteel from "../../../components/AluminumVSSteel/AluminumVSSteel";
-import { aluminiumglass } from "../../../assets/Images";
+// import { aluminiumglass } from "../../../assets/Images";
 const AlumiumVsStainless: React.FC = () => {
   return (
     <>
@@ -19,7 +19,10 @@ const AlumiumVsStainless: React.FC = () => {
         keywords={
           "Stainless Steel Glass Railing, Aluminium Glass Railing, Glass Railing Benefits, Glass Railings for Balconies, Decks, Staircases, Durability of Glass Railings, Cost of Glass Railings, Choosing Glass Railings for Homes"
         }
-        ogImage={aluminiumglass}
+        // ogImage={aluminiumglass}
+        ogImage={
+          "https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/StainlessSteel/aluminiumglass.webp"
+        }
         ogUrl={
           "https://www.imperiorailing.com/blog/aluminum-vs-stainless-steel-glass-railings"
         }
@@ -27,7 +30,7 @@ const AlumiumVsStainless: React.FC = () => {
 
       <Hero
         img={modernBalcony}
-        altText="balcony-railing"
+        altText="balcony-glass-railing"
         header="Aluminium vs Stainless Steel Glass Railings"
         subHeader="Discover the key differences between Aluminium and Stainless Steel Glass Railings, including their benefits, durability, and cost to help you choose the perfect option for your space."
         curve

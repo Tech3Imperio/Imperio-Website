@@ -28,6 +28,8 @@ const blogPosts: BlogPost[] = [
       "We’re excited to share our latest project at Lotus Signature, a premium residential complex in Mumbai, where we’ve recently completed the installation of sophisticated terrace glass railings using the A50 Base and toughened glass. This modern glass railing solution offers more than just safety—it adds a sleek and stylish touch to the architectural design of the terrace, while preserving the panoramic views of the surrounding cityscape. Our choice of toughened glass ensures a high level of durability and safety, making it the perfect fit for both residential and commercial terrace spaces. The A50 Base complements the sleek, minimalistic aesthetic of the glass, resulting in a balcony glass railing system that’s as functional as it is beautiful. Whether it’s for enjoying a coffee on your terrace or hosting a gathering, this glass railing system guarantees an open, airy feel without compromising on security. Trust our expertise to deliver premium glass railing solutions tailored to your unique vision—solutions that stand the test of time in both design and durability.",
 
     imageUrl: jogeswariterrace,
+    // imageUrl:
+    //   "https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/modernterrace/jogeshwari.webp",
     location: "Mumbai, Maharashtra",
   },
   {
@@ -36,6 +38,8 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "The terrace glass railing  in Juhu has been elegantly enhanced with state-of-the-art D75 glass railings, offering both safety and style. These glass railings provide an unobstructed view of the stunning surroundings, allowing residents to fully enjoy the beauty of their outdoor space without compromise. The D75 base ensures robust support while maintaining a sleek, modern aesthetic, making it a perfect choice for contemporary architecture. The installation process was meticulously executed to meet the highest standards of quality and design, ensuring durability and long-lasting performance. The glass panels are not only durable but also easy to maintain, making them ideal for the coastal environment of Juhu. This project exemplifies how glass railings can elevate the ambiance of a terrace, creating a seamless connection between indoor and outdoor living. With the addition of these premium glass railings, the terrace has become a serene retreat for relaxation and entertainment, showcasing the perfect fusion of functionality and elegance. Residents can now enjoy their outdoor space with peace of mind, knowing they are protected by high-quality materials designed to last.",
     imageUrl: juhusite,
+    // imageUrl:
+    //   "https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/modernterrace/jhusite.webp",
     location: "Goa, Goa",
   },
   {
@@ -45,6 +49,8 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "The terrace glass railing project at Sivanta Apartments in Mumbai showcases a stunning blend of safety and sophistication. Utilizing a robust C75 aluminum base, this seamless glass railing system not only enhances the aesthetic appeal of the terrace but also provides a secure barrier for residents. The use of high-quality Sentry glass ensures durability and clarity, allowing for unobstructed views of the beautiful swimming pool below. The installation features an S50 handrail, adding a touch of elegance while ensuring a comfortable grip for users. This combination of materials creates a modern look that perfectly complements the architectural design of Sivanta Apartments. The glass panels are easy to maintain, making them ideal for outdoor environments, while the aluminum base offers excellent resistance to corrosion. This project exemplifies how thoughtful design can transform outdoor spaces into luxurious retreats. Residents can now enjoy their terrace with peace of mind, knowing they are protected by top-notch materials that prioritize both style and safety. The seamless integration of the glass railing system with the swimming pool area creates a harmonious outdoor experience, perfect for relaxation and entertainment in Mumbai.",
     imageUrl: sivanta,
+    // imageUrl:
+    //   "https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/modernterrace/sivanta.webp",
     location: "Mumbai, Maharashtra",
   },
   {
@@ -54,6 +60,8 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "The terrace glass railing project in Belgoan, Chattisgarh combines coastal charm with safety and style. Featuring a durable L50 aluminum base, it provides robust support against the elements, making it ideal for outdoor spaces in seaside environments. The use of premium Sentry glass offers unobstructed views, creating a seamless flow between indoor and outdoor areas. Complemented by the sleek S12 handrail, the design enhances the terrace's aesthetic appeal while providing a comfortable grip. With low-maintenance, high-quality materials, this installation ensures long-lasting durability and peace of mind. The result is a luxurious, functional terrace, perfect for relaxation, entertainment, or quiet reflection—ideal for homeowners in Solapur and across Maharashtra seeking elegant glass railings that stand the test of time. ",
     imageUrl: solapur,
+    // imageUrl:
+    //   "https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/modernterrace/solapur.webp",
     location: "Belgoan ,Chattisgarh",
   },
 ];
@@ -71,11 +79,13 @@ export default function ModernTerrace() {
         keywords={
           "glass railings, aluminum glass railings, Laminated Glass,Terrace glass railing systems, modern glass railings, frameless glass railings,Balcony glass railings, Premium glass railing systems, Minimalist Style, safety glass railings, high durable glass railings, Weather Resistant, Low Maintenance, Customizable Options, Best glass railing systems for terraces in Mumbai, best glass railing systems in Mumbai, Commercial Spaces, modern glass railing designs for homes, Balcony Railings, Staircase glass Railings, stylish glass railings for commercial buildings, transfrom your home decor, seamless glass railing, elegant glass railing, Affordable glass balcony railings in Mumbai"
         }
-        ogImage={jogeswariterrace}
+        // ogImage={jogeswariterrace}
+        ogImage="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/modernterrace/jogeshwari.webp"
         ogUrl={"https://www.imperiorailing.com/blog/terrace/glass-railing"}
       />
       <Hero
         img={heroImg}
+        // img="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/modernterrace/hero.webp"
         altText="hero for blog"
         header="Terrace Glass Railing"
         subHeader="Discover premium terrace glass railing systems in Mumbai, Pune, Delhi, Varanasi, Kolkata, and across Maharashtra and beyond.  Our modern, stylish, and durable top-quality glass railings Frameless Glass Railings for Terraces and Balcony"

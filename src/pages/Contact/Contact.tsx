@@ -16,12 +16,14 @@ export const Contact = () => {
         keywords={
           "Contact Imperio Railing, Aluminum Glass Railings, Railing Installation Support, Custom Railing Designs, Residential Railing Solutions, Commercial Railings, Durable Glass Railings, Stylish Railing Systems, Glass Railing Installation, Maintenance Advice, Modern Aluminum Railings, Outdoor Railing Design, Home Improvement Solutions, Safety Railings, Innovative Railings"
         }
-        ogImage={contactHero}
+        // ogImage={contactHero}
+        ogImage="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/hero/contact.webp"
         ogUrl={"https://www.imperiorailing.com/contactus"}
       />
       <main>
         <Hero
           img={contactHero}
+          // img="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/hero/contact.webp"
           header="Contact Information"
           altText="hero for aboutus"
           subHeader="Discover the perfect blend of safety and sophistication with Imperio's glass railing systems."

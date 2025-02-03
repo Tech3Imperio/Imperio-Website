@@ -26,6 +26,7 @@ const FramedFrameless: React.FC = () => {
 
       <Hero
         img={modernBalcony}
+        // img="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Balcony/ModernBalcony.webp"
         altText="balcony-railing"
         header="Framed vs Frameless Glass Railings"
         subHeader="Framed and frameless glass railings differ in appearance, cost, durability, and maintenance requirements. Explore the pros and cons of framed vs frameless glass railings for your next project."

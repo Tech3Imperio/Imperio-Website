@@ -217,7 +217,8 @@ const MemoProducts: React.FC = () => {
           keywords={
             "glass railing, aluminum railing, balcony glass railing, staircase glass railing, modern railing designs, aluminum handrails, cover panels, durable railings, frameless glass railings, stylish balcony designs, high-quality railings, corrosion-resistant glass railings, UV-resistant glass, custom glass railings, residential railing systems, commercial aluminum railings, innovative railing solutions, elegant glass railings, architectural railing designs, modern aluminum railings"
           }
-          ogImage={productImage}
+          // ogImage={productImage}
+          ogImage="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/hero/product.webp"
           ogUrl={"https://imperiorailing.com/products"}
         />
         <div className="lg:hidden flex top-[0%] fixed right-0 z-40 h-screen ">
@@ -300,6 +301,7 @@ const MemoProducts: React.FC = () => {
         </div>
         <Hero
           img={productImage}
+          // img="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/hero/product.webp"
           altText="Hero image product page"
           header={
             <>
@@ -480,7 +482,8 @@ const MemoProducts: React.FC = () => {
         keywords={
           "glass railing, sgp and pvb laminated glass, aluminum railing, balcony glass railing, staircase glass railing, modern railing designs, aluminum handrails, cover panels, durable railings, frameless glass railings, stylish balcony designs, high-quality railings, corrosion-resistant glass railings, UV-resistant glass, custom glass railings, residential railing systems, commercial aluminum railings, innovative railing solutions, elegant glass railings, architectural railing designs, modern aluminum railings"
         }
-        ogImage={productImage}
+        // ogImage={productImage}
+        ogImage="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/hero/product.webp"
         ogUrl={"https://imperiorailing.com/products"}
       />
       {encodedToken ? (
@@ -571,6 +574,7 @@ const MemoProducts: React.FC = () => {
       </div>
       <Hero
         img={productImage}
+        // img="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/hero/product.webp"
         altText="Hero image for product"
         header={
           <>

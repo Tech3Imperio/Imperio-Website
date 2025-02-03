@@ -29,6 +29,8 @@ const blogPosts: BlogPost[] = [
       "This sleek aluminium oval Premium handrail is an excellent choice for modern staircases in Mumbai, Delhi, Bangalore, and Chennai. The smooth, streamlined oval shape gives your stairs a contemporary and sophisticated look. Made from high durable aluminium, it is designed to withstand the toughest weather conditions, offering superior weather resistance for both indoor and outdoor installations. Whether you're upgrading your stair handrail or installing a new balcony handrail, this handrail provides lasting durability and style. Its rust-proof and corrosion-resistant properties make it ideal for outdoor staircases, ensuring the handrail remains strong and attractive even in harsh climates. The oval shape also offers ergonomic comfort, with a soft, smooth finish that’s easy to grip. The material is lightweight yet strong, ensuring both aesthetic appeal and structural integrity. As a leading stair handrail supplier, we offer competitive prices and exceptional service, making it easier for you to find the perfect solution for your home. This handrail is available in various finishes to match your interior décor. Whether you're looking for a sleek, modern design or a more traditional look, this aluminium handrail will blend beautifully with your space. Its easy maintenance and longevity make it the ideal choice for homes and businesses alike.",
 
     imageUrl: ovalHandrail,
+    // imageUrl:
+    //   "https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/ovalHandrail.webp",
     location: "Mysuru, Mysuru",
   },
   {
@@ -37,6 +39,8 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "Transform your balcony with this square aluminium glass railing, designed to offer both strength and modern style. Perfect for homes and buildings in Uttara Kannada, Rajasthan, Maharashtra, and Karnataka, this handrail is crafted with high durable aluminium for exceptional weather resistance. The square shape adds a bold, geometric appeal to your exterior, while the transparent glass panels allow for unobstructed views of the surroundings. This sleek, contemporary design is ideal for balcony handrails and outdoor staircases where both safety and aesthetics are a priority. The aluminium frame provides robust support, while the glass adds a touch of elegance. This handrail is built to resist rust and corrosion, making it perfect for outdoor railings exposed to varying weather conditions. Its minimalistic yet strong structure is easy to maintain and will continue to look great for years. Whether you’re enhancing your deck or creating a stylish boundary for your balcony, this handrail fits seamlessly into any modern design scheme. The clear glass ensures an open, airy feel without compromising safety, while the aluminium frame maintains structural integrity. As a handrail supplier, we offer competitive pricing for all of our products, ensuring you receive high-quality solutions at great value.",
     imageUrl: squareBalconyHandrail,
+    // imageUrl:
+    //   "http://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/squareBalconyHandrail.webp",
     location: "Bengaluru, Bengaluru",
   },
   {
@@ -45,6 +49,8 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "This oval-shaped wooden finish aluminium staircase handrail combines the timeless elegance of wood with the modern durability of aluminium. Ideal for both Chennai, Mumbai, Delhi, and Bangalore, this handrail provides a warm, traditional aesthetic while ensuring long-lasting performance. The wooden finish mimics the natural beauty of real wood, while the high durable aluminium construction offers excellent weather resistance, making it perfect for outdoor staircases or balconies. The oval shape of this handrail provides a comfortable grip, perfect for stairs or railings where safety and style are key. Whether you are remodeling your staircase or updating your balcony, this handrail fits seamlessly with a wide range of home styles, offering both function and charm. This product is designed to withstand the elements without fading or deteriorating, thanks to its weather resistance. The combination of natural wood aesthetics and modern aluminium technology offers an attractive yet sturdy solution for your home. The handrail is easy to maintain and does not require frequent sealing or polishing, unlike traditional wooden railings. As a leading handrail supplier, we ensure that our products offer both beauty and safety for your living space.",
     imageUrl: ovalWoodenHandrail,
+    // imageUrl:
+    //   "https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/ovalWoddenHandrail.webp",
     location: "Mumbai, Maharashtra",
   },
   {
@@ -53,6 +59,8 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "Introducing the sleek and stylish square LED aluminium staircase handrail, perfect for adding contemporary flair to your staircases and balconies. This innovative handrail integrates LED lighting for enhanced safety and elegance, offering ambient lighting for both indoor and outdoor spaces. Designed for homes in Goa, Tamil Nadu, Andhra Pradesh, and Punjab, this handrail features a square shape that makes a bold statement while remaining functional. The high durable aluminium frame ensures that the handrail is strong, lightweight, and resistant to weathering, making it suitable for any climate. The built-in LED handrail lighting not only enhances the visual appeal but also provides added security at night. Whether you're looking to upgrade your indoor stairs or add a modern touch to your balcony, this handrail is a perfect solution. The weather resistance of aluminium ensures that the handrail remains sturdy and attractive for years to come. Its sleek design fits seamlessly into modern spaces, while the LED lights add a sophisticated and practical touch. With under handrail lighting, this design ensures a bright, welcoming atmosphere. As a trusted stair handrail supplier, we offer this high-quality product at an affordable price, making it easy to add style and function to your home.",
     imageUrl: LEDHandrail,
+    // imageUrl:
+    //   "https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/LEDHandrail.webp",
     location: "Pathankot, Pathankot",
   },
 ];
@@ -66,11 +74,13 @@ export default function ModernHandrail() {
         title="Glass Railing Handrails & Premium Aluminium Handrails"
         description="Find premium handrails and railings for indoor and outdoor staircases, including aluminum, stainless steel, and glass options."
         keywords="handrails staircase, stair handrail, Premium Glass Railing"
-        ogImage={squareBalconyHandrail}
+        // ogImage={squareBalconyHandrail}
+        ogImage="http://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/squareBalconyHandrail.webp"
         ogUrl="https://www.imperiorailing.com/blog/aluminum-handrail"
       />
       <Hero
-        img={squareBalconyHandrail}
+        // img={squareBalconyHandrail}
+        img="http://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/squareBalconyHandrail.webp"
         altText="handrail"
         header="Glass Railing Handrails"
         subHeader="High-quality glass railings oval handrail, sleek handrail And LED handrails for balconies, staircases, and interiors."

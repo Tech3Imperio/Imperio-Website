@@ -77,13 +77,15 @@ export const About: React.FC = () => {
         title="About Us - Imperio Railing | Balcony Glass Railing"
         description="Imperio Railing System is a stair and glass railing manufacturing company in Mumbai, Maharashtra. We're dedicated to creating premium glass railing parts for your home."
         keywords="About Imperio Railing, Aluminum Glass Railings, Railing Solutions, Quality Craftsmanship, Innovative Designs, Residential Railings, Commercial Railings, Safety Standards, Durable Products, Stylish Aesthetics, Experience, Trust, Quality, Design, Innovation, Safety, Glass Railings, Aluminum Railings, Railing Systems, Outdoor Spaces, Home Improvement, Custom Designs, Stylish Solutions, Architectural Design, Premium Railing Solutions, Expert Installation Services, Reliable Railing Provider"
-        ogImage={aboutHero}
+        // ogImage={aboutHero}
+        ogImage="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/about/about.webp"
         ogUrl="https://www.imperiorailing.com/aboutus"
       />
 
       <main>
         <Hero
           img={aboutHero}
+          // img="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/about/about.webp"
           header="About us"
           altText="hero for aboutus"
           subHeader="Elevate your space with Imperio's elegant, frameless glass railing systems, offering unparalleled security and a sleek, minimalist look."
@@ -141,6 +143,7 @@ export const About: React.FC = () => {
                 <div className="relative">
                   <img
                     src={Middle}
+                    // src="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/about/Middle.webp"
                     alt="Imperio Railing Systems"
                     // width={800}
                     // height={600}

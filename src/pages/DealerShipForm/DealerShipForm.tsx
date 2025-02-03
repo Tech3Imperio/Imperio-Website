@@ -229,11 +229,13 @@ export const DealerShipForm: React.FC = () => {
         title="Glass Railing Dealer | Premium Aluminum & Glass Railing Solutions"
         description="Join Imperio Railing’s dealer program to offer premium glass railing solutions, including aluminum railings. Partner with us for exclusive support and high-quality products. Become a top dealer in Mumbai and elevate your business today."
         keywords="Glass Railing Dealers, Aluminum Glass Railings Dealer, Premium Railings Distributor, Dealer Program, Railing Installation, Stylish Glass Railings, Railing Dealer Opportunities, Commercial & Residential Railings, High-Quality Glass Railings, Glass Railing Solutions, Dealer Support, Modern Railings, Aluminum Railing Systems, Railing Installation Services, Business Growth, Durable Glass Railings, Top Railing Dealers in Mumbai"
-        ogImage={bgDealers} // Replace with the actual image path
+        // ogImage={bgDealers} // Replace with the actual image path
+        ogImage="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/quote/bgDealers.webp"
         ogUrl="https://www.imperiorailing.com/dealership"
       />
       <Hero
         img={bgDealers}
+        // img="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/quote/bgDealers.webp"
         altText="Imperio Glass Railing Systems - Premium Glass Railing Solutions"
         header={<>Become an Imperio Glass Railing Dealer!</>}
         subHeader="Become an Imperio Glass Railing dealer and distribute premium glass railings across India for residential and commercial spaces."

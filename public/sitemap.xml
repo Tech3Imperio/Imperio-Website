@@ -152,6 +152,11 @@
         <priority>0.8</priority>
     </url>
     <url>
+            <image:image>
+            <image:loc>
+                https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/quote/bgDealers.webp</image:loc>
+            <image:caption>blog</image:caption>
+        </image:image>
         <loc>https://imperiorailing.com/dealership</loc>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
@@ -314,6 +319,22 @@
         <priority>0.8</priority>
     </url>
     <url>
+            <image:image>
+            <image:loc>
+                https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/LEDHandrail.webp</image:loc>
+            <image:caption>aluminum-handrail</image:caption>
+        </image:image>
+                    <image:image>
+            <image:loc>
+                https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/ovalHandrail.webp</image:loc>
+            <image:caption>oval-handrail</image:caption>
+        </image:image>
+                </image:image>
+                    <image:image>
+            <image:loc>
+                http://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/squareBalconyHandrail.webp</image:loc>
+            <image:caption>balcony-handrail</image:caption>
+        </image:image>
         <!-- https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/LEDHandrail.webp -->
     <!-- https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/ovalHandrail.webp -->
     <!-- http://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/squareBalconyHandrail.webp -->
