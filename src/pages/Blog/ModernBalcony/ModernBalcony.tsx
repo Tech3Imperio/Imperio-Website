@@ -67,7 +67,7 @@ export default function ModernBalcony() {
         keywords="balcony glass railing, aluminum glass railing, glass stair railing, frameless glass railing, spigot glass systems, modern balcony design, aluminum railings, glass handrails, balcony railing systems"
         ogImage={
           // "https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/Balcony/CustomBalcony.webp"
-          "https://www.imperiorailing.com/assets/ModernBalcony-U3MWa-oJ.webp"
+          "https://res.cloudinary.com/dj2h9pj9i/image/upload/v1738388342/Images/Images/Balcony/dc2xgh9qv4spxgqapvpv.jpg"
         }
         ogUrl="https://www.imperiorailing.com/blog/modern/balcony-glass-railing"
       />

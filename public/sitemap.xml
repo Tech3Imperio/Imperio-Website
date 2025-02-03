@@ -371,7 +371,8 @@
         <image:image>
             <image:loc>
                 <!--
-                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/Balcony/CustomBalcony.webp --> https://www.imperiorailing.com/assets/ModernBalcony-U3MWa-oJ.webp </image:loc>
+                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/Balcony/CustomBalcony.webp -->
+                https://res.cloudinary.com/dj2h9pj9i/image/upload/v1738388342/Images/Images/Balcony/dc2xgh9qv4spxgqapvpv.jpg </image:loc>
             <image:caption>CustomBalcony</image:caption>
         </image:image>
         <image:image>
