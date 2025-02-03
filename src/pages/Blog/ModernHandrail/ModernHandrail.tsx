@@ -81,7 +81,7 @@ export default function ModernHandrail() {
       />
       <Hero
         // img={squareBalconyHandrail}
-        img="http://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/squareBalconyHandrail.webp"
+        img="https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/Handrails/squareBalconyHandrail.webp"
         altText="handrail"
         header="Glass Railing Handrails"
         subHeader="High-quality glass railings oval handrail, sleek handrail And LED handrails for balconies, staircases, and interiors."
