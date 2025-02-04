@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import MainContent from "../../../components/FramedVSFrameless/MainContent";
 import { Hero } from "../../../components";
-// import { modernBalcony } from "../../../assets/Images";
+import { modernBalcony } from "../../../assets/Images";
 import Metadata from "../../../components/Metatag/Metatag";
 
 const FramedFrameless: React.FC = () => {
@@ -19,15 +19,15 @@ const FramedFrameless: React.FC = () => {
           "framed  glass vs frameless glass railings, framed glass railings vs frameless, framed glass railing systems, frameless glass railing systems, glass railing design, modern glass railings, balcony glass railing, staircase glass railings, frameless glass railing safety, framed glass railing benefits, glass railing installation, glass railing for homes, glass railing for businesses, frameless vs framed glass railing installation, contemporary glass railings, cost of glass railings, glass railings for decks, custom glass railings, safety glass railing, modern balcony railing, framed glass balcony railing, frameless glass balcony railing"
         }
         // ogImage="https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/Balcony/ModernBalcony.webp" // Replace with your image
-        ogImage="https://asset.cloudinary.com/dj2h9pj9i/aa6a2a9931bc46a208a67bcb83273349"
+        ogImage="https://res.cloudinary.com/dj2h9pj9i/image/upload/v1738388342/Images/Images/Balcony/dc2xgh9qv4spxgqapvpv.jpg"
         ogUrl={
           "https://www.imperiorailing.com/blog/framed-vs-frameless-glass-railings"
         }
       />
 
       <Hero
-        // img={modernBalcony}
-        img="https://asset.cloudinary.com/dj2h9pj9i/aa6a2a9931bc46a208a67bcb83273349p"
+        img={modernBalcony}
+        // img="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Balcony/ModernBalcony.webp"
         altText="balcony-railing"
         header="Framed vs Frameless Glass Railings"
         subHeader="Framed and frameless glass railings differ in appearance, cost, durability, and maintenance requirements. Explore the pros and cons of framed vs frameless glass railings for your next project."
