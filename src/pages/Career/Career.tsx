@@ -324,14 +324,14 @@ export default function Career() {
     //   type: "Internship",
     //   applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9", // Apply link
     // },
-    // {
-    //   title: "Social Media Marketing",
-    //   description:
-    //     "Join Imperio Railing Systems as a Social Media Marketing intern and gain hands-on experience in marketing strategies while showcasing your skills.",
-    //   location: "Mumbai",
-    //   type: "Internship",
-    //   applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9", // Apply link
-    // },
+    {
+      title: "Social Media Marketing Intern",
+      description:
+        "Join Imperio Railing Systems as a Social Media Marketing intern and gain hands-on experience in marketing strategies while showcasing your skills.",
+      location: "Mumbai",
+      type: "Internship",
+      applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9", // Apply link
+    },
   ]);
 
   return (
