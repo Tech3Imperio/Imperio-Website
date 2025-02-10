@@ -5,6 +5,7 @@ import { hero1Image } from "../../assets/Images";
 import { descImage } from "../../assets/Images";
 import { Helmet } from "react-helmet";
 import favicondark from "../../assets/Images/logo/favicondark.ico";
+import ImageGallery from "../../components/ImageGallery/ImageGallery";
 
 import {
   Hero,
@@ -118,7 +119,7 @@ export const Home: React.FC = () => {
             </CTAButton>
           </div>
         </Hero>
-
+        <ImageGallery />
         <section className="flex flex-col-reverse lg:flex-row justify-center gap-8 px-5 phone:px-20 tablet:px-32 xl:px-44 pb-9 phone:pb-16 tablet:pb-24 xl:pb-36 pt-6 phone:pt-14 tablet:pt-24 xl:pt-36">
           <div className="flex flex-col gap-2 phone:gap-4">
             <span className=" text-[#fad000] text-xl tablet:text-4xl lg:text-5xl max-xl:text-3xl max-2xl:text-4xl">
