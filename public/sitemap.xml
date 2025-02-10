@@ -623,5 +623,15 @@
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>https://www.imperiorailing.com/blog/terrace/glass-railing</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://imperiorailing.com/blog/modern-railings</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
 
 </urlset>
