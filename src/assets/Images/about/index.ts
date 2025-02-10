@@ -1,4 +1,4 @@
-import aboutHero from "./about.webp";
+import aboutHero from "./about1.webp";
 import aboutHeroMobile from "./about-mobile.webp";
 import Middle from "./Middle.webp";
 import MiddleMobile from "./Middle-mobile.webp";

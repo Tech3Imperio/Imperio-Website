@@ -19,7 +19,7 @@ const FramedFrameless: React.FC = () => {
           "framed  glass vs frameless glass railings, framed glass railings vs frameless, framed glass railing systems, frameless glass railing systems, glass railing design, modern glass railings, balcony glass railing, staircase glass railings, frameless glass railing safety, framed glass railing benefits, glass railing installation, glass railing for homes, glass railing for businesses, frameless vs framed glass railing installation, contemporary glass railings, cost of glass railings, glass railings for decks, custom glass railings, safety glass railing, modern balcony railing, framed glass balcony railing, frameless glass balcony railing"
         }
         // ogImage="https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/Balcony/ModernBalcony.webp" // Replace with your image
-        ogImage="https://res.cloudinary.com/dj2h9pj9i/image/upload/v1738388342/Images/Images/Balcony/dc2xgh9qv4spxgqapvpv.jpg"
+        ogImage="https://asset.cloudinary.com/dj2h9pj9i/e6878c24157d20f0d63707fbd1a8de5f"
         ogUrl={
           "https://www.imperiorailing.com/blog/framed-vs-frameless-glass-railings"
         }
