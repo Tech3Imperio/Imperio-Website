@@ -192,6 +192,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Hero } from "../../components";
+import Metadata from "../../components/Metatag/Metatag";
 
 interface Job {
   title: string;
@@ -323,20 +324,29 @@ export default function Career() {
     //   type: "Internship",
     //   applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9", // Apply link
     // },
-    // {
-    //   title: "Social Media Marketing",
-    //   description:
-    //     "Join Imperio Railing Systems as a Social Media Marketing intern and gain hands-on experience in marketing strategies while showcasing your skills.",
-    //   location: "Mumbai",
-    //   type: "Internship",
-    //   applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9", // Apply link
-    // },
+    {
+      title: "Social Media Marketing Intern",
+      description:
+        "Join Imperio Railing Systems as a Social Media Marketing intern and gain hands-on experience in marketing strategies while showcasing your skills.",
+      location: "Mumbai",
+      type: "Internship",
+      applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9", // Apply link
+    },
   ]);
 
   return (
     <>
+      <Metadata
+        title="Careers"
+        description="Imperio Railing System is a stair and glass railing manufacturing company in Mumbai, Maharashtra. We're dedicated to creating premium glass railing parts for your home."
+        keywords="About Imperio Railing, Aluminum Glass Railings, Railing Solutions, Quality Craftsmanship, Innovative Designs, Residential Railings, Commercial Railings, Safety Standards, Durable Products, Stylish Aesthetics, Experience, Trust, Quality, Design, Innovation, Safety, Glass Railings, Aluminum Railings, Railing Systems, Outdoor Spaces, Home Improvement, Custom Designs, Stylish Solutions, Architectural Design, Premium Railing Solutions, Expert Installation Services, Reliable Railing Provider"
+        // ogImage={aboutHero}
+        // ogImage="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/about/about.webp"
+        ogImage="https://res.cloudinary.com/dj2h9pj9i/image/upload/v1738388344/Images/Images/career/bh9g9chtf78sejyjhr3i.png"
+        ogUrl="https://www.imperiorailing.com/careers"
+      />
       <Hero
-        img="https://www.valmet.com/globalassets/about-us/careers/careers-hero_1280x720.jpg?format=webp&width=1290&quality=85"
+        img="https://res.cloudinary.com/dj2h9pj9i/image/upload/v1738388344/Images/Images/career/bh9g9chtf78sejyjhr3i.png"
         altText="hero for blog"
         header={
           <>

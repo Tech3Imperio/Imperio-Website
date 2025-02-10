@@ -199,6 +199,11 @@
         <priority>0.8</priority>
     </url>
     <url>
+            <image:image>
+            <image:loc>
+                https://res.cloudinary.com/dj2h9pj9i/image/upload/v1738388344/Images/Images/career/bh9g9chtf78sejyjhr3i.png</image:loc>
+            <image:caption>blog</image:caption>
+        </image:image>
         <loc>https://imperiorailing.com/careers</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -426,10 +431,11 @@
     <url>
         <!--
         https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Balcony/ModernBalcony.webp -->
+        <!-- https://asset.cloudinary.com/dj2h9pj9i/aa6a2a9931bc46a208a67bcb83273349 -->
         <loc>https://imperiorailing.com/blog/framed-vs-frameless-glass-railings</loc>
         <image:image>
             <image:loc>
-                https://res.cloudinary.com/dj2h9pj9i/image/upload/v1738388342/Images/Images/Balcony/dc2xgh9qv4spxgqapvpv.jpg</image:loc>
+                https://asset.cloudinary.com/dj2h9pj9i/aa6a2a9931bc46a208a67bcb83273349</image:loc>
             <image:caption>ModernBalcony</image:caption>
         </image:image>
         <changefreq>weekly</changefreq>
