@@ -176,12 +176,13 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://imperiorailing.com/dealership</loc>
         <image:image>
             <image:loc>
                 https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/quote/bgDealers.webp</image:loc>
             <image:caption>blog</image:caption>
         </image:image>
-        <loc>https://imperiorailing.com/dealership</loc>
+
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>

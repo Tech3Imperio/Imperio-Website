@@ -5,8 +5,8 @@ import React, { useState, useEffect } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { FaTwitter, FaHeart, FaFacebook, FaLinkedin } from "react-icons/fa";
 import Logo from "../../assets/Images/logo/Blacklogo.png";
-// import Metadata from "../../components/Metatag/Metatag";
-
+import Metadata from "../../components/Metatag/Metatag";
+// import { Helmet } from "react-helmet";
 const BlogDetails: React.FC = () => {
   const location = useLocation();
   const params = useParams();
@@ -105,6 +105,27 @@ const BlogDetails: React.FC = () => {
     <>
       {blogData ? (
         <div className="max-w-6xl mx-auto px-4 py-8">
+          <Metadata
+            title="Glass Railing Handrails & Premium Aluminium Handrails"
+            description="Find premium handrails and railings for indoor and outdoor staircases, including aluminum, stainless steel, and glass options."
+            keywords="handrails staircase, stair handrail, Premium Glass Railing"
+            ogImage={`https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/${blogData.img}`}
+            ogUrl={`https://www.imperiorailing.com/blog/${readableTitle}`}
+          />
+          {/* <Helmet>
+            <title>{blogData.header} | Imperio Railing Systems</title>
+            <meta name="description" content={blogData.description} />
+            <meta property="og:title" content={blogData.header} />
+            <meta property="og:description" content={blogData.description} />
+            <meta property="og:image" content={blogData.img} />
+            <meta property="og:url" content={`https://imperiorailing.com/blog/${readableTitle}`} />
+            <meta property="og:type" content="article" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content={blogData.header} />
+            <meta name="twitter:description" content={blogData.description} />
+            <meta name="twitter:image" content={blogData.img} />
+            <link rel="canonical" href={`https://imperiorailing.com/blog/${readableTitle}`} />
+          </Helmet> */}
           <motion.div
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}

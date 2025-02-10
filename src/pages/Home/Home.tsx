@@ -23,7 +23,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { scrollData, testimonialsData } from "../../assets/Data";
 import { MdAddCall } from "react-icons/md";
 import EnquiryButton from "../../components/EnquiryButton/EnquiryButton";
-
+import FAQ from "../../components/FAQ/Faq";
 // const windowWidth = window.innerWidth;
 // console.log(windowWidth);
 // const isMobile = windowWidth <= 425;
@@ -372,6 +372,10 @@ export const Home: React.FC = () => {
 
         <div className="overflow-hidden">
           <Testimonials cards={testimonialsData} />
+        </div>
+
+        <div className="pt-0 pb-14 overflow-hidden">
+          <FAQ />
         </div>
         {/* <Dealers /> */}
         <Quote />
