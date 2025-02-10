@@ -625,12 +625,11 @@
     </url>
     <url>
         <loc>https://www.imperiorailing.com/blog/terrace/glass-railing</loc>
-        <image:image>
-            <image:loc>
-                https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/StainlessSteel/aluminiumglass.webp</image:loc>
-            <image:caption>GlassRailing</image:caption>
-        </image:image>
-
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://imperiorailing.com/blog/modern-railings</loc>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
