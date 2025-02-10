@@ -103,15 +103,20 @@ const BlogDetails: React.FC = () => {
 
   return (
     <>
+      <link
+        rel="canonical"
+        href={`https://imperiorailing.com/blog/${readableTitle}`}
+      />
       {blogData ? (
         <div className="max-w-6xl mx-auto px-4 py-8">
           <Metadata
             title="Glass Railing Handrails & Premium Aluminium Handrails"
-            description="Find premium handrails and railings for indoor and outdoor staircases, including aluminum, stainless steel, and glass options."
-            keywords="handrails staircase, stair handrail, Premium Glass Railing"
+            description={blogData.description}
+            keywords={blogData.header}
             ogImage={`https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/${blogData.img}`}
-            ogUrl={`https://www.imperiorailing.com/blog/${readableTitle}`}
+            ogUrl={`https://imperiorailing.com/blog/${readableTitle}`}
           />
+
           {/* <Helmet>
             <title>{blogData.header} | Imperio Railing Systems</title>
             <meta name="description" content={blogData.description} />

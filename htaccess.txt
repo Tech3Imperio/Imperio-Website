@@ -7,3 +7,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 # Redirect everything else to index.html
 RewriteRule ^(.*)$ /index.html [L]
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.imperiorailing\.com [NC]
+RewriteRule ^(.*)$ https://imperiorailing.com/$1 [L,R=301]

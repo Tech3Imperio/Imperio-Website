@@ -199,7 +199,7 @@
         <priority>0.8</priority>
     </url>
     <url>
-            <image:image>
+        <image:image>
             <image:loc>
                 https://res.cloudinary.com/dj2h9pj9i/image/upload/v1738388344/Images/Images/career/bh9g9chtf78sejyjhr3i.png</image:loc>
             <image:caption>blog</image:caption>
@@ -362,7 +362,7 @@
         </image:image>
         <image:image>
             <image:loc>
-                http://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/squareBalconyHandrail.webp</image:loc>
+                https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/squareBalconyHandrail.webp</image:loc>
             <image:caption>balcony-handrail</image:caption>
         </image:image>
         <!--
