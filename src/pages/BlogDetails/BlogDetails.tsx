@@ -103,14 +103,10 @@ const BlogDetails: React.FC = () => {
 
   return (
     <>
-      <link
-        rel="canonical"
-        href={`https://imperiorailing.com/blog/${readableTitle}`}
-      />
       {blogData ? (
         <div className="max-w-6xl mx-auto px-4 py-8">
           <Metadata
-            title="Glass Railing Handrails & Premium Aluminium Handrails"
+            title={blogData.header}
             description={blogData.description}
             keywords={blogData.header}
             ogImage={`https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/${blogData.img}`}
@@ -139,7 +135,7 @@ const BlogDetails: React.FC = () => {
           >
             <img
               src={blogData?.img}
-              alt="Blog header image"
+              alt={blogData.header}
               className="w-full h-full object-cover rounded-lg"
             />
             <div className="absolute inset-0 bg-black bg-opacity-50 flex items-end p-8 rounded-lg">
@@ -159,7 +155,7 @@ const BlogDetails: React.FC = () => {
               variants={fadeInUpVariants}
               className="flex items-center"
             >
-              <img src={Logo} alt="John Doe" className="w-24 h-12 mr-4" />
+              <img src={Logo} alt="Imperio" className="w-24 h-12 mr-4" />
               <div>
                 <h2 className="text-xl font-semibold">Imperio Railings</h2>
                 <p className="text-gray-600">Published on October 10, 2024</p>
