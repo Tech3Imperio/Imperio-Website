@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { CTAButton } from "../Button";
 import { MdAddCall } from "react-icons/md";
 import EnquiryButton from "../EnquiryButton/EnquiryButton";
-
+import { aluminiumGlass1, aluminiumGlass2 } from "../../assets/Images";
 const AluminiumGlass: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>("");
 
@@ -146,7 +146,7 @@ const AluminiumGlass: React.FC = () => {
           </h2>
           <div className="flex flex-col md:flex-row gap-6 items-center">
             <img
-              src="https://www.vistarailings.com/wp-content/uploads/2022/05/James_Cable_Summer2021_5.jpg"
+              src={aluminiumGlass1}
               alt="Aluminiumm Glass Railing"
               width={500}
               height={300}
@@ -303,7 +303,7 @@ const AluminiumGlass: React.FC = () => {
               </ul>
             </div>
             <img
-              src="https://media.licdn.com/dms/image/v2/D5612AQFSrJNA4S6gZA/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1723281646772?e=2147483647&v=beta&t=H3DsOIRVLxXCOhpL8QeldPByZFCiyYNF_5wH9BwVzm4"
+              src={aluminiumGlass2}
               alt="Imperio Aluminium Glass Railings"
               className="rounded-lg shadow-lg"
               width={500}
