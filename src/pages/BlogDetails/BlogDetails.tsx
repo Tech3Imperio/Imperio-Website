@@ -110,7 +110,7 @@ const BlogDetails: React.FC = () => {
             description={blogData.description}
             keywords={blogData.header}
             ogImage={`https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Handrails/${blogData.img}`}
-            ogUrl={`https://imperiorailing.com/blog/${readableTitle}`}
+            ogUrl={`https://www.imperiorailing.com/blog/premium-railings`}
           />
 
           {/* <Helmet>
