@@ -9,6 +9,7 @@ import {
   villaBalcony,
   pvbsgp,
   modernBalcony,
+  aluminiumglassrailing,
 } from "../../assets/Images";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
 const blogPosts: BlogPost[] = [
@@ -67,6 +68,14 @@ const blogPosts: BlogPost[] = [
       "Compare framed and frameless glass railings. Find the right design for your deck or terrace with our guide.",
     imageUrl: modernBalcony,
     link: "aluminum-vs-stainless-steel-glass-railings",
+  },
+  {
+    id: "8",
+    title: "Elegant and Safe Aluminium Glass Railings",
+    excerpt:
+      "Elevate your space with Imperio’s Aluminium Glass railings, blending safety, style, and sophistication.",
+    imageUrl: aluminiumglassrailing,
+    link: "aluminum-glass-railings",
   },
 ];
 

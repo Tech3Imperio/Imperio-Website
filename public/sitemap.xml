@@ -630,6 +630,14 @@
     </url>
     <url>
         <loc>https://www.imperiorailing.com/blog/modern-railings</loc>
+<<<<<<< HEAD
+=======
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.imperiorailing.com/blog/aluminum-glass-railings</loc>
+>>>>>>> aca6442c1c8a2f89d39781101273d064aba3f455
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
