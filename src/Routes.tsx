@@ -43,6 +43,7 @@ import BillingAddress from "./pages/BillingAddress/BillingAddress";
 import FramedFrameless from "./pages/Blog/FramedFrameless/FramedFrameless";
 import FulltimeHiringForm from "./pages/FulltimeHiringForm/FulltimeHiringForm";
 import AlumiumVsStainless from "./pages/Blog/AlumiumVsStainless/AlumiumVsStainless";
+import AluminiumGlassRailing from "./pages/Blog/AluminiumGlassRailing/AluminiumGlassRailing";
 import Recommendation from "./pages/Recommendation/Recommendation";
 
 // import ForgotPassword from "./pages/DealerOnlineStore/ForgotPassword/ForgotPassword";
@@ -70,6 +71,10 @@ export const routes = createBrowserRouter([
       {
         path: "blog/aluminum-vs-stainless-steel-glass-railings",
         element: <AlumiumVsStainless />,
+      },
+      {
+        path: "blog/aluminum-glass-railings",
+        element: <AluminiumGlassRailing />,
       },
       {
         path: "blog/:blogId",

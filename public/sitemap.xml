@@ -629,7 +629,12 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://imperiorailing.com/blog/modern-railings</loc>
+        <loc>https://www.imperiorailing.com/blog/modern-railings</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.imperiorailing.com/blog/aluminum-glass-railings</loc>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>

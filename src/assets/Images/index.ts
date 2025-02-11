@@ -14,3 +14,4 @@ export * from "./Balcony";
 export * from "./career";
 export * from "./PVBSGP/index";
 export * from "./StainlessSteel/index";
+export * from "./Blogs";

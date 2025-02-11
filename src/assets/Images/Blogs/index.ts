@@ -1,3 +1,3 @@
 import stylishGlass from "./stylishGlass.webp";
-
-export { stylishGlass };
+import aluminiumglassrailing from "./aluminiumglassrailing.webp";
+export { stylishGlass, aluminiumglassrailing };

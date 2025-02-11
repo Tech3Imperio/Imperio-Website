@@ -63,7 +63,7 @@ export default function BlogPost() {
         ogImage={
           "https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/PVBSGP/PVB-Glass.webp"
         }
-        ogUrl={"https://www.imperiorailing.com/blog/sgp/pvb/glass/difference"}
+        ogUrl={"https://www.imperiorailing.com/blog/pvb-sgp/glass-difference"}
       />
       <Hero
         img={blogHero}
