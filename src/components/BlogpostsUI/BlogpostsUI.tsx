@@ -10,6 +10,7 @@ import {
   pvbsgp,
   modernBalcony,
   aluminiumglassrailing,
+  handrailBenefits,
 } from "../../assets/Images";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
 const blogPosts: BlogPost[] = [
@@ -76,6 +77,15 @@ const blogPosts: BlogPost[] = [
       "Elevate your space with Imperio’s Aluminium Glass railings, blending safety, style, and sophistication.",
     imageUrl: aluminiumglassrailing,
     link: "aluminum-glass-railings",
+  },
+  {
+    id: "9",
+    title:
+      "Should You Use Handrails for Railings? Key Benefits and Considerations",
+    excerpt:
+      "Handrails enhance safety, accessibility, and compliance for staircases, ramps, and balconies.",
+    imageUrl: handrailBenefits,
+    link: "handrail-benefits",
   },
 ];
 
