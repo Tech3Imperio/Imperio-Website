@@ -46,6 +46,7 @@ import AlumiumVsStainless from "./pages/Blog/AlumiumVsStainless/AlumiumVsStainle
 import AluminiumGlassRailing from "./pages/Blog/AluminiumGlassRailing/AluminiumGlassRailing";
 import HandrailBenefit from "./pages/Blog/HandrailBenefit/HandrailBenefit";
 import Recommendation from "./pages/Recommendation/Recommendation";
+import SeamlessRailings from "./pages/Blog/SeamlessRailings/SeamlessRailing";
 
 // import ForgotPassword from "./pages/DealerOnlineStore/ForgotPassword/ForgotPassword";
 
@@ -80,6 +81,10 @@ export const routes = createBrowserRouter([
       {
         path: "blog/handrail-benefits",
         element: <HandrailBenefit />,
+      },
+      {
+        path: "blog/seamless-railing",
+        element: <SeamlessRailings />,
       },
       {
         path: "blog/:blogId",

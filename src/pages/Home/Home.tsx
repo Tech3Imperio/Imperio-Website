@@ -337,15 +337,15 @@ export const Home: React.FC = () => {
         </Description>
 
         <TextComponent texts={text} />
-        <div className=" max-w-auto flex flex-col md:flex-row  pt-12 sm:pt-24 tablet:pt-20 xl:pt-28 px-9 sm:px-16 lg:px-28 2xl:px-44">
-          <div className="flex flex-col md:w-[80%] gap-1 tablet:gap-6">
+        <div className=" max-w-auto flex flex-col   pt-12 sm:pt-24 tablet:pt-20 xl:pt-28 px-9 sm:px-16 lg:px-28 2xl:px-44">
+          <div className="flex flex-col gap-1 tablet:gap-6 pb-10">
             <h4 className="text-[--third] flex flex-wrap md:max-w-2xl Raleway tracking-wider w-full text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] 2xl:text-5xl">
               Explore Our Stunning
               <br />
               Glass Railing Showcase.
             </h4>
           </div>
-          <div className=" md:w-[100%] xl:w-[50%] mb-4">
+          <div className="w-full mb-4">
             <p className="text-justify italic text-[--grey] text-[18px]">
               Explore our exceptional collection of{" "}
               <strong>glass railing systems</strong>, featuring elegant designs

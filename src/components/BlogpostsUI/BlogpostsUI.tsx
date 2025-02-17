@@ -11,6 +11,7 @@ import {
   modernBalcony,
   aluminiumglassrailing,
   handrailBenefits,
+  seamlessRailings,
 } from "../../assets/Images";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
 const blogPosts: BlogPost[] = [
@@ -86,6 +87,15 @@ const blogPosts: BlogPost[] = [
       "Handrails enhance safety, accessibility, and compliance for staircases, ramps, and balconies.",
     imageUrl: handrailBenefits,
     link: "handrail-benefits",
+  },
+  {
+    id: "10",
+    title:
+      "Seamless Glass Railing for Uninterrupted Views: Latest Modern Design",
+    excerpt:
+      "Enjoy uninterrupted views with our seamless glass railing system, blending modern design with safety.",
+    imageUrl: seamlessRailings,
+    link: "seamless-railing",
   },
 ];
 

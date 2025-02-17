@@ -56,6 +56,12 @@ const EnquiryButton: React.FC = () => {
   const [showThankYou, setShowThankYou] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const [errors, setErrors] = useState({
+    email: "",
+    phoneNumber: "",
+    address: "",
+  });
+
   useEffect(() => {
     const openFormTimer = setTimeout(() => {
       setIsOpen(true);
@@ -97,30 +103,49 @@ const EnquiryButton: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simple validation
     const isValidEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(
       formData.email
     );
     const isValidPhoneNumber = /^[0-9]{10}$/.test(formData.phoneNumber);
 
-    if (!isValidEmail || !isValidPhoneNumber) {
-      alert("Please enter a valid email or phone number.");
+    let emailError = "";
+    let phoneError = "";
+    let addressError = "";
+
+    if (!isValidEmail) {
+      emailError = "Please enter a valid email address.";
+    }
+
+    if (!isValidPhoneNumber) {
+      phoneError = "Please enter a valid phone number.";
+    }
+
+    if (!formData.city || !formData.state || !formData.location) {
+      addressError = "Could not fetch address details based on the pin code.";
+    }
+
+    if (emailError || phoneError || addressError) {
+      setErrors({
+        email: emailError,
+        phoneNumber: phoneError,
+        address: addressError,
+      });
+      setIsSubmitting(false);
       return;
     }
 
-    // Check if the address is correctly populated (especially if the pin code is valid)
-    if (!formData.city || !formData.state || !formData.location) {
-      alert("Could not fetch address details based on the pin code.");
-      return;
-    }
+    // Clear errors if validation is successful
+    setErrors({
+      email: "",
+      phoneNumber: "",
+      address: "",
+    });
 
     try {
       const response = await axios.post(`${BASE_URL}/enquiry`, formData, {
         headers: { "Content-Type": "application/json" },
       });
-      // console.log("Form data successfully submitted to MongoDB", response.data);
 
-      // Check if the response contains a success message
       if (
         response.data &&
         (response.data.message === "Dealer inquiry submitted successfully." ||
@@ -138,7 +163,6 @@ const EnquiryButton: React.FC = () => {
           location: "",
         });
       } else {
-        // If the response doesn't indicate success, throw an error
         throw new Error("Unexpected response from server");
       }
     } catch (error) {
@@ -189,22 +213,18 @@ const EnquiryButton: React.FC = () => {
             >
               {/* Close Button */}
               <button
-                className="absolute top-4 right-4 text-gray-600 hover:text-gray-800 z-60"
+                className="absolute top-2 right-2 text-gray-600 hover:text-gray-800 z-60"
                 onClick={handleCloseForm}
                 aria-label="Close Form"
               >
                 <FiX size={28} />
               </button>
 
-              <h2 className="text-3xl font-bold mb-6 text-center text-[#03237b]">
-                Get Special Offer
-              </h2>
-
               {showThankYou ? (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="text-center text-green-600 relative"
+                  className="text-center text-black-600 relative"
                 >
                   <button
                     className="absolute top-0 right-0 text-gray-600 hover:text-gray-800"
@@ -215,7 +235,7 @@ const EnquiryButton: React.FC = () => {
                   </button>
                   <FiMessageSquare size={48} className="mx-auto mb-4" />
                   <p className="text-xl font-semibold">
-                    Thank you for your enquiry!
+                    Thank you, our team will get in touch with you !!
                   </p>
                 </motion.div>
               ) : (
@@ -223,6 +243,9 @@ const EnquiryButton: React.FC = () => {
                   onSubmit={handleSubmit}
                   className="space-y-4 overflow-y-auto max-h-[60vh]  md:max-h-[90vh]"
                 >
+                  <h2 className="flex justify-center items-center  text-blue-800 text-2xl font-bold">
+                    Get Special Offer
+                  </h2>
                   <div className="grid grid-cols-2 lg:grid-cols-2 gap-2">
                     <div>
                       <label
@@ -257,6 +280,11 @@ const EnquiryButton: React.FC = () => {
                         required
                         className="mt-2 block w-full border rounded-md border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 p-3"
                       />
+                      {errors.phoneNumber && (
+                        <p className="text-red-500 text-sm">
+                          {errors.phoneNumber}
+                        </p>
+                      )}
                     </div>
                   </div>
 
@@ -333,64 +361,32 @@ const EnquiryButton: React.FC = () => {
                     </div>
                   )}
 
-                  {/* Email */}
-                  <div className=" grid grid-cols-2 gap-2">
-                    <div>
-                      <label
-                        htmlFor="email"
-                        className="block text-sm font-medium text-gray-600  mt-[20px] md:mt-0"
-                      >
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                        className="mt-2 block w-full border rounded-md border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 p-3"
-                      />
-                    </div>
-
-                    {/* Source */}
-                    <div>
-                      <label
-                        htmlFor="source"
-                        className="block text-sm font-medium text-gray-600"
-                      >
-                        How did you find out about us?
-                      </label>
-                      <select
-                        id="source"
-                        name="source"
-                        value={formData.source}
-                        onChange={handleInputChange}
-                        required
-                        className="mt-2 block w-full border rounded-md border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 p-3"
-                      >
-                        <option value="Website">Website</option>
-                        <option value="Instagram">Instagram</option>
-                        <option value="Facebook">Facebook</option>
-                        <option value="Google">Google</option>
-                        <option value="Walk-in">Walk-in</option>
-                        <option value="Advertisement">Advertisement</option>
-                        <option value="Existing Customer">
-                          Existing Customer
-                        </option>
-                        <option value="Friends">Friends</option>
-                        <option value="Event/Conference">
-                          Event/Conference
-                        </option>
-                        <option value="Other">Other</option>
-                      </select>
-                    </div>
+                  {/* Email Field */}
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-600"
+                    >
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                      className="mt-2 block w-full border rounded-md border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 p-3"
+                    />
+                    {errors.email && (
+                      <p className="text-red-500 text-sm">{errors.email}</p>
+                    )}
                   </div>
 
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="px-6 w-full py-4 text-[--black] font-bold bg-[--secound] text-xl rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-yellow-400 text-white py-3 rounded-l hover:bg-yellow-300 transition duration-300"
                   >
                     {isSubmitting ? "Submitting..." : "Submit"}
                   </button>
