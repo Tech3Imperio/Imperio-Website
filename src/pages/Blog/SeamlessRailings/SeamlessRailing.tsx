@@ -26,8 +26,8 @@ const SeamlessRailing: React.FC = () => {
         img={seamlessRailings}
         // img="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Balcony/ModernBalcony.webp"
         altText="Imperio Aluminium Glass railing system on a balcony with a stunning view"
-        header="Aluminium Glass Railings"
-        subHeader="Elevate your space with Imperio’s Aluminium Glass railings, blending safety, style, and sophistication."
+        header="Seamless Glass Railings"
+        subHeader="Seamless Glass Railing for Uninterrupted Views: Latest Modern Design."
         curve
       />
       <div className=" max-w-7xl mx-auto">
