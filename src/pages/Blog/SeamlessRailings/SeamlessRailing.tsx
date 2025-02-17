@@ -10,13 +10,13 @@ const SeamlessRailing: React.FC = () => {
     <>
       <Metadata
         title={
-          "Transform Your Home with Imperio: Elegant and Safe Aluminium Glass Railings"
+          "Seamless Glass Railing for Uninterrupted Views: Latest Modern Design"
         }
         description={
-          "Elevate your space with Imperio’s Aluminium Glass railings, blending safety, style, and sophistication."
+          "Enjoy uninterrupted views with our seamless glass railing system, blending modern design with safety."
         }
         keywords={
-          "aluminium glass railings, Imperio aluminium railings, modern glass railings, balcony glass railing, staircase glass railings, aluminium framed glass railings, frameless glass railings, contemporary glass railings, durable glass railings, corrosion-resistant railings, glass railings for homes, glass railings for businesses, commercial glass railings, residential glass railings, sleek glass railing designs, safety glass railings, stylish railings for decks, glass railings for patios, high-quality aluminium railings, premium railing systems, custom glass railing solutions, elegant glass railings, luxury railing design, best glass railings, aluminium balcony railings, glass railing installation, robust glass railings, secure railing systems"
+          "seamless glass railings, Imperio seamless railings, modern seamless glass railings, balcony seamless glass railing, staircase seamless glass railings, frameless seamless glass railings, contemporary seamless glass railings, durable seamless glass railings, weather-resistant seamless railings, seamless glass railings for homes, seamless glass railings for businesses, commercial seamless glass railings, residential seamless glass railings, sleek seamless glass railing designs, unobstructed view railings, stylish seamless railings for decks, seamless glass railings for patios, high-quality seamless glass railings, premium seamless railing systems, custom seamless glass railing solutions, elegant seamless glass railings, luxury seamless railing design, best seamless glass railings, seamless glass balcony railings, seamless glass railing installation, robust seamless glass railings, secure seamless railing systems"
         }
         ogImage="https://i.postimg.cc/DwKCBkQF/1.png"
         ogUrl={"https://www.imperiorailing.com/blog/seamless-railing"}
