@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { CTAButton } from "../Button";
 import { MdAddCall } from "react-icons/md";
 import EnquiryButton from "../EnquiryButton/EnquiryButton";
-import { seamless1, seamless2 } from "../../assets/Images";
+import { aesthetic1, aesthetic2 } from "../../assets/Images";
 const AestheticRailing: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>("");
 
@@ -95,7 +95,7 @@ const AestheticRailing: React.FC = () => {
           </h2>
           <div className="flex flex-col md:flex-row gap-6 items-center">
             <img
-              src={seamless1}
+              src={aesthetic1}
               alt="Aesthetic Railing Design in Goa"
               width={500}
               height={300}
@@ -265,7 +265,7 @@ const AestheticRailing: React.FC = () => {
               </ul>
             </div>
             <img
-              src={seamless2}
+              src={aesthetic2}
               alt="Aesthetic Railings"
               className="rounded-lg shadow-lg"
               width={500}

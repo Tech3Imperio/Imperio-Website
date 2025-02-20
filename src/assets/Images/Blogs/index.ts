@@ -9,6 +9,8 @@ import seamlessRailings from "./seamlessRailings.webp";
 import seamless1 from "./seamless1.webp";
 import seamless2 from "./seamless2.webp";
 import aesthetic from "./aesthetic.webp";
+import aesthetic1 from "./aesthetic1.webp";
+import aesthetic2 from "./aesthetic2.webp";
 export {
   stylishGlass,
   aluminiumglassrailing,
@@ -21,4 +23,6 @@ export {
   seamless1,
   seamless2,
   aesthetic,
+  aesthetic1,
+  aesthetic2,
 };
