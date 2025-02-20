@@ -12,6 +12,7 @@ import {
   aluminiumglassrailing,
   handrailBenefits,
   seamlessRailings,
+  aesthetic,
 } from "../../assets/Images";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
 const blogPosts: BlogPost[] = [
@@ -96,6 +97,15 @@ const blogPosts: BlogPost[] = [
       "Enjoy uninterrupted views with our seamless glass railing system, blending modern design with safety.",
     imageUrl: seamlessRailings,
     link: "seamless-railing",
+  },
+  {
+    id: "11",
+    title:
+      "Stylish modern railing on a balcony in Goa with a beautiful ocean view",
+    excerpt:
+      "Discover modern railings in our latest Goa project, blending safety with stunning ocean views.",
+    imageUrl: aesthetic,
+    link: "aesthetic-railing",
   },
 ];
 

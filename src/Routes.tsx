@@ -47,6 +47,7 @@ import AluminiumGlassRailing from "./pages/Blog/AluminiumGlassRailing/AluminiumG
 import HandrailBenefit from "./pages/Blog/HandrailBenefit/HandrailBenefit";
 import Recommendation from "./pages/Recommendation/Recommendation";
 import SeamlessRailings from "./pages/Blog/SeamlessRailings/SeamlessRailing";
+import AestheticRailings from "./pages/Blog/AestheticRailing/AestheticRailing";
 
 // import ForgotPassword from "./pages/DealerOnlineStore/ForgotPassword/ForgotPassword";
 
@@ -85,6 +86,10 @@ export const routes = createBrowserRouter([
       {
         path: "blog/seamless-railing",
         element: <SeamlessRailings />,
+      },
+      {
+        path: "blog/aesthetic-railing",
+        element: <AestheticRailings />,
       },
       {
         path: "blog/:blogId",

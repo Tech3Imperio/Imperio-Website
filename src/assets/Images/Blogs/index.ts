@@ -8,6 +8,7 @@ import handrailBenefits from "./handrailBenefits.webp";
 import seamlessRailings from "./seamlessRailings.webp";
 import seamless1 from "./seamless1.webp";
 import seamless2 from "./seamless2.webp";
+import aesthetic from "./aesthetic.webp";
 export {
   stylishGlass,
   aluminiumglassrailing,
@@ -19,4 +20,5 @@ export {
   seamlessRailings,
   seamless1,
   seamless2,
+  aesthetic,
 };
