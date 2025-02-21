@@ -38,22 +38,22 @@ export default function Gallery() {
         the most important thing: your vision.
       </p>
 
-      <div className="grid grid-cols-4 gap-4 max-w-[648px] mx-auto mt-6">
-        {imageList.slice(0, 11).map((src, index) => (
+      <div className="grid grid-cols-2 gap-6 max-w-[900px] mx-auto mt-6">
+        {imageList.slice(0, 3).map((src, index) => (
           <motion.img
             key={index}
             src={src}
             alt="Gallery Item"
-            className="cursor-pointer rounded-md shadow-md hover:shadow-lg transition w-[150px]"
-            style={{ aspectRatio: 1 / 1 }}
+            className="cursor-pointer rounded-md shadow-md hover:shadow-lg transition w-full h-full object-cover"
+            style={{ aspectRatio: 16 / 9 }}
             whileHover={{ scale: 1.05 }}
             onClick={() => setSelectedImage(index)}
           />
         ))}
         <div
           className="flex items-center justify-center cursor-pointer bg-gray-300 rounded-md shadow-md hover:shadow-lg transition"
-          style={{ aspectRatio: 1 / 1 }}
-          onClick={() => setSelectedImage(15)}
+          style={{ aspectRatio: 16 / 9 }}
+          onClick={() => setSelectedImage(3)}
         >
           <Plus size={40} className="text-gray-600" />
         </div>
