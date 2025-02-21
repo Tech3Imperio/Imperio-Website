@@ -1,12 +1,11 @@
 RewriteEngine On
 RewriteBase /
 
-# If the request is not for a file
-RewriteCond %{REQUEST_FILENAME} !-f
-# If the request is not for a directory
-RewriteCond %{REQUEST_FILENAME} !-d
-# Redirect everything else to index.html
-RewriteRule ^(.*)$ /index.html [L]
-RewriteEngine On
+# Redirect www to non-www (301 Permanent Redirect)
 RewriteCond %{HTTP_HOST} ^www\.imperiorailing\.com [NC]
 RewriteRule ^(.*)$ https://imperiorailing.com/$1 [L,R=301]
+
+# Handle React Router (SPA) - Redirect all non-file/non-directory requests to index.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]
