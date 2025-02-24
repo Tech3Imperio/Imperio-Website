@@ -212,14 +212,14 @@ export default function Career() {
       type: "Full-Time",
       applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     },
-    // {
-    //   title: "Digital Marketing Executive",
-    //   description:
-    //     "We are looking for a skilled individual with expertise in Digital Marketing, SEO, Social Media (Facebook & Instagram), and Email Marketing.",
-    //   location: "Mumbai",
-    //   type: "Full-Time",
-    //   applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
-    // },
+    {
+      title: "Digital Marketing Executive",
+      description:
+        "We are looking for a skilled individual with expertise in Digital Marketing, SEO, Social Media (Facebook & Instagram), and Email Marketing.",
+      location: "Mumbai",
+      type: "Full-Time",
+      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    },
     {
       title: "Aluminium Window Sales Executive",
       description:

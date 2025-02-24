@@ -9,14 +9,12 @@ const AestheticRailings: React.FC = () => {
   return (
     <>
       <Metadata
-        title={
-          "Stylish modern railing on a balcony in Goa with a beautiful ocean view"
-        }
+        title={"Modern Balcony Railings with Stunning Sea View | Imperio"}
         description={
-          "Discover modern railings in our latest Goa project, blending safety with stunning ocean views."
+          "Explore Imperio's sleek and durable balcony railings, designed for safety and unobstructed ocean views. Perfect for homes and commercial spaces."
         }
         keywords={
-          "aesthetic railings, Imperio aesthetic railings, modern aesthetic railings, balcony aesthetic railings, staircase aesthetic railings, frameless aesthetic railings, contemporary aesthetic railings, durable aesthetic railings, weather-resistant aesthetic railings, aesthetic railings for homes, aesthetic railings for businesses, commercial aesthetic railings, residential aesthetic railings, sleek aesthetic railing designs, unobstructed view railings, stylish aesthetic railings for decks, aesthetic railings for patios, high-quality aesthetic railings, premium aesthetic railing systems, custom aesthetic railing solutions, elegant aesthetic railings, luxury aesthetic railing design, best aesthetic railings, aesthetic balcony railings, aesthetic railing installation, robust aesthetic railings, secure aesthetic railing systems"
+          "modern balcony railings, frameless glass railings, stylish railings, durable outdoor railings, weather-resistant railings, ocean view railings, contemporary railings, aesthetic balcony railings, luxury railing design, premium glass railings, high-quality deck railings, elegant staircase railings, sleek patio railings, best balcony railings, secure railing systems, custom railing solutions, frameless railing installation, residential railings, commercial railings, minimalist railings, unobstructed view railings"
         }
         ogImage="https://i.postimg.cc/pLrtrZfd/1720001003331.jpg"
         ogUrl={"https://www.imperiorailing.com/blog/aesthetic-railing"}

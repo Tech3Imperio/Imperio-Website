@@ -94,7 +94,7 @@ export default function JobDetailsPage() {
         ],
         responsibilities: [
           "Develop and implement digital marketing strategies to increase brand awareness and drive traffic to our website.",
-          " Manage social media platforms and create engaging content to grow our following and engage with our audience.",
+          "Manage social media platforms and create engaging content to grow our following and engage with our audience.",
           "Optimize website content and implement SEO best practices to improve search engine rankings.",
           "Plan and execute Facebook and Instagram marketing campaigns to reach our target audience and drive conversions.",
           "Create and send targeted email campaigns to nurture leads and promote our products and services.",
