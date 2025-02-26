@@ -704,6 +704,39 @@ export default function JobDetailsPage() {
         ],
         applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
       },
+      {
+        title: "Data Analytics Intern",
+        subtitle:
+          "As a Data Analytics intern at Imperio Railing Systems, you will have the opportunity to apply your knowledge of Data Analytics and MS-Excel in a real-world business setting. Join our passionate team and gain hands-on experience in the world of data-driven decision making!",
+        about:
+          "As a Data Analytics intern at Imperio Railing Systems, you will have the opportunity to apply your knowledge of Data Analytics and MS-Excel in a real-world business setting. Join our passionate team and gain hands-on experience in the world of data-driven decision making!",
+        location: "Mumbai",
+        type: "Internship",
+        others: [
+          {
+            Duration: "6 months",
+            Expriance: "Fresher",
+            join: "Immediately",
+          },
+        ],
+        responsibilities: [
+          "Analyze and interpret data to provide valuable insights for business improvement",
+          "Create visually appealing dashboards and reports using MS-Excel for easy data visualization",
+          "Collaborate with cross-functional teams to identify key metrics and KPIs",
+          "Assist in data cleaning and preparation for analysis",
+          "Conduct ad-hoc analysis to support strategic decision-making process",
+          "Present findings and recommendations to stakeholders in a clear and concise manner",
+          "Continuously learn and improve data analytics skills through mentorship and training opportunities",
+        ],
+        skills: ["Data Analytics", "MS-Excel"],
+        whocanapply: [
+          "Available for full time (in-office) internship",
+          "Are from or open to relocate to Mumbai and neighboring cities",
+          "Available for the duration of 6 months",
+          "Relevant skills and interests",
+        ],
+        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
+      },
     ];
 
     const foundJob = jobs.find(

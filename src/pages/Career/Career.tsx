@@ -332,6 +332,14 @@ export default function Career() {
       type: "Internship",
       applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9", // Apply link
     },
+    {
+      title: "Data Analytics Intern",
+      description:
+        "As a Data Analytics intern at Imperio Railing Systems, you will have the opportunity to apply your knowledge of Data Analytics and MS-Excel in a real-world business setting.",
+      location: "Mumbai",
+      type: "Internship",
+      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    },
   ]);
 
   return (
