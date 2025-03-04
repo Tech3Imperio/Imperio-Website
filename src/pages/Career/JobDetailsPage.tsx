@@ -737,6 +737,355 @@ export default function JobDetailsPage() {
         ],
         applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
       },
+      {
+        title: "Sales Coordinator (Only female candidates)",
+        subtitle:
+          "We are looking for a motivated and detail-oriented Sales Coordinator with an architectural or engineering background to support our sales team and ensure smooth and efficient operations. The ideal candidate will have a strong understanding of technical products and solutions, enabling them to assist in the coordination of sales activities, manage customer orders, and offer valuable insights into product applications and specifications. This position is key in ensuring the sales team can effectively serve clients, including architects, engineers, and contractors.!",
+        about:
+          "We are looking for a motivated and detail-oriented Sales Coordinator with an architectural or engineering background to support our sales team and ensure smooth and efficient operations. The ideal candidate will have a strong understanding of technical products and solutions, enabling them to assist in the coordination of sales activities, manage customer orders, and offer valuable insights into product applications and specifications. This position is key in ensuring the sales team can effectively serve clients, including architects, engineers, and contractors.",
+        location: "Mumbai",
+        type: "Full-Time",
+        others: [
+          {
+            Duration: "NA",
+            Expriance: "1 year",
+            join: "Immediately",
+          },
+        ],
+        responsibilities: [
+          "Assist the sales team with day-to-day operations and provide administrative support, especially regarding technical products and solutions.",
+          "Coordinate communication between sales, engineering, and other departments, ensuring technical details align with client needs.",
+          "Maintain and update customer databases, ensuring accuracy and inclusion of technical details.",
+          "Generate sales reports and analyze performance data.",
+          "Organize and schedule appointments, meetings, and sales presentations, focusing on product and technical applications.",
+          "Handle customer inquiries related to product specifications, technical features, and solutions.",
+          "Monitor and follow up on open sales orders, ensuring timely closure.",
+          "Assist with organizing promotional campaigns and events tailored to the technical market.",
+        ],
+        skills: [
+          "Excellent Communication Skills",
+
+          "Strong Organization Skills",
+
+          "Problem-solving Abilities",
+
+          "Multitasking Efficiency",
+
+          "Customer Relationship Management",
+
+          "Client-focused Approach",
+        ],
+        whocanapply: [
+          "Only Female Candidates ",
+
+          "Bachelor’s degree in Architecture, Engineering, or a related field.",
+
+          "Proven experience in sales coordination, administrative support, or customer-facing roles (1 years preferred).",
+
+          "Strong understanding of technical products, building materials, or engineering solutions.",
+
+          "Knowledge of the architecture, engineering, or construction industry is a plus.",
+        ],
+        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
+      },
+      {
+        title: "Sales Executive (Only male candidates)",
+        subtitle:
+          "We are seeking a highly motivated and goal-oriented Sales Executive with a strong background in architecture, building, or construction. The ideal candidate will be responsible for driving sales, building relationships with potential clients, and contributing to the growth of the company. As a Sales Executive, you will actively engage in prospecting, negotiating, and closing sales deals. A strong focus on customer service, product knowledge, and sales performance is essential.",
+        about:
+          "We are seeking a highly motivated and goal-oriented Sales Executive with a strong background in architecture, building, or construction. The ideal candidate will be responsible for driving sales, building relationships with potential clients, and contributing to the growth of the company. As a Sales Executive, you will actively engage in prospecting, negotiating, and closing sales deals. A strong focus on customer service, product knowledge, and sales performance is essential.",
+        location: "Mumbai",
+        type: "Full-Time",
+        others: [
+          {
+            Duration: "NA",
+            Expriance: "3 year",
+            join: "Immediately",
+          },
+        ],
+        responsibilities: [
+          "Prospect and Generate Leads: Identify new business opportunities and create a pipeline of potential clients through research, networking, and outreach.",
+
+          "Client Relationship Management: Build and maintain strong relationships with existing and potential clients to ensure continued business growth.",
+
+          "Sales Presentations: Present company products and services to potential clients, addressing their needs and demonstrating how our offerings solve their problems.",
+
+          "Negotiation and Closing: Effectively negotiate terms and close sales deals to achieve monthly and quarterly sales targets.",
+
+          "Market Research: Stay informed about industry trends, competitor activities, and market conditions to effectively position the company’s offerings.",
+
+          "Collaboration: Work closely with the sales team and other departments to ensure smooth project execution and customer satisfaction.",
+
+          "Sales Reporting: Keep track of sales progress, prepare reports, and update the sales manager on progress toward goals.",
+
+          "Customer Support: Assist clients with product inquiries, after-sales support, and resolve any issues that may arise during the sales process.",
+
+          "Ability to work independently and as part of a team to meet targets.",
+        ],
+        skills: [
+          "Client Relationship Management",
+          "Negotiation Skills",
+          "Market Research",
+          "Communication Proficiency",
+          "Strategic Thinking",
+          "Time Management",
+          "Goal Orientation",
+          "Team Collaboration",
+          "Product Knowledge",
+          "Presentation Skills",
+          "Customer-focused Approach",
+        ],
+        whocanapply: [
+          "Only Male Candidates ",
+          "Bachelor’s degree in Architecture, Building Construction, or a related field.",
+          "Highly organized with strong time-management skills.",
+          "Minimum of 3 years of experience in sales within the architectural, building, or construction industry.",
+          "Knowledge of industry trends and competitors is a plus.",
+        ],
+        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
+      },
+      {
+        title: "Sales Executive (Only male candidates)",
+        subtitle:
+          "We are seeking a highly motivated and goal-oriented Sales Executive with a strong background in architecture, building, or construction. The ideal candidate will be responsible for driving sales, building relationships with potential clients, and contributing to the growth of the company. As a Sales Executive, you will actively engage in prospecting, negotiating, and closing sales deals. A strong focus on customer service, product knowledge, and sales performance is essential.",
+        about:
+          "We are seeking a highly motivated and goal-oriented Sales Executive with a strong background in architecture, building, or construction. The ideal candidate will be responsible for driving sales, building relationships with potential clients, and contributing to the growth of the company. As a Sales Executive, you will actively engage in prospecting, negotiating, and closing sales deals. A strong focus on customer service, product knowledge, and sales performance is essential.",
+        location: "Mumbai",
+        type: "Full-Time",
+        others: [
+          {
+            Duration: "NA",
+            Expriance: "3 year",
+            join: "Immediately",
+          },
+        ],
+        responsibilities: [
+          "Prospect and Generate Leads: Identify new business opportunities and create a pipeline of potential clients through research, networking, and outreach.",
+
+          "Client Relationship Management: Build and maintain strong relationships with existing and potential clients to ensure continued business growth.",
+
+          "Sales Presentations: Present company products and services to potential clients, addressing their needs and demonstrating how our offerings solve their problems.",
+
+          "Negotiation and Closing: Effectively negotiate terms and close sales deals to achieve monthly and quarterly sales targets.",
+
+          "Market Research: Stay informed about industry trends, competitor activities, and market conditions to effectively position the company’s offerings.",
+
+          "Collaboration: Work closely with the sales team and other departments to ensure smooth project execution and customer satisfaction.",
+
+          "Sales Reporting: Keep track of sales progress, prepare reports, and update the sales manager on progress toward goals.",
+
+          "Customer Support: Assist clients with product inquiries, after-sales support, and resolve any issues that may arise during the sales process.",
+
+          "Ability to work independently and as part of a team to meet targets.",
+        ],
+        skills: [
+          "Client Relationship Management",
+          "Negotiation Skills",
+          "Market Research",
+          "Communication Proficiency",
+          "Strategic Thinking",
+          "Time Management",
+          "Goal Orientation",
+          "Team Collaboration",
+          "Product Knowledge",
+          "Presentation Skills",
+          "Customer-focused Approach",
+        ],
+        whocanapply: [
+          "Only Male Candidates ",
+          "Bachelor’s degree in Architecture, Building Construction, or a related field.",
+          "Highly organized with strong time-management skills.",
+          "Minimum of 3 years of experience in sales within the architectural, building, or construction industry.",
+          "Knowledge of industry trends and competitors is a plus.",
+        ],
+        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
+      },
+      {
+        title: "Marketing Manager",
+        subtitle:
+          "If you live and breathe marketing, we need to talk. We’re looking for a flexible and versatile marketer who will be responsible for the growth of our inbound sales channels. Marketing manager responsibilities include tracking and analyzing the performance of advertising campaigns, managing the marketing budget and ensuring that all marketing material is in line with our brand identity. To be successful in this role, you should have hands-on experience with web analytics tools and be able to turn creative ideas into effective advertising projects.",
+        about:
+          "If you live and breathe marketing, we need to talk. We’re looking for a flexible and versatile marketer who will be responsible for the growth of our inbound sales channels. Marketing manager responsibilities include tracking and analyzing the performance of advertising campaigns, managing the marketing budget and ensuring that all marketing material is in line with our brand identity. To be successful in this role, you should have hands-on experience with web analytics tools and be able to turn creative ideas into effective advertising projects.",
+        location: "Mumbai",
+        type: "Full-Time",
+        others: [
+          {
+            Duration: "NA",
+            Expriance: "2+ year",
+            join: "Immediately",
+          },
+        ],
+        responsibilities: [
+          "Creating marketing strategies to achieve organisational goals",
+          "Implementing marketing campaigns from ideation to execution",
+          "Managing the marketing budget",
+          "Coordinating marketing efforts with cross-functional teams like sales and product development",
+          "Analysing marketing data and metrics to refine marketing strategies",
+          "Staying updated with the latest marketing trends",
+        ],
+        skills: [
+          "Digital Marketing Strategy",
+          "Performance Marketing & PPC Management",
+          "Market Research & Competitive Analysis",
+          "Campaign Planning & Execution",
+          "Brand Management & Positioning",
+          "CRM & Marketing Automation Tools",
+          "Team Leadership & Cross-Functional Collaboration",
+        ],
+        whocanapply: [
+          "Minimum 3-5 years of experience in digital marketing, performance marketing, or brand management",
+          "Strong expertise in PPC, SEO, CRM, and marketing automation tools",
+        ],
+        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
+      },
+      {
+        title: "MIS Executive",
+        subtitle:
+          "We are seeking an innovative, well-organized, and automation-driven MIS Executive to join our growing company. The ideal candidate will be responsible for designing, developing, and optimizing computer systems while ensuring timely execution and alignment with business objectives. This role requires strong expertise in automation, data management, and process optimization to drive efficiency and digital transformation.",
+        about:
+          "We are seeking an innovative, well-organized, and automation-driven MIS Executive to join our growing company. The ideal candidate will be responsible for designing, developing, and optimizing computer systems while ensuring timely execution and alignment with business objectives. This role requires strong expertise in automation, data management, and process optimization to drive efficiency and digital transformation.",
+        location: "Mumbai",
+        type: "Full-Time",
+        others: [
+          {
+            Duration: "NA",
+            Expriance: "2+ year",
+            join: "Immediately",
+          },
+        ],
+        responsibilities: [
+          "Designing, monitoring, analyzing, and troubleshooting IT systems.",
+          "Interpreting briefs and developing IT systems that meet all specifications and cost requirements.",
+          "Assisting with training and onboarding processes.",
+          "Maintaining, managing, and updating software.",
+          "Supervising digital security and ensuring all anti-viruses and firewalls are regularly updated.",
+          "Supervising the development and maintenance of websites and ensuring the protection of users data.",
+          "Analyzing existing operations, protocols, and processes, and making plans for improvement.",
+          "Conducting research, attending workshops, and networking with other professionals in the industry.",
+        ],
+        skills: [
+          "Advanced Excel & Automation",
+          "SQL & Database Management",
+          "Business Intelligence & Reporting",
+          "Process Automation",
+          "ERP & CRM System Management",
+          "Data Security",
+          "Problem-Solving & Analytical Thinking",
+          "Attention to Detail & Data Accuracy",
+          "Process Optimization & Efficiency Improvement",
+          "Time Management & Cross-Functional Collaboration",
+        ],
+        whocanapply: [
+          "Experience managing a team.",
+          "Practical experience with a variety of software applications.",
+          "Attention to detail and excellent diagnostic skills.",
+          "Effective communication and interpersonal skills.",
+          "Ability to motivate and inspire staff.",
+          "Strong leadership abilities and good time management skills.",
+          "Excellent problem-solving and management skills.",
+          "Ability to train staff junior staff.",
+        ],
+        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
+      },
+      {
+        title: "Purcase Procurement Executive (Only female candidates)",
+        subtitle:
+          "We are seeking a detail-oriented and efficient Purchase and Procurement Executive to oversee the procurement process for materials, supplies, and services required by the company. The ideal candidate will manage supplier relationships, negotiate contracts, and ensure the timely and cost-effective acquisition of goods and services. This role requires strong communication skills, negotiation abilities, and the ability to track and manage purchasing activities to support operational efficiency.",
+        about:
+          "We are seeking a detail-oriented and efficient Purchase and Procurement Executive to oversee the procurement process for materials, supplies, and services required by the company. The ideal candidate will manage supplier relationships, negotiate contracts, and ensure the timely and cost-effective acquisition of goods and services. This role requires strong communication skills, negotiation abilities, and the ability to track and manage purchasing activities to support operational efficiency.",
+        location: "Mumbai",
+        type: "Full-Time",
+        others: [
+          {
+            Duration: "NA",
+            Expriance: "2+ year",
+            join: "Immediately",
+          },
+        ],
+        responsibilities: [
+          "Vendor Management: Identify, evaluate, and manage relationships with suppliers to ensure the best value, quality, and delivery times for products and services.",
+          "Purchasing: Handle all aspects of purchasing, including ordering, receiving, and inspecting goods to ensure compliance with specifications and quality standards.",
+          "Negotiation: Negotiate contracts, pricing, and terms with suppliers to ensure favorable terms and cost efficiency for the company.",
+          "Inventory Management: Maintain accurate inventory records, track product levels, and ensure that stock is replenished timely without overstocking.",
+          "Market Research: Stay up to date with market trends and supplier offerings to make informed purchasing decisions.",
+          "Purchase Orders: Create and process purchase orders, track order progress, and ensure timely delivery of materials and services.",
+          "Budget Management: Ensure that purchases are made within budget constraints and propose alternatives when needed.",
+          "Reporting: Maintain detailed records of purchases, supplier performance, and cost analysis to report to senior management.",
+          "Problem Resolution: Address and resolve issues related to procurement delays, quality concerns, and supplier disputes.",
+        ],
+        skills: [
+          "Vendor Management",
+          "Negotiation Skills",
+          "Purchasing Strategy",
+          "Inventory Management",
+          "Supply Chain Knowledge",
+          "Attention to Detail",
+          "Communication Skills",
+          "ERP Systems Proficiency",
+          "Time Management",
+        ],
+        whocanapply: [
+          "Female Candidates",
+          "Candidates with an engineering background are strongly preferred for this role.",
+          "Applicants with a minimum of 2 years of experience in procurement, purchasing, or supply chain management.",
+          "Those who can manage budgets, track expenditures, and ensure purchases are within financial constraints.",
+          "Candidates who have a proven track record in vendor management, negotiation, and sourcing.",
+        ],
+        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
+      },
+      {
+        title: "Performance marketing (Female Candidate Preffered)",
+        subtitle:
+          "We are seeking a results-driven Performance Marketing Specialist to join our marketing team. The ideal candidate will have a proven track record in running successful online marketing campaigns, creating attention-grabbing content, and driving measurable results across various digital platforms. You will play a crucial role in managing and optimizing campaigns, creating engaging content, and ensuring a high return on investment (ROI) for the company.",
+        about:
+          "We are seeking a results-driven Performance Marketing Specialist to join our marketing team. The ideal candidate will have a proven track record in running successful online marketing campaigns, creating attention-grabbing content, and driving measurable results across various digital platforms. You will play a crucial role in managing and optimizing campaigns, creating engaging content, and ensuring a high return on investment (ROI) for the company.",
+        location: "Mumbai",
+        type: "Full-Time",
+        others: [
+          {
+            Duration: "NA",
+            Expriance: "1+ year",
+            join: "Immediately",
+          },
+        ],
+        responsibilities: [
+          "Campaign Strategy & Execution: Plan, implement, and optimize performance marketing campaigns across multiple digital channels, including Google Ads, Facebook, Instagram, LinkedIn, and other performance-based platforms.",
+          "Content Creation: Develop and create compelling, attention-grabbing content for ads, landing pages, and social media campaigns that resonate with target audiences and drive conversions.",
+          "Budget Management: Allocate and manage advertising budgets effectively to achieve maximum ROI.",
+          "Performance Analysis: Continuously monitor, analyze, and report on campaign performance to identify opportunities for optimization and improvement.",
+          "A/B Testing: Conduct A/B tests on ad creatives, landing pages, and audience targeting to improve campaign results.",
+          "Lead Generation: Develop strategies to increase lead generation, conversion rates, and overall sales funnel performance.",
+          "Collaboration: Work closely with the creative and content teams to ensure campaigns align with brand goals and messaging.",
+          "Market Research: Stay up to date with industry trends, competitor activities, and new marketing opportunities to enhance campaign performance.",
+          "Reporting & Insights: Provide regular reports and insights to stakeholders on campaign performance, trends, and actionable recommendations.",
+          "Campaign Optimization: Continuously optimize campaigns based on data-driven insights and performance metrics.",
+        ],
+        skills: [
+          "Content Creation",
+          "Campaign Management",
+          "Budget Allocation",
+          "SEO Knowledge",
+          "PPC Management",
+          "A/B Testing",
+          "Conversion Optimization",
+          "Lead Generation",
+          "Social Media Strategy",
+          "Google Ads Expertise",
+          "Creative Copywriting",
+          "Market Research",
+          "Audience Targeting",
+        ],
+        whocanapply: [
+          "Female candidates are preferred",
+
+          "Candidates with a strong background in performance marketing or digital marketing.",
+
+          "Candidates with at least 1 year of experience in the digital marketing industry or similar roles",
+
+          "Candidates who can demonstrate the ability to manage multiple projects, meet deadlines, and deliver results.",
+        ],
+        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
+      },
     ];
 
     const foundJob = jobs.find(

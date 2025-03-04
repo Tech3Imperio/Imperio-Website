@@ -252,6 +252,54 @@ export default function Career() {
       type: "Full-Time",
       applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     },
+    {
+      title: "Sales Coordinator (Only female candidates)",
+      description:
+        "We are looking for a motivated and detail-oriented Sales Coordinator with an architectural or engineering background to support our sales team and ensure smooth and efficient operations. ",
+      location: "Mumbai",
+      type: "Full-Time",
+      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    },
+    {
+      title: "Sales Executive (Only male candidates)",
+      description:
+        "We are seeking a highly motivated and goal-oriented Sales Executive with a strong background in architecture, building, or construction. ",
+      location: "Mumbai",
+      type: "Full-Time",
+      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    },
+    {
+      title: "Marketing Manager",
+      description:
+        "We’re looking for a flexible and versatile marketer who will be responsible for the growth of our inbound sales channels.",
+      location: "Mumbai",
+      type: "Full-Time",
+      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    },
+    {
+      title: "MIS Executive",
+      description:
+        "We are seeking an innovative, well-organized, and automation-driven MIS Executive to join our growing company.",
+      location: "Mumbai",
+      type: "Full-Time",
+      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    },
+    {
+      title: "Purcase Procurement Executive (Only female candidates)",
+      description:
+        "We are seeking a detail-oriented and efficient Purchase and Procurement Executive to oversee the procurement process for materials, supplies, and services required by the company.",
+      location: "Mumbai",
+      type: "Full-Time",
+      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    },
+    {
+      title: "Performance marketing (Female Candidate Preffered)",
+      description:
+        "We are seeking a results-driven Performance Marketing Specialist to join our marketing team. The ideal candidate will have a proven track record in running successful online marketing campaigns, creating attention-grabbing content, and driving measurable results across various digital platforms.",
+      location: "Mumbai",
+      type: "Full-Time",
+      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    },
     // {
     //   title: "Full Stack Developer",
     //   description:
