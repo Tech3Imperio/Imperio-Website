@@ -1034,7 +1034,7 @@ export default function JobDetailsPage() {
         applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
       },
       {
-        title: "Performance marketing (Female Candidate Preffered)",
+        title: "Performance marketing",
         subtitle:
           "We are seeking a results-driven Performance Marketing Specialist to join our marketing team. The ideal candidate will have a proven track record in running successful online marketing campaigns, creating attention-grabbing content, and driving measurable results across various digital platforms. You will play a crucial role in managing and optimizing campaigns, creating engaging content, and ensuring a high return on investment (ROI) for the company.",
         about:
