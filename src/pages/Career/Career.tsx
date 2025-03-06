@@ -429,17 +429,20 @@ export default function Career() {
                   key={index}
                   className="bg-gray-100 p-6 rounded-lg shadow-md relative hover:shadow-lg transition-shadow"
                 >
-                  <h3 className="text-xl font-semibold mb-2 text-blue-900">
-                    {job.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4">{job.description}</p>
-                  <div className="flex justify-between items-center mb-4">
-                    <span className="text-sm font-medium text-[#292929]">
-                      {job.location}
-                    </span>
-                    <span className="text-sm font-bold text-[#292929] uppercase">
+                  <div className="w-full flex justify-between">
+                    <h3 className="text-xl font-semibold mb-2 text-blue-900">
+                      {job.title}
+                    </h3>
+                    <span className="text-sm font-bold text-[#292929] uppercase w-max">
                       {job.type}
                     </span>
+                  </div>
+
+                  <p className="text-gray-600 mb-4">{job.description}</p>
+                  <div className="flex justify-between items-center mb-4">
+                    {/* <span className="text-sm font-medium text-[#292929]">
+                      {job.location}
+                    </span> */}
                   </div>
                   <div className="flex justify-end items-center mt-4">
                     {/* Link to apply directly */}
