@@ -8,6 +8,7 @@ import {
   jamsedhpurImg,
   goaImg,
 } from "../../assets/Images";
+import { penthouse, luxury } from "../../assets/Images/NewProdPage";
 import Metadata from "../../components/Metatag/Metatag";
 import { Hero } from "../../components";
 import { useMemo } from "react";
@@ -76,6 +77,24 @@ const projects: Project[] = [
       "In the heart of Mumbai, this Private Residence showcases minimalist glass railing that align with the building clean architectural lines. These railings provide open views across the workspaces, enhancing the modern design while supporting collaborative work culture. Engineered for strength and low maintenance, the glass system reinforces safety without compromising style, making it a perfect fit for Mumbai’s dynamic corporate environment. Featuring advanced glass railing solutions like PVB glass and modern glass handrails, this project exemplifies the future of office building design.",
     imageUrl: appartmentImg,
     completionDate: "30/10/2022",
+  },
+  {
+    id: 7,
+    title: "Penthouse",
+    location: "Belgaon",
+    description:
+      "This premium glass railing system adds a sleek and sophisticated touch to a contemporary home in Belgaum. Designed for balconies, terraces, and staircases, the railing seamlessly blends safety with modern aesthetics. The combination of aluminum framing and clear toughened glass ensures durability while maintaining a transparent, open feel. The system not only enhances the property's architectural elegance but also provides wind and weather resistance, making it a low-maintenance and high-performance solution for luxury homes. This installation maximizes safety without compromising on style, making it a top choice for premium residential projects.",
+    imageUrl: penthouse,
+    completionDate: "19/08/2016",
+  },
+  {
+    id: 8,
+    title: "Luxury Hotel",
+    location: "Belgaon",
+    description:
+      "This stunning frameless glass railing installation enhances the aesthetics and safety of a rooftop space in Belgaon. The minimalist design ensures an unobstructed panoramic view, making it perfect for outdoor lounges, terraces, and garden areas. Built with toughened glass panels and a sturdy aluminum base, this railing provides both durability and elegance. Its weather-resistant properties make it ideal for open areas, ensuring long-lasting performance with minimal maintenance. Integrated lighting options can further enhance the ambiance, making it a premium choice for modern architectural designs.",
+    imageUrl: luxury,
+    completionDate: "27/08/2015",
   },
 ];
 

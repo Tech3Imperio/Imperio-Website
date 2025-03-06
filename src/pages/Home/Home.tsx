@@ -71,13 +71,16 @@ export const Home: React.FC = () => {
         <title>Modern Glass Railing & Balcony Glass Railing | Imperio</title>
         <meta
           name="description"
-          content="Explore premium balcony glass railing and aluminium railing, balcony glass railing designs, and more in Mumbai, Maharashtra, and across India. Durable and stylish glass railing"
+          content="Explore premium balcony glass railing and aluminium railing, balcony glass railing designs, and more in Mumbai, Maharashtra, and across India."
         />
         <meta
           name="keywords"
           content="glass railing in India, modern balcony glass railing, staircase glass railing in Mumbai, balcony glass railing design, glass railing in mumbai, modern glass handrails, premium toughened glass, glass railing in India, stylish balcony railings, aluminium glass railing manufacturer in mumbai"
         />
-        <meta name="robots" content="index, follow" />
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.imperiorailing.com/" />
         <meta
@@ -107,7 +110,7 @@ export const Home: React.FC = () => {
               <br />& Stylish Balcony Designs
             </>
           }
-          subHeader="Sleek and Durable Glass Railing Systems for Balconies and Staircases Elevate Your Indoor and Outdoor Spaces with Frameless Glass Railings, Aluminium Options, and Stylish Designs for Ultimate Safety and Elegance."
+          subHeader="Sleek and Durable Glass Railing Systems for Balconies and Staircases Elevate Your Indoor and Outdoor Spaces with Frameless Glass Railings, Aluminium Options, and Stylish Designs for Ultimate Safety and Elegance. Your specialist for railing systems. Top quality and easy installation at imperio railing you will find the largest selection of glass railings, handrails, handrail brackets and much more"
           height
         >
           <div className="p-8 pl-0 w-max text-xs gap-2 flex">

@@ -74,7 +74,7 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: "8",
-    title: "Elegant and Safe Aluminium Glass Railings",
+    title: "Aluminium Glass Railings",
     excerpt:
       "Elevate your space with Imperio’s Aluminium Glass railings, blending safety, style, and sophistication.",
     imageUrl: aluminiumglassrailing,
@@ -82,8 +82,7 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: "9",
-    title:
-      "Should You Use Handrails for Railings? Key Benefits and Considerations",
+    title: "Handrails - Key Benefits and Considerations",
     excerpt:
       "Handrails enhance safety, accessibility, and compliance for staircases, ramps, and balconies.",
     imageUrl: handrailBenefits,
@@ -91,8 +90,7 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: "10",
-    title:
-      "Seamless Glass Railing for Uninterrupted Views: Latest Modern Design",
+    title: "Seamless Glass Railing : Latest Modern Design",
     excerpt:
       "Enjoy uninterrupted views with our seamless glass railing system, blending modern design with safety.",
     imageUrl: seamlessRailings,
@@ -100,8 +98,7 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: "11",
-    title:
-      "Stylish modern railing on a balcony in Goa with a beautiful ocean view",
+    title: "Stylish Modern Railing on a balcony ",
     excerpt:
       "Discover modern railings in our latest Goa project, blending safety with stunning ocean views.",
     imageUrl: aesthetic,

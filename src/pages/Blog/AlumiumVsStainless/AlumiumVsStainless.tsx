@@ -14,7 +14,7 @@ const AlumiumVsStainless: React.FC = () => {
           "Stainless Steel vs Aluminium Glass Railings: Benefits & Comparison"
         }
         description={
-          "Compare stainless steel and aluminium glass railings. Explore their benefits, costs, and durability for balconies, decks, and staircases. Make an informed choice for your home or business."
+          "Compare stainless steel and aluminium glass railings. Explore their benefits, costs, and durability for balconies, decks, and staircases."
         }
         keywords={
           "Stainless Steel Glass Railing, Aluminium Glass Railing, Glass Railing Benefits, Glass Railings for Balconies, Decks, Staircases, Durability of Glass Railings, Cost of Glass Railings, Choosing Glass Railings for Homes"
@@ -32,7 +32,7 @@ const AlumiumVsStainless: React.FC = () => {
         img={modernBalcony}
         altText="balcony-glass-railing"
         header="Aluminium vs Stainless Steel Glass Railings"
-        subHeader="Discover the key differences between Aluminium and Stainless Steel Glass Railings, including their benefits, durability, and cost to help you choose the perfect option for your space."
+        subHeader="Discover the key differences between Aluminium and Stainless Steel Glass Railings, including their benefits, durability, and cost to help you choose the perfect option for your space. Stainless steel post railings: timeless aesthetics and top quality "
         curve
       />
       <div className=" max-w-7xl mx-auto">

@@ -9,14 +9,12 @@ const SeamlessRailing: React.FC = () => {
   return (
     <>
       <Metadata
-        title={
-          "Seamless Glass Railing for Uninterrupted Views: Latest Modern Design"
-        }
+        title={"Seamless Glass Railings: Modern Design for Clear Views"}
         description={
-          "Enjoy uninterrupted views with our seamless glass railing system, blending modern design with safety."
+          "Upgrade to seamless glass railings for uninterrupted views. Modern, durable, and stylish—perfect for balconies, decks, and commercial spaces."
         }
         keywords={
-          "seamless glass railings, Imperio seamless railings, modern seamless glass railings, balcony seamless glass railing, staircase seamless glass railings, frameless seamless glass railings, contemporary seamless glass railings, durable seamless glass railings, weather-resistant seamless railings, seamless glass railings for homes, seamless glass railings for businesses, commercial seamless glass railings, residential seamless glass railings, sleek seamless glass railing designs, unobstructed view railings, stylish seamless railings for decks, seamless glass railings for patios, high-quality seamless glass railings, premium seamless railing systems, custom seamless glass railing solutions, elegant seamless glass railings, luxury seamless railing design, best seamless glass railings, seamless glass balcony railings, seamless glass railing installation, robust seamless glass railings, secure seamless railing systems"
+          "seamless glass railings, frameless glass railings, modern glass railings, balcony glass railing, staircase glass railings, clear view railings, unobstructed glass railings, weather-resistant railings, residential glass railings, commercial glass railings, luxury glass railings, custom glass railing solutions, stylish glass railings, contemporary glass railings, premium glass railing systems, sleek glass railings, glass railing installation, durable glass railings, high-quality glass railings, outdoor glass railings, patio glass railings, best glass railings, corrosion-resistant railings, architectural glass railings, tempered glass railings"
         }
         ogImage="https://i.postimg.cc/DwKCBkQF/1.png"
         ogUrl={"https://www.imperiorailing.com/blog/seamless-railing"}
@@ -27,7 +25,7 @@ const SeamlessRailing: React.FC = () => {
         // img="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Balcony/ModernBalcony.webp"
         altText="Imperio Aluminium Glass railing system on a balcony with a stunning view"
         header="Seamless Glass Railings"
-        subHeader="Seamless Glass Railing for Uninterrupted Views: Latest Modern Design."
+        subHeader="Seamless Glass Railing for Uninterrupted Views: Latest Modern Design. Upgrade to seamless glass railings for uninterrupted views. Modern, durable, and stylish—perfect for balconies, decks, and commercial spaces."
         curve
       />
       <div className=" max-w-7xl mx-auto">

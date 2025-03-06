@@ -11,6 +11,7 @@ export const Footer = () => {
   const [value, setValue] = useState(""); // State to hold input value
   const [message, setMessage] = useState(""); // State to hold feedback message
   const [isSubmitting, setIsSubmitting] = useState(false); // State to handle button disable
+  const [showLocations, setShowLocations] = useState(false);
 
   // Handle input change
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -57,6 +58,35 @@ export const Footer = () => {
       });
   };
 
+  // Sample countries and cities for SEO
+  const locations = [
+    "Mountain View CA, United States",
+    "Berkeley, US",
+    "San Francisco CA, United States",
+    "San Francisco, US",
+    "Ashburn, United States",
+    "United States",
+    "Kansas City, United States",
+    "Burnaby, Canada",
+    "Yekaterinburg, Russian Federation",
+    "Cullinan, South Africa",
+    "Diemen, Netherlands",
+    "Lille, France",
+    "Paterna de Rivera, Spain",
+    "Innsbruck, Austria",
+    "Oberhausen, Germany",
+    "Tlalnepantla, Mexico",
+    "Santa Cruz do Sul, Brazil",
+    "Shah Alam, Malaysia",
+    "Auckland, New Zealand",
+    "Singapore",
+    "Seoul, South Korea",
+    "Shenzhen, China",
+    "Kota, India",
+    "Islamabad, Pakistan",
+    "Ireland",
+    "Dhaka, Bangladesh",
+  ];
   return (
     <footer className="bg-[--black] tablet:min-h-[35rem] py-6 phone:py-10 tablet:py-14 laptop:py-20 xl:py-24 px-9 phone:px-[4.5rem] tablet:px-[6.65rem] laptop:px-[8.75rem] xl:px-44 flex flex-col tablet:flex-row justify-between max-tablet:gap-6">
       <aside className="flex flex-col justify-between min-h-full max-tablet:gap-6">
@@ -121,6 +151,22 @@ export const Footer = () => {
               <Link to="/PrivacyPolicy">Terms of Use Privacy Policy</Link>
             </p>
           </div>
+          <button
+            className=" text-white text-xs px-3 py-1 rounded-lg mt-3 w-fit hover:bg-gray-200"
+            onClick={() => setShowLocations(!showLocations)}
+          >
+            View Locations
+          </button>
+          {/* Conditional rendering of locations */}
+          {showLocations && (
+            <div className="bg-white text-black p-3 rounded-lg mt-2 max-w-sm">
+              <ul className="text-xs list-disc pl-4">
+                {locations.map((loc, index) => (
+                  <li key={index}>{loc}</li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </aside>
       <aside className="flex flex-col justify-center min-h-full text-white pr-0 phone:pr-12 tablet:pr-24 lg:px-16 laptop:-mr-24 gap-4 tablet:gap-6">

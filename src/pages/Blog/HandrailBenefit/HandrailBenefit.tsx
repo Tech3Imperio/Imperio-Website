@@ -9,14 +9,12 @@ const HandrailBenefit: React.FC = () => {
   return (
     <>
       <Metadata
-        title={
-          "Should You Use Handrails for Railings? Key Benefits and Considerations"
-        }
+        title={"Handrails for Safety: Benefits, Design & Installation Guide"}
         description={
-          "Handrails enhance safety, accessibility, and compliance for staircases, ramps, and balconies."
+          "Discover our range of high-quality stair railings made from stainless steel and glass. We are happy to help you to find the perfect solution!."
         }
         keywords={
-          "handrails for safety, handrail installation, ADA-compliant handrails, commercial handrails, residential handrails, modern handrail designs, durable handrails, aluminium handrails, stainless steel handrails, glass handrails, wooden handrails, handrails for staircases, handrails for ramps, balcony handrails, deck handrails, safety handrails, accessibility handrails, secure handrails, high-quality handrails, custom handrail solutions, best handrails for homes, handrails for public spaces, stylish handrails, contemporary handrails, premium handrail systems, easy-to-install handrails, corrosion-resistant handrails, legal requirements for handrails, building code handrail regulations, ergonomic handrails, slip-resistant handrails, supportive handrails, handrails for elderly, wheelchair-accessible handrails"
+          "handrails for safety, handrail installation, ADA-compliant handrails, commercial handrails, residential handrails, modern handrail designs, durable handrails, aluminium handrails, stainless steel handrails, glass handrails, wooden handrails, staircase handrails, ramp handrails, balcony handrails, deck handrails, safety handrails, accessibility handrails, secure handrails, premium handrail systems, ergonomic handrails, slip-resistant handrails, wheelchair-accessible handrails, corrosion-resistant handrails, best handrails for homes, stylish handrails, contemporary handrails, building code handrail regulations, legal handrail requirements"
         }
         ogImage="https://i.postimg.cc/pT79XCGX/quora.webp"
         ogUrl={"https://www.imperiorailing.com/blog/handrail-benefit"}
@@ -25,9 +23,9 @@ const HandrailBenefit: React.FC = () => {
       <Hero
         img={handrailBenefits}
         // img="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Balcony/ModernBalcony.webp"
-        altText="Sturdy handrails installed on a staircase, providing safety and support."
-        header="Sturdy Handrails"
-        subHeader="Handrails enhance safety, accessibility, and compliance for staircases, ramps, and balconies."
+        altText="Sturdy handrails installed on a staircase"
+        header="Aluminium Handrails"
+        subHeader="Discover our high-quality handrails, as well as an extensive range of brackets, end pieces and lighting. Handrails enhance safety, accessibility, and compliance for staircases, ramps, and balconies. Explore handrails for staircases, ramps, and balconies. Find range of high-quality stair railings made from stainless steel and glass. We are happy to help you to find the perfect solution!"
         curve
       />
       <div className=" max-w-7xl mx-auto">

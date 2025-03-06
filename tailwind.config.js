@@ -38,5 +38,5 @@ export default {
       },
     },
   },
-  plugins: [aspectRatio],
+  plugins: [aspectRatio, "tailwind-scrollbar-hide"],
 };

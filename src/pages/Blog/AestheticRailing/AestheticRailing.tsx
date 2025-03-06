@@ -9,12 +9,12 @@ const AestheticRailings: React.FC = () => {
   return (
     <>
       <Metadata
-        title={"Modern Balcony Railings with Stunning Sea View | Imperio"}
+        title={"Modern Balcony Railings with Unobstructed Ocean View | Imperio"}
         description={
-          "Explore Imperio's sleek and durable balcony railings, designed for safety and unobstructed ocean views. Perfect for homes and commercial spaces."
+          "Explore Imperio's frameless glass balcony railings, designed for durability and clear ocean views. Ideal for residential and commercial applications."
         }
         keywords={
-          "modern balcony railings, frameless glass railings, stylish railings, durable outdoor railings, weather-resistant railings, ocean view railings, contemporary railings, aesthetic balcony railings, luxury railing design, premium glass railings, high-quality deck railings, elegant staircase railings, sleek patio railings, best balcony railings, secure railing systems, custom railing solutions, frameless railing installation, residential railings, commercial railings, minimalist railings, unobstructed view railings"
+          "modern balcony railings, frameless glass railings, balcony glass panels, durable outdoor railings, weather-resistant glass railings, ocean view balcony railings, contemporary glass railings, balcony railing systems, premium glass railing solutions, deck glass railings, glass stair railings, patio glass railings, best balcony railing designs, glass railing installation, commercial balcony railings, residential glass railings, frameless railing systems, custom glass railings, unobstructed view railings, tempered glass railings"
         }
         ogImage="https://i.postimg.cc/pLrtrZfd/1720001003331.jpg"
         ogUrl={"https://www.imperiorailing.com/blog/aesthetic-railing"}
@@ -25,7 +25,7 @@ const AestheticRailings: React.FC = () => {
         // img="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Balcony/ModernBalcony.webp"
         altText="Stylish modern railing on a balcony in Goa with a beautiful ocean view"
         header="Aesthetic Glass Railings"
-        subHeader="Modern Railing Designs with Unmatched Aesthetic Charm"
+        subHeader="Modern Railing Designs with Unmatched Aesthetic Charm. Explore Imperio's frameless glass balcony railings, designed for durability and clear ocean views. Ideal for residential and commercial applications."
         curve
       />
       <div className=" max-w-7xl mx-auto">

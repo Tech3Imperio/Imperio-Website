@@ -671,7 +671,7 @@ export default function JobDetailsPage() {
         about:
           "As a Graphic Design Intern at Imperio Railing Systems, you will have the exciting opportunity to showcase your creativity and design skills across various projects. You will gain hands-on experience working with our marketing and design teams, contributing to the visual identity of our brand and supporting the creation of impactful marketing materials.",
         location: "Mumbai",
-        type: "Full-Time",
+        type: "Internship",
         others: [
           {
             Duration: "6 months",
@@ -786,7 +786,7 @@ export default function JobDetailsPage() {
 
           "Knowledge of the architecture, engineering, or construction industry is a plus.",
         ],
-        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
+        applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
       },
       {
         title: "Sales Executive (Only male candidates)",
@@ -842,7 +842,7 @@ export default function JobDetailsPage() {
           "Minimum of 3 years of experience in sales within the architectural, building, or construction industry.",
           "Knowledge of industry trends and competitors is a plus.",
         ],
-        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
+        applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
       },
       {
         title: "Sales Executive (Only male candidates)",
@@ -898,7 +898,7 @@ export default function JobDetailsPage() {
           "Minimum of 3 years of experience in sales within the architectural, building, or construction industry.",
           "Knowledge of industry trends and competitors is a plus.",
         ],
-        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
+        applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
       },
       {
         title: "Marketing Manager",
@@ -936,7 +936,7 @@ export default function JobDetailsPage() {
           "Minimum 3-5 years of experience in digital marketing, performance marketing, or brand management",
           "Strong expertise in PPC, SEO, CRM, and marketing automation tools",
         ],
-        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
+        applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
       },
       {
         title: "MIS Executive",
@@ -985,7 +985,7 @@ export default function JobDetailsPage() {
           "Excellent problem-solving and management skills.",
           "Ability to train staff junior staff.",
         ],
-        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
+        applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
       },
       {
         title: "Purcase Procurement Executive (Only female candidates)",
@@ -1031,7 +1031,7 @@ export default function JobDetailsPage() {
           "Those who can manage budgets, track expenditures, and ensure purchases are within financial constraints.",
           "Candidates who have a proven track record in vendor management, negotiation, and sourcing.",
         ],
-        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
+        applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
       },
       {
         title: "Performance marketing (Female Candidate Preffered)",
@@ -1084,7 +1084,7 @@ export default function JobDetailsPage() {
 
           "Candidates who can demonstrate the ability to manage multiple projects, meet deadlines, and deliver results.",
         ],
-        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
+        applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
       },
     ];
 

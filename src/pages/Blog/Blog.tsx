@@ -48,7 +48,7 @@ export const Blog = () => {
           "Discover Blogs for stylish and durable glass railings in India. Get expert tips and a free quote! Know more about Imperio & Gain the knwoledge for glass railing systems"
         }
         keywords={
-          "pvb glass, sgp glass,framed vs frameless glass railings, framed glass railings vs frameless, frameless glass railings, pvb vs sgp differance,pvb vs sgp glass, glass railings, balcony glass railing, Balcony Railings, Staircase glass Railings, commercial buildings, seamless glass railing, aluminum glass railings, Laminated Glass, modern glass railings, frameless glass railings, Aesthetic glass railing, Classic Look, Minimalist Style, safety glass railings, high durable glass railings, Weather Resistant, Low Maintenance, Customizable Options"
+          "pvb glass, sgp glass, framed vs frameless glass railings, framed glass railings vs frameless, frameless glass railings, pvb vs sgp difference, pvb vs sgp glass, glass railings, balcony glass railing, balcony railings, durable outdoor railings, weather-resistant glass railings, ocean view balcony railings, contemporary glass railings, balcony railing systems, premium glass railing solutions, staircase glass railings, commercial buildings, seamless glass railing, aluminum glass railings, laminated glass, modern glass railings, aesthetic glass railing, classic look, minimalist style, safety glass railings, high durable glass railings, weather-resistant, low maintenance, customizable options, commercial handrails, residential handrails, modern handrail designs, durable handrails, aluminium handrails "
         }
         ogImage={
           "https://raw.githubusercontent.com/Tech3Imperio/Imperio-Website/refs/heads/main/src/assets/Images/hero/blog.webp"
@@ -89,6 +89,34 @@ export const Blog = () => {
             </p>
           </div>
         </div>
+        <BlogpostsUI />
+        <div className=" max-w-7xl flex flex-col md:flex-row mx-auto mt-10 md:mt-24 gap-8 p-4">
+          <div className="flex flex-col md:w-[60%] gap-1 tablet:gap-6">
+            <h2 className="YellowText text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
+              Elegant Glass Railing Designs
+            </h2>
+            <h3 className="text-[--third] flex flex-wrap md:max-w-2xl Raleway tracking-wider w-full text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] 2xl:text-5xl">
+              Stylish Glass Railings for Homes
+            </h3>
+          </div>
+          <div className="md:w-[40%]">
+            <p className="text-justify italic text-[--grey]">
+              Glass railings are becoming a popular choice in Indian cities and
+              state like Mumbai, Punjab, Uttarakhand, Tamil Nadu, Andhra Pradesh
+              and Maharashtra for their sleek, modern look and functional
+              benefits. Whether it's for a staircase, balcony, or deck, these
+              railings provide an unobstructed view while adding a touch of
+              elegance to any space. <br />
+              <br />
+              Not only are they visually appealing, but they are also durable,
+              safe, and low-maintenance. In this blog, we explore the advantages
+              of glass railings, the installation process, and how they can
+              elevate the design of homes and commercial properties in your
+              city.
+              <br />
+            </p>
+          </div>
+        </div>
         <Suspense fallback={<div>Loading...</div>}>
           <BlogPanel
             Socials={["LinkedIn", "Twitter", "Quora", "Pinterest"]}
@@ -97,33 +125,7 @@ export const Blog = () => {
           />
         </Suspense>
       </main>
-      <div className=" max-w-7xl flex flex-col md:flex-row mx-auto mt-10 md:mt-24 gap-8 p-4">
-        <div className="flex flex-col md:w-[60%] gap-1 tablet:gap-6">
-          <h2 className="YellowText text-lg sm:text-2xl lg:text-[2rem] 2xl:text-[2.5rem]">
-            Elegant Glass Railing Designs
-          </h2>
-          <h3 className="text-[--third] flex flex-wrap md:max-w-2xl Raleway tracking-wider w-full text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] 2xl:text-5xl">
-            Stylish Glass Railings for Homes
-          </h3>
-        </div>
-        <div className="md:w-[40%]">
-          <p className="text-justify italic text-[--grey]">
-            Glass railings are becoming a popular choice in Indian cities and
-            state like Mumbai, Punjab, Uttarakhand, Tamil Nadu, Andhra Pradesh
-            and Maharashtra for their sleek, modern look and functional
-            benefits. Whether it's for a staircase, balcony, or deck, these
-            railings provide an unobstructed view while adding a touch of
-            elegance to any space. <br />
-            <br />
-            Not only are they visually appealing, but they are also durable,
-            safe, and low-maintenance. In this blog, we explore the advantages
-            of glass railings, the installation process, and how they can
-            elevate the design of homes and commercial properties in your city.
-            <br />
-          </p>
-        </div>
-      </div>
-      <BlogpostsUI />
+
       <EnquiryButton />
       {/* <div className="max-w-7xl grid md:grid-cols-2 mx-auto mt-10 md:mt-24 gap-10 xl:gap-[3rem] p-6 pb-14">
         <div>

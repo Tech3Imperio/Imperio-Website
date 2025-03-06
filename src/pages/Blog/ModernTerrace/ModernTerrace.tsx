@@ -74,7 +74,7 @@ export default function ModernTerrace() {
       <Metadata
         title={"Terrace Glass Railing | Modern Terrace Glass Railing Designs"}
         description={
-          "Explore durable terrace glass railing systems in Mumbai, Pune, and Nagpur, Maharashtra. Our premium glass railing solutions offer safety, aesthetics, and low maintenance, enhancing your outdoor space with style and functionality."
+          "Explore durable terrace glass railing systems in Mumbai, Pune, and Nagpur, Maharashtra."
         }
         keywords={
           "glass railings, aluminum glass railings, Laminated Glass,Terrace glass railing systems, modern glass railings, frameless glass railings,Balcony glass railings, Premium glass railing systems, Minimalist Style, safety glass railings, high durable glass railings, Weather Resistant, Low Maintenance, Customizable Options, Best glass railing systems for terraces in Mumbai, best glass railing systems in Mumbai, Commercial Spaces, modern glass railing designs for homes, Balcony Railings, Staircase glass Railings, stylish glass railings for commercial buildings, transfrom your home decor, seamless glass railing, elegant glass railing, Affordable glass balcony railings in Mumbai"
@@ -89,7 +89,7 @@ export default function ModernTerrace() {
         // img="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/modernterrace/hero.webp"
         altText="hero for blog"
         header="Terrace Glass Railing"
-        subHeader="Discover premium terrace glass railing systems in Mumbai, Pune, Delhi, Varanasi, Kolkata, and across Maharashtra and beyond.  Our modern, stylish, and durable top-quality glass railings Frameless Glass Railings for Terraces and Balcony"
+        subHeader="Discover premium terrace glass railing systems in Mumbai, Pune, Delhi, Varanasi, Kolkata, and across Maharashtra and beyond.  Our modern, stylish, and durable top-quality glass railings Frameless Glass Railings for Terraces and Balcony. Discover modern terrace railings made of glass, stainless steel and aluminium. High safety, stylish design and customisation for your terrace.  Our premium glass railing solutions offer safety, aesthetics, and low maintenance, enhancing your outdoor space with style and functionality."
         curve
       />
       <div className="min-h-screen bg-white p-4 md:p-8">

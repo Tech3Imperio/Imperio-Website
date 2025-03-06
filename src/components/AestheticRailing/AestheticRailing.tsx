@@ -40,7 +40,7 @@ const AestheticRailing: React.FC = () => {
   ];
   return (
     <div className="flex gap-8">
-      <nav className="hidden md:block sticky top-2 h-fit w-64 ">
+      <nav className="hidden md:block sticky top-2 h-fit w-64">
         <ul className="space-y-2">
           {navItems.map((item) => (
             <li key={item.id}>
@@ -66,22 +66,22 @@ const AestheticRailing: React.FC = () => {
           variants={sectionVariants}
         >
           <span className="text-4xl font-semibold mb-4 text-[#03237b]">
-            Modern Railing Designs with Unmatched Aesthetic Charm
+            Elegant & Durable Modern Balcony Railings
           </span>
           <p className="text-[#1a1919] leading-relaxed text-justify">
-            Discover the beauty of modern railings through our latest project in
-            Goa, where style meets safety. The stunning designs not only enhance
-            the visual appeal of the property but also provide essential safety
-            features for balconies and decks. Our modern railings are crafted
-            with precision, ensuring that they harmonize with the breathtaking
-            coastal views. These railings serve as a testament to contemporary
-            design, reflecting a lifestyle that appreciates both elegance and
-            functionality. By integrating cutting-edge materials and techniques,
-            we ensure that each railing system not only meets but exceeds
-            industry standards for safety and durability.
+            Experience the perfect fusion of{" "}
+            <strong>frameless glass railings</strong>
+            and <strong>contemporary balcony railings</strong> designed for
+            stunning ocean views. Our premium,{" "}
+            <strong>weather-resistant railings</strong>
+            offer durability and safety while elevating the aesthetics of any
+            outdoor space. Whether for residential or commercial properties, our{" "}
+            <strong>luxury railing designs</strong> seamlessly blend with modern
+            architecture, providing an
+            <strong>unobstructed view railing system</strong> without
+            compromising security.
           </p>
         </motion.section>
-
         <motion.section
           className="mb-12"
           id="aesthetic-railing-features"
@@ -89,62 +89,51 @@ const AestheticRailing: React.FC = () => {
         >
           <h2 className="text-3xl font-semibold mb-4 text-[#03237b]">
             <strong className="text-[#fad000] font-medium">
-              Modern Railing Designs:
+              Modern Railing Innovations:
             </strong>{" "}
-            A Perfect Blend of Functionality and Aesthetic Appeal
+            Aesthetics, Strength & Functionality
           </h2>
           <div className="flex flex-col md:flex-row gap-6 items-center">
             <img
               src={aesthetic1}
-              alt="Aesthetic Railing Design in Goa"
+              alt="Frameless Glass Railings"
               width={500}
               height={300}
               className="rounded-lg shadow-lg"
             />
             <div>
               <p className="text-[#292929] mb-4 text-justify">
-                Explore our newest project in <strong>Goa</strong>, featuring
-                state-of-the-art <strong>modern railing designs</strong> that
-                seamlessly combine safety with elegance. Designed to enhance
-                coastal properties, these railings allow homeowners to enjoy
-                breathtaking views without compromising on security. The use of{" "}
-                <strong>high-quality materials</strong> ensures that they
-                withstand the harsh coastal climate, making them perfect for
-                seaside living. The sleek,
-                <strong>minimalistic design</strong> emphasizes clean lines and
-                an unobtrusive profile, preserving the stunning ocean view as
-                the focal point.
-              </p>
-              <p className="text-[#292929] mb-4 text-justify">
-                Our innovative railing solutions prioritize durability while
-                maintaining an elegant appearance, creating a seamless blend
-                with the surrounding environment. The architectural integrity of
-                these railings enhances the property’s aesthetic appeal,
-                increasing both its charm and value.
+                Our latest project in <strong>Goa</strong> showcases innovative
+                <strong> stylish balcony railings</strong> that blend high-end
+                design with robust materials. These{" "}
+                <strong>high-quality deck railings</strong>
+                are built to withstand coastal weather while maintaining their
+                <strong> minimalist railing aesthetics</strong>. Crafted for a
+                modern lifestyle, our{" "}
+                <strong>frameless railing installation</strong> offers both
+                elegance and structural integrity.
               </p>
               <p className="text-2xl font-semibold mb-2 text-[#03237b]">
-                Key Features:
+                Why Choose Imperio’s Modern Railings?
               </p>
               <ul className="list-disc list-inside text-[#292929] space-y-2">
                 <li>
-                  <b>Enhanced Coastal Views:</b> Designed to maximize the
-                  oceanfront experience.
+                  <b>Luxury Railing Design:</b> Perfect for{" "}
+                  <strong>premium glass railings</strong>
+                  in homes, patios, and commercial spaces.
                 </li>
                 <li>
-                  <b>Durability and Strength:</b> Crafted from high-quality
-                  materials to withstand coastal weather conditions.
+                  <b>Weather-Resistant Railings:</b> Engineered for durability
+                  in all climates.
                 </li>
                 <li>
-                  <b>Modern Minimalistic Design:</b> Clean lines and an
-                  unobtrusive profile complement any contemporary property.
+                  <b>Unobstructed Views:</b>{" "}
+                  <strong>Minimalist balcony railings</strong> for a sleek,
+                  modern aesthetic.
                 </li>
                 <li>
-                  <b>Seamless Integration:</b> Blends effortlessly with the
-                  surrounding landscape for a sophisticated look.
-                </li>
-                <li>
-                  <b>Architectural Enhancement:</b> Adds charm and increases
-                  property value with its premium aesthetics.
+                  <b>Custom Railing Solutions:</b> Tailored to complement
+                  various architectural styles.
                 </li>
               </ul>
             </div>
@@ -158,57 +147,55 @@ const AestheticRailing: React.FC = () => {
         >
           <h3 className="text-3xl font-semibold mb-4 text-[#03237b]">
             <strong className="text-[#fad000] font-medium">
-              Beyond Aesthetics:
+              Secure & Stylish:
             </strong>{" "}
-            Safety, Functionality & Lasting Value
+            The Future of Outdoor Railings
           </h3>
           <div className="lg:flex gap-12 mt-2">
             <div className="pt-4">
               <span className="text-xl font-semibold text-[#03237b]">
-                Why Choose Modern Railings?
+                Key Advantages of Frameless Glass Railings:
               </span>
               <ul className="list-disc list-inside text-[#292929] space-y-2">
                 <li>
-                  <b>Unobstructed Views:</b> Designed to enhance balconies and
-                  decks with open sightlines, making scenic enjoyment
-                  effortless.
+                  <b>Durable Outdoor Railings:</b> Engineered for longevity with
+                  high-strength materials.
                 </li>
                 <li>
-                  <b>Durable & Weather-Resistant:</b> Engineered to withstand
-                  various weather conditions for long-lasting performance.
+                  <b>Elegant Staircase Railings:</b> Aesthetic appeal combined
+                  with robust support.
                 </li>
                 <li>
-                  <b>Low Maintenance:</b> High-quality materials reduce the need
-                  for frequent upkeep while maintaining a sleek appearance.
+                  <b>Low Maintenance & Weather-Resistant:</b> Perfect for harsh
+                  outdoor conditions.
                 </li>
                 <li>
-                  <b>Contemporary Appeal:</b> The modern design seamlessly
-                  blends with contemporary homes, elevating their overall
-                  aesthetic.
+                  <b>Premium Glass Railings:</b> High-end finishes that enhance
+                  modern architecture.
                 </li>
               </ul>
             </div>
             <div className="pt-4">
               <span className="text-xl font-semibold text-[#03237b]">
-                Additional Benefits:
+                Where Our Railings Stand Out:
               </span>
               <ul className="list-disc list-inside text-[#292929] space-y-2">
                 <li>
-                  <b>Increases Property Value:</b> Enhances curb appeal, making
-                  your home more desirable in the market.
+                  <b>Commercial Railings:</b> Sleek, secure solutions for
+                  businesses and public spaces.
                 </li>
                 <li>
-                  <b>Safety & Stability:</b> Provides strong protection for
-                  outdoor spaces without compromising style.
+                  <b>Residential Railings:</b>{" "}
+                  <strong>Minimalist railings</strong>
+                  for a sophisticated home upgrade.
                 </li>
                 <li>
-                  <b>Versatile Applications:</b> Ideal for residential and
-                  commercial settings, including balconies, patios, and
-                  staircases.
+                  <b>Custom Railing Designs:</b> Tailored solutions for unique
+                  architectural needs.
                 </li>
                 <li>
-                  <b>Long-Term Investment:</b> Combines durability with
-                  aesthetics, ensuring a timeless addition to any property.
+                  <b>Secure Railing Systems:</b> Providing safety without
+                  compromising aesthetics.
                 </li>
               </ul>
             </div>
@@ -222,51 +209,46 @@ const AestheticRailing: React.FC = () => {
         >
           <p className="text-3xl font-semibold mb-4 text-[#03237b]">
             <strong className="text-[#fad000] font-medium">
-              Modern Railings:
+              Luxury Railings:
             </strong>{" "}
-            Perfect for Coastal Living & Contemporary Design
+            Elevate Your Outdoor Spaces
           </p>
 
           <div className="flex flex-col md:flex-row gap-6 items-center">
             <div>
               <p className="text-[#292929] mb-4 text-justify">
-                Designed for coastal properties, modern railings provide the
-                perfect balance between safety and aesthetics. Ideal for
-                balconies, decks, and patios, they create an inviting atmosphere
-                for entertaining guests or simply enjoying the view. Their
-                versatility ensures seamless integration into various
-                architectural styles, whether minimalist or traditional,
-                enhancing the overall appeal of any space. Additionally, these
-                railings are engineered for easy installation and adaptability,
-                making them suitable for both private residences and commercial
-                projects.
+                Designed for high-end homes and commercial properties, our
+                <strong> frameless glass railings</strong> provide safety
+                without obstructing breathtaking views. Whether you're designing
+                a<strong> contemporary outdoor railing system</strong> or need
+                <strong> high-quality deck railings</strong>, Imperio offers the
+                perfect balance of beauty and functionality.
               </p>
               <div className="text-2xl font-semibold mb-2 text-[#03237b]">
-                Where Modern Railings Make an Impact:
+                Ideal Applications:
               </div>
               <ul className="list-disc list-inside text-[#292929] space-y-2">
                 <li>
-                  <b>Coastal Properties:</b> Perfect for beachfront homes,
-                  allowing unobstructed ocean views while ensuring safety.
+                  <b>Balcony Railings:</b> Unmatched elegance for high-rise
+                  views.
                 </li>
                 <li>
-                  <b>Outdoor Living Spaces:</b> Enhances patios, decks, and
-                  balconies, creating a seamless transition between indoors and
-                  outdoors.
+                  <b>Patio & Deck Railings:</b> Enhancing outdoor relaxation
+                  spaces.
                 </li>
                 <li>
-                  <b>Versatile Architectural Fit:</b> Complements modern,
-                  minimalist, or traditional home designs.
+                  <b>Minimalist Railing Installations:</b> Designed for a
+                  modern, seamless look.
                 </li>
                 <li>
-                  <b>Effortless Installation:</b> Designed for quick setup
-                  without compromising durability or structural integrity.
+                  <b>Weather-Resistant Railings:</b> Built to endure all
+                  climates.
                 </li>
               </ul>
             </div>
             <img
               src={aesthetic2}
-              alt="Aesthetic Railings"
+              alt="Modern Balcony Railings"
               className="rounded-lg shadow-lg"
               width={500}
               height={300}

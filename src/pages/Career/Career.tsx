@@ -441,6 +441,11 @@ export default function Career() {
                       {job.type}
                     </span>
                   </div>
+                  <div>
+                    <span className="text-sm font-bold text-[#292929] uppercase">
+                      {job.type}
+                    </span>
+                  </div>
                   <div className="flex justify-end items-center mt-4">
                     {/* Link to apply directly */}
                     {/* <a href={job.applyLink} target="_blank">

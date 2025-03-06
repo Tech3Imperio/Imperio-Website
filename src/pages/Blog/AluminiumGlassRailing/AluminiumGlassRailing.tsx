@@ -9,14 +9,12 @@ const AluminiumGlassRailing: React.FC = () => {
   return (
     <>
       <Metadata
-        title={
-          "Transform Your Home with Imperio: Elegant and Safe Aluminium Glass Railings"
-        }
+        title={"Imperio Aluminium Glass Railings – Durable & Modern Designs"}
         description={
-          "Elevate your space with Imperio’s Aluminium Glass railings, blending safety, style, and sophistication."
+          "Discover premium aluminium glass railings by Imperio. Durable, stylish, and corrosion-resistant solutions for balconies, staircases, patios, and decks."
         }
         keywords={
-          "aluminium glass railings, Imperio aluminium railings, modern glass railings, balcony glass railing, staircase glass railings, aluminium framed glass railings, frameless glass railings, contemporary glass railings, durable glass railings, corrosion-resistant railings, glass railings for homes, glass railings for businesses, commercial glass railings, residential glass railings, sleek glass railing designs, safety glass railings, stylish railings for decks, glass railings for patios, high-quality aluminium railings, premium railing systems, custom glass railing solutions, elegant glass railings, luxury railing design, best glass railings, aluminium balcony railings, glass railing installation, robust glass railings, secure railing systems"
+          "aluminium glass railings, Imperio railings, modern glass railings, balcony glass railing, staircase railings, frameless glass railings, commercial railings, residential railings, weather-resistant railings, corrosion-resistant railings, luxury railing design, premium glass railings, minimalist railings, durable railing systems, patio glass railings, deck railings, custom glass railings, contemporary railings, secure glass railings, high-quality aluminium railings, glass railing installation, architectural railings, best glass railings, railing solutions"
         }
         ogImage="https://i.postimg.cc/DwKCBkQF/1.png"
         ogUrl={"https://www.imperiorailing.com/blog/aluminum-glass-railings"}
@@ -27,7 +25,7 @@ const AluminiumGlassRailing: React.FC = () => {
         // img="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/Balcony/ModernBalcony.webp"
         altText="Imperio Aluminium Glass railing system on a balcony with a stunning view"
         header="Aluminium Glass Railings"
-        subHeader="Elevate your space with Imperio’s Aluminium Glass railings, blending safety, style, and sophistication."
+        subHeader="The utmost convenience and quickest installation with a highly customisable aluminium railings. Discover premium aluminium glass railings by Imperio. Durable, stylish, and corrosion-resistant solutions for balconies, staircases, patios, and decks."
         curve
       />
       <div className=" max-w-7xl mx-auto">
