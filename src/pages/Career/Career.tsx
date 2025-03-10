@@ -316,7 +316,14 @@ export default function Career() {
     //   type: "Full-Time",
     //   applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     // },
-    //
+    {
+      title: "Interior Designer – New Product Research & Development",
+      description:
+        "The ideal candidate should have strong expertise in vendor management, international relations, product design and engineering, installation coordination, sales, and site meetings.",
+      location: "Mumbai",
+      type: "Full-Time",
+      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    },
   ]);
   const [intern] = useState<Intern[]>([
     // {
@@ -470,7 +477,7 @@ export default function Career() {
                       <h3 className="text-xl font-semibold mb-2 text-blue-900">
                         {job.title}
                       </h3>
-                      <span className="text-sm font-bold text-[#292929] uppercase w-[85px] text-right">
+                      <span className="text-sm font-bold text-[#292929] uppercase w-max">
                         {job.type}
                       </span>
                     </div>
