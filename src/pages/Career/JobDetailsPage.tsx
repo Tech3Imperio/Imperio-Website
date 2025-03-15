@@ -1137,6 +1137,51 @@ export default function JobDetailsPage() {
         ],
         applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
       },
+      {
+        title: "UI/UX Design Intern",
+        subtitle:
+          "Imperio Railing Systems, a leader in innovative glass railing solutions, is looking for a talented and creative UI/UX Design Intern to join our team. This internship offers an excellent opportunity to gain hands-on experience in designing user-friendly digital experiences, collaborating with our marketing and development teams to enhance our online presence and product visualization.",
+        about:
+          "Imperio Railing Systems, a leader in innovative glass railing solutions, is looking for a talented and creative UI/UX Design Intern to join our team. This internship offers an excellent opportunity to gain hands-on experience in designing user-friendly digital experiences, collaborating with our marketing and development teams to enhance our online presence and product visualization.",
+        location: "Mumbai",
+        type: "Full-Time",
+        others: [
+          {
+            Duration: "6 months",
+            Expriance: "NA",
+            join: "Immediately",
+          },
+        ],
+        responsibilities: [
+          "Assist in creating engaging, user-friendly interfaces for websites and mobile applications",
+          "Collaborate with senior designers and cross-functional teams to ensure designs meet business goals and user needs",
+          "Conduct research on user behavior, market trends, and competitor analysis",
+          "Create wireframes, prototypes, and design specifications for new features and products",
+          "Help perform usability testing and gather feedback to refine designs",
+          "Assist in maintaining design consistency across digital platforms",
+          "Contribute to improving the overall design workflow and best practices",
+        ],
+        skills: [
+          "Figma",
+          "Prototyping",
+          "UI & UX Design",
+          "Wireframing",
+          "HTML & CSS",
+        ],
+        whocanapply: [
+          "Are available for full time (in-office) internship",
+          "Can start the internship between 13th Mar'25 and 17th Apr'25",
+          "Are available for duration of 6 months",
+          "A portfolio demonstrating your skills in UI/UX design, wireframing, and prototyping in Figma",
+          "Familiarity with design tools such as Figma, Sketch, Adobe XD, or other similar tools",
+          "Strong communication skills and the ability to articulate design decisions",
+          "A keen interest in learning about user-centered design principles",
+          "Ability to work independently and as part of a team",
+          "Strong attention to detail and problem-solving abilities",
+          "A basic understanding of HTML/CSS and front-end development is a plus but not required",
+        ],
+        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
+      },
     ];
 
     const foundJob = jobs.find(
