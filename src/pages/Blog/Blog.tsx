@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { Hero } from "../../components";
-import { blogHero1 } from "../../assets/Images";
+import { bloghero1 } from "../../assets/Images/Blogs";
 // import { blogHero, blogHero1 } from "../../assets/Images";
 import { useEffect, useState } from "react";
 import { BlogType } from "../../types";
@@ -57,7 +57,7 @@ export const Blog = () => {
       />
       <main>
         <Hero
-          img={blogHero1}
+          img={bloghero1}
           altText="hero for blog"
           header="Glass Railing Blogs"
           subHeader="Check out our blogs. Unlock the Secrets to Stunning Glass Railings: Your Ultimate Guide to Stylish and Safe Balcony and Staircase Solutions in India!"

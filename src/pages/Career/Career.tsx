@@ -201,8 +201,16 @@ interface Job {
   type: string;
   applyLink: string; // Apply link directly to the application page
 }
+interface Intern {
+  title: string;
+  description: string;
+  location: string;
+  type: string;
+  applyLink: string; // Apply link directly to the application page
+}
 
 export default function Career() {
+  const [selectedCategory, setSelectedCategory] = useState("jobs");
   const [jobs] = useState<Job[]>([
     {
       title: "Business Development Executive",
@@ -308,6 +316,16 @@ export default function Career() {
     //   type: "Full-Time",
     //   applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     // },
+    {
+      title: "Interior Designer – New Product Research & Development",
+      description:
+        "The ideal candidate should have strong expertise in vendor management, international relations, product design and engineering, installation coordination, sales, and site meetings.",
+      location: "Mumbai",
+      type: "Full-Time",
+      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    },
+  ]);
+  const [intern] = useState<Intern[]>([
     // {
     //   title: "Full Stack Developer Intern",
     //   description:
@@ -422,46 +440,59 @@ export default function Career() {
           <h2 className="justify-center text-center text-5xl text-[#03237b]">
             Explore Job Opportunities
           </h2>
+
           <div className="max-w-7xl mx-auto mt-10 gap-8 p-4">
+            {/* Toggle Buttons */}
+            <div className="flex gap-4 mb-16 justify-center items-center">
+              <h3 className="max-w-5xl  gap-8 text-xl">Applying for:</h3>
+              <button
+                className={`px-4 py-2 font-bold rounded-lg transition-all border ${
+                  selectedCategory === "jobs"
+                    ? "bg-[--black] text-[--secound] border-[--black]"
+                    : "bg-gray-200 text-gray-700 border-gray-400"
+                }`}
+                onClick={() => setSelectedCategory("jobs")}
+              >
+                Jobs
+              </button>
+              <button
+                className={`px-4 py-2 font-bold rounded-lg transition-all border ${
+                  selectedCategory === "intern"
+                    ? "bg-[--black] text-[--secound] border-[--black]"
+                    : "bg-gray-200 text-gray-700 border-gray-400"
+                }`}
+                onClick={() => setSelectedCategory("intern")}
+              >
+                Internships
+              </button>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-14">
-              {jobs.map((job, index) => (
-                <div
-                  key={index}
-                  className="bg-gray-100 p-6 rounded-lg shadow-md relative hover:shadow-lg transition-shadow"
-                >
-                  <h3 className="text-xl font-semibold mb-2 text-blue-900">
-                    {job.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4">{job.description}</p>
-                  <div className="flex justify-between items-center mb-4">
-                    <span className="text-sm font-medium text-[#292929]">
-                      {job.location}
-                    </span>
-                    <span className="text-sm font-bold text-[#292929] uppercase">
-                      {job.type}
-                    </span>
+              {(selectedCategory === "jobs" ? jobs : intern).map(
+                (job, index) => (
+                  <div
+                    key={index}
+                    className="bg-gray-100 p-6 rounded-lg shadow-md relative hover:shadow-lg transition-shadow"
+                  >
+                    <div className="w-full flex justify-between">
+                      <h3 className="text-xl font-semibold mb-2 text-blue-900">
+                        {job.title}
+                      </h3>
+                      <span className="text-sm font-bold text-[#292929] uppercase w-max">
+                        {job.type}
+                      </span>
+                    </div>
+                    <p className="text-gray-600 mb-4">{job.description}</p>
+
+                    <div className="flex justify-end items-center mt-4">
+                      <Link to={`/careers/${encodeURIComponent(job.title)}`}>
+                        <button className="px-4 py-3 text-[--secound] font-bold bg-[--black] text-xs rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--secound] hover:text-[--black] whitespace-nowrap">
+                          View Details
+                        </button>
+                      </Link>
+                    </div>
                   </div>
-                  <div>
-                    <span className="text-sm font-bold text-[#292929] uppercase">
-                      {job.type}
-                    </span>
-                  </div>
-                  <div className="flex justify-end items-center mt-4">
-                    {/* Link to apply directly */}
-                    {/* <a href={job.applyLink} target="_blank">
-                      <button className="px-4 py-3 text-[--black] font-bold bg-[--secound] text-xs rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap">
-                        Apply Now
-                      </button>
-                    </a> */}
-                    {/* Link to Job details page */}
-                    <Link to={`/careers/${encodeURIComponent(job.title)}`}>
-                      <button className="px-4 py-3 text-[--secound] font-bold bg-[--black] text-xs rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--secound] hover:text-[--black] whitespace-nowrap">
-                        View Details
-                      </button>
-                    </Link>
-                  </div>
-                </div>
-              ))}
+                )
+              )}
             </div>
           </div>
         </div>

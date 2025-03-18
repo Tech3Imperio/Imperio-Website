@@ -1,5 +1,5 @@
 import React, { useEffect, useState, Suspense } from "react";
-import { hero1Image } from "../../assets/Images";
+import { hero2Image } from "../../assets/Images";
 // import { heroImage, heroImg } from "../../assets/Images";
 // import { heroImage, heroImageMobile } from "../../assets/Images";
 import { descImage } from "../../assets/Images";
@@ -102,7 +102,7 @@ export const Home: React.FC = () => {
       <main>
         <Hero
           // img={isMobile ? heroImageMobile : heroImage}
-          img={hero1Image}
+          img={hero2Image}
           altText="Hero Image"
           header={
             <>

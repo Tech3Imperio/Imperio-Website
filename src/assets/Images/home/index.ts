@@ -3,7 +3,15 @@ import descImage from "./desc.webp";
 import heroImageMobile from "./hero-mobile.webp";
 import descImageMobile from "./desc-mobile.webp";
 import hero1Image from "./hero1.webp";
-export { heroImage, descImage, heroImageMobile, descImageMobile, hero1Image };
+import hero2Image from "./hero2.webp";
+export {
+  heroImage,
+  descImage,
+  heroImageMobile,
+  descImageMobile,
+  hero1Image,
+  hero2Image,
+};
 
 // import { IMAGE_URL } from "../../../config";
 

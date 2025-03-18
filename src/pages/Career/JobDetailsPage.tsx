@@ -160,6 +160,57 @@ export default function JobDetailsPage() {
         applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
       },
       {
+        title: "Interior Designer – New Product Research & Development",
+        subtitle:
+          "We are looking for an experienced Interior Designer to lead our efforts in exploring and introducing innovative interior products from both domestic and international markets. This role involves researching new materials, obtaining technical details and samples, creating working prototypes, and presenting them to architects and interior designers to assess market response.",
+        about:
+          "We are looking for an experienced Interior Designer to lead our efforts in exploring and introducing innovative interior products from both domestic and international markets. This role involves researching new materials, obtaining technical details and samples, creating working prototypes, and presenting them to architects and interior designers to assess market response.",
+        location: "Mumbai",
+        type: "Full-Time",
+        others: [
+          {
+            Duration: "NA",
+            Expriance: "3+ year",
+            join: "Immediately",
+          },
+        ],
+        responsibilities: [
+          "Product Research & Sourcing:",
+          "Identify and explore new, innovative interior design products from domestic and international markets.",
+          "Establish relationships with vendors, suppliers, and manufacturers for product procurement.",
+          "Collect technical specifications, certifications, and samples of new materials and technologies.",
+
+          "Prototype Development & Testing:",
+          "Work with the product design and engineering team to create working prototypes and demos.",
+          "Coordinate with the installation team to ensure feasibility and functionality.",
+
+          "Market Validation & Business Development:",
+          "Pitch new products to architects, interior designers, and industry professionals to gauge demand.",
+          "Gather feedback and recommend improvements for product enhancement.",
+
+          "Vendor & Supplier Management:",
+          "Negotiate pricing, quality standards, and timelines with local and international suppliers.",
+          "Coordinate logistics for smooth procurement and delivery of samples.",
+
+          "Sales & Site Coordination:",
+          "Work closely with the sales team to provide technical insights and assist in product presentations.",
+          "Attend site meetings to oversee installations and resolve design-related challenges.",
+        ],
+        skills: [
+          "Strong knowledge of materials, finishes, and emerging design trends.",
+          "Experience in vendor management, supplier negotiations, and international product sourcing.",
+          "Ability to develop prototypes and present concepts to architects and designers.",
+          "Excellent communication and interpersonal skills.",
+          "Hands-on experience in coordinating with installation teams and managing site meetings.",
+          "Willingness to travel for research and business development when required",
+        ],
+        whocanapply: [
+          "Bachelor’s degree in Interior Design, Product Design, or a related field.",
+          "Minimum 3 years of experience in interior design, product research, or a similar role.",
+        ],
+        applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
+      },
+      {
         title: "Business Development (Sales)",
         subtitle:
           "As a Business Development intern at Imperio Railing Systems, you'll assist in lead generation, client relationship building, and revenue growth while gaining marketing experience.",
