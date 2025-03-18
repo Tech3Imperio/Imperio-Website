@@ -211,6 +211,57 @@ export default function JobDetailsPage() {
         applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
       },
       {
+        title: "Interior Designer – New Product Research & Development",
+        subtitle:
+          "We are looking for an experienced Interior Designer to lead our efforts in exploring and introducing innovative interior products from both domestic and international markets. This role involves researching new materials, obtaining technical details and samples, creating working prototypes, and presenting them to architects and interior designers to assess market response.",
+        about:
+          "We are looking for an experienced Interior Designer to lead our efforts in exploring and introducing innovative interior products from both domestic and international markets. This role involves researching new materials, obtaining technical details and samples, creating working prototypes, and presenting them to architects and interior designers to assess market response.",
+        location: "Mumbai",
+        type: "Full-Time",
+        others: [
+          {
+            Duration: "NA",
+            Expriance: "3+ year",
+            join: "Immediately",
+          },
+        ],
+        responsibilities: [
+          "Product Research & Sourcing:",
+          "Identify and explore new, innovative interior design products from domestic and international markets.",
+          "Establish relationships with vendors, suppliers, and manufacturers for product procurement.",
+          "Collect technical specifications, certifications, and samples of new materials and technologies.",
+
+          "Prototype Development & Testing:",
+          "Work with the product design and engineering team to create working prototypes and demos.",
+          "Coordinate with the installation team to ensure feasibility and functionality.",
+
+          "Market Validation & Business Development:",
+          "Pitch new products to architects, interior designers, and industry professionals to gauge demand.",
+          "Gather feedback and recommend improvements for product enhancement.",
+
+          "Vendor & Supplier Management:",
+          "Negotiate pricing, quality standards, and timelines with local and international suppliers.",
+          "Coordinate logistics for smooth procurement and delivery of samples.",
+
+          "Sales & Site Coordination:",
+          "Work closely with the sales team to provide technical insights and assist in product presentations.",
+          "Attend site meetings to oversee installations and resolve design-related challenges.",
+        ],
+        skills: [
+          "Strong knowledge of materials, finishes, and emerging design trends.",
+          "Experience in vendor management, supplier negotiations, and international product sourcing.",
+          "Ability to develop prototypes and present concepts to architects and designers.",
+          "Excellent communication and interpersonal skills.",
+          "Hands-on experience in coordinating with installation teams and managing site meetings.",
+          "Willingness to travel for research and business development when required",
+        ],
+        whocanapply: [
+          "Bachelor’s degree in Interior Design, Product Design, or a related field.",
+          "Minimum 3 years of experience in interior design, product research, or a similar role.",
+        ],
+        applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
+      },
+      {
         title: "Business Development (Sales)",
         subtitle:
           "As a Business Development intern at Imperio Railing Systems, you'll assist in lead generation, client relationship building, and revenue growth while gaining marketing experience.",
@@ -1136,6 +1187,51 @@ export default function JobDetailsPage() {
           "Candidates who can demonstrate the ability to manage multiple projects, meet deadlines, and deliver results.",
         ],
         applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
+      },
+      {
+        title: "UI/UX Design Intern",
+        subtitle:
+          "Imperio Railing Systems, a leader in innovative glass railing solutions, is looking for a talented and creative UI/UX Design Intern to join our team. This internship offers an excellent opportunity to gain hands-on experience in designing user-friendly digital experiences, collaborating with our marketing and development teams to enhance our online presence and product visualization.",
+        about:
+          "Imperio Railing Systems, a leader in innovative glass railing solutions, is looking for a talented and creative UI/UX Design Intern to join our team. This internship offers an excellent opportunity to gain hands-on experience in designing user-friendly digital experiences, collaborating with our marketing and development teams to enhance our online presence and product visualization.",
+        location: "Mumbai",
+        type: "Full-Time",
+        others: [
+          {
+            Duration: "6 months",
+            Expriance: "NA",
+            join: "Immediately",
+          },
+        ],
+        responsibilities: [
+          "Assist in creating engaging, user-friendly interfaces for websites and mobile applications",
+          "Collaborate with senior designers and cross-functional teams to ensure designs meet business goals and user needs",
+          "Conduct research on user behavior, market trends, and competitor analysis",
+          "Create wireframes, prototypes, and design specifications for new features and products",
+          "Help perform usability testing and gather feedback to refine designs",
+          "Assist in maintaining design consistency across digital platforms",
+          "Contribute to improving the overall design workflow and best practices",
+        ],
+        skills: [
+          "Figma",
+          "Prototyping",
+          "UI & UX Design",
+          "Wireframing",
+          "HTML & CSS",
+        ],
+        whocanapply: [
+          "Are available for full time (in-office) internship",
+          "Can start the internship between 13th Mar'25 and 17th Apr'25",
+          "Are available for duration of 6 months",
+          "A portfolio demonstrating your skills in UI/UX design, wireframing, and prototyping in Figma",
+          "Familiarity with design tools such as Figma, Sketch, Adobe XD, or other similar tools",
+          "Strong communication skills and the ability to articulate design decisions",
+          "A keen interest in learning about user-centered design principles",
+          "Ability to work independently and as part of a team",
+          "Strong attention to detail and problem-solving abilities",
+          "A basic understanding of HTML/CSS and front-end development is a plus but not required",
+        ],
+        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
       },
     ];
 

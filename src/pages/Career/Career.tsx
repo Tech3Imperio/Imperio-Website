@@ -406,6 +406,14 @@ export default function Career() {
       type: "Internship",
       applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     },
+    {
+      title: "UI/UX Design Intern",
+      description:
+        "Imperio Railing Systems, a leader in innovative glass railing solutions, is looking for a talented and creative UI/UX Design Intern to join our team. This internship offers an excellent opportunity to gain hands-on experience in designing user-friendly digital experiences, collaborating with our marketing and development teams to enhance our online presence and product visualization.",
+      location: "Mumbai",
+      type: "Internship",
+      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    },
   ]);
 
   return (
