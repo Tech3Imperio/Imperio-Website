@@ -111,24 +111,22 @@ const App: React.FC = () => {
     }
   }, [encodedToken, navigate]);
 
+  const isLandingPage = location.pathname === "/landing";
   return (
     <>
       {isModal && (
         <Suspense fallback={<div>Loading...</div>}>
           <ErrorPopup
             onClose={handleModalChange}
-            message={
-              "Your Session is Expired! We Kindly request you to please Login again!"
-            }
+            message="Your Session is Expired! We Kindly request you to please Login again!"
           />
         </Suspense>
       )}
       <Toaster />
-      <Navbar />
+      {!isLandingPage && <Navbar />}
       <Outlet />
-      <WhatsAppChat />
-      {/* <EnquiryButton /> */}
-      <Footer />
+      {!isLandingPage && <WhatsAppChat />}
+      {!isLandingPage && <Footer />}
       <ToastContainer />
     </>
   );

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState, useEffect } from "react";
@@ -39,9 +41,18 @@ interface UserData {
   size: number;
 }
 
-// interface SheetRow {
-//   [key: string]: string | number;
-// }
+// Define the BaseDataItem interface to match what ProductSelection expects
+interface BaseDataItem {
+  Base: string;
+  [key: string]: string | number;
+}
+
+interface HandrailDataItem {
+  "Handrail Type": string;
+  [key: string]: string | number;
+}
+
+// Define SheetRow with all possible properties and make them optional
 type SheetRow = {
   Base?: string;
   "Handrail Type"?: string;
@@ -49,6 +60,9 @@ type SheetRow = {
   Location?: string;
   Timeline?: string;
   "User Type"?: string;
+  Price?: string | number;
+  "Parameter (in %)"?: number;
+  [key: string]: string | number | undefined;
 };
 
 function App() {
@@ -76,8 +90,8 @@ function App() {
   });
 
   // Data from Google Sheets
-  const [baseData, setBaseData] = useState<SheetRow[]>([]);
-  const [handrailData, setHandrailData] = useState<SheetRow[]>([]);
+  const [baseData, setBaseData] = useState<BaseDataItem[]>([]);
+  const [handrailData, setHandrailData] = useState<HandrailDataItem[]>([]);
   const [glassData, setGlassData] = useState<SheetRow[]>([]);
   const [locationData, setLocationData] = useState<SheetRow[]>([]);
   const [timelineData, setTimelineData] = useState<SheetRow[]>([]);
@@ -113,8 +127,28 @@ function App() {
           axios.get<SheetRow[]>(USER_TYPE_SHEET_URL),
         ]);
 
-        setBaseData(baseResponse.data);
-        setHandrailData(handrailResponse.data);
+        // Convert SheetRow[] to BaseDataItem[] for baseData
+        const typedBaseData: BaseDataItem[] = baseResponse.data.map((row) => {
+          // Create a new object with all properties from row
+          const typedRow: BaseDataItem = {
+            Base: row.Base as string,
+            ...row,
+          };
+          return typedRow;
+        });
+        const typedHandrailData: HandrailDataItem[] = handrailResponse.data.map(
+          (row) => {
+            // Create a new object with all properties from row
+            const typedRow: HandrailDataItem = {
+              "Handrail Type": row["Handrail Type"] as string,
+              ...row,
+            };
+            return typedRow;
+          }
+        );
+
+        setBaseData(typedBaseData);
+        setHandrailData(typedHandrailData);
         setGlassData(glassResponse.data);
         setLocationData(locationResponse.data);
         setTimelineData(timelineResponse.data);
@@ -193,6 +227,7 @@ function App() {
         baseTotal * locationMultiplier * userDiscount * timelineMultiplier;
 
       return Number.parseFloat(perFtPrice.toFixed(2));
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       return `❌ Error: ${error.message}`;
     }

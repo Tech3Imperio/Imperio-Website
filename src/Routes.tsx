@@ -50,6 +50,7 @@ import SeamlessRailings from "./pages/Blog/SeamlessRailings/SeamlessRailing";
 import AestheticRailings from "./pages/Blog/AestheticRailing/AestheticRailing";
 import NewProducts from "./pages/NewProducts/NewProducts";
 import FormDashboard from "./pages/FormDashboard/FormDashboard";
+import LandingApp from "./pages/LandingApp/LandingApp";
 // import ForgotPassword from "./pages/DealerOnlineStore/ForgotPassword/ForgotPassword";
 
 export const routes = createBrowserRouter([
@@ -145,7 +146,7 @@ export const routes = createBrowserRouter([
       { path: "recommendation", element: <Recommendation /> },
       { path: "newproducts", element: <NewProducts /> },
       { path: "formDash", element: <FormDashboard /> },
-
+      { path: "Landing", element: <LandingApp /> },
       {
         path: "PrivacyPolicy",
         element: (
