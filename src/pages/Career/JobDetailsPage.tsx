@@ -1189,6 +1189,51 @@ export default function JobDetailsPage() {
         applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
       },
       {
+        title: "SEO Intern",
+        subtitle:
+          "Imperio Railing Systems, a leader in innovative glass railing solutions, is looking for a talented and creative SEO Intern Intern to join our team. This internship offers an excellent opportunity to gain hands-on experience",
+        about:
+          "Imperio Railing Systems, a leader in innovative glass railing solutions, is looking for a talented and creative SEO Intern Intern to join our team. This internship offers an excellent opportunity to gain hands-on experience",
+        location: "Mumbai",
+        type: "Internship",
+        others: [
+          {
+            Duration: "6 months",
+            Expriance: "NA",
+            join: "Immediately",
+          },
+        ],
+        responsibilities: [
+          "Assist in keyword research and analysis to identify opportunities for growth.",
+          "Optimize on-page elements, including meta tags, headings, and content.",
+          "Conduct competitive analysis and performance tracking.",
+          "Help improve website performance using SEO tools like Google Analytics, Search Console, and SEMrush.",
+          "Support link-building strategies by identifying opportunities and reaching out for collaborations.",
+          "Collaborate with the content team to ensure SEO best practices are implemented.",
+          "Track and report website traffic, rankings, and performance metrics.",
+          "Stay updated on the latest search engine algorithms and SEO trends.",
+        ],
+        skills: [
+          "Content Writing and Strategy",
+          "On-Page SEO",
+          "Off-Page SEO",
+          "Technical SEO",
+          "Analytics and Reporting",
+          "Page speed optimization",
+          "Social Media and SEO Integration",
+        ],
+        whocanapply: [
+          "Are available for full time (in-office) internship",
+          "Can start the internship immediately",
+          "Are available for duration of 6 months",
+          "have relevant skills and interests",
+          "Ability to work independently and as part of a team",
+          "Strong attention to detail and problem-solving abilities",
+          "A basic understanding of HTML/CSS and front-end development is a plus but not required",
+        ],
+        applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
+      },
+      {
         title: "UI/UX Design Intern",
         subtitle:
           "Imperio Railing Systems, a leader in innovative glass railing solutions, is looking for a talented and creative UI/UX Design Intern to join our team. This internship offers an excellent opportunity to gain hands-on experience in designing user-friendly digital experiences, collaborating with our marketing and development teams to enhance our online presence and product visualization.",

@@ -414,6 +414,14 @@ export default function Career() {
       type: "Internship",
       applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     },
+    {
+      title: "SEO Intern",
+      description:
+        "Imperio Railing Systems, a leader in innovative glass railing solutions, is looking for a talented and creative SEO Intern Intern to join our team. This internship offers an excellent opportunity to gain hands-on experience",
+      location: "Mumbai",
+      type: "Internship",
+      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    },
   ]);
 
   return (
