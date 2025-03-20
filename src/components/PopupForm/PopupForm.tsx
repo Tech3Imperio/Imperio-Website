@@ -207,7 +207,7 @@ export default function PopupForm() {
 
                 <div>
                   <CustomTextarea
-                    name="requirements"
+                    name="message"
                     placeholder="Tell us about your requirements"
                     value={formData.message}
                     onChange={handleChange}

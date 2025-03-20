@@ -19,27 +19,7 @@ export default function HeroSection() {
           className="w-full h-full object-cover"
         />
       </div>
-      {/* Fixed Navbar */}
-      <nav className="top-0 left-0 w-full bg-black backdrop-blur-md shadow-md z-50">
-        <div className=" container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between">
-          <img
-            src="/images/Landing/White.webp"
-            alt="Imperio Railing Systems"
-            className="h-20 w-32 "
-          />
-          <button className="bg-yellow-500 text-gray-900 px-5 py-2 rounded-lg hover:bg-yellow-300">
-            Call Us Now
-          </button>
-        </div>
-      </nav>
 
-      <div className="absolute inset-0 z-0 opacity-40">
-        <img
-          src="/images/Landing/SlidingDoor.jpg"
-          alt="Imperio Railing Systems"
-          className="w-full h-full object-cover"
-        />
-      </div>
       {/* Animated overlay elements */}
       <motion.div
         className="absolute top-20 left-10 w-32 h-32 bg-[var(--yellow-500)] rounded-full opacity-20 blur-3xl"
@@ -66,7 +46,24 @@ export default function HeroSection() {
           repeatType: "reverse",
         }}
       />
-
+      {/* Fixed Navbar */}
+      <nav className="top-0 left-0 w-full bg-black opacity-90 backdrop-blur-md z-50">
+        <div className=" container mx-auto px-4 py-2 flex flex-col md:flex-row items-center justify-between">
+          <img
+            src="/images/Landing/White.webp"
+            alt="Imperio Railing Systems"
+            className="h-20 w-32 "
+          />
+          <button
+            onClick={() => {
+              window.open("https://wa.me/918591953385", "_blank");
+            }}
+            className="bg-yellow-500 text-gray-900 px-5 py-2 rounded-lg hover:bg-yellow-300"
+          >
+            Chat on WhatsApp
+          </button>
+        </div>
+      </nav>
       <div className="relative z-10 container mx-auto px-4 py-20 md:py-32 flex flex-col md:flex-row items-center justify-between">
         <motion.div
           className="max-w-xl mb-12 md:mb-0"

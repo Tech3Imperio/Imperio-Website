@@ -12,25 +12,26 @@ export default function GetInTouchSection() {
     {
       icon: <Phone className="h-6 w-6 text-[var(--yellow-500)]" />,
       title: "Phone",
-      details: "+91 98765 43210",
-      link: "tel:+919876543210",
+      details: "+91 85919 53385",
+      link: "tel:+918591953385",
     },
     {
       icon: <Mail className="h-6 w-6 text-[var(--yellow-500)]" />,
       title: "Email",
-      details: "info@imperiorailing.com",
-      link: "mailto:info@imperiorailing.com",
+      details: "sales@imperiorailing.com",
+      link: "mailto:sales@imperiorailing.com",
     },
     {
       icon: <MapPin className="h-6 w-6 text-[var(--yellow-500)]" />,
       title: "Office",
-      details: "123 Business Park, Mumbai, India",
+      details:
+        "1, Aman Chambers, New Queens Rd, Charni Road, Mumbai Maharashtra - 400004.",
       link: "#",
     },
     {
       icon: <Clock className="h-6 w-6 text-[var(--yellow-500)]" />,
       title: "Working Hours",
-      details: "Mon-Sat: 9AM - 6PM",
+      details: "Mon-Sat: 10AM - 7PM",
       link: "#",
     },
   ];
