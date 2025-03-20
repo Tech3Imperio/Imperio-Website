@@ -15,7 +15,8 @@ interface HandrailDataItem {
 
 interface GlassDataItem {
   "Glass Thickness": string;
-  Price: number;
+  Price: string | number;
+  [key: string]: string | number;
 }
 
 interface LocationDataItem {

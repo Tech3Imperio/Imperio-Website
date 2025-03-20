@@ -79,11 +79,14 @@ export default function FixedContactForm() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://imperiorailing.com/landing-form", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://backendimperio.onrender.com/landing-form",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
 
       // Check if response is actually JSON
       const contentType = response.headers.get("content-type");

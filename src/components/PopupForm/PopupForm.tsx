@@ -11,7 +11,7 @@ import CustomTextarea from "../CustomTextarea/CustomTextarea";
 export default function PopupForm() {
   const [isOpen, setIsOpen] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [hasBeenOpened, setHasBeenOpened] = useState(false);
+  const [, setHasBeenOpened] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -87,11 +87,14 @@ export default function PopupForm() {
 
     // Simulate form submission
     try {
-      const response = await fetch("https://imperiorailing.com/landing-form", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://backendimperio.onrender.com/landing-form",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
 
       // Check if response is actually JSON
       const contentType = response.headers.get("content-type");

@@ -52,6 +52,30 @@ interface HandrailDataItem {
   [key: string]: string | number;
 }
 
+interface GlassDataItem {
+  "Glass Thickness": string;
+  Price: string | number;
+  [key: string]: string | number;
+}
+
+interface LocationDataItem {
+  Location: string;
+  "Parameter (in %)": number;
+  [key: string]: string | number;
+}
+
+interface TimelineDataItem {
+  Timeline: string;
+  "Parameter (in %)": number;
+  [key: string]: string | number;
+}
+
+interface UserTypeDataItem {
+  "User Type": string;
+  "Parameter (in %)": number;
+  [key: string]: string | number;
+}
+
 // Define SheetRow with all possible properties and make them optional
 type SheetRow = {
   Base?: string;
@@ -64,6 +88,42 @@ type SheetRow = {
   "Parameter (in %)"?: number;
   [key: string]: string | number | undefined;
 };
+
+// Conversion functions to ensure type safety
+function convertToGlassData(data: SheetRow[]): GlassDataItem[] {
+  return data.map((row) => ({
+    "Glass Thickness": row["Glass Thickness"] || "",
+    Price: row.Price || 0,
+    ...row,
+  }));
+}
+
+function convertToLocationData(data: SheetRow[]): LocationDataItem[] {
+  return data.map((row) => ({
+    Location: row.Location || "",
+    "Parameter (in %)":
+      typeof row["Parameter (in %)"] === "number" ? row["Parameter (in %)"] : 0,
+    ...row,
+  }));
+}
+
+function convertToTimelineData(data: SheetRow[]): TimelineDataItem[] {
+  return data.map((row) => ({
+    Timeline: row.Timeline || "",
+    "Parameter (in %)":
+      typeof row["Parameter (in %)"] === "number" ? row["Parameter (in %)"] : 0,
+    ...row,
+  }));
+}
+
+function convertToUserTypeData(data: SheetRow[]): UserTypeDataItem[] {
+  return data.map((row) => ({
+    "User Type": row["User Type"] || "",
+    "Parameter (in %)":
+      typeof row["Parameter (in %)"] === "number" ? row["Parameter (in %)"] : 0,
+    ...row,
+  }));
+}
 
 function App() {
   // State for page control
@@ -82,7 +142,7 @@ function App() {
   });
 
   // User form state
-  const [userData, setUserData] = useState<UserData>({
+  const [, setUserData] = useState<UserData>({
     name: "",
     phone: "",
     email: "",
@@ -282,7 +342,10 @@ function App() {
       };
 
       // Submit to Google Apps Script
-      await axios.post("http://localhost:3001/submit-form", formData);
+      await axios.post(
+        "https://backendimperio.onrender.com/submit-form",
+        formData
+      );
 
       setMessage(
         "✅ Your quotation has been submitted successfully! You will receive the total price on WhatsApp."
@@ -390,10 +453,10 @@ function App() {
             setProductData={setProductData}
             baseData={baseData}
             handrailData={handrailData}
-            glassData={glassData}
-            locationData={locationData}
-            timelineData={timelineData}
-            userTypeData={userTypeData}
+            glassData={convertToGlassData(glassData)}
+            locationData={convertToLocationData(locationData)}
+            timelineData={convertToTimelineData(timelineData)}
+            userTypeData={convertToUserTypeData(userTypeData)}
             heightOptions={heightOptions}
           />
 
