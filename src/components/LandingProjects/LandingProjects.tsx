@@ -63,7 +63,7 @@ export default function LandingProjects() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          Why Choose Imperio Railing Systems
+          Our Latest Projects
         </motion.h2>
 
         <motion.div
