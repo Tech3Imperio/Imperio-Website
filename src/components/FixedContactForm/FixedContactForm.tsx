@@ -6,8 +6,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import CustomButton from "../CustomButton/CustomButton";
 import CustomInput from "../CustomInput/CustomInput";
 import CustomTextarea from "../CustomTextarea/CustomTextarea";
+import { useNavigate } from "react-router-dom";
 
 export default function FixedContactForm() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -100,6 +102,7 @@ export default function FixedContactForm() {
       console.log("Form submitted successfully:", result);
       setIsVisible(false);
       localStorage.setItem("formSubmitted", "true");
+      navigate("/thanks");
       setFormData({ name: "", email: "", phone: "", pincode: "", message: "" });
       setErrors({});
     } catch (error) {

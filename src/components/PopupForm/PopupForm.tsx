@@ -7,8 +7,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import CustomButton from "../CustomButton/CustomButton";
 import CustomInput from "../CustomInput/CustomInput";
 import CustomTextarea from "../CustomTextarea/CustomTextarea";
+import { useNavigate } from "react-router-dom";
 
 export default function PopupForm() {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [, setHasBeenOpened] = useState(false);
@@ -120,7 +122,7 @@ export default function PopupForm() {
     }
     setTimeout(() => {
       setIsSubmitting(false);
-      alert("Quote request submitted! Our team will contact you shortly.");
+      navigate("/thanks");
       setFormData({
         name: "",
         email: "",

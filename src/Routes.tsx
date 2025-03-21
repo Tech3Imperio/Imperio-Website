@@ -147,6 +147,7 @@ export const routes = createBrowserRouter([
       { path: "newproducts", element: <NewProducts /> },
       { path: "formDash", element: <FormDashboard /> },
       { path: "Landing", element: <LandingApp /> },
+      { path: "thanks", element: <ThankYou /> },
       {
         path: "PrivacyPolicy",
         element: (
