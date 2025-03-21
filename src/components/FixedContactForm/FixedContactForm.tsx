@@ -102,6 +102,7 @@ export default function FixedContactForm() {
       console.log("Form submitted successfully:", result);
       setIsVisible(false);
       localStorage.setItem("formSubmitted", "true");
+      localStorage.setItem("fixedForm", "true");
       navigate("/thanks");
       setFormData({ name: "", email: "", phone: "", pincode: "", message: "" });
       setErrors({});

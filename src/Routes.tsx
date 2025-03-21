@@ -51,7 +51,6 @@ import AestheticRailings from "./pages/Blog/AestheticRailing/AestheticRailing";
 import NewProducts from "./pages/NewProducts/NewProducts";
 import FormDashboard from "./pages/FormDashboard/FormDashboard";
 import LandingApp from "./pages/LandingApp/LandingApp";
-import { ThankYouLanding } from "./pages/ThankYou/ThankyouLanding";
 // import ForgotPassword from "./pages/DealerOnlineStore/ForgotPassword/ForgotPassword";
 
 export const routes = createBrowserRouter([
@@ -148,7 +147,7 @@ export const routes = createBrowserRouter([
       { path: "newproducts", element: <NewProducts /> },
       { path: "formDash", element: <FormDashboard /> },
       { path: "Landing", element: <LandingApp /> },
-      { path: "thanks", element: <ThankYouLanding /> },
+      { path: "thanks", element: <ThankYou /> },
       {
         path: "PrivacyPolicy",
         element: (

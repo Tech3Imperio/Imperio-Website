@@ -107,6 +107,7 @@ export default function PopupForm() {
       const result = await response.json();
       console.log("Form submitted successfully:", result);
       localStorage.setItem("formSubmitted", "true");
+      localStorage.setItem("fixedForm", "false");
       setFormData({
         name: "",
         email: "",

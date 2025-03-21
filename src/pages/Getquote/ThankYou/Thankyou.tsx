@@ -2,7 +2,7 @@ import "./style.css";
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import { BlackButton } from "../../../components";
-
+const isLanding = localStorage.getItem("fixedForm");
 export const ThankYou = () => {
   return (
     <main className="thanks-page">
@@ -69,7 +69,28 @@ export const ThankYou = () => {
             Will contact you within 24 hours.
           </p>
         </div>
-        <BlackButton className="w-[12rem] h-[4rem] flex items-center justify-center mt-7">
+        {isLanding ? (
+          <BlackButton className="w-[12rem] h-[4rem] flex items-center justify-center mt-7">
+            <Link
+              to="/home"
+              className="text-xl flex items-center justify-center space-x-2"
+            >
+              <FaArrowLeft />
+              <span>Back Home</span>
+            </Link>
+          </BlackButton>
+        ) : (
+          <BlackButton className="w-[12rem] h-[4rem] flex items-center justify-center mt-7">
+            <Link
+              to="/landing"
+              className="text-xl flex items-center justify-center space-x-2"
+            >
+              <FaArrowLeft />
+              <span>Back Home</span>
+            </Link>
+          </BlackButton>
+        )}
+        {/* <BlackButton className="w-[12rem] h-[4rem] flex items-center justify-center mt-7">
           <Link
             to="/home"
             className="text-xl flex items-center justify-center space-x-2"
@@ -77,7 +98,7 @@ export const ThankYou = () => {
             <FaArrowLeft />
             <span>Back Home</span>
           </Link>
-        </BlackButton>
+        </BlackButton> */}
         <div>
           <p className="issue-msg">
             If you have any issue{" "}
