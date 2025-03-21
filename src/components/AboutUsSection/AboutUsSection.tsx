@@ -25,14 +25,14 @@ export default function AboutUsSection() {
           >
             <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-xl">
               <img
-                src="/images/Landing/windows2.webp"
+                src="/images/Landing/img1.webp"
                 alt="About Imperio Railing"
                 className="w-full h-full object-cover"
               />
             </div>
 
             <motion.div
-              className="absolute -bottom-6 -right-6 w-32 h-32 bg-[var(--yellow-500)] rounded-lg z-[-1]"
+              className="absolute -bottom-6 -right-6 w-32 h-32 bg-yellow-500 rounded-lg z-[-1]"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 0.6, scale: 1 }}
               viewport={{ once: true }}
@@ -75,7 +75,7 @@ export default function AboutUsSection() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + index * 0.1, duration: 0.5 }}
                 >
-                  <CheckCircle className="h-5 w-5 text-[var(--yellow-500)] flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-yellow-500 flex-shrink-0" />
                   <span>{item}</span>
                 </motion.div>
               ))}

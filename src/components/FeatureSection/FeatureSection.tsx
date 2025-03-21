@@ -94,7 +94,7 @@ export default function FeaturesSection() {
                 </div>
               </div>
               <div className="flex items-center mb-4">
-                <div className="mr-3">{feature.icon}</div>
+                <div className="mr-3 text-yellow-500">{feature.icon}</div>
                 <h3 className="text-xl font-bold">{feature.title}</h3>
               </div>
               <p className="text-gray-600">{feature.description}</p>

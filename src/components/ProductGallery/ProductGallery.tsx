@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import CustomButton from "../CustomButton/CustomButton";
-import { ArrowRight } from "lucide-react";
+// import { ArrowRight } from "lucide-react";
 
 export default function ProductGallery() {
   const [activeCategory, setActiveCategory] = useState("glass");
@@ -38,7 +38,7 @@ export default function ProductGallery() {
       {
         id: 4,
         name: "Modern Glass Partition",
-        image: "/images/Landing/windows4.webp",
+        image: "/images/Landing/buildingImg.webp",
       },
     ],
     stainless: [
@@ -120,7 +120,7 @@ export default function ProductGallery() {
                 onClick={() => setActiveCategory(category.id)}
                 className={`px-6 py-3 rounded-full text-lg font-medium transition-all duration-300 ${
                   activeCategory === category.id
-                    ? "bg-[var(--yellow-500)] text-black shadow-md"
+                    ? "bg-yellow-500 text-black shadow-md"
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                 }`}
               >
@@ -161,7 +161,7 @@ export default function ProductGallery() {
                       <CustomButton
                         variant="primary"
                         size="sm"
-                        className="w-full text-white bg-slate-400 opacity-80"
+                        className="w-full text-white bg-slate-700 opacity-80"
                         onClick={handleOpenPopup}
                       >
                         Get Quote
@@ -175,14 +175,20 @@ export default function ProductGallery() {
         </AnimatePresence>
 
         <motion.div
-          className="mt-12 text-center"
+          className="mt-12 text-center w-full flex justify-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          <CustomButton variant="primary" size="lg" onClick={handleOpenPopup}>
-            Request Custom Design <ArrowRight className="ml-2 h-5 w-5" />
+          <CustomButton
+            variant="primary"
+            size="lg"
+            onClick={handleOpenPopup}
+            className="bg-yellow-500"
+          >
+            Request Custom Design
+            {/* <ArrowRight className="ml-2 h-5 w-5  " /> */}
           </CustomButton>
         </motion.div>
       </div>

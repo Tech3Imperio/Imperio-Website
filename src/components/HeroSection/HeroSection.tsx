@@ -14,7 +14,7 @@ export default function HeroSection() {
     >
       <div className="absolute inset-0 z-0 opacity-40">
         <img
-          src="/images/Landing/SlidingDoor.jpg"
+          src="/images/Landing/Hero.webp"
           alt="Imperio Railing Systems"
           className="w-full h-full object-cover"
         />
@@ -56,7 +56,7 @@ export default function HeroSection() {
           />
           <button
             onClick={() => {
-              window.open("https://wa.me/918591953385", "_blank");
+              window.open("https://wa.me/918591953382", "_blank");
             }}
             className="bg-yellow-500 text-gray-900 px-5 py-2 rounded-lg hover:bg-yellow-300"
           >
@@ -94,7 +94,7 @@ export default function HeroSection() {
             >
               Get a Free Quote <ArrowRight className="ml-2 h-5 w-5 " />
             </CustomButton>
-            <CustomButton
+            {/* <CustomButton
               variant="outline"
               size="lg"
               onClick={() => {
@@ -103,7 +103,7 @@ export default function HeroSection() {
               }}
             >
               Explore Products
-            </CustomButton>
+            </CustomButton> */}
           </motion.div>
         </motion.div>
 
