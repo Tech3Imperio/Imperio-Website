@@ -14,7 +14,7 @@ type TrendingItem = {
 const items: TrendingItem[] = Array.from({ length: 10 }, (_, i) => ({
   id: i + 1,
   title: `${i + 1}`,
-  imageUrl: `/imagegallery/${i + 1}.jpg`,
+  imageUrl: `images/imagegallery/${i + 1}.jpg`,
 }));
 
 export default function ImageGallery() {

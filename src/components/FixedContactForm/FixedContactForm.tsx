@@ -190,7 +190,7 @@ export default function FixedContactForm() {
                   <CustomButton
                     type="submit"
                     variant="primary"
-                    className="w-full"
+                    className="w-full bg-yellow-500"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? "Submitting..." : "Get My Free Quote"}

@@ -1,5 +1,5 @@
 import { QuoteButton, DealershipButton } from "../.."; // Importing the QuoteButton component
-import { bgQuote, bgDealers } from "../../../assets/Images"; // Importing the background image
+import { bgDealers, goaImg2 } from "../../../assets/Images"; // Importing the background image
 import { CTAButton3 } from "../../../components";
 import { MdAddCall } from "react-icons/md";
 export const Dealers = () => {
@@ -55,11 +55,11 @@ export const Quote = () => {
         {" "}
         {/* Wrapper div with full width and height */}
         <img
-          src={bgQuote} // Source of the background image
+          src={goaImg2} // Source of the background image
           // src="https://github.com/Tech3Imperio/Imperio-Website/blob/main/src/assets/Images/quote/bgQuote.webp"
           alt="Backdrop for product" // Alt text for the image
           title="Backdrop for product" // Title text for the image
-          className="w-screen h-[50vh] lg:h-full object-cover" // Image styling
+          className="w-screen h-[60vh] lg:h-[70vh] object-cover" // Image styling
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#f2f0e980] from-75% to-[#03237b3a] flex justify-center items-center">
           {" "}

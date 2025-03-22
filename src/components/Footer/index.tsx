@@ -179,6 +179,11 @@ export const Footer = () => {
             <p>Telephone</p>
             <p>022-66362506</p>
           </div>
+          <HiOutlinePhone className="text-lg phone:text-xl tablet:text-2xl laptop:text-base xl:text-xl" />{" "}
+          <div className="flex flex-col gap-1 text-xs tablet:text-sm laptop:text-base">
+            <p>Phone</p>
+            <p>8591953385</p>
+          </div>
         </div>
         <div className="flex gap-4">
           <MdOutlineEmail className="text-lg phone:text-xl tablet:text-2xl laptop:text-base xl:text-xl" />{" "}
