@@ -130,7 +130,10 @@ async function getPincodeState(pincode: string): Promise<string | null> {
   try {
     console.log("Fetching state for pincode:", pincode);
     const response = await axios.get(
-      `https://api.postalpincode.in/pincode/${pincode}`
+      `https://api.postalpincode.in/pincode/${pincode}`,
+      {
+        timeout: 5000, // Add timeout to prevent long waits
+      }
     );
     console.log("Pincode API response:", response.data);
 
@@ -159,8 +162,8 @@ function App() {
   // State for page control
   const [currentPage, setCurrentPage] = useState<"product" | "user">("product");
 
-  // Product selection state
-  const [productData, setProductData] = useState<ProductData>({
+  // Default product data
+  const defaultProductData: ProductData = {
     base: "",
     handrail: "",
     finish: "",
@@ -169,10 +172,15 @@ function App() {
     location: "",
     userType: "",
     timeline: "",
+  };
+
+  // Product selection state
+  const [productData, setProductData] = useState<ProductData>({
+    ...defaultProductData,
   });
 
   // User form state
-  const [, setUserData] = useState<UserData>({
+  const [userData, setUserData] = useState<UserData>({
     name: "",
     phone: "",
     email: "",
@@ -193,6 +201,7 @@ function App() {
   const [message, setMessage] = useState<string>("");
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [initialDataLoaded, setInitialDataLoaded] = useState<boolean>(false);
 
   const heightOptions: number[] = [2.5, 3, 3.25, 3.5, 4];
 
@@ -243,6 +252,7 @@ function App() {
         setLocationData(locationResponse.data);
         setTimelineData(timelineResponse.data);
         setUserTypeData(userTypeResponse.data);
+        setInitialDataLoaded(true);
 
         // Set default values
         if (baseResponse.data.length > 0 && handrailResponse.data.length > 0) {
@@ -278,6 +288,7 @@ function App() {
       console.log("Product data:", productData);
       console.log("Location data:", locationData);
 
+      // Fetch Base price (a) based on Finish
       const baseRow = baseData.find((row) => row.Base === productData.base);
       if (!baseRow) {
         console.error("Base row not found for:", productData.base);
@@ -285,11 +296,9 @@ function App() {
       }
 
       const basePrice = baseRow[productData.finish];
-      if (basePrice === undefined) {
-        console.error("Base price not found for finish:", productData.finish);
-        return "❌ Error: Base price not found for selected finish";
-      }
+      console.log("Base price:", basePrice);
 
+      // Fetch Handrail price (b) based on Finish
       const handrailRow = handrailData.find(
         (row) => row["Handrail Type"] === productData.handrail
       );
@@ -299,14 +308,9 @@ function App() {
       }
 
       const handrailPrice = handrailRow[productData.finish];
-      if (handrailPrice === undefined) {
-        console.error(
-          "Handrail price not found for finish:",
-          productData.finish
-        );
-        return "❌ Error: Handrail price not found for selected finish";
-      }
+      console.log("Handrail price:", handrailPrice);
 
+      // Fetch Glass price (c) based on Glass Thickness
       const glassRow = glassData.find(
         (row) => row["Glass Thickness"] === productData.glass
       );
@@ -316,50 +320,40 @@ function App() {
       }
 
       const glassPrice = glassRow.Price;
-      if (glassPrice === undefined) {
-        console.error("Glass price not found");
-        return "❌ Error: Glass price not found";
-      }
+      console.log("Glass price:", glassPrice);
 
-      // Default location multiplier if state not found
-      let locationMultiplier = 1;
+      // Fetch Height (d)
+      const heightValue = productData.height;
+      console.log("Height value:", heightValue);
+
+      // Calculate cd = c * d
+      const cdValue = Number.parseFloat(glassPrice as string) * heightValue;
+      console.log("cd value (glass price * height):", cdValue);
+
+      // Fetch Location multiplier (e)
+      let locationMultiplier = 1; // Default value
 
       if (stateForCalculation) {
-        // Try to find the location parameter for the state
         const locationRow = locationData.find(
           (row) => row.Location === stateForCalculation
         );
 
         if (locationRow && locationRow["Parameter (in %)"] !== undefined) {
-          locationMultiplier =
-            1 + (locationRow["Parameter (in %)"] as number) / 100;
-          console.log(
-            "Using location multiplier for state:",
-            locationMultiplier
-          );
+          // Use the parameter directly, not as a percentage adjustment
+          locationMultiplier = locationRow["Parameter (in %)"] as number;
+          console.log("Location multiplier for state:", locationMultiplier);
         } else {
           console.log(
             "Location parameter not found for state, using default multiplier"
           );
         }
-      } else {
-        // If no state provided, try to find a default parameter
-        console.log("No state provided, using default multiplier");
       }
 
-      const timelineRow = timelineData.find(
-        (row) => row.Timeline === productData.timeline
-      );
-      if (!timelineRow) {
-        console.error("Timeline row not found for:", productData.timeline);
-        return "❌ Error: Timeline option not found";
-      }
+      // Calculate f = cd * e
+      const fValue = cdValue * locationMultiplier;
+      console.log("f value (cd * location multiplier):", fValue);
 
-      const timelineMultiplier =
-        timelineRow["Parameter (in %)"] !== undefined
-          ? 1 + (timelineRow["Parameter (in %)"] as number) / 100
-          : 1;
-
+      // Fetch User Discount multiplier (h)
       const userTypeRow = userTypeData.find(
         (row) => row["User Type"] === productData.userType
       );
@@ -368,39 +362,42 @@ function App() {
         return "❌ Error: User type option not found";
       }
 
+      // Note: Adding the parameter (not subtracting as before)
       const userDiscount =
-        userTypeRow["Parameter (in %)"] !== undefined
-          ? 1 - (userTypeRow["Parameter (in %)"] as number) / 100
-          : 1;
+        1 + (userTypeRow["Parameter (in %)"] as number) / 100;
+      console.log("User discount:", userDiscount);
 
-      // Parse values safely
-      const parsedGlassPrice = Number.parseFloat(glassPrice as string) || 0;
-      const parsedBasePrice = Number.parseFloat(basePrice as string) || 0;
-      const parsedHandrailPrice =
-        Number.parseFloat(handrailPrice as string) || 0;
+      // Calculate Total Price
+      // (base_price + handrail_price + cd_value + f_value) * user_discount
+      const totalPrice =
+        (Number.parseFloat(basePrice as string) +
+          Number.parseFloat(handrailPrice as string) +
+          cdValue +
+          fValue) *
+        userDiscount;
 
-      console.log("Parsed prices:", {
-        base: parsedBasePrice,
-        handrail: parsedHandrailPrice,
-        glass: parsedGlassPrice,
-        height: productData.height,
-      });
-
-      const totalGlassPrice = parsedGlassPrice * productData.height;
-      const baseTotal = parsedBasePrice + parsedHandrailPrice + totalGlassPrice;
-
-      console.log("Calculation factors:", {
-        baseTotal,
-        locationMultiplier,
+      console.log("Total price calculation components:", {
+        basePrice: Number.parseFloat(basePrice as string),
+        handrailPrice: Number.parseFloat(handrailPrice as string),
+        cdValue,
+        fValue,
         userDiscount,
-        timelineMultiplier,
       });
 
-      const perFtPrice =
-        baseTotal * locationMultiplier * userDiscount * timelineMultiplier;
-      console.log("Final price per ft:", perFtPrice);
+      console.log("Final price per ft:", totalPrice);
 
-      return Number.parseFloat(perFtPrice.toFixed(2));
+      // Timeline is fetched but not used in calculation
+      const timelineRow = timelineData.find(
+        (row) => row.Timeline === productData.timeline
+      );
+      if (timelineRow) {
+        console.log(
+          "Timeline value (not used in calculation):",
+          timelineRow["Parameter (in %)"]
+        );
+      }
+
+      return Number.parseFloat(totalPrice.toFixed(2));
     } catch (error: any) {
       console.error("Error in calculatePerFtPrice:", error);
       return `❌ Error: ${error.message}`;
@@ -509,16 +506,22 @@ function App() {
         totalPrice: Number.parseFloat(totalPrice.toFixed(2)),
       };
 
-      // Submit to Google Apps Script
+      // Submit to Google Apps Script with timeout
       await axios.post(
         "https://backendimperio.onrender.com/submit-form",
-        formData
+        formData,
+        {
+          timeout: 10000, // 10 second timeout
+        }
       );
 
       setMessage(
         "✅ Your quotation has been submitted successfully! You will receive the total price on WhatsApp."
       );
       setIsSuccess(true);
+
+      // Store user data for potential reuse
+      setUserData(userData);
     } catch (error: any) {
       console.error("Error submitting form:", error);
       setMessage(`❌ Error submitting form: ${error.message}`);
@@ -529,26 +532,39 @@ function App() {
 
   const handleNewQuote = () => {
     // Reset all data and go back to first page
-    setProductData({
-      base: "",
-      handrail: "",
-      finish: "",
-      glass: "",
-      height: 2.5,
-      location: "",
-      userType: "",
-      timeline: "",
-    });
-    setUserData({
-      name: "",
-      phone: "",
-      email: "",
-      size: 0,
-    });
+    if (initialDataLoaded && baseData.length > 0) {
+      // Get the first finish option
+      const firstFinish = Object.keys(baseData[0]).filter(
+        (key) => key !== "Base"
+      )[0];
+
+      // Reset with default values from the data
+      setProductData({
+        base: baseData[0].Base,
+        handrail:
+          handrailData.length > 0 ? handrailData[0]["Handrail Type"] : "",
+        finish: firstFinish,
+        glass: "",
+        height: 2.5,
+        location: "",
+        userType: "",
+        timeline: "",
+      });
+    } else {
+      // Fallback to empty defaults if data isn't loaded
+      setProductData({ ...defaultProductData });
+    }
+
     setPricePerFt(null);
     setMessage("");
     setIsSuccess(false);
     setCurrentPage("product");
+
+    // Force a re-render by setting loading briefly
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 100);
   };
 
   // Render loading state
