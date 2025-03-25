@@ -64,7 +64,12 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
     e.preventDefault();
 
     if (validateForm()) {
-      onSubmit(userData);
+      const formattedUserData = {
+        ...userData,
+        email: userData.email.trim() || "", // Ensure email is always defined
+      };
+
+      onSubmit(formattedUserData);
     }
   };
 
