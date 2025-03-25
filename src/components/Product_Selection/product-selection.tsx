@@ -104,6 +104,14 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
     Wood: "#a15a3e",
   };
 
+  const heightImages: Record<string, string> = {
+    "2.5": "/images/GlassHeight/2.5.png",
+    "3": "/images/GlassHeight/3.png",
+    "3.25": "/images/GlassHeight/3.25.png",
+    "3.5": "/images/GlassHeight/3.5.png",
+    "4": "/images/GlassHeight/4.png",
+  };
+
   return (
     <div className="max-w-[1200px] mx-auto p-5 sm:p-10 font-sans text-gray-800 bg-gray-50 rounded-xl">
       {/* Preload images */}
@@ -374,7 +382,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
               }
               className="w-full p-3 rounded-lg border border-gray-200 text-gray-700 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
             >
-              <option value="">Select Glass</option>
+              {/* <option value="">Select Glass</option> */}
               {glassData.map((row) => (
                 <option
                   key={row["Glass Thickness"]}
@@ -418,7 +426,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
               }
               className="w-full p-3 rounded-lg border border-gray-200 text-gray-700 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
             >
-              <option value="">Select User Type</option>
+              {/* <option value="">Select User Type</option> */}
               {userTypeData.map((row) => (
                 <option key={row["User Type"]} value={row["User Type"]}>
                   {row["User Type"]}
@@ -426,18 +434,13 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
               ))}
             </select>
           </div>
-          <div className="mb-6"></div>
 
           {/* Timeline Selection */}
           <div className="mb-6">
             <label className="block mb-2 font-medium text-gray-600">
               Project Timeline:
             </label>
-            <img
-              src="/images/30 days.png"
-              alt="Timeline"
-              className="h-[200px] object-contain mx-auto mb-4 block"
-            />
+
             <select
               value={productData.timeline}
               onChange={(e) =>
@@ -445,7 +448,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
               }
               className="w-full p-3 rounded-lg border border-gray-200 text-gray-700 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
             >
-              <option value="">Select Timeline</option>
+              {/* <option value="">Select Timeline</option> */}
               {timelineData.map((row) => (
                 <option key={row.Timeline} value={row.Timeline}>
                   {row.Timeline}
@@ -454,19 +457,23 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
             </select>
           </div>
           {/* Height Selection */}
-          <div className="mb-6 ">
+          <div className="mb-6">
             <label className="block mb-2 font-medium text-gray-600">
-              Railing Height:
+              Glass Height:
             </label>
-            <div className="flex justify-center items-center gap-10">
-              <div className="flex flex-col items-center h-[250px] relative">
-                <div className="absolute -left-10 h-[200px] flex flex-col-reverse justify-between pl-5">
+            <div className="flex justify-center items-center gap-20">
+              {/* Height Selection & Labels */}
+              <div className="flex flex-col items-center h-[200px] relative">
+                {/* Fixed Width for Height Labels */}
+                <div className="absolute h-[150px] flex flex-col-reverse justify-between pl-10 w-[40px] text-right">
                   {heightOptions.map((option) => (
-                    <span key={option} className="text-sm text-gray-500">
+                    <span key={option} className="text-sm text-gray-500 block">
                       {option}ft
                     </span>
                   ))}
                 </div>
+
+                {/* Vertical Range Slider */}
                 <input
                   type="range"
                   min={0}
@@ -477,16 +484,23 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                     const height = heightMap[Number.parseInt(e.target.value)];
                     setProductData({ ...productData, height });
                   }}
-                  className="appearance-none w-[10px] h-[200px] bg-gray-200 rounded-md outline-none mx-[30px] [writing-mode:vertical-rl] [direction:ltr] rotate-180"
+                  className="appearance-none -left-10 w-[10px] h-[150px] bg-gray-200 rounded-md outline-none mx-[20px] [writing-mode:vertical-rl] [direction:ltr] rotate-180"
                 />
-                <div className="mt-5 text-lg font-semibold text-blue-500">
-                  {productData.height}ft
+
+                {/* Fixed Width for Selected Height Text */}
+                <div className="mt-5 text-lg font-semibold text-blue-500 w-[60px] text-center">
+                  {productData.height} feet
                 </div>
               </div>
+
+              {/* Dynamic Image Based on Height Selection */}
               <img
-                src="/images/6ftman.png"
+                src={
+                  heightImages[productData.height] ||
+                  "/images/GlassHeight/3.5.png"
+                }
                 alt="Human"
-                className="h-[400px] object-contain"
+                className="h-[400px] w-[150px] object-cover"
               />
             </div>
           </div>

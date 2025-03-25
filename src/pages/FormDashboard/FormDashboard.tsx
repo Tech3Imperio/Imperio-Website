@@ -168,7 +168,7 @@ function App() {
     handrail: "",
     finish: "",
     glass: "",
-    height: 2.5,
+    height: 3.5,
     location: "",
     userType: "",
     timeline: "",
@@ -260,12 +260,21 @@ function App() {
           const firstFinish = Object.keys(baseResponse.data[0]).filter(
             (key) => key !== "Base"
           )[0];
-
+          const firstGlass = glassResponse.data[0]?.[
+            "Glass Thickness"
+          ] as string;
+          const firstTimeline = timelineResponse.data[0]?.Timeline as string;
+          const firstUserType = userTypeResponse.data[0]?.[
+            "User Type"
+          ] as string;
           setProductData((prev) => ({
             ...prev,
             base: baseResponse.data[0].Base as string,
             handrail: handrailResponse.data[0]["Handrail Type"] as string,
             finish: firstFinish,
+            glass: firstGlass || "",
+            timeline: firstTimeline || "",
+            userType: firstUserType || "",
           }));
         }
       } catch (error) {
@@ -545,7 +554,7 @@ function App() {
           handrailData.length > 0 ? handrailData[0]["Handrail Type"] : "",
         finish: firstFinish,
         glass: "",
-        height: 2.5,
+        height: 3.5,
         location: "",
         userType: "",
         timeline: "",

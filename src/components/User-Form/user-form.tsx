@@ -27,7 +27,7 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
     name: "",
     phone: "",
     email: "",
-    size: 0,
+    size: 50,
   });
 
   const [errors, setErrors] = useState<Errors>();
@@ -46,11 +46,11 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
       newErrors.phone = "Invalid phone number format";
     }
 
-    if (!userData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/^[^@]+@[^@]+\.[^@]+$/.test(userData.email)) {
-      newErrors.email = "Invalid email address";
-    }
+    // if (!userData.email.trim()) {
+    //   newErrors.email = "Email is required";
+    // } else if (!/^[^@]+@[^@]+\.[^@]+$/.test(userData.email)) {
+    //   newErrors.email = "Invalid email address";
+    // }
 
     if (!userData.size || userData.size <= 0) {
       newErrors.size = "Please enter a valid size";
@@ -122,7 +122,7 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
         <label
           style={{ display: "block", marginBottom: "8px", fontWeight: "500" }}
         >
-          Email:
+          Email: (optional)
         </label>
         <input
           type="email"
@@ -194,7 +194,7 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
             fontWeight: "500",
           }}
         >
-          {isSubmitting ? "Submitting..." : "Submit Quotation"}
+          {isSubmitting ? "Submitting..." : "Get Quote on WhatsApp"}
         </button>
 
         <button
