@@ -511,7 +511,7 @@ function App() {
         "https://backendimperio.onrender.com/submit-form",
         formData,
         {
-          timeout: 10000, // 10 second timeout
+          timeout: 100000, // 10 second timeout
         }
       );
 
