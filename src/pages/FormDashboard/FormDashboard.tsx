@@ -125,6 +125,36 @@ function convertToUserTypeData(data: SheetRow[]): UserTypeDataItem[] {
   }));
 }
 
+// Add this function after the convertToUserTypeData function:
+async function getPincodeState(pincode: string): Promise<string | null> {
+  try {
+    console.log("Fetching state for pincode:", pincode);
+    const response = await axios.get(
+      `https://api.postalpincode.in/pincode/${pincode}`
+    );
+    console.log("Pincode API response:", response.data);
+
+    if (
+      response.data &&
+      Array.isArray(response.data) &&
+      response.data.length > 0 &&
+      response.data[0].Status === "Success" &&
+      response.data[0].PostOffice &&
+      response.data[0].PostOffice.length > 0
+    ) {
+      const state = response.data[0].PostOffice[0].State;
+      console.log("State found:", state);
+      return state;
+    }
+
+    console.error("Invalid response format or no data found for pincode");
+    return null;
+  } catch (error) {
+    console.error("Error fetching pincode data:", error);
+    return null;
+  }
+}
+
 function App() {
   // State for page control
   const [currentPage, setCurrentPage] = useState<"product" | "user">("product");
@@ -240,67 +270,151 @@ function App() {
   }, []);
 
   // Calculate price per foot
-  const calculatePerFtPrice = (): number | string => {
+  const calculatePerFtPrice = (
+    stateForCalculation?: string
+  ): number | string => {
     try {
+      console.log("Calculating price with state:", stateForCalculation);
+      console.log("Product data:", productData);
+      console.log("Location data:", locationData);
+
       const baseRow = baseData.find((row) => row.Base === productData.base);
-      const basePrice = baseRow ? baseRow[productData.finish] : 0;
+      if (!baseRow) {
+        console.error("Base row not found for:", productData.base);
+        return "❌ Error: Base option not found";
+      }
+
+      const basePrice = baseRow[productData.finish];
+      if (basePrice === undefined) {
+        console.error("Base price not found for finish:", productData.finish);
+        return "❌ Error: Base price not found for selected finish";
+      }
 
       const handrailRow = handrailData.find(
         (row) => row["Handrail Type"] === productData.handrail
       );
-      const handrailPrice = handrailRow ? handrailRow[productData.finish] : 0;
+      if (!handrailRow) {
+        console.error("Handrail row not found for:", productData.handrail);
+        return "❌ Error: Handrail option not found";
+      }
+
+      const handrailPrice = handrailRow[productData.finish];
+      if (handrailPrice === undefined) {
+        console.error(
+          "Handrail price not found for finish:",
+          productData.finish
+        );
+        return "❌ Error: Handrail price not found for selected finish";
+      }
 
       const glassRow = glassData.find(
         (row) => row["Glass Thickness"] === productData.glass
       );
-      const glassPrice = glassRow ? glassRow.Price : 0;
+      if (!glassRow) {
+        console.error("Glass row not found for:", productData.glass);
+        return "❌ Error: Glass option not found";
+      }
 
-      const locationRow = locationData.find(
-        (row) => row.Location === productData.location
-      );
-      const locationMultiplier = locationRow
-        ? 1 + (locationRow["Parameter (in %)"] as number) / 100
-        : 1;
+      const glassPrice = glassRow.Price;
+      if (glassPrice === undefined) {
+        console.error("Glass price not found");
+        return "❌ Error: Glass price not found";
+      }
+
+      // Default location multiplier if state not found
+      let locationMultiplier = 1;
+
+      if (stateForCalculation) {
+        // Try to find the location parameter for the state
+        const locationRow = locationData.find(
+          (row) => row.Location === stateForCalculation
+        );
+
+        if (locationRow && locationRow["Parameter (in %)"] !== undefined) {
+          locationMultiplier =
+            1 + (locationRow["Parameter (in %)"] as number) / 100;
+          console.log(
+            "Using location multiplier for state:",
+            locationMultiplier
+          );
+        } else {
+          console.log(
+            "Location parameter not found for state, using default multiplier"
+          );
+        }
+      } else {
+        // If no state provided, try to find a default parameter
+        console.log("No state provided, using default multiplier");
+      }
 
       const timelineRow = timelineData.find(
         (row) => row.Timeline === productData.timeline
       );
-      const timelineMultiplier = timelineRow
-        ? 1 + (timelineRow["Parameter (in %)"] as number) / 100
-        : 1;
+      if (!timelineRow) {
+        console.error("Timeline row not found for:", productData.timeline);
+        return "❌ Error: Timeline option not found";
+      }
+
+      const timelineMultiplier =
+        timelineRow["Parameter (in %)"] !== undefined
+          ? 1 + (timelineRow["Parameter (in %)"] as number) / 100
+          : 1;
 
       const userTypeRow = userTypeData.find(
         (row) => row["User Type"] === productData.userType
       );
-      const userDiscount = userTypeRow
-        ? 1 - (userTypeRow["Parameter (in %)"] as number) / 100
-        : 1;
+      if (!userTypeRow) {
+        console.error("User type row not found for:", productData.userType);
+        return "❌ Error: User type option not found";
+      }
 
-      const totalGlassPrice =
-        Number.parseFloat(glassPrice as string) *
-        Number.parseFloat(productData.height.toString());
-      const baseTotal =
-        Number.parseFloat(basePrice as string) +
-        Number.parseFloat(handrailPrice as string) +
-        totalGlassPrice;
+      const userDiscount =
+        userTypeRow["Parameter (in %)"] !== undefined
+          ? 1 - (userTypeRow["Parameter (in %)"] as number) / 100
+          : 1;
+
+      // Parse values safely
+      const parsedGlassPrice = Number.parseFloat(glassPrice as string) || 0;
+      const parsedBasePrice = Number.parseFloat(basePrice as string) || 0;
+      const parsedHandrailPrice =
+        Number.parseFloat(handrailPrice as string) || 0;
+
+      console.log("Parsed prices:", {
+        base: parsedBasePrice,
+        handrail: parsedHandrailPrice,
+        glass: parsedGlassPrice,
+        height: productData.height,
+      });
+
+      const totalGlassPrice = parsedGlassPrice * productData.height;
+      const baseTotal = parsedBasePrice + parsedHandrailPrice + totalGlassPrice;
+
+      console.log("Calculation factors:", {
+        baseTotal,
+        locationMultiplier,
+        userDiscount,
+        timelineMultiplier,
+      });
+
       const perFtPrice =
         baseTotal * locationMultiplier * userDiscount * timelineMultiplier;
+      console.log("Final price per ft:", perFtPrice);
 
       return Number.parseFloat(perFtPrice.toFixed(2));
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
+      console.error("Error in calculatePerFtPrice:", error);
       return `❌ Error: ${error.message}`;
     }
   };
 
   // Handle Calculate button click
-  const handleCalculate = () => {
+  const handleCalculate = async () => {
     // Validate required fields
     if (
       !productData.base ||
       !productData.handrail ||
       !productData.glass ||
-      !productData.location ||
+      !productData.location || // This is now the pincode
       !productData.userType ||
       !productData.timeline
     ) {
@@ -308,15 +422,69 @@ function App() {
       return;
     }
 
-    const price = calculatePerFtPrice();
-    if (typeof price === "number") {
-      setPricePerFt(price);
-      setMessage(`✅ Product options saved successfully!`);
+    // Validate pincode format
+    if (!/^\d{6}$/.test(productData.location)) {
+      setMessage("❌ Please enter a valid 6-digit pincode");
+      return;
+    }
 
-      // Move to user details page
-      setCurrentPage("user");
-    } else {
-      setMessage(price);
+    try {
+      setIsLoading(true);
+      setMessage("Fetching location data...");
+
+      // Convert pincode to state
+      const state = await getPincodeState(productData.location);
+      console.log("State from pincode:", state);
+
+      if (!state) {
+        setMessage(
+          "❌ Could not find location for this pincode. Please try another."
+        );
+        setIsLoading(false);
+        return;
+      }
+
+      // Find the location parameter for this state
+      const locationRow = locationData.find((row) => row.Location === state);
+      console.log("Location data for state:", locationRow);
+
+      if (!locationRow) {
+        // If exact state match is not found, use default parameter
+        console.log("State not found in location data, using default");
+
+        // Calculate price using default location parameter
+        const price = calculatePerFtPrice();
+        console.log("Calculated price with default parameter:", price);
+
+        if (typeof price === "number") {
+          setPricePerFt(price);
+          setMessage(
+            `✅ Product options saved successfully! (Using default location parameter)`
+          );
+          // Move to user details page
+          setCurrentPage("user");
+        } else {
+          setMessage(price);
+        }
+      } else {
+        // Calculate price using the state parameter
+        const price = calculatePerFtPrice(state);
+        console.log("Calculated price with state parameter:", price);
+
+        if (typeof price === "number") {
+          setPricePerFt(price);
+          setMessage(`✅ Product options saved successfully!`);
+          // Move to user details page
+          setCurrentPage("user");
+        } else {
+          setMessage(price);
+        }
+      }
+    } catch (error: any) {
+      console.error("Error in handleCalculate:", error);
+      setMessage(`❌ Error: ${error.message}`);
+    } finally {
+      setIsLoading(false);
     }
   };
 

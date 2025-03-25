@@ -63,7 +63,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
   baseData,
   handrailData,
   glassData,
-  locationData,
+  // locationData,
   timelineData,
   userTypeData,
   heightOptions,
@@ -386,25 +386,24 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
             </select>
           </div>
 
-          {/* Location Selection */}
+          {/* Pincode Input */}
           <div className="mb-6">
             <label className="block mb-2 font-medium text-gray-600">
-              Installation Location:
+              Installation Pincode:
             </label>
-            <select
+            <input
+              type="text"
               value={productData.location}
-              onChange={(e) =>
-                setProductData({ ...productData, location: e.target.value })
-              }
+              onChange={(e) => {
+                // Only allow numeric input
+                if (/^\d*$/.test(e.target.value)) {
+                  setProductData({ ...productData, location: e.target.value });
+                }
+              }}
+              placeholder="Enter your pincode"
               className="w-full p-3 rounded-lg border border-gray-200 text-gray-700 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
-            >
-              <option value="">Select Location</option>
-              {locationData.map((row) => (
-                <option key={row.Location} value={row.Location}>
-                  {row.Location}
-                </option>
-              ))}
-            </select>
+              maxLength={6}
+            />
           </div>
 
           {/* User Type Selection */}
@@ -534,7 +533,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
           )}
           {productData.location && (
             <div className="bg-white p-3 rounded-lg shadow-sm">
-              <div className="text-xs text-gray-500 mb-1">Location</div>
+              <div className="text-xs text-gray-500 mb-1">Pincode</div>
               <div className="font-semibold text-gray-800">
                 {productData.location}
               </div>
