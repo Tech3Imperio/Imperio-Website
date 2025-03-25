@@ -488,7 +488,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                 />
 
                 {/* Fixed Width for Selected Height Text */}
-                <div className="mt-5 text-lg font-semibold text-blue-500 w-[60px] text-center">
+                <div className="mt-5 text-lg font-semibold text-blue-500 w-[80px] text-center">
                   {productData.height} feet
                 </div>
               </div>

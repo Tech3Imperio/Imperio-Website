@@ -324,6 +324,22 @@ export default function Career() {
       type: "Full-Time",
       applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     },
+    {
+      title: "Franchise Development Manager",
+      description:
+        "A Franchise Manager oversees the operations and performance of a franchise network, ensuring compliance with company standards, managing franchisee relationships, and driving business growth through strategic planning and execution",
+      location: "Mumbai",
+      type: "Full-Time",
+      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    },
+    {
+      title: "Telesales Executive",
+      description:
+        "As a Tele Sales Executive at Imperio Railing Systems, you will have the opportunity to showcase your skills in Sales. Your role will involve working closely with the sales team to generate leads.",
+      location: "Mumbai",
+      type: "Full-Time",
+      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    },
   ]);
   const [intern] = useState<Intern[]>([
     // {
