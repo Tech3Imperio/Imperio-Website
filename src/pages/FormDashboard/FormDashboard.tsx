@@ -180,7 +180,7 @@ function App() {
   });
 
   // User form state
-  const [userData, setUserData] = useState<UserData>({
+  const [, setUserData] = useState<UserData>({
     name: "",
     phone: "",
     email: "",
