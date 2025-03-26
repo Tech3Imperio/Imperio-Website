@@ -30,6 +30,8 @@ interface ProductData {
   glass: string;
   height: number;
   location: string;
+  city: string;
+  state: string;
   userType: string;
   timeline: string;
 }
@@ -170,6 +172,8 @@ function App() {
     glass: "",
     height: 3.5,
     location: "",
+    city: "",
+    state: "",
     userType: "",
     timeline: "",
   };
@@ -293,9 +297,15 @@ function App() {
     stateForCalculation?: string
   ): number | string => {
     try {
-      console.log("Calculating price with state:", stateForCalculation);
+      console.log(
+        "Calculating price with state:",
+        stateForCalculation || productData.state
+      );
       console.log("Product data:", productData);
       console.log("Location data:", locationData);
+
+      // Use either the passed state parameter or the state from productData
+      const stateToUse = stateForCalculation || productData.state;
 
       // Fetch Base price (a) based on Finish
       const baseRow = baseData.find((row) => row.Base === productData.base);
@@ -342,9 +352,9 @@ function App() {
       // Fetch Location multiplier (e)
       let locationMultiplier = 1; // Default value
 
-      if (stateForCalculation) {
+      if (stateToUse) {
         const locationRow = locationData.find(
-          (row) => row.Location === stateForCalculation
+          (row) => row.Location === stateToUse
         );
 
         if (locationRow && locationRow["Parameter (in %)"] !== undefined) {
@@ -556,6 +566,8 @@ function App() {
         glass: "",
         height: 3.5,
         location: "",
+        city: "",
+        state: "",
         userType: "",
         timeline: "",
       });
@@ -671,7 +683,7 @@ function App() {
             Continue
           </button>
 
-          {message && (
+          {/* {message && (
             <div
               style={{
                 marginTop: "15px",
@@ -685,7 +697,7 @@ function App() {
             >
               {message}
             </div>
-          )}
+          )} */}
         </div>
       </div>
     );
@@ -756,7 +768,7 @@ function App() {
           </div>
         )}
 
-        {!isSuccess && message && (
+        {/* {!isSuccess && message && (
           <div
             style={{
               marginTop: "15px",
@@ -768,7 +780,7 @@ function App() {
           >
             {message}
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );

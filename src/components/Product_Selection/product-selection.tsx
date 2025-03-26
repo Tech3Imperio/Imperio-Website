@@ -1,6 +1,7 @@
 "use client";
 
 import type React from "react";
+import { getLocationFromPincode } from "../../utils/pincode-service";
 
 // Define TypeScript interfaces for props and data structures
 interface BaseDataItem {
@@ -41,6 +42,8 @@ interface ProductData {
   glass: string;
   height: number;
   location: string;
+  city: string;
+  state: string;
   userType: string;
   timeline: string;
 }
@@ -149,8 +152,8 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
       </div>
 
       {/* Finish Selection */}
-      <div className="mb-4">
-        <h2 className="text-xl font-semibold mb-4">Select Finish</h2>
+      <div className="mb-4 flex flex-col justify-center items-center">
+        <h2 className="text-2xl font-semibold mb-4">Select Finish</h2>
         <div className="flex flex-wrap gap-3">
           {baseData.length > 0 &&
             Object.keys(baseData[0])
@@ -163,7 +166,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                   <button
                     key={finish}
                     onClick={() => setProductData({ ...productData, finish })}
-                    className={`w-10 h-10 rounded-full relative outline-none cursor-pointer ${
+                    className={`w-12 h-12 rounded-full relative outline-none cursor-pointer ${
                       productData.finish === finish
                         ? "border-[3px] border-blue-500"
                         : "border-2 border-gray-300"
@@ -194,10 +197,13 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
 
       {/* Base Selection */}
       <div className="mb-10 bg-white rounded-2xl p-6 sm:p-8 shadow-md">
-        <h2 className="text-xl font-semibold mb-6 pb-2.5 relative">
-          Select Base
-          <div className="absolute bottom-0 left-0 w-[60px] h-[3px] bg-blue-500 rounded-sm"></div>
-        </h2>
+        <div className="flex flex-col justify-center items-center">
+          <h2 className="text-2xl font-semibold mb-6 pb-2.5 relative text-center">
+            Select Base
+            <div className="absolute bottom-0 w-[60px] h-[3px] bg-blue-500 rounded-sm left-1/2 translate-x-[-50%]"></div>
+          </h2>
+        </div>
+
         <div className="relative">
           <button
             onClick={() => {
@@ -276,10 +282,12 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
 
       {/* Handrail Selection */}
       <div className="mb-10 bg-white rounded-2xl p-6 sm:p-8 shadow-md">
-        <h2 className="text-xl font-semibold mb-6 pb-2.5 relative">
-          Select Handrail
-          <div className="absolute bottom-0 left-0 w-[60px] h-[3px] bg-blue-500 rounded-sm"></div>
-        </h2>
+        <div className="flex flex-col justify-center items-center">
+          <h2 className="text-2xl font-semibold mb-6 pb-2.5 relative text-center">
+            Select Handrail
+            <div className="absolute bottom-0 w-[60px] h-[3px] bg-blue-500 rounded-sm left-1/2 translate-x-[-50%]"></div>
+          </h2>
+        </div>
         <div className="relative">
           <button
             onClick={() => {
@@ -364,10 +372,12 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
 
       {/* Additional Options */}
       <div className="mb-10 bg-white rounded-2xl p-6 sm:p-8 shadow-md">
-        <h2 className="text-xl font-semibold mb-6 pb-2.5 relative">
-          Additional Options
-          <div className="absolute bottom-0 left-0 w-[60px] h-[3px] bg-blue-500 rounded-sm"></div>
-        </h2>
+        <div className="flex flex-col justify-center items-center">
+          <h2 className="text-2xl font-semibold mb-6 pb-2.5 relative text-center">
+            Additional Options
+            <div className="absolute bottom-0 w-[60px] h-[3px] bg-blue-500 rounded-sm left-1/2 translate-x-[-50%]"></div>
+          </h2>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           {/* Glass Selection */}
@@ -394,7 +404,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
             </select>
           </div>
 
-          {/* Pincode Input */}
+          {/* Pincode Input with City/State Display */}
           <div className="mb-6">
             <label className="block mb-2 font-medium text-gray-600">
               Installation Pincode:
@@ -405,13 +415,61 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
               onChange={(e) => {
                 // Only allow numeric input
                 if (/^\d*$/.test(e.target.value)) {
-                  setProductData({ ...productData, location: e.target.value });
+                  const pincode = e.target.value;
+                  setProductData({ ...productData, location: pincode });
+
+                  // Fetch city and state when pincode is 6 digits
+                  if (pincode.length === 6) {
+                    getLocationFromPincode(pincode).then((locationData) => {
+                      if (locationData) {
+                        console.log("City and state fetched:", locationData);
+                        setProductData((prev) => ({
+                          ...prev,
+                          city: locationData.city,
+                          state: locationData.state,
+                        }));
+                      } else {
+                        setProductData((prev) => ({
+                          ...prev,
+                          city: "",
+                          state: "",
+                        }));
+                      }
+                    });
+                  } else if (pincode.length < 6) {
+                    // Clear city and state if pincode is incomplete
+                    setProductData((prev) => ({
+                      ...prev,
+                      city: "",
+                      state: "",
+                    }));
+                  }
                 }
               }}
               placeholder="Enter your pincode"
               className="w-full p-3 rounded-lg border border-gray-200 text-gray-700 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
               maxLength={6}
             />
+
+            {/* Display city and state when available */}
+            {productData.state && (
+              <div className="mt-2 p-3 bg-blue-50 rounded-lg border border-blue-100">
+                <div className="grid grid-cols-2 gap-2">
+                  <div>
+                    <span className="text-xs text-gray-500">City:</span>
+                    <p className="font-medium text-gray-800">
+                      {productData.city}
+                    </p>
+                  </div>
+                  <div>
+                    <span className="text-xs text-gray-500">State:</span>
+                    <p className="font-medium text-gray-800">
+                      {productData.state}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* User Type Selection */}
@@ -518,7 +576,9 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
               <img
                 src={
                   heightImages[productData.height] ||
-                  "/images/GlassHeight/3.5full.png"
+                  "/images/GlassHeight/3.5full.png" ||
+                  "/placeholder.svg" ||
+                  "/placeholder.svg"
                 }
                 alt="Height visualization"
                 className="h-[300px] md:h-[350px] object-contain"
@@ -571,6 +631,22 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
               <div className="text-xs text-gray-500 mb-1">Pincode</div>
               <div className="font-semibold text-gray-800">
                 {productData.location}
+              </div>
+            </div>
+          )}
+          {productData.city && (
+            <div className="bg-white p-3 rounded-lg shadow-sm">
+              <div className="text-xs text-gray-500 mb-1">City</div>
+              <div className="font-semibold text-gray-800">
+                {productData.city}
+              </div>
+            </div>
+          )}
+          {productData.state && (
+            <div className="bg-white p-3 rounded-lg shadow-sm">
+              <div className="text-xs text-gray-500 mb-1">State</div>
+              <div className="font-semibold text-gray-800">
+                {productData.state}
               </div>
             </div>
           )}
