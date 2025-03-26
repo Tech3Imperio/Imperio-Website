@@ -1,6 +1,8 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, FormEvent, useEffect } from "react";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 interface UserData {
   name: string;
@@ -42,7 +44,7 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
 
     if (!userData.phone.trim()) {
       newErrors.phone = "Phone number is required";
-    } else if (!/^\+?\d{10,15}$/.test(userData.phone)) {
+    } else if (!/^\+?\d{10,15}$/.test(userData.phone.replace(/\s/g, ""))) {
       newErrors.phone = "Invalid phone number format";
     }
 
@@ -73,6 +75,12 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
     }
   };
 
+  const [phone, setPhone] = useState(userData.phone || "91"); // Default to India (+91)
+
+  useEffect(() => {
+    setUserData({ ...userData, phone: `+${phone}` });
+  }, [phone]);
+
   return (
     <form onSubmit={handleSubmit}>
       <div style={{ marginBottom: "16px" }}>
@@ -99,22 +107,33 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
         )}
       </div>
 
-      <div style={{ marginBottom: "16px" }}>
+      <div style={{ marginBottom: "16px", width: "100%" }}>
         <label
           style={{ display: "block", marginBottom: "8px", fontWeight: "500" }}
         >
           Phone:
         </label>
-        <input
-          type="text"
-          value={userData.phone}
-          onChange={(e) => setUserData({ ...userData, phone: e.target.value })}
-          style={{
+        <PhoneInput
+          country={"in"} // Default country: India (+91)
+          value={phone}
+          onChange={(phone) => setPhone(phone)} // Updates phone state
+          enableSearch={true} // Allows searching for countries
+          autoFormat={true} // Auto-formats the number
+          inputStyle={{
             width: "100%",
-            padding: "10px",
+            height: "42px",
+            paddingLeft: "50px", // Prevents text overlap with country code
+            fontSize: "16px",
             borderRadius: "5px",
             border: errors?.phone ? "1px solid #dc3545" : "1px solid #ccc",
+            backgroundColor: "#fff",
           }}
+          containerStyle={{ width: "100%" }}
+          buttonStyle={{
+            borderRadius: "5px 0 0 5px",
+            borderRight: "1px solid #ccc",
+          }}
+          dropdownStyle={{ fontSize: "14px" }}
         />
         {errors?.phone && (
           <div style={{ color: "#dc3545", fontSize: "14px", marginTop: "4px" }}>
@@ -151,7 +170,7 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
         <label
           style={{ display: "block", marginBottom: "8px", fontWeight: "500" }}
         >
-          Size (ft):
+          Quantity (Running Feet):
         </label>
         <input
           type="number"

@@ -105,11 +105,11 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
   };
 
   const heightImages: Record<string, string> = {
-    "2.5": "/images/GlassHeight/2.5.png",
-    "3": "/images/GlassHeight/3.png",
-    "3.25": "/images/GlassHeight/3.25.png",
-    "3.5": "/images/GlassHeight/3.5.png",
-    "4": "/images/GlassHeight/4.png",
+    "2.5": "/images/GlassHeight/2.5full.png",
+    "3": "/images/GlassHeight/3full.png",
+    "3.25": "/images/GlassHeight/3.25full.png",
+    "3.5 (Standard)": "/images/GlassHeight/3.5full.png",
+    "4": "/images/GlassHeight/4full.png",
   };
 
   return (
@@ -417,7 +417,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
           {/* User Type Selection */}
           <div className="mb-6">
             <label className="block mb-2 font-medium text-gray-600">
-              Looking For:
+              I am:
             </label>
             <select
               value={productData.userType}
@@ -456,24 +456,18 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
               ))}
             </select>
           </div>
-          {/* Height Selection */}
-          <div className="mb-6">
-            <label className="block mb-2 font-medium text-gray-600">
-              Glass Height:
-            </label>
-            <div className="flex justify-center items-center gap-20">
-              {/* Height Selection & Labels */}
-              <div className="flex flex-col items-center h-[200px] relative">
-                {/* Fixed Width for Height Labels */}
-                <div className="absolute h-[150px] flex flex-col-reverse justify-between pl-10 w-[40px] text-right">
-                  {heightOptions.map((option) => (
-                    <span key={option} className="text-sm text-gray-500 block">
-                      {option}ft
-                    </span>
-                  ))}
-                </div>
+        </div>
 
-                {/* Vertical Range Slider */}
+        {/* Height Selection */}
+        <div className="mb-6 w-full">
+          <label className="block mb-3 font-medium text-gray-600">
+            Glass Height from (Finish Floor Level):
+          </label>
+          <div className="flex flex-col md:flex-row w-full justify-evenly md:items-start gap-4 md:gap-10">
+            {/* Height Selection & Labels */}
+            <div className="flex flex-col items-start md:items-start w-max md:w-max">
+              <div className="relative flex w-max items-start my-12">
+                {/* Range Input */}
                 <input
                   type="range"
                   min={0}
@@ -484,23 +478,50 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                     const height = heightMap[Number.parseInt(e.target.value)];
                     setProductData({ ...productData, height });
                   }}
-                  className="appearance-none -left-10 w-[10px] h-[150px] bg-gray-200 rounded-md outline-none mx-[20px] [writing-mode:vertical-rl] [direction:ltr] rotate-180"
+                  className="appearance-none w-[10px] h-[200px] bg-gray-200 rounded-full outline-none [writing-mode:vertical-rl] [direction:ltr] rotate-180"
                 />
 
-                {/* Fixed Width for Selected Height Text */}
-                <div className="mt-5 text-lg font-semibold text-blue-500 w-[80px] text-center">
-                  {productData.height} feet
+                {/* Labels for the scale */}
+                <div className="absolute left-8 top-0 flex flex-col justify-center !w-max h-full">
+                  {heightOptions.map((height, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setProductData({ ...productData, height })}
+                      className={`text-sm px-3 w-max rounded-md transition-all ${
+                        productData.height === height
+                      }`}
+                      style={{
+                        position: "absolute",
+                        bottom: `${
+                          (index / (heightOptions.length - 1)) * 100
+                        }%`,
+                        transform: "translateY(50%)",
+                      }}
+                    >
+                      {height} {height === 3.5 ? "(Standard)" : ""} Feet
+                    </button>
+                  ))}
                 </div>
               </div>
 
-              {/* Dynamic Image Based on Height Selection */}
+              {/* Selected Height Text */}
+              <div
+                className="mt-2 text-lg font-semibold flex justify-center text-blue-500 px-4 py-2 bg-blue-50 rounded-full shadow-sm"
+                style={{ minWidth: "120px" }}
+              >
+                {productData.height} Feet
+              </div>
+            </div>
+
+            {/* Dynamic Image Based on Height Selection */}
+            <div className="relative mt-4 md:mt-0 w-full md:w-auto flex justify-center">
               <img
                 src={
                   heightImages[productData.height] ||
-                  "/images/GlassHeight/3.5.png"
+                  "/images/GlassHeight/3.5full.png"
                 }
-                alt="Human"
-                className="h-[400px] w-[150px] object-cover"
+                alt="Height visualization"
+                className="h-[300px] md:h-[350px] object-contain"
               />
             </div>
           </div>

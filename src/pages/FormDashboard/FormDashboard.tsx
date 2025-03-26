@@ -668,7 +668,7 @@ function App() {
               fontSize: "16px",
             }}
           >
-            Calculate & Continue
+            Continue
           </button>
 
           {message && (
