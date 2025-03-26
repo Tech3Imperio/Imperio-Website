@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import CustomButton from "../CustomButton/CustomButton";
+import { hero2Image } from "../../assets/Images";
 
 export default function HeroSection() {
   const handleOpenPopup = () => {
@@ -12,9 +13,9 @@ export default function HeroSection() {
     <section
       className={`relative w-full min-h-[70vh] bg-gradient-to-r from-gray-900 to-gray-800 overflow-hidden `}
     >
-      <div className="absolute inset-0 z-0 opacity-40">
+      <div className="absolute inset-0 z-0 opacity-50">
         <img
-          src="/images/Landing/Hero.webp"
+          src={hero2Image}
           alt="Imperio Railing Systems"
           className="w-full h-full object-cover"
         />
@@ -22,7 +23,7 @@ export default function HeroSection() {
 
       {/* Animated overlay elements */}
       <motion.div
-        className="absolute top-20 left-10 w-32 h-32 bg-[var(--yellow-500)] rounded-full opacity-20 blur-3xl"
+        className="absolute top-20 left-10 w-32 h-32 bg-yellow-500 rounded-full opacity-40 blur-3xl"
         animate={{
           x: [0, 50, 0],
           y: [0, 30, 0],
@@ -35,7 +36,7 @@ export default function HeroSection() {
       />
 
       <motion.div
-        className="absolute bottom-20 right-10 w-40 h-40 bg-[var(--yellow-500)] rounded-full opacity-10 blur-3xl"
+        className="absolute bottom-20 right-10 w-40 h-40 bg-yellow-500 rounded-full opacity-10 blur-3xl"
         animate={{
           x: [0, -40, 0],
           y: [0, -20, 0],
