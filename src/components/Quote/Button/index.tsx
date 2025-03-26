@@ -44,7 +44,8 @@ import { DealershipButtonProps, QuoteButtonProps } from "../../../types";
 export const QuoteButton: React.FC<QuoteButtonProps> = ({ className }) => {
   return (
     <Link
-      to="/quote"
+      // to="/quote"
+      to="/formDash"
       aria-label="qoute btn"
       className={
         "px-6 py-4 text-[--black] font-bold bg-[--secound] text-xs rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap " +
