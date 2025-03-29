@@ -683,7 +683,7 @@ function App() {
             Continue
           </button>
 
-          {/* {message && (
+          {message && (
             <div
               style={{
                 marginTop: "15px",
@@ -697,7 +697,7 @@ function App() {
             >
               {message}
             </div>
-          )} */}
+          )}
         </div>
       </div>
     );

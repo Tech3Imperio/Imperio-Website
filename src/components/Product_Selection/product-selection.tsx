@@ -111,7 +111,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
     "2.5": "/images/GlassHeight/2.5full.png",
     "3": "/images/GlassHeight/3full.png",
     "3.25": "/images/GlassHeight/3.25full.png",
-    "3.5 (Standard)": "/images/GlassHeight/3.5full.png",
+    "3.5": "/images/GlassHeight/3.5full.png",
     "4": "/images/GlassHeight/4full.png",
   };
 
@@ -556,7 +556,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                         transform: "translateY(50%)",
                       }}
                     >
-                      {height} {height === 3.5 ? "(Standard)" : ""} Feet
+                      {height} {height === 3.5 ? "Feet (Standard)" : "Feet"}
                     </button>
                   ))}
                 </div>
