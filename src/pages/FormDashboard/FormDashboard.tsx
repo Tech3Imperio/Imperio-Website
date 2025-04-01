@@ -549,7 +549,13 @@ function App() {
     }
   };
 
-  const handleNewQuote = () => {
+  const handleNewQuote = async () => {
+    const [glassResponse, timelineResponse, userTypeResponse] =
+      await Promise.all([
+        axios.get<SheetRow[]>(GLASS_THICKNESS_URL),
+        axios.get<SheetRow[]>(TIMELINE_SHEET_URL),
+        axios.get<SheetRow[]>(USER_TYPE_SHEET_URL),
+      ]);
     // Reset all data and go back to first page
     if (initialDataLoaded && baseData.length > 0) {
       // Get the first finish option
@@ -557,23 +563,17 @@ function App() {
         (key) => key !== "Base"
       )[0];
 
-      // Reset with default values from the data
-      setProductData({
-        base: baseData[0].Base,
-        handrail:
-          handrailData.length > 0 ? handrailData[0]["Handrail Type"] : "",
+      const firstGlass = glassResponse.data[0]?.["Glass Thickness"] as string;
+      const firstTimeline = timelineResponse.data[0]?.Timeline as string;
+      const firstUserType = userTypeResponse.data[0]?.["User Type"] as string;
+      setProductData((prev) => ({
+        ...prev,
+
         finish: firstFinish,
-        glass: "",
-        height: 3.5,
-        location: "",
-        city: "",
-        state: "",
-        userType: "",
-        timeline: "",
-      });
-    } else {
-      // Fallback to empty defaults if data isn't loaded
-      setProductData({ ...defaultProductData });
+        glass: firstGlass || "",
+        timeline: firstTimeline || "",
+        userType: firstUserType || "",
+      }));
     }
 
     setPricePerFt(null);
