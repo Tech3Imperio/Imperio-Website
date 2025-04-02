@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiX, FiMessageSquare } from "react-icons/fi";
 import axios from "axios";
 import { BASE_URL } from "../../pages/Service/Api/Api";
-
+import { useLocation } from "react-router-dom";
 // Function to fetch address details based on the pin code
 const fetchAddressDetails = async (pinCode: string) => {
   try {
@@ -61,11 +61,20 @@ const EnquiryButton: React.FC = () => {
     phoneNumber: "",
     address: "",
   });
+  const useIsHomePage = () => {
+    const location = useLocation();
+    console.log(location.pathname);
+    return location.pathname === "/";
+  };
+  const isHomePage = useIsHomePage();
 
   useEffect(() => {
     const openFormTimer = setTimeout(() => {
-      setIsOpen(true);
-    }, 10000);
+      console.log(isHomePage);
+      if (isHomePage) {
+        setIsOpen(true);
+      }
+    }, 20000);
 
     const savedFormState = localStorage.getItem("formOpen");
     if (savedFormState === "true") {
@@ -73,7 +82,7 @@ const EnquiryButton: React.FC = () => {
     }
 
     return () => clearTimeout(openFormTimer);
-  }, []);
+  }, [isHomePage]);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
