@@ -268,7 +268,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                       </div>
                     )}
                     {isSelected && (
-                      <div className="absolute top-3 right-3 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                      <div className="absolute bottom-3 right-3 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
                         Selected
                       </div>
                     )}
@@ -280,7 +280,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                         );
                         setShowHandrailInfo(null);
                       }}
-                      className="absolute bottom-3 right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md text-blue-500 hover:bg-blue-50 transition-all"
+                      className="absolute top-3 right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md text-blue-500 hover:bg-blue-50 transition-all"
                     >
                       <Info className="w-4 h-4" />
                     </button>
@@ -447,7 +447,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                       </div>
                     )}
                     {isSelected && (
-                      <div className="absolute top-3 right-3 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                      <div className="absolute bottom-3 right-3 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
                         Selected
                       </div>
                     )}
@@ -461,7 +461,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                         );
                         setShowBaseInfo(null);
                       }}
-                      className="absolute bottom-3 right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md text-blue-500 hover:bg-blue-50 transition-all"
+                      className="absolute top-3 right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md text-blue-500 hover:bg-blue-50 transition-all"
                     >
                       <Info className="w-4 h-4" />
                     </button>
@@ -783,7 +783,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
         {/* Height Selection */}
         <div className="mb-6 w-full">
           <label className="block mb-3 font-medium text-gray-600">
-            Glass Height from (Finish Floor Level):
+            Glass Height from finish floor level:
           </label>
           <div className="flex flex-col md:flex-row w-full justify-evenly md:items-start gap-4 md:gap-10">
             {/* Height Selection & Labels */}
