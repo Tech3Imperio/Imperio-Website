@@ -2,6 +2,8 @@
 
 import type React from "react";
 import { getLocationFromPincode } from "../../utils/pincode-service";
+import { Info } from "lucide-react";
+import { useState } from "react";
 
 // Define TypeScript interfaces for props and data structures
 interface BaseDataItem {
@@ -115,6 +117,23 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
     "4": "/images/GlassHeight/4full.png",
   };
 
+  const getBaseTypeImageUrl = (baseType: string | undefined) => {
+    if (!baseType) return "/placeholder.svg";
+    const formattedName = baseType.replace(/\s+/g, "").toLowerCase(); // e.g., "Slim Base" -> "slimbase"
+    return `/images/baseInfo/${formattedName}_info.jpeg`;
+  };
+
+  const getHandrailTypeImageUrl = (baseType: string | undefined) => {
+    if (!baseType) return "/placeholder.svg";
+    const formattedName = baseType.replace(/\s+/g, "").toLowerCase(); // e.g., "Slim Base" -> "slimbase"
+    return `/images/handrailInfo/${formattedName}_info.jpeg`;
+  };
+
+  const [showInfo, setShowInfo] = useState(false);
+  const [showPincodeInfo, setShowPincodeInfo] = useState(false);
+  const [showTimelineInfo, setShowTimelineInfo] = useState(false);
+  const [showBaseInfo, setShowBaseInfo] = useState<string | null>(null);
+  const [showHandrailInfo, setShowHandrailInfo] = useState<string | null>(null);
   return (
     <div className="max-w-[1200px] mx-auto p-5 sm:p-10 font-sans text-gray-800 bg-gray-50 rounded-xl">
       {/* Preload images */}
@@ -253,6 +272,18 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                         Selected
                       </div>
                     )}
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setShowBaseInfo(
+                          showBaseInfo === row.Base ? null : row.Base
+                        );
+                        setShowHandrailInfo(null);
+                      }}
+                      className="absolute bottom-3 right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md text-blue-500 hover:bg-blue-50 transition-all"
+                    >
+                      <Info className="w-4 h-4" />
+                    </button>
                   </div>
                   <div
                     className={`p-4 text-center font-medium text-base ${
@@ -279,6 +310,83 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
           </button>
         </div>
       </div>
+      {showBaseInfo && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+          onClick={() => setShowBaseInfo(null)}
+        >
+          <div
+            className="bg-white rounded-xl overflow-hidden max-w-2xl w-full shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="relative">
+              <img
+                src={getBaseTypeImageUrl(showBaseInfo)}
+                alt={showBaseInfo}
+                className="w-full h-100 object-cover"
+              />
+              <button
+                onClick={() => setShowBaseInfo(null)}
+                className="absolute pb-2 top-4 right-4 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md text-gray-700 hover:bg-gray-100 text-2xl"
+              >
+                ×
+              </button>
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-bold mb-3">{showBaseInfo} Base</h3>
+              <div className="space-y-3 text-gray-700">
+                <p>
+                  {showBaseInfo === "Dot"
+                    ? "Hole Adjustment Feature, Ultra Strong and Modern Aesthetics, High Grade Anti Corrosion"
+                    : showBaseInfo === "Ace"
+                    ? "Heavy duty Railing Systems, Ultra Strong and Modern Aesthetics, High Grade Anti Corrosion"
+                    : showBaseInfo === "Pro"
+                    ? "Heavy duty Railing Systems, Ultra Strong and Modern Aesthetics, High Grade Anti Corrosion"
+                    : showBaseInfo === "Smart"
+                    ? "Heavy duty Railing Systems, Ultra Strong and Modern Aesthetics, High Grade Anti Corrosion"
+                    : showBaseInfo === "Mini"
+                    ? "Minimal Railing System, High Grade Anti Corrosion, Ultra Strong and Modern Aesthetics"
+                    : showBaseInfo === "Micro"
+                    ? "Minimal Railing System, High Grade Anti Corrosion, Ultra Strong and Modern Aesthetics"
+                    : showBaseInfo === "SemiPro"
+                    ? "Heavy duty Railing Systems, Ultra Strong and Modern Aesthetics, High Grade Anti Corrosion"
+                    : showBaseInfo === "SemiSmart"
+                    ? "Heavy duty Railing Systems, Ultra Strong and Modern Aesthetics, High Grade Anti Corrosion"
+                    : showBaseInfo === "SemiMini"
+                    ? "Heavy duty Railing Systems, Ultra Strong and Modern Aesthetics, High Grade Anti Corrosion"
+                    : showBaseInfo === "Spigot"
+                    ? "Premium floor-mounted spigot system with sleek design and high load capacity. Ideal for frameless installations."
+                    : "Custom installations requiring specialized mounting solutions"}
+                </p>
+                <p>
+                  <strong>Suitable for:</strong>{" "}
+                  {showBaseInfo === "Dot"
+                    ? "Staircase Railing, Side Mounted, supports 12mm, 13.52mm, 15mm, 17.52mm, 19mm, 21.52mm glass thicknesses with height options of up to 900mm, 1050mm, and 1200mm. Designed for both indoor and outdoor applications."
+                    : showBaseInfo === "Ace"
+                    ? "High-end residential and commercial projects. Perfect for main entrances, feature staircases, and premium balustrades."
+                    : showBaseInfo === "Pro"
+                    ? "Heavy-duty commercial applications and public spaces. Designed for high-traffic areas and maximum safety compliance."
+                    : showBaseInfo === "Smart"
+                    ? "Modern architectural designs requiring precision installation. Features built-in adjustment mechanisms for perfect alignment."
+                    : showBaseInfo === "Mini"
+                    ? "Residential applications with standard glass thickness. Works well for interior railings and low-traffic balconies."
+                    : showBaseInfo === "Micro"
+                    ? "Small balconies, compact staircases, and tight spaces. Ideal for urban apartments and small footprint renovations."
+                    : showBaseInfo === "SemiPro"
+                    ? "Mixed-use buildings and mid-range commercial projects. Offers professional performance at a more accessible price point."
+                    : showBaseInfo === "SemiSmart"
+                    ? "Installations on uneven surfaces or where fine adjustments are needed. Good for retrofit projects and renovations."
+                    : showBaseInfo === "SemiMini"
+                    ? "Residential and light commercial use. Suitable for standard balconies and medium-sized staircases with space constraints."
+                    : showBaseInfo === "Spigot"
+                    ? "Versatile for balconies, pool fencing, and decks. Supports frameless installations with a clean aesthetic."
+                    : "Commercial spaces and unique architectural designs requiring specific mounting configurations."}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Handrail Selection */}
       <div className="mb-10 bg-white rounded-2xl p-6 sm:p-8 shadow-md">
@@ -343,6 +451,20 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                         Selected
                       </div>
                     )}
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setShowHandrailInfo(
+                          showHandrailInfo === row["Handrail Type"]
+                            ? null
+                            : row["Handrail Type"]
+                        );
+                        setShowBaseInfo(null);
+                      }}
+                      className="absolute bottom-3 right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md text-blue-500 hover:bg-blue-50 transition-all"
+                    >
+                      <Info className="w-4 h-4" />
+                    </button>
                   </div>
                   <div
                     className={`p-4 text-center font-medium text-base ${
@@ -369,6 +491,84 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
           </button>
         </div>
       </div>
+      {showHandrailInfo && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+          onClick={() => setShowHandrailInfo(null)}
+        >
+          <div
+            className="bg-white rounded-xl overflow-hidden max-w-2xl w-full shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="relative">
+              <img
+                src={getHandrailTypeImageUrl(showHandrailInfo)}
+                alt={showHandrailInfo}
+                className="w-full h-100 object-cover"
+              />
+              <button
+                onClick={() => setShowHandrailInfo(null)}
+                className="absolute pb-2 top-4 right-4 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md text-gray-700 hover:bg-gray-100 text-2xl"
+              >
+                ×
+              </button>
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-bold mb-3">
+                {showHandrailInfo} Handrail
+              </h3>
+              <div className="space-y-3 text-gray-700">
+                <p>
+                  <strong>Usage:</strong> The {showHandrailInfo} handrail is
+                  designed for{" "}
+                  {showHandrailInfo === "LED20"
+                    ? "commercial spaces and public areas needing powerful illumination and maximum stability with its robust 80mm profile"
+                    : showHandrailInfo === "LED40"
+                    ? "medium-sized staircases and walkways requiring both illumination and sturdy support with its 40mm profile"
+                    : showHandrailInfo === "LED80"
+                    ? "commercial spaces and public areas needing powerful illumination and maximum stability with its robust 80mm profile"
+                    : showHandrailInfo === "Oval60"
+                    ? "ergonomic applications where a comfortable, easy-to-grip oval shape with 60mm width is preferred"
+                    : showHandrailInfo === "Round50"
+                    ? "traditional settings requiring a classic 50mm round profile that offers excellent grip and timeless appeal"
+                    : showHandrailInfo === "Sleek"
+                    ? "contemporary designs where a refined, low-profile handrail creates a sophisticated, unobtrusive appearance"
+                    : showHandrailInfo === "Slim"
+                    ? "space-constrained installations where a minimal footprint is required without compromising on functionality"
+                    : showHandrailInfo === "Square40"
+                    ? "modern architectural designs featuring clean lines and geometric elements with its substantial 40mm square profile"
+                    : showHandrailInfo === "Square50"
+                    ? "contemporary spaces requiring a medium-sized square profile of 50mm that balances aesthetics with practicality"
+                    : "specialized applications requiring unique profiles and ergonomic considerations"}
+                  .
+                </p>
+                <p>
+                  <strong>Suitable for:</strong>{" "}
+                  {showHandrailInfo === "LED20"
+                    ? "Hotels, theaters, and public buildings. Provides powerful pathway lighting and robust support suitable for high-traffic areas and emergency egress routes."
+                    : showHandrailInfo === "LED40"
+                    ? "Mixed-use buildings and upscale residential projects. Combines practical illumination with substantial support, ideal for primary circulation routes."
+                    : showHandrailInfo === "LED80"
+                    ? "Hotels, theaters, and public buildings. Provides powerful pathway lighting and robust support suitable for high-traffic areas and emergency egress routes."
+                    : showHandrailInfo === "Oval60"
+                    ? "Healthcare facilities, senior living communities, and universal design applications. The ergonomic oval shape is easy to grip for users with limited hand strength."
+                    : showHandrailInfo === "Round50"
+                    ? "Traditional homes, historic renovations, and classic architectural styles. The standard 50mm diameter provides optimal grip for users of all ages."
+                    : showHandrailInfo === "Sleek"
+                    ? "Luxury residences and high-end commercial spaces. Creates a refined aesthetic while maintaining functional support, perfect for design-focused projects."
+                    : showHandrailInfo === "Slim"
+                    ? "Narrow staircases, tight corridors, and space-efficient designs. Provides necessary support with minimal visual and physical footprint."
+                    : showHandrailInfo === "Square40"
+                    ? "Urban residences and trendy commercial spaces. Offers a modern geometric profile that's substantial without overwhelming smaller spaces."
+                    : showHandrailInfo === "Square50"
+                    ? "Contemporary commercial spaces and modern homes. The substantial 50mm square profile makes a bold design statement while providing maximum stability."
+                    : "Custom installations where standard profiles don't meet specific design or functional requirements."}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Additional Options */}
       <div className="mb-10 bg-white rounded-2xl p-6 sm:p-8 shadow-md">
@@ -382,9 +582,33 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           {/* Glass Selection */}
           <div className="mb-6">
-            <label className="block mb-2 font-medium text-gray-600">
+            <div className="mb-2 font-medium text-gray-600 flex items-center gap-2 relative">
               Glass Type:
-            </label>
+              <div
+                className="relative flex items-center"
+                onMouseEnter={() => setShowInfo(true)}
+                onMouseLeave={() => setShowInfo(false)}
+              >
+                <button
+                  type="button"
+                  onClick={() => setShowInfo(!showInfo)}
+                  className="text-blue-500 hover:text-blue-700"
+                >
+                  <Info className="w-4 h-4" />
+                </button>
+
+                {showInfo && (
+                  <div className="absolute top-6 left-0 w-64 p-3 bg-white border border-gray-300 shadow-lg rounded-md text-sm text-gray-700 z-50">
+                    <strong>Glass Type Info:</strong>
+                    <br />
+                    Choose the thickness of the glass based on safety,
+                    aesthetics, and structural requirements. Thicker glass is
+                    usually used for frameless or heavy-duty applications.
+                  </div>
+                )}
+              </div>
+            </div>
+
             <select
               value={productData.glass}
               onChange={(e) =>
@@ -392,7 +616,6 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
               }
               className="w-full p-3 rounded-lg border border-gray-200 text-gray-700 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
             >
-              {/* <option value="">Select Glass</option> */}
               {glassData.map((row) => (
                 <option
                   key={row["Glass Thickness"]}
@@ -406,19 +629,40 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
 
           {/* Pincode Input with City/State Display */}
           <div className="mb-6">
-            <label className="block mb-2 font-medium text-gray-600">
+            <div className="block mb-2 font-medium text-gray-600 flex items-center gap-2 relative">
               Installation Pincode:
-            </label>
+              <div
+                className="relative flex items-center"
+                onMouseEnter={() => setShowPincodeInfo(true)}
+                onMouseLeave={() => setShowPincodeInfo(false)}
+              >
+                <button
+                  type="button"
+                  onClick={() => setShowPincodeInfo(!showPincodeInfo)}
+                  className="text-blue-500 hover:text-blue-700"
+                >
+                  <Info className="w-4 h-4" />
+                </button>
+
+                {showPincodeInfo && (
+                  <div className="absolute top-6 left-0 w-64 p-3 bg-white border border-gray-300 shadow-lg rounded-md text-sm text-gray-700 z-50">
+                    <strong>Why we ask for your pincode:</strong>
+                    <br />
+                    We use your pincode to fetch the city and state
+                    automatically for accurate delivery estimates.
+                  </div>
+                )}
+              </div>
+            </div>
+
             <input
               type="text"
               value={productData.location}
               onChange={(e) => {
-                // Only allow numeric input
                 if (/^\d*$/.test(e.target.value)) {
                   const pincode = e.target.value;
                   setProductData({ ...productData, location: pincode });
 
-                  // Fetch city and state when pincode is 6 digits
                   if (pincode.length === 6) {
                     getLocationFromPincode(pincode).then((locationData) => {
                       if (locationData) {
@@ -436,8 +680,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                         }));
                       }
                     });
-                  } else if (pincode.length < 6) {
-                    // Clear city and state if pincode is incomplete
+                  } else {
                     setProductData((prev) => ({
                       ...prev,
                       city: "",
@@ -451,7 +694,6 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
               maxLength={6}
             />
 
-            {/* Display city and state when available */}
             {productData.state && (
               <div className="mt-2 p-3 bg-blue-50 rounded-lg border border-blue-100">
                 <div className="grid grid-cols-2 gap-2">
@@ -495,9 +737,32 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
 
           {/* Timeline Selection */}
           <div className="mb-6">
-            <label className="block mb-2 font-medium text-gray-600">
+            <div className="block mb-2 font-medium text-gray-600 flex items-center gap-2 relative">
               Project Timeline:
-            </label>
+              <div
+                className="relative flex items-center"
+                onMouseEnter={() => setShowTimelineInfo(true)}
+                onMouseLeave={() => setShowTimelineInfo(false)}
+              >
+                <button
+                  type="button"
+                  onClick={() => setShowTimelineInfo(!showTimelineInfo)}
+                  className="text-blue-500 hover:text-blue-700"
+                >
+                  <Info className="w-4 h-4" />
+                </button>
+
+                {showTimelineInfo && (
+                  <div className="absolute top-6 left-0 w-64 p-3 bg-white border border-gray-300 shadow-lg rounded-md text-sm text-gray-700 z-50">
+                    <strong>Why we ask:</strong>
+                    <br />
+                    Your project timeline helps us prioritize your order and
+                    suggest available materials or installation slots
+                    accordingly.
+                  </div>
+                )}
+              </div>
+            </div>
 
             <select
               value={productData.timeline}
@@ -506,7 +771,6 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
               }
               className="w-full p-3 rounded-lg border border-gray-200 text-gray-700 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
             >
-              {/* <option value="">Select Timeline</option> */}
               {timelineData.map((row) => (
                 <option key={row.Timeline} value={row.Timeline}>
                   {row.Timeline}
@@ -577,6 +841,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                 src={
                   heightImages[productData.height] ||
                   "/images/GlassHeight/3.5full.png" ||
+                  "/placeholder.svg" ||
                   "/placeholder.svg" ||
                   "/placeholder.svg"
                 }
