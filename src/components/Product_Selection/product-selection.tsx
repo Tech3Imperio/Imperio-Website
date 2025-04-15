@@ -48,6 +48,7 @@ interface ProductData {
   state: string;
   userType: string;
   timeline: string;
+  installation: string; // Changed to string for compatibility
 }
 
 interface ProductSelectionProps {
@@ -321,7 +322,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
           >
             <div className="relative">
               <img
-                src={getBaseTypeImageUrl(showBaseInfo)}
+                src={getBaseTypeImageUrl(showBaseInfo) || "/placeholder.svg"}
                 alt={showBaseInfo}
                 className="w-full h-100 object-cover"
               />
@@ -502,7 +503,10 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
           >
             <div className="relative">
               <img
-                src={getHandrailTypeImageUrl(showHandrailInfo)}
+                src={
+                  getHandrailTypeImageUrl(showHandrailInfo) ||
+                  "/placeholder.svg"
+                }
                 alt={showHandrailInfo}
                 className="w-full h-100 object-cover"
               />
@@ -778,6 +782,39 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
               ))}
             </select>
           </div>
+
+          {/* Installation Option */}
+          <div className="mb-6">
+            <div className="block mb-2 font-medium text-gray-600 flex items-center gap-2 relative">
+              Installation Required:
+            </div>
+            <div className="flex items-center gap-4">
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="radio"
+                  name="installation"
+                  checked={productData.installation === "Yes"}
+                  onChange={() =>
+                    setProductData({ ...productData, installation: "Yes" })
+                  }
+                  className="w-4 h-4 text-blue-500 focus:ring-blue-400"
+                />
+                <span>Yes</span>
+              </label>
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="radio"
+                  name="installation"
+                  checked={productData.installation === "No"}
+                  onChange={() =>
+                    setProductData({ ...productData, installation: "No" })
+                  }
+                  className="w-4 h-4 text-blue-500 focus:ring-blue-400"
+                />
+                <span>No</span>
+              </label>
+            </div>
+          </div>
         </div>
 
         {/* Height Selection */}
@@ -841,6 +878,8 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                 src={
                   heightImages[productData.height] ||
                   "/images/GlassHeight/3.5full.png" ||
+                  "/placeholder.svg" ||
+                  "/placeholder.svg" ||
                   "/placeholder.svg" ||
                   "/placeholder.svg" ||
                   "/placeholder.svg"
@@ -939,6 +978,13 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
               </div>
             </div>
           )}
+          {/* Installation */}
+          <div className="bg-white p-3 rounded-lg shadow-sm">
+            <div className="text-xs text-gray-500 mb-1">Installation</div>
+            <div className="font-semibold text-gray-800">
+              {productData.installation}
+            </div>
+          </div>
         </div>
       </div>
     </div>
