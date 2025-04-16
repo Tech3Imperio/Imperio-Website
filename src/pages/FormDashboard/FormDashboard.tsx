@@ -202,7 +202,7 @@ function App() {
   const [userTypeData, setUserTypeData] = useState<SheetRow[]>([]);
 
   // App state
-  const [pricePerFt, setPricePerFt] = useState<number | null>(null);
+  // const [pricePerFt, setPricePerFt] = useState<number | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [message, setMessage] = useState<string>("");
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
@@ -416,7 +416,7 @@ function App() {
       }));
     }
 
-    setPricePerFt(null);
+    // setPricePerFt(null);
     setMessage("");
     setIsSuccess(false);
     setCurrentPage("product");
