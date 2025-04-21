@@ -78,6 +78,41 @@ export default function JobDetailsPage() {
         applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
       },
       {
+        title: "Aluminium Fabricator Fitter",
+        subtitle:
+          "Metal components ko assemble, fit aur weld karke construction ya machinery ke liye ready karo.",
+        about:
+          "Imperio Railing Systems is hiring experienced Aluminium Fabricator Fitters in Mumbai. Candidates should be skilled in fabrication, fitting, welding, blueprint reading, and must follow safety protocols. This is a great opportunity for those with a minimum of 2 years of experience looking for a stable, hands-on job near Charni Road.",
+        location: "Mumbai",
+        type: "Full-Time",
+        others: [
+          {
+            Duration: "NA",
+            Expriance: "2 - 15 years",
+            join: "Immediately",
+          },
+        ],
+        responsibilities: [
+          "Metal components ko assemble, fit aur weld karna.",
+          "Blueprints read karna aur precision ensure karna.",
+          "Construction aur machinery ke liye fabrication work complete karna.",
+          "Safety guidelines ko strictly follow karna.",
+          "Team ke sath coordinate karna to ensure timely project completion.",
+        ],
+        skills: [
+          "Fabrication experience",
+          "Blueprint reading",
+          "Welding and fitting skills",
+          "Use of fabrication tools",
+          "Workplace safety knowledge",
+        ],
+        whocanapply: [
+          "Candidates with minimum 2 years of experience.",
+          "Those who are from or open to relocate to areas around Charni Road, Mumbai",
+        ],
+        applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
+      },
+      {
         title: "Franchise Development Manager",
         subtitle:
           "Ensuring compliance with company standards, managing franchisee relationships",
