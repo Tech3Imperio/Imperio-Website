@@ -633,7 +633,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
 
           {/* Pincode Input with City/State Display */}
           <div className="mb-6">
-            <div className="block mb-2 font-medium text-gray-600 flex items-center gap-2 relative">
+            <div className=" mb-2 font-medium text-gray-600 flex items-center gap-2 relative">
               Installation Pincode:
               <div
                 className="relative flex items-center"
@@ -741,7 +741,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
 
           {/* Timeline Selection */}
           <div className="mb-6">
-            <div className="block mb-2 font-medium text-gray-600 flex items-center gap-2 relative">
+            <div className=" mb-2 font-medium text-gray-600 flex items-center gap-2 relative">
               Project Timeline:
               <div
                 className="relative flex items-center"
@@ -785,7 +785,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
 
           {/* Installation Option */}
           <div className="mb-6">
-            <div className="block mb-2 font-medium text-gray-600 flex items-center gap-2 relative">
+            <div className=" mb-2 font-medium text-gray-600 flex items-center gap-2 relative">
               Installation Required:
             </div>
             <div className="flex items-center gap-4">
