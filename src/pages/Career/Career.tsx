@@ -221,6 +221,14 @@ export default function Career() {
       applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     },
     {
+      title: "Aluminium Fabricator Fitter",
+      description:
+        "As an Aluminium Fabricator Fitter at Imperio Railing Systems, you will be responsible for assembling, fitting, and welding metal components for construction and machinery, ensuring precision and adherence to safety standards.",
+      location: "Mumbai",
+      type: "Full-Time",
+      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
+    },
+    {
       title: "Digital Marketing Executive",
       description:
         "We are looking for a skilled individual with expertise in Digital Marketing, SEO, Social Media (Facebook & Instagram), and Email Marketing.",

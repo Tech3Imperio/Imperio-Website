@@ -34,6 +34,7 @@ interface ProductData {
   state: string;
   userType: string;
   timeline: string;
+  installation: string; // Changed to string for compatibility
 }
 
 interface UserData {
@@ -176,6 +177,7 @@ function App() {
     state: "",
     userType: "",
     timeline: "",
+    installation: "No", // Default to "No" as string
   };
 
   // Product selection state
@@ -200,7 +202,7 @@ function App() {
   const [userTypeData, setUserTypeData] = useState<SheetRow[]>([]);
 
   // App state
-  const [pricePerFt, setPricePerFt] = useState<number | null>(null);
+  // const [pricePerFt, setPricePerFt] = useState<number | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [message, setMessage] = useState<string>("");
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
@@ -292,137 +294,6 @@ function App() {
     fetchData();
   }, []);
 
-  // Calculate price per foot
-  const calculatePerFtPrice = (
-    stateForCalculation?: string
-  ): number | string => {
-    try {
-      console.log(
-        "Calculating price with state:",
-        stateForCalculation || productData.state
-      );
-      console.log("Product data:", productData);
-      console.log("Location data:", locationData);
-
-      // Use either the passed state parameter or the state from productData
-      const stateToUse = stateForCalculation || productData.state;
-
-      // Fetch Base price (a) based on Finish
-      const baseRow = baseData.find((row) => row.Base === productData.base);
-      if (!baseRow) {
-        console.error("Base row not found for:", productData.base);
-        return "❌ Error: Base option not found";
-      }
-
-      const basePrice = baseRow[productData.finish];
-      console.log("Base price:", basePrice);
-
-      // Fetch Handrail price (b) based on Finish
-      const handrailRow = handrailData.find(
-        (row) => row["Handrail Type"] === productData.handrail
-      );
-      if (!handrailRow) {
-        console.error("Handrail row not found for:", productData.handrail);
-        return "❌ Error: Handrail option not found";
-      }
-
-      const handrailPrice = handrailRow[productData.finish];
-      console.log("Handrail price:", handrailPrice);
-
-      // Fetch Glass price (c) based on Glass Thickness
-      const glassRow = glassData.find(
-        (row) => row["Glass Thickness"] === productData.glass
-      );
-      if (!glassRow) {
-        console.error("Glass row not found for:", productData.glass);
-        return "❌ Error: Glass option not found";
-      }
-
-      const glassPrice = glassRow.Price;
-      console.log("Glass price:", glassPrice);
-
-      // Fetch Height (d)
-      const heightValue = productData.height;
-      console.log("Height value:", heightValue);
-
-      // Calculate cd = c * d
-      const cdValue = Number.parseFloat(glassPrice as string) * heightValue;
-      console.log("cd value (glass price * height):", cdValue);
-
-      // Fetch Location multiplier (e)
-      let locationMultiplier = 1; // Default value
-
-      if (stateToUse) {
-        const locationRow = locationData.find(
-          (row) => row.Location === stateToUse
-        );
-
-        if (locationRow && locationRow["Parameter (in %)"] !== undefined) {
-          // Use the parameter directly, not as a percentage adjustment
-          locationMultiplier = locationRow["Parameter (in %)"] as number;
-          console.log("Location multiplier for state:", locationMultiplier);
-        } else {
-          console.log(
-            "Location parameter not found for state, using default multiplier"
-          );
-        }
-      }
-
-      // Calculate f = cd * e
-      const fValue = cdValue * locationMultiplier;
-      console.log("f value (cd * location multiplier):", fValue);
-
-      // Fetch User Discount multiplier (h)
-      const userTypeRow = userTypeData.find(
-        (row) => row["User Type"] === productData.userType
-      );
-      if (!userTypeRow) {
-        console.error("User type row not found for:", productData.userType);
-        return "❌ Error: User type option not found";
-      }
-
-      // Note: Adding the parameter (not subtracting as before)
-      const userDiscount =
-        1 + (userTypeRow["Parameter (in %)"] as number) / 100;
-      console.log("User discount:", userDiscount);
-
-      // Calculate Total Price
-      // (base_price + handrail_price + cd_value + f_value) * user_discount
-      const totalPrice =
-        (Number.parseFloat(basePrice as string) +
-          Number.parseFloat(handrailPrice as string) +
-          cdValue +
-          fValue) *
-        userDiscount;
-
-      console.log("Total price calculation components:", {
-        basePrice: Number.parseFloat(basePrice as string),
-        handrailPrice: Number.parseFloat(handrailPrice as string),
-        cdValue,
-        fValue,
-        userDiscount,
-      });
-
-      console.log("Final price per ft:", totalPrice);
-
-      // Timeline is fetched but not used in calculation
-      const timelineRow = timelineData.find(
-        (row) => row.Timeline === productData.timeline
-      );
-      if (timelineRow) {
-        console.log(
-          "Timeline value (not used in calculation):",
-          timelineRow["Parameter (in %)"]
-        );
-      }
-
-      return Number.parseFloat(totalPrice.toFixed(2));
-    } catch (error: any) {
-      console.error("Error in calculatePerFtPrice:", error);
-      return `❌ Error: ${error.message}`;
-    }
-  };
-
   // Handle Calculate button click
   const handleCalculate = async () => {
     // Validate required fields
@@ -460,42 +331,15 @@ function App() {
         return;
       }
 
-      // Find the location parameter for this state
-      const locationRow = locationData.find((row) => row.Location === state);
-      console.log("Location data for state:", locationRow);
+      // Update the state in product data
+      setProductData((prev) => ({
+        ...prev,
+        state,
+      }));
 
-      if (!locationRow) {
-        // If exact state match is not found, use default parameter
-        console.log("State not found in location data, using default");
-
-        // Calculate price using default location parameter
-        const price = calculatePerFtPrice();
-        console.log("Calculated price with default parameter:", price);
-
-        if (typeof price === "number") {
-          setPricePerFt(price);
-          setMessage(
-            `✅ Product options saved successfully! (Using default location parameter)`
-          );
-          // Move to user details page
-          setCurrentPage("user");
-        } else {
-          setMessage(price);
-        }
-      } else {
-        // Calculate price using the state parameter
-        const price = calculatePerFtPrice(state);
-        console.log("Calculated price with state parameter:", price);
-
-        if (typeof price === "number") {
-          setPricePerFt(price);
-          setMessage(`✅ Product options saved successfully!`);
-          // Move to user details page
-          setCurrentPage("user");
-        } else {
-          setMessage(price);
-        }
-      }
+      // Move to user details page without calculating price
+      setMessage(`✅ Product options saved successfully!`);
+      setCurrentPage("user");
     } catch (error: any) {
       console.error("Error in handleCalculate:", error);
       setMessage(`❌ Error: ${error.message}`);
@@ -506,33 +350,29 @@ function App() {
 
   // Handle form submission
   const handleSubmit = async (userData: UserData) => {
-    if (!pricePerFt) {
-      setMessage("❌ Error: Price calculation failed");
-      return;
-    }
-
     try {
       setIsSubmitting(true);
       setMessage("Submitting your quotation...");
-
-      // Calculate total price (not shown to user)
-      const totalPrice = pricePerFt * userData.size;
 
       // Combine product and user data
       const formData = {
         ...productData,
         ...userData,
-        totalPrice: Number.parseFloat(totalPrice.toFixed(2)),
       };
 
+      console.log("Submitting form data:", formData);
+
       // Submit to Google Apps Script with timeout
-      await axios.post(
+      // https://backendimperio.onrender.com
+      const response = await axios.post(
         "https://backendimperio.onrender.com/submit-form",
         formData,
         {
           timeout: 100000, // 10 second timeout
         }
       );
+
+      console.log("Form submission response:", response.data);
 
       setMessage(
         "✅ Your quotation has been submitted successfully! You will receive the total price on WhatsApp."
@@ -568,15 +408,15 @@ function App() {
       const firstUserType = userTypeResponse.data[0]?.["User Type"] as string;
       setProductData((prev) => ({
         ...prev,
-
         finish: firstFinish,
         glass: firstGlass || "",
         timeline: firstTimeline || "",
         userType: firstUserType || "",
+        installation: "No", // Reset installation to default
       }));
     }
 
-    setPricePerFt(null);
+    // setPricePerFt(null);
     setMessage("");
     setIsSuccess(false);
     setCurrentPage("product");
@@ -767,20 +607,6 @@ function App() {
             </button>
           </div>
         )}
-
-        {/* {!isSuccess && message && (
-          <div
-            style={{
-              marginTop: "15px",
-              padding: "10px",
-              borderRadius: "5px",
-              backgroundColor: message.startsWith("✅") ? "#e6f7e6" : "#ffebeb",
-              color: message.startsWith("✅") ? "#2e7d32" : "#d32f2f",
-            }}
-          >
-            {message}
-          </div>
-        )} */}
       </div>
     </div>
   );
