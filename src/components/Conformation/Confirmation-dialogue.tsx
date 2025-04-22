@@ -44,7 +44,7 @@ const ConfirmationDialog = ({
       onClick={onClose}
     >
       <div
-        className={`bg-white rounded-lg shadow-xl max-w-md w-full mx-4 transition-all duration-300 ${
+        className={`bg-white rounded-none shadow-xl max-w-md w-full mx-4 transition-all duration-300 ${
           isOpen ? "scale-100" : "scale-95"
         }`}
         onClick={(e) => e.stopPropagation()}
@@ -58,13 +58,13 @@ const ConfirmationDialog = ({
         <div className="flex justify-end gap-3 p-4 border-t">
           <button
             onClick={onClose}
-            className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+            className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-none hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
           >
             {cancelText}
           </button>
           <button
             onClick={onConfirm}
-            className="px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+            className="px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-none hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
           >
             {confirmText}
           </button>

@@ -76,10 +76,10 @@ export default function FeaturesSection() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
+              className="bg-white p-6 rounded-none shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
               variants={itemVariants}
             >
-              <div className="relative h-48 mb-6 rounded-md overflow-hidden">
+              <div className="relative h-48 mb-6 rounded-none overflow-hidden">
                 <img
                   src={feature.image || "/placeholder.svg"}
                   alt={feature.title}

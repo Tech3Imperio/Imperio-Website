@@ -189,7 +189,7 @@ function NewProducts() {
           </p>
           <a
             href="/products"
-            className="mt-4 px-5 py-2 bg-yellow-600 text-white rounded-lg shadow-md hover:bg-yellow-700"
+            className="mt-4 px-5 py-2 bg-yellow-600 text-white rounded-none shadow-md hover:bg-yellow-700"
           >
             Explore Our Collections
           </a>
@@ -209,7 +209,7 @@ function NewProducts() {
                   <img
                     src={product.image}
                     alt={`Product ${product.id}`}
-                    className="aspect-[1/1] object-cover rounded-lg shadow-lg"
+                    className="aspect-[1/1] object-cover rounded-none shadow-lg"
                   />
                 </a>
               </div>
@@ -232,7 +232,7 @@ function NewProducts() {
                     setShowFullText(!showFullText);
                     setShowFullTextForId(product.id);
                   }}
-                  className="mt-6 px-6 py-2 bg-yellow-600 text-white rounded-lg shadow-md hover:bg-yellow-700 duration-300 w-auto self-start"
+                  className="mt-6 px-6 py-2 bg-yellow-600 text-white rounded-none shadow-md hover:bg-yellow-700 duration-300 w-auto self-start"
                 >
                   {showFullText && product.id === showFullTextForid
                     ? "Show Less"
@@ -265,7 +265,7 @@ function NewProducts() {
               </p>
               <a
                 href="/contactus"
-                className="mt-8 px-5 py-2 bg-yellow-800 text-white rounded-lg shadow-md hover:bg-yellow-600"
+                className="mt-8 px-5 py-2 bg-yellow-800 text-white rounded-none shadow-md hover:bg-yellow-600"
               >
                 Get in Touch
               </a>
@@ -313,7 +313,7 @@ function NewProducts() {
                 ) => (
                   <motion.div
                     key={index}
-                    className={`rounded-lg overflow-hidden ${
+                    className={`rounded-none overflow-hidden ${
                       index % 3 === 0 ? "row-span-2" : "row-span-1"
                     }`}
                   >
@@ -361,7 +361,7 @@ function NewProducts() {
                   <img
                     src={img.src}
                     alt={`Project ${img.id}`}
-                    className=" w-full h-full object-cover rounded-lg shadow-lg py-4"
+                    className=" w-full h-full object-cover rounded-none shadow-lg py-4"
                   />
                   <div className="absolute">{img.location}</div>
                 </motion.a>
@@ -372,7 +372,7 @@ function NewProducts() {
           {!showAll && (
             <button
               onClick={() => setShowAll(true)}
-              className="mt-6 px-6 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition"
+              className="mt-6 px-6 py-2 bg-blue-600 text-white rounded-none shadow-md hover:bg-blue-700 transition"
             >
               Show More
             </button>

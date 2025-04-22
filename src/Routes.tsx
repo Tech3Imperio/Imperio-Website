@@ -107,6 +107,7 @@ export const routes = createBrowserRouter([
       { path: "careers", element: <Career /> },
       { path: "/careers/:title", element: <JobDetailsPage /> },
       { path: "products", element: <Products /> },
+      { path: "all-products", element: <AllProducts /> },
       { path: "cart", element: <CartProdcut /> },
       {
         path: "products/:productID",

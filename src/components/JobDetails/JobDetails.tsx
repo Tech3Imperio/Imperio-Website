@@ -42,11 +42,11 @@
 //         curve
 //       />
 //       <section className="max-w-7xl mx-auto mt-7 md:mt-0 p-4">
-//         <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+//         <div className="bg-gray-100 p-6 rounded-none shadow-md">
 //           <div className="flex md:-mb-14 justify-end">
 //             <button
 //               onClick={handleApplyClick}
-//               className="md:w-max py-2 px-3 md:py-3 md:px-5 border-2 rounded-3xl md:rounded-4xl text-white bg-[#000000] bg-opacity-60 transition-700 hover:border-[--secound] hover:text-[--black] hover:bg-[--secound] hover:bg-opacity-100"
+//               className="md:w-max py-2 px-3 md:py-3 md:px-5 border-2 rounded-none md:rounded-none text-white bg-[#000000] bg-opacity-60 transition-700 hover:border-[--secound] hover:text-[--black] hover:bg-[--secound] hover:bg-opacity-100"
 //             >
 //               Apply Now
 //             </button>
@@ -120,7 +120,7 @@
 //           </ul>
 //           <button
 //             onClick={handleApplyClick}
-//             className="w-max py-3 px-5 border-2 rounded-4xl text-white bg-[#000000] bg-opacity-60 transition-700 hover:border-[--secound] hover:text-[--black] hover:bg-[--secound] hover:bg-opacity-100"
+//             className="w-max py-3 px-5 border-2 rounded-none text-white bg-[#000000] bg-opacity-60 transition-700 hover:border-[--secound] hover:text-[--black] hover:bg-[--secound] hover:bg-opacity-100"
 //           >
 //             Apply Now
 //           </button>
@@ -185,11 +185,11 @@ export function JobDetails({ job }: JobDetailsProps) {
         curve
       />
       <section className="max-w-7xl mx-auto mt-7 md:mt-0 p-4">
-        <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+        <div className="bg-gray-100 p-6 rounded-none shadow-md">
           <div className="flex md:-mb-14 justify-end">
             <button
               onClick={handleApplyClick}
-              className="md:w-max py-2 px-3 md:py-3 md:px-5 border-2 rounded-3xl md:rounded-4xl text-white bg-[#000000] bg-opacity-60 transition-700 hover:border-[--secound] hover:text-[--black] hover:bg-[--secound] hover:bg-opacity-100"
+              className="md:w-max py-2 px-3 md:py-3 md:px-5 border-2 rounded-none md:rounded-none text-white bg-[#000000] bg-opacity-60 transition-700 hover:border-[--secound] hover:text-[--black] hover:bg-[--secound] hover:bg-opacity-100"
             >
               Apply Now
             </button>
@@ -263,7 +263,7 @@ export function JobDetails({ job }: JobDetailsProps) {
           </ul>
           <button
             onClick={handleApplyClick}
-            className="w-max py-3 px-5 border-2 rounded-4xl text-white bg-[#000000] bg-opacity-60 transition-700 hover:border-[--secound] hover:text-[--black] hover:bg-[--secound] hover:bg-opacity-100"
+            className="w-max py-3 px-5 border-2 rounded-none text-white bg-[#000000] bg-opacity-60 transition-700 hover:border-[--secound] hover:text-[--black] hover:bg-[--secound] hover:bg-opacity-100"
           >
             Apply Now
           </button>

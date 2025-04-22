@@ -20,7 +20,7 @@ const CustomInput = forwardRef<HTMLInputElement, InputProps>(
         <motion.div whileFocus={{ scale: 1.01 }} className="relative">
           <input
             ref={ref}
-            className={`w-full px-4 py-2.5 rounded-md border ${
+            className={`w-full px-4 py-2.5 rounded-none border ${
               error ? "border-red-500" : "border-gray-300"
             } focus:outline-none focus:ring-2 focus:ring-[var(--yellow-500)] focus:border-transparent transition-all duration-200 ${className}`}
             {...props}

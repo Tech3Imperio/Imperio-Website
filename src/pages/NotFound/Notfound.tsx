@@ -19,7 +19,7 @@ export const NotFound: React.FC = () => {
       </p>
       <Link
         to="/"
-        className="flex items-center text-lg font-medium text-[--black] bg-[--secound] px-6 py-3 rounded-4xl hover:bg-[--black] hover:text-[--secound] transition-500"
+        className="flex items-center text-lg font-medium text-[--black] bg-[--secound] px-6 py-3 rounded-none hover:bg-[--black] hover:text-[--secound] transition-500"
       >
         <HiOutlineHome className="mr-2" /> Go Back Home
       </Link>

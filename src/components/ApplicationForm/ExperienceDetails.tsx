@@ -38,7 +38,7 @@ function ExperienceDetails({
             name="companyName"
             value={formData.companyName}
             onChange={handleInputChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#fad000]"
+            className="w-full px-3 py-2 border border-gray-300 rounded-none focus:outline-none focus:ring-1 focus:ring-[#fad000]"
           />
         </div>
         <div>
@@ -54,7 +54,7 @@ function ExperienceDetails({
             name="designation"
             value={formData.designation}
             onChange={handleInputChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#fad000]"
+            className="w-full px-3 py-2 border border-gray-300 rounded-none focus:outline-none focus:ring-1 focus:ring-[#fad000]"
           />
         </div>
         <div>
@@ -70,7 +70,7 @@ function ExperienceDetails({
             name="experienceYears"
             value={formData.experienceYears}
             onChange={handleInputChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#fad000]"
+            className="w-full px-3 py-2 border border-gray-300 rounded-none focus:outline-none focus:ring-1 focus:ring-[#fad000]"
           />
         </div>
         <div>
@@ -86,7 +86,7 @@ function ExperienceDetails({
             value={formData.highestQualification}
             onChange={handleInputChange}
             required
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#fad000]"
+            className="w-full px-3 py-2 border border-gray-300 rounded-none focus:outline-none focus:ring-1 focus:ring-[#fad000]"
           >
             <option value="">Select Qualification</option>
             <option value="10th pass">10th pass</option>
@@ -109,7 +109,7 @@ function ExperienceDetails({
           value={formData.skills}
           onChange={handleInputChange}
           rows={3}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#fad000]"
+          className="w-full px-3 py-2 border border-gray-300 rounded-none focus:outline-none focus:ring-1 focus:ring-[#fad000]"
         ></textarea>
       </div>
     </motion.div>

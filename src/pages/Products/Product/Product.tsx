@@ -157,7 +157,7 @@
 //           </div>
 //           <div>
 //             <img
-//               className="rounded-4xl cursor-pointer hidden xl:block"
+//               className="rounded-none cursor-pointer hidden xl:block"
 //               onClick={handleLeftClick}
 //               src={imageData[imageData.length - 1].img}
 //               alt={imageData[imageData.length - 1].alt}
@@ -170,7 +170,7 @@
 //             className="cursor-pointer text-8xl tablet:text-5xl laptop:text-3xl"
 //             onClick={handleLeftClick}
 //           />
-//           {/* <div className="max-h-[70vh] max-w-[70vw] rounded-4xl xl:max-h-[40.5rem] xl:max-w-[40.5rem] overflow-hidden">
+//           {/* <div className="max-h-[70vh] max-w-[70vw] rounded-none xl:max-h-[40.5rem] xl:max-w-[40.5rem] overflow-hidden">
 //             <img
 //               className="w-full h-full object-cover object-center"
 //               src={imageData[0].img}
@@ -178,7 +178,7 @@
 //               title={imageData[0].alt}
 //             />
 //           </div> */}
-//           <div className="max-h-[70vh] max-w-[100vw] xl:h-[40.5rem] xl:w-[40.5rem] rounded-4xl overflow-hidden">
+//           <div className="max-h-[70vh] max-w-[100vw] xl:h-[40.5rem] xl:w-[40.5rem] rounded-none overflow-hidden">
 //             <img
 //               className=" min-w-full min-h-full object-cover object-center"
 //               src={imageData[0].img}
@@ -205,7 +205,7 @@
 //           </div>
 //           <div>
 //             <img
-//               className="rounded-4xl cursor-pointer hidden xl:block"
+//               className="rounded-none cursor-pointer hidden xl:block"
 //               onClick={handleRightClick}
 //               src={imageData[1].img}
 //               alt={imageData[1].alt}
@@ -401,7 +401,7 @@
 //           </div>
 //           <div>
 //             <img
-//               className="rounded-4xl laptop:h-full cursor-pointer hidden xl:block"
+//               className="rounded-none laptop:h-full cursor-pointer hidden xl:block"
 //               onClick={handleLeftClick}
 //               src={imageData[imageData.length - 1].img}
 //               alt={imageData[imageData.length - 1].alt}
@@ -421,9 +421,9 @@
 //               onClick={handleLeftClick}
 //             />
 //           )}
-//           <div className="middle-image-container xl:max-h-[75vh] xl:max-w-[33vw] xl:h-[40.5rem] xl:w-[40.5rem] rounded-4xl overflow-hidden">
+//           <div className="middle-image-container xl:max-h-[75vh] xl:max-w-[33vw] xl:h-[40.5rem] xl:w-[40.5rem] rounded-none overflow-hidden">
 //             <img
-//               className="middle-image rounded-4xl"
+//               className="middle-image rounded-none"
 //               src={imageData[0].img}
 //               alt={imageData[0].alt}
 //               title={imageData[0].alt}
@@ -450,7 +450,7 @@
 //           </div>
 //           <div>
 //             <img
-//               className="rounded-4xl cursor-pointer hidden xl:block"
+//               className="rounded-none cursor-pointer hidden xl:block"
 //               onClick={handleRightClick}
 //               src={imageData[1].img}
 //               alt={imageData[1].alt}
@@ -749,7 +749,7 @@
 //   if (!productData || !imageData.length) {
 //     return (
 //       <div className="w-screen h-screen flex justify-center items-center">
-//         <div className="w-16 h-16 border-t-4 border-b-4 border-blue-500 rounded-full animate-spin"></div>
+//         <div className="w-16 h-16 border-t-4 border-b-4 border-blue-500 rounded-none animate-spin"></div>
 //       </div>
 //     );
 //   }
@@ -786,7 +786,7 @@
 //           </div>
 //           <div>
 //             <img
-//               className="rounded-4xl laptop:h-full cursor-pointer hidden xl:block"
+//               className="rounded-none laptop:h-full cursor-pointer hidden xl:block"
 //               onClick={handleLeftClick}
 //               src={imageData[imageData.length - 1].img}
 //               alt={imageData[imageData.length - 1].alt}
@@ -806,14 +806,14 @@
 //               onClick={handleLeftClick}
 //             />
 //           )}
-//           <div className="middle-image-container xl:max-h-[75vh] xl:max-w-[33vw] xl:h-[40.5rem] xl:w-[40.5rem] rounded-4xl overflow-hidden relative">
+//           <div className="middle-image-container xl:max-h-[75vh] xl:max-w-[33vw] xl:h-[40.5rem] xl:w-[40.5rem] rounded-none overflow-hidden relative">
 //             {isMobile && showSwipeIndicator && (
 //               <div className="swipe-indicator absolute top-0 left-0 w-full h-full flex items-center justify-center text-white font-bold animate-fade-in">
 //                 Swipe to navigate
 //               </div>
 //             )}
 //             <img
-//               className="middle-image rounded-4xl"
+//               className="middle-image rounded-none"
 //               src={imageData[0].img}
 //               alt={imageData[0].alt}
 //               title={imageData[0].alt}
@@ -848,7 +848,7 @@
 //           </div>
 //           <div>
 //             <img
-//               className="rounded-4xl cursor-pointer hidden xl:block"
+//               className="rounded-none cursor-pointer hidden xl:block"
 //               onClick={handleRightClick}
 //               src={imageData[1].img}
 //               alt={imageData[1].alt}
@@ -863,7 +863,7 @@
 //       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 //         {/* Product imageData */}
 //         <div className="space-y-4">
-//           <div className="aspect-square border rounded-lg overflow-hidden">
+//           <div className="aspect-square border rounded-none overflow-hidden">
 //             {imageData[selectedImage] && (
 //               <img
 //                 src={imageData[selectedImage].img}
@@ -877,7 +877,7 @@
 //               <button
 //                 key={index}
 //                 onClick={() => setSelectedImage(index)}
-//                 className={`w-20 h-20 border rounded-lg overflow-hidden ${
+//                 className={`w-20 h-20 border rounded-none overflow-hidden ${
 //                   selectedImage === index
 //                     ? "border-gray-800"
 //                     : "border-gray-200"
@@ -913,7 +913,7 @@
 //             </div>
 //           </div>
 
-//           <div className="border rounded-lg p-4">
+//           <div className="border rounded-none p-4">
 //             <h2 className="font-semibold mb-2">Product dimantions</h2>
 //             {/* Add product dimensions content here */}
 //           </div>
@@ -927,7 +927,7 @@
 //                 <button
 //                   key={color.name}
 //                   style={{ backgroundColor: color.code }}
-//                   className={`w-6 h-6 rounded-full border border-gray-300 hover:bg-opacity-75 focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
+//                   className={`w-6 h-6 rounded-none border border-gray-300 hover:bg-opacity-75 focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
 //                     selectedColor === color.name ? "border-blue-500" : ""
 //                   }`}
 //                   onClick={() => setSelectedColor(color.name)}
@@ -947,7 +947,7 @@
 //               </label>
 //               <select
 //                 name="blocks"
-//                 className="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none"
+//                 className="mt-1 w-full border rounded-none px-3 py-2 focus:outline-none"
 //                 required
 //               >
 //                 {/* Populate Blocks dropdown with the available options */}
@@ -966,7 +966,7 @@
 //               </label>
 //               <select
 //                 name="cover"
-//                 className="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none"
+//                 className="mt-1 w-full border rounded-none px-3 py-2 focus:outline-none"
 //                 required
 //               >
 //                 {/* Populate Cover dropdown with the available options */}
@@ -986,7 +986,7 @@
 //               <input
 //                 type="number"
 //                 name="quantity"
-//                 className="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none"
+//                 className="mt-1 w-full border rounded-none px-3 py-2 focus:outline-none"
 //                 required
 //               />
 //             </div>
@@ -999,7 +999,7 @@
 //               <input
 //                 type="number"
 //                 name="rubber"
-//                 className="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none"
+//                 className="mt-1 w-full border rounded-none px-3 py-2 focus:outline-none"
 //                 required
 //               />
 //             </div>
@@ -1012,7 +1012,7 @@
 //               <input
 //                 type="number"
 //                 name="nutbolt"
-//                 className="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none"
+//                 className="mt-1 w-full border rounded-none px-3 py-2 focus:outline-none"
 //                 required
 //               />
 //             </div>
@@ -1025,7 +1025,7 @@
 //               <input
 //                 type="number"
 //                 name="endcap"
-//                 className="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none"
+//                 className="mt-1 w-full border rounded-none px-3 py-2 focus:outline-none"
 //                 required
 //               />
 //             </div>
@@ -1033,13 +1033,13 @@
 //             {/* Add to Cart Button */}
 //             <button
 //               type="submit"
-//               className="flex-1 bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 text-center"
+//               className="flex-1 bg-blue-600 text-white py-3 rounded-none hover:bg-blue-700 text-center"
 //             >
 //               Add to cart
 //             </button>
 
 //             {/* Buy Now Button */}
-//             <button className="flex-1 bg-blue-100 text-blue-600 py-3 rounded-md hover:bg-blue-200">
+//             <button className="flex-1 bg-blue-100 text-blue-600 py-3 rounded-none hover:bg-blue-200">
 //               Buy Now
 //             </button>
 //           </form>
@@ -1385,7 +1385,7 @@
 //   if (!productData || !imageData.length) {
 //     return (
 //       <div className="w-screen h-screen flex justify-center items-center">
-//         <div className="w-16 h-16 border-t-4 border-b-4 border-blue-500 rounded-full animate-spin"></div>
+//         <div className="w-16 h-16 border-t-4 border-b-4 border-blue-500 rounded-none animate-spin"></div>
 //       </div>
 //     );
 //   }
@@ -1422,7 +1422,7 @@
 //           </div>
 //           <div>
 //             <img
-//               className="rounded-4xl laptop:h-full cursor-pointer hidden xl:block"
+//               className="rounded-none laptop:h-full cursor-pointer hidden xl:block"
 //               onClick={handleLeftClick}
 //               src={imageData[imageData.length - 1].img}
 //               alt={imageData[imageData.length - 1].alt}
@@ -1442,14 +1442,14 @@
 //               onClick={handleLeftClick}
 //             />
 //           )}
-//           <div className="middle-image-container xl:max-h-[75vh] xl:max-w-[33vw] xl:h-[40.5rem] xl:w-[40.5rem] rounded-4xl overflow-hidden relative">
+//           <div className="middle-image-container xl:max-h-[75vh] xl:max-w-[33vw] xl:h-[40.5rem] xl:w-[40.5rem] rounded-none overflow-hidden relative">
 //             {isMobile && showSwipeIndicator && (
 //               <div className="swipe-indicator absolute top-0 left-0 w-full h-full flex items-center justify-center text-white font-bold animate-fade-in">
 //                 Swipe to navigate
 //               </div>
 //             )}
 //             <img
-//               className="middle-image rounded-4xl"
+//               className="middle-image rounded-none"
 //               src={imageData[0].img}
 //               alt={imageData[0].alt}
 //               title={imageData[0].alt}
@@ -1484,7 +1484,7 @@
 //           </div>
 //           <div>
 //             <img
-//               className="rounded-4xl cursor-pointer hidden xl:block"
+//               className="rounded-none cursor-pointer hidden xl:block"
 //               onClick={handleRightClick}
 //               src={imageData[1].img}
 //               alt={imageData[1].alt}
@@ -1499,7 +1499,7 @@
 //       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 //         {/* Product imageData */}
 //         <div className="space-y-4">
-//           <div className="aspect-square border rounded-lg overflow-hidden">
+//           <div className="aspect-square border rounded-none overflow-hidden">
 //             {imageData[selectedImage] && (
 //               <img
 //                 src={imageData[selectedImage].img}
@@ -1513,7 +1513,7 @@
 //               <button
 //                 key={index}
 //                 onClick={() => setSelectedImage(index)}
-//                 className={`w-20 h-20 border rounded-lg overflow-hidden ${
+//                 className={`w-20 h-20 border rounded-none overflow-hidden ${
 //                   selectedImage === index
 //                     ? "border-gray-800"
 //                     : "border-gray-200"
@@ -1549,7 +1549,7 @@
 //             </div>
 //           </div>
 
-//           <div className="border rounded-lg p-4">
+//           <div className="border rounded-none p-4">
 //             <h2 className="font-semibold mb-2">Product dimantions</h2>
 //             {/* Add product dimensions content here */}
 //           </div>
@@ -1563,7 +1563,7 @@
 //                 <button
 //                   key={color.name}
 //                   style={{ backgroundColor: color.code }}
-//                   className={`w-6 h-6 rounded-full border border-gray-300 hover:bg-opacity-75 focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
+//                   className={`w-6 h-6 rounded-none border border-gray-300 hover:bg-opacity-75 focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
 //                     selectedColor === color.name ? "border-blue-500" : ""
 //                   }`}
 //                   onClick={() => setSelectedColor(color.name)}
@@ -1588,7 +1588,7 @@
 //                     onChange={(e) =>
 //                       updateBlockSelection(index, "type", e.target.value)
 //                     }
-//                     className="w-full border rounded-md px-3 py-2 focus:outline-none"
+//                     className="w-full border rounded-none px-3 py-2 focus:outline-none"
 //                     required
 //                   >
 //                     <option value="">Select Block</option>
@@ -1609,7 +1609,7 @@
 //                         parseInt(e.target.value)
 //                       )
 //                     }
-//                     className="ml-2 w-[100%] border rounded-md px-3 py-2 focus:outline-none"
+//                     className="ml-2 w-[100%] border rounded-none px-3 py-2 focus:outline-none"
 //                     placeholder="Enter Qty"
 //                     required
 //                     min="1"
@@ -1617,7 +1617,7 @@
 //                   {index === blockSelections.length - 1 ? (
 //                     <button
 //                       type="button"
-//                       className="m-2 bg-blue-500 text-white rounded-full w-[75px] h-8 flex items-center justify-center"
+//                       className="m-2 bg-blue-500 text-white rounded-none w-[75px] h-8 flex items-center justify-center"
 //                       onClick={addBlockSelection}
 //                     >
 //                       <FaPlus />
@@ -1625,7 +1625,7 @@
 //                   ) : (
 //                     <button
 //                       type="button"
-//                       className="m-2 bg-red-500 text-white rounded-full  w-[75px] h-8 flex items-center justify-center"
+//                       className="m-2 bg-red-500 text-white rounded-none  w-[75px] h-8 flex items-center justify-center"
 //                       onClick={() => removeBlockSelection(index)}
 //                     >
 //                       <FaMinus />
@@ -1645,7 +1645,7 @@
 //                   onChange={(e) =>
 //                     updateCoverSelection(0, "type", e.target.value)
 //                   }
-//                   className="w-full border rounded-md px-3 py-2 focus:outline-none"
+//                   className="w-full border rounded-none px-3 py-2 focus:outline-none"
 //                   required
 //                 >
 //                   <option value="">Select Cover</option>
@@ -1665,7 +1665,7 @@
 //                       parseInt(e.target.value)
 //                     )
 //                   }
-//                   className="ml-2 w-20 border rounded-md px-3 py-2 focus:outline-none"
+//                   className="ml-2 w-20 border rounded-none px-3 py-2 focus:outline-none"
 //                   placeholder="Qty"
 //                   required
 //                   min="1"
@@ -1680,7 +1680,7 @@
 //               <input
 //                 type="number"
 //                 name="quantity"
-//                 className="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none"
+//                 className="mt-1 w-full border rounded-none px-3 py-2 focus:outline-none"
 //                 required
 //               />
 //             </div>
@@ -1691,7 +1691,7 @@
 //               <input
 //                 type="number"
 //                 name="rubber"
-//                 className="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none"
+//                 className="mt-1 w-full border rounded-none px-3 py-2 focus:outline-none"
 //                 required
 //               />
 //             </div>
@@ -1702,7 +1702,7 @@
 //               <input
 //                 type="number"
 //                 name="nutbolt"
-//                 className="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none"
+//                 className="mt-1 w-full border rounded-none px-3 py-2 focus:outline-none"
 //                 required
 //               />
 //             </div>
@@ -1713,19 +1713,19 @@
 //               <input
 //                 type="number"
 //                 name="endcap"
-//                 className="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none"
+//                 className="mt-1 w-full border rounded-none px-3 py-2 focus:outline-none"
 //                 required
 //               />
 //             </div>
 
 //             <button
 //               type="submit"
-//               className="flex-1 bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 text-center"
+//               className="flex-1 bg-blue-600 text-white py-3 rounded-none hover:bg-blue-700 text-center"
 //             >
 //               Add to cart
 //             </button>
 
-//             <button className="flex-1 bg-blue-100 text-blue-600 py-3 rounded-md hover:bg-blue-200">
+//             <button className="flex-1 bg-blue-100 text-blue-600 py-3 rounded-none hover:bg-blue-200">
 //               Buy Now
 //             </button>
 //           </form>
@@ -2093,7 +2093,7 @@ const MemoProduct: React.FC = () => {
   if (!productData || !imageData.length) {
     return (
       <div className="w-screen h-screen flex justify-center items-center">
-        <div className="w-16 h-16 border-t-4 border-b-4 border-blue-500 rounded-full animate-spin"></div>
+        <div className="w-16 h-16 border-t-4 border-b-4 border-blue-500 rounded-none animate-spin"></div>
       </div>
     );
   }
@@ -2130,7 +2130,7 @@ const MemoProduct: React.FC = () => {
           </div>
           <div>
             <img
-              className="rounded-4xl laptop:h-full cursor-pointer hidden xl:block"
+              className="rounded-none laptop:h-full cursor-pointer hidden xl:block"
               onClick={handleLeftClick}
               src={imageData[imageData.length - 1].img}
               alt={imageData[imageData.length - 1].alt}
@@ -2150,14 +2150,14 @@ const MemoProduct: React.FC = () => {
               onClick={handleLeftClick}
             />
           )}
-          <div className="middle-image-container xl:max-h-[75vh] xl:max-w-[33vw] xl:h-[40.5rem] xl:w-[40.5rem] rounded-4xl overflow-hidden relative">
+          <div className="middle-image-container xl:max-h-[75vh] xl:max-w-[33vw] xl:h-[40.5rem] xl:w-[40.5rem] rounded-none overflow-hidden relative">
             {isMobile && showSwipeIndicator && (
               <div className="swipe-indicator absolute top-0 left-0 w-full h-full flex items-center justify-center text-white font-bold animate-fade-in">
                 Swipe to navigate
               </div>
             )}
             <img
-              className="middle-image rounded-4xl"
+              className="middle-image rounded-none"
               src={imageData[0].img}
               alt={imageData[0].alt}
               title={imageData[0].alt}
@@ -2192,7 +2192,7 @@ const MemoProduct: React.FC = () => {
           </div>
           <div>
             <img
-              className="rounded-4xl cursor-pointer hidden xl:block"
+              className="rounded-none cursor-pointer hidden xl:block"
               onClick={handleRightClick}
               src={imageData[1].img}
               alt={imageData[1].alt}
@@ -2207,7 +2207,7 @@ const MemoProduct: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Product imageData */}
         <div className="space-y-4">
-          <div className="aspect-square border rounded-lg overflow-hidden">
+          <div className="aspect-square border rounded-none overflow-hidden">
             {imageData[selectedImage] && (
               <img
                 src={imageData[selectedImage].img}
@@ -2221,7 +2221,7 @@ const MemoProduct: React.FC = () => {
               <button
                 key={index}
                 onClick={() => setSelectedImage(index)}
-                className={`flex-shrink-0 w-20 h-20 border rounded-lg overflow-hidden ${
+                className={`flex-shrink-0 w-20 h-20 border rounded-none overflow-hidden ${
                   selectedImage === index
                     ? "border-gray-800"
                     : "border-gray-200"
@@ -2260,7 +2260,7 @@ const MemoProduct: React.FC = () => {
             </div>
           </div>
 
-          <div className="border rounded-lg p-4">
+          <div className="border rounded-none p-4">
             <h2 className="font-semibold mb-2">Product dimensions</h2>
             {/* Add product dimensions content here */}
           </div>
@@ -2283,7 +2283,7 @@ const MemoProduct: React.FC = () => {
                     key={color.name}
                     type="button"
                     style={{ backgroundColor: color.code }}
-                    className={`w-8 h-8 rounded-full border border-gray-300 hover:bg-opacity-75 focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
+                    className={`w-8 h-8 rounded-none border border-gray-300 hover:bg-opacity-75 focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
                       selectedColor === color.name
                         ? "border-blue-500 ring-2 ring-blue-500"
                         : ""
@@ -2305,7 +2305,7 @@ const MemoProduct: React.FC = () => {
                     onChange={(e) =>
                       updateBlockSelection(index, "type", e.target.value)
                     }
-                    className="w-full border rounded-md px-3 py-2 focus:outline-none"
+                    className="w-full border rounded-none px-3 py-2 focus:outline-none"
                     required
                   >
                     <option value="">Select Block</option>
@@ -2325,7 +2325,7 @@ const MemoProduct: React.FC = () => {
                         parseInt(e.target.value)
                       )
                     }
-                    className="ml-2 w-[100%] border rounded-md px-3 py-2 focus:outline-none"
+                    className="ml-2 w-[100%] border rounded-none px-3 py-2 focus:outline-none"
                     placeholder="Enter Qty"
                     required
                     min="1"
@@ -2333,7 +2333,7 @@ const MemoProduct: React.FC = () => {
                   {index === blockSelections.length - 1 ? (
                     <button
                       type="button"
-                      className="m-2 bg-blue-500 text-white rounded-full w-[75px] h-8 flex items-center justify-center"
+                      className="m-2 bg-blue-500 text-white rounded-none w-[75px] h-8 flex items-center justify-center"
                       onClick={addBlockSelection}
                     >
                       <FaPlus />
@@ -2341,7 +2341,7 @@ const MemoProduct: React.FC = () => {
                   ) : (
                     <button
                       type="button"
-                      className="m-2 bg-red-500 text-white rounded-full w-[75px] h-8 flex items-center justify-center"
+                      className="m-2 bg-red-500 text-white rounded-none w-[75px] h-8 flex items-center justify-center"
                       onClick={() => removeBlockSelection(index)}
                     >
                       <FaMinus />
@@ -2362,7 +2362,7 @@ const MemoProduct: React.FC = () => {
                     onChange={(e) =>
                       updateCoverSelection(index, "type", e.target.value)
                     }
-                    className="w-full border rounded-md px-3 py-2 focus:outline-none"
+                    className="w-full border rounded-none px-3 py-2 focus:outline-none"
                     required
                   >
                     <option value="">Select Cover</option>
@@ -2382,7 +2382,7 @@ const MemoProduct: React.FC = () => {
                         parseInt(e.target.value)
                       )
                     }
-                    className="ml-2 w-[100%] border rounded-md px-3 py-2 focus:outline-none"
+                    className="ml-2 w-[100%] border rounded-none px-3 py-2 focus:outline-none"
                     placeholder="Enter Qty"
                     required
                     min="1"
@@ -2390,7 +2390,7 @@ const MemoProduct: React.FC = () => {
                   {index === coverSelections.length - 1 ? (
                     <button
                       type="button"
-                      className="m-2 bg-blue-500 text-white rounded-full w-[75px] h-8 flex items-center justify-center"
+                      className="m-2 bg-blue-500 text-white rounded-none w-[75px] h-8 flex items-center justify-center"
                       onClick={addCoverSelection}
                     >
                       <FaPlus />
@@ -2398,7 +2398,7 @@ const MemoProduct: React.FC = () => {
                   ) : (
                     <button
                       type="button"
-                      className="m-2 bg-red-500 text-white rounded-full w-[75px] h-8 flex items-center justify-center"
+                      className="m-2 bg-red-500 text-white rounded-none w-[75px] h-8 flex items-center justify-center"
                       onClick={() => removeCoverSelection(index)}
                     >
                       <FaMinus />
@@ -2416,7 +2416,7 @@ const MemoProduct: React.FC = () => {
                 <input
                   type="number"
                   name="quantity"
-                  className="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none"
+                  className="mt-1 w-full border rounded-none px-3 py-2 focus:outline-none"
                   required
                   min="1"
                 />
@@ -2428,7 +2428,7 @@ const MemoProduct: React.FC = () => {
                 <input
                   type="number"
                   name="rubber"
-                  className="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none"
+                  className="mt-1 w-full border rounded-none px-3 py-2 focus:outline-none"
                   required
                   min="0"
                 />
@@ -2440,7 +2440,7 @@ const MemoProduct: React.FC = () => {
                 <input
                   type="number"
                   name="nutbolt"
-                  className="mt-1 w-full border rounded-md px-3 py-2 focus:outline-none"
+                  className="mt-1 w-full border rounded-none px-3 py-2 focus:outline-none"
                   required
                   min="0"
                 />
@@ -2452,7 +2452,7 @@ const MemoProduct: React.FC = () => {
                 <input
                   type="number"
                   name="endcap"
-                  className="mt-1 w-60 border rounded-md px-3 py-2 focus:outline-none"
+                  className="mt-1 w-60 border rounded-none px-3 py-2 focus:outline-none"
                   required
                   min="0"
                 />
@@ -2464,7 +2464,7 @@ const MemoProduct: React.FC = () => {
               <div>
                 <button
                   type="submit"
-                  className="px-6 w-full py-4 text-[--black] font-bold bg-[--secound] text-xl rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap "
+                  className="px-6 w-full py-4 text-[--black] font-bold bg-[--secound] text-xl rounded-none transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap "
                 >
                   Add to cart
                 </button>
@@ -2472,7 +2472,7 @@ const MemoProduct: React.FC = () => {
               <div>
                 <button
                   type="button"
-                  className="px-6 w-full py-4  text-[--black] font-bold bg-white text-xl rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound]"
+                  className="px-6 w-full py-4  text-[--black] font-bold bg-white text-xl rounded-none transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound]"
                 >
                   Buy Now
                 </button>

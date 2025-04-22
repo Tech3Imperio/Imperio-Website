@@ -55,7 +55,7 @@ const AluminumVSSteel: React.FC = () => {
               <li key={item.id}>
                 <a
                   href={`#${item.id}`}
-                  className={`block px-4 py-2 rounded-lg transition-colors whitespace-nowrap ${
+                  className={`block px-4 py-2 rounded-none transition-colors whitespace-nowrap ${
                     activeSection === item.id
                       ? "bg-[#fad000] text-[#03237b] font-bold"
                       : "hover:bg-gray-200"
@@ -114,7 +114,7 @@ const AluminumVSSteel: React.FC = () => {
                 alt="Framed Glass Railing"
                 width={500}
                 height={300}
-                className="rounded-lg shadow-lg"
+                className="rounded-none shadow-lg"
               />
               <div>
                 <p className="text-[#292929] mb-4 text-justify">
@@ -247,7 +247,7 @@ const AluminumVSSteel: React.FC = () => {
                 alt="Stainless Steel Glass Railings"
                 width={500}
                 height={300}
-                className="rounded-lg shadow-lg"
+                className="rounded-none shadow-lg"
               />
             </div>
           </motion.section>

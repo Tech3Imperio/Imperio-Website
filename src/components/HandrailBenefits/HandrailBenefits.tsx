@@ -46,7 +46,7 @@ const HandrailBenefits: React.FC = () => {
             <li key={item.id}>
               <a
                 href={`#${item.id}`}
-                className={`block px-4 py-2 rounded-lg transition-colors whitespace-nowrap ${
+                className={`block px-4 py-2 rounded-none transition-colors whitespace-nowrap ${
                   activeSection === item.id
                     ? "bg-[#fad000] text-[#03237b] font-bold"
                     : "hover:bg-gray-200"
@@ -59,7 +59,7 @@ const HandrailBenefits: React.FC = () => {
           {/* <li>
             <a
               href="#introduction"
-              className={`block px-4 py-2 rounded-lg transition-colors whitespace-nowrap ${
+              className={`block px-4 py-2 rounded-none transition-colors whitespace-nowrap ${
                 activeSection === "introduction"
                   ? "bg-[#fad000] text-[#03237b] font-bold"
                   : "hover:bg-gray-200"
@@ -71,7 +71,7 @@ const HandrailBenefits: React.FC = () => {
           <li>
             <a
               href="#aluminium-glass-features"
-              className={`block px-4 py-2 rounded-lg transition-colors whitespace-nowrap ${
+              className={`block px-4 py-2 rounded-none transition-colors whitespace-nowrap ${
                 activeSection === "framed-glass"
                   ? "bg-[#fad000] text-[#03237b] font-bold"
                   : "hover:bg-gray-200"
@@ -83,7 +83,7 @@ const HandrailBenefits: React.FC = () => {
           <li>
             <a
               href="#aluminium-glass-benefits"
-              className={`block px-4 py-2 rounded-lg transition-colors whitespace-nowrap ${
+              className={`block px-4 py-2 rounded-none transition-colors whitespace-nowrap ${
                 activeSection === "framed-porch-cores"
                   ? "bg-[#fad000] text-[#03237b] font-bold"
                   : "hover:bg-gray-200"
@@ -95,7 +95,7 @@ const HandrailBenefits: React.FC = () => {
           <li>
             <a
               href="#aluminium-glass-application"
-              className={`block px-4 py-2 rounded-lg transition-colors whitespace-nowrap ${
+              className={`block px-4 py-2 rounded-none transition-colors whitespace-nowrap ${
                 activeSection === "frameless-glass"
                   ? "bg-[#fad000] text-[#03237b] font-bold"
                   : "hover:bg-gray-200"
@@ -164,7 +164,7 @@ const HandrailBenefits: React.FC = () => {
               alt="Handrail Benefits"
               width={500}
               height={300}
-              className="rounded-lg shadow-lg"
+              className="rounded-none shadow-lg"
             />
             <div>
               <p className="text-[#292929] mb-4 text-justify">
@@ -329,7 +329,7 @@ const HandrailBenefits: React.FC = () => {
             <img
               src={handrailBenefits2}
               alt="Handrails for Safety and Accessibility"
-              className="rounded-lg shadow-lg"
+              className="rounded-none shadow-lg"
               width={500}
               height={300}
             />

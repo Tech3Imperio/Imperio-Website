@@ -67,7 +67,7 @@ export default function DealerLogin() {
   return (
     <section className="min-h-screen  flex items-center justify-center px-4 py-12">
       <motion.main
-        className="bg-white shadow-2xl rounded-3xl overflow-hidden w-full max-w-4xl"
+        className="bg-white shadow-2xl rounded-none overflow-hidden w-full max-w-4xl"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -125,7 +125,7 @@ export default function DealerLogin() {
                     onChange={handleInput}
                     placeholder="Enter your registered phone number"
                     required
-                    className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg"
+                    className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-none"
                   />
                 </div>
               </div>
@@ -148,7 +148,7 @@ export default function DealerLogin() {
                     onChange={handleInput}
                     placeholder="Enter your password"
                     required
-                    className="w-full pl-10 pr-10 py-2 border border-gray-300 rounded-lg "
+                    className="w-full pl-10 pr-10 py-2 border border-gray-300 rounded-none "
                   />
                   <button
                     type="button"
@@ -161,14 +161,14 @@ export default function DealerLogin() {
               </div>
               <motion.button
                 type="submit"
-                className="px-8 py-4 w-full text-[--black] font-bold bg-[--secound] rounded-4xl transition-700 cursor-pointer border border-[--secound]  hover:bg-[--black] hover:text-[--secound]"
+                className="px-8 py-4 w-full text-[--black] font-bold bg-[--secound] rounded-none transition-700 cursor-pointer border border-[--secound]  hover:bg-[--black] hover:text-[--secound]"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 disabled={isLoader}
               >
                 {isLoader ? (
                   <motion.div
-                    className="h-5 w-5 border-t-2 border-white rounded-full"
+                    className="h-5 w-5 border-t-2 border-white rounded-none"
                     animate={{ rotate: 360 }}
                     transition={{
                       duration: 1,

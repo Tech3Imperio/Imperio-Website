@@ -38,7 +38,7 @@ const DealerReject: React.FC = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-100 to-purple-100 p-4">
-      <div className="bg-white shadow-lg rounded-lg w-full max-w-md overflow-hidden">
+      <div className="bg-white shadow-lg rounded-none w-full max-w-md overflow-hidden">
         <div className="p-6">
           <h1 className="text-2xl font-semibold text-center text-gray-800 mb-4">
             Decline Dealer
@@ -49,7 +49,7 @@ const DealerReject: React.FC = () => {
           <p className="font-bold text-blue-600 break-all mb-4">{email}</p>
           {message && (
             <div
-              className={`p-4 rounded-md mt-4 ${
+              className={`p-4 rounded-none mt-4 ${
                 message.includes("Error")
                   ? "bg-red-100 text-red-700"
                   : "bg-green-100 text-green-700"

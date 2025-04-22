@@ -279,7 +279,7 @@ const MemoProducts: React.FC = () => {
                         />
                         <label
                           htmlFor={option}
-                          className="cursor-pointer rounded-lg whitespace-nowrap -text--grey"
+                          className="cursor-pointer rounded-none whitespace-nowrap -text--grey"
                         >
                           {option}
                         </label>
@@ -293,7 +293,7 @@ const MemoProducts: React.FC = () => {
               onClick={() => {
                 setSelectedTypes([]), setSidebarOpen(false);
               }}
-              className=" px-6 py-4 text-[--black] font-bold bg-[--secound] text-xs rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap "
+              className=" px-6 py-4 text-[--black] font-bold bg-[--secound] text-xs rounded-none transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap "
             >
               Reset Filters
             </button>
@@ -315,7 +315,7 @@ const MemoProducts: React.FC = () => {
         />
 
         <main className="flex flex-col md:flex-row max-w-[85rem] mx-auto">
-          <aside className="hidden lg:flex flex-col text-center md:top-32 md:mt-10 self-start p-4 w-[80%] md:w-[18%] mx-auto border rounded-xl mb-6">
+          <aside className="hidden lg:flex flex-col text-center md:top-32 md:mt-10 self-start p-4 w-[80%] md:w-[18%] mx-auto border rounded-none mb-6">
             {filterCategories.map((category) => (
               <div key={category.name} className="p-2  mb-4">
                 <div
@@ -352,7 +352,7 @@ const MemoProducts: React.FC = () => {
                         />
                         <label
                           htmlFor={option}
-                          className="cursor-pointer rounded-lg whitespace-nowrap"
+                          className="cursor-pointer rounded-none whitespace-nowrap"
                         >
                           {option}
                         </label>
@@ -364,7 +364,7 @@ const MemoProducts: React.FC = () => {
             ))}
             <button
               onClick={() => setSelectedTypes([])}
-              className="py-3 mb-3 tablet:py-4 px-5 laptop:px-6 text-sm text-white bg-[--black] font-normal rounded-4xl transition-700 hover:text-[--black] hover:bg-[--secound]"
+              className="py-3 mb-3 tablet:py-4 px-5 laptop:px-6 text-sm text-white bg-[--black] font-normal rounded-none transition-700 hover:text-[--black] hover:bg-[--secound]"
             >
               Reset Filters
             </button>
@@ -552,7 +552,7 @@ const MemoProducts: React.FC = () => {
                       />
                       <label
                         htmlFor={option}
-                        className="cursor-pointer rounded-lg whitespace-nowrap -text--grey"
+                        className="cursor-pointer rounded-none whitespace-nowrap -text--grey"
                       >
                         {option}
                       </label>
@@ -566,7 +566,7 @@ const MemoProducts: React.FC = () => {
             onClick={() => {
               setSelectedTypes([]), setSidebarOpen(false);
             }}
-            className=" px-6 py-4 text-[--black] font-bold bg-[--secound] text-xs rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap "
+            className=" px-6 py-4 text-[--black] font-bold bg-[--secound] text-xs rounded-none transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap "
           >
             Reset Filters
           </button>
@@ -639,7 +639,7 @@ const MemoProducts: React.FC = () => {
                         />
                         <label
                           htmlFor={option}
-                          className="cursor-pointer rounded-lg whitespace-nowrap -text--grey"
+                          className="cursor-pointer rounded-none whitespace-nowrap -text--grey"
                         >
                           {option}
                         </label>
@@ -654,7 +654,7 @@ const MemoProducts: React.FC = () => {
               onClick={() => {
                 setSelectedTypes([]), setFilterSidebar(false);
               }}
-              className=" px-6 py-4 text-[--black] font-bold bg-[--secound] text-xs rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap "
+              className=" px-6 py-4 text-[--black] font-bold bg-[--secound] text-xs rounded-none transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap "
             >
               Reset Filters
             </button>
@@ -670,12 +670,12 @@ const MemoProducts: React.FC = () => {
         } max-w-[85rem] mx-auto justify-center`}
       >
         {encodedToken ? (
-          <nav className=" flex justify-between items-center py-3 px-2 lg:px-6 shadow-sm rounded-2xl border mx-2">
+          <nav className=" flex justify-between items-center py-3 px-2 lg:px-6 shadow-sm rounded-none border mx-2">
             <button onClick={() => setFilterSidebar(!filterSidebar)}>
               <CiFilter size={32} />
             </button>
 
-            <div className="flex justify-center items-center gap-4 rounded-3xl shadow-2xl border px-4 focus:border-0">
+            <div className="flex justify-center items-center gap-4 rounded-none shadow-2xl border px-4 focus:border-0">
               <IoSearchOutline size={20} />
               <input
                 placeholder="Search..."
@@ -689,13 +689,13 @@ const MemoProducts: React.FC = () => {
               to="/cart"
             >
               <BsHandbag size={24} />
-              <p className="h-8 w-8 rounded-full text-2xl bg-[#fad000] text-[#03237b] uppercase flex justify-center items-center Raleway">
+              <p className="h-8 w-8 rounded-none text-2xl bg-[#fad000] text-[#03237b] uppercase flex justify-center items-center Raleway">
                 {icon}
               </p>
             </Link>
           </nav>
         ) : (
-          <aside className="hidden lg:flex flex-col text-center md:top-32 md:mt-10 self-start p-4 w-[80%] md:w-[18%] mx-auto border rounded-xl mb-6">
+          <aside className="hidden lg:flex flex-col text-center md:top-32 md:mt-10 self-start p-4 w-[80%] md:w-[18%] mx-auto border rounded-none mb-6">
             {filterCategories.map((category) => (
               <div key={category.name} className="p-2  mb-4">
                 <div
@@ -731,7 +731,7 @@ const MemoProducts: React.FC = () => {
                         />
                         <label
                           htmlFor={option}
-                          className="cursor-pointer rounded-lg whitespace-nowrap"
+                          className="cursor-pointer rounded-none whitespace-nowrap"
                         >
                           {option}
                         </label>
@@ -743,7 +743,7 @@ const MemoProducts: React.FC = () => {
             ))}
             <button
               onClick={() => setSelectedTypes([])}
-              className="py-3 mb-3 tablet:py-4 px-5 laptop:px-6 text-sm text-white bg-[--black] font-normal rounded-4xl transition-700 hover:text-[--black] hover:bg-[--secound]"
+              className="py-3 mb-3 tablet:py-4 px-5 laptop:px-6 text-sm text-white bg-[--black] font-normal rounded-none transition-700 hover:text-[--black] hover:bg-[--secound]"
             >
               Reset Filters
             </button>

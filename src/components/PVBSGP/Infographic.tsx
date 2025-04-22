@@ -9,7 +9,7 @@ interface InfographicProps {
 export default function Infographic({ type }: InfographicProps) {
   return (
     <motion.div
-      className="w-full mb-4 p-4 bg-gray-100 rounded-lg mt-4"
+      className="w-full mb-4 p-4 bg-gray-100 rounded-none mt-4"
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
@@ -24,7 +24,7 @@ export default function Infographic({ type }: InfographicProps) {
           <img
             src={type === "pvb" ? pvbGlass : sgpGlass}
             alt={`${type.toUpperCase()} Laminated Glass`}
-            className="w-full h-auto rounded-lg shadow-md"
+            className="w-full h-auto rounded-none shadow-md"
           />
         </motion.div>
         <motion.div

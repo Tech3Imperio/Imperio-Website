@@ -166,7 +166,7 @@
 //                   to={`/careers/${encodeURIComponent(job.title)}`}
 //                   key={index}
 //                 >
-//                   <div className="bg-gray-100 p-6 rounded-lg shadow-md relative hover:shadow-lg transition-shadow">
+//                   <div className="bg-gray-100 p-6 rounded-none shadow-md relative hover:shadow-lg transition-shadow">
 //                     <h3 className="text-xl font-semibold mb-2 text-blue-900">
 //                       {job.title}
 //                     </h3>
@@ -478,7 +478,7 @@ export default function Career() {
             <div className="flex gap-4 mb-16 justify-center items-center">
               <h3 className="max-w-5xl  gap-8 text-xl">Applying for:</h3>
               <button
-                className={`px-4 py-2 font-bold rounded-lg transition-all border ${
+                className={`px-4 py-2 font-bold rounded-none transition-all border ${
                   selectedCategory === "jobs"
                     ? "bg-[--black] text-[--secound] border-[--black]"
                     : "bg-gray-200 text-gray-700 border-gray-400"
@@ -488,7 +488,7 @@ export default function Career() {
                 Jobs
               </button>
               <button
-                className={`px-4 py-2 font-bold rounded-lg transition-all border ${
+                className={`px-4 py-2 font-bold rounded-none transition-all border ${
                   selectedCategory === "intern"
                     ? "bg-[--black] text-[--secound] border-[--black]"
                     : "bg-gray-200 text-gray-700 border-gray-400"
@@ -503,7 +503,7 @@ export default function Career() {
                 (job, index) => (
                   <div
                     key={index}
-                    className="bg-gray-100 p-6 rounded-lg shadow-md relative hover:shadow-lg transition-shadow"
+                    className="bg-gray-100 p-6 rounded-none shadow-md relative hover:shadow-lg transition-shadow"
                   >
                     <div className="w-full flex justify-between">
                       <h3 className="text-xl font-semibold mb-2 text-blue-900">
@@ -517,7 +517,7 @@ export default function Career() {
 
                     <div className="flex justify-end items-center mt-4">
                       <Link to={`/careers/${encodeURIComponent(job.title)}`}>
-                        <button className="px-4 py-3 text-[--secound] font-bold bg-[--black] text-xs rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--secound] hover:text-[--black] whitespace-nowrap">
+                        <button className="px-4 py-3 text-[--secound] font-bold bg-[--black] text-xs rounded-none transition-700 cursor-pointer border border-[--secound] hover:bg-[--secound] hover:text-[--black] whitespace-nowrap">
                           View Details
                         </button>
                       </Link>

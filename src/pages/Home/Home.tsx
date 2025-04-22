@@ -213,7 +213,7 @@ export const Home: React.FC = () => {
                     <img
                       src={item.img}
                       alt={item.alt}
-                      className="rounded-4xl object-cover"
+                      className="rounded-none object-cover"
                       title={item.alt}
                       loading="lazy"
                     />
@@ -248,7 +248,7 @@ export const Home: React.FC = () => {
                       alt={item.alt}
                       title={item.alt}
                       loading="lazy"
-                      className="rounded-4xl object-cover"
+                      className="rounded-none object-cover"
                     />
                   </div>
                   <div className="flex flex-col text-white">
@@ -275,7 +275,7 @@ export const Home: React.FC = () => {
                         sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1200px" // Define sizes for different screen widths
                         src={item.img} // Fallback image if srcSet is not supported
                         alt={item.alt}
-                        className="rounded-4xl object-cover"
+                        className="rounded-none object-cover"
                         title={item.alt}
                         loading="lazy"
                         width="500" // Set width to match the displayed size
@@ -314,7 +314,7 @@ export const Home: React.FC = () => {
                         sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1200px" // Define sizes for different screen widths
                         src={item.img} // Fallback image if srcSet is not supported
                         alt={item.alt}
-                        className="rounded-4xl object-cover"
+                        className="rounded-none object-cover"
                         title={item.alt}
                         loading="lazy"
                         width="500" // Set width to match the displayed size

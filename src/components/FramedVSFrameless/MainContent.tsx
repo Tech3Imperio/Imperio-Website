@@ -40,7 +40,7 @@ const MainContent: React.FC = () => {
           <li>
             <a
               href="#introduction"
-              className={`block px-4 py-2 rounded-lg transition-colors whitespace-nowrap ${
+              className={`block px-4 py-2 rounded-none transition-colors whitespace-nowrap ${
                 activeSection === "introduction"
                   ? "bg-[#fad000] text-[#03237b] font-bold"
                   : "hover:bg-gray-200"
@@ -52,7 +52,7 @@ const MainContent: React.FC = () => {
           <li>
             <a
               href="#framed-glass"
-              className={`block px-4 py-2 rounded-lg transition-colors whitespace-nowrap ${
+              className={`block px-4 py-2 rounded-none transition-colors whitespace-nowrap ${
                 activeSection === "framed-glass"
                   ? "bg-[#fad000] text-[#03237b] font-bold"
                   : "hover:bg-gray-200"
@@ -64,7 +64,7 @@ const MainContent: React.FC = () => {
           <li>
             <a
               href="#framed-porch-cores"
-              className={`block px-4 py-2 rounded-lg transition-colors whitespace-nowrap ${
+              className={`block px-4 py-2 rounded-none transition-colors whitespace-nowrap ${
                 activeSection === "framed-porch-cores"
                   ? "bg-[#fad000] text-[#03237b] font-bold"
                   : "hover:bg-gray-200"
@@ -76,7 +76,7 @@ const MainContent: React.FC = () => {
           <li>
             <a
               href="#frameless-glass"
-              className={`block px-4 py-2 rounded-lg transition-colors whitespace-nowrap ${
+              className={`block px-4 py-2 rounded-none transition-colors whitespace-nowrap ${
                 activeSection === "frameless-glass"
                   ? "bg-[#fad000] text-[#03237b] font-bold"
                   : "hover:bg-gray-200"
@@ -88,7 +88,7 @@ const MainContent: React.FC = () => {
           <li>
             <a
               href="#frameless-porch-cores"
-              className={`block px-4 py-2 rounded-lg transition-colors whitespace-nowrap ${
+              className={`block px-4 py-2 rounded-none transition-colors whitespace-nowrap ${
                 activeSection === "frameless-porch-cores"
                   ? "bg-[#fad000] text-[#03237b] font-bold"
                   : "hover:bg-gray-200"
@@ -100,7 +100,7 @@ const MainContent: React.FC = () => {
           <li>
             <a
               href="#comprison"
-              className={`block px-4 py-2 rounded-lg transition-colors whitespace-nowrap ${
+              className={`block px-4 py-2 rounded-none transition-colors whitespace-nowrap ${
                 activeSection === "comprison"
                   ? "bg-[#fad000] text-[#03237b] font-bold"
                   : "hover:bg-gray-200"
@@ -112,7 +112,7 @@ const MainContent: React.FC = () => {
           <li>
             <a
               href="#right-fit-foryou"
-              className={`block px-4 py-2 rounded-lg transition-colors whitespace-nowrap ${
+              className={`block px-4 py-2 rounded-none transition-colors whitespace-nowrap ${
                 activeSection === "right-fit-foryou"
                   ? "bg-[#fad000] text-[#03237b] font-bold"
                   : "hover:bg-gray-200"
@@ -124,7 +124,7 @@ const MainContent: React.FC = () => {
           <li>
             <a
               href="#whyframless"
-              className={`block px-4 py-2 rounded-lg transition-colors whitespace-nowrap ${
+              className={`block px-4 py-2 rounded-none transition-colors whitespace-nowrap ${
                 activeSection === "whyframless"
                   ? "bg-[#fad000] text-[#03237b] font-bold"
                   : "hover:bg-gray-200"
@@ -136,7 +136,7 @@ const MainContent: React.FC = () => {
           <li>
             <a
               href="#casestudy"
-              className={`block px-4 py-2 rounded-lg transition-colors whitespace-nowrap ${
+              className={`block px-4 py-2 rounded-none transition-colors whitespace-nowrap ${
                 activeSection === "casestudy"
                   ? "bg-[#fad000] text-[#03237b] font-bold"
                   : "hover:bg-gray-200"
@@ -187,7 +187,7 @@ const MainContent: React.FC = () => {
               alt="Framed Glass Railing"
               width={500}
               height={300}
-              className="rounded-lg shadow-lg"
+              className="rounded-none shadow-lg"
             />
             <div>
               <p className="text-[#292929] mb-4 text-justify">
@@ -312,7 +312,7 @@ const MainContent: React.FC = () => {
             <img
               src="https://media.licdn.com/dms/image/v2/D5612AQFSrJNA4S6gZA/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1723281646772?e=2147483647&v=beta&t=H3DsOIRVLxXCOhpL8QeldPByZFCiyYNF_5wH9BwVzm4"
               alt="Frameless Glass Railing"
-              className="rounded-lg shadow-lg"
+              className="rounded-none shadow-lg"
               width={500}
               height={300}
             />
@@ -492,7 +492,7 @@ const MainContent: React.FC = () => {
           <p className="text-3xl font-semibold mb-4 text-[#03237b]">
             Case Study
           </p>
-          <div className="bg-white p-6 rounded-lg shadow-lg">
+          <div className="bg-white p-6 rounded-none shadow-lg">
             <p className="text-[#292929] mb-2 text-justify">
               DoubleTree by Hilton and W Hotel Goa, two luxury seaside resorts
               in Goa, sought to elevate their{" "}

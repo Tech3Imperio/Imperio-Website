@@ -20,7 +20,7 @@ export const GreyButton: React.FC<ButtonProps> = ({
       to={path}
       className={
         className +
-        ` w-max py-4 px-6 border-2 rounded-4xl bg-gray-500 bg-opacity-60 transition-700 hover:border-[--secound] hover:text-[--black] hover:bg-[--secound] hover:bg-opacity-100`
+        ` w-max py-4 px-6 border-2 rounded-none bg-gray-500 bg-opacity-60 transition-700 hover:border-[--secound] hover:text-[--black] hover:bg-[--secound] hover:bg-opacity-100`
       }
     >
       {children}
@@ -39,7 +39,7 @@ export const BlackButton: React.FC<ButtonProps> = ({
       to={path}
       className={
         className +
-        ` py-4 px-6 rounded-4xl text-[--white] bg-[--black] transition-700 hover:text-[--black] hover:bg-[--secound] text-center whitespace-nowrap`
+        ` py-4 px-6 rounded-none text-[--white] bg-[--black] transition-700 hover:text-[--black] hover:bg-[--secound] text-center whitespace-nowrap`
       }
     >
       {children}
@@ -58,7 +58,7 @@ export const BlackButton2: React.FC<Button2Props> = ({
       onClick={onClick}
       className={
         className +
-        ` w-max py-4 px-6 rounded-4xl text-[--white] bg-[--black] transition-700 hover:text-[--black] hover:bg-[--secound]`
+        ` w-max py-4 px-6 rounded-none text-[--white] bg-[--black] transition-700 hover:text-[--black] hover:bg-[--secound]`
       }
     >
       {children}
@@ -77,7 +77,7 @@ export const WhiteButton: React.FC<WhiteButtonProps> = ({
       aria-label="dealer white"
       onClick={onClick}
       className={
-        `w-max py-2 px-6 border-black rounded-4xl ${
+        `w-max py-2 px-6 border-black rounded-none ${
           value ? "bg-[--secound]" : "bg-transparent"
         } text-[--black] transition-700 hover:text-[--black] hover:bg-[--secound] ` +
         className
@@ -99,7 +99,7 @@ export const CTAButton: React.FC<CTAButtonProps> = ({
       to={`tel:${phoneNumber}`} // Using "tel:" scheme for phone call
       className={
         className +
-        `px-5 justify-center items-center py-4 text-[--black] flex gap-2 font-bold bg-[--secound] text-xs rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap`
+        `px-5 justify-center items-center py-4 text-[--black] flex gap-2 font-bold bg-[--secound] text-xs rounded-none transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap`
       }
     >
       {children}
@@ -117,7 +117,7 @@ export const CTAButton: React.FC<CTAButtonProps> = ({
 //       to={`tel:${phoneNumber}`} // Using "tel:" scheme for phone call
 //       className={
 //         className +
-//         `w-max py-4 px-4 rounded-4xl text-[--white] bg-[--black] transition-700 hover:text-[--black] hover:bg-[--secound]`
+//         `w-max py-4 px-4 rounded-none text-[--white] bg-[--black] transition-700 hover:text-[--black] hover:bg-[--secound]`
 //       }
 //     >
 //       {children}
@@ -135,7 +135,7 @@ export const CTAButton3: React.FC<CTAButtonProps3> = ({
       to={`tel:${phoneNumber}`} // Using "tel:" scheme for phone call
       className={
         className +
-        `py-[15px] justify-center items-center flex gap-2 px-5 text-[--black] font-bold bg-white text-[9px] md:text-xs rounded-4xl transition-700 cursor-pointer border border-white hover:bg-[--black] hover:text-[--secound] whitespace-nowrap`
+        `py-[15px] justify-center items-center flex gap-2 px-5 text-[--black] font-bold bg-white text-[9px] md:text-xs rounded-none transition-700 cursor-pointer border border-white hover:bg-[--black] hover:text-[--secound] whitespace-nowrap`
       }
     >
       {children}

@@ -43,7 +43,7 @@ const DealerAccept: React.FC = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-100 to-green-100 p-4">
-      <div className="max-w-md w-full bg-white shadow-lg rounded-lg overflow-hidden">
+      <div className="max-w-md w-full bg-white shadow-lg rounded-none overflow-hidden">
         <div className="p-8">
           <div className="flex justify-center mb-6">
             <svg
@@ -72,7 +72,7 @@ const DealerAccept: React.FC = () => {
           </div>
           <div className="flex justify-center">
             <button
-              className={`w-full max-w-xs bg-green-500 text-white px-6 py-3 rounded-lg font-semibold text-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg ${
+              className={`w-full max-w-xs bg-green-500 text-white px-6 py-3 rounded-none font-semibold text-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg ${
                 loading ? "opacity-50 cursor-not-allowed" : "hover:bg-green-600"
               }`}
               onClick={acceptDealer}
@@ -109,7 +109,7 @@ const DealerAccept: React.FC = () => {
           </div>
           {message && (
             <div
-              className={`mt-6 text-center p-3 rounded-lg ${
+              className={`mt-6 text-center p-3 rounded-none ${
                 message.includes("Error")
                   ? "bg-red-100 text-red-700"
                   : "bg-green-100 text-green-700"

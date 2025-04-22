@@ -116,7 +116,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
   };
 
   return (
-    <div className="max-w-[1200px] mx-auto p-5 sm:p-10 font-sans text-gray-800 bg-gray-50 rounded-xl">
+    <div className="max-w-[1200px] mx-auto p-5 sm:p-10 font-sans text-gray-800 bg-gray-50 rounded-none">
       {/* Preload images */}
       {baseData.map((base) =>
         Object.keys(finishColors).map((finish) => (
@@ -166,7 +166,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                   <button
                     key={finish}
                     onClick={() => setProductData({ ...productData, finish })}
-                    className={`w-12 h-12 rounded-full relative outline-none cursor-pointer ${
+                    className={`w-12 h-12 rounded-none relative outline-none cursor-pointer ${
                       productData.finish === finish
                         ? "border-[3px] border-blue-500"
                         : "border-2 border-gray-300"
@@ -174,7 +174,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                     style={{ backgroundColor: color }}
                   >
                     {productData.finish === finish && (
-                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full" />
+                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-none" />
                     )}
                   </button>
                 ) : (
@@ -182,7 +182,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                   <button
                     key={finish}
                     onClick={() => setProductData({ ...productData, finish })}
-                    className={`px-4 py-2 border border-gray-300 rounded-md cursor-pointer ${
+                    className={`px-4 py-2 border border-gray-300 rounded-none cursor-pointer ${
                       productData.finish === finish
                         ? "bg-blue-500 text-white font-semibold"
                         : "bg-gray-50 text-black font-normal"
@@ -196,11 +196,11 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
       </div>
 
       {/* Base Selection */}
-      <div className="mb-10 bg-white rounded-2xl p-6 sm:p-8 shadow-md">
+      <div className="mb-10 bg-white rounded-none p-6 sm:p-8 shadow-md">
         <div className="flex flex-col justify-center items-center">
           <h2 className="text-2xl font-semibold mb-6 pb-2.5 relative text-center">
             Select Base
-            <div className="absolute bottom-0 w-[60px] h-[3px] bg-blue-500 rounded-sm left-1/2 translate-x-[-50%]"></div>
+            <div className="absolute bottom-0 w-[60px] h-[3px] bg-blue-500 rounded-none left-1/2 translate-x-[-50%]"></div>
           </h2>
         </div>
 
@@ -212,7 +212,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                 baseScroll.scrollBy({ left: -250, behavior: "smooth" });
               }
             }}
-            className="absolute top-1/2 -left-5 z-10 transform -translate-y-1/2 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md cursor-pointer text-lg text-gray-700 transition-all hover:shadow-lg"
+            className="absolute top-1/2 -left-5 z-10 transform -translate-y-1/2 bg-white rounded-none w-10 h-10 flex items-center justify-center shadow-md cursor-pointer text-lg text-gray-700 transition-all hover:shadow-lg"
           >
             &#10094;
           </button>
@@ -231,7 +231,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                   onClick={() =>
                     setProductData({ ...productData, base: row.Base })
                   }
-                  className={`rounded-xl overflow-hidden min-w-[220px] flex-none snap-start cursor-pointer transition-all duration-300 ${
+                  className={`rounded-none overflow-hidden min-w-[220px] flex-none snap-start cursor-pointer transition-all duration-300 ${
                     isSelected
                       ? "shadow-lg shadow-blue-200 -translate-y-1"
                       : "shadow-md hover:shadow-lg"
@@ -249,7 +249,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                       </div>
                     )}
                     {isSelected && (
-                      <div className="absolute top-3 right-3 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                      <div className="absolute top-3 right-3 bg-blue-500 text-white px-3 py-1 rounded-none text-xs font-semibold">
                         Selected
                       </div>
                     )}
@@ -273,7 +273,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                 baseScroll.scrollBy({ left: 250, behavior: "smooth" });
               }
             }}
-            className="absolute top-1/2 -right-5 z-10 transform -translate-y-1/2 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md cursor-pointer text-lg text-gray-700 transition-all hover:shadow-lg"
+            className="absolute top-1/2 -right-5 z-10 transform -translate-y-1/2 bg-white rounded-none w-10 h-10 flex items-center justify-center shadow-md cursor-pointer text-lg text-gray-700 transition-all hover:shadow-lg"
           >
             &#10095;
           </button>
@@ -281,11 +281,11 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
       </div>
 
       {/* Handrail Selection */}
-      <div className="mb-10 bg-white rounded-2xl p-6 sm:p-8 shadow-md">
+      <div className="mb-10 bg-white rounded-none p-6 sm:p-8 shadow-md">
         <div className="flex flex-col justify-center items-center">
           <h2 className="text-2xl font-semibold mb-6 pb-2.5 relative text-center">
             Select Handrail
-            <div className="absolute bottom-0 w-[60px] h-[3px] bg-blue-500 rounded-sm left-1/2 translate-x-[-50%]"></div>
+            <div className="absolute bottom-0 w-[60px] h-[3px] bg-blue-500 rounded-none left-1/2 translate-x-[-50%]"></div>
           </h2>
         </div>
         <div className="relative">
@@ -296,7 +296,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                 handrailScroll.scrollBy({ left: -250, behavior: "smooth" });
               }
             }}
-            className="absolute top-1/2 -left-5 z-10 transform -translate-y-1/2 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md cursor-pointer text-lg text-gray-700 transition-all hover:shadow-lg"
+            className="absolute top-1/2 -left-5 z-10 transform -translate-y-1/2 bg-white rounded-none w-10 h-10 flex items-center justify-center shadow-md cursor-pointer text-lg text-gray-700 transition-all hover:shadow-lg"
           >
             &#10094;
           </button>
@@ -321,7 +321,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                       handrail: row["Handrail Type"],
                     })
                   }
-                  className={`rounded-xl overflow-hidden min-w-[220px] flex-none snap-start cursor-pointer transition-all duration-300 ${
+                  className={`rounded-none overflow-hidden min-w-[220px] flex-none snap-start cursor-pointer transition-all duration-300 ${
                     isSelected
                       ? "shadow-lg shadow-blue-200 -translate-y-1"
                       : "shadow-md hover:shadow-lg"
@@ -339,7 +339,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                       </div>
                     )}
                     {isSelected && (
-                      <div className="absolute top-3 right-3 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                      <div className="absolute top-3 right-3 bg-blue-500 text-white px-3 py-1 rounded-none text-xs font-semibold">
                         Selected
                       </div>
                     )}
@@ -363,7 +363,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                 handrailScroll.scrollBy({ left: 250, behavior: "smooth" });
               }
             }}
-            className="absolute top-1/2 -right-5 z-10 transform -translate-y-1/2 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md cursor-pointer text-lg text-gray-700 transition-all hover:shadow-lg"
+            className="absolute top-1/2 -right-5 z-10 transform -translate-y-1/2 bg-white rounded-none w-10 h-10 flex items-center justify-center shadow-md cursor-pointer text-lg text-gray-700 transition-all hover:shadow-lg"
           >
             &#10095;
           </button>
@@ -371,11 +371,11 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
       </div>
 
       {/* Additional Options */}
-      <div className="mb-10 bg-white rounded-2xl p-6 sm:p-8 shadow-md">
+      <div className="mb-10 bg-white rounded-none p-6 sm:p-8 shadow-md">
         <div className="flex flex-col justify-center items-center">
           <h2 className="text-2xl font-semibold mb-6 pb-2.5 relative text-center">
             Additional Options
-            <div className="absolute bottom-0 w-[60px] h-[3px] bg-blue-500 rounded-sm left-1/2 translate-x-[-50%]"></div>
+            <div className="absolute bottom-0 w-[60px] h-[3px] bg-blue-500 rounded-none left-1/2 translate-x-[-50%]"></div>
           </h2>
         </div>
 
@@ -390,7 +390,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
               onChange={(e) =>
                 setProductData({ ...productData, glass: e.target.value })
               }
-              className="w-full p-3 rounded-lg border border-gray-200 text-gray-700 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
+              className="w-full p-3 rounded-none border border-gray-200 text-gray-700 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
             >
               {/* <option value="">Select Glass</option> */}
               {glassData.map((row) => (
@@ -447,13 +447,13 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                 }
               }}
               placeholder="Enter your pincode"
-              className="w-full p-3 rounded-lg border border-gray-200 text-gray-700 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
+              className="w-full p-3 rounded-none border border-gray-200 text-gray-700 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
               maxLength={6}
             />
 
             {/* Display city and state when available */}
             {productData.state && (
-              <div className="mt-2 p-3 bg-blue-50 rounded-lg border border-blue-100">
+              <div className="mt-2 p-3 bg-blue-50 rounded-none border border-blue-100">
                 <div className="grid grid-cols-2 gap-2">
                   <div>
                     <span className="text-xs text-gray-500">City:</span>
@@ -482,7 +482,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
               onChange={(e) =>
                 setProductData({ ...productData, userType: e.target.value })
               }
-              className="w-full p-3 rounded-lg border border-gray-200 text-gray-700 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
+              className="w-full p-3 rounded-none border border-gray-200 text-gray-700 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
             >
               {/* <option value="">Select User Type</option> */}
               {userTypeData.map((row) => (
@@ -504,7 +504,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
               onChange={(e) =>
                 setProductData({ ...productData, timeline: e.target.value })
               }
-              className="w-full p-3 rounded-lg border border-gray-200 text-gray-700 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
+              className="w-full p-3 rounded-none border border-gray-200 text-gray-700 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
             >
               {/* <option value="">Select Timeline</option> */}
               {timelineData.map((row) => (
@@ -536,7 +536,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                     const height = heightMap[Number.parseInt(e.target.value)];
                     setProductData({ ...productData, height });
                   }}
-                  className="appearance-none w-[10px] h-[200px] bg-gray-200 rounded-full outline-none [writing-mode:vertical-rl] [direction:ltr] rotate-180"
+                  className="appearance-none w-[10px] h-[200px] bg-gray-200 rounded-none outline-none [writing-mode:vertical-rl] [direction:ltr] rotate-180"
                 />
 
                 {/* Labels for the scale */}
@@ -545,7 +545,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                     <button
                       key={index}
                       onClick={() => setProductData({ ...productData, height })}
-                      className={`text-sm px-3 w-max rounded-md transition-all ${
+                      className={`text-sm px-3 w-max rounded-none transition-all ${
                         productData.height === height
                       }`}
                       style={{
@@ -564,7 +564,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
 
               {/* Selected Height Text */}
               <div
-                className="mt-2 text-lg font-semibold flex justify-center text-blue-500 px-4 py-2 bg-blue-50 rounded-full shadow-sm"
+                className="mt-2 text-lg font-semibold flex justify-center text-blue-500 px-4 py-2 bg-blue-50 rounded-none shadow-sm"
                 style={{ minWidth: "120px" }}
               >
                 {productData.height} Feet
@@ -589,13 +589,13 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
       </div>
 
       {/* Summary */}
-      <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 mt-10 border border-blue-200">
+      <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-none p-6 mt-10 border border-blue-200">
         <h2 className="text-lg font-semibold mb-4 text-blue-500">
           Your Selection
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
           {productData.finish && (
-            <div className="bg-white p-3 rounded-lg shadow-sm">
+            <div className="bg-white p-3 rounded-none shadow-sm">
               <div className="text-xs text-gray-500 mb-1">Finish</div>
               <div className="font-semibold text-gray-800">
                 {productData.finish}
@@ -603,7 +603,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
             </div>
           )}
           {productData.base && (
-            <div className="bg-white p-3 rounded-lg shadow-sm">
+            <div className="bg-white p-3 rounded-none shadow-sm">
               <div className="text-xs text-gray-500 mb-1">Base</div>
               <div className="font-semibold text-gray-800">
                 {productData.base}
@@ -611,7 +611,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
             </div>
           )}
           {productData.handrail && (
-            <div className="bg-white p-3 rounded-lg shadow-sm">
+            <div className="bg-white p-3 rounded-none shadow-sm">
               <div className="text-xs text-gray-500 mb-1">Handrail</div>
               <div className="font-semibold text-gray-800">
                 {productData.handrail}
@@ -619,7 +619,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
             </div>
           )}
           {productData.glass && (
-            <div className="bg-white p-3 rounded-lg shadow-sm">
+            <div className="bg-white p-3 rounded-none shadow-sm">
               <div className="text-xs text-gray-500 mb-1">Glass</div>
               <div className="font-semibold text-gray-800">
                 {productData.glass}
@@ -627,7 +627,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
             </div>
           )}
           {productData.location && (
-            <div className="bg-white p-3 rounded-lg shadow-sm">
+            <div className="bg-white p-3 rounded-none shadow-sm">
               <div className="text-xs text-gray-500 mb-1">Pincode</div>
               <div className="font-semibold text-gray-800">
                 {productData.location}
@@ -635,7 +635,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
             </div>
           )}
           {productData.city && (
-            <div className="bg-white p-3 rounded-lg shadow-sm">
+            <div className="bg-white p-3 rounded-none shadow-sm">
               <div className="text-xs text-gray-500 mb-1">City</div>
               <div className="font-semibold text-gray-800">
                 {productData.city}
@@ -643,7 +643,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
             </div>
           )}
           {productData.state && (
-            <div className="bg-white p-3 rounded-lg shadow-sm">
+            <div className="bg-white p-3 rounded-none shadow-sm">
               <div className="text-xs text-gray-500 mb-1">State</div>
               <div className="font-semibold text-gray-800">
                 {productData.state}
@@ -651,7 +651,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
             </div>
           )}
           {productData.height && (
-            <div className="bg-white p-3 rounded-lg shadow-sm">
+            <div className="bg-white p-3 rounded-none shadow-sm">
               <div className="text-xs text-gray-500 mb-1">Height</div>
               <div className="font-semibold text-gray-800">
                 {productData.height}ft
@@ -659,7 +659,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
             </div>
           )}
           {productData.timeline && (
-            <div className="bg-white p-3 rounded-lg shadow-sm">
+            <div className="bg-white p-3 rounded-none shadow-sm">
               <div className="text-xs text-gray-500 mb-1">Timeline</div>
               <div className="font-semibold text-gray-800">
                 {productData.timeline}
@@ -667,7 +667,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
             </div>
           )}
           {productData.userType && (
-            <div className="bg-white p-3 rounded-lg shadow-sm">
+            <div className="bg-white p-3 rounded-none shadow-sm">
               <div className="text-xs text-gray-500 mb-1">Looking For</div>
               <div className="font-semibold text-gray-800">
                 {productData.userType}

@@ -37,7 +37,7 @@
 //           name="portfolioLink"
 //           value={formData.portfolioLink}
 //           onChange={handleInputChange}
-//           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#fad000]"
+//           className="w-full px-3 py-2 border border-gray-300 rounded-none focus:outline-none focus:ring-1 focus:ring-[#fad000]"
 //         />
 //       </div>
 //       <div className="mb-6">
@@ -53,7 +53,7 @@
 //           value={formData.coverLetter}
 //           onChange={handleInputChange}
 //           rows={5}
-//           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#fad000]"
+//           className="w-full px-3 py-2 border border-gray-300 rounded-none focus:outline-none focus:ring-1 focus:ring-[#fad000]"
 //         ></textarea>
 //       </div>
 //       <div className="mb-6">
@@ -63,13 +63,13 @@
 //         >
 //           Resume
 //         </label>
-//         <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+//         <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-none">
 //           <div className="space-y-1 text-center">
 //             <FiUpload className="mx-auto h-12 w-12 text-gray-400" />
 //             <div className="flex text-sm text-[#393939]">
 //               <label
 //                 htmlFor="resume"
-//                 className="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500"
+//                 className="relative cursor-pointer bg-white rounded-none font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500"
 //               >
 //                 <span>Upload a file</span>
 //                 <input
@@ -134,7 +134,7 @@
 //           name="portfolioLink"
 //           value={formData.portfolioLink}
 //           onChange={handleInputChange}
-//           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#fad000]"
+//           className="w-full px-3 py-2 border border-gray-300 rounded-none focus:outline-none focus:ring-1 focus:ring-[#fad000]"
 //         />
 //       </div>
 //       <div className="mb-6">
@@ -150,7 +150,7 @@
 //           value={formData.coverLetter}
 //           onChange={handleInputChange}
 //           rows={5}
-//           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#fad000]"
+//           className="w-full px-3 py-2 border border-gray-300 rounded-none focus:outline-none focus:ring-1 focus:ring-[#fad000]"
 //         ></textarea>
 //       </div>
 //       <div className="mb-6">
@@ -165,7 +165,7 @@
 //   firstname-lastname.pdf
 // </p>
 //         {formData.resume && (
-// <div className="flex items-center justify-between mb-2 p-2 bg-gray-100 border border-gray-300 rounded-md">
+// <div className="flex items-center justify-between mb-2 p-2 bg-gray-100 border border-gray-300 rounded-none">
 //   <p className="text-sm text-[#393939]">{formData.resume.name}</p>
 //   <FiX
 //     className="cursor-pointer text-[#393939]"
@@ -174,13 +174,13 @@
 //   />
 // </div>
 //         )}
-//         <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+//         <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-none">
 //           <div className="space-y-1 text-center">
 //             <FiUpload className="mx-auto h-12 w-12 text-gray-400" />
 //             <div className="flex text-sm text-[#393939]">
 //               <label
 //                 htmlFor="resume"
-//                 className="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500"
+//                 className="relative cursor-pointer bg-white rounded-none font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500"
 //               >
 //                 <span>Upload a file</span>
 //                 <input
@@ -240,7 +240,7 @@
 //           value={formData.coverLetter}
 //           onChange={handleInputChange}
 //           rows={5}
-//           className="w-full p-2 border rounded-md"
+//           className="w-full p-2 border rounded-none"
 //         />
 //       </div>
 
@@ -257,7 +257,7 @@
 //           name="portfolioLink"
 //           value={formData.portfolioLink}
 //           onChange={handleInputChange}
-//           className="w-full p-2 border rounded-md"
+//           className="w-full p-2 border rounded-none"
 //         />
 //       </div>
 
@@ -274,7 +274,7 @@
 //         </p>
 //         {/* Resume file input or file display */}
 //         {formData.resume ? (
-//           <div className="flex items-center justify-between mb-2 p-2 bg-gray-100 border border-gray-300 rounded-md">
+//           <div className="flex items-center justify-between mb-2 p-2 bg-gray-100 border border-gray-300 rounded-none">
 //             <p className="text-sm text-[#393939]">{formData.resume.name}</p>
 //             <FiX
 //               className="cursor-pointer text-[#393939]"
@@ -283,13 +283,13 @@
 //             />
 //           </div>
 //         ) : (
-//           <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+//           <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-none">
 //             <div className="space-y-1 text-center">
 //               <FiUpload className="mx-auto h-12 w-12 text-gray-400" />
 //               <div className="flex text-sm text-[#393939]">
 //                 <label
 //                   htmlFor="resume"
-//                   className="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500"
+//                   className="relative cursor-pointer bg-white rounded-none font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500"
 //                 >
 //                   <span>Upload a file</span>
 //                   <input
@@ -373,7 +373,7 @@ const FinalDetails: React.FC<FinalDetailsProps> = ({
           value={formData.coverLetter}
           onChange={handleInputChange}
           rows={5}
-          className="w-full p-2 border rounded-md"
+          className="w-full p-2 border rounded-none"
         />
       </div>
 
@@ -390,7 +390,7 @@ const FinalDetails: React.FC<FinalDetailsProps> = ({
           name="portfolioLink"
           value={formData.portfolioLink}
           onChange={handleInputChange}
-          className="w-full p-2 border rounded-md"
+          className="w-full p-2 border rounded-none"
         />
       </div>
 
@@ -412,7 +412,7 @@ const FinalDetails: React.FC<FinalDetailsProps> = ({
         )}
         {/* Resume file input or file display */}
         {formData.resume ? (
-          <div className="flex items-center justify-between mb-2 p-2 bg-gray-100 border border-gray-300 rounded-md">
+          <div className="flex items-center justify-between mb-2 p-2 bg-gray-100 border border-gray-300 rounded-none">
             <p className="text-sm text-[#393939]">{formData.resume.name}</p>
             <FiX
               className="cursor-pointer text-[#393939]"
@@ -421,13 +421,13 @@ const FinalDetails: React.FC<FinalDetailsProps> = ({
             />
           </div>
         ) : (
-          <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+          <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-none">
             <div className="space-y-1 text-center">
               <FiUpload className="mx-auto h-12 w-12 text-gray-400" />
               <div className="flex text-sm text-[#393939]">
                 <label
                   htmlFor="resume"
-                  className="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500"
+                  className="relative cursor-pointer bg-white rounded-none font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500"
                 >
                   <span>Upload a file</span>
                   <input

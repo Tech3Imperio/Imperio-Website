@@ -12,7 +12,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
       className={
         `relative max-w-[350px] ${
           hover ? "h-[350px]" : "h-[380px]"
-        } max-h-[380px] rounded-4xl shadow-lg flex flex-col overflow-hidden transition-700  ` +
+        } max-h-[380px] rounded-none shadow-lg flex flex-col overflow-hidden transition-700  ` +
         className
       }
       onMouseEnter={() => setHover(true)}
@@ -22,7 +22,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
       <div
         className={`${
           hover ? "h-[210px]" : "h-[280px]"
-        } max-h-[280px] rounded-4xl overflow-hidden transition-700`}
+        } max-h-[280px] rounded-none overflow-hidden transition-700`}
       >
         <img
           className="relative top-0 left-0 object-contain object-center"
@@ -53,7 +53,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
               ? blog.tags.slice(0, 3).map((tag, index) => (
                   <span
                     key={index}
-                    className="inline-block rounded-full px-3 py-1 text-xs font-normal text-gray-500 mr-2 mb-2"
+                    className="inline-block rounded-none px-3 py-1 text-xs font-normal text-gray-500 mr-2 mb-2"
                   >
                     #{tag}
                   </span>
@@ -65,7 +65,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
                   .map((tag, index) => (
                     <span
                       key={index}
-                      className="inline-block rounded-full px-3 py-1 text-xs font-normal text-gray-500 mr-2 mb-2"
+                      className="inline-block rounded-none px-3 py-1 text-xs font-normal text-gray-500 mr-2 mb-2"
                     >
                       #{tag.trim()}
                     </span>
@@ -74,7 +74,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
           </div>
 
           <div>
-            <span className="inline-block bg-gray-500 italic rounded-full px-3 py-1 text-sm font-semibold text-white mb-2">
+            <span className="inline-block bg-gray-500 italic rounded-none px-3 py-1 text-sm font-semibold text-white mb-2">
               {blog.socialMedia}
             </span>
           </div>

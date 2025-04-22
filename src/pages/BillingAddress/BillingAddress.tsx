@@ -75,7 +75,7 @@ export default function BillingAddress() {
           <h2 className="text-2xl text-[#03237b] mb-6 flex items-center">
             <FiShoppingBag className="mr-2" /> Order Summary
           </h2>
-          <div className="bg-white rounded-lg drop-shadow-lg shadow-md p-6">
+          <div className="bg-white rounded-none drop-shadow-lg shadow-md p-6">
             {orderDetails.items.map((item, index) => (
               <motion.div
                 key={index}
@@ -140,7 +140,7 @@ export default function BillingAddress() {
           </h2>
           <form
             onSubmit={handleSubmit}
-            className="bg-white rounded-lg drop-shadow-lg shadow-md p-6 space-y-6"
+            className="bg-white rounded-none drop-shadow-lg shadow-md p-6 space-y-6"
           >
             <div>
               <label
@@ -155,7 +155,7 @@ export default function BillingAddress() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
-                className="w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-[#03237b] focus:border-transparent transition duration-200"
+                className="w-full border border-gray-300 rounded-none shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-[#03237b] focus:border-transparent transition duration-200"
               />
             </div>
             <div>
@@ -171,7 +171,7 @@ export default function BillingAddress() {
                 value={mobileNo}
                 onChange={(e) => setMobileNo(e.target.value)}
                 required
-                className="w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-[#03237b] focus:border-transparent transition duration-200"
+                className="w-full border border-gray-300 rounded-none shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-[#03237b] focus:border-transparent transition duration-200"
               />
             </div>
             <div>
@@ -187,14 +187,14 @@ export default function BillingAddress() {
                 onChange={(e) => setAddress(e.target.value)}
                 required
                 rows={3}
-                className="w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-[#03237b] focus:border-transparent transition duration-200"
+                className="w-full border border-gray-300 rounded-none shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-[#03237b] focus:border-transparent transition duration-200"
               ></textarea>
             </div>
             <motion.button
               type="submit"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 w-full py-4 text-[--black] font-bold bg-[--secound] text-xl rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap "
+              className="px-6 w-full py-4 text-[--black] font-bold bg-[--secound] text-xl rounded-none transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap "
             >
               Confirm Order
             </motion.button>

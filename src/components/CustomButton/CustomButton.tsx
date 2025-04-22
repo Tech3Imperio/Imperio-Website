@@ -16,7 +16,7 @@ export default function CustomButton({
   ...props
 }: ButtonProps) {
   const baseStyles =
-    "font-bold rounded-md transition-all duration-300 flex items-center justify-center";
+    "font-bold rounded-none transition-all duration-300 flex items-center justify-center";
 
   const variantStyles = {
     primary:

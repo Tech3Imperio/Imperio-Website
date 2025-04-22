@@ -9,7 +9,7 @@
 //       to="/quote"
 //       className={
 //         // Combine static class names with the dynamic className prop using template literals
-//         "px-6 py-4 text-[--black] font-bold bg-[--secound] text-xs rounded-4xl transition-700 cursor-pointer border border-[--secound]  hover:bg-[--black] hover:text-[--secound] " +
+//         "px-6 py-4 text-[--black] font-bold bg-[--secound] text-xs rounded-none transition-700 cursor-pointer border border-[--secound]  hover:bg-[--black] hover:text-[--secound] " +
 //         className
 //       }
 //     >
@@ -27,7 +27,7 @@
 //       to="/dealership"
 //       className={
 //         // Combine static class names with the dynamic className prop using template literals
-//         "py-4 px-6 text-[--black] font-bold bg-white text-xs rounded-4xl transition-700 cursor-pointer border border-white  hover:bg-[--black] hover:text-[--secound] " +
+//         "py-4 px-6 text-[--black] font-bold bg-white text-xs rounded-none transition-700 cursor-pointer border border-white  hover:bg-[--black] hover:text-[--secound] " +
 //         className
 //       }
 //     >
@@ -48,7 +48,7 @@ export const QuoteButton: React.FC<QuoteButtonProps> = ({ className }) => {
       to="/formDash"
       aria-label="qoute btn"
       className={
-        "px-6 py-4 text-[--black] font-bold bg-[--secound] text-xs rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap " +
+        "px-6 py-4 text-[--black] font-bold bg-[--secound] text-xs rounded-none transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap " +
         className
       }
     >
@@ -66,7 +66,7 @@ export const DealershipButton: React.FC<DealershipButtonProps> = ({
       to="/dealership"
       aria-label="dealership btn"
       className={
-        "py-4 px-6 text-[--black] font-bold bg-white text-xs rounded-4xl transition-700 cursor-pointer border border-white hover:bg-[--black] hover:text-[--secound] " +
+        "py-4 px-6 text-[--black] font-bold bg-white text-xs rounded-none transition-700 cursor-pointer border border-white hover:bg-[--black] hover:text-[--secound] " +
         className
       }
     >

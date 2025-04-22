@@ -66,7 +66,7 @@
 //                 value={value}
 //                 onChange={handleChange} // Attach change handler
 //                 pattern={pattern} // Apply pattern if available
-//                 className="py-3 px-8 bg-transparent border-2 rounded-2xl border-black w-full laptop:w-[50rem] outline-none"
+//                 className="py-3 px-8 bg-transparent border-2 rounded-none border-black w-full laptop:w-[50rem] outline-none"
 //               />
 //             </div>
 //           ))}
@@ -75,14 +75,14 @@
 //           <button
 //             type="button"
 //             onClick={() => setContact((prev) => !prev)} // Toggle contact view
-//             className="py-4 laptop:py-6 px-6 laptop:px-9 text-base laptop:text-lg font-semibold text-white bg-[--black] hover:text-[--black] hover:bg-[--secound] transition-500 rounded-full flex justify-center gap-2"
+//             className="py-4 laptop:py-6 px-6 laptop:px-9 text-base laptop:text-lg font-semibold text-white bg-[--black] hover:text-[--black] hover:bg-[--secound] transition-500 rounded-none flex justify-center gap-2"
 //           >
 //             <FaArrowLeft className="text-xl laptop:text-2xl" />
 //             Go Back & Select
 //           </button>
 //           <button
 //             type="submit"
-//             className="py-4 laptop:py-6 px-6 laptop:px-9 text-base laptop:text-lg font-semibold text-white bg-[--black] hover:text-[--black] hover:bg-[--secound] transition-500 rounded-full flex justify-center gap-2"
+//             className="py-4 laptop:py-6 px-6 laptop:px-9 text-base laptop:text-lg font-semibold text-white bg-[--black] hover:text-[--black] hover:bg-[--secound] transition-500 rounded-none flex justify-center gap-2"
 //           >
 //             GET THE ESTIMATE
 //             <FaArrowRight className="text-xl laptop:text-2xl" />
@@ -170,7 +170,7 @@
 //                 value={value}
 //                 onChange={handleChange} // Attach change handler
 //                 pattern={pattern} // Apply pattern if available
-//                 className="py-3 px-8 bg-transparent border-2 rounded-2xl border-black w-full laptop:w-[50rem] outline-none"
+//                 className="py-3 px-8 bg-transparent border-2 rounded-none border-black w-full laptop:w-[50rem] outline-none"
 //                 title={
 //                   id === "number"
 //                     ? "WhatsApp number must be exactly 10 digits"
@@ -185,7 +185,7 @@
 //           <button
 //             type="button"
 //             onClick={() => setContact((prev) => !prev)} // Toggle contact view
-//             className="py-4 laptop:py-6 px-6 laptop:px-9 text-base laptop:text-lg font-semibold text-white bg-[--black] hover:text-[--black] hover:bg-[--secound] transition-500 rounded-full flex justify-center gap-2"
+//             className="py-4 laptop:py-6 px-6 laptop:px-9 text-base laptop:text-lg font-semibold text-white bg-[--black] hover:text-[--black] hover:bg-[--secound] transition-500 rounded-none flex justify-center gap-2"
 //           >
 //             <FaArrowLeft className="text-xl laptop:text-2xl" />
 //             Go Back & Select
@@ -193,7 +193,7 @@
 //           <button
 //             type="submit"
 //             disabled={isSubmitting} // Disable button while submitting
-//             className={`py-4 laptop:py-6 px-6 laptop:px-9 text-base laptop:text-lg font-semibold text-white bg-[--black] hover:text-[--black] hover:bg-[--secound] transition-500 rounded-full flex justify-center gap-2 ${
+//             className={`py-4 laptop:py-6 px-6 laptop:px-9 text-base laptop:text-lg font-semibold text-white bg-[--black] hover:text-[--black] hover:bg-[--secound] transition-500 rounded-none flex justify-center gap-2 ${
 //               isSubmitting ? "opacity-50 cursor-not-allowed" : ""
 //             }`}
 //           >
@@ -205,7 +205,6 @@
 //     </form>
 //   );
 // };
-
 
 import React, { useState } from "react";
 import { QuoteFormProps } from "../../../types";
@@ -233,7 +232,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
 
       if (data[0].Status === "Success" && data[0].PostOffice.length > 0) {
         const address = data[0].PostOffice[0];
-        console.log(address)
+        console.log(address);
         return {
           city: address.District,
           state: address.State,
@@ -338,7 +337,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
                 value={value}
                 onChange={handleChange} // Attach change handler
                 pattern={pattern} // Apply pattern if available
-                className="py-3 px-8 bg-transparent border-2 rounded-2xl border-black w-full laptop:w-[50rem] outline-none"
+                className="py-3 px-8 bg-transparent border-2 rounded-none border-black w-full laptop:w-[50rem] outline-none"
                 title={
                   id === "number"
                     ? "WhatsApp number must be exactly 10 digits"
@@ -353,7 +352,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
           <button
             type="button"
             onClick={() => setContact((prev) => !prev)} // Toggle contact view
-            className="py-4 laptop:py-6 px-6 laptop:px-9 text-base laptop:text-lg font-semibold text-white bg-[--black] hover:text-[--black] hover:bg-[--secound] transition-500 rounded-full flex justify-center gap-2"
+            className="py-4 laptop:py-6 px-6 laptop:px-9 text-base laptop:text-lg font-semibold text-white bg-[--black] hover:text-[--black] hover:bg-[--secound] transition-500 rounded-none flex justify-center gap-2"
           >
             <FaArrowLeft className="text-xl laptop:text-2xl" />
             Go Back & Select
@@ -361,7 +360,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
           <button
             type="submit"
             disabled={isSubmitting} // Disable button while submitting
-            className={`py-4 laptop:py-6 px-6 laptop:px-9 text-base laptop:text-lg font-semibold text-white bg-[--black] hover:text-[--black] hover:bg-[--secound] transition-500 rounded-full flex justify-center gap-2 ${
+            className={`py-4 laptop:py-6 px-6 laptop:px-9 text-base laptop:text-lg font-semibold text-white bg-[--black] hover:text-[--black] hover:bg-[--secound] transition-500 rounded-none flex justify-center gap-2 ${
               isSubmitting ? "opacity-50 cursor-not-allowed" : ""
             }`}
           >

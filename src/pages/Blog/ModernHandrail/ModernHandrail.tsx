@@ -159,7 +159,7 @@ export default function ModernHandrail() {
                       src={`${post.imageUrl}-800.webp`}
                       alt={post.title}
                       loading="lazy"
-                      className="w-full h-auto object-contain transition-transform duration-300 rounded-4xl"
+                      className="w-full h-auto object-contain transition-transform duration-300 rounded-none"
                     />
                   </picture>
                 </motion.div>

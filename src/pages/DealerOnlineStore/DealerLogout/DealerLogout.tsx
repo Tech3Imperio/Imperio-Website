@@ -37,7 +37,7 @@ export default function DealerLogout() {
 
   return (
     <section className="min-h-screen bg-gray-50 flex items-center justify-center px-6">
-      <main className="bg-white shadow-2xl rounded-3xl overflow-hidden w-full max-w-md">
+      <main className="bg-white shadow-2xl rounded-none overflow-hidden w-full max-w-md">
         <div className="flex flex-col items-center justify-center p-8">
           <h2 className="text-2xl font-semibold mb-6">
             Are you sure you want to logout?
@@ -45,7 +45,7 @@ export default function DealerLogout() {
           <button
             onClick={handleLogout}
             disabled={loading} // Disable the button while loading
-            className="w-full px-4 py-2 text-white bg-red-600 hover:bg-red-700 rounded-md focus:outline-none focus:ring focus:ring-red-300"
+            className="w-full px-4 py-2 text-white bg-red-600 hover:bg-red-700 rounded-none focus:outline-none focus:ring focus:ring-red-300"
           >
             {loading ? "Logging out..." : "Logout"} {/* Show loading text */}
           </button>

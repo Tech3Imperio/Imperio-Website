@@ -20,7 +20,7 @@ export const Dealers = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-[#f2f0e980] from-75% to-[#03237b3a] flex justify-center items-center">
           {" "}
           {/* Overlay div with gradient background */}
-          <div className="bg-[--black] h-[60.75%]  md:h-[53.75%] w-[90%] phone:w-[83%] tablet:w-[75%] laptop:w-[68.48%] laptop:h-[42.48%] text-white rounded-4xl overflow-hidden flex flex-col gap-3 tablet:gap-6 xl:gap-8 px-7 tablet:px-12 xl:px-16 justify-center">
+          <div className="bg-[--black] h-[60.75%]  md:h-[53.75%] w-[90%] phone:w-[83%] tablet:w-[75%] laptop:w-[68.48%] laptop:h-[42.48%] text-white rounded-none overflow-hidden flex flex-col gap-3 tablet:gap-6 xl:gap-8 px-7 tablet:px-12 xl:px-16 justify-center">
             {" "}
             {/* Content container */}
             <span className="Raleway text-[22px] tablet:text-[1.75rem] xl:text-5xl">
@@ -64,7 +64,7 @@ export const Quote = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-[#f2f0e980] from-75% to-[#03237b3a] flex justify-center items-center">
           {" "}
           {/* Overlay div with gradient background */}
-          <div className="bg-[--black] h-[65.75%] w-[90%] phone:w-[83%] tablet:w-[75%] laptop:w-[68.48%] text-white rounded-4xl overflow-hidden flex flex-col gap-3 tablet:gap-6 xl:gap-8 px-7 tablet:px-12 xl:px-16 justify-center">
+          <div className="bg-[--black] h-[65.75%] w-[90%] phone:w-[83%] tablet:w-[75%] laptop:w-[68.48%] text-white rounded-none overflow-hidden flex flex-col gap-3 tablet:gap-6 xl:gap-8 px-7 tablet:px-12 xl:px-16 justify-center">
             {" "}
             {/* Content container */}
             <span className="Raleway text-2xl tablet:text-[1.75rem] xl:text-5xl">

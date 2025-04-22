@@ -23,7 +23,7 @@ export default function AboutUsSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-xl">
+            <div className="relative h-[400px] md:h-[500px] rounded-none overflow-hidden shadow-xl">
               <img
                 src="/images/Landing/img1.webp"
                 alt="About Imperio Railing"
@@ -32,7 +32,7 @@ export default function AboutUsSection() {
             </div>
 
             <motion.div
-              className="absolute -bottom-6 -right-6 w-32 h-32 bg-yellow-500 rounded-lg z-[-1]"
+              className="absolute -bottom-6 -right-6 w-32 h-32 bg-yellow-500 rounded-none z-[-1]"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 0.6, scale: 1 }}
               viewport={{ once: true }}
@@ -40,7 +40,7 @@ export default function AboutUsSection() {
             />
 
             <motion.div
-              className="absolute -top-6 -left-6 w-24 h-24 bg-gray-800 rounded-lg z-[-1]"
+              className="absolute -top-6 -left-6 w-24 h-24 bg-gray-800 rounded-none z-[-1]"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 0.6, scale: 1 }}
               viewport={{ once: true }}

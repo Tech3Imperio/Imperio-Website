@@ -105,7 +105,7 @@ export default function ImageGallery() {
                 key={item.id}
                 className="flex-none w-[200px] md:w-[250px] transition-transform duration-300 hover:scale-105 cursor-pointer"
               >
-                <div className="relative rounded-xl overflow-hidden">
+                <div className="relative rounded-2xl overflow-hidden">
                   <img
                     src={
                       item.imageUrl || "/placeholder.svg?height=300&width=400"

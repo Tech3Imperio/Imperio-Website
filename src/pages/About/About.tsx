@@ -148,7 +148,7 @@ export const About: React.FC = () => {
                     alt="Imperio Railing Systems"
                     // width={800}
                     // height={600}
-                    className="object-cover w-full h-[400px] md:h-[55rem] p-4 rounded-3xl md:w-auto lg:h-[43rem] lg:w-auto xl:w-[800px] xl:h-[600px] md:p-14 lg:rounded-[4rem]"
+                    className="object-cover w-full h-[400px] md:h-[55rem] p-4 rounded-none md:w-auto lg:h-[43rem] lg:w-auto xl:w-[800px] xl:h-[600px] md:p-14 lg:rounded-[4rem]"
                   />
                 </div>
               </motion.div>
@@ -181,7 +181,7 @@ export const About: React.FC = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -20 }}
                       transition={{ duration: 0.5 }}
-                      className="bg-[#292929] p-8 rounded-lg"
+                      className="bg-[#292929] p-8 rounded-none"
                     >
                       <p className="text-[#f1efe7] leading-relaxed text-lg text-justify">
                         {window.innerWidth < 768

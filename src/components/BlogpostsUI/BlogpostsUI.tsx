@@ -118,7 +118,7 @@ const BlogPage: React.FC = () => {
         {blogPosts.map((post) => (
           <motion.div
             key={post.id}
-            className=" shadow-slate-200 rounded-xl shadow-lg overflow-hidden"
+            className=" shadow-slate-200 rounded-none shadow-lg overflow-hidden"
             whileHover={{ scale: 1.03 }}
             transition={{ duration: 0.2 }}
           >

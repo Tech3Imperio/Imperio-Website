@@ -33,7 +33,7 @@
 
 //   return (
 //     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-100 to-purple-100 p-4">
-//       <div className="max-w-md w-full bg-white shadow-lg rounded-lg overflow-hidden">
+//       <div className="max-w-md w-full bg-white shadow-lg rounded-none overflow-hidden">
 //         <div className="p-8">
 //           <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
 //             Forgot Password
@@ -52,14 +52,14 @@
 //                 placeholder="Enter your email"
 //                 value={email}
 //                 onChange={handleInputChange}
-//                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
+//                 className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
 //                 required
 //               />
 //             </div>
 //             <button
 //               type="submit"
 //               disabled={isLoading}
-//               className={`w-full bg-blue-500 text-white py-2 px-4 rounded-md font-semibold transition duration-200 ${
+//               className={`w-full bg-blue-500 text-white py-2 px-4 rounded-none font-semibold transition duration-200 ${
 //                 isLoading
 //                   ? "opacity-50 cursor-not-allowed"
 //                   : "hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
@@ -96,7 +96,7 @@
 //           </form>
 //           {message && (
 //             <div
-//               className={`mt-4 p-3 rounded-md text-center ${
+//               className={`mt-4 p-3 rounded-none text-center ${
 //                 message.includes("Error")
 //                   ? "bg-red-100 text-red-700"
 //                   : "bg-green-100 text-green-700"

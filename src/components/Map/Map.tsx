@@ -8,7 +8,7 @@ const Map = React.memo(() => {
   );
 
   const iframeClassNames = classNames(
-    "w-full rounded-2xl h-[65.75vh] outline-none"
+    "w-full rounded-none h-[65.75vh] outline-none"
   );
 
   // const contactClassNames = classNames(

@@ -143,7 +143,7 @@ const QuoteSelector: React.FC<QuoteSelectorProps> = ({
         <img
           src={image}
           alt="product"
-          className="rounded-4xl h-full w-screen laptop:w-[45rem] laptop:mt-10"
+          className="rounded-none h-full w-screen laptop:w-[45rem] laptop:mt-10"
         />
       </aside>
       <aside className="w-screen laptop:w-[40rem] -ml-4 laptop:ml-0 px-4 phone:px-8 tablet:px-12 laptop:px-16 py-10 laptop:pt-11 laptop:pb-28 flex flex-col gap-10 laptop:gap-0 justify-center laptop:justify-between">
@@ -172,7 +172,7 @@ const QuoteSelector: React.FC<QuoteSelectorProps> = ({
                 (colorHex, idx) => (
                   <div
                     key={idx}
-                    className={`w-12 h-12 rounded-full ${
+                    className={`w-12 h-12 rounded-none ${
                       isColorStage
                         ? "cursor-pointer"
                         : "cursor-not-allowed opacity-50"
@@ -201,7 +201,7 @@ const QuoteSelector: React.FC<QuoteSelectorProps> = ({
               type="button"
               key={index}
               className={classNames(
-                "border-2 rounded-full py-3 px-6 text-sm phone:text-base  xl:mr-0 transition-500 hover:border-[--secound]",
+                "border-2 rounded-none py-3 px-6 text-sm phone:text-base  xl:mr-0 transition-500 hover:border-[--secound]",
                 {
                   "bg-[--black] text-[--secound] border-transparent":
                     data[stages[stage]] === text,
@@ -227,7 +227,7 @@ const QuoteSelector: React.FC<QuoteSelectorProps> = ({
           <button
             type="button"
             onClick={() => setContact((prev) => !prev)} // Handle contact form display
-            className="py-2 laptop:py-4 laptop:mt-20 px-3 laptop:px-6 text-base tablet:mr-16 laptop:text-lg font-semibold text-white bg-[--black] hover:text-[--black] hover:bg-[--secound] transition-500 rounded-full flex gap-2"
+            className="py-2 laptop:py-4 laptop:mt-20 px-3 laptop:px-6 text-base tablet:mr-16 laptop:text-lg font-semibold text-white bg-[--black] hover:text-[--black] hover:bg-[--secound] transition-500 rounded-none flex gap-2"
           >
             Proceed Further
             <FaArrowRight className="text-2xl laptop:text-3xl" />

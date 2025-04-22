@@ -55,7 +55,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ cards }) => {
   }, [cards.length]);
 
   return (
-    <section className="mx-4 tablet:mx-12 laptop:mx-24 my-10 phone:my-36 px-3 phone:px-8 tablet:px-14 laptop:px-20 pt-9 phone:pt-14 tablet:pt-16 laptop:pt-24 pb-[25rem] h-80 phone:h-[28rem] tablet:h-[34rem] laptop:h-[40rem] flex flex-col justify-between rounded-4xl bg-[--black] 2xl:overflow-hidden">
+    <section className="mx-4 tablet:mx-12 laptop:mx-24 my-10 phone:my-36 px-3 phone:px-8 tablet:px-14 laptop:px-20 pt-9 phone:pt-14 tablet:pt-16 laptop:pt-24 pb-[25rem] h-80 phone:h-[28rem] tablet:h-[34rem] laptop:h-[40rem] flex flex-col justify-between rounded-none bg-[--black] 2xl:overflow-hidden">
       <h2 className="Raleway text-[1.75rem] phone:text-3xl tablet:text-4xl laptop:text-5xl text-white">
         Esteemed Clients Who Trusted Us
       </h2>
@@ -72,7 +72,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ cards }) => {
             <div
               key={card.id}
               className={classNames(
-                "text-white py-6 px-3 w-[13rem] h-[9.5rem] phone:w-[26rem] phone:h-[13rem] tablet:w-[33rem] tablet:h-[16.5rem] laptop:w-[30rem] laptop:h-80 flex flex-col justify-center items-center gap-2 phone:gap-5 tablet:gap-7 laptop:gap-9 rounded-4xl transition-all duration-500 ease-in-out",
+                "text-white py-6 px-3 w-[13rem] h-[9.5rem] phone:w-[26rem] phone:h-[13rem] tablet:w-[33rem] tablet:h-[16.5rem] laptop:w-[30rem] laptop:h-80 flex flex-col justify-center items-center gap-2 phone:gap-5 tablet:gap-7 laptop:gap-9 rounded-none transition-all duration-500 ease-in-out",
                 {
                   "absolute bg-[--black] z-20 transform scale-110 opacity-100 -translate-x-1/2 translate-y-16 phone:translate-y-28 tablet:translate-y-16 laptop:translate-y-0":
                     isCurrent, // Styles for the current card
@@ -96,7 +96,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ cards }) => {
                 alt={card.alt}
                 title={card.alt}
                 loading="lazy"
-                className="rounded-full overflow-hidden w-12 h-12 phone:w-16 phone:h-16 tablet:w-20 tablet:h-20 laptop:w-28 laptop:h-28"
+                className="rounded-none overflow-hidden w-12 h-12 phone:w-16 phone:h-16 tablet:w-20 tablet:h-20 laptop:w-28 laptop:h-28"
               />
               <div className="flex flex-col gap-[0.2rem] phone:gap-1 tablet:gap-3 laptop:gap-5">
                 <div className="flex flex-col items-center gap-2">

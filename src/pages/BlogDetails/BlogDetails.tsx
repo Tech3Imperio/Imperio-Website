@@ -136,9 +136,9 @@ const BlogDetails: React.FC = () => {
             <img
               src={blogData?.img}
               alt={blogData.header}
-              className="w-full h-full object-cover rounded-lg"
+              className="w-full h-full object-cover rounded-none"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-end p-8 rounded-lg">
+            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-end p-8 rounded-none">
               <h1 className="text-4xl font-bold text-white">
                 {blogData?.header}
               </h1>
@@ -187,7 +187,7 @@ const BlogDetails: React.FC = () => {
                         sectionElement.scrollIntoView({ behavior: "smooth" });
                       }
                     }}
-                    className="block py-2 px-3 text-sm hover:bg-gray-100 rounded-md transition-colors"
+                    className="block py-2 px-3 text-sm hover:bg-gray-100 rounded-none transition-colors"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.3 }}
@@ -259,7 +259,7 @@ const BlogDetails: React.FC = () => {
               <AnimatedSection>
                 <div className="flex items-center justify-between mb-8">
                   <motion.button
-                    className={`flex items-center space-x-2 px-4 py-2 rounded-full ${
+                    className={`flex items-center space-x-2 px-4 py-2 rounded-none ${
                       liked
                         ? "bg-red-500 text-white"
                         : "bg-gray-200 text-gray-800"
@@ -274,7 +274,7 @@ const BlogDetails: React.FC = () => {
 
                   <div className="flex space-x-4">
                     <motion.button
-                      className="p-2 bg-gray-200 rounded-full"
+                      className="p-2 bg-gray-200 rounded-none"
                       whileHover={{ scale: 1.1, rotate: 15 }}
                       whileTap={{ scale: 0.9 }}
                     >
@@ -284,7 +284,7 @@ const BlogDetails: React.FC = () => {
                       </Link>
                     </motion.button>
                     <motion.button
-                      className="p-2 bg-gray-200 rounded-full"
+                      className="p-2 bg-gray-200 rounded-none"
                       whileHover={{ scale: 1.1, rotate: -15 }}
                       whileTap={{ scale: 0.9 }}
                     >
@@ -294,7 +294,7 @@ const BlogDetails: React.FC = () => {
                       </Link>
                     </motion.button>
                     <motion.button
-                      className="p-2 bg-gray-200 rounded-full"
+                      className="p-2 bg-gray-200 rounded-none"
                       whileHover={{ scale: 1.1, rotate: 15 }}
                       whileTap={{ scale: 0.9 }}
                     >
@@ -321,7 +321,7 @@ const BlogDetails: React.FC = () => {
                       .map((item, index) => (
                         <motion.div
                           key={index}
-                          className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
+                          className="bg-white rounded-none shadow-md overflow-hidden cursor-pointer"
                           variants={fadeInUpVariants}
                           whileHover={{ y: -15, transition: { duration: 0.5 } }}
                         >
@@ -376,7 +376,7 @@ const BlogDetails: React.FC = () => {
         </div>
       ) : (
         <div className="w-screen h-screen flex justify-center items-center">
-          <div className="w-16 h-16 border-t-4 border-b-4 border-blue-500 rounded-full animate-spin"></div>
+          <div className="w-16 h-16 border-t-4 border-b-4 border-blue-500 rounded-none animate-spin"></div>
         </div>
       )}
     </>

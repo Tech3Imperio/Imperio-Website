@@ -146,7 +146,7 @@ export default function PopupForm() {
           transition={{ duration: 0.3 }}
         >
           <motion.div
-            className="bg-white rounded-lg shadow-lg max-w-md w-full max-h-[90vh] overflow-y-auto"
+            className="bg-white rounded-none shadow-lg max-w-md w-full max-h-[90vh] overflow-y-auto"
             initial={{ scale: 0.9, y: 20 }}
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0.9, y: 20 }}
@@ -157,7 +157,7 @@ export default function PopupForm() {
                 <h3 className="text-xl font-bold">Request Your Free Quote</h3>
                 <button
                   onClick={handleClose}
-                  className="p-1 rounded-full hover:bg-gray-100 transition-colors"
+                  className="p-1 rounded-none hover:bg-gray-100 transition-colors"
                 >
                   <X className="h-5 w-5" />
                   <span className="sr-only">Close</span>

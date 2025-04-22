@@ -7,7 +7,7 @@ export default function DealerMessagePage() {
 
   return (
     <section className="h-screen flex items-center justify-center px-6">
-      <div className="bg-white shadow-2xl drop-shadow-xl rounded-3xl overflow-hidden w-full max-w-[45rem] p-8">
+      <div className="bg-white shadow-2xl drop-shadow-xl rounded-none overflow-hidden w-full max-w-[45rem] p-8">
         <h2 className="text-2xl font-bold text-center text-[#03237b]">
           Welcome to Imperio!
         </h2>
@@ -26,7 +26,7 @@ export default function DealerMessagePage() {
         <div className="flex justify-center p-2">
           <Link
             to="/"
-            className="flex items-center text-lg font-medium text-[--black] bg-[--secound] px-6 py-3 rounded-4xl hover:bg-[--black] hover:text-[--secound] transition-500"
+            className="flex items-center text-lg font-medium text-[--black] bg-[--secound] px-6 py-3 rounded-none hover:bg-[--black] hover:text-[--secound] transition-500"
           >
             <HiOutlineHome className="mr-2 " /> Go Home
           </Link>

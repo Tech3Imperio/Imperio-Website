@@ -19,7 +19,7 @@ const ThankYouMessage = ({ onClose }: ThankYouMessageProps) => (
     </p>
     <button
       onClick={onClose}
-      className="px-8 py-3 text-[--secound] font-bold bg-[--black] text-base rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--secound] hover:text-[--black] whitespace-nowrap"
+      className="px-8 py-3 text-[--secound] font-bold bg-[--black] text-base rounded-none transition-700 cursor-pointer border border-[--secound] hover:bg-[--secound] hover:text-[--black] whitespace-nowrap"
     >
       Close
     </button>

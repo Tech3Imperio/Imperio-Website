@@ -21,7 +21,7 @@ export default function TableOfContents({
           >
             <a
               href={`#${section.id}`}
-              className={`block px-4 py-2 rounded-lg transition-colors  whitespace-nowrap ${
+              className={`block px-4 py-2 rounded-none transition-colors  whitespace-nowrap ${
                 activeSection === section.id
                   ? "bg-[#fad000] text-[#03237b] font-bold"
                   : "hover:bg-gray-200"

@@ -163,7 +163,7 @@ export default function Projects() {
             {memoizedProjects.map((project) => (
               <div
                 key={project.id}
-                className="bg-white rounded-lg overflow-hidden shadow-lg"
+                className="bg-white rounded-none overflow-hidden shadow-lg"
               >
                 <img
                   src={project.imageUrl}

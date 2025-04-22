@@ -118,7 +118,7 @@ export default function ProductGallery() {
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`px-6 py-3 rounded-full text-lg font-medium transition-all duration-300 ${
+                className={`px-6 py-3 rounded-none text-lg font-medium transition-all duration-300 ${
                   activeCategory === category.id
                     ? "bg-yellow-500 text-black shadow-md"
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
@@ -146,7 +146,7 @@ export default function ProductGallery() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.1, duration: 0.4 }}
-                  className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
+                  className="group relative overflow-hidden rounded-none shadow-md hover:shadow-xl transition-all duration-300"
                 >
                   <div className="relative h-64 w-full overflow-hidden">
                     <img

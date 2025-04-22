@@ -41,7 +41,7 @@ export default function SafetyFeatures() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
-            className="bg-white p-6 rounded-2xl  drop-shadow-lg"
+            className="bg-white p-6 rounded-none  drop-shadow-lg"
           >
             <h3 className="text-xl font-semibold text-[#03237b] mb-2">
               {feature.title}

@@ -23,7 +23,7 @@ export default function HeroSection() {
 
       {/* Animated overlay elements */}
       <motion.div
-        className="absolute top-20 left-10 w-32 h-32 bg-yellow-500 rounded-full opacity-40 blur-3xl"
+        className="absolute top-20 left-10 w-32 h-32 bg-yellow-500 rounded-none opacity-40 blur-3xl"
         animate={{
           x: [0, 50, 0],
           y: [0, 30, 0],
@@ -36,7 +36,7 @@ export default function HeroSection() {
       />
 
       <motion.div
-        className="absolute bottom-20 right-10 w-40 h-40 bg-yellow-500 rounded-full opacity-10 blur-3xl"
+        className="absolute bottom-20 right-10 w-40 h-40 bg-yellow-500 rounded-none opacity-10 blur-3xl"
         animate={{
           x: [0, -40, 0],
           y: [0, -20, 0],
@@ -59,7 +59,7 @@ export default function HeroSection() {
             onClick={() => {
               window.open("https://wa.me/918591953382", "_blank");
             }}
-            className="bg-yellow-500 text-gray-900 px-5 py-2 rounded-lg hover:bg-yellow-300"
+            className="bg-yellow-500 text-gray-900 px-5 py-2 rounded-none hover:bg-yellow-300"
           >
             Chat on WhatsApp
           </button>
@@ -117,11 +117,11 @@ export default function HeroSection() {
           <img
             src="/images/Landing/SlidingDoor.jpg"
             alt="Modern Glass Railing"
-            className="w-full h-full object-cover rounded-lg shadow-2xl"
+            className="w-full h-full object-cover rounded-none shadow-2xl"
           />
 
           <motion.div
-            className="absolute -bottom-5 -right-5 w-32 h-32 bg-[var(--yellow-500)] rounded-lg z-[-1]"
+            className="absolute -bottom-5 -right-5 w-32 h-32 bg-[var(--yellow-500)] rounded-none z-[-1]"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 0.2, scale: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}

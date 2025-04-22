@@ -77,7 +77,7 @@ export const ImageScrolls: React.FC<ImageScrollsProps> = ({
               loading="lazy"
               key={index} // Unique key for each image
               title={card.alt} // Title attribute for the image
-              className="max-h-[34rem] rounded-4xl w-auto" // Image styling
+              className="max-h-[34rem] rounded-none w-auto" // Image styling
             />
           );
         })}

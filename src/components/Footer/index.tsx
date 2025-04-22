@@ -152,14 +152,14 @@ export const Footer = () => {
             </p>
           </div>
           <button
-            className=" text-white text-xs px-3 py-1 rounded-lg mt-3 w-fit hover:bg-gray-200"
+            className=" text-white text-xs px-3 py-1 rounded-none mt-3 w-fit hover:bg-gray-200"
             onClick={() => setShowLocations(!showLocations)}
           >
             View Locations
           </button>
           {/* Conditional rendering of locations */}
           {showLocations && (
-            <div className="bg-white text-black p-3 rounded-lg mt-2 max-w-sm">
+            <div className="bg-white text-black p-3 rounded-none mt-2 max-w-sm">
               <ul className="text-xs list-disc pl-4">
                 {locations.map((loc, index) => (
                   <li key={index}>{loc}</li>

@@ -149,7 +149,7 @@
 //         initial={{ y: 50, opacity: 0 }}
 //         animate={{ y: 0, opacity: 1 }}
 //         exit={{ y: 50, opacity: 0 }}
-//         className="bg-white rounded-lg shadow-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto"
+//         className="bg-white rounded-none shadow-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto"
 //       >
 //         <div className="sticky top-0 bg-white p-6 border-b flex justify-between items-center">
 //           <h1 className="text-3xl font-bold text-[#393939]">
@@ -173,7 +173,7 @@
 //               {steps.map((step, index) => (
 //                 <div key={index} className="flex flex-col items-center">
 //                   <div
-//                     className={`w-12 h-12 rounded-full flex items-center justify-center ${
+//                     className={`w-12 h-12 rounded-none flex items-center justify-center ${
 //                       index + 1 <= currentStep
 //                         ? "bg-[#fad000] text-[#03237b]"
 //                         : "bg-gray-200 text-[#393939]"
@@ -233,7 +233,7 @@
 //                 <button
 //                   type="button"
 //                   onClick={() => setCurrentStep((prev) => prev - 1)}
-//                   className="px-7 py-3 text-[--secound] font-bold bg-[--black] text-base rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--secound] hover:text-[--black] whitespace-nowrap"
+//                   className="px-7 py-3 text-[--secound] font-bold bg-[--black] text-base rounded-none transition-700 cursor-pointer border border-[--secound] hover:bg-[--secound] hover:text-[--black] whitespace-nowrap"
 //                 >
 //                   Back
 //                 </button>
@@ -241,7 +241,7 @@
 //               <button
 //                 type="submit"
 //                 disabled={isSubmitting}
-//                 className={`px-7 py-3 text-[--black] font-bold bg-[--secound] text-base rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap ${
+//                 className={`px-7 py-3 text-[--black] font-bold bg-[--secound] text-base rounded-none transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap ${
 //                   isSubmitting ? "opacity-50 cursor-not-allowed" : ""
 //                 }`}
 //               >
@@ -414,7 +414,7 @@ export function ApplicationForm({
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 50, opacity: 0 }}
-        className="bg-white rounded-lg shadow-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto"
+        className="bg-white rounded-none shadow-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto"
       >
         <div className="sticky top-0 bg-white p-6 border-b flex justify-between items-center">
           <h1 className="text-3xl font-bold text-[#393939]">
@@ -438,7 +438,7 @@ export function ApplicationForm({
               {steps.map((step, index) => (
                 <div key={index} className="flex flex-col items-center">
                   <div
-                    className={`w-12 h-12 rounded-full flex items-center justify-center ${
+                    className={`w-12 h-12 rounded-none flex items-center justify-center ${
                       index + 1 <= currentStep
                         ? "bg-[#fad000] text-[#03237b]"
                         : "bg-gray-200 text-[#393939]"
@@ -499,7 +499,7 @@ export function ApplicationForm({
                 <button
                   type="button"
                   onClick={() => setCurrentStep((prev) => prev - 1)}
-                  className="px-7 py-3 text-[--secound] font-bold bg-[--black] text-base rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--secound] hover:text-[--black] whitespace-nowrap"
+                  className="px-7 py-3 text-[--secound] font-bold bg-[--black] text-base rounded-none transition-700 cursor-pointer border border-[--secound] hover:bg-[--secound] hover:text-[--black] whitespace-nowrap"
                 >
                   Back
                 </button>
@@ -507,7 +507,7 @@ export function ApplicationForm({
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`px-7 py-3 text-[--black] font-bold bg-[--secound] text-base rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap ${
+                className={`px-7 py-3 text-[--black] font-bold bg-[--secound] text-base rounded-none transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap ${
                   isSubmitting ? "opacity-50 cursor-not-allowed" : ""
                 }`}
               >

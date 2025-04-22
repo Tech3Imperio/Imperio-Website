@@ -16,7 +16,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       tabIndex={0} // Setting tabindex to make the div focusable
       role="button" // Setting role to button for accessibility
       onClick={() => navigate(path, { state: data })} // Navigate to specified path with additional data on click
-      className="max-w-64 max-h-72 h-72 flex flex-col items-center rounded-xl overflow-hidden group shadow-sm hover:shadow-none cursor-pointer transition-700 outline-none" // Styling classes for the product card
+      className="max-w-64 max-h-72 h-72 flex flex-col items-center rounded-none overflow-hidden group shadow-sm hover:shadow-none cursor-pointer transition-700 outline-none" // Styling classes for the product card
     >
       <div className="relative overflow-hidden w-full h-full">
         {/* Absolute positioned overlay for displaying product details on hover */}

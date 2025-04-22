@@ -201,7 +201,7 @@ const EnquiryButton: React.FC = () => {
         animate={{ opacity: 1, scale: 1 }}
         onClick={handleOpenForm}
         aria-label="Contact button"
-        className="fixed top-[55%] w-12 py-11 text-[--black] font-bold  -left-1 transform -translate-y-1/2  bg-[--secound] transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] text-center flex items-center justify-center rounded-4xl z-50 whitespace-nowrap"
+        className="fixed top-[55%] w-12 py-11 text-[--black] font-bold  -left-1 transform -translate-y-1/2  bg-[--secound] transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] text-center flex items-center justify-center rounded-none z-50 whitespace-nowrap"
       >
         <span className="transform -rotate-90 text-[14px]">Contact now</span>
       </motion.button>
@@ -218,7 +218,7 @@ const EnquiryButton: React.FC = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="bg-white max-w-4xl mx-4 p-6 rounded-lg shadow-lg drop-shadow-xl relative"
+              className="bg-white max-w-4xl mx-4 p-6 rounded-none shadow-lg drop-shadow-xl relative"
             >
               {/* Close Button */}
               <button
@@ -270,7 +270,7 @@ const EnquiryButton: React.FC = () => {
                         value={formData.fullName}
                         onChange={handleInputChange}
                         required
-                        className="mt-2 block w-full border rounded-md border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 p-3"
+                        className="mt-2 block w-full border rounded-none border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 p-3"
                       />
                     </div>
                     <div>
@@ -287,7 +287,7 @@ const EnquiryButton: React.FC = () => {
                         value={formData.phoneNumber}
                         onChange={handleInputChange}
                         required
-                        className="mt-2 block w-full border rounded-md border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 p-3"
+                        className="mt-2 block w-full border rounded-none border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 p-3"
                       />
                       {errors.phoneNumber && (
                         <p className="text-red-500 text-sm">
@@ -313,7 +313,7 @@ const EnquiryButton: React.FC = () => {
                       onChange={handlePinCodeChange}
                       maxLength={6}
                       required
-                      className="mt-2 block w-full rounded-md border border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 p-3"
+                      className="mt-2 block w-full rounded-none border border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 p-3"
                     />
                   </div>
                   {/* City, State, Location (Only Show if Pin Code is Provided) */}
@@ -332,7 +332,7 @@ const EnquiryButton: React.FC = () => {
                           name="city"
                           value={formData.city}
                           disabled
-                          className="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 p-3 bg-gray-200"
+                          className="mt-2 block w-full rounded-none border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 p-3 bg-gray-200"
                         />
                       </div>
                       <div>
@@ -348,7 +348,7 @@ const EnquiryButton: React.FC = () => {
                           name="state"
                           value={formData.state}
                           disabled
-                          className="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 p-3 bg-gray-200"
+                          className="mt-2 block w-full rounded-none border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 p-3 bg-gray-200"
                         />
                       </div>
                       <div>
@@ -364,7 +364,7 @@ const EnquiryButton: React.FC = () => {
                           name="location"
                           value={formData.location}
                           disabled
-                          className="mt-2 block w-full rounded-md  border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 p-3 bg-gray-200"
+                          className="mt-2 block w-full rounded-none  border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 p-3 bg-gray-200"
                         />
                       </div>
                     </div>
@@ -385,7 +385,7 @@ const EnquiryButton: React.FC = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="mt-2 block w-full border rounded-md border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 p-3"
+                      className="mt-2 block w-full border rounded-none border-gray-300 shadow-sm focus:border-gray-400 focus:ring focus:ring-gray-200 focus:ring-opacity-50 p-3"
                     />
                     {errors.email && (
                       <p className="text-red-500 text-sm">{errors.email}</p>

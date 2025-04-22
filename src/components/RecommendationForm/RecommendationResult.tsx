@@ -15,7 +15,7 @@ const RecommendationResult: React.FC<RecommendationResultProps> = ({
   recommendation,
 }) => {
   return (
-    <div className="mt-6 bg-gray-50 p-4 rounded-md">
+    <div className="mt-6 bg-gray-50 p-4 rounded-none">
       <h2 className="text-lg font-semibold mb-2">Recommendation:</h2>
       <ul className="space-y-2">
         <li>

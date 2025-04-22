@@ -328,7 +328,7 @@ export const DealerShipForm: React.FC = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="flex justify-center md:text-justify py-4"
             >
-              <div className="bg-white rounded-lg shadow-lg p-6 w-full">
+              <div className="bg-white rounded-none shadow-lg p-6 w-full">
                 <h3 className="text-xl text-[#03237b] mb-2">{point.title}</h3>
                 <p className="text-[#393939] text-justify">
                   {point.Description}
@@ -382,7 +382,7 @@ export const DealerShipForm: React.FC = () => {
 
                   {/* Blue Circle indicator */}
                   <div
-                    className={`w-4 h-4 hidden bg-[#fad000] rounded-full absolute top-1/2 transform -translate-y-1/2 z-10 ${
+                    className={`w-4 h-4 hidden bg-[#fad000] rounded-none absolute top-1/2 transform -translate-y-1/2 z-10 ${
                       index % 2 === 0
                         ? " md:left-[19.5rem] lg:left-[20.5rem]"
                         : "right-[20.5rem] md:right-[19.5rem] lg:right-[20.5rem] "
@@ -391,7 +391,7 @@ export const DealerShipForm: React.FC = () => {
 
                   {/* Checkpoint content */}
                   <div
-                    className={`max-w-auto md:w-[53%] p-6 border-2 border-[#fad000] justify-center flex flex-col text-center rounded-xl bg-[#292929] relative shadow-lg ${
+                    className={`max-w-auto md:w-[53%] p-6 border-2 border-[#fad000] justify-center flex flex-col text-center rounded-none bg-[#292929] relative shadow-lg ${
                       index % 2 === 0 ? "-ml-1 md:-ml-14" : " -ml-1 md:-mr-14"
                     }`}
                   >
@@ -442,7 +442,7 @@ export const DealerShipForm: React.FC = () => {
                 onChange={handleChange}
                 className={`mt-1 block w-[20rem] md:w-[30rem] lg:w-[25rem] xl:w-full p-2 border ${
                   errors.fullName ? "border-red-500" : "border-gray-300"
-                } rounded-md`}
+                } rounded-none`}
               />
               {errors.fullName && (
                 <p className="text-red-500 text-sm">{errors.fullName}</p>
@@ -461,7 +461,7 @@ export const DealerShipForm: React.FC = () => {
                 onChange={handleChange}
                 className={`mt-1 block w-full p-2 border ${
                   errors.organizationName ? "border-red-500" : "border-gray-300"
-                } rounded-md`}
+                } rounded-none`}
               />
               {errors.organizationName && (
                 <p className="text-red-500 text-sm">
@@ -480,7 +480,7 @@ export const DealerShipForm: React.FC = () => {
                 onChange={handleChange}
                 className={`mt-1 block w-full p-2 border ${
                   errors.email ? "border-red-500" : "border-gray-300"
-                } rounded-md`}
+                } rounded-none`}
               />
               {errors.email && (
                 <p className="text-red-500 text-sm">{errors.email}</p>
@@ -499,7 +499,7 @@ export const DealerShipForm: React.FC = () => {
                 onChange={handleChange}
                 className={`mt-1 block w-full p-2 border ${
                   errors.phone ? "border-red-500" : "border-gray-300"
-                } rounded-md`}
+                } rounded-none`}
               />
               {errors.phone && (
                 <p className="text-red-500 text-sm">{errors.phone}</p>
@@ -516,7 +516,7 @@ export const DealerShipForm: React.FC = () => {
                 onChange={handleChange}
                 className={`mt-1 block w-full p-2 border ${
                   errors.streetAddress ? "border-red-500" : "border-gray-300"
-                } rounded-md`}
+                } rounded-none`}
               />
               {errors.streetAddress && (
                 <p className="text-red-500 text-sm">{errors.streetAddress}</p>
@@ -536,7 +536,7 @@ export const DealerShipForm: React.FC = () => {
                 onChange={handleChange}
                 className={`mt-1 block w-full p-2 border ${
                   errors.website ? "border-red-500" : "border-gray-300"
-                } rounded-md`}
+                } rounded-none`}
               />
               {errors.website && (
                 <p className="text-red-500 text-sm">{errors.website}</p>
@@ -553,7 +553,7 @@ export const DealerShipForm: React.FC = () => {
               onChange={handleChange}
               className={`mt-1 block w-full p-2 border ${
                 errors.city ? "border-red-500" : "border-gray-300"
-              } rounded-md`}
+              } rounded-none`}
             />
             {errors.city && (
               <p className="text-red-500 text-sm">{errors.city}</p>
@@ -570,7 +570,7 @@ export const DealerShipForm: React.FC = () => {
                 onChange={handleChange}
                 className={`mt-1 block w-full p-2 border ${
                   errors.zipPostalCode ? "border-red-500" : "border-gray-300"
-                } rounded-md`}
+                } rounded-none`}
               />
               {errors.zipPostalCode && (
                 <p className="text-red-500 text-sm">{errors.zipPostalCode}</p>
@@ -589,7 +589,7 @@ export const DealerShipForm: React.FC = () => {
                 onChange={handleChange}
                 className={`mt-1 block w-full p-2 border ${
                   errors.stateProvince ? "border-red-500" : "border-gray-300"
-                } rounded-md`}
+                } rounded-none`}
               />
               {errors.stateProvince && (
                 <p className="text-red-500 text-sm">{errors.stateProvince}</p>
@@ -606,7 +606,7 @@ export const DealerShipForm: React.FC = () => {
               onChange={handleChange}
               className={`mt-1 block w-full p-2 border ${
                 errors.zipPostalCode ? "border-red-500" : "border-gray-300"
-              } rounded-md`}
+              } rounded-none`}
             />
             {errors.zipPostalCode && (
               <p className="text-red-500 text-sm">{errors.zipPostalCode}</p>
@@ -623,7 +623,7 @@ export const DealerShipForm: React.FC = () => {
                 onChange={handleChange}
                 className={`mt-1 block w-full p-2 border ${
                   errors.city ? "border-red-500" : "border-gray-300"
-                } rounded-md`}
+                } rounded-none`}
               />
               {errors.city && (
                 <p className="text-red-500 text-sm">{errors.city}</p>
@@ -644,7 +644,7 @@ export const DealerShipForm: React.FC = () => {
                   errors.typeOfProductsOrIndustry
                     ? "border-red-500"
                     : "border-gray-300"
-                } rounded-md`}
+                } rounded-none`}
               />
               {errors.typeOfProductsOrIndustry && (
                 <p className="text-red-500 text-sm">
@@ -666,7 +666,7 @@ export const DealerShipForm: React.FC = () => {
                   errors.numberOfYearsInBusiness
                     ? "border-red-500"
                     : "border-gray-300"
-                } rounded-md`}
+                } rounded-none`}
               />
               {errors.numberOfYearsInBusiness && (
                 <p className="text-red-500 text-sm">
@@ -689,7 +689,7 @@ export const DealerShipForm: React.FC = () => {
                   errors.HowMuchAmountcanyouinvestindealership
                     ? "border-red-500"
                     : "border-gray-300"
-                } rounded-md`}
+                } rounded-none`}
               />
               {errors.HowMuchAmountcanyouinvestindealership && (
                 <p className="text-red-500 text-sm">
@@ -710,7 +710,7 @@ export const DealerShipForm: React.FC = () => {
                   errors.Howmuchareacanyouprovidefordisplay
                     ? "border-red-500"
                     : "border-gray-300"
-                } rounded-md`}
+                } rounded-none`}
               />
               {errors.Howmuchareacanyouprovidefordisplay && (
                 <p className="text-red-500 text-sm">
@@ -722,7 +722,7 @@ export const DealerShipForm: React.FC = () => {
           <div className="mt-6">
             <button
               type="submit"
-              className="px-8 py-4 text-[--black] font-bold bg-[--secound] rounded-4xl transition-700 cursor-pointer border border-[--secound]  hover:bg-[--black] hover:text-[--secound]"
+              className="px-8 py-4 text-[--black] font-bold bg-[--secound] rounded-none transition-700 cursor-pointer border border-[--secound]  hover:bg-[--black] hover:text-[--secound]"
               disabled={isLoader}
             >
               {isLoader ? "Submitting..." : "Submit Information"}

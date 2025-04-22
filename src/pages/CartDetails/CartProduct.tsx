@@ -33,7 +33,7 @@
 //   const totalAmount = totalMRP + shippingFee - couponDiscount;
 
 //   return (
-//     <div className="bg-white p-6 rounded-lg shadow-md">
+//     <div className="bg-white p-6 rounded-none shadow-md">
 //       <h3 className="font-semibold text-2xl text-[#03237b] mb-4">
 //         Price Details ({items.length} Items)
 //       </h3>
@@ -71,7 +71,7 @@
 //           Apply Coupon
 //         </h4>
 //         {appliedCoupon ? (
-//           <div className="flex justify-between items-center bg-green-100 p-2 rounded-xl">
+//           <div className="flex justify-between items-center bg-green-100 p-2 rounded-none">
 //             <span className="text-green-900">{appliedCoupon} applied</span>
 //             <button
 //               onClick={removeCoupon}
@@ -86,7 +86,7 @@
 //               <button
 //                 key={coupon.code}
 //                 onClick={() => applyCoupon(coupon.code)}
-//                 className="border rounded-2xl hover:text-[#fad000] px-4 py-2 transition duration-700 hover:bg-[#292929] "
+//                 className="border rounded-none hover:text-[#fad000] px-4 py-2 transition duration-700 hover:bg-[#292929] "
 //               >
 //                 {coupon.code}
 //               </button>
@@ -104,7 +104,7 @@
 //         </span>
 //       </div>
 
-//       <button className="px-6 w-full py-4 text-[--black] font-bold bg-[--secound] text-xl rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap ">
+//       <button className="px-6 w-full py-4 text-[--black] font-bold bg-[--secound] text-xl rounded-none transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap ">
 //         Place Order
 //       </button>
 //     </div>
@@ -171,10 +171,10 @@
 //             </div> */}
 
 //             <div className="flex gap-4">
-//               {/* <button className="px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors">
+//               {/* <button className="px-6 py-2 bg-red-500 text-white rounded-none hover:bg-red-600 transition-colors">
 //                 Remove
 //               </button>
-//               <button className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
+//               <button className="px-6 py-2 bg-blue-500 text-white rounded-none hover:bg-blue-600 transition-colors">
 //                 Add to Wishlist
 //               </button> */}
 //               <h5 className="text-3xl text-[#03237b] font-semibold">
@@ -231,7 +231,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   onRemove,
 }) => {
   return (
-    <div className="flex flex-col bg-white drop-shadow-lg p-6 rounded-xl gap-2 items-start">
+    <div className="flex flex-col bg-white drop-shadow-lg p-6 rounded-none gap-2 items-start">
       <div className="flex justify-end items-center w-full">
         <button
           onClick={onRemove}
@@ -241,7 +241,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         </button>
       </div>
       <div className="flex flex-col md:flex-row items-start gap-6">
-        <div className="w-60 h-54 bg-gray-100 rounded-lg flex items-center justify-center overflow-hidden drop-shadow-md">
+        <div className="w-60 h-54 bg-gray-100 rounded-none flex items-center justify-center overflow-hidden drop-shadow-md">
           <img
             src={img}
             alt={productname}
@@ -268,7 +268,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 <input
                   type="text"
                   value={quantity}
-                  className="border-2 rounded-full w-[75px] pl-6 py-1  text-sm phone:text-base  xl:mr-0 transition-500 border-[--secound]"
+                  className="border-2 rounded-none w-[75px] pl-6 py-1  text-sm phone:text-base  xl:mr-0 transition-500 border-[--secound]"
                   readOnly
                 />
               </div>
@@ -277,7 +277,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 <input
                   type="text"
                   value={nutbolt}
-                  className="border-2 rounded-full w-[75px] pl-6 py-1  text-sm phone:text-base  xl:mr-0 transition-500 border-[--secound]"
+                  className="border-2 rounded-none w-[75px] pl-6 py-1  text-sm phone:text-base  xl:mr-0 transition-500 border-[--secound]"
                   readOnly
                 />
               </div>
@@ -286,7 +286,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 <input
                   type="text"
                   value={rubber}
-                  className="border-2 rounded-full w-[75px] pl-6 py-1  text-sm phone:text-base  xl:mr-0 transition-500 border-[--secound]"
+                  className="border-2 rounded-none w-[75px] pl-6 py-1  text-sm phone:text-base  xl:mr-0 transition-500 border-[--secound]"
                   readOnly
                 />
               </div>
@@ -295,7 +295,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 <input
                   type="text"
                   value={endcap}
-                  className="border-2 rounded-full w-[75px] pl-6 py-1  text-sm phone:text-base  xl:mr-0 transition-500 border-[--secound]"
+                  className="border-2 rounded-none w-[75px] pl-6 py-1  text-sm phone:text-base  xl:mr-0 transition-500 border-[--secound]"
                   readOnly
                 />
               </div>
@@ -363,7 +363,7 @@ const PriceDetails: React.FC<{ items: ProductCardProps[] }> = ({ items }) => {
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md">
+    <div className="bg-white p-6 rounded-none shadow-md">
       <h3 className="font-semibold text-2xl text-[#03237b] mb-4">
         Price Details ({items.length} Items)
       </h3>
@@ -401,7 +401,7 @@ const PriceDetails: React.FC<{ items: ProductCardProps[] }> = ({ items }) => {
           Apply Coupon
         </h4>
         {appliedCoupon ? (
-          <div className="flex justify-between items-center bg-green-100 p-2 rounded-xl">
+          <div className="flex justify-between items-center bg-green-100 p-2 rounded-none">
             <span className="text-green-900">{appliedCoupon} applied</span>
             <button
               onClick={removeCoupon}
@@ -416,7 +416,7 @@ const PriceDetails: React.FC<{ items: ProductCardProps[] }> = ({ items }) => {
               <button
                 key={coupon.code}
                 onClick={() => applyCoupon(coupon.code)}
-                className="border rounded-2xl hover:text-[#fad000] px-4 py-2 transition duration-700 hover:bg-[#292929] "
+                className="border rounded-none hover:text-[#fad000] px-4 py-2 transition duration-700 hover:bg-[#292929] "
               >
                 {coupon.code}
               </button>
@@ -436,7 +436,7 @@ const PriceDetails: React.FC<{ items: ProductCardProps[] }> = ({ items }) => {
 
       <button
         onClick={handlePlaceOrder}
-        className="px-6 w-full py-4 text-[--black] font-bold bg-[--secound] text-xl rounded-4xl transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap "
+        className="px-6 w-full py-4 text-[--black] font-bold bg-[--secound] text-xl rounded-none transition-700 cursor-pointer border border-[--secound] hover:bg-[--black] hover:text-[--secound] whitespace-nowrap "
       >
         Place Order
       </button>

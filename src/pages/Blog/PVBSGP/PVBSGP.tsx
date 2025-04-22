@@ -217,7 +217,7 @@ export default function BlogPost() {
                 each:
               </p>
               <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-blue-100 p-4 rounded-lg">
+                <div className="bg-blue-100 p-4 rounded-none">
                   <h3 className="text-xl font-semibold mb-2">
                     Choose PVB Laminated Glass If:
                   </h3>
@@ -230,7 +230,7 @@ export default function BlogPost() {
                     <li>You need UV protection and sound insulation.</li>
                   </ul>
                 </div>
-                <div className="bg-green-100 p-4 rounded-lg">
+                <div className="bg-green-100 p-4 rounded-none">
                   <h3 className="text-xl font-semibold mb-2">
                     Choose SGP Laminated Glass If:
                   </h3>

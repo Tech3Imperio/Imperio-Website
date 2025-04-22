@@ -82,7 +82,7 @@ export default function GetInTouchSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
+            <div className="relative h-[400px] rounded-none overflow-hidden shadow-xl">
               <img
                 src="/images/Landing/getintouch.webp"
                 alt="Contact Imperio"
@@ -121,7 +121,7 @@ export default function GetInTouchSection() {
                 <motion.a
                   key={index}
                   href={item.link}
-                  className="bg-gray-50 p-6 rounded-lg hover:shadow-md transition-all duration-300 flex flex-col"
+                  className="bg-gray-50 p-6 rounded-none hover:shadow-md transition-all duration-300 flex flex-col"
                   variants={itemVariants}
                 >
                   <div className="mb-4">{item.icon}</div>

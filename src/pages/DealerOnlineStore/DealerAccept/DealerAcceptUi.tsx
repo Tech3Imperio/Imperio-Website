@@ -6,7 +6,7 @@ const DealerAcceptUi: React.FC = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-green-100 to-blue-100 p-4">
-      <div className="max-w-md w-full bg-white shadow-2xl rounded-lg overflow-hidden">
+      <div className="max-w-md w-full bg-white shadow-2xl rounded-none overflow-hidden">
         <div className="p-8">
           <div className="flex justify-center mb-6">
             <svg
@@ -33,13 +33,13 @@ const DealerAcceptUi: React.FC = () => {
           <div className="flex flex-col space-y-4">
             {/* <button
               onClick={() => navigate("/dealer-store")}
-              className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg"
+              className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-none transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg"
             >
               Access Online Store
             </button> */}
             <button
               onClick={() => navigate("/")}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-4 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg"
+              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-4 rounded-none transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg"
             >
               Return to Dashboard
             </button>
