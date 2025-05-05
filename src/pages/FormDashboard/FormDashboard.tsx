@@ -34,7 +34,8 @@ interface ProductData {
   state: string;
   userType: string;
   timeline: string;
-  installation: string; // Changed to string for compatibility
+  installation: string;
+  projectName: string;
 }
 
 interface UserData {
@@ -178,6 +179,7 @@ function App() {
     userType: "",
     timeline: "",
     installation: "No", // Default to "No" as string
+    projectName: "",
   };
 
   // Product selection state
@@ -362,7 +364,7 @@ function App() {
 
       console.log("Submitting form data:", formData);
 
-      // Submit to Google Apps Script with timeout
+      // Submit to Google
       // https://backendimperio.onrender.com
       const response = await axios.post(
         "https://backendimperio.onrender.com/submit-form",

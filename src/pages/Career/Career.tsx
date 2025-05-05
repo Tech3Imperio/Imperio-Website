@@ -221,6 +221,14 @@ export default function Career() {
       applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     },
     {
+      title: "Accounts Executive",
+      description:
+        "The Accounts Executive will be responsible for managing daily financial transactions, maintaining accurate records, preparing financial reports, and assisting in audits and tax filings.",
+      location: "Mumbai",
+      type: "Full-Time",
+      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    },
+    {
       title: "Aluminium Fabricator Fitter",
       description:
         "As an Aluminium Fabricator Fitter at Imperio Railing Systems, you will be responsible for assembling, fitting, and welding metal components for construction and machinery, ensuring precision and adherence to safety standards.",

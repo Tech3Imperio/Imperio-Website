@@ -48,7 +48,8 @@ interface ProductData {
   state: string;
   userType: string;
   timeline: string;
-  installation: string; // Changed to string for compatibility
+  installation: string;
+  projectName: string;
 }
 
 interface ProductSelectionProps {
@@ -505,6 +506,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
               <img
                 src={
                   getHandrailTypeImageUrl(showHandrailInfo) ||
+                  "/placeholder.svg" ||
                   "/placeholder.svg"
                 }
                 alt={showHandrailInfo}
@@ -815,6 +817,48 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
               </label>
             </div>
           </div>
+
+          {/* Project name */}
+          <div className="mb-6">
+            <div className=" mb-2 font-medium text-gray-600 flex items-center gap-2 relative">
+              Project name:
+              <div
+                className="relative flex items-center"
+                onMouseEnter={() => setShowPincodeInfo(true)}
+                onMouseLeave={() => setShowPincodeInfo(false)}
+              >
+                <button
+                  type="button"
+                  onClick={() => setShowPincodeInfo(!showPincodeInfo)}
+                  className="text-blue-500 hover:text-blue-700"
+                >
+                  <Info className="w-4 h-4" />
+                </button>
+
+                {showPincodeInfo && (
+                  <div className="absolute top-6 left-0 w-64 p-3 bg-white border border-gray-300 shadow-lg rounded-md text-sm text-gray-700 z-50">
+                    <strong>Why we ask for your project name:</strong>
+                    <br />
+                    To segregate your order and provide personalized service.
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <input
+              type="text"
+              value={productData.projectName}
+              onChange={(e) => {
+                const proName = e.target.value;
+                setProductData({ ...productData, projectName: proName });
+                if (productData.projectName) {
+                  console.log("Project name:", productData.projectName);
+                }
+              }}
+              placeholder="Enter your project name"
+              className="w-full p-3 rounded-none border border-gray-200 text-gray-700 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
+            />
+          </div>
         </div>
 
         {/* Height Selection */}
@@ -878,6 +922,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                 src={
                   heightImages[productData.height] ||
                   "/images/GlassHeight/3.5full.png" ||
+                  "/placeholder.svg" ||
                   "/placeholder.svg" ||
                   "/placeholder.svg" ||
                   "/placeholder.svg" ||
@@ -983,6 +1028,14 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
             <div className="text-xs text-gray-500 mb-1">Installation</div>
             <div className="font-semibold text-gray-800">
               {productData.installation}
+            </div>
+          </div>
+
+          {/* Project name */}
+          <div className="bg-white p-3 rounded-lg shadow-sm">
+            <div className="text-xs text-gray-500 mb-1">Project name</div>
+            <div className="font-semibold text-gray-800">
+              {productData.projectName}
             </div>
           </div>
         </div>

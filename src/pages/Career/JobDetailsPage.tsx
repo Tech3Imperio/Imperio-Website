@@ -178,6 +178,48 @@ export default function JobDetailsPage() {
         applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
       },
       {
+        title: "Accounts Executive",
+        subtitle:
+          "Manage daily financial operations, ensure compliance, and support audits in a structured, fast-paced environment.",
+        about:
+          "The Accounts Executive will be responsible for managing daily financial transactions, maintaining accurate records, preparing financial reports, and assisting in audits and tax filings. This role ensures that all accounting tasks are completed in a timely and accurate manner in compliance with financial regulations and company policies.",
+        location: "Mumbai",
+        type: "Full-Time",
+        others: [
+          {
+            Duration: "NA",
+            Expriance: "1-3 years",
+            join: "Immediately",
+          },
+        ],
+        responsibilities: [
+          "Handle day-to-day accounting operations including accounts payable, accounts receivable, general ledger entries, and bank reconciliations.",
+          "Process payments, manage petty cash and expense claims with accuracy and efficiency.",
+          "Support internal and external audits by providing necessary documentation.",
+          "Maintain proper filing of financial documents for record-keeping and audit purposes.",
+          "Ensure compliance with statutory law and financial regulations (TDS calculation & payment, GST calculation and payment).",
+          "Collaborate with other departments for accurate financial analysis and reporting.",
+        ],
+        skills: [
+          "Bookkeeping",
+          "Reconciliation",
+          "Compliance",
+          "Invoicing",
+          "Accuracy",
+          "Reporting",
+          "Time-management",
+          "Communication",
+          "Confidentiality",
+          "Multitasking",
+          "Excel",
+        ],
+        whocanapply: [
+          "Candidates with 1–3 years of experience in a similar role (freshers with strong internship experience may also be considered).",
+          "Those who are from or open to relocate to Mumbai and neighboring cities.",
+        ],
+        applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
+      },
+      {
         title: "Digital Marketing Executive",
         subtitle:
           "Create captivating animations to showcase innovative products in a dynamic, creative environment.",
