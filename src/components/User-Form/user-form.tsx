@@ -28,13 +28,16 @@ interface UserFormProps {
 
 const sendOTPToEmail = async (email: string): Promise<boolean> => {
   try {
-    const res = await fetch("https://backendimperio.onrender.com/api/send-otp", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email }),
-    });
+    const res = await fetch(
+      "https://backendimperio.onrender.com/api/send-otp",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      }
+    );
 
     if (!res.ok) throw new Error("Failed to send OTP");
     return true;
@@ -46,16 +49,19 @@ const sendOTPToEmail = async (email: string): Promise<boolean> => {
 
 const verifyOTP = async (email: string, otp: string): Promise<boolean> => {
   try {
-    const res = await fetch("https://backendimperio.onrender.com/api/verify-otp", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-        otp: otp,
-      }),
-    });
+    const res = await fetch(
+      "https://backendimperio.onrender.com/api/verify-otp",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          otp: otp,
+        }),
+      }
+    );
 
     const data = await res.json();
     console.log("Verify OTP Response:", data);
