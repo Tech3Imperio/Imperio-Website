@@ -256,6 +256,50 @@ export default function JobDetailsPage() {
         applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
       },
       {
+        title: "Back Office Executive",
+        subtitle:
+          "Support daily operations with precision and efficiency by managing administrative tasks and maintaining accurate records.",
+        about:
+          "We are looking for a highly organized and detail-oriented Back Office Executive to handle administrative tasks, data entry, record management, and report preparation. The role involves supporting daily operations by managing behind-the-scenes activities and ensuring smooth workflows.",
+        location: "Mumbai",
+        type: "Full-Time",
+        others: [
+          {
+            Duration: "6 months and above",
+            Expriance: "6 months or more",
+            join: "Immediately",
+          },
+        ],
+        responsibilities: [
+          "Perform data entry and maintain accurate records (both physical and electronic).",
+          "Prepare and generate reports for internal teams.",
+          "Assist in administrative tasks such as managing emails, scheduling, and document organization.",
+          "Ensure accuracy in workflow and document management.",
+          "Collaborate with internal teams to meet operational needs.",
+          "Suggest process improvements to enhance efficiency.",
+        ],
+        skills: [
+          "Organization",
+          "Attention to Detail",
+          "Time Management",
+          "Communication",
+          "Data Entry",
+          "Multitasking",
+          "Problem-Solving",
+          "Report Preparation",
+          "Confidentiality",
+          "Collaboration",
+        ],
+        whocanapply: [
+          "Anyone who has completed their 12th grade (high school).",
+          "People with 6 months or more experience in office work or similar roles.",
+          "Those who are good at using MS Office or Google Workspace (like Word, Excel, etc.).",
+          "Candidates who are organized, pay attention to details, and can handle multiple tasks.",
+          "Good communication skills and the ability to work well with others.",
+        ],
+        applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
+      },
+      {
         title: "Logistics and Back office Coordinator",
         subtitle:
           "Create captivating animations to showcase innovative products in a dynamic, creative environment.",

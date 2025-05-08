@@ -213,6 +213,14 @@ export default function Career() {
   const [selectedCategory, setSelectedCategory] = useState("jobs");
   const [jobs] = useState<Job[]>([
     {
+      title: "Back Office Executive",
+      description:
+        "As a Back Office Executive at Imperio Railing Systems, you will ensure smooth operational workflows by managing administrative tasks, accurate data entry, and internal reporting with high attention to detail.",
+      location: "Mumbai",
+      type: "Full-Time",
+      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    },
+    {
       title: "Business Development Executive",
       description:
         "As a Business Development Executive at Imperio Railing Systems, you will play a key role in driving the growth and success of our business.",
