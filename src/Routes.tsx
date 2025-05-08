@@ -51,6 +51,7 @@ import AestheticRailings from "./pages/Blog/AestheticRailing/AestheticRailing";
 import NewProducts from "./pages/NewProducts/NewProducts";
 import FormDashboard from "./pages/FormDashboard/FormDashboard";
 import LandingApp from "./pages/LandingApp/LandingApp";
+import { GlassRailingsGallery } from "./pages/Gallery/Gallery";
 // import ForgotPassword from "./pages/DealerOnlineStore/ForgotPassword/ForgotPassword";
 
 export const routes = createBrowserRouter([
@@ -107,7 +108,10 @@ export const routes = createBrowserRouter([
       { path: "careers", element: <Career /> },
       { path: "/careers/:title", element: <JobDetailsPage /> },
       { path: "products", element: <Products /> },
-      // { path: "all-products", element: <AllProducts /> },
+      {
+        path: "gallery",
+        element: <GlassRailingsGallery />,
+      },
       { path: "cart", element: <CartProdcut /> },
       {
         path: "products/:productID",

@@ -9,7 +9,7 @@ import seamless8 from "./seamless8.jpg";
 import seamless9 from "./seamless9.jpg";
 import seamless10 from "./seamless10.jpg";
 
-const Seamless1 = {
+export const Seamless1 = {
   src: seamless1,
   categories: ["balcony", "villa", "seamless", "aluminium", "silver"],
 };
