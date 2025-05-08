@@ -32,7 +32,7 @@ export const Hero: React.FC<HeroProps> = ({
         className={`relative -top-7 w-full ${
           condition
             ? "h-screen max-phone:h-[60vh] overflow-hidden" // Full height without curve
-            : "h-[60vh] max-phone:h-[50vh] rounded-b-4xl overflow-hidden" // Specific height with curve
+            : "h-[60vh] max-phone:h-[50vh] overflow-hidden" // Specific height with curve
         } bg-cover bg-center`}
         style={{
           backgroundImage: `url(${img})`, // Main image URL

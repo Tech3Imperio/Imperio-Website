@@ -1,17 +1,37 @@
-export * from "./Apartment";
-export * from "./balcony";
-export * from "./building";
-export * from "./duplex";
-export * from "./pool";
-export * from "./staircase";
-export * from "./villa";
-export * from "./robust";
-export * from "./seamless";
-export * from "./led";
-export * from "./pool";
-export * from "./terrace";
-export * from "./black";
-export * from "./brown";
-export * from "./champagne";
-export * from "./silver";
-export * from "./wooden";
+import { ApartmentImages } from "./Apartment";
+import { BalconyImages } from "./balcony";
+import { BlackImages } from "./black";
+import { BrownImages } from "./brown";
+import { BuildingImages } from "./building";
+import { champagneImages } from "./champagne";
+import { dImages } from "./deck";
+import { duplexImages } from "./duplex";
+import { ledImages } from "./led";
+import { PImages } from "./pool";
+import { RobustImages } from "./robust";
+import { SeamlessImages } from "./seamless";
+import { SilverImages } from "./silver";
+import { StaircaseImages } from "./staircase";
+import { TerraceImages } from "./terrace";
+import { VillaImages } from "./villa";
+import { WoodenImages } from "./wooden";
+
+export const GalleryImages = [
+  ...ApartmentImages,
+  ...BalconyImages,
+  ...BlackImages,
+  ...BrownImages,
+  ...BuildingImages,
+  ...champagneImages,
+  ...dImages,
+  ...duplexImages,
+  ...ledImages,
+  ...PImages,
+  ...RobustImages,
+  ...SeamlessImages,
+  ...SilverImages,
+  ...StaircaseImages,
+  ...TerraceImages,
+  ...VillaImages,
+  ...WoodenImages,
+];
