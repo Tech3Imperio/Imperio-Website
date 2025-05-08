@@ -15,3 +15,4 @@ export * from "./career";
 export * from "./PVBSGP/index";
 export * from "./StainlessSteel/index";
 export * from "./Blogs";
+export * from "./productsPageEndUserImages/CompiledImages";

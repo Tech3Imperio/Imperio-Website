@@ -17,6 +17,7 @@ interface Errors {
   phone?: string;
   email?: string;
   size?: string;
+  otp?: string;
 }
 
 interface UserFormProps {
@@ -24,6 +25,52 @@ interface UserFormProps {
   isSubmitting: boolean;
   onBack: () => void;
 }
+
+const sendOTPToEmail = async (email: string): Promise<boolean> => {
+  try {
+    const res = await fetch(
+      "https://backendimperio.onrender.com/api/send-otp",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      }
+    );
+
+    if (!res.ok) throw new Error("Failed to send OTP");
+    return true;
+  } catch (error) {
+    console.error("Error sending OTP:", error);
+    return false;
+  }
+};
+
+const verifyOTP = async (email: string, otp: string): Promise<boolean> => {
+  try {
+    const res = await fetch(
+      "https://backendimperio.onrender.com/api/verify-otp",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          otp: otp,
+        }),
+      }
+    );
+
+    const data = await res.json();
+    console.log("Verify OTP Response:", data);
+    return res.ok && data.message === "OTP verified successfully";
+  } catch (error) {
+    console.error("Error verifying OTP:", error);
+    return false;
+  }
+};
 
 const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
   const [userData, setUserData] = useState<UserData>({
@@ -33,8 +80,21 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
     size: 50,
   });
 
-  const [errors, setErrors] = useState<Errors>();
+  const [errors, setErrors] = useState<Errors>({});
   const [showConfirmDialog, setShowConfirmDialog] = useState(false);
+  const [phone, setPhone] = useState("91"); // Default to India (+91)
+
+  // OTP related states
+  const [isEmailVerified, setIsEmailVerified] = useState(false);
+  const [showOTPInput, setShowOTPInput] = useState(false);
+  const [otp, setOtp] = useState("");
+  const [isOTPSending, setIsOTPSending] = useState(false);
+  const [isOTPVerifying, setIsOTPVerifying] = useState(false);
+  const [otpSent, setOtpSent] = useState(false);
+
+  useEffect(() => {
+    setUserData({ ...userData, phone: `+${phone}` });
+  }, [phone]);
 
   // Validate inputs
   const validateForm = (): boolean => {
@@ -50,11 +110,13 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
       newErrors.phone = "Invalid phone number format";
     }
 
-    // if (!userData.email.trim()) {
-    //   newErrors.email = "Email is required";
-    // } else if (!/^[^@]+@[^@]+\.[^@]+$/.test(userData.email)) {
-    //   newErrors.email = "Invalid email address";
-    // }
+    if (!userData.email.trim()) {
+      newErrors.email = "Email is required for verification";
+    } else if (!/^[^@]+@[^@]+\.[^@]+$/.test(userData.email)) {
+      newErrors.email = "Invalid email address";
+    } else if (!isEmailVerified) {
+      newErrors.email = "Email verification required";
+    }
 
     if (!userData.size || userData.size <= 0) {
       newErrors.size = "Please enter a valid size";
@@ -70,18 +132,61 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
     if (validateForm()) {
       const formattedUserData = {
         ...userData,
-        email: userData.email.trim() || "", // Ensure email is always defined
+        email: userData.email.trim(),
       };
 
       onSubmit(formattedUserData);
     }
   };
 
-  const [phone, setPhone] = useState(userData.phone || "91"); // Default to India (+91)
+  const handleSendOTP = async () => {
+    // Validate email before sending OTP
+    if (!userData.email.trim()) {
+      setErrors({ ...errors, email: "Email is required" });
+      return;
+    } else if (!/^[^@]+@[^@]+\.[^@]+$/.test(userData.email)) {
+      setErrors({ ...errors, email: "Invalid email address" });
+      return;
+    }
 
-  useEffect(() => {
-    setUserData({ ...userData, phone: `+${phone}` });
-  }, [phone]);
+    setIsOTPSending(true);
+    try {
+      const success = await sendOTPToEmail(userData.email);
+      if (success) {
+        setOtpSent(true);
+        setShowOTPInput(true);
+        setErrors({ ...errors, email: undefined });
+      }
+    } catch (error) {
+      setErrors({ ...errors, email: "Failed to send OTP. Please try again." });
+    } finally {
+      setIsOTPSending(false);
+    }
+  };
+
+  const handleVerifyOTP = async () => {
+    if (!otp.trim()) {
+      setErrors({ ...errors, otp: "OTP is required" });
+      return;
+    }
+
+    setIsOTPVerifying(true);
+    try {
+      console.log("Sending OTP for verification:", otp);
+      const isValid = await verifyOTP(userData.email, otp);
+      if (isValid) {
+        setIsEmailVerified(true);
+        setShowOTPInput(false);
+        setErrors({ ...errors, otp: undefined });
+      } else {
+        setErrors({ ...errors, otp: "Invalid OTP. Please try again." });
+      }
+    } catch (error) {
+      setErrors({ ...errors, otp: "Verification failed. Please try again." });
+    } finally {
+      setIsOTPVerifying(false);
+    }
+  };
 
   return (
     <div style={{ position: "relative" }}>
@@ -160,15 +265,15 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
             Phone:
           </label>
           <PhoneInput
-            country={"in"} // Default country: India (+91)
+            country={"in"}
             value={phone}
-            onChange={(phone) => setPhone(phone)} // Updates phone state
-            enableSearch={true} // Allows searching for countries
-            autoFormat={true} // Auto-formats the number
+            onChange={(phone) => setPhone(phone)}
+            enableSearch={true}
+            autoFormat={true}
             inputStyle={{
               width: "100%",
               height: "42px",
-              paddingLeft: "50px", // Prevents text overlap with country code
+              paddingLeft: "50px",
               fontSize: "16px",
               borderRadius: "5px",
               border: errors?.phone ? "1px solid #dc3545" : "1px solid #ccc",
@@ -194,21 +299,52 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
           <label
             style={{ display: "block", marginBottom: "8px", fontWeight: "500" }}
           >
-            Email: (optional)
+            Email:
           </label>
-          <input
-            type="email"
-            value={userData.email}
-            onChange={(e) =>
-              setUserData({ ...userData, email: e.target.value })
-            }
-            style={{
-              width: "100%",
-              padding: "10px",
-              borderRadius: "5px",
-              border: errors?.email ? "1px solid #dc3545" : "1px solid #ccc",
-            }}
-          />
+          <div style={{ display: "flex", gap: "10px" }}>
+            <input
+              type="email"
+              value={userData.email}
+              onChange={(e) => {
+                setUserData({ ...userData, email: e.target.value });
+                // Reset verification status when email changes
+                if (isEmailVerified) {
+                  setIsEmailVerified(false);
+                }
+              }}
+              disabled={isEmailVerified}
+              style={{
+                flex: "1",
+                padding: "10px",
+                borderRadius: "5px",
+                border: errors?.email ? "1px solid #dc3545" : "1px solid #ccc",
+                backgroundColor: isEmailVerified ? "#f0f0f0" : "#fff",
+              }}
+            />
+            <button
+              type="button"
+              onClick={handleSendOTP}
+              disabled={isOTPSending || isEmailVerified}
+              style={{
+                padding: "10px 15px",
+                backgroundColor: isEmailVerified ? "#28a745" : "#007bff",
+                color: "white",
+                border: "none",
+                borderRadius: "5px",
+                cursor:
+                  isOTPSending || isEmailVerified ? "not-allowed" : "pointer",
+                opacity: isOTPSending ? 0.7 : 1,
+              }}
+            >
+              {isEmailVerified
+                ? "Verified"
+                : isOTPSending
+                ? "Sending..."
+                : otpSent
+                ? "Resend OTP"
+                : "Send OTP"}
+            </button>
+          </div>
           {errors?.email && (
             <div
               style={{ color: "#dc3545", fontSize: "14px", marginTop: "4px" }}
@@ -217,6 +353,69 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
             </div>
           )}
         </div>
+
+        {showOTPInput && !isEmailVerified && (
+          <div style={{ marginBottom: "16px" }}>
+            <label
+              style={{
+                display: "block",
+                marginBottom: "8px",
+                fontWeight: "500",
+              }}
+            >
+              Enter OTP:
+            </label>
+            <div style={{ display: "flex", gap: "10px" }}>
+              <input
+                type="text"
+                value={otp}
+                onChange={(e) =>
+                  setOtp(e.target.value.replace(/\D/g, "").substring(0, 6))
+                }
+                placeholder="6-digit OTP"
+                maxLength={6}
+                style={{
+                  flex: "1",
+                  padding: "10px",
+                  borderRadius: "5px",
+                  border: errors?.otp ? "1px solid #dc3545" : "1px solid #ccc",
+                }}
+              />
+              <button
+                type="button"
+                onClick={handleVerifyOTP}
+                disabled={isOTPVerifying || otp.length !== 6}
+                style={{
+                  padding: "10px 15px",
+                  backgroundColor: "#007bff",
+                  color: "white",
+                  border: "none",
+                  borderRadius: "5px",
+                  cursor:
+                    isOTPVerifying || otp.length !== 6
+                      ? "not-allowed"
+                      : "pointer",
+                  opacity: isOTPVerifying || otp.length !== 6 ? 0.7 : 1,
+                }}
+              >
+                {isOTPVerifying ? "Verifying..." : "Verify OTP"}
+              </button>
+            </div>
+            {errors?.otp && (
+              <div
+                style={{ color: "#dc3545", fontSize: "14px", marginTop: "4px" }}
+              >
+                {errors.otp}
+              </div>
+            )}
+            <div
+              style={{ fontSize: "14px", marginTop: "8px", color: "#6c757d" }}
+            >
+              Didn't receive the OTP? Check your spam folder or click "Resend
+              OTP".
+            </div>
+          </div>
+        )}
 
         <div style={{ marginBottom: "16px" }}>
           <label
@@ -259,7 +458,7 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
         >
           <button
             type="submit"
-            disabled={isSubmitting}
+            disabled={isSubmitting || !isEmailVerified}
             style={{
               flex: "1",
               padding: "12px",
@@ -267,8 +466,9 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
               color: "white",
               border: "none",
               borderRadius: "5px",
-              cursor: isSubmitting ? "not-allowed" : "pointer",
-              opacity: isSubmitting ? 0.7 : 1,
+              cursor:
+                isSubmitting || !isEmailVerified ? "not-allowed" : "pointer",
+              opacity: isSubmitting || !isEmailVerified ? 0.7 : 1,
               fontWeight: "500",
             }}
           >
