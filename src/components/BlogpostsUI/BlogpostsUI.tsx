@@ -13,6 +13,7 @@ import {
   handrailBenefits,
   seamlessRailings,
   aesthetic,
+  futureHome1,
 } from "../../assets/Images";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
 const blogPosts: BlogPost[] = [
@@ -103,6 +104,14 @@ const blogPosts: BlogPost[] = [
       "Discover modern railings in our latest Goa project, blending safety with stunning ocean views.",
     imageUrl: aesthetic,
     link: "aesthetic-railing",
+  },
+  {
+    id: "12",
+    title: "Why Glass Railings Are the Future of Modern Home Design",
+    excerpt:
+      "Few design elements combine elegance, safety, functionality &amp; sustainability as well as glass railings do.",
+    imageUrl: futureHome1,
+    link: "future-modern-home-design",
   },
 ];
 

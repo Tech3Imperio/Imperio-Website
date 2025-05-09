@@ -12,6 +12,10 @@ import aesthetic from "./aesthetic.webp";
 import aesthetic1 from "./aesthetic1.webp";
 import aesthetic2 from "./aesthetic2.webp";
 import bloghero1 from "./bloghero1.webp";
+
+import futureHome1 from "./futureHome1.jpg";
+import futureHome2 from "./futureHome2.jpg";
+import futureHome3 from "./futureHome3.jpg";
 export {
   stylishGlass,
   aluminiumglassrailing,
@@ -27,4 +31,7 @@ export {
   aesthetic1,
   aesthetic2,
   bloghero1,
+  futureHome1,
+  futureHome2,
+  futureHome3,
 };
