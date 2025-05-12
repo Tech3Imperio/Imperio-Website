@@ -136,6 +136,8 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
       };
 
       onSubmit(formattedUserData);
+      window.location.href =
+        "https://wa.me/918591155386?text=Hi!%20Kindly%20send%20my%20quote";
     }
   };
 
