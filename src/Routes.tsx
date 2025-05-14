@@ -48,6 +48,7 @@ import HandrailBenefit from "./pages/Blog/HandrailBenefit/HandrailBenefit";
 import Recommendation from "./pages/Recommendation/Recommendation";
 import SeamlessRailings from "./pages/Blog/SeamlessRailings/SeamlessRailing";
 import AestheticRailings from "./pages/Blog/AestheticRailing/AestheticRailing";
+import Futuredesign from "./pages/Blog/FutureDesign/FutureDesign";
 import NewProducts from "./pages/NewProducts/NewProducts";
 import FormDashboard from "./pages/FormDashboard/FormDashboard";
 import LandingApp from "./pages/LandingApp/LandingApp";
@@ -93,6 +94,10 @@ export const routes = createBrowserRouter([
       {
         path: "blog/aesthetic-railing",
         element: <AestheticRailings />,
+      },
+      {
+        path: "blog/future-modern-home-design",
+        element: <Futuredesign />,
       },
       {
         path: "blog/:blogId",
