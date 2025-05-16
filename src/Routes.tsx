@@ -53,6 +53,7 @@ import NewProducts from "./pages/NewProducts/NewProducts";
 import FormDashboard from "./pages/FormDashboard/FormDashboard";
 import LandingApp from "./pages/LandingApp/LandingApp";
 import { GlassRailingsGallery } from "./pages/Gallery/Gallery";
+import InteriorDesign from "./pages/Blog/InteriorDesign/InteriorDesign";
 // import ForgotPassword from "./pages/DealerOnlineStore/ForgotPassword/ForgotPassword";
 
 export const routes = createBrowserRouter([
@@ -98,6 +99,10 @@ export const routes = createBrowserRouter([
       {
         path: "blog/future-modern-home-design",
         element: <Futuredesign />,
+      },
+      {
+        path: "blog/interior-design",
+        element: <InteriorDesign />,
       },
       {
         path: "blog/:blogId",

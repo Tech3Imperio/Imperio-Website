@@ -113,6 +113,14 @@ const blogPosts: BlogPost[] = [
     imageUrl: futureHome1,
     link: "future-modern-home-design",
   },
+  {
+    id: "13",
+    title: "How Railings Can Transform Your Living Space",
+    excerpt:
+      "The railing of your staircase is not just meant for safety—it enhances the beauty of your modern home.",
+    imageUrl: futureHome1,
+    link: "interior-design",
+  },
 ];
 
 const BlogPage: React.FC = () => {
