@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Hero } from "../../../components";
 import { aesthetic } from "../../../assets/Images";
 import Metadata from "../../../components/Metatag/Metatag";
-import Interiordesign from "../../../components/InteriorDesign/InteriorDesign";
+import Interiordesign from "../../../components/InteriorDesign/Interiordesign";
 
 const InteriorDesign: React.FC = () => {
   return (
