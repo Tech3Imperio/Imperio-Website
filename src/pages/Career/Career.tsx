@@ -364,6 +364,14 @@ export default function Career() {
       type: "Full-Time",
       applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     },
+    {
+      title: "Site Supervisor",
+      description:
+        "Imperio Railing Systems is looking for a dedicated Site Supervisor with experience in aluminium fabrication projects. The ideal candidate will be responsible for supervising on-site fabricators and fitters, managing daily tasks, ensuring quality control, and coordinating with the operations team to ensure projects are delivered efficiently and on time.",
+      location: "Mumbai",
+      type: "Full-Time",
+      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    },
   ]);
   const [intern] = useState<Intern[]>([
     // {

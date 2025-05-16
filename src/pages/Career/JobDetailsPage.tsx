@@ -1464,6 +1464,47 @@ export default function JobDetailsPage() {
         ],
         applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
       },
+      {
+        title: "Site Supervisor",
+        subtitle:
+          "Imperio Railing Systems is looking for a dedicated Site Supervisor with experience in aluminium fabrication projects. The ideal candidate will be responsible for supervising on-site fabricators and fitters, managing daily tasks, ensuring quality control, and coordinating with the operations team to ensure projects are delivered efficiently and on time.",
+        about:
+          "Imperio Railing Systems is looking for a dedicated Site Supervisor with experience in aluminium fabrication projects. The ideal candidate will be responsible for supervising on-site fabricators and fitters, managing daily tasks, ensuring quality control, and coordinating with the operations team to ensure projects are delivered efficiently and on time.",
+        location: "Mumbai",
+        type: "Full-Time",
+        others: [
+          {
+            Duration: "NA",
+            Expriance: "3+ Years",
+            join: "Immediately",
+          },
+        ],
+        responsibilities: [
+          "Daily supervision of aluminium fabricators and fitters on site",
+          "Ensure tasks are executed according to blueprints and technical drawings",
+          "Coordinate with the project and operations team for material availability and task scheduling",
+          "Monitor progress and maintain quality standards during fabrication and installation",
+          "Enforce safety protocols and ensure site cleanliness and organization",
+          "Provide hands-on support in resolving on-site challenges",
+          "Maintain attendance and daily work logs",
+          "Communicate with clients and internal teams for project updates",
+        ],
+        skills: [
+          "Aluminium fabrication and railing systems",
+          "Read and interpret blueprints and technical drawings",
+          "Leadership and team management skills",
+          "On-site Safety Protocols",
+          "Problem-solving and decision-making",
+          "Good communication and reporting",
+        ],
+        whocanapply: [
+          "Minimum 3 years of experience supervising aluminium fabrication or similar site work",
+          "Candidates from Charni Road or nearby Mumbai locations preferred",
+          "Must be willing to work on-site and manage hands-on tasks",
+          "Immediate joiners preferred",
+        ],
+        applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
+      },
     ];
 
     const foundJob = jobs.find(
