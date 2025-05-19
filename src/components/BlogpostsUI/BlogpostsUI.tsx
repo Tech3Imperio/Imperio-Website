@@ -14,6 +14,7 @@ import {
   seamlessRailings,
   aesthetic,
   futureHome1,
+  futureHome3,
 } from "../../assets/Images";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
 const blogPosts: BlogPost[] = [
@@ -110,7 +111,7 @@ const blogPosts: BlogPost[] = [
     title: "Why Glass Railings Are the Future of Modern Home Design",
     excerpt:
       "Few design elements combine elegance, safety, functionality &amp; sustainability as well as glass railings do.",
-    imageUrl: futureHome1,
+    imageUrl: futureHome3,
     link: "future-modern-home-design",
   },
   {
