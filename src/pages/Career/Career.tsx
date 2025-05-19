@@ -293,7 +293,7 @@ export default function Career() {
       applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     },
     {
-      title: "Sales Executive (Only male candidates)",
+      title: "Sales Executive",
       description:
         "We are seeking a highly motivated and goal-oriented Sales Executive with a strong background in architecture, building, or construction. ",
       location: "Mumbai",
@@ -324,14 +324,14 @@ export default function Career() {
       type: "Full-Time",
       applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     },
-    {
-      title: "Performance marketing (Female Candidate Preffered)",
-      description:
-        "We are seeking a results-driven Performance Marketing Specialist to join our marketing team. The ideal candidate will have a proven track record in running successful online marketing campaigns, creating attention-grabbing content, and driving measurable results across various digital platforms.",
-      location: "Mumbai",
-      type: "Full-Time",
-      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
-    },
+    // {
+    //   title: "Performance marketing (Female Candidate Preffered)",
+    //   description:
+    //     "We are seeking a results-driven Performance Marketing Specialist to join our marketing team. The ideal candidate will have a proven track record in running successful online marketing campaigns, creating attention-grabbing content, and driving measurable results across various digital platforms.",
+    //   location: "Mumbai",
+    //   type: "Full-Time",
+    //   applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    // },
     // {
     //   title: "Full Stack Developer",
     //   description:

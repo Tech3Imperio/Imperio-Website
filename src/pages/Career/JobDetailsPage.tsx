@@ -1133,7 +1133,7 @@ export default function JobDetailsPage() {
         applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
       },
       {
-        title: "Sales Executive (Only male candidates)",
+        title: "Sales Executive",
         subtitle:
           "We are seeking a highly motivated and goal-oriented Sales Executive with a strong background in architecture, building, or construction. The ideal candidate will be responsible for driving sales, building relationships with potential clients, and contributing to the growth of the company. As a Sales Executive, you will actively engage in prospecting, negotiating, and closing sales deals. A strong focus on customer service, product knowledge, and sales performance is essential.",
         about:
@@ -1180,7 +1180,6 @@ export default function JobDetailsPage() {
           "Customer-focused Approach",
         ],
         whocanapply: [
-          "Only Male Candidates ",
           "Bachelor’s degree in Architecture, Building Construction, or a related field.",
           "Highly organized with strong time-management skills.",
           "Minimum of 3 years of experience in sales within the architectural, building, or construction industry.",
@@ -1321,59 +1320,59 @@ export default function JobDetailsPage() {
         ],
         applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
       },
-      {
-        title: "Performance marketing (Female Candidate Preffered)",
-        subtitle:
-          "We are seeking a results-driven Performance Marketing Specialist to join our marketing team. The ideal candidate will have a proven track record in running successful online marketing campaigns, creating attention-grabbing content, and driving measurable results across various digital platforms. You will play a crucial role in managing and optimizing campaigns, creating engaging content, and ensuring a high return on investment (ROI) for the company.",
-        about:
-          "We are seeking a results-driven Performance Marketing Specialist to join our marketing team. The ideal candidate will have a proven track record in running successful online marketing campaigns, creating attention-grabbing content, and driving measurable results across various digital platforms. You will play a crucial role in managing and optimizing campaigns, creating engaging content, and ensuring a high return on investment (ROI) for the company.",
-        location: "Mumbai",
-        type: "Full-Time",
-        others: [
-          {
-            Duration: "NA",
-            Expriance: "1+ year",
-            join: "Immediately",
-          },
-        ],
-        responsibilities: [
-          "Campaign Strategy & Execution: Plan, implement, and optimize performance marketing campaigns across multiple digital channels, including Google Ads, Facebook, Instagram, LinkedIn, and other performance-based platforms.",
-          "Content Creation: Develop and create compelling, attention-grabbing content for ads, landing pages, and social media campaigns that resonate with target audiences and drive conversions.",
-          "Budget Management: Allocate and manage advertising budgets effectively to achieve maximum ROI.",
-          "Performance Analysis: Continuously monitor, analyze, and report on campaign performance to identify opportunities for optimization and improvement.",
-          "A/B Testing: Conduct A/B tests on ad creatives, landing pages, and audience targeting to improve campaign results.",
-          "Lead Generation: Develop strategies to increase lead generation, conversion rates, and overall sales funnel performance.",
-          "Collaboration: Work closely with the creative and content teams to ensure campaigns align with brand goals and messaging.",
-          "Market Research: Stay up to date with industry trends, competitor activities, and new marketing opportunities to enhance campaign performance.",
-          "Reporting & Insights: Provide regular reports and insights to stakeholders on campaign performance, trends, and actionable recommendations.",
-          "Campaign Optimization: Continuously optimize campaigns based on data-driven insights and performance metrics.",
-        ],
-        skills: [
-          "Content Creation",
-          "Campaign Management",
-          "Budget Allocation",
-          "SEO Knowledge",
-          "PPC Management",
-          "A/B Testing",
-          "Conversion Optimization",
-          "Lead Generation",
-          "Social Media Strategy",
-          "Google Ads Expertise",
-          "Creative Copywriting",
-          "Market Research",
-          "Audience Targeting",
-        ],
-        whocanapply: [
-          "Female candidates are preferred",
+      // {
+      //   title: "Performance marketing (Female Candidate Preffered)",
+      //   subtitle:
+      //     "We are seeking a results-driven Performance Marketing Specialist to join our marketing team. The ideal candidate will have a proven track record in running successful online marketing campaigns, creating attention-grabbing content, and driving measurable results across various digital platforms. You will play a crucial role in managing and optimizing campaigns, creating engaging content, and ensuring a high return on investment (ROI) for the company.",
+      //   about:
+      //     "We are seeking a results-driven Performance Marketing Specialist to join our marketing team. The ideal candidate will have a proven track record in running successful online marketing campaigns, creating attention-grabbing content, and driving measurable results across various digital platforms. You will play a crucial role in managing and optimizing campaigns, creating engaging content, and ensuring a high return on investment (ROI) for the company.",
+      //   location: "Mumbai",
+      //   type: "Full-Time",
+      //   others: [
+      //     {
+      //       Duration: "NA",
+      //       Expriance: "1+ year",
+      //       join: "Immediately",
+      //     },
+      //   ],
+      //   responsibilities: [
+      //     "Campaign Strategy & Execution: Plan, implement, and optimize performance marketing campaigns across multiple digital channels, including Google Ads, Facebook, Instagram, LinkedIn, and other performance-based platforms.",
+      //     "Content Creation: Develop and create compelling, attention-grabbing content for ads, landing pages, and social media campaigns that resonate with target audiences and drive conversions.",
+      //     "Budget Management: Allocate and manage advertising budgets effectively to achieve maximum ROI.",
+      //     "Performance Analysis: Continuously monitor, analyze, and report on campaign performance to identify opportunities for optimization and improvement.",
+      //     "A/B Testing: Conduct A/B tests on ad creatives, landing pages, and audience targeting to improve campaign results.",
+      //     "Lead Generation: Develop strategies to increase lead generation, conversion rates, and overall sales funnel performance.",
+      //     "Collaboration: Work closely with the creative and content teams to ensure campaigns align with brand goals and messaging.",
+      //     "Market Research: Stay up to date with industry trends, competitor activities, and new marketing opportunities to enhance campaign performance.",
+      //     "Reporting & Insights: Provide regular reports and insights to stakeholders on campaign performance, trends, and actionable recommendations.",
+      //     "Campaign Optimization: Continuously optimize campaigns based on data-driven insights and performance metrics.",
+      //   ],
+      //   skills: [
+      //     "Content Creation",
+      //     "Campaign Management",
+      //     "Budget Allocation",
+      //     "SEO Knowledge",
+      //     "PPC Management",
+      //     "A/B Testing",
+      //     "Conversion Optimization",
+      //     "Lead Generation",
+      //     "Social Media Strategy",
+      //     "Google Ads Expertise",
+      //     "Creative Copywriting",
+      //     "Market Research",
+      //     "Audience Targeting",
+      //   ],
+      //   whocanapply: [
+      //     "Female candidates are preferred",
 
-          "Candidates with a strong background in performance marketing or digital marketing.",
+      //     "Candidates with a strong background in performance marketing or digital marketing.",
 
-          "Candidates with at least 1 year of experience in the digital marketing industry or similar roles",
+      //     "Candidates with at least 1 year of experience in the digital marketing industry or similar roles",
 
-          "Candidates who can demonstrate the ability to manage multiple projects, meet deadlines, and deliver results.",
-        ],
-        applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
-      },
+      //     "Candidates who can demonstrate the ability to manage multiple projects, meet deadlines, and deliver results.",
+      //   ],
+      //   applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
+      // },
       {
         title: "SEO Intern",
         subtitle:
