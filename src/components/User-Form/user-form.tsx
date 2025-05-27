@@ -29,7 +29,7 @@ interface UserFormProps {
 const sendOTPToEmail = async (email: string): Promise<boolean> => {
   try {
     const res = await fetch(
-      "https://backendimperio.onrender.com/api/send-otp",
+      "https://backendimperio-5uku.onrender.com/api/send-otp",
       {
         method: "POST",
         headers: {
@@ -50,7 +50,7 @@ const sendOTPToEmail = async (email: string): Promise<boolean> => {
 const verifyOTP = async (email: string, otp: string): Promise<boolean> => {
   try {
     const res = await fetch(
-      "https://backendimperio.onrender.com/api/verify-otp",
+      "https://backendimperio-5uku.onrender.com/api/verify-otp",
       {
         method: "POST",
         headers: {

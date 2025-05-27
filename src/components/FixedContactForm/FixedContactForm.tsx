@@ -82,7 +82,7 @@ export default function FixedContactForm() {
 
     try {
       const response = await fetch(
-        "https://backendimperio.onrender.com/landing-form",
+        "https://backendimperio-5uku.onrender.com/landing-form",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
