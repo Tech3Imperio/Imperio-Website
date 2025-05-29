@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { CTAButton } from "../Button";
 import { MdAddCall } from "react-icons/md";
-import EnquiryButton from "../EnquiryButton/EnquiryButton";
+// import EnquiryButton from "../EnquiryButton/EnquiryButton";
 
 const MainContent: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>("");
@@ -528,7 +528,7 @@ const MainContent: React.FC = () => {
           </CTAButton>
         </div>
       </motion.main>
-      <EnquiryButton />
+      {/* <EnquiryButton /> */}
     </div>
   );
 };

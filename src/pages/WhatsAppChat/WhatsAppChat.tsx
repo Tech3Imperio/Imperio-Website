@@ -5,16 +5,13 @@ export default function WhatsAppChat() {
   return (
     <div>
       <FloatingWhatsApp
-        phoneNumber="+918591953385"
+        phoneNumber="+91859195338"
         accountName="Imperio Railing"
         messageDelay={2}
         darkMode={true}
         avatar={favicon}
         statusMessage="Online"
         chatMessage="Hello there! How can I assist you?"
-        buttonStyle={{
-          bottom: "7rem",
-        }}
       />
     </div>
   );

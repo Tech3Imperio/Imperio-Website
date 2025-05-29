@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { CTAButton } from "../Button";
 import { MdAddCall } from "react-icons/md";
-import EnquiryButton from "../EnquiryButton/EnquiryButton";
+// import EnquiryButton from "../EnquiryButton/EnquiryButton";
 import { aluminiumGlass1, aluminiumGlass2 } from "../../assets/Images";
 const AluminiumGlass: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>("");
@@ -319,7 +319,7 @@ const AluminiumGlass: React.FC = () => {
           </CTAButton>
         </div>
       </motion.main>
-      <EnquiryButton />
+      {/* <EnquiryButton /> */}
     </div>
   );
 };

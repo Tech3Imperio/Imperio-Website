@@ -9,7 +9,7 @@ import { CTAButton, Hero } from "../../../components";
 import { blogHero } from "../../../assets/Images";
 import Metadata from "../../../components/Metatag/Metatag";
 import { MdAddCall } from "react-icons/md";
-import EnquiryButton from "../../../components/EnquiryButton/EnquiryButton";
+// import EnquiryButton from "../../../components/EnquiryButton/EnquiryButton";
 
 const sections = [
   { id: "introduction", title: "Introduction" },
@@ -111,7 +111,7 @@ export default function BlogPost() {
                 performance required, ensuring both safety and visual appeal.
               </p>
             </section>
-            <EnquiryButton />
+            {/* <EnquiryButton /> */}
             <section id="pvb-glass">
               <span className="text-2xl  font-semibold text-[#03237b] mb-4">
                 What is PVB Laminated Glass?

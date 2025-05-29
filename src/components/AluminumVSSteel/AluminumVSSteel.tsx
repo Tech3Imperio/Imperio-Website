@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ssglassrailing, aluminiumglass } from "../../assets/Images";
-import EnquiryButton from "../EnquiryButton/EnquiryButton";
+// import EnquiryButton from "../EnquiryButton/EnquiryButton";
 import { CTAButton } from "../Button";
 import { MdAddCall } from "react-icons/md";
 
@@ -481,7 +481,7 @@ const AluminumVSSteel: React.FC = () => {
             </CTAButton>
           </div>
         </motion.main>
-        <EnquiryButton />
+        {/* <EnquiryButton /> */}
       </div>
     </>
   );

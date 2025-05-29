@@ -11,7 +11,7 @@ import {
 import Metadata from "../../../components/Metatag/Metatag";
 import { Link } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import EnquiryButton from "../../../components/EnquiryButton/EnquiryButton";
+// import EnquiryButton from "../../../components/EnquiryButton/EnquiryButton";
 
 type BlogPost = {
   id: number;
@@ -122,7 +122,7 @@ export default function ModernStaircase() {
             Modern, Stylish, and Durable Glass Railings for Staircase
           </h3>
         </motion.header>
-        <EnquiryButton />
+        {/* <EnquiryButton /> */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

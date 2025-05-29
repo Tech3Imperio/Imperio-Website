@@ -8,7 +8,7 @@ import Metadata from "../../components/Metatag/Metatag";
 import { motion } from "framer-motion";
 
 import { MdAddCall } from "react-icons/md";
-import EnquiryButton from "../../components/EnquiryButton/EnquiryButton";
+// import EnquiryButton from "../../components/EnquiryButton/EnquiryButton";
 export const DealerShipForm: React.FC = () => {
   const checkpoints = [
     {
@@ -287,7 +287,7 @@ export const DealerShipForm: React.FC = () => {
           </p>{" "}
         </div>
       </div>
-      <EnquiryButton />
+      {/* <EnquiryButton /> */}
       <div className="max-w-7xl flex flex-col mx-auto mt-10 md:mt-24 gap-8 p-7">
         <h3 className="text-[#03237b] text-3xl overflow-hidden md:text-5xl flex justify-start mt-20">
           Why Partner with Imperio Railing as Your Trusted Glass Railing Dealer?

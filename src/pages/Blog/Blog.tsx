@@ -7,7 +7,7 @@ import { BlogType } from "../../types";
 // import { Link } from "react-router-dom";
 // import { LiaExternalLinkAltSolid } from "react-icons/lia";
 import Metadata from "../../components/Metatag/Metatag";
-import EnquiryButton from "../../components/EnquiryButton/EnquiryButton";
+// import EnquiryButton from "../../components/EnquiryButton/EnquiryButton";
 const BlogPanel = React.lazy(() => import("../../components/Blog/Panel/index"));
 import BlogpostsUI from "../../components/BlogpostsUI/BlogpostsUI";
 export const Blog = () => {
@@ -126,7 +126,7 @@ export const Blog = () => {
         </Suspense>
       </main>
 
-      <EnquiryButton />
+      {/* <EnquiryButton /> */}
       {/* <div className="max-w-7xl grid md:grid-cols-2 mx-auto mt-10 md:mt-24 gap-10 xl:gap-[3rem] p-6 pb-14">
         <div>
           <h3 className=" text-3xl text-[--third] pb-2">

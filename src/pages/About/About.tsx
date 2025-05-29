@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Metadata from "../../components/Metatag/Metatag";
 // import { aboutData } from "../../assets/Data";
 import { MdAddCall } from "react-icons/md";
-import EnquiryButton from "../../components/EnquiryButton/EnquiryButton";
+// import EnquiryButton from "../../components/EnquiryButton/EnquiryButton";
 interface TabContent {
   title: string;
   content: {
@@ -222,7 +222,7 @@ export const About: React.FC = () => {
                     </div>
                   </motion.div>
                 ))}
-                <EnquiryButton />
+                {/* <EnquiryButton /> */}
               </div>
             </motion.div>
           </motion.div>

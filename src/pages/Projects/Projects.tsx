@@ -12,7 +12,7 @@ import { penthouse, luxury } from "../../assets/Images/NewProdPage";
 import Metadata from "../../components/Metatag/Metatag";
 import { Hero } from "../../components";
 import { useMemo } from "react";
-import EnquiryButton from "../../components/EnquiryButton/EnquiryButton";
+// import EnquiryButton from "../../components/EnquiryButton/EnquiryButton";
 
 interface Project {
   id: number;
@@ -156,7 +156,7 @@ export default function Projects() {
           </p>
         </div>
       </div>
-      <EnquiryButton />
+      {/* <EnquiryButton /> */}
       <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">

@@ -22,7 +22,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { scrollData, testimonialsData } from "../../assets/Data";
 import { MdAddCall } from "react-icons/md";
-import EnquiryButton from "../../components/EnquiryButton/EnquiryButton";
+// import EnquiryButton from "../../components/EnquiryButton/EnquiryButton";
 import FAQ from "../../components/FAQ/Faq";
 // const windowWidth = window.innerWidth;
 // console.log(windowWidth);
@@ -172,7 +172,7 @@ export const Home: React.FC = () => {
             </picture>
           </div>
         </section>
-        <EnquiryButton />
+        {/* <EnquiryButton /> */}
         <Description black>
           <div className="max-w-max flex flex-col md:flex-row mx-auto -mt-16 gap-8 ">
             <div className="flex flex-col md:w-[70%] gap-1 tablet:gap-6">
