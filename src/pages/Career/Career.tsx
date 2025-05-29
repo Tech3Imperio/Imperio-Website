@@ -212,14 +212,14 @@ interface Intern {
 export default function Career() {
   const [selectedCategory, setSelectedCategory] = useState("jobs");
   const [jobs] = useState<Job[]>([
-    {
-      title: "Back Office Executive",
-      description:
-        "As a Back Office Executive at Imperio Railing Systems, you will ensure smooth operational workflows by managing administrative tasks, accurate data entry, and internal reporting with high attention to detail.",
-      location: "Mumbai",
-      type: "Full-Time",
-      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
-    },
+    // {
+    //   title: "Back Office Executive",
+    //   description:
+    //     "As a Back Office Executive at Imperio Railing Systems, you will ensure smooth operational workflows by managing administrative tasks, accurate data entry, and internal reporting with high attention to detail.",
+    //   location: "Mumbai",
+    //   type: "Full-Time",
+    //   applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    // },
     {
       title: "Business Development Executive",
       description:
@@ -228,14 +228,14 @@ export default function Career() {
       type: "Full-Time",
       applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     },
-    {
-      title: "Accounts Executive",
-      description:
-        "The Accounts Executive will be responsible for managing daily financial transactions, maintaining accurate records, preparing financial reports, and assisting in audits and tax filings.",
-      location: "Mumbai",
-      type: "Full-Time",
-      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
-    },
+    // {
+    //   title: "Accounts Executive",
+    //   description:
+    //     "The Accounts Executive will be responsible for managing daily financial transactions, maintaining accurate records, preparing financial reports, and assisting in audits and tax filings.",
+    //   location: "Mumbai",
+    //   type: "Full-Time",
+    //   applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    // },
     {
       title: "Aluminium Fabricator Fitter",
       description:
@@ -244,14 +244,14 @@ export default function Career() {
       type: "Full-Time",
       applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
     },
-    {
-      title: "Digital Marketing Executive",
-      description:
-        "We are looking for a skilled individual with expertise in Digital Marketing, SEO, Social Media (Facebook & Instagram), and Email Marketing.",
-      location: "Mumbai",
-      type: "Full-Time",
-      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
-    },
+    // {
+    //   title: "Digital Marketing Executive",
+    //   description:
+    //     "We are looking for a skilled individual with expertise in Digital Marketing, SEO, Social Media (Facebook & Instagram), and Email Marketing.",
+    //   location: "Mumbai",
+    //   type: "Full-Time",
+    //   applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    // },
     {
       title: "Aluminium Window Sales Executive",
       description:
@@ -308,22 +308,22 @@ export default function Career() {
       type: "Full-Time",
       applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     },
-    {
-      title: "MIS Executive",
-      description:
-        "We are seeking an innovative, well-organized, and automation-driven MIS Executive to join our growing company.",
-      location: "Mumbai",
-      type: "Full-Time",
-      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
-    },
-    {
-      title: "Purcase Procurement Executive (Only female candidates)",
-      description:
-        "We are seeking a detail-oriented and efficient Purchase and Procurement Executive to oversee the procurement process for materials, supplies, and services required by the company.",
-      location: "Mumbai",
-      type: "Full-Time",
-      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
-    },
+    // {
+    //   title: "MIS Executive",
+    //   description:
+    //     "We are seeking an innovative, well-organized, and automation-driven MIS Executive to join our growing company.",
+    //   location: "Mumbai",
+    //   type: "Full-Time",
+    //   applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    // },
+    // {
+    //   title: "Purcase Procurement Executive (Only female candidates)",
+    //   description:
+    //     "We are seeking a detail-oriented and efficient Purchase and Procurement Executive to oversee the procurement process for materials, supplies, and services required by the company.",
+    //   location: "Mumbai",
+    //   type: "Full-Time",
+    //   applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    // },
     // {
     //   title: "Performance marketing (Female Candidate Preffered)",
     //   description:
@@ -356,14 +356,14 @@ export default function Career() {
       type: "Full-Time",
       applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     },
-    {
-      title: "Telesales Executive",
-      description:
-        "As a Tele Sales Executive at Imperio Railing Systems, you will have the opportunity to showcase your skills in Sales. Your role will involve working closely with the sales team to generate leads.",
-      location: "Mumbai",
-      type: "Full-Time",
-      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
-    },
+    // {
+    //   title: "Telesales Executive",
+    //   description:
+    //     "As a Tele Sales Executive at Imperio Railing Systems, you will have the opportunity to showcase your skills in Sales. Your role will involve working closely with the sales team to generate leads.",
+    //   location: "Mumbai",
+    //   type: "Full-Time",
+    //   applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    // },
     {
       title: "Site Supervisor",
       description:
