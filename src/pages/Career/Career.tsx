@@ -308,14 +308,14 @@ export default function Career() {
       type: "Full-Time",
       applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     },
-    // {
-    //   title: "MIS Executive",
-    //   description:
-    //     "We are seeking an innovative, well-organized, and automation-driven MIS Executive to join our growing company.",
-    //   location: "Mumbai",
-    //   type: "Full-Time",
-    //   applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
-    // },
+    {
+      title: "MIS Executive",
+      description:
+        "We are seeking an innovative, well-organized, and automation-driven MIS Executive to join our growing company.",
+      location: "Mumbai",
+      type: "Full-Time",
+      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    },
     // {
     //   title: "Purcase Procurement Executive (Only female candidates)",
     //   description:
