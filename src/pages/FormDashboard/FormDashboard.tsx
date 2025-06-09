@@ -9,8 +9,8 @@ import UserForm from "../../components/User-Form/user-form";
 import QuotationViewer from "../../components/Quotation/quotation-viewer";
 
 // Google Apps Script Web App URLs
-const POST_URL =
-  "https://script.google.com/macros/s/AKfycbym6AMQRI6Xo8Lm9anfhDIJJiFaqwz54xhDb4El-aX_mDBshgWbb-rTVBNklWSde6xU/exec";
+// const POST_URL =
+//   "https://script.google.com/macros/s/AKfycbym6AMQRI6Xo8Lm9anfhDIJJiFaqwz54xhDb4El-aX_mDBshgWbb-rTVBNklWSde6xU/exec";
 const GET_QUOTATION_URL =
   "https://script.google.com/macros/s/AKfycbyBueVSS9dggQIBBTm5TecMHoyviL5lLXHoYYUy55OavWIbfehVo5HzDF2IwiKkqzMx/exec";
 
@@ -28,8 +28,8 @@ const USER_TYPE_SHEET_URL =
   "https://script.google.com/macros/s/AKfycbyGliJ9kC9zhN4ShItCtCatIe-GCB98yVo0z9uVa8k0ToaPfKM7LupxuiBiDkgZJ2Ug/exec?sheet=User Type";
 
 // Placeholder URLs for image APIs - replace with actual Google Sheets APIs
-const GLASS_TYPE_IMAGES_URL = "YOUR_GLASS_TYPE_IMAGES_API_URL";
-const FINAL_IMAGES_URL = "YOUR_FINAL_IMAGES_API_URL";
+// const GLASS_TYPE_IMAGES_URL = "YOUR_GLASS_TYPE_IMAGES_API_URL";
+// const FINAL_IMAGES_URL = "YOUR_FINAL_IMAGES_API_URL";
 
 interface ProductData {
   base: string;
@@ -241,7 +241,7 @@ function App() {
   const [quotationData, setQuotationData] = useState<QuotationData | null>(
     null
   );
-  const [submissionResponse, setSubmissionResponse] = useState<any>(null);
+  // Removed unused submissionResponse state
 
   // Data from Google Sheets
   const [baseData, setBaseData] = useState<BaseDataItem[]>([]);
@@ -338,7 +338,7 @@ function App() {
     };
 
     fetchData();
-  }, []);
+  }, [userData]);
 
   // Handle Calculate button click
   const handleCalculate = async () => {
@@ -390,98 +390,98 @@ function App() {
   };
 
   // Fetch quotation data from Google Sheets
-  const fetchQuotationData = async (
-    timestamp: string,
-    orderId: string
-  ): Promise<QuotationData | null> => {
-    try {
-      const response = await axios.get(GET_QUOTATION_URL);
+  // const fetchQuotationData = async (
+  //   timestamp: string,
+  //   orderId: string
+  // ): Promise<QuotationData | null> => {
+  //   try {
+  //     const response = await axios.get(GET_QUOTATION_URL);
 
-      console.log("Quotation fetch response:", response.data);
-      console.log("Looking for Order ID:", orderId);
+  //     console.log("Quotation fetch response:", response.data);
+  //     console.log("Looking for Order ID:", orderId);
 
-      if (
-        response.data &&
-        response.status === 200 &&
-        Array.isArray(response.data)
-      ) {
-        const matchingRecord = response.data.find((record: any) => {
-          const recordOrderId = String(
-            record["Order ID"] || record.orderId || record.order_id || ""
-          );
-          const targetOrderId = String(orderId);
-          console.log(
-            `Comparing record Order ID: ${recordOrderId} with target: ${targetOrderId}`
-          );
-          return recordOrderId === targetOrderId;
-        });
+  //     if (
+  //       response.data &&
+  //       response.status === 200 &&
+  //       Array.isArray(response.data)
+  //     ) {
+  //       const matchingRecord = response.data.find((record: any) => {
+  //         const recordOrderId = String(
+  //           record["Order ID"] || record.orderId || record.order_id || ""
+  //         );
+  //         const targetOrderId = String(orderId);
+  //         console.log(
+  //           `Comparing record Order ID: ${recordOrderId} with target: ${targetOrderId}`
+  //         );
+  //         return recordOrderId === targetOrderId;
+  //       });
 
-        if (!matchingRecord) {
-          console.log("No matching record found for Order ID:", orderId);
-          console.log(
-            "Available Order IDs:",
-            response.data.map((r: any) => r["Order ID"])
-          );
-          return null;
-        }
+  //       if (!matchingRecord) {
+  //         console.log("No matching record found for Order ID:", orderId);
+  //         console.log(
+  //           "Available Order IDs:",
+  //           response.data.map((r: any) => r["Order ID"])
+  //         );
+  //         return null;
+  //       }
 
-        console.log("Found matching record:", matchingRecord);
+  //       console.log("Found matching record:", matchingRecord);
 
-        const images = await fetchProductImages(matchingRecord);
+  //       const images = await fetchProductImages(matchingRecord);
 
-        const extractPrice = (priceStr: string | number): number => {
-          if (typeof priceStr === "number")
-            return Math.round(priceStr * 100) / 100;
-          if (typeof priceStr === "string") {
-            const cleanPrice = priceStr.replace(/[₹,]/g, "").trim();
-            const parsed = Number.parseFloat(cleanPrice);
-            return isNaN(parsed) ? 0 : Math.round(parsed * 100) / 100;
-          }
-          return 0;
-        };
+  //       const extractPrice = (priceStr: string | number): number => {
+  //         if (typeof priceStr === "number")
+  //           return Math.round(priceStr * 100) / 100;
+  //         if (typeof priceStr === "string") {
+  //           const cleanPrice = priceStr.replace(/[₹,]/g, "").trim();
+  //           const parsed = Number.parseFloat(cleanPrice);
+  //           return isNaN(parsed) ? 0 : Math.round(parsed * 100) / 100;
+  //         }
+  //         return 0;
+  //       };
 
-        return {
-          orderId: String(matchingRecord["Order ID"]),
-          timestamp:
-            matchingRecord.Timestamp ||
-            matchingRecord.timestamp ||
-            matchingRecord.Date ||
-            timestamp,
-          customerDetails: {
-            name: matchingRecord.Name || userData.name,
-            phone: String(matchingRecord["Phone Number"] || userData.phone),
-            email: matchingRecord["Email id"] || userData.email,
-            pincode: String(matchingRecord.Location || productData.location),
-            projectName:
-              matchingRecord["Project Name"] || productData.projectName,
-          },
-          productSelection: {
-            base: matchingRecord.Base || productData.base,
-            handrail: matchingRecord.Handrail || productData.handrail,
-            finish: matchingRecord.Finish || productData.finish,
-            glassType: matchingRecord.Glass || productData.glass,
-            height: matchingRecord.Height || productData.height,
-            size: matchingRecord.Quantity || userData.size,
-          },
-          pricing: {
-            diy: extractPrice(matchingRecord["DIY Price"]),
-            standard: extractPrice(matchingRecord.Standard),
-            premium: extractPrice(matchingRecord.Premium),
-          },
-          images,
-          validTill:
-            matchingRecord["Valid Till"] ||
-            new Date(
-              Date.now() + 15 * 24 * 60 * 60 * 1000
-            ).toLocaleDateString(),
-        };
-      }
-      return null;
-    } catch (error) {
-      console.error("Error fetching quotation data:", error);
-      return null;
-    }
-  };
+  //       return {
+  //         orderId: String(matchingRecord["Order ID"]),
+  //         timestamp:
+  //           matchingRecord.Timestamp ||
+  //           matchingRecord.timestamp ||
+  //           matchingRecord.Date ||
+  //           timestamp,
+  //         customerDetails: {
+  //           name: matchingRecord.Name || userData.name,
+  //           phone: String(matchingRecord["Phone Number"] || userData.phone),
+  //           email: matchingRecord["Email id"] || userData.email,
+  //           pincode: String(matchingRecord.Location || productData.location),
+  //           projectName:
+  //             matchingRecord["Project Name"] || productData.projectName,
+  //         },
+  //         productSelection: {
+  //           base: matchingRecord.Base || productData.base,
+  //           handrail: matchingRecord.Handrail || productData.handrail,
+  //           finish: matchingRecord.Finish || productData.finish,
+  //           glassType: matchingRecord.Glass || productData.glass,
+  //           height: matchingRecord.Height || productData.height,
+  //           size: matchingRecord.Quantity || userData.size,
+  //         },
+  //         pricing: {
+  //           diy: extractPrice(matchingRecord["DIY Price"]),
+  //           standard: extractPrice(matchingRecord.Standard),
+  //           premium: extractPrice(matchingRecord.Premium),
+  //         },
+  //         images,
+  //         validTill:
+  //           matchingRecord["Valid Till"] ||
+  //           new Date(
+  //             Date.now() + 15 * 24 * 60 * 60 * 1000
+  //           ).toLocaleDateString(),
+  //       };
+  //     }
+  //     return null;
+  //   } catch (error) {
+  //     console.error("Error fetching quotation data:", error);
+  //     return null;
+  //   }
+  // };
 
   // Fetch quotation data by phone number
   const fetchQuotationByPhone = async (
@@ -614,24 +614,24 @@ function App() {
   };
 
   // Convert Google Drive link to direct image URL
-  const convertGoogleDriveLink = (url: string): string => {
-    try {
-      // Extract the file ID from various Google Drive URL formats
-      const match = url.match(
-        /(?:https?:\/\/)?(?:www\.)?(?:drive\.google\.com\/(?:file\/d\/|open\?id=)|docs\.google\.com\/file\/d\/)([a-zA-Z0-9_-]+)/
-      );
-      if (match && match[1]) {
-        const fileId = match[1];
-        // Return direct image URL
-        return `https://drive.google.com/uc?export=view&id=${fileId}`;
-      }
-      console.warn("Invalid Google Drive URL:", url);
-      return "/placeholder.svg?height=400&width=600";
-    } catch (error) {
-      console.error("Error converting Google Drive link:", error);
-      return "/placeholder.svg?height=400&width=600";
-    }
-  };
+  // const convertGoogleDriveLink = (url: string): string => {
+  //   try {
+  //     // Extract the file ID from various Google Drive URL formats
+  //     const match = url.match(
+  //       /(?:https?:\/\/)?(?:www\.)?(?:drive\.google\.com\/(?:file\/d\/|open\?id=)|docs\.google\.com\/file\/d\/)([a-zA-Z0-9_-]+)/
+  //     );
+  //     if (match && match[1]) {
+  //       const fileId = match[1];
+  //       // Return direct image URL
+  //       return `https://drive.google.com/uc?export=view&id=${fileId}`;
+  //     }
+  //     console.warn("Invalid Google Drive URL:", url);
+  //     return "/placeholder.svg?height=400&width=600";
+  //   } catch (error) {
+  //     console.error("Error converting Google Drive link:", error);
+  //     return "/placeholder.svg?height=400&width=600";
+  //   }
+  // };
 
   // Fetch product images based on selections
   const fetchProductImages = async (recordData?: any) => {
@@ -704,11 +704,11 @@ function App() {
     return glassImageMap[glassType] || "/placeholder.svg?height=200&width=300";
   };
 
-  const getFinalImage = (base: string, handrail: string): string => {
-    return base && handrail
-      ? `/images/final/${base}+${handrail}.jpg`
-      : "/placeholder.svg?height=200&width=300";
-  };
+  // const getFinalImage = (base: string, handrail: string): string => {
+  //   return base && handrail
+  //     ? `/images/final/${base}+${handrail}.jpg`
+  //     : "/placeholder.svg?height=200&width=300";
+  // };
 
   // Handle form submission
   const handleSubmit = async (userFormData: UserData) => {
@@ -762,7 +762,7 @@ function App() {
               }
             }
 
-            const timestamp = Date.now();
+            // const timestamp = Date.now();
             const randomNum = Math.floor(Math.random() * 100000);
             return `25${String(randomNum).padStart(5, "0")}`;
           };
@@ -782,7 +782,7 @@ function App() {
             ...responseData,
           };
 
-          setSubmissionResponse(submissionData);
+          // setSubmissionResponse(submissionData); // Removed unused state update
           setUserData(userFormData);
           setMessage("✅ Your quotation has been submitted successfully!");
           setIsSuccess(true);
@@ -896,7 +896,7 @@ function App() {
     setMessage("");
     setIsSuccess(false);
     setQuotationData(null);
-    setSubmissionResponse(null);
+    // setSubmissionResponse(null); // Removed unused state update
     setCurrentPage("product");
 
     setIsLoading(true);
