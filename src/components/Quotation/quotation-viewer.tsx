@@ -658,13 +658,13 @@ const QuotationViewer: React.FC<QuotationViewerProps> = ({
                 marginBottom: "30px",
               }}
             >
-              <div style={{ textAlign: "center" }}>
+              <div style={{ textAlign: "center", width: "100%" }}>
                 <img
                   src="/images/quotation/quotation3.png"
                   alt="Balcony Glass Railings"
                   style={{
                     width: "100%",
-                    height: "250px",
+                    // height: "250px",
                     objectFit: "cover",
                     // borderRadius: "8px",
                     marginBottom: "10px",
@@ -676,13 +676,13 @@ const QuotationViewer: React.FC<QuotationViewerProps> = ({
                   Balcony Glass Railings
                 </p>
               </div>
-              <div style={{ textAlign: "center" }}>
+              <div style={{ textAlign: "center", width: "100%" }}>
                 <img
                   src="/images/quotation/quotation4.png"
                   alt="Staircase Glass Railings"
                   style={{
                     width: "100%",
-                    height: "250px",
+                    // height: "250px",
                     objectFit: "cover",
                     // borderRadius: "8px",
                     marginBottom: "10px",
@@ -694,13 +694,13 @@ const QuotationViewer: React.FC<QuotationViewerProps> = ({
                   Staircase Glass Railings
                 </p>
               </div>
-              <div style={{ textAlign: "center" }}>
+              <div style={{ textAlign: "center", width: "100%" }}>
                 <img
                   src="/images/quotation/quotation5.jpg"
                   alt="Terrace Glass Railings"
                   style={{
                     width: "100%",
-                    height: "250px",
+                    // height: "250px",
                     objectFit: "cover",
                     // borderRadius: "8px",
                     marginBottom: "10px",
