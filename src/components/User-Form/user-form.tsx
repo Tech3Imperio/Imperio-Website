@@ -3,7 +3,7 @@
 import { useState, type FormEvent, useEffect } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import ConfirmationDialog from "../Conformation/Confirmation-dialogue";
+import { Mail, CheckCircle, Loader2, Send } from "lucide-react";
 
 interface UserData {
   name: string;
@@ -72,6 +72,68 @@ const verifyOTP = async (email: string, otp: string): Promise<boolean> => {
   }
 };
 
+const LoadingDistraction = ({ step }: { step: number }) => {
+  const [currentTip, setCurrentTip] = useState(0);
+
+  const tips = [
+    "💡 Check your spam folder if you don't see the email",
+    "⏰ OTP codes are valid for 10 minutes",
+    "🔒 We use secure encryption to protect your data",
+    "📧 Make sure your email address is correct",
+    "🚀 Almost there! Your quote will be ready soon",
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTip((prev) => (prev + 1) % tips.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 my-4">
+      <div className="flex items-center justify-center mb-4">
+        <div className="relative">
+          <Mail className="h-12 w-12 text-blue-500" />
+          <div className="absolute -top-1 -right-1">
+            <Loader2 className="h-4 w-4 text-blue-600 animate-spin" />
+          </div>
+        </div>
+      </div>
+
+      <div className="text-center mb-4">
+        <h3 className="text-lg font-semibold text-blue-800 mb-2">
+          Sending OTP to your email...
+        </h3>
+        <div className="flex justify-center items-center space-x-2 mb-3">
+          {[1, 2, 3].map((i) => (
+            <div
+              key={i}
+              className={`h-2 w-8 rounded-full transition-all duration-500 ${
+                step >= i ? "bg-blue-500" : "bg-blue-200"
+              }`}
+            />
+          ))}
+        </div>
+        <p className="text-blue-600 text-sm">
+          This usually takes 10-30 seconds
+        </p>
+      </div>
+
+      <div className="bg-white rounded-md p-3 border border-blue-100">
+        <div className="flex items-start space-x-2">
+          <div className="flex-shrink-0 mt-0.5">
+            <div className="h-2 w-2 bg-blue-400 rounded-full animate-pulse" />
+          </div>
+          <p className="text-sm text-gray-700 transition-all duration-500">
+            {tips[currentTip]}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
   const [userData, setUserData] = useState<UserData>({
     name: "",
@@ -82,7 +144,7 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
 
   const [errors, setErrors] = useState<Errors>({});
   const [showConfirmDialog, setShowConfirmDialog] = useState(false);
-  const [phone, setPhone] = useState("91"); // Default to India (+91)
+  const [phone, setPhone] = useState("91");
 
   // OTP related states
   const [isEmailVerified, setIsEmailVerified] = useState(false);
@@ -91,12 +153,28 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
   const [isOTPSending, setIsOTPSending] = useState(false);
   const [isOTPVerifying, setIsOTPVerifying] = useState(false);
   const [otpSent, setOtpSent] = useState(false);
+  const [loadingStep, setLoadingStep] = useState(0);
 
   useEffect(() => {
     setUserData({ ...userData, phone: `+${phone}` });
   }, [phone]);
 
-  // Validate inputs
+  // Simulate loading progress
+  useEffect(() => {
+    if (isOTPSending) {
+      setLoadingStep(0);
+      const timer1 = setTimeout(() => setLoadingStep(1), 1000);
+      const timer2 = setTimeout(() => setLoadingStep(2), 2000);
+      const timer3 = setTimeout(() => setLoadingStep(3), 3000);
+
+      return () => {
+        clearTimeout(timer1);
+        clearTimeout(timer2);
+        clearTimeout(timer3);
+      };
+    }
+  }, [isOTPSending]);
+
   const validateForm = (): boolean => {
     const newErrors: Errors = {};
 
@@ -136,13 +214,10 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
       };
 
       onSubmit(formattedUserData);
-      // window.location.href =
-      //   "https://wa.me/918591155386?text=Hi!%20Kindly%20send%20my%20quote";
     }
   };
 
   const handleSendOTP = async () => {
-    // Validate email before sending OTP
     if (!userData.email.trim()) {
       setErrors({ ...errors, email: "Email is required" });
       return;
@@ -174,7 +249,6 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
 
     setIsOTPVerifying(true);
     try {
-      console.log("Sending OTP for verification:", otp);
       const isValid = await verifyOTP(userData.email, otp);
       if (isValid) {
         setIsEmailVerified(true);
@@ -191,80 +265,74 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
   };
 
   return (
-    <div style={{ position: "relative" }}>
+    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
       {/* Navigation Icons */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          marginBottom: "20px",
-        }}
-      >
-        {/* Back arrow */}
+      <div className="flex justify-between items-center mb-6">
         <button
           type="button"
           onClick={onBack}
           disabled={isSubmitting}
-          style={{
-            background: "none",
-            border: "none",
-            cursor: isSubmitting ? "not-allowed" : "pointer",
-            opacity: isSubmitting ? 0.7 : 1,
-            fontSize: "24px",
-          }}
+          className="p-2 rounded-full hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          &#8592;
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
         </button>
 
-        {/* Home icon */}
         <button
           type="button"
           onClick={() => setShowConfirmDialog(true)}
           disabled={isSubmitting}
-          style={{
-            background: "none",
-            border: "none",
-            cursor: isSubmitting ? "not-allowed" : "pointer",
-            opacity: isSubmitting ? 0.7 : 1,
-            fontSize: "24px",
-          }}
+          className="p-2 rounded-full hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          &#10006;
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
         </button>
       </div>
 
-      <form onSubmit={handleSubmit}>
-        <div style={{ marginBottom: "16px" }}>
-          <label
-            style={{ display: "block", marginBottom: "8px", fontWeight: "500" }}
-          >
-            Name:
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Name
           </label>
           <input
             type="text"
             value={userData.name}
             onChange={(e) => setUserData({ ...userData, name: e.target.value })}
-            style={{
-              width: "100%",
-              padding: "10px",
-              borderRadius: "5px",
-              border: errors?.name ? "1px solid #dc3545" : "1px solid #ccc",
-            }}
+            className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+              errors?.name ? "border-red-500" : "border-gray-300"
+            }`}
+            placeholder="Enter your full name"
           />
           {errors?.name && (
-            <div
-              style={{ color: "#dc3545", fontSize: "14px", marginTop: "4px" }}
-            >
-              {errors.name}
-            </div>
+            <p className="text-red-500 text-sm mt-1">{errors.name}</p>
           )}
         </div>
 
-        <div style={{ marginBottom: "16px", width: "100%" }}>
-          <label
-            style={{ display: "block", marginBottom: "8px", fontWeight: "500" }}
-          >
-            Phone:
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Phone
           </label>
           <PhoneInput
             country={"in"}
@@ -277,97 +345,83 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
               height: "42px",
               paddingLeft: "50px",
               fontSize: "16px",
-              borderRadius: "5px",
-              border: errors?.phone ? "1px solid #dc3545" : "1px solid #ccc",
+              borderRadius: "6px",
+              border: errors?.phone ? "1px solid #ef4444" : "1px solid #d1d5db",
               backgroundColor: "#fff",
             }}
             containerStyle={{ width: "100%" }}
             buttonStyle={{
-              borderRadius: "5px 0 0 5px",
-              borderRight: "1px solid #ccc",
+              borderRadius: "6px 0 0 6px",
+              borderRight: "1px solid #d1d5db",
             }}
-            dropdownStyle={{ fontSize: "14px" }}
           />
           {errors?.phone && (
-            <div
-              style={{ color: "#dc3545", fontSize: "14px", marginTop: "4px" }}
-            >
-              {errors.phone}
-            </div>
+            <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
           )}
         </div>
 
-        <div style={{ marginBottom: "16px" }}>
-          <label
-            style={{ display: "block", marginBottom: "8px", fontWeight: "500" }}
-          >
-            Email:
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Email
           </label>
-          <div style={{ display: "flex", gap: "10px" }}>
+          <div className="flex gap-2">
             <input
               type="email"
               value={userData.email}
               onChange={(e) => {
                 setUserData({ ...userData, email: e.target.value });
-                // Reset verification status when email changes
                 if (isEmailVerified) {
                   setIsEmailVerified(false);
                 }
               }}
               disabled={isEmailVerified}
-              style={{
-                flex: "1",
-                padding: "10px",
-                borderRadius: "5px",
-                border: errors?.email ? "1px solid #dc3545" : "1px solid #ccc",
-                backgroundColor: isEmailVerified ? "#f0f0f0" : "#fff",
-              }}
+              className={`flex-1 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                errors?.email ? "border-red-500" : "border-gray-300"
+              } ${isEmailVerified ? "bg-gray-50" : "bg-white"}`}
+              placeholder="Enter your email"
             />
             <button
               type="button"
               onClick={handleSendOTP}
               disabled={isOTPSending || isEmailVerified}
-              style={{
-                padding: "10px 15px",
-                backgroundColor: isEmailVerified ? "#28a745" : "#007bff",
-                color: "white",
-                border: "none",
-                borderRadius: "5px",
-                cursor:
-                  isOTPSending || isEmailVerified ? "not-allowed" : "pointer",
-                opacity: isOTPSending ? 0.7 : 1,
-              }}
+              className={`px-4 py-2 rounded-md font-medium transition-colors flex items-center gap-2 ${
+                isEmailVerified
+                  ? "bg-green-500 text-white"
+                  : "bg-blue-500 hover:bg-blue-600 text-white"
+              } disabled:opacity-50 disabled:cursor-not-allowed`}
             >
-              {isEmailVerified
-                ? "Verified"
-                : isOTPSending
-                ? "Sending..."
-                : otpSent
-                ? "Resend OTP"
-                : "Send OTP"}
+              {isEmailVerified ? (
+                <>
+                  <CheckCircle className="h-4 w-4" />
+                  Verified
+                </>
+              ) : isOTPSending ? (
+                <>
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  Sending...
+                </>
+              ) : (
+                <>
+                  <Send className="h-4 w-4" />
+                  {otpSent ? "Resend" : "Send OTP"}
+                </>
+              )}
             </button>
           </div>
           {errors?.email && (
-            <div
-              style={{ color: "#dc3545", fontSize: "14px", marginTop: "4px" }}
-            >
-              {errors.email}
-            </div>
+            <p className="text-red-500 text-sm mt-1">{errors.email}</p>
           )}
         </div>
 
+        {/* Loading Distraction Component */}
+        {isOTPSending && <LoadingDistraction step={loadingStep} />}
+
         {showOTPInput && !isEmailVerified && (
-          <div style={{ marginBottom: "16px" }}>
-            <label
-              style={{
-                display: "block",
-                marginBottom: "8px",
-                fontWeight: "500",
-              }}
-            >
-              Enter OTP:
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Enter OTP
             </label>
-            <div style={{ display: "flex", gap: "10px" }}>
+            <div className="flex gap-2">
               <input
                 type="text"
                 value={otp}
@@ -376,54 +430,40 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
                 }
                 placeholder="6-digit OTP"
                 maxLength={6}
-                style={{
-                  flex: "1",
-                  padding: "10px",
-                  borderRadius: "5px",
-                  border: errors?.otp ? "1px solid #dc3545" : "1px solid #ccc",
-                }}
+                className={`flex-1 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                  errors?.otp ? "border-red-500" : "border-gray-300"
+                }`}
               />
               <button
                 type="button"
                 onClick={handleVerifyOTP}
                 disabled={isOTPVerifying || otp.length !== 6}
-                style={{
-                  padding: "10px 15px",
-                  backgroundColor: "#007bff",
-                  color: "white",
-                  border: "none",
-                  borderRadius: "5px",
-                  cursor:
-                    isOTPVerifying || otp.length !== 6
-                      ? "not-allowed"
-                      : "pointer",
-                  opacity: isOTPVerifying || otp.length !== 6 ? 0.7 : 1,
-                }}
+                className="px-4 py-2 bg-blue-500 text-white rounded-md font-medium hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
               >
-                {isOTPVerifying ? "Verifying..." : "Verify OTP"}
+                {isOTPVerifying ? (
+                  <>
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                    Verifying...
+                  </>
+                ) : (
+                  "Verify"
+                )}
               </button>
             </div>
             {errors?.otp && (
-              <div
-                style={{ color: "#dc3545", fontSize: "14px", marginTop: "4px" }}
-              >
-                {errors.otp}
-              </div>
+              <p className="text-red-500 text-sm mt-1">{errors.otp}</p>
             )}
-            <div
-              style={{ fontSize: "14px", marginTop: "8px", color: "#6c757d" }}
-            >
-              Didn't receive the OTP? Check your spam folder or click "Resend
-              OTP".
-            </div>
+            <p className="text-gray-500 text-sm mt-2">
+              {
+                "Didn't receive the OTP? Check your spam folder or click 'Resend OTP'."
+              }
+            </p>
           </div>
         )}
 
-        <div style={{ marginBottom: "16px" }}>
-          <label
-            style={{ display: "block", marginBottom: "8px", fontWeight: "500" }}
-          >
-            Quantity (Running Feet):
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Quantity (Running Feet)
           </label>
           <input
             type="number"
@@ -434,59 +474,59 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
                 size: Number.parseFloat(e.target.value) || 0,
               })
             }
-            style={{
-              width: "100%",
-              padding: "10px",
-              borderRadius: "5px",
-              border: errors?.size ? "1px solid #dc3545" : "1px solid #ccc",
-            }}
+            className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+              errors?.size ? "border-red-500" : "border-gray-300"
+            }`}
+            placeholder="Enter quantity in running feet"
           />
           {errors?.size && (
-            <div
-              style={{ color: "#dc3545", fontSize: "14px", marginTop: "4px" }}
-            >
-              {errors.size}
-            </div>
+            <p className="text-red-500 text-sm mt-1">{errors.size}</p>
           )}
         </div>
 
-        <div
-          style={{
-            display: "flex",
-            gap: "10px",
-            marginTop: "20px",
-            flexDirection: window.innerWidth < 500 ? "column" : "row",
-          }}
+        <button
+          type="submit"
+          disabled={isSubmitting || !isEmailVerified}
+          className="w-full py-3 bg-green-500 text-white rounded-md font-medium hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
         >
-          <button
-            type="submit"
-            disabled={isSubmitting || !isEmailVerified}
-            style={{
-              flex: "1",
-              padding: "12px",
-              backgroundColor: "#28a745",
-              color: "white",
-              border: "none",
-              borderRadius: "5px",
-              cursor:
-                isSubmitting || !isEmailVerified ? "not-allowed" : "pointer",
-              opacity: isSubmitting || !isEmailVerified ? 0.7 : 1,
-              fontWeight: "500",
-            }}
-          >
-            {isSubmitting ? "Submitting..." : "Get Quote on WhatsApp"}
-          </button>
-        </div>
+          {isSubmitting ? (
+            <>
+              <Loader2 className="h-4 w-4 animate-spin" />
+              Submitting...
+            </>
+          ) : (
+            "Get Quote on WhatsApp"
+          )}
+        </button>
       </form>
-      <ConfirmationDialog
-        isOpen={showConfirmDialog}
-        onClose={() => setShowConfirmDialog(false)}
-        onConfirm={() => (window.location.href = "/")}
-        title="Leave Quotation Maker"
-        message="Are you sure you want to leave the quotation maker?"
-        confirmText="Yes"
-        cancelText="No"
-      />
+
+      {/* Confirmation Dialog */}
+      {showConfirmDialog && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 max-w-sm mx-4">
+            <h3 className="text-lg font-semibold mb-2">
+              Leave Quotation Maker
+            </h3>
+            <p className="text-gray-600 mb-4">
+              Are you sure you want to leave the quotation maker?
+            </p>
+            <div className="flex gap-2">
+              <button
+                onClick={() => setShowConfirmDialog(false)}
+                className="flex-1 py-2 px-4 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+              >
+                No
+              </button>
+              <button
+                onClick={() => (window.location.href = "/")}
+                className="flex-1 py-2 px-4 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
+              >
+                Yes
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

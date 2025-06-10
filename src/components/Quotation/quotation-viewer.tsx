@@ -186,7 +186,7 @@ const QuotationViewer: React.FC<QuotationViewerProps> = ({
               <img src="/images/quotation/logo.png" alt="Logo" style="width: 150px; object-fit: cover; margin-bottom: 10px;" />
             </div>
             <h2 style="font-size: 20px; margin: 0 0 30px 0; font-weight: bold; color: #333;">WE PROVIDE</h2>
-            <div style="display: flex; flex-direction: column; gap: 30px; margin-bottom: 20px;">
+            <div style="display: flex; flex-direction: column; gap: 30px; margin-bottom: 20px; width: 100%">
               <div style="text-align: center;">
                 <img src="/images/quotation/quotation3.png" alt="Balcony Glass Railings" style="width: 100%; height: 220px; object-fit: cover; margin-bottom: 10px;" />
                 <p style="margin: 0; font-size: 14px; font-weight: bold;">Balcony Glass Railings</p>
