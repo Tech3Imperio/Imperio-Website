@@ -31,13 +31,16 @@ const sendPhoneOTP = async (
   phoneNumber: string
 ): Promise<{ success: boolean; sessionId?: string; error?: string }> => {
   try {
-    const response = await fetch("http://localhost:3001/api/send-phone-otp", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ phoneNumber }),
-    });
+    const response = await fetch(
+      "https://backendimperio-5uku.onrender.com/api/send-phone-otp",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ phoneNumber }),
+      }
+    );
 
     const data = await response.json();
 
@@ -57,13 +60,16 @@ const verifyPhoneOTP = async (
   otp: string
 ): Promise<{ success: boolean; error?: string }> => {
   try {
-    const response = await fetch("http://localhost:3001/api/verify-phone-otp", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ sessionId, otp }),
-    });
+    const response = await fetch(
+      "https://backendimperio-5uku.onrender.com/api/verify-phone-otp",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ sessionId, otp }),
+      }
+    );
 
     const data = await response.json();
 
