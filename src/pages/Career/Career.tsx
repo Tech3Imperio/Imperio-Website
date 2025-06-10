@@ -285,7 +285,7 @@ export default function Career() {
       applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     },
     {
-      title: "Sales Coordinator (Only female candidates)",
+      title: "Sales Coordinator",
       description:
         "We are looking for a motivated and detail-oriented Sales Coordinator with an architectural or engineering background to support our sales team and ensure smooth and efficient operations. ",
       location: "Mumbai",

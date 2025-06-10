@@ -1026,7 +1026,7 @@ export default function JobDetailsPage() {
         applyLink: "https://forms.gle/LWLBTQTDSLBxD5Zc9",
       },
       {
-        title: "Sales Coordinator (Only female candidates)",
+        title: "Sales Coordinator",
         subtitle:
           "We are looking for a motivated and detail-oriented Sales Coordinator with an architectural or engineering background to support our sales team and ensure smooth and efficient operations. The ideal candidate will have a strong understanding of technical products and solutions, enabling them to assist in the coordination of sales activities, manage customer orders, and offer valuable insights into product applications and specifications. This position is key in ensuring the sales team can effectively serve clients, including architects, engineers, and contractors.!",
         about:
@@ -1064,8 +1064,6 @@ export default function JobDetailsPage() {
           "Client-focused Approach",
         ],
         whocanapply: [
-          "Only Female Candidates ",
-
           "Bachelor’s degree in Architecture, Engineering, or a related field.",
 
           "Proven experience in sales coordination, administrative support, or customer-facing roles (1 years preferred).",
