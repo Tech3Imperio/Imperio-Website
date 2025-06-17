@@ -76,14 +76,16 @@ const verifyPhoneOTP = async (
     if (response.ok && data.Status === "Success") {
       return { success: true };
     } else {
-      return { success: false, error: data.Details || "Invalid OTP" };
+      return {
+        success: false,
+        error: data.Details || "Invalid OTP",
+      };
     }
   } catch (error) {
     console.error("Error verifying phone OTP:", error);
     return { success: false, error: "Verification failed" };
   }
 };
-
 const sendOTPToEmail = async (email: string): Promise<boolean> => {
   try {
     const res = await fetch(
@@ -346,7 +348,7 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
   };
 
   const handleSendPhoneOTP = async () => {
-    // Validate phone before sending OTP
+    //   // Validate phone before sending OTP
     if (!userData.phone.trim()) {
       setErrors({ ...errors, phone: "Phone number is required" });
       return;
@@ -383,8 +385,8 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
       return;
     }
 
-    if (phoneOtp.length !== 6) {
-      setErrors({ ...errors, otp: "OTP must be 6 digits" });
+    if (phoneOtp.length !== 4) {
+      setErrors({ ...errors, otp: "OTP must be 4 digits" });
       return;
     }
 
@@ -486,7 +488,7 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
               value={phone}
               onChange={(phone) => {
                 setPhone(phone);
-                // Reset verification status when phone changes
+                // // Reset verification status when phone changes
                 if (isPhoneVerified) {
                   setIsPhoneVerified(false);
                   setShowPhoneOTPInput(false);
@@ -566,10 +568,10 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
                 type="text"
                 value={phoneOtp}
                 onChange={(e) =>
-                  setPhoneOtp(e.target.value.replace(/\D/g, "").substring(0, 6))
+                  setPhoneOtp(e.target.value.replace(/\D/g, "").substring(0, 4))
                 }
-                placeholder="6-digit OTP"
-                maxLength={6}
+                placeholder="4-digit OTP"
+                maxLength={4}
                 style={{
                   flex: "1",
                   padding: "10px",
@@ -580,7 +582,7 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
               <button
                 type="button"
                 onClick={handleVerifyPhoneOTP}
-                disabled={isPhoneOTPVerifying || phoneOtp.length !== 6}
+                disabled={isPhoneOTPVerifying || phoneOtp.length !== 4}
                 style={{
                   padding: "10px 15px",
                   backgroundColor: "#007bff",
@@ -588,11 +590,11 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
                   border: "none",
                   borderRadius: "5px",
                   cursor:
-                    isPhoneOTPVerifying || phoneOtp.length !== 6
+                    isPhoneOTPVerifying || phoneOtp.length !== 4
                       ? "not-allowed"
                       : "pointer",
                   opacity:
-                    isPhoneOTPVerifying || phoneOtp.length !== 6 ? 0.7 : 1,
+                    isPhoneOTPVerifying || phoneOtp.length !== 4 ? 0.7 : 1,
                 }}
               >
                 {isPhoneOTPVerifying ? "Verifying..." : "Verify OTP"}
