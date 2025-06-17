@@ -136,10 +136,9 @@ const LoadingDistraction = ({ step }: { step: number }) => {
   const [currentTip, setCurrentTip] = useState(0);
 
   const tips = [
-    "💡 Check your spam folder if you don't see the email",
+    "💡 Check your phone if you don't see the otp",
     "⏰ OTP codes are valid for 10 minutes",
     "🔒 We use secure encryption to protect your data",
-    "📧 Make sure your email address is correct",
     "🚀 Almost there! Your quote will be ready soon",
   ];
 

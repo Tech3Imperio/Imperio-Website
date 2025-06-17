@@ -216,7 +216,7 @@ const QuotationViewer: React.FC<QuotationViewerProps> = ({
                 }</div>
                 <div><strong>Date:</strong> ${new Date(
                   safeQuotationData.timestamp
-                ).toLocaleDateString()}</div>
+                ).toLocaleDateString("en-GB")}</div>
                 <div><strong>Valid Till:</strong> ${
                   safeQuotationData.validTill
                 }</div>
@@ -776,7 +776,9 @@ const QuotationViewer: React.FC<QuotationViewerProps> = ({
                 </div>
                 <div>
                   <strong>Date:</strong>{" "}
-                  {new Date(safeQuotationData.timestamp).toLocaleDateString()}
+                  {new Date(safeQuotationData.timestamp).toLocaleDateString(
+                    "en-GB"
+                  )}
                 </div>
                 <div>
                   <strong>Valid Till:</strong> {safeQuotationData.validTill}
