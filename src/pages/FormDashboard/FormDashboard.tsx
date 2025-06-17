@@ -983,6 +983,24 @@ function App() {
             width: "100%",
           }}
         >
+          {/* BETA Badge */}
+          <div
+            style={{
+              position: "relative",
+              display: "flex",
+              justifyContent: "end",
+              top: "10px",
+              right: "10px",
+              color: "black",
+              padding: "4px 10px",
+              fontSize: "12px",
+              fontWeight: "bold",
+              textTransform: "uppercase",
+              zIndex: 1,
+            }}
+          >
+            Beta Version
+          </div>
           <ProductSelection
             productData={productData}
             setProductData={setProductData}

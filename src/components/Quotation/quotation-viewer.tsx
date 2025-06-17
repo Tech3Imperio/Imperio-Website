@@ -336,7 +336,7 @@ const QuotationViewer: React.FC<QuotationViewerProps> = ({
             
             <!-- Contact Button -->
             <div style="text-align: center; margin-bottom: 10px;">
-              <button style="background-color: #28a745; color: white; border: none; border-radius: 25px; font-size: 16px; font-weight: bold; text-transform: uppercase; cursor: pointer"  onclick="window.location.href='/contactus';">CONTACT US NOW!!</button>
+              <button style="background-color: #28a745; color: white; border: none; border-radius: 25px; font-size: 16px; font-weight: bold; text-transform: uppercase; cursor: pointer"  onclick="window.location.href='https://wa.me/91859195338'">CONTACT US NOW!!</button>
             </div>
           </div>
 
@@ -1262,7 +1262,9 @@ const QuotationViewer: React.FC<QuotationViewerProps> = ({
                   cursor: "pointer",
                   textTransform: "uppercase",
                 }}
-                onClick={() => (window.location.href = "/contactus")}
+                onClick={() => {
+                  window.open("https://wa.me/91859195338", "_blank");
+                }}
               >
                 CONTACT US NOW!!
               </button>
