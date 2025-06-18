@@ -997,6 +997,7 @@ function App() {
               fontWeight: "bold",
               textTransform: "uppercase",
               zIndex: 1,
+              marginBottom: "10px",
             }}
           >
             Beta Version

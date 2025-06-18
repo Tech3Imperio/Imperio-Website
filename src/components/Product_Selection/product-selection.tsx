@@ -121,13 +121,13 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
 
   const getBaseTypeImageUrl = (baseType: string | undefined) => {
     if (!baseType) return "/placeholder.svg";
-    const formattedName = baseType.replace(/\s+/g, "").toLowerCase(); // e.g., "Slim Base" -> "slimbase"
+    const formattedName = baseType.replace(/\s+/g, "").toLowerCase();
     return `/images/baseInfo/${formattedName}_info.jpeg`;
   };
 
   const getHandrailTypeImageUrl = (baseType: string | undefined) => {
     if (!baseType) return "/placeholder.svg";
-    const formattedName = baseType.replace(/\s+/g, "").toLowerCase(); // e.g., "Slim Base" -> "slimbase"
+    const formattedName = baseType.replace(/\s+/g, "").toLowerCase();
     return `/images/handrailInfo/${formattedName}_info.jpeg`;
   };
 
@@ -260,10 +260,16 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                 >
                   <div
                     className="h-[200px] bg-cover bg-center relative"
-                    style={{
-                      backgroundImage: imageUrl ? `url(${imageUrl})` : "none",
-                    }}
+                    // style={{
+                    //   backgroundImage: imageUrl ? `url(${imageUrl})` : "none",
+                    // }}
                   >
+                    <img
+                      src={imageUrl || "/placeholder.svg"}
+                      alt="Base"
+                      loading="lazy"
+                      className="h-[200px] w-[220px] object-cover"
+                    />
                     {!imageUrl && (
                       <div className="h-full flex items-center justify-center text-gray-500">
                         No image available
@@ -439,10 +445,16 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                 >
                   <div
                     className="h-[200px] bg-cover bg-center relative"
-                    style={{
-                      backgroundImage: imageUrl ? `url(${imageUrl})` : "none",
-                    }}
+                    // style={{
+                    //   backgroundImage: imageUrl ? `url(${imageUrl})` : "none",
+                    // }}
                   >
+                    <img
+                      src={imageUrl || "/placeholder.svg"}
+                      alt="Handrail"
+                      loading="lazy"
+                      className="h-[200px] w-[220px] object-cover"
+                    />
                     {!imageUrl && (
                       <div className="h-full flex items-center justify-center text-gray-500">
                         No image available
@@ -922,15 +934,11 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                 src={
                   heightImages[productData.height] ||
                   "/images/GlassHeight/3.5full.png" ||
-                  "/placeholder.svg" ||
-                  "/placeholder.svg" ||
-                  "/placeholder.svg" ||
-                  "/placeholder.svg" ||
-                  "/placeholder.svg" ||
                   "/placeholder.svg"
                 }
                 alt="Height visualization"
                 className="h-[300px] md:h-[350px] object-contain"
+                loading="lazy"
               />
             </div>
           </div>
