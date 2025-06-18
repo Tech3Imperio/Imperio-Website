@@ -751,7 +751,7 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
               Submitting...
             </>
           ) : (
-            "Get Quote on WhatsApp"
+            "Get a quote"
           )}
         </button>
       </form>
