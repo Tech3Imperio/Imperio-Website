@@ -3,7 +3,8 @@
 import { useState, type FormEvent, useEffect } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { Mail, CheckCircle, Loader2, Send } from "lucide-react";
+// import { Mail, CheckCircle, Loader2, Send } from "lucide-react";
+import { Mail, Loader2 } from "lucide-react";
 
 interface UserData {
   name: string;
@@ -86,51 +87,51 @@ const verifyPhoneOTP = async (
     return { success: false, error: "Verification failed" };
   }
 };
-const sendOTPToEmail = async (email: string): Promise<boolean> => {
-  try {
-    const res = await fetch(
-      "https://backendimperio-5uku.onrender.com/api/send-otp",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      }
-    );
+// const sendOTPToEmail = async (email: string): Promise<boolean> => {
+//   try {
+//     const res = await fetch(
+//       "https://backendimperio-5uku.onrender.com/api/send-otp",
+//       {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify({ email }),
+//       }
+//     );
 
-    if (!res.ok) throw new Error("Failed to send OTP");
-    return true;
-  } catch (error) {
-    console.error("Error sending OTP:", error);
-    return false;
-  }
-};
+//     if (!res.ok) throw new Error("Failed to send OTP");
+//     return true;
+//   } catch (error) {
+//     console.error("Error sending OTP:", error);
+//     return false;
+//   }
+// };
 
-const verifyOTP = async (email: string, otp: string): Promise<boolean> => {
-  try {
-    const res = await fetch(
-      "https://backendimperio-5uku.onrender.com/api/verify-otp",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email,
-          otp: otp,
-        }),
-      }
-    );
+// const verifyOTP = async (email: string, otp: string): Promise<boolean> => {
+//   try {
+//     const res = await fetch(
+//       "https://backendimperio-5uku.onrender.com/api/verify-otp",
+//       {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify({
+//           email: email,
+//           otp: otp,
+//         }),
+//       }
+//     );
 
-    const data = await res.json();
-    console.log("Verify OTP Response:", data);
-    return res.ok && data.message === "OTP verified successfully";
-  } catch (error) {
-    console.error("Error verifying OTP:", error);
-    return false;
-  }
-};
+//     const data = await res.json();
+//     console.log("Verify OTP Response:", data);
+//     return res.ok && data.message === "OTP verified successfully";
+//   } catch (error) {
+//     console.error("Error verifying OTP:", error);
+//     return false;
+//   }
+// };
 
 const LoadingDistraction = ({ step }: { step: number }) => {
   const [currentTip, setCurrentTip] = useState(0);
@@ -205,13 +206,13 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
   const [showConfirmDialog, setShowConfirmDialog] = useState(false);
   const [phone, setPhone] = useState("91");
 
-  // OTP related states
-  const [isEmailVerified, setIsEmailVerified] = useState(false);
-  const [showEmailOTPInput, setShowEmailOTPInput] = useState(false);
-  const [emailOtp, setEmailOtp] = useState("");
-  const [isEmailOTPSending, setIsEmailOTPSending] = useState(false);
-  const [isEmailOTPVerifying, setIsEmailOTPVerifying] = useState(false);
-  const [emailOtpSent, setEmailOtpSent] = useState(false);
+  // // OTP related states
+  // const [isEmailVerified, setIsEmailVerified] = useState(false);
+  // const [showEmailOTPInput, setShowEmailOTPInput] = useState(false);
+  // const [emailOtp, setEmailOtp] = useState("");
+  // const [isEmailOTPSending, setIsEmailOTPSending] = useState(false);
+  // const [isEmailOTPVerifying, setIsEmailOTPVerifying] = useState(false);
+  // const [emailOtpSent, setEmailOtpSent] = useState(false);
   const [loadingStep, setLoadingStep] = useState(0);
 
   // Phone OTP related states
@@ -240,8 +241,23 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
   }, [otpTimer]);
 
   // Simulate loading progress
+  // useEffect(() => {
+  //   if (isEmailOTPSending || isPhoneOTPSending) {
+  //     setLoadingStep(0);
+  //     const timer1 = setTimeout(() => setLoadingStep(1), 1000);
+  //     const timer2 = setTimeout(() => setLoadingStep(2), 2000);
+  //     const timer3 = setTimeout(() => setLoadingStep(3), 3000);
+
+  //     return () => {
+  //       clearTimeout(timer1);
+  //       clearTimeout(timer2);
+  //       clearTimeout(timer3);
+  //     };
+  //   }
+  // }, [isEmailOTPSending, isPhoneOTPSending]);
+
   useEffect(() => {
-    if (isEmailOTPSending || isPhoneOTPSending) {
+    if (isPhoneOTPSending) {
       setLoadingStep(0);
       const timer1 = setTimeout(() => setLoadingStep(1), 1000);
       const timer2 = setTimeout(() => setLoadingStep(2), 2000);
@@ -253,7 +269,7 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
         clearTimeout(timer3);
       };
     }
-  }, [isEmailOTPSending, isPhoneOTPSending]);
+  }, [isPhoneOTPSending]);
 
   const validateForm = (): boolean => {
     const newErrors: Errors = {};
@@ -274,9 +290,10 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
       newErrors.email = "Email is required for verification";
     } else if (!/^[^@]+@[^@]+\.[^@]+$/.test(userData.email)) {
       newErrors.email = "Invalid email address";
-    } else if (!isEmailVerified) {
-      newErrors.email = "Email verification required";
     }
+    // } else if (!isEmailVerified) {
+    //   newErrors.email = "Email verification required";
+    // }
 
     if (!userData.size || userData.size <= 0) {
       newErrors.size = "Please enter a valid size";
@@ -299,52 +316,52 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
     }
   };
 
-  const handleSendEmailOTP = async () => {
-    if (!userData.email.trim()) {
-      setErrors({ ...errors, email: "Email is required" });
-      return;
-    } else if (!/^[^@]+@[^@]+\.[^@]+$/.test(userData.email)) {
-      setErrors({ ...errors, email: "Invalid email address" });
-      return;
-    }
+  // const handleSendEmailOTP = async () => {
+  //   if (!userData.email.trim()) {
+  //     setErrors({ ...errors, email: "Email is required" });
+  //     return;
+  //   } else if (!/^[^@]+@[^@]+\.[^@]+$/.test(userData.email)) {
+  //     setErrors({ ...errors, email: "Invalid email address" });
+  //     return;
+  //   }
 
-    setIsEmailOTPSending(true);
-    try {
-      const success = await sendOTPToEmail(userData.email);
-      if (success) {
-        setEmailOtpSent(true);
-        setShowEmailOTPInput(true);
-        setErrors({ ...errors, email: undefined });
-      }
-    } catch (error) {
-      setErrors({ ...errors, email: "Failed to send OTP. Please try again." });
-    } finally {
-      setIsEmailOTPSending(false);
-    }
-  };
+  //   setIsEmailOTPSending(true);
+  //   try {
+  //     const success = await sendOTPToEmail(userData.email);
+  //     if (success) {
+  //       setEmailOtpSent(true);
+  //       setShowEmailOTPInput(true);
+  //       setErrors({ ...errors, email: undefined });
+  //     }
+  //   } catch (error) {
+  //     setErrors({ ...errors, email: "Failed to send OTP. Please try again." });
+  //   } finally {
+  //     setIsEmailOTPSending(false);
+  //   }
+  // };
 
-  const handleVerifyEmailOTP = async () => {
-    if (!emailOtp.trim()) {
-      setErrors({ ...errors, otp: "OTP is required" });
-      return;
-    }
+  // const handleVerifyEmailOTP = async () => {
+  //   if (!emailOtp.trim()) {
+  //     setErrors({ ...errors, otp: "OTP is required" });
+  //     return;
+  //   }
 
-    setIsEmailOTPVerifying(true);
-    try {
-      const isValid = await verifyOTP(userData.email, emailOtp);
-      if (isValid) {
-        setIsEmailVerified(true);
-        setShowEmailOTPInput(false);
-        setErrors({ ...errors, otp: undefined });
-      } else {
-        setErrors({ ...errors, otp: "Invalid OTP. Please try again." });
-      }
-    } catch (error) {
-      setErrors({ ...errors, otp: "Verification failed. Please try again." });
-    } finally {
-      setIsEmailOTPVerifying(false);
-    }
-  };
+  //   setIsEmailOTPVerifying(true);
+  //   try {
+  //     const isValid = await verifyOTP(userData.email, emailOtp);
+  //     if (isValid) {
+  //       setIsEmailVerified(true);
+  //       setShowEmailOTPInput(false);
+  //       setErrors({ ...errors, otp: undefined });
+  //     } else {
+  //       setErrors({ ...errors, otp: "Invalid OTP. Please try again." });
+  //     }
+  //   } catch (error) {
+  //     setErrors({ ...errors, otp: "Verification failed. Please try again." });
+  //   } finally {
+  //     setIsEmailOTPVerifying(false);
+  //   }
+  // };
 
   const handleSendPhoneOTP = async () => {
     //   // Validate phone before sending OTP
@@ -613,7 +630,8 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
             </div>
           </div>
         )}
-
+        {/* Loading Distraction Component */}
+        {isPhoneOTPSending && <LoadingDistraction step={loadingStep} />}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
             Email
@@ -624,17 +642,17 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
               value={userData.email}
               onChange={(e) => {
                 setUserData({ ...userData, email: e.target.value });
-                if (isEmailVerified) {
-                  setIsEmailVerified(false);
-                }
+                // if (isEmailVerified) {
+                //   setIsEmailVerified(false);
+                // }
               }}
-              disabled={isEmailVerified}
+              // disabled={isEmailVerified}
               className={`flex-1 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                 errors?.email ? "border-red-500" : "border-gray-300"
-              } ${isEmailVerified ? "bg-gray-50" : "bg-white"}`}
-              placeholder="Enter your email"
+              }`}
+              // placeholder="Enter your email"
             />
-            <button
+            {/* <button
               type="button"
               onClick={handleSendEmailOTP}
               disabled={isEmailOTPSending || isEmailVerified}
@@ -660,19 +678,14 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
                   {emailOtpSent ? "Resend" : "Send OTP"}
                 </>
               )}
-            </button>
+            </button> */}
           </div>
           {errors?.email && (
             <p className="text-red-500 text-sm mt-1">{errors.email}</p>
           )}
         </div>
 
-        {/* Loading Distraction Component */}
-        {(isEmailOTPSending || isPhoneOTPSending) && (
-          <LoadingDistraction step={loadingStep} />
-        )}
-
-        {showEmailOTPInput && !isEmailVerified && (
+        {/* {showEmailOTPInput && !isEmailVerified && (
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Enter Email OTP
@@ -715,7 +728,7 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
               }
             </p>
           </div>
-        )}
+        )} */}
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -742,7 +755,7 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
 
         <button
           type="submit"
-          disabled={isSubmitting || !isEmailVerified || !isPhoneVerified}
+          disabled={isSubmitting || !isPhoneVerified}
           className="w-full py-3 bg-green-500 text-white rounded-md font-medium hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
         >
           {isSubmitting ? (
