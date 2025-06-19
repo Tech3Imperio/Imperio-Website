@@ -212,14 +212,14 @@ interface Intern {
 export default function Career() {
   const [selectedCategory, setSelectedCategory] = useState("jobs");
   const [jobs] = useState<Job[]>([
-    {
-      title: "Back Office Executive",
-      description:
-        "As a Back Office Executive at Imperio Railing Systems, you will ensure smooth operational workflows by managing administrative tasks, accurate data entry, and internal reporting with high attention to detail.",
-      location: "Mumbai",
-      type: "Full-Time",
-      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
-    },
+    // {
+    //   title: "Back Office Executive",
+    //   description:
+    //     "As a Back Office Executive at Imperio Railing Systems, you will ensure smooth operational workflows by managing administrative tasks, accurate data entry, and internal reporting with high attention to detail.",
+    //   location: "Mumbai",
+    //   type: "Full-Time",
+    //   applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    // },
     {
       title: "Business Development Executive",
       description:
@@ -236,14 +236,14 @@ export default function Career() {
     //   type: "Full-Time",
     //   applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     // },
-    {
-      title: "Aluminium Fabricator Fitter",
-      description:
-        "As an Aluminium Fabricator Fitter at Imperio Railing Systems, you will be responsible for assembling, fitting, and welding metal components for construction and machinery, ensuring precision and adherence to safety standards.",
-      location: "Mumbai",
-      type: "Full-Time",
-      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
-    },
+    // {
+    //   title: "Aluminium Fabricator Fitter",
+    //   description:
+    //     "As an Aluminium Fabricator Fitter at Imperio Railing Systems, you will be responsible for assembling, fitting, and welding metal components for construction and machinery, ensuring precision and adherence to safety standards.",
+    //   location: "Mumbai",
+    //   type: "Full-Time",
+    //   applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
+    // },
     // {
     //   title: "Digital Marketing Executive",
     //   description:
@@ -276,22 +276,22 @@ export default function Career() {
       type: "Full-Time",
       applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     },
-    {
-      title: "Logistics and Back office Coordinator",
-      description:
-        "The Back Office and Logistics Coordinator manages logistics support, administrative tasks, and record-keeping for smooth operations.",
-      location: "Mumbai",
-      type: "Full-Time",
-      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
-    },
-    {
-      title: "Sales Coordinator",
-      description:
-        "We are looking for a motivated and detail-oriented Sales Coordinator with an architectural or engineering background to support our sales team and ensure smooth and efficient operations. ",
-      location: "Mumbai",
-      type: "Full-Time",
-      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
-    },
+    // {
+    //   title: "Logistics and Back office Coordinator",
+    //   description:
+    //     "The Back Office and Logistics Coordinator manages logistics support, administrative tasks, and record-keeping for smooth operations.",
+    //   location: "Mumbai",
+    //   type: "Full-Time",
+    //   applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    // },
+    // {
+    //   title: "Sales Coordinator",
+    //   description:
+    //     "We are looking for a motivated and detail-oriented Sales Coordinator with an architectural or engineering background to support our sales team and ensure smooth and efficient operations. ",
+    //   location: "Mumbai",
+    //   type: "Full-Time",
+    //   applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    // },
     {
       title: "Sales Executive",
       description:
@@ -308,14 +308,14 @@ export default function Career() {
       type: "Full-Time",
       applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     },
-    {
-      title: "MIS Executive",
-      description:
-        "We are seeking an innovative, well-organized, and automation-driven MIS Executive to join our growing company.",
-      location: "Mumbai",
-      type: "Full-Time",
-      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
-    },
+    // {
+    //   title: "MIS Executive",
+    //   description:
+    //     "We are seeking an innovative, well-organized, and automation-driven MIS Executive to join our growing company.",
+    //   location: "Mumbai",
+    //   type: "Full-Time",
+    //   applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    // },
     // {
     //   title: "Purcase Procurement Executive (Only female candidates)",
     //   description:
@@ -340,14 +340,14 @@ export default function Career() {
     //   type: "Full-Time",
     //   applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     // },
-    {
-      title: "Interior Designer – New Product Research & Development",
-      description:
-        "The ideal candidate should have strong expertise in vendor management, international relations, product design and engineering, installation coordination, sales, and site meetings.",
-      location: "Mumbai",
-      type: "Full-Time",
-      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
-    },
+    // {
+    //   title: "Interior Designer – New Product Research & Development",
+    //   description:
+    //     "The ideal candidate should have strong expertise in vendor management, international relations, product design and engineering, installation coordination, sales, and site meetings.",
+    //   location: "Mumbai",
+    //   type: "Full-Time",
+    //   applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    // },
     {
       title: "Franchise Development Manager",
       description:
@@ -364,14 +364,14 @@ export default function Career() {
     //   type: "Full-Time",
     //   applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     // },
-    {
-      title: "Site Supervisor",
-      description:
-        "Imperio Railing Systems is looking for a dedicated Site Supervisor with experience in aluminium fabrication projects. The ideal candidate will be responsible for supervising on-site fabricators and fitters, managing daily tasks, ensuring quality control, and coordinating with the operations team to ensure projects are delivered efficiently and on time.",
-      location: "Mumbai",
-      type: "Full-Time",
-      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
-    },
+    // {
+    //   title: "Site Supervisor",
+    //   description:
+    //     "Imperio Railing Systems is looking for a dedicated Site Supervisor with experience in aluminium fabrication projects. The ideal candidate will be responsible for supervising on-site fabricators and fitters, managing daily tasks, ensuring quality control, and coordinating with the operations team to ensure projects are delivered efficiently and on time.",
+    //   location: "Mumbai",
+    //   type: "Full-Time",
+    //   applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    // },
   ]);
   const [intern] = useState<Intern[]>([
     // {
