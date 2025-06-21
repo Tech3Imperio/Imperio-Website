@@ -2,30 +2,18 @@ import React, { useState } from "react";
 import { contest_banner } from "../../assets/Images/contest";
 function Contest() {
   type FormFields = {
-    firstName: string;
-    lastName: string;
-    email: string;
+    fullName: string;
     phone: number | string;
-    city: string;
-    state: string;
   };
 
   const fieldLabels: Record<keyof FormFields, string> = {
-    firstName: "First Name",
-    lastName: "Last Name",
-    email: "Email Address",
+    fullName: "Full Name",
     phone: "Phone",
-    city: "City",
-    state: "State",
   };
 
   const [formData, setFormData] = useState<FormFields>({
-    firstName: "",
-    lastName: "",
-    email: "",
+    fullName: "",
     phone: "",
-    city: "",
-    state: "",
   });
 
   const [message, setMessage] = useState("");
@@ -67,12 +55,8 @@ function Contest() {
       if (result.status === "success") {
         setMessage("Data submitted successfully!");
         setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
+          fullName: "",
           phone: "",
-          city: "",
-          state: "",
         });
         setSubmitted(true);
       } else {
