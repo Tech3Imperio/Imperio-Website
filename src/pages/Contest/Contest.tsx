@@ -48,11 +48,14 @@ function Contest() {
       );
       return;
     }
-    const res = await fetch("http://localhost:3001/contest-form", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
+    const res = await fetch(
+      "https://backendimperio-5uku.onrender.com/contest-form",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      }
+    );
 
     const result = await res.json();
 
