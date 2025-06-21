@@ -121,9 +121,8 @@ function Contest() {
           </div>
 
           <p className="mb-6">
-            Fill in your{" "}
-            <strong>Name, Mobile Number, Email ID, City, and State</strong> —
-            and let the journey begin!
+            Fill in your <strong>Name, Mobile Number</strong> — and let the
+            journey begin!
           </p>
           <div className="mx-auto  text-left">
             <h2 className="text-lg font-semibold mb-2 ">🎁 Prize</h2>
@@ -136,9 +135,9 @@ function Contest() {
             <h2 className="text-lg font-semibold mb-2">🗓️ Contest Timeline</h2>
             <p className="mb-6">
               The contest kicks off on <strong>22nd June 2025</strong> and runs
-              till <strong>22nd August 2025</strong>! Mark your calendars — the
-              lucky winner will be revealed on <strong>1st September</strong>!
-              🎉
+              till <strong>31st December 2025!</strong>! Mark your calendars —
+              the lucky winner will be revealed on <strong>10th January</strong>
+              ! 🎉
             </p>
           </div>
           <form
@@ -204,55 +203,107 @@ function Contest() {
                   To ensure a smooth and fair contest, please review the
                   following:
                 </p>
-                <ol className="list-decimal list-inside space-y-2">
+                <ol className="list-decimal list-inside space-y-4 text-sm leading-relaxed">
                   <li>
-                    Entries must be submitted through the official online form
-                    by providing your Name, Mobile Number, Email ID, City, and
-                    State.
+                    <span className="font-semibold text-gray-800">
+                      Entry Submission
+                    </span>
+                    <p>
+                      Participants must submit their entry via the official
+                      online form by providing their Name and Mobile Number.
+                    </p>
                   </li>
                   <li>
-                    All participants must agree to the following Terms and
-                    Conditions to be eligible.
+                    <span className="font-semibold text-gray-800">
+                      Eligibility
+                    </span>
+                    <p>
+                      All participants must agree to these Terms and Conditions
+                      to be considered eligible for the contest.
+                    </p>
                   </li>
                   <li>
-                    Our team will schedule and shoot a short video (no longer
-                    than 90 seconds) at your location — we handle everything, no
-                    script needed.
+                    <span className="font-semibold text-gray-800">
+                      Shoot Your Video
+                    </span>
+                    <p>
+                      Record a short video (no longer than 90 seconds) at your
+                      home or site, showcasing your Imperio Glass Railing and
+                      sharing your genuine experience. Be natural — no script
+                      required.
+                    </p>
                   </li>
                   <li>
-                    The content will highlight your genuine experience with
-                    Imperio Glass Railing Systems.
+                    <span className="font-semibold text-gray-800">
+                      Content Focus
+                    </span>
+                    <p>
+                      Your video should highlight your honest experience with
+                      Imperio Glass Railing Systems and showcase the product in
+                      a positive and clear manner.
+                    </p>
                   </li>
                   <li>
-                    Once the video is ready, we will share it with you to post
-                    on your personal social media (Instagram, Facebook, etc.).
+                    <span className="font-semibold text-gray-800">
+                      Post &amp; Tag
+                    </span>
+                    <p>
+                      Upload the video to your personal Instagram, Facebook, or
+                      other social media platforms. Tag{" "}
+                      <strong>@imperiorailings</strong> in the post and make
+                      sure the post is public.
+                    </p>
                   </li>
                   <li>
-                    Your post must tag Imperio’s official account and comply
-                    with the platform’s Terms of Service.
+                    <span className="font-semibold text-gray-800">
+                      Content Standards
+                    </span>
+                    <p>
+                      Submissions must be suitable for all audiences. No content
+                      containing violence, nudity, offensive language, or
+                      inappropriate behavior will be accepted. Imperio reserves
+                      the right to disqualify any entry that violates these
+                      standards.
+                    </p>
                   </li>
                   <li>
-                    The content must be suitable for all age groups — no
-                    violence, nudity, inappropriate language, or behavior.
-                    Imperio reserves the right to disqualify any entry that
-                    doesn’t meet these standards.
+                    {" "}
+                    <span className="font-semibold text-gray-800">
+                      Language Preference
+                    </span>
+                    <p>
+                      You may speak in English or Hindi, depending on your
+                      comfort.
+                    </p>
                   </li>
                   <li>
-                    Any dialogue or voice-over will be in English or Hindi, as
-                    per your preference.
+                    <span className="font-semibold text-gray-800">
+                      Original Content Only
+                    </span>
+                    <p>
+                      The video must be shot by you (or someone on your behalf),
+                      specifically for this contest.
+                    </p>
                   </li>
                   <li>
-                    All content must be original and shot by Imperio’s team — no
-                    modifications or unauthorized usage is allowed.
+                    <span className="font-semibold text-gray-800">
+                      Brand Exclusivity
+                    </span>
+                    <p>
+                      The video must not feature or mention any other brands,
+                      products, or services apart from Imperio.
+                    </p>
                   </li>
                   <li>
-                    Videos must not mention or feature any other brands or
-                    products besides Imperio.
-                  </li>
-                  <li>
-                    By participating, you agree that Imperio has the right to
-                    use the final video content for marketing and promotional
-                    purposes across all platforms.
+                    <span className="font-semibold text-gray-800">
+                      Usage Rights
+                    </span>
+                    <p>
+                      By participating, you agree that Imperio has the right to
+                      use your video content for marketing and promotional
+                      purposes across all digital and offline platforms, without
+                      additional consent or compensation.
+                    </p>
                   </li>
                 </ol>
               </div>
