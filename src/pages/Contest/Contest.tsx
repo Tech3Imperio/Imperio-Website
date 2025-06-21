@@ -170,6 +170,8 @@ function Contest() {
                   type={field === "phone" ? "tel" : "text"}
                   name={field}
                   value={formData[field]}
+                  required
+                  placeholder={`Enter your ${fieldLabels[field]}`}
                   onChange={handleChange}
                   className="w-full border border-gray-300 rounded px-4 py-2 bg-gray-100 focus:outline-none"
                 />
