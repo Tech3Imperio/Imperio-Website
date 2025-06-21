@@ -31,7 +31,8 @@ function Contest() {
   const [message, setMessage] = useState("");
   const [agreed, setAgreed] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -48,29 +49,39 @@ function Contest() {
       );
       return;
     }
-    const res = await fetch(
-      "https://backendimperio-5uku.onrender.com/contest-form",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+    setIsSubmitting(true);
+    setMessage("");
+
+    try {
+      const res = await fetch(
+        "https://backendimperio-5uku.onrender.com/contest-form",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const result = await res.json();
+
+      if (result.status === "success") {
+        setMessage("Data submitted successfully!");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          city: "",
+          state: "",
+        });
+        setSubmitted(true);
+      } else {
+        setMessage("Failed to submit data.");
       }
-    );
-
-    const result = await res.json();
-
-    if (result.status === "success") {
-      setMessage("Data submitted successfully!");
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        city: "",
-        state: "",
-      });
-    } else {
-      setMessage("Failed to submit data.");
+    } catch (err) {
+      setMessage("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -262,9 +273,22 @@ function Contest() {
             )}
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+              disabled={!agreed || isSubmitting || submitted}
+              className={`w-full py-2 rounded text-white font-medium transition ${
+                submitted
+                  ? "bg-green-600 cursor-default"
+                  : isSubmitting
+                  ? "bg-blue-400 cursor-wait"
+                  : agreed
+                  ? "bg-blue-600 hover:bg-blue-700"
+                  : "bg-gray-400 cursor-not-allowed"
+              }`}
             >
-              Submit
+              {submitted
+                ? "Submitted ✅"
+                : isSubmitting
+                ? "Submitting..."
+                : "Submit"}
             </button>
           </form>
         </div>
