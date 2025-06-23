@@ -101,29 +101,31 @@ function Contest() {
 
           <ol className="list-decimal list-inside space-y-2 mb-6">
             <li>
-              <strong>Book a shoot with us</strong> — Just fill in your details,
-              and our team will get in touch to schedule a quick video shoot at
-              your place. (Don’t worry, we’ll handle everything!)
+              <strong>Shoot a video</strong> — Record a quick video showing your
+              beautiful railing and sharing your experience with Imperio.
             </li>
             <li>
-              <strong>Share your video</strong> on social media and tag us.
+              <strong>Upload &amp; Tag</strong> — Post the video on your social
+              media and tag us <strong>@imperiorailings</strong>.
             </li>
             <li>
-              The video with the most <strong>views, likes, and shares</strong>{" "}
-              wins the trip! 🏖️
+              <strong>Win a trip!</strong> — The video with the most{" "}
+              <strong>views, likes, and shares</strong> takes home the grand
+              prize! 🏖️
             </li>
           </ol>
+
           <div className="w-full mx-auto text-left ">
-            <p className="mb-4 italic">
+            {/* <p className="mb-4 italic">
               ✨ No stress. No script. Just your genuine experience with
               Imperio.
+            </p> */}
+            <p className="mb-6">
+              Fill in your <strong>Name, Mobile Number</strong> — and let the
+              journey begin!
             </p>
           </div>
 
-          <p className="mb-6">
-            Fill in your <strong>Name, Mobile Number</strong> — and let the
-            journey begin!
-          </p>
           <div className="mx-auto  text-left">
             <h2 className="text-lg font-semibold mb-2 ">🎁 Prize</h2>
             <p className="mb-6">
