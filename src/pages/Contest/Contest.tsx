@@ -307,6 +307,17 @@ function Contest() {
                       additional consent or compensation.
                     </p>
                   </li>
+                  <li>
+                    <span className="font-semibold text-gray-800">
+                      Please note
+                    </span>
+                    <p>
+                      The contest will only proceed if we receive a minimum of
+                      50 valid entries. Imperio reserves the right to cancel,
+                      modify, or postpone the contest at its sole discretion if
+                      this condition is not met.
+                    </p>
+                  </li>
                 </ol>
               </div>
             )}
