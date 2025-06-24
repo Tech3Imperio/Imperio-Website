@@ -97,6 +97,30 @@ function Contest() {
             We’re giving away an unforgettable trip to <strong>Dubai</strong> to
             one lucky Imperio customer!
           </p>
+          <div
+            className="bg-gradient-to-r from-[#F8F9FA] to-[#E9ECEF] px-6 py-5 rounded-xl shadow-md mt-6 mb-8 "
+            style={{ fontFamily: "'Cormorant Garamond', serif" }}
+          >
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-center text-[#333] leading-snug">
+              At Imperio, we’ve always believed that our customers are not just
+              buyers — they’re part of a{" "}
+              <span className="underline decoration-gray-500 decoration-2 underline-offset-4 mx-1">
+                growing community
+              </span>{" "}
+              that builds dreams, one railing at a time.
+            </h2>
+            <p className="text-center mt-4 text-base sm:text-lg text-[#555] max-w-4xl mx-auto">
+              This Dubai trip isn’t just a vacation — it’s a{" "}
+              <strong className="text-[#000]">celebration</strong> of the
+              stories we’ve created together, the homes we’ve transformed, and
+              the memories we’ve built. We’re taking <strong>one of you</strong>{" "}
+              with us not as a winner, but as a part of our journey.
+              <br />
+              <span className="block mt-2 font-medium text-[#000]">
+                Let’s grow, build, and celebrate… together.
+              </span>
+            </p>
+          </div>
           <div className="w-full mx-auto text-left mt-10">
             <h2 className="text-lg font-semibold mb-2">Here’s how to enter:</h2>
           </div>
@@ -354,6 +378,15 @@ function Contest() {
                       50 valid entries. Imperio reserves the right to cancel,
                       modify, or postpone the contest at its sole discretion if
                       this condition is not met.
+                    </p>
+                  </li>
+                  <li>
+                    <span className="font-semibold text-gray-800">
+                      General conditions
+                    </span>
+                    <p>
+                      Travel will be booked by Imperio. Any changes or upgrades
+                      requested by the winner will be at their own expense.
                     </p>
                   </li>
                 </ol>
