@@ -80,7 +80,7 @@ function Contest() {
           className="w-full h-auto rounded-lg  object-cover"
         />
         <div className="max-w-2xl p-6 rounded-lg  mb-8 flex flex-col justify-center items-center mx-auto">
-          <div className=" justify-center flex pt-10    "></div>
+          <div className=" justify-center flex pt-10"></div>
 
           <h1 className="text-3xl font-bold mb-4 text-center">
             Contest Details and Submission Guidelines
@@ -99,9 +99,9 @@ function Contest() {
           </p>
           <div
             className="bg-gradient-to-r from-[#F8F9FA] to-[#E9ECEF] px-6 py-5 rounded-xl shadow-md mt-6 mb-8 "
-            style={{ fontFamily: "'Cormorant Garamond', serif" }}
+            style={{ fontFamily: "'Poppins', sans-serif" }}
           >
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-center text-[#333] leading-snug">
+            <h2 className="text-xl sm:text-xl md:text-2xl font-semibold text-center text-[#333] leading-snug">
               At Imperio, we’ve always believed that our customers are not just
               buyers — they’re part of a{" "}
               <span className="underline decoration-gray-500 decoration-2 underline-offset-4 mx-1">
