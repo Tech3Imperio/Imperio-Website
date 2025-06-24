@@ -169,9 +169,7 @@ function Contest() {
             <h2 className="text-lg font-semibold mb-2">🗓️ Contest Timeline</h2>
             <p className="mb-6">
               The contest kicks off on <strong>22nd June 2025</strong> and runs
-              till <strong>31st December 2025!</strong>! Mark your calendars —
-              the lucky winner will be revealed on <strong>10th January</strong>
-              ! 🎉
+              till <strong>31st December 2025!</strong>🎉
             </p>
           </div>
           <form
@@ -248,7 +246,7 @@ function Contest() {
             <button
               type="button"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-blue-600 underline focus:outline-none w-full text-center"
+              className="text-gray-700 underline focus:outline-none w-full text-center"
             >
               {isOpen ? "Hide Terms & Conditions" : "View Terms & Conditions"}
             </button>
