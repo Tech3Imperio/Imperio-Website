@@ -8,6 +8,7 @@ import styles from "./Navbar.module.css";
 import { whiteLogo } from "../../assets/Images";
 // import { SlHandbag } from "react-icons/sl";
 import { PiUserCircle } from "react-icons/pi";
+import { navbar_txt } from "../../assets/Images/contest";
 
 // Logo component with a link to home
 const Logo: React.FC = () => (
@@ -46,7 +47,7 @@ const MenuItems: React.FC<MenuItemsProps> = ({ handleClick, type }) => (
       { to: "/blog", label: "Blog" },
       { to: "/contactus", label: "Contact Us" },
       { to: "/careers", label: "Careers" },
-      { to: "/contest", label: "Contest" },
+
       // { to: "/newproducts", label: "New Products" },
     ].map((item) => (
       <MenuItem
@@ -177,6 +178,13 @@ export const Navbar: React.FC = () => {
               <ul className="text-base flex gap-6 h-11 laptop:gap-10 xl:gap-7 justify-center items-center text-white my-auto px-7 rounded-none border border-transparent transition-700 hover:shadow-small hover:shadow-white hover:border-white">
                 <MenuItems type="desktop" />
               </ul>
+              <a href="http://localhost:5173/contest">
+                <img
+                  src={navbar_txt}
+                  alt="Contest"
+                  className="h-50 w-50 px-4 justify-center items-center border border-transparent transition-700 hover:shadow-small"
+                />
+              </a>
             </div>
             <div className=" flex gap-6 justify-center items-center">
               <DealershipButton />
