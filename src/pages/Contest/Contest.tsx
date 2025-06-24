@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { contest_banner } from "../../assets/Images/contest";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 function Contest() {
   type FormFields = {
     fullName: string;
-    phone: number | string;
+    phone: string;
   };
 
   const fieldLabels: Record<keyof FormFields, string> = {
@@ -56,7 +58,7 @@ function Contest() {
         setMessage("Data submitted successfully!");
         setFormData({
           fullName: "",
-          phone: "",
+          phone: "", // Reset phone to null
         });
         setSubmitted(true);
       } else {
@@ -106,7 +108,13 @@ function Contest() {
             </li>
             <li>
               <strong>Upload &amp; Tag</strong> — Post the video on your social
-              media and tag us <strong>@imperiorailings</strong>.
+              media and tag us{" "}
+              <strong>
+                <a href="https://www.instagram.com/imperio.railings/?hl=en">
+                  @imperio.railings
+                </a>
+              </strong>
+              .
             </li>
             <li>
               <strong>Win a trip!</strong> — The video with the most{" "}
@@ -129,9 +137,9 @@ function Contest() {
           <div className="mx-auto  text-left">
             <h2 className="text-lg font-semibold mb-2 ">🎁 Prize</h2>
             <p className="mb-6">
-              The grand prize? A <strong>fully sponsored trip to Dubai</strong>{" "}
-              for the winner — and yes, you can take a +1 to share the
-              adventure! ✈️
+              The Dubai Experience Trip is worth <strong>AED 4266</strong> –
+              fully sponsored by Imperio! Any cost exceeding this amount will
+              not be covered. ✈️
             </p>
 
             <h2 className="text-lg font-semibold mb-2">🗓️ Contest Timeline</h2>
@@ -151,15 +159,35 @@ function Contest() {
                 <label className="block mb-1 text-sm font-medium text-gray-700">
                   {fieldLabels[field]}
                 </label>
-                <input
-                  type={field === "phone" ? "tel" : "text"}
-                  name={field}
-                  value={formData[field]}
-                  required
-                  placeholder={`Enter your ${fieldLabels[field]}`}
-                  onChange={handleChange}
-                  className="w-full border border-gray-300 rounded px-4 py-2 bg-gray-100 focus:outline-none"
-                />
+
+                {field === "phone" ? (
+                  <PhoneInput
+                    country={"in"}
+                    value={formData.phone}
+                    onChange={(value) =>
+                      setFormData((prev) => ({
+                        ...prev,
+                        phone: value,
+                      }))
+                    }
+                    inputProps={{
+                      name: "phone",
+                      required: true,
+                      autoFocus: false,
+                    }}
+                    inputClass="!w-full !border !border-gray-300 !rounded px-4 !py-2 !bg-gray-100"
+                  />
+                ) : (
+                  <input
+                    type="text"
+                    name={field}
+                    value={formData[field]}
+                    required
+                    placeholder={`Enter your ${fieldLabels[field]}`}
+                    onChange={handleChange}
+                    className="w-full border border-gray-300 rounded px-4 py-2 bg-gray-100 focus:outline-none"
+                  />
+                )}
               </div>
             ))}
 
@@ -174,7 +202,7 @@ function Contest() {
                 {message}
               </p>
             )}
-            <div className="flex items-center justify-center mt-4 mb-6 gap-2">
+            <div className="flex items-center  mt-4 mb-6 gap-2">
               <input
                 type="checkbox"
                 id="terms"
@@ -186,7 +214,13 @@ function Contest() {
                 I agree to the Terms and Conditions
               </label>
             </div>
-
+            <div>
+              <p className="text-sm text-gray-600 mb-2">
+                By accepting I agree to the Terms and Conditions and clicking
+                "Submit", I authorize Imperio Railing to contact me about this
+                campaign via the contact information I provided.
+              </p>
+            </div>
             <button
               type="button"
               onClick={() => setIsOpen(!isOpen)}
@@ -252,8 +286,12 @@ function Contest() {
                     <p>
                       Upload the video to your personal Instagram, Facebook, or
                       other social media platforms. Tag{" "}
-                      <strong>@imperiorailings</strong> in the post and make
-                      sure the post is public.
+                      <strong>
+                        <a href="https://www.instagram.com/imperio.railings/?hl=en">
+                          @imperio.railings
+                        </a>
+                      </strong>{" "}
+                      in the post and make sure the post is public.
                     </p>
                   </li>
                   <li>
