@@ -1318,6 +1318,51 @@ export default function JobDetailsPage() {
         ],
         applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
       },
+      {
+        title: "Telesales Executive",
+        subtitle:
+          "We are looking for an enthusiastic Tele Sales Executive to contribute in generating sales for our company. You will be responsible for sales over the phone and maintaining good customer relationships.An effective telesales representative must be an excellent communicator and have superior people skills.They must be comfortable presenting products or services over the phone as well as dealing with complaints and doubts.The goal is to help the company grow by bringing in customers and developing business.",
+        about:
+          "We are looking for an enthusiastic Tele Sales Executive to contribute in generating sales for our company. You will be responsible for sales over the phone and maintaining good customer relationships.An effective telesales representative must be an excellent communicator and have superior people skills.They must be comfortable presenting products or services over the phone as well as dealing with complaints and doubts.The goal is to help the company grow by bringing in customers and developing business.",
+        location: "Mumbai",
+        type: "Full-Time",
+        others: [
+          {
+            Duration: "NA",
+            Expriance: "1+ year",
+            join: "Immediately",
+          },
+        ],
+        responsibilities: [
+          "Customer Outreach: Contact potential or existing customers to inform them about products or services using prepared scripts.",
+          "Product Knowledge: Answer questions related to the company’s offerings clearly and confidently to build customer trust.",
+          "Needs Assessment: Ask relevant questions to understand customer requirements and propose suitable solutions.",
+          "Lead Routing: Direct qualified prospects to the field sales team when in-person follow-up is required.",
+          "Data Management: Enter and update accurate customer information in the company database.",
+          "Order Processing: Take and process orders in an efficient and accurate manner, ensuring a smooth transaction experience.",
+          "Grievance Handling: Address customer grievances professionally to maintain the company’s reputation and ensure satisfaction.",
+          "Target Achievement: Go the extra mile to meet or exceed monthly sales quotas and facilitate repeat business.",
+          "Sales Documentation: Keep detailed records of calls, sales interactions, customer feedback, and relevant notes for future reference.",
+        ],
+        skills: [
+          "Telesales Experience",
+          "Sales Target Achievement",
+          "CRM Software Proficiency",
+          "Telephone System Knowledge",
+          "Product & Service Explanation",
+          "English Proficiency",
+          "Communication & Interpersonal Skills",
+          "Emotional Resilience",
+          "Negotiation & Conflict Resolution",
+        ],
+        whocanapply: [
+          "Graduates with 1–3 years of experience in telesales, inside sales, or customer service.",
+          "Candidates with prior experience in the interior, architecture, building materials, or related industries are preferred.",
+          "Individuals who can thrive in a fast-paced, target-driven sales environment.",
+          "Applicants with a strong passion for sales and a proactive, go-getter attitude.",
+        ],
+        applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
+      },
       // {
       //   title: "Performance marketing (Female Candidate Preffered)",
       //   subtitle:

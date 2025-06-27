@@ -221,6 +221,14 @@ export default function Career() {
     //   applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
     // },
     {
+      title: "Telesales Executive",
+      description:
+        "We are looking for an enthusiastic Tele Sales Executive to contribute in generating sales for our company.",
+      location: "Mumbai",
+      type: "Full-Time",
+      applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8", // Apply link
+    },
+    {
       title: "Business Development Executive",
       description:
         "As a Business Development Executive at Imperio Railing Systems, you will play a key role in driving the growth and success of our business.",
