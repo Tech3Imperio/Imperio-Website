@@ -141,42 +141,42 @@ export default function JobDetailsPage() {
         whocanapply: ["12 Pass or above", "Speaks Good English"],
         applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
       },
-      {
-        title: "Telesales Executive",
-        subtitle:
-          "Involve working closely with the sales team to generate leads, build relationships with potential clients",
-        about:
-          "As a Tele Sales Executive at Imperio Railing Systems, you will have the opportunity to showcase your skills in Sales. Your role will involve working closely with the sales team to generate leads, build relationships with potential clients, and drive revenue growth for the company.",
-        location: "Mumbai",
-        type: "Full-Time",
-        others: [
-          {
-            Duration: "NA",
-            Expriance: "1 year",
-            join: "Immediately",
-          },
-        ],
-        responsibilities: [
-          "Contact potential or existing customers to inform them about a product or service using scripts",
-          "Answer questions about products or the company",
-          "Ask questions to understand customer requirements and close sales",
-          "Direct prospects to the field sales team when needed",
-          "Enter and update customer information in the database",
-          "Take and process orders in an accurate manner",
-          "Track and analyze sales data to identify trends and areas for improvement.",
-          "Handle grievances to preserve the company’s reputation",
-          "Go the “extra mile” to meet sales quota and facilitate future sales",
-          "Keep records of calls and sales and note useful information",
-        ],
-        skills: ["Tele Sales"],
-        whocanapply: [
-          "Are available for full time (in-office and on-site)",
-          "Can start immediately from 1st April 2025",
-          "Are from Mumbai",
-          "Have relevant skills and interests",
-        ],
-        applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
-      },
+      // {
+      //   title: "Telesales Executive",
+      //   subtitle:
+      //     "Involve working closely with the sales team to generate leads, build relationships with potential clients",
+      //   about:
+      //     "As a Tele Sales Executive at Imperio Railing Systems, you will have the opportunity to showcase your skills in Sales. Your role will involve working closely with the sales team to generate leads, build relationships with potential clients, and drive revenue growth for the company.",
+      //   location: "Mumbai",
+      //   type: "Full-Time",
+      //   others: [
+      //     {
+      //       Duration: "NA",
+      //       Expriance: "1 year",
+      //       join: "Immediately",
+      //     },
+      //   ],
+      //   responsibilities: [
+      //     "Contact potential or existing customers to inform them about a product or service using scripts",
+      //     "Answer questions about products or the company",
+      //     "Ask questions to understand customer requirements and close sales",
+      //     "Direct prospects to the field sales team when needed",
+      //     "Enter and update customer information in the database",
+      //     "Take and process orders in an accurate manner",
+      //     "Track and analyze sales data to identify trends and areas for improvement.",
+      //     "Handle grievances to preserve the company’s reputation",
+      //     "Go the “extra mile” to meet sales quota and facilitate future sales",
+      //     "Keep records of calls and sales and note useful information",
+      //   ],
+      //   skills: ["Tele Sales"],
+      //   whocanapply: [
+      //     "Are available for full time (in-office and on-site)",
+      //     "Can start immediately from 1st April 2025",
+      //     "Are from Mumbai",
+      //     "Have relevant skills and interests",
+      //   ],
+      //   applyLink: "https://forms.gle/QTY4R3SGjB2Mw3AB8",
+      // },
       {
         title: "Accounts Executive",
         subtitle:
@@ -1321,7 +1321,7 @@ export default function JobDetailsPage() {
       {
         title: "Telesales Executive",
         subtitle:
-          "We are looking for an enthusiastic Tele Sales Executive to contribute in generating sales for our company. You will be responsible for sales over the phone and maintaining good customer relationships.An effective telesales representative must be an excellent communicator and have superior people skills.They must be comfortable presenting products or services over the phone as well as dealing with complaints and doubts.The goal is to help the company grow by bringing in customers and developing business.",
+          "We are looking for an enthusiastic Tele Sales Executive to contribute in generating sales for our company. You will be responsible for sales over the phone and maintaining good customer relationships.",
         about:
           "We are looking for an enthusiastic Tele Sales Executive to contribute in generating sales for our company. You will be responsible for sales over the phone and maintaining good customer relationships.An effective telesales representative must be an excellent communicator and have superior people skills.They must be comfortable presenting products or services over the phone as well as dealing with complaints and doubts.The goal is to help the company grow by bringing in customers and developing business.",
         location: "Mumbai",
@@ -1356,7 +1356,7 @@ export default function JobDetailsPage() {
           "Negotiation & Conflict Resolution",
         ],
         whocanapply: [
-          "Graduates with 1–3 years of experience in telesales, inside sales, or customer service.",
+          "Graduates with 1 year of experience in telesales, inside sales, or customer service.",
           "Candidates with prior experience in the interior, architecture, building materials, or related industries are preferred.",
           "Individuals who can thrive in a fast-paced, target-driven sales environment.",
           "Applicants with a strong passion for sales and a proactive, go-getter attitude.",
