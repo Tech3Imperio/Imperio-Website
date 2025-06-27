@@ -3,9 +3,9 @@
 import type React from "react";
 import { getLocationFromPincode } from "../../utils/pincode-service";
 import { Info } from "lucide-react";
-import { useState } from "react";
+import { useState, useCallback, useMemo } from "react";
 
-// Define TypeScript interfaces for props and data structures
+// Interfaces (keeping your existing ones)
 interface BaseDataItem {
   Base: string;
   [key: string]: string | number;
@@ -70,103 +70,140 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
   baseData,
   handrailData,
   glassData,
-  // locationData,
   timelineData,
   userTypeData,
   heightOptions,
 }) => {
-  // Get image URL for a specific base and finish
-  const getBaseImageUrl = (base: string, finish: string): string | null => {
-    return base ? `/images/bases/${base}/${finish}.jpg` : null;
-  };
-
-  // Get image URL for a specific handrail and finish
-  const getHandrailImageUrl = (
-    handrail: string,
-    finish: string
-  ): string | null => {
-    return handrail ? `/images/handrail/${handrail}/${finish}.jpg` : null;
-  };
-
-  const heightMap: Record<number, number> = heightOptions.reduce(
-    (acc, height, index) => {
-      acc[index] = height;
-      return acc;
-    },
-    {} as Record<number, number>
-  );
-
-  const getSliderValue = (height: number): string => {
-    return (
-      Object.keys(heightMap).find(
-        (key) => heightMap[Number.parseInt(key)] === height
-      ) || "0"
-    );
-  };
-
-  const finishColors: Record<string, string> = {
-    Silver: "#e3e2dd",
-    Black: "#000000",
-    Champagne: "#958061",
-    Wood: "#a15a3e",
-  };
-
-  const heightImages: Record<string, string> = {
-    "2.5": "/images/GlassHeight/2.5full.png",
-    "3": "/images/GlassHeight/3full.png",
-    "3.25": "/images/GlassHeight/3.25full.png",
-    "3.5": "/images/GlassHeight/3.5full.png",
-    "4": "/images/GlassHeight/4full.png",
-  };
-
-  const getBaseTypeImageUrl = (baseType: string | undefined) => {
-    if (!baseType) return "/placeholder.svg";
-    const formattedName = baseType.replace(/\s+/g, "").toLowerCase();
-    return `/images/baseInfo/${formattedName}_info.jpeg`;
-  };
-
-  const getHandrailTypeImageUrl = (baseType: string | undefined) => {
-    if (!baseType) return "/placeholder.svg";
-    const formattedName = baseType.replace(/\s+/g, "").toLowerCase();
-    return `/images/handrailInfo/${formattedName}_info.jpeg`;
-  };
-
+  // State for info modals
   const [showInfo, setShowInfo] = useState(false);
   const [showPincodeInfo, setShowPincodeInfo] = useState(false);
   const [showTimelineInfo, setShowTimelineInfo] = useState(false);
   const [showBaseInfo, setShowBaseInfo] = useState<string | null>(null);
   const [showHandrailInfo, setShowHandrailInfo] = useState<string | null>(null);
-  return (
-    <div className="max-w-[1200px] mx-auto p-5 sm:p-10 font-sans text-gray-800 bg-gray-50 rounded-none">
-      {/* Preload images */}
-      {baseData.map((base) =>
-        Object.keys(finishColors).map((finish) => (
-          <link
-            key={`${base.Base}-${finish}`}
-            rel="preload"
-            href={`/images/bases/${base.Base}/${finish}.jpg`}
-            as="image"
-          />
-        ))
-      )}
 
-      {handrailData.map((handrail) =>
-        Object.keys(finishColors).map((finish) => (
-          <link
-            key={`${handrail["Handrail Type"]}-${finish}`}
-            rel="preload"
-            href={`/images/handrail/${handrail["Handrail Type"]}/${finish}.jpg`}
-            as="image"
-          />
-        ))
-      )}
+  // Memoized image URL functions to prevent recalculation
+  const getBaseImageUrl = useCallback(
+    (base: string, finish: string): string | null => {
+      return base ? `/images/bases/${base}/${finish}.jpg` : null;
+    },
+    []
+  );
+
+  const getHandrailImageUrl = useCallback(
+    (handrail: string, finish: string): string | null => {
+      return handrail ? `/images/handrail/${handrail}/${finish}.jpg` : null;
+    },
+    []
+  );
+
+  // Memoized constants
+  const heightMap: Record<number, number> = useMemo(
+    () =>
+      heightOptions.reduce((acc, height, index) => {
+        acc[index] = height;
+        return acc;
+      }, {} as Record<number, number>),
+    [heightOptions]
+  );
+
+  const getSliderValue = useCallback(
+    (height: number): string => {
+      return (
+        Object.keys(heightMap).find(
+          (key) => heightMap[Number.parseInt(key)] === height
+        ) || "0"
+      );
+    },
+    [heightMap]
+  );
+
+  const finishColors: Record<string, string> = useMemo(
+    () => ({
+      Silver: "#e3e2dd",
+      Black: "#000000",
+      Champagne: "#958061",
+      Wood: "#a15a3e",
+    }),
+    []
+  );
+
+  const heightImages: Record<string, string> = useMemo(
+    () => ({
+      "2.5": "/images/GlassHeight/2.5full.png",
+      "3": "/images/GlassHeight/3full.png",
+      "3.25": "/images/GlassHeight/3.25full.png",
+      "3.5": "/images/GlassHeight/3.5full.png",
+      "4": "/images/GlassHeight/4full.png",
+    }),
+    []
+  );
+
+  // Memoized helper functions
+  const getBaseTypeImageUrl = useCallback((baseType: string | undefined) => {
+    if (!baseType) return "/placeholder.svg";
+    const formattedName = baseType.replace(/\s+/g, "").toLowerCase();
+    return `/images/baseInfo/${formattedName}_info.jpeg`;
+  }, []);
+
+  const getHandrailTypeImageUrl = useCallback(
+    (baseType: string | undefined) => {
+      if (!baseType) return "/placeholder.svg";
+      const formattedName = baseType.replace(/\s+/g, "").toLowerCase();
+      return `/images/handrailInfo/${formattedName}_info.jpeg`;
+    },
+    []
+  );
+
+  // Memoized finish options to prevent recalculation
+  const finishOptions = useMemo(() => {
+    if (baseData.length === 0) return [];
+    return Object.keys(baseData[0]).filter((key) => key !== "Base");
+  }, [baseData]);
+
+  // Optimized scroll handlers
+  const handleScroll = useCallback(
+    (elementId: string, direction: "left" | "right") => {
+      const element = document.getElementById(elementId);
+      if (element) {
+        const scrollAmount = direction === "left" ? -250 : 250;
+        element.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      }
+    },
+    []
+  );
+
+  // Optimized product data update handlers
+  const updateProductData = useCallback(
+    (updates: Partial<ProductData>) => {
+      setProductData((prev) => ({ ...prev, ...updates }));
+    },
+    [setProductData]
+  );
+
+  return (
+    <div className="max-w-6xl mx-auto p-5 sm:p-10 font-sans text-gray-800 bg-gray-50 rounded-none">
+      {/* Preload critical images */}
+      <div className="hidden">
+        {baseData
+          .slice(0, 3)
+          .map((base) =>
+            Object.keys(finishColors).map((finish) => (
+              <img
+                key={`${base.Base}-${finish}`}
+                src={`/images/bases/${base.Base}/${finish}.jpg`}
+                alt=""
+                loading="eager"
+              />
+            ))
+          )}
+      </div>
 
       {/* Header */}
       <div className="text-center mb-10">
         <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
           Design Your Custom Railing
         </h1>
-        <p className="text-base text-gray-500 max-w-[600px] mx-auto">
+        <p className="text-base text-gray-500 max-w-2xl mx-auto">
           Customize every aspect of your railing system to match your space
           perfectly
         </p>
@@ -176,43 +213,39 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
       <div className="mb-4 flex flex-col justify-center items-center">
         <h2 className="text-2xl font-semibold mb-4">Select Finish</h2>
         <div className="flex flex-wrap gap-3">
-          {baseData.length > 0 &&
-            Object.keys(baseData[0])
-              .filter((key) => key !== "Base")
-              .map((finish) => {
-                const color = finishColors[finish]; // Check if the finish has a mapped color
+          {finishOptions.map((finish) => {
+            const color = finishColors[finish];
 
-                return color ? (
-                  // If the finish has a mapped color, display a color swatch
-                  <button
-                    key={finish}
-                    onClick={() => setProductData({ ...productData, finish })}
-                    className={`w-12 h-12 rounded-none relative outline-none cursor-pointer ${
-                      productData.finish === finish
-                        ? "border-[3px] border-blue-500"
-                        : "border-2 border-gray-300"
-                    }`}
-                    style={{ backgroundColor: color }}
-                  >
-                    {productData.finish === finish && (
-                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-none" />
-                    )}
-                  </button>
-                ) : (
-                  // If the finish does NOT have a mapped color, show it as text
-                  <button
-                    key={finish}
-                    onClick={() => setProductData({ ...productData, finish })}
-                    className={`px-4 py-2 border border-gray-300 rounded-none cursor-pointer ${
-                      productData.finish === finish
-                        ? "bg-blue-500 text-white font-semibold"
-                        : "bg-gray-50 text-black font-normal"
-                    }`}
-                  >
-                    {finish}
-                  </button>
-                );
-              })}
+            return color ? (
+              <button
+                key={finish}
+                onClick={() => updateProductData({ finish })}
+                className={`w-12 h-12 rounded-none relative outline-none cursor-pointer transition-all hover:scale-105 ${
+                  productData.finish === finish
+                    ? "border-[3px] border-blue-500 shadow-lg"
+                    : "border-2 border-gray-300 hover:border-gray-400"
+                }`}
+                style={{ backgroundColor: color }}
+                aria-label={`Select ${finish} finish`}
+              >
+                {productData.finish === finish && (
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-none" />
+                )}
+              </button>
+            ) : (
+              <button
+                key={finish}
+                onClick={() => updateProductData({ finish })}
+                className={`px-4 py-2 border border-gray-300 rounded-none cursor-pointer transition-all hover:shadow-md ${
+                  productData.finish === finish
+                    ? "bg-blue-500 text-white font-semibold"
+                    : "bg-gray-50 text-black font-normal hover:bg-gray-100"
+                }`}
+              >
+                {finish}
+              </button>
+            );
+          })}
         </div>
       </div>
 
@@ -227,13 +260,9 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
 
         <div className="relative">
           <button
-            onClick={() => {
-              const baseScroll = document.getElementById("baseScroll");
-              if (baseScroll) {
-                baseScroll.scrollBy({ left: -250, behavior: "smooth" });
-              }
-            }}
-            className="absolute top-1/2 -left-5 z-10 transform -translate-y-1/2 bg-white rounded-none w-10 h-10 flex items-center justify-center shadow-md cursor-pointer text-lg text-gray-700 transition-all hover:shadow-lg"
+            onClick={() => handleScroll("baseScroll", "left")}
+            className="absolute top-1/2 -left-5 z-10 transform -translate-y-1/2 bg-white rounded-none w-10 h-10 flex items-center justify-center shadow-md cursor-pointer text-lg text-gray-700 transition-all hover:shadow-lg hover:bg-gray-50"
+            aria-label="Scroll left"
           >
             &#10094;
           </button>
@@ -241,6 +270,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
           <div
             id="baseScroll"
             className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {baseData.map((row) => {
               const imageUrl = getBaseImageUrl(row.Base, productData.finish);
@@ -249,32 +279,24 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
               return (
                 <div
                   key={row.Base}
-                  onClick={() =>
-                    setProductData({ ...productData, base: row.Base })
-                  }
+                  onClick={() => updateProductData({ base: row.Base })}
                   className={`rounded-none overflow-hidden min-w-[220px] flex-none snap-start cursor-pointer transition-all duration-300 ${
                     isSelected
                       ? "shadow-lg shadow-blue-200 -translate-y-1"
-                      : "shadow-md hover:shadow-lg"
+                      : "shadow-md hover:shadow-lg hover:-translate-y-0.5"
                   }`}
                 >
-                  <div
-                    className="h-[200px] bg-cover bg-center relative"
-                    // style={{
-                    //   backgroundImage: imageUrl ? `url(${imageUrl})` : "none",
-                    // }}
-                  >
+                  <div className="h-[200px] bg-cover bg-center relative">
                     <img
                       src={imageUrl || "/placeholder.svg"}
-                      alt="Base"
+                      alt={`${row.Base} base`}
                       loading="lazy"
                       className="h-[200px] w-[220px] object-cover"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src =
+                          "/placeholder.svg?height=200&width=220";
+                      }}
                     />
-                    {!imageUrl && (
-                      <div className="h-full flex items-center justify-center text-gray-500">
-                        No image available
-                      </div>
-                    )}
                     {isSelected && (
                       <div className="absolute bottom-3 right-3 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
                         Selected
@@ -289,13 +311,16 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                         setShowHandrailInfo(null);
                       }}
                       className="absolute top-3 right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md text-blue-500 hover:bg-blue-50 transition-all"
+                      aria-label={`View ${row.Base} information`}
                     >
                       <Info className="w-4 h-4" />
                     </button>
                   </div>
                   <div
-                    className={`p-4 text-center font-medium text-base ${
-                      isSelected ? "bg-blue-50 text-blue-500" : ""
+                    className={`p-4 text-center font-medium text-base transition-colors ${
+                      isSelected
+                        ? "bg-blue-50 text-blue-500"
+                        : "hover:bg-gray-50"
                     }`}
                   >
                     {row.Base}
@@ -306,36 +331,36 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
           </div>
 
           <button
-            onClick={() => {
-              const baseScroll = document.getElementById("baseScroll");
-              if (baseScroll) {
-                baseScroll.scrollBy({ left: 250, behavior: "smooth" });
-              }
-            }}
-            className="absolute top-1/2 -right-5 z-10 transform -translate-y-1/2 bg-white rounded-none w-10 h-10 flex items-center justify-center shadow-md cursor-pointer text-lg text-gray-700 transition-all hover:shadow-lg"
+            onClick={() => handleScroll("baseScroll", "right")}
+            className="absolute top-1/2 -right-5 z-10 transform -translate-y-1/2 bg-white rounded-none w-10 h-10 flex items-center justify-center shadow-md cursor-pointer text-lg text-gray-700 transition-all hover:shadow-lg hover:bg-gray-50"
+            aria-label="Scroll right"
           >
             &#10095;
           </button>
         </div>
       </div>
+
+      {/* Base Info Modal */}
       {showBaseInfo && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
           onClick={() => setShowBaseInfo(null)}
         >
           <div
-            className="bg-white rounded-xl overflow-hidden max-w-2xl w-full shadow-2xl"
+            className="bg-white rounded-xl overflow-hidden max-w-2xl w-full shadow-2xl max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative">
               <img
                 src={getBaseTypeImageUrl(showBaseInfo) || "/placeholder.svg"}
                 alt={showBaseInfo}
-                className="w-full h-100 object-cover"
+                className="w-full h-64 object-cover"
+                loading="lazy"
               />
               <button
                 onClick={() => setShowBaseInfo(null)}
-                className="absolute pb-2 top-4 right-4 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md text-gray-700 hover:bg-gray-100 text-2xl"
+                className="absolute top-4 right-4 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md text-gray-700 hover:bg-gray-100 text-2xl"
+                aria-label="Close modal"
               >
                 ×
               </button>
@@ -406,13 +431,9 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
         </div>
         <div className="relative">
           <button
-            onClick={() => {
-              const handrailScroll = document.getElementById("handrailScroll");
-              if (handrailScroll) {
-                handrailScroll.scrollBy({ left: -250, behavior: "smooth" });
-              }
-            }}
-            className="absolute top-1/2 -left-5 z-10 transform -translate-y-1/2 bg-white rounded-none w-10 h-10 flex items-center justify-center shadow-md cursor-pointer text-lg text-gray-700 transition-all hover:shadow-lg"
+            onClick={() => handleScroll("handrailScroll", "left")}
+            className="absolute top-1/2 -left-5 z-10 transform -translate-y-1/2 bg-white rounded-none w-10 h-10 flex items-center justify-center shadow-md cursor-pointer text-lg text-gray-700 transition-all hover:shadow-lg hover:bg-gray-50"
+            aria-label="Scroll left"
           >
             &#10094;
           </button>
@@ -420,6 +441,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
           <div
             id="handrailScroll"
             className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {handrailData.map((row) => {
               const imageUrl = getHandrailImageUrl(
@@ -432,34 +454,25 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                 <div
                   key={row["Handrail Type"]}
                   onClick={() =>
-                    setProductData({
-                      ...productData,
-                      handrail: row["Handrail Type"],
-                    })
+                    updateProductData({ handrail: row["Handrail Type"] })
                   }
                   className={`rounded-none overflow-hidden min-w-[220px] flex-none snap-start cursor-pointer transition-all duration-300 ${
                     isSelected
                       ? "shadow-lg shadow-blue-200 -translate-y-1"
-                      : "shadow-md hover:shadow-lg"
+                      : "shadow-md hover:shadow-lg hover:-translate-y-0.5"
                   }`}
                 >
-                  <div
-                    className="h-[200px] bg-cover bg-center relative"
-                    // style={{
-                    //   backgroundImage: imageUrl ? `url(${imageUrl})` : "none",
-                    // }}
-                  >
+                  <div className="h-[200px] bg-cover bg-center relative">
                     <img
                       src={imageUrl || "/placeholder.svg"}
-                      alt="Handrail"
+                      alt={`${row["Handrail Type"]} handrail`}
                       loading="lazy"
                       className="h-[200px] w-[220px] object-cover"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src =
+                          "/placeholder.svg?height=200&width=220";
+                      }}
                     />
-                    {!imageUrl && (
-                      <div className="h-full flex items-center justify-center text-gray-500">
-                        No image available
-                      </div>
-                    )}
                     {isSelected && (
                       <div className="absolute bottom-3 right-3 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
                         Selected
@@ -476,13 +489,16 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                         setShowBaseInfo(null);
                       }}
                       className="absolute top-3 right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md text-blue-500 hover:bg-blue-50 transition-all"
+                      aria-label={`View ${row["Handrail Type"]} information`}
                     >
                       <Info className="w-4 h-4" />
                     </button>
                   </div>
                   <div
-                    className={`p-4 text-center font-medium text-base ${
-                      isSelected ? "bg-blue-50 text-blue-500" : ""
+                    className={`p-4 text-center font-medium text-base transition-colors ${
+                      isSelected
+                        ? "bg-blue-50 text-blue-500"
+                        : "hover:bg-gray-50"
                     }`}
                   >
                     {row["Handrail Type"]}
@@ -493,40 +509,39 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
           </div>
 
           <button
-            onClick={() => {
-              const handrailScroll = document.getElementById("handrailScroll");
-              if (handrailScroll) {
-                handrailScroll.scrollBy({ left: 250, behavior: "smooth" });
-              }
-            }}
-            className="absolute top-1/2 -right-5 z-10 transform -translate-y-1/2 bg-white rounded-none w-10 h-10 flex items-center justify-center shadow-md cursor-pointer text-lg text-gray-700 transition-all hover:shadow-lg"
+            onClick={() => handleScroll("handrailScroll", "right")}
+            className="absolute top-1/2 -right-5 z-10 transform -translate-y-1/2 bg-white rounded-none w-10 h-10 flex items-center justify-center shadow-md cursor-pointer text-lg text-gray-700 transition-all hover:shadow-lg hover:bg-gray-50"
+            aria-label="Scroll right"
           >
             &#10095;
           </button>
         </div>
       </div>
+
+      {/* Handrail Info Modal */}
       {showHandrailInfo && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
           onClick={() => setShowHandrailInfo(null)}
         >
           <div
-            className="bg-white rounded-xl overflow-hidden max-w-2xl w-full shadow-2xl"
+            className="bg-white rounded-xl overflow-hidden max-w-2xl w-full shadow-2xl max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative">
               <img
                 src={
                   getHandrailTypeImageUrl(showHandrailInfo) ||
-                  "/placeholder.svg" ||
                   "/placeholder.svg"
                 }
                 alt={showHandrailInfo}
-                className="w-full h-100 object-cover"
+                className="w-full h-64 object-cover"
+                loading="lazy"
               />
               <button
                 onClick={() => setShowHandrailInfo(null)}
-                className="absolute pb-2 top-4 right-4 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md text-gray-700 hover:bg-gray-100 text-2xl"
+                className="absolute top-4 right-4 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md text-gray-700 hover:bg-gray-100 text-2xl"
+                aria-label="Close modal"
               >
                 ×
               </button>
@@ -610,7 +625,8 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                 <button
                   type="button"
                   onClick={() => setShowInfo(!showInfo)}
-                  className="text-blue-500 hover:text-blue-700"
+                  className="text-blue-500 hover:text-blue-700 transition-colors"
+                  aria-label="Glass type information"
                 >
                   <Info className="w-4 h-4" />
                 </button>
@@ -629,9 +645,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
 
             <select
               value={productData.glass}
-              onChange={(e) =>
-                setProductData({ ...productData, glass: e.target.value })
-              }
+              onChange={(e) => updateProductData({ glass: e.target.value })}
               className="w-full p-3 rounded-none border border-gray-200 text-gray-700 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
             >
               {glassData.map((row) => (
@@ -647,7 +661,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
 
           {/* Pincode Input with City/State Display */}
           <div className="mb-6">
-            <div className=" mb-2 font-medium text-gray-600 flex items-center gap-2 relative">
+            <div className="mb-2 font-medium text-gray-600 flex items-center gap-2 relative">
               Installation Pincode:
               <div
                 className="relative flex items-center"
@@ -657,7 +671,8 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                 <button
                   type="button"
                   onClick={() => setShowPincodeInfo(!showPincodeInfo)}
-                  className="text-blue-500 hover:text-blue-700"
+                  className="text-blue-500 hover:text-blue-700 transition-colors"
+                  aria-label="Pincode information"
                 >
                   <Info className="w-4 h-4" />
                 </button>
@@ -679,31 +694,21 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
               onChange={(e) => {
                 if (/^\d*$/.test(e.target.value)) {
                   const pincode = e.target.value;
-                  setProductData({ ...productData, location: pincode });
+                  updateProductData({ location: pincode });
 
                   if (pincode.length === 6) {
                     getLocationFromPincode(pincode).then((locationData) => {
                       if (locationData) {
-                        console.log("City and state fetched:", locationData);
-                        setProductData((prev) => ({
-                          ...prev,
+                        updateProductData({
                           city: locationData.city,
                           state: locationData.state,
-                        }));
+                        });
                       } else {
-                        setProductData((prev) => ({
-                          ...prev,
-                          city: "",
-                          state: "",
-                        }));
+                        updateProductData({ city: "", state: "" });
                       }
                     });
                   } else {
-                    setProductData((prev) => ({
-                      ...prev,
-                      city: "",
-                      state: "",
-                    }));
+                    updateProductData({ city: "", state: "" });
                   }
                 }
               }}
@@ -739,12 +744,9 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
             </label>
             <select
               value={productData.userType}
-              onChange={(e) =>
-                setProductData({ ...productData, userType: e.target.value })
-              }
+              onChange={(e) => updateProductData({ userType: e.target.value })}
               className="w-full p-3 rounded-none border border-gray-200 text-gray-700 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
             >
-              {/* <option value="">Select User Type</option> */}
               {userTypeData.map((row) => (
                 <option key={row["User Type"]} value={row["User Type"]}>
                   {row["User Type"]}
@@ -755,7 +757,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
 
           {/* Timeline Selection */}
           <div className="mb-6">
-            <div className=" mb-2 font-medium text-gray-600 flex items-center gap-2 relative">
+            <div className="mb-2 font-medium text-gray-600 flex items-center gap-2 relative">
               Project Timeline:
               <div
                 className="relative flex items-center"
@@ -765,7 +767,8 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                 <button
                   type="button"
                   onClick={() => setShowTimelineInfo(!showTimelineInfo)}
-                  className="text-blue-500 hover:text-blue-700"
+                  className="text-blue-500 hover:text-blue-700 transition-colors"
+                  aria-label="Timeline information"
                 >
                   <Info className="w-4 h-4" />
                 </button>
@@ -784,9 +787,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
 
             <select
               value={productData.timeline}
-              onChange={(e) =>
-                setProductData({ ...productData, timeline: e.target.value })
-              }
+              onChange={(e) => updateProductData({ timeline: e.target.value })}
               className="w-full p-3 rounded-none border border-gray-200 text-gray-700 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
             >
               {timelineData.map((row) => (
@@ -799,7 +800,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
 
           {/* Installation Option */}
           <div className="mb-6">
-            <div className=" mb-2 font-medium text-gray-600 flex items-center gap-2 relative">
+            <div className="mb-2 font-medium text-gray-600 flex items-center gap-2 relative">
               Installation Required:
             </div>
             <div className="flex items-center gap-4">
@@ -808,9 +809,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                   type="radio"
                   name="installation"
                   checked={productData.installation === "Yes"}
-                  onChange={() =>
-                    setProductData({ ...productData, installation: "Yes" })
-                  }
+                  onChange={() => updateProductData({ installation: "Yes" })}
                   className="w-4 h-4 text-blue-500 focus:ring-blue-400"
                 />
                 <span>Yes</span>
@@ -820,9 +819,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                   type="radio"
                   name="installation"
                   checked={productData.installation === "No"}
-                  onChange={() =>
-                    setProductData({ ...productData, installation: "No" })
-                  }
+                  onChange={() => updateProductData({ installation: "No" })}
                   className="w-4 h-4 text-blue-500 focus:ring-blue-400"
                 />
                 <span>No</span>
@@ -832,7 +829,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
 
           {/* Project name */}
           <div className="mb-6">
-            <div className=" mb-2 font-medium text-gray-600 flex items-center gap-2 relative">
+            <div className="mb-2 font-medium text-gray-600 flex items-center gap-2 relative">
               Project name:
               <div
                 className="relative flex items-center"
@@ -842,7 +839,8 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                 <button
                   type="button"
                   onClick={() => setShowPincodeInfo(!showPincodeInfo)}
-                  className="text-blue-500 hover:text-blue-700"
+                  className="text-blue-500 hover:text-blue-700 transition-colors"
+                  aria-label="Project name information"
                 >
                   <Info className="w-4 h-4" />
                 </button>
@@ -860,13 +858,9 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
             <input
               type="text"
               value={productData.projectName}
-              onChange={(e) => {
-                const proName = e.target.value;
-                setProductData({ ...productData, projectName: proName });
-                if (productData.projectName) {
-                  console.log("Project name:", productData.projectName);
-                }
-              }}
+              onChange={(e) =>
+                updateProductData({ projectName: e.target.value })
+              }
               placeholder="Enter your project name"
               className="w-full p-3 rounded-none border border-gray-200 text-gray-700 bg-white shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
             />
@@ -891,7 +885,7 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                   value={getSliderValue(productData.height)}
                   onChange={(e) => {
                     const height = heightMap[Number.parseInt(e.target.value)];
-                    setProductData({ ...productData, height });
+                    updateProductData({ height });
                   }}
                   className="appearance-none w-[10px] h-[200px] bg-gray-200 rounded-none outline-none [writing-mode:vertical-rl] [direction:ltr] rotate-180"
                 />
@@ -901,9 +895,11 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                   {heightOptions.map((height, index) => (
                     <button
                       key={index}
-                      onClick={() => setProductData({ ...productData, height })}
-                      className={`text-sm px-3 w-max rounded-none transition-all ${
+                      onClick={() => updateProductData({ height })}
+                      className={`text-sm px-3 w-max rounded-none transition-all hover:bg-gray-100 ${
                         productData.height === height
+                          ? "font-bold text-blue-500"
+                          : ""
                       }`}
                       style={{
                         position: "absolute",
@@ -933,12 +929,15 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
               <img
                 src={
                   heightImages[productData.height] ||
-                  "/images/GlassHeight/3.5full.png" ||
-                  "/placeholder.svg"
+                  "/images/GlassHeight/3.5full.png"
                 }
                 alt="Height visualization"
                 className="h-[300px] md:h-[350px] object-contain"
                 loading="lazy"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src =
+                    "/placeholder.svg?height=350&width=200";
+                }}
               />
             </div>
           </div>
@@ -1031,15 +1030,12 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
               </div>
             </div>
           )}
-          {/* Installation */}
           <div className="bg-white p-3 rounded-lg shadow-sm">
             <div className="text-xs text-gray-500 mb-1">Installation</div>
             <div className="font-semibold text-gray-800">
               {productData.installation}
             </div>
           </div>
-
-          {/* Project name */}
           <div className="bg-white p-3 rounded-lg shadow-sm">
             <div className="text-xs text-gray-500 mb-1">Project name</div>
             <div className="font-semibold text-gray-800">

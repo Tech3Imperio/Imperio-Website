@@ -2,15 +2,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import axios from "axios";
 import ProductSelection from "../../components/Product_Selection/product-selection";
 import UserForm from "../../components/User-Form/user-form";
 import QuotationViewer from "../../components/Quotation/quotation-viewer";
 
 // Google Apps Script Web App URLs
-// const POST_URL =
-//   "https://script.google.com/macros/s/AKfycbym6AMQRI6Xo8Lm9anfhDIJJiFaqwz54xhDb4El-aX_mDBshgWbb-rTVBNklWSde6xU/exec";
 const GET_QUOTATION_URL =
   "https://script.google.com/macros/s/AKfycbyBueVSS9dggQIBBTm5TecMHoyviL5lLXHoYYUy55OavWIbfehVo5HzDF2IwiKkqzMx/exec";
 
@@ -27,10 +25,24 @@ const TIMELINE_SHEET_URL =
 const USER_TYPE_SHEET_URL =
   "https://script.google.com/macros/s/AKfycbyGliJ9kC9zhN4ShItCtCatIe-GCB98yVo0z9uVa8k0ToaPfKM7LupxuiBiDkgZJ2Ug/exec?sheet=User Type";
 
-// Placeholder URLs for image APIs - replace with actual Google Sheets APIs
-// const GLASS_TYPE_IMAGES_URL = "YOUR_GLASS_TYPE_IMAGES_API_URL";
-// const FINAL_IMAGES_URL = "YOUR_FINAL_IMAGES_API_URL";
+// Cache configuration
+const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+const cache = new Map();
 
+// Optimized cache utility
+const getCachedData = (key: string) => {
+  const cached = cache.get(key);
+  if (cached && Date.now() - cached.timestamp < CACHE_DURATION) {
+    return cached.data;
+  }
+  return null;
+};
+
+const setCachedData = (key: string, data: any) => {
+  cache.set(key, { data, timestamp: Date.now() });
+};
+
+// Interfaces (keeping your existing ones)
 interface ProductData {
   base: string;
   handrail: string;
@@ -85,7 +97,6 @@ interface QuotationData {
   validTill: string;
 }
 
-// Define the BaseDataItem interface to match what ProductSelection expects
 interface BaseDataItem {
   Base: string;
   [key: string]: string | number;
@@ -120,7 +131,6 @@ interface UserTypeDataItem {
   [key: string]: string | number;
 }
 
-// Define SheetRow with all possible properties and make them optional
 type SheetRow = {
   Base?: string;
   "Handrail Type"?: string;
@@ -133,7 +143,53 @@ type SheetRow = {
   [key: string]: string | number | undefined;
 };
 
-// Conversion functions to ensure type safety
+// Optimized API call with retry logic and timeout
+const fetchWithRetry = async (
+  url: string,
+  retries = 2,
+  timeout = 10000
+): Promise<any> => {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeout);
+
+  try {
+    const response = await axios.get(url, {
+      signal: controller.signal,
+      timeout: timeout,
+    });
+    clearTimeout(timeoutId);
+    return response.data;
+  } catch (error) {
+    clearTimeout(timeoutId);
+    if (retries > 0 && !controller.signal.aborted) {
+      console.warn(`Retrying API call to ${url}, attempts left: ${retries}`);
+      await new Promise((resolve) => setTimeout(resolve, 1000)); // Wait 1 second before retry
+      return fetchWithRetry(url, retries - 1, timeout);
+    }
+    throw error;
+  }
+};
+
+// Optimized data fetching with caching
+const fetchSheetData = async (url: string, cacheKey: string) => {
+  const cached = getCachedData(cacheKey);
+  if (cached) {
+    console.log(`Using cached data for ${cacheKey}`);
+    return cached;
+  }
+
+  try {
+    const data = await fetchWithRetry(url);
+    setCachedData(cacheKey, data);
+    return data;
+  } catch (error) {
+    console.error(`Error fetching ${cacheKey}:`, error);
+    // Return empty array as fallback
+    return [];
+  }
+};
+
+// Conversion functions (keeping your existing ones but optimized)
 function convertToGlassData(data: SheetRow[]): GlassDataItem[] {
   return data.map((row) => ({
     "Glass Thickness": row["Glass Thickness"] || "",
@@ -169,17 +225,20 @@ function convertToUserTypeData(data: SheetRow[]): UserTypeDataItem[] {
   }));
 }
 
-// Add this function after the convertToUserTypeData function:
+// Optimized pincode API with caching
 async function getPincodeState(pincode: string): Promise<string | null> {
+  const cacheKey = `pincode_${pincode}`;
+  const cached = getCachedData(cacheKey);
+  if (cached) {
+    return cached;
+  }
+
   try {
     console.log("Fetching state for pincode:", pincode);
     const response = await axios.get(
       `https://api.postalpincode.in/pincode/${pincode}`,
-      {
-        timeout: 5000, // Add timeout to prevent long waits
-      }
+      { timeout: 5000 }
     );
-    console.log("Pincode API response:", response.data);
 
     if (
       response.data &&
@@ -190,11 +249,10 @@ async function getPincodeState(pincode: string): Promise<string | null> {
       response.data[0].PostOffice.length > 0
     ) {
       const state = response.data[0].PostOffice[0].State;
-      console.log("State found:", state);
+      setCachedData(cacheKey, state);
       return state;
     }
 
-    console.error("Invalid response format or no data found for pincode");
     return null;
   } catch (error) {
     console.error("Error fetching pincode data:", error);
@@ -220,28 +278,23 @@ function App() {
     state: "",
     userType: "",
     timeline: "",
-    installation: "No", // Default to "No" as string
+    installation: "No",
     projectName: "",
   };
 
-  // Product selection state
+  // State
   const [productData, setProductData] = useState<ProductData>({
     ...defaultProductData,
   });
-
-  // User form state
   const [userData, setUserData] = useState<UserData>({
     name: "",
     phone: "",
     email: "",
     size: 0,
   });
-
-  // Quotation state
   const [quotationData, setQuotationData] = useState<QuotationData | null>(
     null
   );
-  // Removed unused submissionResponse state
 
   // Data from Google Sheets
   const [baseData, setBaseData] = useState<BaseDataItem[]>([]);
@@ -253,6 +306,9 @@ function App() {
 
   // App state
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [loadingProgress, setLoadingProgress] = useState<number>(0);
+  const [loadingMessage, setLoadingMessage] =
+    useState<string>("Initializing...");
   const [message, setMessage] = useState<string>("");
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -260,88 +316,160 @@ function App() {
 
   const heightOptions: number[] = [2.5, 3, 3.25, 3.5, 4];
 
-  // Fetch data from Google Sheets
+  // Memoized converted data to prevent unnecessary recalculations
+  const convertedGlassData = useMemo(
+    () => convertToGlassData(glassData),
+    [glassData]
+  );
+  const convertedLocationData = useMemo(
+    () => convertToLocationData(locationData),
+    [locationData]
+  );
+  const convertedTimelineData = useMemo(
+    () => convertToTimelineData(timelineData),
+    [timelineData]
+  );
+  const convertedUserTypeData = useMemo(
+    () => convertToUserTypeData(userTypeData),
+    [userTypeData]
+  );
+
+  // Optimized data fetching with progress tracking
   useEffect(() => {
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        const [
-          baseResponse,
-          handrailResponse,
-          glassResponse,
-          locationResponse,
-          timelineResponse,
-          userTypeResponse,
-        ] = await Promise.all([
-          axios.get<SheetRow[]>(BASE_SHEET_URL),
-          axios.get<SheetRow[]>(HANDRAIL_SHEET_URL),
-          axios.get<SheetRow[]>(GLASS_THICKNESS_URL),
-          axios.get<SheetRow[]>(LOCATION_SHEET_URL),
-          axios.get<SheetRow[]>(TIMELINE_SHEET_URL),
-          axios.get<SheetRow[]>(USER_TYPE_SHEET_URL),
-        ]);
+        setLoadingProgress(0);
+        setLoadingMessage("Loading product data...");
 
-        // Convert SheetRow[] to BaseDataItem[] for baseData
-        const typedBaseData: BaseDataItem[] = baseResponse.data.map((row) => {
-          const typedRow: BaseDataItem = {
-            Base: row.Base as string,
-            ...row,
-          };
-          return typedRow;
-        });
-        const typedHandrailData: HandrailDataItem[] = handrailResponse.data.map(
-          (row) => {
-            const typedRow: HandrailDataItem = {
-              "Handrail Type": row["Handrail Type"] as string,
-              ...row,
-            };
-            return typedRow;
-          }
+        const urls = [
+          { url: BASE_SHEET_URL, key: "base", name: "Base data" },
+          { url: HANDRAIL_SHEET_URL, key: "handrail", name: "Handrail data" },
+          { url: GLASS_THICKNESS_URL, key: "glass", name: "Glass data" },
+          { url: LOCATION_SHEET_URL, key: "location", name: "Location data" },
+          { url: TIMELINE_SHEET_URL, key: "timeline", name: "Timeline data" },
+          { url: USER_TYPE_SHEET_URL, key: "userType", name: "User type data" },
+        ];
+
+        const results = await Promise.allSettled(
+          urls.map(async ({ url, key, name }, index) => {
+            setLoadingMessage(`Loading ${name}...`);
+            setLoadingProgress((index / urls.length) * 100);
+
+            const data = await fetchSheetData(url, key);
+
+            // Update progress
+            setLoadingProgress(((index + 1) / urls.length) * 100);
+
+            return { key, data };
+          })
         );
 
-        setBaseData(typedBaseData);
-        setHandrailData(typedHandrailData);
-        setGlassData(glassResponse.data);
-        setLocationData(locationResponse.data);
-        setTimelineData(timelineResponse.data);
-        setUserTypeData(userTypeResponse.data);
-        setInitialDataLoaded(true);
+        // Process results
+        results.forEach((result, index) => {
+          if (result.status === "fulfilled") {
+            const { key, data } = result.value;
 
-        // Set default values
-        if (baseResponse.data.length > 0 && handrailResponse.data.length > 0) {
-          const firstFinish = Object.keys(baseResponse.data[0]).filter(
+            switch (key) {
+              case "base": {
+                const typedBaseData: BaseDataItem[] = data.map((row: any) => ({
+                  Base: row.Base as string,
+                  ...row,
+                }));
+                setBaseData(typedBaseData);
+                break;
+              }
+              case "handrail": {
+                const typedHandrailData: HandrailDataItem[] = data.map(
+                  (row: any) => ({
+                    "Handrail Type": row["Handrail Type"] as string,
+                    ...row,
+                  })
+                );
+                setHandrailData(typedHandrailData);
+                break;
+              }
+              case "glass": {
+                setGlassData(data);
+                break;
+              }
+              case "location": {
+                setLocationData(data);
+                break;
+              }
+              case "timeline": {
+                setTimelineData(data);
+                break;
+              }
+              case "userType": {
+                setUserTypeData(data);
+                break;
+              }
+            }
+          } else {
+            console.error(`Failed to load ${urls[index].name}:`, result.reason);
+          }
+        });
+
+        setLoadingMessage("Setting up defaults...");
+
+        // Set default values only after data is loaded
+        const baseResult = results[0];
+        const handrailResult = results[1];
+        const glassResult = results[2];
+        const timelineResult = results[4];
+        const userTypeResult = results[5];
+
+        if (
+          baseResult.status === "fulfilled" &&
+          handrailResult.status === "fulfilled" &&
+          baseResult.value.data.length > 0 &&
+          handrailResult.value.data.length > 0
+        ) {
+          const firstFinish = Object.keys(baseResult.value.data[0]).filter(
             (key) => key !== "Base"
           )[0];
-          const firstGlass = glassResponse.data[0]?.[
-            "Glass Thickness"
-          ] as string;
-          const firstTimeline = timelineResponse.data[0]?.Timeline as string;
-          const firstUserType = userTypeResponse.data[0]?.[
-            "User Type"
-          ] as string;
+
+          const firstGlass =
+            glassResult.status === "fulfilled"
+              ? (glassResult.value.data[0]?.["Glass Thickness"] as string)
+              : "";
+          const firstTimeline =
+            timelineResult.status === "fulfilled"
+              ? (timelineResult.value.data[0]?.Timeline as string)
+              : "";
+          const firstUserType =
+            userTypeResult.status === "fulfilled"
+              ? (userTypeResult.value.data[0]?.["User Type"] as string)
+              : "";
+
           setProductData((prev) => ({
             ...prev,
-            base: baseResponse.data[0].Base as string,
-            handrail: handrailResponse.data[0]["Handrail Type"] as string,
+            base: baseResult.value.data[0].Base as string,
+            handrail: handrailResult.value.data[0]["Handrail Type"] as string,
             finish: firstFinish,
             glass: firstGlass || "",
             timeline: firstTimeline || "",
             userType: firstUserType || "",
           }));
         }
+
+        setInitialDataLoaded(true);
+        setLoadingMessage("Ready!");
       } catch (error) {
         console.error("Error fetching data:", error);
         setMessage("❌ Error loading product data. Please try again.");
       } finally {
         setIsLoading(false);
+        setLoadingProgress(100);
       }
     };
 
     fetchData();
-  }, [userData]);
+  }, []); // Remove userData dependency to prevent unnecessary re-fetches
 
-  // Handle Calculate button click
-  const handleCalculate = async () => {
+  // Memoized handlers to prevent unnecessary re-renders
+  const handleCalculate = useCallback(async () => {
     if (
       !productData.base ||
       !productData.handrail ||
@@ -364,7 +492,6 @@ function App() {
       setMessage("Fetching location data...");
 
       const state = await getPincodeState(productData.location);
-      console.log("State from pincode:", state);
 
       if (!state) {
         setMessage(
@@ -387,296 +514,167 @@ function App() {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [productData]);
 
-  // Fetch quotation data from Google Sheets
-  // const fetchQuotationData = async (
-  //   timestamp: string,
-  //   orderId: string
-  // ): Promise<QuotationData | null> => {
-  //   try {
-  //     const response = await axios.get(GET_QUOTATION_URL);
+  // Optimized quotation fetching
+  const fetchQuotationByPhone = useCallback(
+    async (phoneNumber: string): Promise<QuotationData | null> => {
+      try {
+        console.log("Fetching quotation for phone number:", phoneNumber);
 
-  //     console.log("Quotation fetch response:", response.data);
-  //     console.log("Looking for Order ID:", orderId);
+        const response = await fetchWithRetry(GET_QUOTATION_URL);
 
-  //     if (
-  //       response.data &&
-  //       response.status === 200 &&
-  //       Array.isArray(response.data)
-  //     ) {
-  //       const matchingRecord = response.data.find((record: any) => {
-  //         const recordOrderId = String(
-  //           record["Order ID"] || record.orderId || record.order_id || ""
-  //         );
-  //         const targetOrderId = String(orderId);
-  //         console.log(
-  //           `Comparing record Order ID: ${recordOrderId} with target: ${targetOrderId}`
-  //         );
-  //         return recordOrderId === targetOrderId;
-  //       });
+        if (response && Array.isArray(response)) {
+          const matchingRecords = response.filter((record: any) => {
+            const recordPhone = String(
+              record["Phone Number"] || record.phone || record.Phone || ""
+            ).replace(/\D/g, "");
+            const targetPhone = String(phoneNumber).replace(/\D/g, "");
+            return recordPhone === targetPhone;
+          });
 
-  //       if (!matchingRecord) {
-  //         console.log("No matching record found for Order ID:", orderId);
-  //         console.log(
-  //           "Available Order IDs:",
-  //           response.data.map((r: any) => r["Order ID"])
-  //         );
-  //         return null;
-  //       }
+          if (matchingRecords.length === 0) {
+            return null;
+          }
 
-  //       console.log("Found matching record:", matchingRecord);
+          const latestRecord = matchingRecords.sort((a: any, b: any) => {
+            const dateA = new Date(
+              a.Timestamp || a.timestamp || a.Date || a.date || 0
+            );
+            const dateB = new Date(
+              b.Timestamp || b.timestamp || b.Date || b.date || 0
+            );
+            return dateB.getTime() - dateA.getTime();
+          })[0];
 
-  //       const images = await fetchProductImages(matchingRecord);
+          const images = await fetchProductImages(latestRecord);
 
-  //       const extractPrice = (priceStr: string | number): number => {
-  //         if (typeof priceStr === "number")
-  //           return Math.round(priceStr * 100) / 100;
-  //         if (typeof priceStr === "string") {
-  //           const cleanPrice = priceStr.replace(/[₹,]/g, "").trim();
-  //           const parsed = Number.parseFloat(cleanPrice);
-  //           return isNaN(parsed) ? 0 : Math.round(parsed * 100) / 100;
-  //         }
-  //         return 0;
-  //       };
+          const extractPrice = (priceStr: string | number): number => {
+            if (typeof priceStr === "number")
+              return Math.round(priceStr * 100) / 100;
+            if (typeof priceStr === "string") {
+              const cleanPrice = priceStr.replace(/[₹,]/g, "").trim();
+              const parsed = Number.parseFloat(cleanPrice);
+              return isNaN(parsed) ? 0 : Math.round(parsed * 100) / 100;
+            }
+            return 0;
+          };
 
-  //       return {
-  //         orderId: String(matchingRecord["Order ID"]),
-  //         timestamp:
-  //           matchingRecord.Timestamp ||
-  //           matchingRecord.timestamp ||
-  //           matchingRecord.Date ||
-  //           timestamp,
-  //         customerDetails: {
-  //           name: matchingRecord.Name || userData.name,
-  //           phone: String(matchingRecord["Phone Number"] || userData.phone),
-  //           email: matchingRecord["Email id"] || userData.email,
-  //           pincode: String(matchingRecord.Location || productData.location),
-  //           projectName:
-  //             matchingRecord["Project Name"] || productData.projectName,
-  //         },
-  //         productSelection: {
-  //           base: matchingRecord.Base || productData.base,
-  //           handrail: matchingRecord.Handrail || productData.handrail,
-  //           finish: matchingRecord.Finish || productData.finish,
-  //           glassType: matchingRecord.Glass || productData.glass,
-  //           height: matchingRecord.Height || productData.height,
-  //           size: matchingRecord.Quantity || userData.size,
-  //         },
-  //         pricing: {
-  //           diy: extractPrice(matchingRecord["DIY Price"]),
-  //           standard: extractPrice(matchingRecord.Standard),
-  //           premium: extractPrice(matchingRecord.Premium),
-  //         },
-  //         images,
-  //         validTill:
-  //           matchingRecord["Valid Till"] ||
-  //           new Date(
-  //             Date.now() + 15 * 24 * 60 * 60 * 1000
-  //           ).toLocaleDateString(),
-  //       };
-  //     }
-  //     return null;
-  //   } catch (error) {
-  //     console.error("Error fetching quotation data:", error);
-  //     return null;
-  //   }
-  // };
+          return {
+            orderId: String(
+              latestRecord["Order ID"] ||
+                latestRecord.orderId ||
+                `PHONE_${Date.now()}`
+            ),
+            timestamp:
+              latestRecord.Timestamp ||
+              latestRecord.timestamp ||
+              latestRecord.Date ||
+              new Date().toISOString(),
+            customerDetails: {
+              name: latestRecord.Name || latestRecord.name || "Unknown",
+              phone: String(
+                latestRecord["Phone Number"] ||
+                  latestRecord.phone ||
+                  phoneNumber
+              ),
+              email:
+                latestRecord["Email id"] || latestRecord.email || "Unknown",
+              pincode: String(
+                latestRecord.Location || latestRecord.location || "Unknown"
+              ),
+              projectName:
+                latestRecord["Project Name"] ||
+                latestRecord.projectName ||
+                "Unknown",
+            },
+            productSelection: {
+              base: latestRecord.Base || latestRecord.base || "Unknown",
+              handrail:
+                latestRecord.Handrail || latestRecord.handrail || "Unknown",
+              finish: latestRecord.Finish || latestRecord.finish || "Unknown",
+              glassType: latestRecord.Glass || latestRecord.glass || "Unknown",
+              height: Number(latestRecord.Height || latestRecord.height) || 3.5,
+              size:
+                Number(
+                  latestRecord.Quantity ||
+                    latestRecord.quantity ||
+                    latestRecord.size
+                ) || 0,
+            },
+            pricing: {
+              diy: extractPrice(
+                latestRecord["DIY Price"] || latestRecord.diyPrice || 0
+              ),
+              standard: extractPrice(
+                latestRecord.Standard || latestRecord.standard || 0
+              ),
+              premium: extractPrice(
+                latestRecord.Premium || latestRecord.premium || 0
+              ),
+            },
+            images,
+            validTill:
+              latestRecord["Valid Till"] ||
+              latestRecord.validTill ||
+              new Date(
+                Date.now() + 15 * 24 * 60 * 60 * 1000
+              ).toLocaleDateString(),
+          };
+        }
+        return null;
+      } catch (error) {
+        console.error("Error fetching quotation by phone:", error);
+        return null;
+      }
+    },
+    []
+  );
 
-  // Fetch quotation data by phone number
-  const fetchQuotationByPhone = async (
-    phoneNumber: string
-  ): Promise<QuotationData | null> => {
-    try {
-      console.log("Fetching quotation for phone number:", phoneNumber);
+  // Optimized image fetching
+  const fetchProductImages = useCallback(
+    async (recordData?: any) => {
+      try {
+        const baseToUse = recordData?.Base || productData.base;
+        const handrailToUse = recordData?.Handrail || productData.handrail;
+        const finishToUse = recordData?.Finish || productData.finish;
+        const glassToUse = recordData?.Glass || productData.glass;
 
-      const response = await axios.get(GET_QUOTATION_URL);
+        const baseImage = getBaseImage(baseToUse, finishToUse);
+        const handrailImage = getHandrailImage(handrailToUse, finishToUse);
+        const glassTypeImage = getGlassImage(glassToUse);
 
-      console.log("Quotation fetch response:", response.data);
-
-      if (
-        response.data &&
-        response.status === 200 &&
-        Array.isArray(response.data)
-      ) {
-        const matchingRecords = response.data.filter((record: any) => {
-          const recordPhone = String(
-            record["Phone Number"] || record.phone || record.Phone || ""
-          ).replace(/\D/g, "");
-          const targetPhone = String(phoneNumber).replace(/\D/g, "");
-          console.log(
-            `Comparing record phone: ${recordPhone} with target: ${targetPhone}`
-          );
-          return recordPhone === targetPhone;
-        });
-
-        if (matchingRecords.length === 0) {
-          console.log(
-            "No matching records found for phone number:",
-            phoneNumber
-          );
-          console.log(
-            "Available phone numbers:",
-            response.data.map((r: any) => r["Phone Number"])
-          );
-          return null;
+        let finalImage = "/placeholder.svg?height=400&width=600";
+        if (baseToUse && handrailToUse) {
+          finalImage = `/images/Renders/${baseToUse}+${handrailToUse}.jpg`;
         }
 
-        const latestRecord = matchingRecords.sort((a: any, b: any) => {
-          const dateA = new Date(
-            a.Timestamp || a.timestamp || a.Date || a.date || 0
-          );
-          const dateB = new Date(
-            b.Timestamp || b.timestamp || b.Date || b.date || 0
-          );
-          return dateB.getTime() - dateA.getTime();
-        })[0];
-
-        console.log("Found latest record:", latestRecord);
-
-        const images = await fetchProductImages(latestRecord);
-
-        const extractPrice = (priceStr: string | number): number => {
-          if (typeof priceStr === "number")
-            return Math.round(priceStr * 100) / 100;
-          if (typeof priceStr === "string") {
-            const cleanPrice = priceStr.replace(/[₹,]/g, "").trim();
-            const parsed = Number.parseFloat(cleanPrice);
-            return isNaN(parsed) ? 0 : Math.round(parsed * 100) / 100;
-          }
-          return 0;
-        };
-
         return {
-          orderId: String(
-            latestRecord["Order ID"] ||
-              latestRecord.orderId ||
-              `PHONE_${Date.now()}`
-          ),
-          timestamp:
-            latestRecord.Timestamp ||
-            latestRecord.timestamp ||
-            latestRecord.Date ||
-            new Date().toISOString(),
-          customerDetails: {
-            name: latestRecord.Name || latestRecord.name || "Unknown",
-            phone: String(
-              latestRecord["Phone Number"] || latestRecord.phone || phoneNumber
-            ),
-            email: latestRecord["Email id"] || latestRecord.email || "Unknown",
-            pincode: String(
-              latestRecord.Location || latestRecord.location || "Unknown"
-            ),
-            projectName:
-              latestRecord["Project Name"] ||
-              latestRecord.projectName ||
-              "Unknown",
-          },
-          productSelection: {
-            base: latestRecord.Base || latestRecord.base || "Unknown",
-            handrail:
-              latestRecord.Handrail || latestRecord.handrail || "Unknown",
-            finish: latestRecord.Finish || latestRecord.finish || "Unknown",
-            glassType: latestRecord.Glass || latestRecord.glass || "Unknown",
-            height: Number(latestRecord.Height || latestRecord.height) || 3.5,
-            size:
-              Number(
-                latestRecord.Quantity ||
-                  latestRecord.quantity ||
-                  latestRecord.size
-              ) || 0,
-          },
-          pricing: {
-            diy: extractPrice(
-              latestRecord["DIY Price"] || latestRecord.diyPrice || 0
-            ),
-            standard: extractPrice(
-              latestRecord.Standard || latestRecord.standard || 0
-            ),
-            premium: extractPrice(
-              latestRecord.Premium || latestRecord.premium || 0
-            ),
-          },
-          images,
-          validTill:
-            latestRecord["Valid Till"] ||
-            latestRecord.validTill ||
-            new Date(
-              Date.now() + 15 * 24 * 60 * 60 * 1000
-            ).toLocaleDateString(),
+          baseImage,
+          handrailImage,
+          glassTypeImage,
+          finalImage,
+        };
+      } catch (error) {
+        console.error("Error fetching product images:", error);
+        return {
+          baseImage: "/placeholder.svg?height=200&width=300",
+          handrailImage: "/placeholder.svg?height=200&width=300",
+          glassTypeImage: "/placeholder.svg?height=200&width=300",
+          finalImage: "/placeholder.svg?height=400&width=600",
         };
       }
-      return null;
-    } catch (error) {
-      console.error("Error fetching quotation by phone:", error);
-      return null;
-    }
-  };
+    },
+    [productData]
+  );
 
-  // Convert Google Drive link to direct image URL
-  // const convertGoogleDriveLink = (url: string): string => {
-  //   try {
-  //     // Extract the file ID from various Google Drive URL formats
-  //     const match = url.match(
-  //       /(?:https?:\/\/)?(?:www\.)?(?:drive\.google\.com\/(?:file\/d\/|open\?id=)|docs\.google\.com\/file\/d\/)([a-zA-Z0-9_-]+)/
-  //     );
-  //     if (match && match[1]) {
-  //       const fileId = match[1];
-  //       // Return direct image URL
-  //       return `https://drive.google.com/uc?export=view&id=${fileId}`;
-  //     }
-  //     console.warn("Invalid Google Drive URL:", url);
-  //     return "/placeholder.svg?height=400&width=600";
-  //   } catch (error) {
-  //     console.error("Error converting Google Drive link:", error);
-  //     return "/placeholder.svg?height=400&width=600";
-  //   }
-  // };
-
-  // Fetch product images based on selections
-  const fetchProductImages = async (recordData?: any) => {
-    try {
-      const baseToUse = recordData?.Base || productData.base;
-      const handrailToUse = recordData?.Handrail || productData.handrail;
-      const finishToUse = recordData?.Finish || productData.finish;
-      const glassToUse = recordData?.Glass || productData.glass;
-
-      const baseImage = getBaseImage(baseToUse, finishToUse);
-      const handrailImage = getHandrailImage(handrailToUse, finishToUse);
-      const glassTypeImage = getGlassImage(glassToUse);
-
-      // Handle final image from Google Sheet
-      let finalImage = "/placeholder.svg?height=400&width=600";
-      if (baseToUse && handrailToUse) {
-        finalImage = `/images/Renders/${baseToUse}+${handrailToUse}.jpg`;
-        console.log("Using final image from Renders folder:", finalImage);
-      }
-
-      return {
-        baseImage,
-        handrailImage,
-        glassTypeImage,
-        finalImage,
-      };
-    } catch (error) {
-      console.error("Error fetching product images:", error);
-      return {
-        baseImage: "/placeholder.svg?height=200&width=300",
-        handrailImage: "/placeholder.svg?height=200&width=300",
-        glassTypeImage: "/placeholder.svg?height=200&width=300",
-        finalImage: "/placeholder.svg?height=400&width=600",
-      };
-    }
-  };
-
-  // Get base image based on selection
+  // Image helper functions (keeping your existing ones)
   const getBaseImage = (base: string, finish: string): string => {
     return base
       ? `/images/bases/${base}/${finish}.jpg`
       : "/placeholder.svg?height=200&width=300";
   };
 
-  // Get handrail image based on selection
   const getHandrailImage = (handrail: string, finish?: string): string => {
     const finishToUse = finish || productData.finish;
     return handrail
@@ -684,9 +682,7 @@ function App() {
       : "/placeholder.svg?height=200&width=300";
   };
 
-  // Get glass type image based on selection
   const getGlassImage = (glassType: string): string => {
-    // Map glass types to their corresponding image files in /glassInfo/
     const glassImageMap: { [key: string]: string } = {
       "12mm Clear Toughened Glass":
         "/images/glasses/12mm Clear Toughened Glass.png",
@@ -699,127 +695,85 @@ function App() {
       "8+8 SGP Laminated Toughened glass":
         "/images/glasses/8+8 SGP Laminated Toughened glass.png",
     };
-
-    // Return the mapped image or fallback to placeholder
     return glassImageMap[glassType] || "/placeholder.svg?height=200&width=300";
   };
 
-  // const getFinalImage = (base: string, handrail: string): string => {
-  //   return base && handrail
-  //     ? `/images/final/${base}+${handrail}.jpg`
-  //     : "/placeholder.svg?height=200&width=300";
-  // };
+  // Optimized form submission
+  const handleSubmit = useCallback(
+    async (userFormData: UserData) => {
+      try {
+        setIsSubmitting(true);
+        setMessage("Submitting your quotation...");
 
-  // Handle form submission
-  const handleSubmit = async (userFormData: UserData) => {
-    try {
-      setIsSubmitting(true);
-      setMessage("Submitting your quotation...");
+        const formData = {
+          ...productData,
+          ...userFormData,
+        };
 
-      const formData = {
-        ...productData,
-        ...userFormData,
-      };
+        const response = await axios.post(
+          "https://backendimperio-5uku.onrender.com/submit-form",
+          formData,
+          {
+            timeout: 100000,
+          }
+        );
 
-      console.log("Submitting form data:", formData);
+        if (response.status === 200 && response.data) {
+          const responseData = response.data;
+          const isSuccess = responseData.success !== false;
 
-      const response = await axios.post(
-        "https://backendimperio-5uku.onrender.com/submit-form",
-        formData,
-        {
-          timeout: 100000,
-        }
-      );
+          if (isSuccess) {
+            const extractOrderId = (data: any): string => {
+              const possibleOrderIds = [
+                data["Order ID"],
+                data.orderId,
+                data.order_id,
+                data.orderNumber,
+                data.order_number,
+                data.id,
+              ];
 
-      console.log("Form submission response:", response.data);
-      console.log(
-        "Full response data structure:",
-        JSON.stringify(response.data, null, 2)
-      );
-      console.log("Available keys in response:", Object.keys(response.data));
-
-      if (response.status === 200 && response.data) {
-        const responseData = response.data;
-        const isSuccess = responseData.success !== false;
-
-        if (isSuccess) {
-          const extractOrderId = (data: any): string => {
-            const possibleOrderIds = [
-              data["Order ID"],
-              data.orderId,
-              data.order_id,
-              data.orderNumber,
-              data.order_number,
-              data.id,
-            ];
-
-            for (const id of possibleOrderIds) {
-              if (id !== undefined && id !== null) {
-                const idStr = String(id).trim();
-                if (idStr && !isNaN(Number(idStr))) {
-                  return idStr;
+              for (const id of possibleOrderIds) {
+                if (id !== undefined && id !== null) {
+                  const idStr = String(id).trim();
+                  if (idStr && !isNaN(Number(idStr))) {
+                    return idStr;
+                  }
                 }
               }
-            }
 
-            // const timestamp = Date.now();
-            const randomNum = Math.floor(Math.random() * 100000);
-            return `25${String(randomNum).padStart(5, "0")}`;
-          };
+              const randomNum = Math.floor(Math.random() * 100000);
+              return `25${String(randomNum).padStart(5, "0")}`;
+            };
 
-          const submissionData = {
-            success: true,
-            orderId: extractOrderId(responseData),
-            timestamp:
-              responseData.Timestamp ||
-              responseData.timestamp ||
-              responseData.created_at ||
-              responseData.createdAt ||
-              responseData.Date ||
-              responseData.date ||
-              new Date().toISOString(),
-            message: responseData.message || "Quotation submitted successfully",
-            ...responseData,
-          };
-
-          // setSubmissionResponse(submissionData); // Removed unused state update
-          setUserData(userFormData);
-          setMessage("✅ Your quotation has been submitted successfully!");
-          setIsSuccess(true);
-
-          console.log("Submission successful with data:", submissionData);
-          console.log("Extracted Order ID:", submissionData.orderId);
+            setUserData(userFormData);
+            setMessage("✅ Your quotation has been submitted successfully!");
+            setIsSuccess(true);
+          } else {
+            const errorMessage =
+              responseData.message || responseData.error || "Submission failed";
+            throw new Error(errorMessage);
+          }
         } else {
-          const errorMessage =
-            responseData.message || responseData.error || "Submission failed";
-          throw new Error(errorMessage);
+          throw new Error(`Server responded with status ${response.status}`);
         }
-      } else {
-        throw new Error(`Server responded with status ${response.status}`);
+      } catch (error: any) {
+        console.error("Error submitting form:", error);
+        let errorMessage = "Error submitting form";
+        if (error.response?.data?.message) {
+          errorMessage += `: ${error.response.data.message}`;
+        } else if (error.message) {
+          errorMessage += `: ${error.message}`;
+        }
+        setMessage(`❌ ${errorMessage}`);
+      } finally {
+        setIsSubmitting(false);
       }
-    } catch (error: any) {
-      console.error("Error submitting form:", error);
-      console.error("Error details:", {
-        message: error.message,
-        response: error.response?.data,
-        status: error.response?.status,
-      });
+    },
+    [productData]
+  );
 
-      let errorMessage = "Error submitting form";
-      if (error.response?.data?.message) {
-        errorMessage += `: ${error.response.data.message}`;
-      } else if (error.message) {
-        errorMessage += `: ${error.message}`;
-      }
-
-      setMessage(`❌ ${errorMessage}`);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  // Handle show quotation
-  const handleShowQuotation = async () => {
+  const handleShowQuotation = useCallback(async () => {
     const phoneNumber = prompt(
       "Please enter your phone number to fetch your latest quotation: include +91"
     );
@@ -866,70 +820,80 @@ function App() {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [fetchQuotationByPhone]);
 
-  const handleNewQuote = async () => {
-    const [glassResponse, timelineResponse, userTypeResponse] =
-      await Promise.all([
-        axios.get<SheetRow[]>(GLASS_THICKNESS_URL),
-        axios.get<SheetRow[]>(TIMELINE_SHEET_URL),
-        axios.get<SheetRow[]>(USER_TYPE_SHEET_URL),
-      ]);
-    if (initialDataLoaded && baseData.length > 0) {
-      const firstFinish = Object.keys(baseData[0]).filter(
-        (key) => key !== "Base"
-      )[0];
+  const handleNewQuote = useCallback(async () => {
+    try {
+      const [glassResponse, timelineResponse, userTypeResponse] =
+        await Promise.all([
+          fetchSheetData(GLASS_THICKNESS_URL, "glass"),
+          fetchSheetData(TIMELINE_SHEET_URL, "timeline"),
+          fetchSheetData(USER_TYPE_SHEET_URL, "userType"),
+        ]);
 
-      const firstGlass = glassResponse.data[0]?.["Glass Thickness"] as string;
-      const firstTimeline = timelineResponse.data[0]?.Timeline as string;
-      const firstUserType = userTypeResponse.data[0]?.["User Type"] as string;
-      setProductData((prev) => ({
-        ...prev,
-        finish: firstFinish,
-        glass: firstGlass || "",
-        timeline: firstTimeline || "",
-        userType: firstUserType || "",
-        installation: "No",
-      }));
+      if (initialDataLoaded && baseData.length > 0) {
+        const firstFinish = Object.keys(baseData[0]).filter(
+          (key) => key !== "Base"
+        )[0];
+        const firstGlass = glassResponse[0]?.["Glass Thickness"] as string;
+        const firstTimeline = timelineResponse[0]?.Timeline as string;
+        const firstUserType = userTypeResponse[0]?.["User Type"] as string;
+
+        setProductData((prev) => ({
+          ...prev,
+          finish: firstFinish,
+          glass: firstGlass || "",
+          timeline: firstTimeline || "",
+          userType: firstUserType || "",
+          installation: "No",
+        }));
+      }
+
+      setMessage("");
+      setIsSuccess(false);
+      setQuotationData(null);
+      setCurrentPage("product");
+
+      setIsLoading(true);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 100);
+    } catch (error) {
+      console.error("Error creating new quote:", error);
     }
+  }, [initialDataLoaded, baseData]);
 
-    setMessage("");
-    setIsSuccess(false);
-    setQuotationData(null);
-    // setSubmissionResponse(null); // Removed unused state update
-    setCurrentPage("product");
-
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 100);
-  };
-
+  // Optimized loading component
   if (isLoading) {
     return (
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          minHeight: "100vh",
-          backgroundColor: "#f9f9f9",
-        }}
-      >
-        <div style={{ textAlign: "center" }}>
-          <div
-            style={{
-              border: "4px solid #f3f3f3",
-              borderTop: "4px solid #3498db",
-              borderRadius: "50%",
-              width: "50px",
-              height: "50px",
-              animation: "spin 2s linear infinite",
-              margin: "0 auto",
-            }}
-          ></div>
-          <p style={{ marginTop: "20px", fontSize: "18px" }}>
-            Loading Products...
+      <div className="flex items-center justify-center min-h-screen bg-gray-50">
+        <div className="text-center max-w-md mx-auto p-6">
+          <div className="relative w-16 h-16 mx-auto mb-4">
+            <div className="absolute inset-0 border-4 border-blue-200 rounded-full"></div>
+            <div className="absolute inset-0 border-4 border-blue-500 rounded-full border-t-transparent animate-spin"></div>
+          </div>
+
+          <div className="mb-4">
+            <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
+              <div
+                className="bg-blue-500 h-2 rounded-full transition-all duration-300 ease-out"
+                style={{ width: `${loadingProgress}%` }}
+              ></div>
+            </div>
+            <p className="text-sm text-gray-600">
+              {Math.round(loadingProgress)}% Complete
+            </p>
+          </div>
+
+          <p className="text-lg font-medium text-gray-800 mb-2">
+            {loadingMessage}
+          </p>
+          <p className="text-sm text-gray-500">
+            {loadingProgress < 50
+              ? "Loading product configurations..."
+              : loadingProgress < 80
+              ? "Almost ready..."
+              : "Finalizing setup..."}
           </p>
         </div>
       </div>
@@ -953,103 +917,46 @@ function App() {
 
   if (currentPage === "product") {
     return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          padding: "20px",
-          backgroundColor: "#f9f9f9",
-          minHeight: "100vh",
-        }}
-      >
-        <h1
-          style={{
-            textAlign: "center",
-            marginBottom: "20px",
-            fontSize: "28px",
-          }}
-        >
+      <div className="flex flex-col p-5 bg-gray-50 min-h-screen">
+        <h1 className="text-center mb-5 text-3xl font-bold text-gray-800">
           Product Selection
         </h1>
 
-        <div
-          style={{
-            padding: "20px",
-            backgroundColor: "white",
-            borderRadius: "10px",
-            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-            maxWidth: "1200px",
-            margin: "0 auto",
-            width: "100%",
-          }}
-        >
-          {/* BETA Badge */}
-          <div
-            style={{
-              position: "relative",
-              display: "flex",
-              justifyContent: "end",
-              top: "10px",
-              right: "10px",
-              color: "black",
-              padding: "4px 10px",
-              fontSize: "12px",
-              fontWeight: "bold",
-              textTransform: "uppercase",
-              zIndex: 1,
-              marginBottom: "10px",
-            }}
-          >
-            Beta Version
+        <div className="p-5 bg-white rounded-lg shadow-lg max-w-6xl mx-auto w-full">
+          <div className="flex justify-end items-center mb-4">
+            <span className="text-xs font-bold text-gray-600 uppercase tracking-wide">
+              Beta Version
+            </span>
           </div>
+
           <ProductSelection
             productData={productData}
             setProductData={setProductData}
             baseData={baseData}
             handrailData={handrailData}
-            glassData={convertToGlassData(glassData)}
-            locationData={convertToLocationData(locationData)}
-            timelineData={convertToTimelineData(timelineData)}
-            userTypeData={convertToUserTypeData(userTypeData)}
+            glassData={convertedGlassData}
+            locationData={convertedLocationData}
+            timelineData={convertedTimelineData}
+            userTypeData={convertedUserTypeData}
             heightOptions={heightOptions}
           />
 
           <button
             onClick={handleCalculate}
-            style={{
-              width: "100%",
-              padding: "12px",
-              backgroundColor: "#007bff",
-              color: "white",
-              border: "none",
-              borderRadius: "5px",
-              cursor: "pointer",
-              fontWeight: "500",
-              marginTop: "20px",
-              fontSize: "16px",
-            }}
+            disabled={isLoading}
+            className="w-full p-3 bg-blue-500 text-white border-none rounded-md cursor-pointer font-medium mt-5 text-base hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Continue
+            {isLoading ? "Processing..." : "Continue"}
           </button>
 
-          <div style={{ textAlign: "center", margin: "20px 0" }}>
-            <div
-              style={{ fontSize: "14px", color: "#666", marginBottom: "10px" }}
-            >
+          <div className="text-center my-5">
+            <div className="text-sm text-gray-600 mb-2">
               Already have a quotation?
             </div>
             <button
               onClick={handleShowQuotation}
-              style={{
-                padding: "10px 20px",
-                backgroundColor: "#6c757d",
-                color: "white",
-                border: "none",
-                borderRadius: "5px",
-                cursor: "pointer",
-                fontWeight: "500",
-                fontSize: "14px",
-              }}
+              disabled={isLoading}
+              className="px-5 py-2 bg-gray-500 text-white border-none rounded-md cursor-pointer font-medium text-sm hover:bg-gray-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               View Existing Quotation
             </button>
@@ -1057,15 +964,11 @@ function App() {
 
           {message && (
             <div
-              style={{
-                marginTop: "15px",
-                padding: "10px",
-                borderRadius: "5px",
-                backgroundColor: message.startsWith("✅")
-                  ? "#e6f7e6"
-                  : "#ffebeb",
-                color: message.startsWith("✅") ? "#2e7d32" : "#d32f2f",
-              }}
+              className={`mt-4 p-3 rounded-md ${
+                message.startsWith("✅")
+                  ? "bg-green-50 text-green-700 border border-green-200"
+                  : "bg-red-50 text-red-700 border border-red-200"
+              }`}
             >
               {message}
             </div>
@@ -1076,27 +979,9 @@ function App() {
   }
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        minHeight: "100vh",
-        backgroundColor: "#f9f9f9",
-        padding: "20px",
-      }}
-    >
-      <div
-        style={{
-          width: "100%",
-          maxWidth: "500px",
-          padding: "30px",
-          backgroundColor: "white",
-          borderRadius: "10px",
-          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-        }}
-      >
-        <h1 style={{ textAlign: "center", marginBottom: "20px" }}>
+    <div className="flex justify-center items-center min-h-screen bg-gray-50 p-5">
+      <div className="w-full max-w-lg p-8 bg-white rounded-lg shadow-lg">
+        <h1 className="text-center mb-5 text-2xl font-bold text-gray-800">
           Complete Your Quotation
         </h1>
 
@@ -1110,59 +995,28 @@ function App() {
             }}
           />
         ) : (
-          <div style={{ textAlign: "center" }}>
-            <div
-              style={{
-                backgroundColor: "#e6f7e6",
-                color: "#2e7d32",
-                padding: "15px",
-                borderRadius: "5px",
-                marginBottom: "20px",
-              }}
-            >
+          <div className="text-center">
+            <div className="bg-green-50 text-green-700 p-4 rounded-md mb-5 border border-green-200">
               {message}
             </div>
 
-            <div
-              style={{
-                display: "flex",
-                gap: "10px",
-                justifyContent: "center",
-                flexWrap: "wrap",
-              }}
-            >
+            <div className="flex gap-3 justify-center flex-wrap">
               <button
                 onClick={handleShowQuotation}
-                style={{
-                  padding: "12px 24px",
-                  backgroundColor: "#28a745",
-                  color: "white",
-                  border: "none",
-                  borderRadius: "5px",
-                  cursor: "pointer",
-                  fontWeight: "500",
-                }}
+                className="px-6 py-3 bg-green-500 text-white border-none rounded-md cursor-pointer font-medium hover:bg-green-600 transition-colors"
               >
                 View My Quotation
               </button>
 
               <button
                 onClick={handleNewQuote}
-                style={{
-                  padding: "12px 24px",
-                  backgroundColor: "#ffc107",
-                  color: "white",
-                  border: "none",
-                  borderRadius: "5px",
-                  cursor: "pointer",
-                  fontWeight: "500",
-                }}
+                className="px-6 py-3 bg-yellow-500 text-white border-none rounded-md cursor-pointer font-medium hover:bg-yellow-600 transition-colors"
               >
                 Get Another Quote
               </button>
             </div>
 
-            <div style={{ marginTop: "15px", fontSize: "14px", color: "#666" }}>
+            <div className="mt-4 text-sm text-gray-600">
               You'll be asked to enter your phone number to fetch your latest
               quotation
             </div>

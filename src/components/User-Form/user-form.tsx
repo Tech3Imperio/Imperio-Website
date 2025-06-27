@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, type FormEvent, useEffect } from "react";
+import type React from "react";
+
+import { useState, type FormEvent, useEffect, useCallback } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-// import { Mail, CheckCircle, Loader2, Send } from "lucide-react";
 import { Mail, Loader2 } from "lucide-react";
 
 interface UserData {
@@ -27,11 +28,14 @@ interface UserFormProps {
   onBack: () => void;
 }
 
-// Updated 2factor API integration functions
+// Optimized API calls with better error handling
 const sendPhoneOTP = async (
   phoneNumber: string
 ): Promise<{ success: boolean; sessionId?: string; error?: string }> => {
   try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout
+
     const response = await fetch(
       "https://backendimperio-5uku.onrender.com/api/send-phone-otp",
       {
@@ -40,9 +44,11 @@ const sendPhoneOTP = async (
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ phoneNumber }),
+        signal: controller.signal,
       }
     );
 
+    clearTimeout(timeoutId);
     const data = await response.json();
 
     if (response.ok && data.Status === "Success") {
@@ -52,6 +58,9 @@ const sendPhoneOTP = async (
     }
   } catch (error) {
     console.error("Error sending phone OTP:", error);
+    if (error instanceof Error && error.name === "AbortError") {
+      return { success: false, error: "Request timeout. Please try again." };
+    }
     return { success: false, error: "Network error occurred" };
   }
 };
@@ -61,6 +70,9 @@ const verifyPhoneOTP = async (
   otp: string
 ): Promise<{ success: boolean; error?: string }> => {
   try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+
     const response = await fetch(
       "https://backendimperio-5uku.onrender.com/api/verify-phone-otp",
       {
@@ -69,9 +81,11 @@ const verifyPhoneOTP = async (
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ sessionId, otp }),
+        signal: controller.signal,
       }
     );
 
+    clearTimeout(timeoutId);
     const data = await response.json();
 
     if (response.ok && data.Status === "Success") {
@@ -84,60 +98,19 @@ const verifyPhoneOTP = async (
     }
   } catch (error) {
     console.error("Error verifying phone OTP:", error);
+    if (error instanceof Error && error.name === "AbortError") {
+      return { success: false, error: "Request timeout. Please try again." };
+    }
     return { success: false, error: "Verification failed" };
   }
 };
-// const sendOTPToEmail = async (email: string): Promise<boolean> => {
-//   try {
-//     const res = await fetch(
-//       "https://backendimperio-5uku.onrender.com/api/send-otp",
-//       {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify({ email }),
-//       }
-//     );
 
-//     if (!res.ok) throw new Error("Failed to send OTP");
-//     return true;
-//   } catch (error) {
-//     console.error("Error sending OTP:", error);
-//     return false;
-//   }
-// };
-
-// const verifyOTP = async (email: string, otp: string): Promise<boolean> => {
-//   try {
-//     const res = await fetch(
-//       "https://backendimperio-5uku.onrender.com/api/verify-otp",
-//       {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify({
-//           email: email,
-//           otp: otp,
-//         }),
-//       }
-//     );
-
-//     const data = await res.json();
-//     console.log("Verify OTP Response:", data);
-//     return res.ok && data.message === "OTP verified successfully";
-//   } catch (error) {
-//     console.error("Error verifying OTP:", error);
-//     return false;
-//   }
-// };
-
+// Optimized loading component with better UX
 const LoadingDistraction = ({ step }: { step: number }) => {
   const [currentTip, setCurrentTip] = useState(0);
 
   const tips = [
-    "💡 Check your phone if you don't see the otp",
+    "💡 Check your phone if you don't see the OTP",
     "⏰ OTP codes are valid for 10 minutes",
     "🔒 We use secure encryption to protect your data",
     "🚀 Almost there! Your quote will be ready soon",
@@ -148,7 +121,7 @@ const LoadingDistraction = ({ step }: { step: number }) => {
       setCurrentTip((prev) => (prev + 1) % tips.length);
     }, 2000);
     return () => clearInterval(interval);
-  }, []);
+  }, [tips.length]);
 
   return (
     <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 my-4">
@@ -206,15 +179,6 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
   const [showConfirmDialog, setShowConfirmDialog] = useState(false);
   const [phone, setPhone] = useState("91");
 
-  // // OTP related states
-  // const [isEmailVerified, setIsEmailVerified] = useState(false);
-  // const [showEmailOTPInput, setShowEmailOTPInput] = useState(false);
-  // const [emailOtp, setEmailOtp] = useState("");
-  // const [isEmailOTPSending, setIsEmailOTPSending] = useState(false);
-  // const [isEmailOTPVerifying, setIsEmailOTPVerifying] = useState(false);
-  // const [emailOtpSent, setEmailOtpSent] = useState(false);
-  const [loadingStep, setLoadingStep] = useState(0);
-
   // Phone OTP related states
   const [isPhoneVerified, setIsPhoneVerified] = useState(false);
   const [showPhoneOTPInput, setShowPhoneOTPInput] = useState(false);
@@ -224,9 +188,11 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
   const [phoneOtpSent, setPhoneOtpSent] = useState(false);
   const [otpTimer, setOtpTimer] = useState(0);
   const [sessionId, setSessionId] = useState("");
+  const [loadingStep, setLoadingStep] = useState(0);
 
+  // Update userData when phone changes
   useEffect(() => {
-    setUserData({ ...userData, phone: `+${phone}` });
+    setUserData((prev) => ({ ...prev, phone: `+${phone}` }));
   }, [phone]);
 
   // Timer for OTP resend
@@ -234,34 +200,19 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
     let interval: NodeJS.Timeout;
     if (otpTimer > 0) {
       interval = setInterval(() => {
-        setOtpTimer(otpTimer - 1);
+        setOtpTimer((prev) => prev - 1);
       }, 1000);
     }
     return () => clearInterval(interval);
   }, [otpTimer]);
 
   // Simulate loading progress
-  // useEffect(() => {
-  //   if (isEmailOTPSending || isPhoneOTPSending) {
-  //     setLoadingStep(0);
-  //     const timer1 = setTimeout(() => setLoadingStep(1), 1000);
-  //     const timer2 = setTimeout(() => setLoadingStep(2), 2000);
-  //     const timer3 = setTimeout(() => setLoadingStep(3), 3000);
-
-  //     return () => {
-  //       clearTimeout(timer1);
-  //       clearTimeout(timer2);
-  //       clearTimeout(timer3);
-  //     };
-  //   }
-  // }, [isEmailOTPSending, isPhoneOTPSending]);
-
   useEffect(() => {
     if (isPhoneOTPSending) {
       setLoadingStep(0);
-      const timer1 = setTimeout(() => setLoadingStep(1), 1000);
-      const timer2 = setTimeout(() => setLoadingStep(2), 2000);
-      const timer3 = setTimeout(() => setLoadingStep(3), 3000);
+      const timer1 = setTimeout(() => setLoadingStep(1), 10000);
+      const timer2 = setTimeout(() => setLoadingStep(2), 20000);
+      const timer3 = setTimeout(() => setLoadingStep(3), 30000);
 
       return () => {
         clearTimeout(timer1);
@@ -271,11 +222,14 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
     }
   }, [isPhoneOTPSending]);
 
-  const validateForm = (): boolean => {
+  // Optimized validation function
+  const validateForm = useCallback((): boolean => {
     const newErrors: Errors = {};
 
     if (!userData.name.trim()) {
       newErrors.name = "Name is required";
+    } else if (userData.name.trim().length < 2) {
+      newErrors.name = "Name must be at least 2 characters";
     }
 
     if (!userData.phone.trim()) {
@@ -291,91 +245,47 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
     } else if (!/^[^@]+@[^@]+\.[^@]+$/.test(userData.email)) {
       newErrors.email = "Invalid email address";
     }
-    // } else if (!isEmailVerified) {
-    //   newErrors.email = "Email verification required";
-    // }
 
     if (!userData.size || userData.size <= 0) {
       newErrors.size = "Please enter a valid size";
+    } else if (userData.size > 10000) {
+      newErrors.size = "Size seems too large. Please verify.";
     }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
-  };
+  }, [userData, isPhoneVerified]);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  // Optimized form submission
+  const handleSubmit = useCallback(
+    (e: FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
 
-    if (validateForm()) {
-      const formattedUserData = {
-        ...userData,
-        email: userData.email.trim(),
-      };
+      if (validateForm()) {
+        const formattedUserData = {
+          ...userData,
+          email: userData.email.trim().toLowerCase(),
+          name: userData.name.trim(),
+        };
 
-      onSubmit(formattedUserData);
-    }
-  };
+        onSubmit(formattedUserData);
+      }
+    },
+    [userData, validateForm, onSubmit]
+  );
 
-  // const handleSendEmailOTP = async () => {
-  //   if (!userData.email.trim()) {
-  //     setErrors({ ...errors, email: "Email is required" });
-  //     return;
-  //   } else if (!/^[^@]+@[^@]+\.[^@]+$/.test(userData.email)) {
-  //     setErrors({ ...errors, email: "Invalid email address" });
-  //     return;
-  //   }
-
-  //   setIsEmailOTPSending(true);
-  //   try {
-  //     const success = await sendOTPToEmail(userData.email);
-  //     if (success) {
-  //       setEmailOtpSent(true);
-  //       setShowEmailOTPInput(true);
-  //       setErrors({ ...errors, email: undefined });
-  //     }
-  //   } catch (error) {
-  //     setErrors({ ...errors, email: "Failed to send OTP. Please try again." });
-  //   } finally {
-  //     setIsEmailOTPSending(false);
-  //   }
-  // };
-
-  // const handleVerifyEmailOTP = async () => {
-  //   if (!emailOtp.trim()) {
-  //     setErrors({ ...errors, otp: "OTP is required" });
-  //     return;
-  //   }
-
-  //   setIsEmailOTPVerifying(true);
-  //   try {
-  //     const isValid = await verifyOTP(userData.email, emailOtp);
-  //     if (isValid) {
-  //       setIsEmailVerified(true);
-  //       setShowEmailOTPInput(false);
-  //       setErrors({ ...errors, otp: undefined });
-  //     } else {
-  //       setErrors({ ...errors, otp: "Invalid OTP. Please try again." });
-  //     }
-  //   } catch (error) {
-  //     setErrors({ ...errors, otp: "Verification failed. Please try again." });
-  //   } finally {
-  //     setIsEmailOTPVerifying(false);
-  //   }
-  // };
-
-  const handleSendPhoneOTP = async () => {
-    //   // Validate phone before sending OTP
+  // Optimized OTP sending
+  const handleSendPhoneOTP = useCallback(async () => {
     if (!userData.phone.trim()) {
-      setErrors({ ...errors, phone: "Phone number is required" });
+      setErrors((prev) => ({ ...prev, phone: "Phone number is required" }));
       return;
     } else if (!/^\+?\d{10,15}$/.test(userData.phone.replace(/\s/g, ""))) {
-      setErrors({ ...errors, phone: "Invalid phone number format" });
+      setErrors((prev) => ({ ...prev, phone: "Invalid phone number format" }));
       return;
     }
 
     setIsPhoneOTPSending(true);
     try {
-      // Remove + and any spaces from phone number for 2factor API
       const cleanPhone = userData.phone.replace(/^\+/, "").replace(/\s/g, "");
       const result = await sendPhoneOTP(cleanPhone);
 
@@ -383,26 +293,33 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
         setSessionId(result.sessionId);
         setPhoneOtpSent(true);
         setShowPhoneOTPInput(true);
-        setOtpTimer(60); // 60 seconds timer
-        setErrors({ ...errors, phone: undefined });
+        setOtpTimer(60);
+        setErrors((prev) => ({ ...prev, phone: undefined }));
       } else {
-        setErrors({ ...errors, phone: result.error || "Failed to send OTP" });
+        setErrors((prev) => ({
+          ...prev,
+          phone: result.error || "Failed to send OTP",
+        }));
       }
     } catch (error) {
-      setErrors({ ...errors, phone: "Failed to send OTP. Please try again." });
+      setErrors((prev) => ({
+        ...prev,
+        phone: "Failed to send OTP. Please try again.",
+      }));
     } finally {
       setIsPhoneOTPSending(false);
     }
-  };
+  }, [userData.phone]);
 
-  const handleVerifyPhoneOTP = async () => {
+  // Optimized OTP verification
+  const handleVerifyPhoneOTP = useCallback(async () => {
     if (!phoneOtp.trim()) {
-      setErrors({ ...errors, otp: "OTP is required" });
+      setErrors((prev) => ({ ...prev, otp: "OTP is required" }));
       return;
     }
 
     if (phoneOtp.length !== 4) {
-      setErrors({ ...errors, otp: "OTP must be 4 digits" });
+      setErrors((prev) => ({ ...prev, otp: "OTP must be 4 digits" }));
       return;
     }
 
@@ -412,19 +329,72 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
       if (result.success) {
         setIsPhoneVerified(true);
         setShowPhoneOTPInput(false);
-        setErrors({ ...errors, otp: undefined });
+        setErrors((prev) => ({ ...prev, otp: undefined }));
       } else {
-        setErrors({
-          ...errors,
+        setErrors((prev) => ({
+          ...prev,
           otp: result.error || "Invalid OTP. Please try again.",
-        });
+        }));
       }
     } catch (error) {
-      setErrors({ ...errors, otp: "Verification failed. Please try again." });
+      setErrors((prev) => ({
+        ...prev,
+        otp: "Verification failed. Please try again.",
+      }));
     } finally {
       setIsPhoneOTPVerifying(false);
     }
-  };
+  }, [phoneOtp, sessionId]);
+
+  // Optimized input handlers
+  const handleNameChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const value = e.target.value;
+      setUserData((prev) => ({ ...prev, name: value }));
+      if (errors.name && value.trim().length >= 2) {
+        setErrors((prev) => ({ ...prev, name: undefined }));
+      }
+    },
+    [errors.name]
+  );
+
+  const handleEmailChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const value = e.target.value;
+      setUserData((prev) => ({ ...prev, email: value }));
+      if (errors.email && /^[^@]+@[^@]+\.[^@]+$/.test(value)) {
+        setErrors((prev) => ({ ...prev, email: undefined }));
+      }
+    },
+    [errors.email]
+  );
+
+  const handleSizeChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const value = Number.parseFloat(e.target.value) || 0;
+      setUserData((prev) => ({ ...prev, size: value }));
+      if (errors.size && value > 0 && value <= 10000) {
+        setErrors((prev) => ({ ...prev, size: undefined }));
+      }
+    },
+    [errors.size]
+  );
+
+  const handlePhoneChange = useCallback(
+    (phone: string) => {
+      setPhone(phone);
+      if (isPhoneVerified) {
+        setIsPhoneVerified(false);
+        setShowPhoneOTPInput(false);
+        setPhoneOtpSent(false);
+        setPhoneOtp("");
+      }
+      if (errors.phone) {
+        setErrors((prev) => ({ ...prev, phone: undefined }));
+      }
+    },
+    [isPhoneVerified, errors.phone]
+  );
 
   return (
     <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
@@ -435,6 +405,7 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
           onClick={onBack}
           disabled={isSubmitting}
           className="p-2 rounded-full hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          aria-label="Go back"
         >
           <svg
             className="w-6 h-6"
@@ -456,6 +427,7 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
           onClick={() => setShowConfirmDialog(true)}
           disabled={isSubmitting}
           className="p-2 rounded-full hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          aria-label="Close form"
         >
           <svg
             className="w-6 h-6"
@@ -474,44 +446,37 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Name Input */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Name
+            Name *
           </label>
           <input
             type="text"
             value={userData.name}
-            onChange={(e) => setUserData({ ...userData, name: e.target.value })}
-            className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+            onChange={handleNameChange}
+            className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors ${
               errors?.name ? "border-red-500" : "border-gray-300"
             }`}
             placeholder="Enter your full name"
+            disabled={isSubmitting}
           />
           {errors?.name && (
             <p className="text-red-500 text-sm mt-1">{errors.name}</p>
           )}
         </div>
 
-        <div style={{ marginBottom: "16px", width: "100%" }}>
-          <label
-            style={{ display: "block", marginBottom: "8px", fontWeight: "500" }}
-          >
-            Phone Number:
+        {/* Phone Input */}
+        <div className="mb-4 w-full">
+          <label className="block mb-2 text-sm font-medium text-gray-700">
+            Phone Number *
           </label>
-          <div style={{ display: "flex", gap: "10px" }}>
+          <div className="flex gap-2">
             <PhoneInput
               country={"in"}
               value={phone}
-              onChange={(phone) => {
-                setPhone(phone);
-                // // Reset verification status when phone changes
-                if (isPhoneVerified) {
-                  setIsPhoneVerified(false);
-                  setShowPhoneOTPInput(false);
-                  setPhoneOtpSent(false);
-                }
-              }}
-              disabled={isPhoneVerified}
+              onChange={handlePhoneChange}
+              disabled={isPhoneVerified || isSubmitting}
               enableSearch={true}
               autoFormat={true}
               inputStyle={{
@@ -533,23 +498,20 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
             <button
               type="button"
               onClick={handleSendPhoneOTP}
-              disabled={isPhoneOTPSending || isPhoneVerified || otpTimer > 0}
-              style={{
-                padding: "10px 15px",
-                backgroundColor: isPhoneVerified ? "#28a745" : "#007bff",
-                color: "white",
-                border: "none",
-                borderRadius: "5px",
-                cursor:
-                  isPhoneOTPSending || isPhoneVerified || otpTimer > 0
-                    ? "not-allowed"
-                    : "pointer",
-                opacity: isPhoneOTPSending || otpTimer > 0 ? 0.7 : 1,
-                whiteSpace: "nowrap",
-              }}
+              disabled={
+                isPhoneOTPSending ||
+                isPhoneVerified ||
+                otpTimer > 0 ||
+                isSubmitting
+              }
+              className={`px-4 py-2 text-white border-none rounded-md cursor-pointer font-medium text-sm transition-colors ${
+                isPhoneVerified
+                  ? "bg-green-500 hover:bg-green-600"
+                  : "bg-blue-500 hover:bg-blue-600"
+              } disabled:opacity-50 disabled:cursor-not-allowed`}
             >
               {isPhoneVerified
-                ? "Verified"
+                ? "✓ Verified"
                 : isPhoneOTPSending
                 ? "Sending..."
                 : otpTimer > 0
@@ -560,26 +522,17 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
             </button>
           </div>
           {errors?.phone && (
-            <div
-              style={{ color: "#dc3545", fontSize: "14px", marginTop: "4px" }}
-            >
-              {errors.phone}
-            </div>
+            <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
           )}
         </div>
 
+        {/* Phone OTP Input */}
         {showPhoneOTPInput && !isPhoneVerified && (
-          <div style={{ marginBottom: "16px" }}>
-            <label
-              style={{
-                display: "block",
-                marginBottom: "8px",
-                fontWeight: "500",
-              }}
-            >
-              Enter Phone OTP:
+          <div className="mb-4">
+            <label className="block mb-2 text-sm font-medium text-gray-700">
+              Enter Phone OTP *
             </label>
-            <div style={{ display: "flex", gap: "10px" }}>
+            <div className="flex gap-2">
               <input
                 type="text"
                 value={phoneOtp}
@@ -588,171 +541,78 @@ const UserForm = ({ onSubmit, isSubmitting, onBack }: UserFormProps) => {
                 }
                 placeholder="4-digit OTP"
                 maxLength={4}
-                style={{
-                  flex: "1",
-                  padding: "10px",
-                  borderRadius: "5px",
-                  border: errors?.otp ? "1px solid #dc3545" : "1px solid #ccc",
-                }}
+                className={`flex-1 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors ${
+                  errors?.otp ? "border-red-500" : "border-gray-300"
+                }`}
+                disabled={isSubmitting}
               />
               <button
                 type="button"
                 onClick={handleVerifyPhoneOTP}
-                disabled={isPhoneOTPVerifying || phoneOtp.length !== 4}
-                style={{
-                  padding: "10px 15px",
-                  backgroundColor: "#007bff",
-                  color: "white",
-                  border: "none",
-                  borderRadius: "5px",
-                  cursor:
-                    isPhoneOTPVerifying || phoneOtp.length !== 4
-                      ? "not-allowed"
-                      : "pointer",
-                  opacity:
-                    isPhoneOTPVerifying || phoneOtp.length !== 4 ? 0.7 : 1,
-                }}
-              >
-                {isPhoneOTPVerifying ? "Verifying..." : "Verify OTP"}
-              </button>
-            </div>
-            {errors?.otp && (
-              <div
-                style={{ color: "#dc3545", fontSize: "14px", marginTop: "4px" }}
-              >
-                {errors.otp}
-              </div>
-            )}
-            <div
-              style={{ fontSize: "14px", marginTop: "8px", color: "#6c757d" }}
-            >
-              OTP sent to {userData.phone}. Valid for 10 minutes.
-            </div>
-          </div>
-        )}
-        {/* Loading Distraction Component */}
-        {isPhoneOTPSending && <LoadingDistraction step={loadingStep} />}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Email
-          </label>
-          <div className="flex gap-2">
-            <input
-              type="email"
-              value={userData.email}
-              onChange={(e) => {
-                setUserData({ ...userData, email: e.target.value });
-                // if (isEmailVerified) {
-                //   setIsEmailVerified(false);
-                // }
-              }}
-              // disabled={isEmailVerified}
-              className={`flex-1 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                errors?.email ? "border-red-500" : "border-gray-300"
-              }`}
-              // placeholder="Enter your email"
-            />
-            {/* <button
-              type="button"
-              onClick={handleSendEmailOTP}
-              disabled={isEmailOTPSending || isEmailVerified}
-              className={`px-4 py-2 rounded-md font-medium transition-colors flex items-center gap-2 ${
-                isEmailVerified
-                  ? "bg-green-500 text-white"
-                  : "bg-blue-500 hover:bg-blue-600 text-white"
-              } disabled:opacity-50 disabled:cursor-not-allowed`}
-            >
-              {isEmailVerified ? (
-                <>
-                  <CheckCircle className="h-4 w-4" />
-                  Verified
-                </>
-              ) : isEmailOTPSending ? (
-                <>
-                  <Loader2 className="h-4 w-4 animate-spin" />
-                  Sending...
-                </>
-              ) : (
-                <>
-                  <Send className="h-4 w-4" />
-                  {emailOtpSent ? "Resend" : "Send OTP"}
-                </>
-              )}
-            </button> */}
-          </div>
-          {errors?.email && (
-            <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-          )}
-        </div>
-
-        {/* {showEmailOTPInput && !isEmailVerified && (
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Enter Email OTP
-            </label>
-            <div className="flex gap-2">
-              <input
-                type="text"
-                value={emailOtp}
-                onChange={(e) =>
-                  setEmailOtp(e.target.value.replace(/\D/g, "").substring(0, 6))
+                disabled={
+                  isPhoneOTPVerifying || phoneOtp.length !== 4 || isSubmitting
                 }
-                placeholder="6-digit OTP"
-                maxLength={6}
-                className={`flex-1 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                  errors?.otp ? "border-red-500" : "border-gray-300"
-                }`}
-              />
-              <button
-                type="button"
-                onClick={handleVerifyEmailOTP}
-                disabled={isEmailOTPVerifying || emailOtp.length !== 6}
-                className="px-4 py-2 bg-blue-500 text-white rounded-md font-medium hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                className="px-4 py-2 bg-blue-500 text-white border-none rounded-md cursor-pointer font-medium hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isEmailOTPVerifying ? (
-                  <>
-                    <Loader2 className="h-4 w-4 animate-spin" />
-                    Verifying...
-                  </>
-                ) : (
-                  "Verify"
-                )}
+                {isPhoneOTPVerifying ? "Verifying..." : "Verify"}
               </button>
             </div>
             {errors?.otp && (
               <p className="text-red-500 text-sm mt-1">{errors.otp}</p>
             )}
             <p className="text-gray-500 text-sm mt-2">
-              {
-                "Didn't receive the OTP? Check your spam folder or click 'Resend OTP'."
-              }
+              OTP sent to {userData.phone}. Valid for 10 minutes.
             </p>
           </div>
-        )} */}
+        )}
 
+        {/* Loading Distraction Component */}
+        {isPhoneOTPSending && <LoadingDistraction step={loadingStep} />}
+
+        {/* Email Input */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Quantity (Running Feet)
+            Email *
+          </label>
+          <input
+            type="email"
+            value={userData.email}
+            onChange={handleEmailChange}
+            className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors ${
+              errors?.email ? "border-red-500" : "border-gray-300"
+            }`}
+            placeholder="Enter your email address"
+            disabled={isSubmitting}
+          />
+          {errors?.email && (
+            <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+          )}
+        </div>
+
+        {/* Size Input */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Quantity (Running Feet) *
           </label>
           <input
             type="number"
             value={userData.size}
-            onChange={(e) =>
-              setUserData({
-                ...userData,
-                size: Number.parseFloat(e.target.value) || 0,
-              })
-            }
-            className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+            onChange={handleSizeChange}
+            className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors ${
               errors?.size ? "border-red-500" : "border-gray-300"
             }`}
             placeholder="Enter quantity in running feet"
+            min="1"
+            max="10000"
+            step="0.1"
+            disabled={isSubmitting}
           />
           {errors?.size && (
             <p className="text-red-500 text-sm mt-1">{errors.size}</p>
           )}
         </div>
 
+        {/* Submit Button */}
         <button
           type="submit"
           disabled={isSubmitting || !isPhoneVerified}
