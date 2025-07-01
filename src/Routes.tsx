@@ -55,6 +55,7 @@ import LandingApp from "./pages/LandingApp/LandingApp";
 import { GlassRailingsGallery } from "./pages/Gallery/Gallery";
 import InteriorDesign from "./pages/Blog/InteriorDesign/InteriorDesign";
 import Contest from "./pages/Contest/Contest";
+import GlassRecommendationSystem from "./pages/GlassRecommendationSystem/GlassRecommendationSystem";
 // import ForgotPassword from "./pages/DealerOnlineStore/ForgotPassword/ForgotPassword";
 
 export const routes = createBrowserRouter([
@@ -165,6 +166,7 @@ export const routes = createBrowserRouter([
       { path: "Landing", element: <LandingApp /> },
       { path: "thanks", element: <ThankYou /> },
       { path: "contest", element: <Contest /> },
+      { path: "recommend", element: <GlassRecommendationSystem /> },
       {
         path: "PrivacyPolicy",
         element: (

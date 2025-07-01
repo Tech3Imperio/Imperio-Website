@@ -25,11 +25,9 @@ const TIMELINE_SHEET_URL =
 const USER_TYPE_SHEET_URL =
   "https://script.google.com/macros/s/AKfycbyGliJ9kC9zhN4ShItCtCatIe-GCB98yVo0z9uVa8k0ToaPfKM7LupxuiBiDkgZJ2Ug/exec?sheet=User Type";
 
-// Cache configuration
-const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+const CACHE_DURATION = 5 * 60 * 1000;
 const cache = new Map();
 
-// Optimized cache utility
 const getCachedData = (key: string) => {
   const cached = cache.get(key);
   if (cached && Date.now() - cached.timestamp < CACHE_DURATION) {
@@ -42,7 +40,6 @@ const setCachedData = (key: string, data: any) => {
   cache.set(key, { data, timestamp: Date.now() });
 };
 
-// Interfaces (keeping your existing ones)
 interface ProductData {
   base: string;
   handrail: string;
@@ -143,7 +140,6 @@ type SheetRow = {
   [key: string]: string | number | undefined;
 };
 
-// Optimized API call with retry logic and timeout
 const fetchWithRetry = async (
   url: string,
   retries = 2,
@@ -286,7 +282,7 @@ function App() {
   const [productData, setProductData] = useState<ProductData>({
     ...defaultProductData,
   });
-  const [userData, setUserData] = useState<UserData>({
+  const [, setUserData] = useState<UserData>({
     name: "",
     phone: "",
     email: "",
@@ -632,41 +628,38 @@ function App() {
   );
 
   // Optimized image fetching
-  const fetchProductImages = useCallback(
-    async (recordData?: any) => {
-      try {
-        const baseToUse = recordData?.Base || productData.base;
-        const handrailToUse = recordData?.Handrail || productData.handrail;
-        const finishToUse = recordData?.Finish || productData.finish;
-        const glassToUse = recordData?.Glass || productData.glass;
+  const fetchProductImages = useCallback(async (recordData?: any) => {
+    try {
+      const baseToUse = recordData?.Base || productData.base;
+      const handrailToUse = recordData?.Handrail || productData.handrail;
+      const finishToUse = recordData?.Finish || productData.finish;
+      const glassToUse = recordData?.Glass || productData.glass;
 
-        const baseImage = getBaseImage(baseToUse, finishToUse);
-        const handrailImage = getHandrailImage(handrailToUse, finishToUse);
-        const glassTypeImage = getGlassImage(glassToUse);
+      const baseImage = getBaseImage(baseToUse, finishToUse);
+      const handrailImage = getHandrailImage(handrailToUse, finishToUse);
+      const glassTypeImage = getGlassImage(glassToUse);
 
-        let finalImage = "/placeholder.svg?height=400&width=600";
-        if (baseToUse && handrailToUse) {
-          finalImage = `/images/Renders/${baseToUse}+${handrailToUse}.jpg`;
-        }
-
-        return {
-          baseImage,
-          handrailImage,
-          glassTypeImage,
-          finalImage,
-        };
-      } catch (error) {
-        console.error("Error fetching product images:", error);
-        return {
-          baseImage: "/placeholder.svg?height=200&width=300",
-          handrailImage: "/placeholder.svg?height=200&width=300",
-          glassTypeImage: "/placeholder.svg?height=200&width=300",
-          finalImage: "/placeholder.svg?height=400&width=600",
-        };
+      let finalImage = "/placeholder.svg?height=400&width=600";
+      if (baseToUse && handrailToUse) {
+        finalImage = `/images/Renders/${baseToUse}+${handrailToUse}.jpg`;
       }
-    },
-    [productData]
-  );
+
+      return {
+        baseImage,
+        handrailImage,
+        glassTypeImage,
+        finalImage,
+      };
+    } catch (error) {
+      console.error("Error fetching product images:", error);
+      return {
+        baseImage: "/placeholder.svg?height=200&width=300",
+        handrailImage: "/placeholder.svg?height=200&width=300",
+        glassTypeImage: "/placeholder.svg?height=200&width=300",
+        finalImage: "/placeholder.svg?height=400&width=600",
+      };
+    }
+  }, []);
 
   // Image helper functions (keeping your existing ones)
   const getBaseImage = (base: string, finish: string): string => {
@@ -745,7 +738,7 @@ function App() {
               const randomNum = Math.floor(Math.random() * 100000);
               return `25${String(randomNum).padStart(5, "0")}`;
             };
-
+            console.log(extractOrderId(responseData));
             setUserData(userFormData);
             setMessage("✅ Your quotation has been submitted successfully!");
             setIsSuccess(true);
