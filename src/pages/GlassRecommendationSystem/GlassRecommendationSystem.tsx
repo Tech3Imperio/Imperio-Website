@@ -4,8 +4,11 @@ import { useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import PropertyTypeStep from "../../components/Recommendation/property-type-step";
 import InstallationAreaStep from "../../components/Recommendation/installation-area-step";
-import BudgetStep from "../../components/Recommendation/budget-step";
-import PrivacyStep from "../../components/Recommendation/privacy-step";
+import FloorNumberStep from "../../components/Recommendation/floor-number-step";
+import RailingLengthStep from "../../components/Recommendation/railing-length-step";
+import ApplicationTypeStep from "../../components/Recommendation/application-type-step";
+import RequirementStep from "../../components/Recommendation/requirement-step";
+// import PrivacyStep from "../../components/Recommendation/privacy-step";
 import AddonsStep from "../../components/Recommendation/addons-step";
 import NanocoatingStep from "../../components/Recommendation/nanocoating-step";
 import ResultsStep from "../../components/Recommendation/results-step";
@@ -13,8 +16,11 @@ import ResultsStep from "../../components/Recommendation/results-step";
 export interface FormData {
   propertyType: string;
   installationArea: string;
-  budget: string;
-  privacyLevel: string;
+  floorNumber: string;
+  railingLength: string;
+  applicationType: string;
+  requirement: string;
+  // privacyLevel: string;
   addons: string;
   nanocoating: string;
 }
@@ -22,8 +28,11 @@ export interface FormData {
 const initialFormData: FormData = {
   propertyType: "",
   installationArea: "",
-  budget: "",
-  privacyLevel: "",
+  floorNumber: "",
+  railingLength: "",
+  applicationType: "",
+  requirement: "",
+  // privacyLevel: "",
   addons: "",
   nanocoating: "",
 };
@@ -31,8 +40,11 @@ const initialFormData: FormData = {
 const steps = [
   { title: "Property Type", component: PropertyTypeStep },
   { title: "Installation Area", component: InstallationAreaStep },
-  { title: "Budget", component: BudgetStep },
-  { title: "Privacy Level", component: PrivacyStep },
+  { title: "Floor Number", component: FloorNumberStep },
+  { title: "Railing Length", component: RailingLengthStep },
+  { title: "Application Type", component: ApplicationTypeStep },
+  { title: "Requirement", component: RequirementStep },
+  // { title: "Privacy Level", component: PrivacyStep },
   { title: "Add-ons", component: AddonsStep },
   { title: "Nanocoating", component: NanocoatingStep },
   { title: "Results", component: ResultsStep },
@@ -70,12 +82,16 @@ export default function GlassRecommendationSystem() {
       case 1:
         return formData.installationArea !== "";
       case 2:
-        return formData.budget !== "";
+        return formData.floorNumber !== "";
       case 3:
-        return formData.privacyLevel !== "";
+        return formData.railingLength !== "";
       case 4:
-        return formData.addons !== "";
+        return formData.applicationType !== "";
       case 5:
+        return formData.requirement !== "";
+      case 6:
+        return formData.addons !== "";
+      case 7:
         return formData.nanocoating !== "";
       default:
         return true;
@@ -93,7 +109,8 @@ export default function GlassRecommendationSystem() {
             Glass Installation Recommendation System
           </h1>
           <p className="text-lg text-gray-600">
-            Get personalized recommendations for your glass installation project
+            Get personalized safety-based recommendations for your glass
+            installation project
           </p>
         </div>
 
