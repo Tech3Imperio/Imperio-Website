@@ -1,7 +1,7 @@
 "use client";
 
 import type { FormData } from "../../pages/GlassRecommendationSystem/GlassRecommendationSystem";
-import { Building, Home, Briefcase, Hotel } from "lucide-react";
+import { ArrowUp, ArrowRight } from "lucide-react";
 
 interface Props {
   formData: FormData;
@@ -10,44 +10,36 @@ interface Props {
   onReset: () => void;
 }
 
-const propertyOptions = [
+const mountingOptions = [
   {
-    value: "Villa/Bungalow",
-    label: "Villa / Bungalow",
-    icon: Home,
-    description: "Independent house or villa",
+    value: "top-mounted",
+    label: "Top Mounted",
+    icon: ArrowUp,
+    description: "Railing mounted on top of the surface",
   },
   {
-    value: "Apartment",
-    label: "Apartment / Residential Building",
-    icon: Building,
-    description: "Multi-story residential building",
-  },
-  {
-    value: "Commercial",
-    label: "Commercial Office",
-    icon: Briefcase,
-    description: "Office buildings and commercial spaces",
-  },
-  {
-    value: "Hotel",
-    label: "Hotel / Resort",
-    icon: Hotel,
-    description: "Hospitality and resort properties",
+    value: "side-mounted",
+    label: "Side Mounted",
+    icon: ArrowRight,
+    description: "Railing mounted on the side of the surface",
   },
 ];
 
-export default function PropertyTypeStep({ formData, updateFormData }: Props) {
+export default function MountingTypeStep({ formData, updateFormData }: Props) {
   return (
     <div>
       <h2 className="text-2xl font-semibold mb-6 text-center text-gray-900">
-        What type of property is this for?
+        How will the railing be mounted?
       </h2>
+      <p className="text-center text-gray-600 mb-8">
+        Choose the mounting style for your{" "}
+        {formData.installationArea.toLowerCase()} railing
+      </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {propertyOptions.map((option) => {
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+        {mountingOptions.map((option) => {
           const IconComponent = option.icon;
-          const isSelected = formData.propertyType === option.value;
+          const isSelected = formData.mountingType === option.value;
           return (
             <div
               key={option.value}
@@ -56,7 +48,7 @@ export default function PropertyTypeStep({ formData, updateFormData }: Props) {
                   ? "border-blue-500 bg-blue-50 shadow-md"
                   : "border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50"
               }`}
-              onClick={() => updateFormData("propertyType", option.value)}
+              onClick={() => updateFormData("mountingType", option.value)}
             >
               <div className="text-center">
                 <IconComponent className="w-12 h-12 mx-auto mb-4 text-blue-600" />

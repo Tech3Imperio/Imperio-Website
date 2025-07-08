@@ -1,7 +1,7 @@
 "use client";
 
 import type { FormData } from "../../pages/GlassRecommendationSystem/GlassRecommendationSystem";
-import { Shield, X } from "lucide-react";
+import { Shield, Layers, Zap } from "lucide-react";
 
 interface Props {
   formData: FormData;
@@ -10,32 +10,41 @@ interface Props {
   onReset: () => void;
 }
 
-const nanocoatingOptions = [
+const glassTypeOptions = [
   {
-    value: "Yes",
-    label: "Yes, add nanocoating",
-    icon: Shield,
-    description: "Enhanced protection and easy cleaning",
+    value: "laminated",
+    label: "Laminated Glass",
+    icon: Layers,
+    description: "PVB and SGP laminated glass options",
   },
   {
-    value: "No",
-    label: "No nanocoating",
-    icon: X,
-    description: "Standard glass without coating",
+    value: "toughened",
+    label: "Toughened Glass",
+    icon: Shield,
+    description: "Tempered glass for basic safety",
+  },
+  {
+    value: "any",
+    label: "Any Glass Type",
+    icon: Zap,
+    description: "Show all available glass options",
   },
 ];
 
-export default function NanocoatingStep({ formData, updateFormData }: Props) {
+export default function GlassTypeStep({ formData, updateFormData }: Props) {
   return (
     <div>
       <h2 className="text-2xl font-semibold mb-6 text-center text-gray-900">
-        Do you want nanocoating for extra protection?
+        What type of glass do you prefer?
       </h2>
+      <p className="text-center text-gray-600 mb-8">
+        Choose your preferred glass technology
+      </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-        {nanocoatingOptions.map((option) => {
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {glassTypeOptions.map((option) => {
           const IconComponent = option.icon;
-          const isSelected = formData.nanocoating === option.value;
+          const isSelected = formData.glassType === option.value;
           return (
             <div
               key={option.value}
@@ -44,7 +53,7 @@ export default function NanocoatingStep({ formData, updateFormData }: Props) {
                   ? "border-blue-500 bg-blue-50 shadow-md"
                   : "border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50"
               }`}
-              onClick={() => updateFormData("nanocoating", option.value)}
+              onClick={() => updateFormData("glassType", option.value)}
             >
               <div className="text-center">
                 <IconComponent className="w-12 h-12 mx-auto mb-4 text-blue-600" />

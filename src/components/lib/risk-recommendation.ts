@@ -52,15 +52,13 @@ const handrailTypes = [
 const baseTypes = [
   { name: "Micro (F40)", safety: 10 },
   { name: "SemiMini (D55)", safety: 20 },
-  { name: "Mini (F55)", safety: 40 },
+  { name: "Mini (F55)", safety: 30 },
   { name: "SemiSmart (D75)", safety: 40 },
-  { name: "SemiPro (C100)", safety: 40 },
-  { name: "Spigot (SP150)", safety: 40 },
+  { name: "SemiPro (C100)", safety: 45 },
   { name: "Lux (T100)", safety: 50 },
   { name: "Smart (C75)", safety: 60 },
-  { name: "Spigot (SP200)", safety: 60 },
   { name: "Spigot (SP250)", safety: 70 },
-  { name: "Dot (E50)", safety: 80 },
+  { name: "Dot (E50)", safety: 75 },
   { name: "Ace (A50)", safety: 80 },
   { name: "Pro (L50)", safety: 85 },
   { name: "Ultra (M50)", safety: 95 },
@@ -80,9 +78,6 @@ const staircaseHandrails = [
 
 const staircaseBases = [
   { name: "Dot (E50)", safety: 80 },
-  { name: "Spigot (SP100)", safety: 50 },
-  { name: "Spigot (SP150)", safety: 40 },
-  { name: "Spigot (SP200)", safety: 60 },
   { name: "Spigot (SP250)", safety: 70 },
 ];
 
