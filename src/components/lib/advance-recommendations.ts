@@ -49,61 +49,59 @@ const glassComponents: Component[] = [
 ];
 
 const handrailComponents: Component[] = [
-  { name: "Oval-(O-80)", safety: 80, cost: 95, suitability: 90 },
-  { name: "Oval-(O-60)", safety: 70, cost: 80, suitability: 85 },
-  { name: "Square-(S-50)", safety: 60, cost: 70, suitability: 80 },
-  { name: "LED-40", safety: 55, cost: 85, suitability: 75 },
-  { name: "Square-(S-40)", safety: 50, cost: 65, suitability: 75 },
-  { name: "Round-(R-50)", safety: 45, cost: 60, suitability: 70 },
-  { name: "Slim-(S-25)", safety: 35, cost: 45, suitability: 65 },
+  { name: "Oval-(O-80)", safety: 90, cost: 95, suitability: 90 },
+  { name: "Oval-(O-60)", safety: 80, cost: 80, suitability: 85 },
+  { name: "Square-(S-50)", safety: 70, cost: 70, suitability: 80 },
+  { name: "LED-40", safety: 65, cost: 85, suitability: 75 },
+  { name: "Square-(S-40)", safety: 60, cost: 65, suitability: 75 },
+  { name: "Round-(R-50)", safety: 50, cost: 60, suitability: 70 },
+  { name: "Slim-(S-25)", safety: 40, cost: 45, suitability: 65 },
   { name: "LED-20", safety: 30, cost: 55, suitability: 60 },
   { name: "Sleek-(S-17)", safety: 25, cost: 35, suitability: 55 },
   { name: "Sleek-(S-12)", safety: 20, cost: 30, suitability: 50 },
 ];
 
 const baseComponents: Component[] = [
-  { name: "Ultra-(M50)", safety: 85, cost: 100, suitability: 95 },
-  { name: "Pro-(L50)", safety: 80, cost: 90, suitability: 90 },
-  { name: "Ace-(A50)", safety: 75, cost: 85, suitability: 85 },
-  { name: "Dot-(E50)", safety: 70, cost: 80, suitability: 80 },
-  { name: "Spigot-(SP250)", safety: 65, cost: 75, suitability: 75 },
-  { name: "Spigot-(SP200)", safety: 55, cost: 65, suitability: 70 },
-  { name: "Smart-(C75)", safety: 50, cost: 70, suitability: 75 },
-  { name: "Lux-(T100)", safety: 45, cost: 60, suitability: 65 },
-  { name: "Spigot-(SP150)", safety: 40, cost: 50, suitability: 60 },
-  { name: "SemiPro-(C50)", safety: 35, cost: 55, suitability: 65 },
-  { name: "SemiSmart-(D75)", safety: 30, cost: 45, suitability: 60 },
-  { name: "Mini-(F55)", safety: 25, cost: 40, suitability: 55 },
+  { name: "Ultra-(M50)", safety: 95, cost: 100, suitability: 95 },
+  { name: "Pro-(L50)", safety: 85, cost: 90, suitability: 90 },
+  { name: "Ace-(A50)", safety: 80, cost: 85, suitability: 85 },
+  { name: "Dot-(E50)", safety: 75, cost: 80, suitability: 80 },
+  { name: "Spigot-(SP250)", safety: 70, cost: 75, suitability: 75 },
+  { name: "Smart-(C75)", safety: 60, cost: 70, suitability: 75 },
+  { name: "Lux-(T100)", safety: 50, cost: 60, suitability: 65 },
+  { name: "SemiPro-(C50)", safety: 45, cost: 55, suitability: 65 },
+  { name: "SemiSmart-(D75)", safety: 40, cost: 45, suitability: 60 },
+  { name: "Mini-(F55)", safety: 30, cost: 40, suitability: 55 },
   { name: "SemiMini-(D55)", safety: 20, cost: 25, suitability: 45 },
-  { name: "Micro-(F40)", safety: 15, cost: 15, suitability: 35 },
+  { name: "Micro-(F40)", safety: 10, cost: 15, suitability: 35 },
 ];
 
 const staircaseHandrails: Component[] = [
-  { name: "Oval-(O-80)", safety: 80, cost: 95, suitability: 95 },
-  { name: "Oval-(O-60)", safety: 70, cost: 80, suitability: 90 },
-  { name: "Square-(S-50)", safety: 60, cost: 70, suitability: 85 },
-  { name: "LED-40", safety: 55, cost: 85, suitability: 80 },
-  { name: "Square-(S-40)", safety: 50, cost: 65, suitability: 80 },
-  { name: "Round-(R-50)", safety: 45, cost: 60, suitability: 75 },
-  { name: "Slim-(S-25)", safety: 35, cost: 45, suitability: 70 },
+  { name: "Oval-(O-80)", safety: 90, cost: 95, suitability: 95 },
+  { name: "Oval-(O-60)", safety: 80, cost: 80, suitability: 90 },
+  { name: "Square-(S-50)", safety: 70, cost: 70, suitability: 85 },
+  { name: "LED-40", safety: 65, cost: 85, suitability: 80 },
+  { name: "Square-(S-40)", safety: 60, cost: 65, suitability: 80 },
+  { name: "Round-(R-50)", safety: 50, cost: 60, suitability: 75 },
+  { name: "Slim-(S-25)", safety: 40, cost: 45, suitability: 70 },
   { name: "LED-20", safety: 30, cost: 55, suitability: 65 },
 ];
 
 const staircaseBases: Component[] = [
-  { name: "Dot-(E50)", safety: 70, cost: 80, suitability: 90 },
-  { name: "Spigot-(SP250)", safety: 65, cost: 75, suitability: 85 },
+  { name: "Dot-(E50)", safety: 75, cost: 80, suitability: 90 },
+  { name: "Spigot-(SP250)", safety: 70, cost: 75, suitability: 85 },
 ];
 
 // Recommendation mappings based on your specifications
 const baseRecommendations = {
   Staircase: {
-    Low: ["SemiPro-(C50)", "Mini-(F55)", "Spigot-(SP150)"],
+    Low: ["SemiPro-(C50)", "Mini-(F55)", "Spigot-(SP250)"],
     Moderate: ["SemiPro-(C50)", "Mini-(F55)", "Ultra-(M50)"],
     High: ["Smart-(C75)", "Ace-(A50)", "Pro-(L50)", "Dot-(E50)"],
   },
   "Non-Staircase": {
     Low: ["SemiMini-(D55)", "SemiSmart-(D75)", "Lux-(T100)"],
-    Moderate: ["SemiPro-(C50)", "Mini-(F55)", "Smart-(C75)", "Spigot-(SP150)"],
+    Moderate: ["SemiPro-(C50)", "Mini-(F55)", "Smart-(C75)", "Spigot-(SP250)"],
     High: ["Ace-(A50)", "Pro-(L50)"],
   },
 };

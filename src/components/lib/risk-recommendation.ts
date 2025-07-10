@@ -38,13 +38,13 @@ const glassTypes = {
 const handrailTypes = [
   { name: "Sleek (S-12)", safety: 20 },
   { name: "Sleek (S-17)", safety: 25 },
-  { name: "LED-20", safety: 40 },
+  { name: "LED-20", safety: 30 },
   { name: "Slim (S-25)", safety: 40 },
   { name: "Round (R-50)", safety: 50 },
   { name: "Square (S-40)", safety: 60 },
-  { name: "LED-40", safety: 60 },
-  { name: "Square (S-50)", safety: 60 },
-  { name: "Oval (O-60)", safety: 75 },
+  { name: "LED-40", safety: 65 },
+  { name: "Square (S-50)", safety: 70 },
+  { name: "Oval (O-60)", safety: 80 },
   { name: "Oval (O-80)", safety: 90 },
 ];
 
@@ -54,7 +54,7 @@ const baseTypes = [
   { name: "SemiMini (D55)", safety: 20 },
   { name: "Mini (F55)", safety: 30 },
   { name: "SemiSmart (D75)", safety: 40 },
-  { name: "SemiPro (C100)", safety: 45 },
+  { name: "SemiPro (C50)", safety: 45 },
   { name: "Lux (T100)", safety: 50 },
   { name: "Smart (C75)", safety: 60 },
   { name: "Spigot (SP250)", safety: 70 },
@@ -66,18 +66,18 @@ const baseTypes = [
 
 // Staircase specific recommendations
 const staircaseHandrails = [
-  { name: "LED-20", safety: 40 },
+  { name: "LED-20", safety: 30 },
   { name: "Slim (S-25)", safety: 40 },
   { name: "Round (R-50)", safety: 50 },
   { name: "Square (S-40)", safety: 60 },
-  { name: "LED-40", safety: 60 },
-  { name: "Square (S-50)", safety: 60 },
-  { name: "Oval (O-60)", safety: 75 },
+  { name: "LED-40", safety: 65 },
+  { name: "Square (S-50)", safety: 70 },
+  { name: "Oval (O-60)", safety: 80 },
   { name: "Oval (O-80)", safety: 90 },
 ];
 
 const staircaseBases = [
-  { name: "Dot (E50)", safety: 80 },
+  { name: "Dot (E50)", safety: 75 },
   { name: "Spigot (SP250)", safety: 70 },
 ];
 

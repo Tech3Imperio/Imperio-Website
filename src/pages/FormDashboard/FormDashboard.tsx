@@ -7,7 +7,7 @@ import axios from "axios";
 import ProductSelection from "../../components/Product_Selection/product-selection";
 import UserForm from "../../components/User-Form/user-form";
 import QuotationViewer from "../../components/Quotation/quotation-viewer";
-
+import RecommendationPopup from "../../components/RecommendationPopup/RecommendationPopup";
 // Google Apps Script Web App URLs
 const GET_QUOTATION_URL =
   "https://script.google.com/macros/s/AKfycbyBueVSS9dggQIBBTm5TecMHoyviL5lLXHoYYUy55OavWIbfehVo5HzDF2IwiKkqzMx/exec";
@@ -911,62 +911,65 @@ function App() {
   if (currentPage === "product") {
     return (
       <div className="flex flex-col p-5 bg-gray-50 min-h-screen">
-        <h1 className="text-center mb-5 text-3xl font-bold text-gray-800">
-          Product Selection
-        </h1>
+        <div className="flex flex-col p-5 bg-gray-50 min-h-screen">
+          <h1 className="text-center mb-5 text-3xl font-bold text-gray-800">
+            Product Selection
+          </h1>
 
-        <div className="p-5 bg-white rounded-lg shadow-lg max-w-6xl mx-auto w-full">
-          <div className="flex justify-end items-center mb-4">
-            <span className="text-xs font-bold text-gray-600 uppercase tracking-wide">
-              Beta Version
-            </span>
-          </div>
-
-          <ProductSelection
-            productData={productData}
-            setProductData={setProductData}
-            baseData={baseData}
-            handrailData={handrailData}
-            glassData={convertedGlassData}
-            locationData={convertedLocationData}
-            timelineData={convertedTimelineData}
-            userTypeData={convertedUserTypeData}
-            heightOptions={heightOptions}
-          />
-
-          <button
-            onClick={handleCalculate}
-            disabled={isLoading}
-            className="w-full p-3 bg-blue-500 text-white border-none rounded-md cursor-pointer font-medium mt-5 text-base hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {isLoading ? "Processing..." : "Continue"}
-          </button>
-
-          <div className="text-center my-5">
-            <div className="text-sm text-gray-600 mb-2">
-              Already have a quotation?
+          <div className="p-5 bg-white rounded-lg shadow-lg max-w-6xl mx-auto w-full">
+            <div className="flex justify-end items-center mb-4">
+              <span className="text-xs font-bold text-gray-600 uppercase tracking-wide">
+                Beta Version
+              </span>
             </div>
+
+            <ProductSelection
+              productData={productData}
+              setProductData={setProductData}
+              baseData={baseData}
+              handrailData={handrailData}
+              glassData={convertedGlassData}
+              locationData={convertedLocationData}
+              timelineData={convertedTimelineData}
+              userTypeData={convertedUserTypeData}
+              heightOptions={heightOptions}
+            />
+
             <button
-              onClick={handleShowQuotation}
+              onClick={handleCalculate}
               disabled={isLoading}
-              className="px-5 py-2 bg-gray-500 text-white border-none rounded-md cursor-pointer font-medium text-sm hover:bg-gray-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full p-3 bg-blue-500 text-white border-none rounded-md cursor-pointer font-medium mt-5 text-base hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              View Existing Quotation
+              {isLoading ? "Processing..." : "Continue"}
             </button>
-          </div>
 
-          {message && (
-            <div
-              className={`mt-4 p-3 rounded-md ${
-                message.startsWith("✅")
-                  ? "bg-green-50 text-green-700 border border-green-200"
-                  : "bg-red-50 text-red-700 border border-red-200"
-              }`}
-            >
-              {message}
+            <div className="text-center my-5">
+              <div className="text-sm text-gray-600 mb-2">
+                Already have a quotation?
+              </div>
+              <button
+                onClick={handleShowQuotation}
+                disabled={isLoading}
+                className="px-5 py-2 bg-gray-500 text-white border-none rounded-md cursor-pointer font-medium text-sm hover:bg-gray-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                View Existing Quotation
+              </button>
             </div>
-          )}
+
+            {message && (
+              <div
+                className={`mt-4 p-3 rounded-md ${
+                  message.startsWith("✅")
+                    ? "bg-green-50 text-green-700 border border-green-200"
+                    : "bg-red-50 text-red-700 border border-red-200"
+                }`}
+              >
+                {message}
+              </div>
+            )}
+          </div>
         </div>
+        <RecommendationPopup />
       </div>
     );
   }

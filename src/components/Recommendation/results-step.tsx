@@ -219,32 +219,29 @@ export default function ResultsStep({ formData, onReset }: Props) {
 
                 {/* Component Details */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {/* Glass */}
-                  <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
-                    <h4 className="font-semibold text-blue-900 mb-2 flex items-center gap-2">
-                      <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                      Glass Component
+                  {/* Base */}
+                  <div className="bg-purple-50 rounded-lg p-4 border border-purple-200">
+                    <h4 className="font-semibold text-purple-900 mb-2 flex items-center gap-2">
+                      <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+                      Base Component
                     </h4>
-                    <p className="font-medium text-gray-900">
-                      {rec.glass.name}
-                    </p>
-                    <p className="text-sm text-gray-600">{rec.glass.type}</p>
+                    <p className="font-medium text-gray-900">{rec.base.name}</p>
                     <div className="mt-2 flex justify-between text-sm">
                       <span className="text-gray-600">Safety:</span>
                       <span className="font-medium text-green-600">
-                        {rec.glass.safety}
+                        {rec.base.safety}
                       </span>
                     </div>
                     <div className="mt-1 flex justify-between text-sm">
                       <span className="text-gray-600">Cost Level:</span>
                       <span className="font-medium text-purple-600">
-                        {rec.glass.cost}
+                        {rec.base.cost}
                       </span>
                     </div>
                     <div className="mt-1">
                       <img
-                        src={getImageSrc("glass", rec.glass.name)}
-                        alt="Glass component"
+                        src={getImageSrc("base", rec.base.name)}
+                        alt="Base component"
                         className="w-full h-36 object-cover rounded border border-gray-200 mt-2"
                       />
                     </div>
@@ -280,29 +277,32 @@ export default function ResultsStep({ formData, onReset }: Props) {
                     </div>
                   </div>
 
-                  {/* Base */}
-                  <div className="bg-purple-50 rounded-lg p-4 border border-purple-200">
-                    <h4 className="font-semibold text-purple-900 mb-2 flex items-center gap-2">
-                      <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
-                      Base Component
+                  {/* Glass */}
+                  <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                    <h4 className="font-semibold text-blue-900 mb-2 flex items-center gap-2">
+                      <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                      Glass Component
                     </h4>
-                    <p className="font-medium text-gray-900">{rec.base.name}</p>
+                    <p className="font-medium text-gray-900">
+                      {rec.glass.name}
+                    </p>
+                    <p className="text-sm text-gray-600">{rec.glass.type}</p>
                     <div className="mt-2 flex justify-between text-sm">
                       <span className="text-gray-600">Safety:</span>
                       <span className="font-medium text-green-600">
-                        {rec.base.safety}
+                        {rec.glass.safety}
                       </span>
                     </div>
                     <div className="mt-1 flex justify-between text-sm">
                       <span className="text-gray-600">Cost Level:</span>
                       <span className="font-medium text-purple-600">
-                        {rec.base.cost}
+                        {rec.glass.cost}
                       </span>
                     </div>
                     <div className="mt-1">
                       <img
-                        src={getImageSrc("base", rec.base.name)}
-                        alt="Base component"
+                        src={getImageSrc("glass", rec.glass.name)}
+                        alt="Glass component"
                         className="w-full h-36 object-cover rounded border border-gray-200 mt-2"
                       />
                     </div>
