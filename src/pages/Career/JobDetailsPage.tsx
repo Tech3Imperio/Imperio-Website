@@ -897,7 +897,7 @@ export default function JobDetailsPage() {
         ],
         whocanapply: [
           "are available for full time (in-office) internship",
-          "can start the internship between 18th Jan'25 and 22nd Feb'25",
+          "can start the internship between 15th Jul'25 and 24th Jul'25",
           "are available for duration of 6 months",
           "have relevant skills and interests",
         ],
