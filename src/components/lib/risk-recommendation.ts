@@ -149,7 +149,7 @@ function calculateRiskPoints(formData: FormData) {
 
 function normalizeAndRecommend(
   totalRisk: number,
-  requirement: string,
+  // requirement: string,
   isStaircase: boolean
 ) {
   // Normalize risk to determine safety requirement level
@@ -160,11 +160,11 @@ function normalizeAndRecommend(
   else requiredSafety = 100; // Critical risk
 
   // Adjust based on requirement type
-  if (requirement === "economical") {
-    requiredSafety = Math.max(20, requiredSafety - 20);
-  } else if (requirement === "premium") {
-    requiredSafety = Math.min(100, requiredSafety + 20);
-  }
+  // if (requirement === "economical") {
+  //   requiredSafety = Math.max(20, requiredSafety - 20);
+  // } else if (requirement === "premium") {
+  //   requiredSafety = Math.min(100, requiredSafety + 20);
+  // }
 
   // Select glass recommendations
   let glassRecommendations: RecommendationItem[] = [];
@@ -174,24 +174,23 @@ function normalizeAndRecommend(
     ...glassTypes.tough,
   ];
 
-  if (requirement === "economical") {
-    glassRecommendations = allGlass
-      .filter(
-        (g) => g.safety >= requiredSafety && g.safety <= requiredSafety + 30
-      )
-      .slice(0, 2);
-  } else if (requirement === "premium") {
-    glassRecommendations = allGlass
-      .filter((g) => g.safety >= requiredSafety)
-      .slice(0, 3);
-  } else {
-    glassRecommendations = allGlass
-      .filter(
-        (g) =>
-          g.safety >= requiredSafety - 10 && g.safety <= requiredSafety + 20
-      )
-      .slice(0, 3);
-  }
+  // if (requirement === "economical") {
+  //   glassRecommendations = allGlass
+  //     .filter(
+  //       (g) => g.safety >= requiredSafety && g.safety <= requiredSafety + 30
+  //     )
+  //     .slice(0, 2);
+  // } else if (requirement === "premium") {
+  //   glassRecommendations = allGlass
+  //     .filter((g) => g.safety >= requiredSafety)
+  //     .slice(0, 3);
+  // } else {
+  glassRecommendations = allGlass
+    .filter(
+      (g) => g.safety >= requiredSafety - 10 && g.safety <= requiredSafety + 20
+    )
+    .slice(0, 3);
+  // }
 
   // Select handrail recommendations
   const handrailSource = isStaircase ? staircaseHandrails : handrailTypes;
@@ -224,7 +223,7 @@ export function getRiskBasedRecommendations(
 
   const recommendations = normalizeAndRecommend(
     riskPoints.totalRisk,
-    formData.requirement,
+    // formData.requirement,
     isStaircase
   );
 
