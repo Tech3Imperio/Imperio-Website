@@ -1,7 +1,14 @@
 "use client";
 
 import type { FormData } from "../../pages/GlassRecommendationSystem/GlassRecommendationSystem";
-import { Minus, CornerDownRight, RotateCcw, Zap } from "lucide-react";
+import { Minus } from "lucide-react";
+import type { FC } from "react";
+import type { LucideProps } from "lucide-react";
+
+// 🖼️ Import images
+import LShapedImage from "../../../public/images/components/logos/L-shaped.png";
+import CShapedImage from "../../../public/images/components/logos/C-shaped.png";
+import ZigZagImage from "../../../public/images/components/logos/zig-zig.png";
 
 interface Props {
   formData: FormData;
@@ -10,10 +17,31 @@ interface Props {
   onReset: () => void;
 }
 
-const applicationOptions = [
+// ✅ Union type for type-safe mixed icons
+type ApplicationOption =
+  | {
+      value: string;
+      label: string;
+      type: "icon";
+      icon: FC<LucideProps>;
+      description: string;
+      risk: string;
+    }
+  | {
+      value: string;
+      label: string;
+      type: "image";
+      icon: string; // image path
+      description: string;
+      risk: string;
+    };
+
+// ✅ Options array
+const applicationOptions: ApplicationOption[] = [
   {
     value: "straight",
     label: "Straight",
+    type: "icon",
     icon: Minus,
     description: "Simple straight line installation",
     risk: "25 Risk Points",
@@ -21,26 +49,28 @@ const applicationOptions = [
   {
     value: "l-shaped",
     label: "L-Shaped",
-    icon: CornerDownRight,
+    type: "image",
+    icon: LShapedImage,
     description: "90-degree corner installation",
     risk: "50 Risk Points",
   },
   {
     value: "c-shaped",
     label: "C-Shaped",
-    icon: RotateCcw,
+    type: "image",
+    icon: CShapedImage,
     description: "Curved or U-shaped installation",
     risk: "75 Risk Points",
   },
   {
     value: "zig-zag",
     label: "Zig-Zag",
-    icon: Zap,
+    type: "image",
+    icon: ZigZagImage,
     description: "Multiple angles and turns",
     risk: "100 Risk Points",
   },
 ];
-
 export default function ApplicationTypeStep({
   formData,
   updateFormData,
@@ -56,8 +86,8 @@ export default function ApplicationTypeStep({
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {applicationOptions.map((option) => {
-          const IconComponent = option.icon;
           const isSelected = formData.applicationType === option.value;
+
           return (
             <div
               key={option.value}
@@ -69,7 +99,15 @@ export default function ApplicationTypeStep({
               onClick={() => updateFormData("applicationType", option.value)}
             >
               <div className="text-center">
-                <IconComponent className="w-12 h-12 mx-auto mb-4 text-blue-600" />
+                {option.type === "icon" ? (
+                  <option.icon className="w-12 h-12 mx-auto mb-4 text-blue-600" />
+                ) : (
+                  <img
+                    src={option.icon}
+                    alt={option.label}
+                    className="w-12 h-12 mx-auto mb-4 object-contain"
+                  />
+                )}
                 <h3 className="text-lg font-semibold mb-2 text-gray-900">
                   {option.label}
                 </h3>

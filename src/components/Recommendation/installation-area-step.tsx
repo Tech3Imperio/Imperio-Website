@@ -1,15 +1,11 @@
 "use client";
 
 import type { FormData } from "../../pages/GlassRecommendationSystem/GlassRecommendationSystem";
-import {
-  StepBackIcon as Stairs,
-  Home,
-  Sun,
-  Waves,
-  Eye,
-  Building,
-} from "lucide-react";
-
+import { Sun, Building } from "lucide-react";
+import type { FC } from "react";
+import type { LucideProps } from "lucide-react";
+import Staircase from "../../../public/images/components/logos/staircase.png";
+import Cshape from "../../../public/images/components/logos/C-shaped.png";
 interface Props {
   formData: FormData;
   updateFormData: (field: keyof FormData, value: string) => void;
@@ -17,14 +13,47 @@ interface Props {
   onReset: () => void;
 }
 
-const areaOptions = [
-  { value: "Staircase", label: "Staircase", icon: Stairs },
-  { value: "Balcony", label: "Balcony", icon: Home },
-  { value: "Terrace", label: "Terrace", icon: Sun },
-  { value: "Deck", label: "Deck", icon: Home },
-  { value: "Poolside", label: "Poolside", icon: Waves },
-  { value: "Skylight", label: "Skylight", icon: Eye },
-  { value: "Double height", label: "Double Height", icon: Building },
+// ✅ Define a union type for icon option
+type AreaOption =
+  | {
+      value: string;
+      label: string;
+      type: "icon";
+      icon: FC<LucideProps>;
+    }
+  | {
+      value: string;
+      label: string;
+      type: "image";
+      icon: string; // PNG path
+    };
+
+// ✅ Use the typed array
+const areaOptions: AreaOption[] = [
+  {
+    value: "Staircase",
+    label: "Staircase",
+    type: "image",
+    icon: Staircase,
+  },
+  {
+    value: "Balcony",
+    label: "Balcony",
+    type: "image",
+    icon: Cshape,
+  },
+  {
+    value: "Terrace",
+    label: "Terrace",
+    type: "icon",
+    icon: Sun,
+  },
+  {
+    value: "Double height",
+    label: "Double Height",
+    type: "icon",
+    icon: Building,
+  },
 ];
 
 export default function InstallationAreaStep({
@@ -37,10 +66,10 @@ export default function InstallationAreaStep({
         Where will the glass be installed?
       </h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {areaOptions.map((option) => {
-          const IconComponent = option.icon;
           const isSelected = formData.installationArea === option.value;
+
           return (
             <div
               key={option.value}
@@ -52,7 +81,15 @@ export default function InstallationAreaStep({
               onClick={() => updateFormData("installationArea", option.value)}
             >
               <div className="text-center">
-                <IconComponent className="w-8 h-8 mx-auto mb-2 text-blue-600" />
+                {option.type === "icon" ? (
+                  <option.icon className="w-12 h-12 mx-auto mb-2 text-blue-600" />
+                ) : (
+                  <img
+                    src={option.icon}
+                    alt={option.label}
+                    className="w-12 h-12 mx-auto mb-2"
+                  />
+                )}
                 <p className="text-sm font-medium text-gray-900">
                   {option.label}
                 </p>

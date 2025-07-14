@@ -1,7 +1,12 @@
 "use client";
 
 import type { FormData } from "../../pages/GlassRecommendationSystem/GlassRecommendationSystem";
-import { Plus, Minus } from "lucide-react";
+import { Minus } from "lucide-react";
+import type { FC } from "react";
+import type { LucideProps } from "lucide-react";
+
+// 🖼️ Import custom image
+import PlusImage from "../../../public/images/components/logos/addon.png";
 
 interface Props {
   formData: FormData;
@@ -10,16 +15,35 @@ interface Props {
   onReset: () => void;
 }
 
-const addonOptions = [
+// ✅ Define a safe type
+type AddonOption =
+  | {
+      value: string;
+      label: string;
+      type: "icon";
+      icon: FC<LucideProps>;
+      description: string;
+    }
+  | {
+      value: string;
+      label: string;
+      type: "image";
+      icon: string; // image path
+      description: string;
+    };
+
+const addonOptions: AddonOption[] = [
   {
     value: "Yes",
     label: "Yes, I want add-ons",
-    icon: Plus,
+    type: "image",
+    icon: PlusImage,
     description: "LED lighting and premium features",
   },
   {
     value: "No",
     label: "No add-ons needed",
+    type: "icon",
     icon: Minus,
     description: "Standard installation only",
   },
@@ -34,8 +58,8 @@ export default function AddonsStep({ formData, updateFormData }: Props) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
         {addonOptions.map((option) => {
-          const IconComponent = option.icon;
           const isSelected = formData.addons === option.value;
+
           return (
             <div
               key={option.value}
@@ -47,7 +71,16 @@ export default function AddonsStep({ formData, updateFormData }: Props) {
               onClick={() => updateFormData("addons", option.value)}
             >
               <div className="text-center">
-                <IconComponent className="w-12 h-12 mx-auto mb-4 text-blue-600" />
+                {option.type === "icon" ? (
+                  <option.icon className="w-12 h-12 mx-auto mb-4 text-blue-600" />
+                ) : (
+                  <img
+                    src={option.icon}
+                    alt={option.label}
+                    className="w-12 h-12 mx-auto mb-4 object-contain"
+                  />
+                )}
+
                 <h3 className="text-lg font-semibold mb-2 text-gray-900">
                   {option.label}
                 </h3>

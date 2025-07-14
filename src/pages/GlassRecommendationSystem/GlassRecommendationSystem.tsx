@@ -7,16 +7,19 @@ import InstallationAreaStep from "../../components/Recommendation/installation-a
 import FloorNumberStep from "../../components/Recommendation/floor-number-step";
 import RailingLengthStep from "../../components/Recommendation/railing-length-step";
 import ApplicationTypeStep from "../../components/Recommendation/application-type-step";
-import RequirementStep from "../../components/Recommendation/requirement-step";
 // import PrivacyStep from "../../components/Recommendation/privacy-step";
 import AddonsStep from "../../components/Recommendation/addons-step";
 // import NanocoatingStep from "../../components/Recommendation/nanocoating-step";
 import ResultsStep from "../../components/Recommendation/results-step";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { shouldAskFloorNumber } from "../../components/lib/advance-recommendations";
+import {
+  shouldAskFloorNumber,
+  shouldAskMountingType,
+} from "../../components/lib/advance-recommendations";
 import GlassHeightStep from "../../components/Recommendation/glass-height-step";
 import MountingTypeStep from "../../components/Recommendation/mounting-type-step";
 import GlassTypeStep from "../../components/Recommendation/glass-type-step";
+import PriorityStep from "../../components/Recommendation/priority-step";
 
 export interface FormData {
   propertyType: string;
@@ -27,9 +30,9 @@ export interface FormData {
   mountingType: string;
   railingLength: string;
   applicationType: string;
-  requirement: string;
   addons: string;
   nanocoating: string;
+  priority: string;
 }
 
 const initialFormData: FormData = {
@@ -41,10 +44,19 @@ const initialFormData: FormData = {
   mountingType: "",
   railingLength: "",
   applicationType: "",
-  requirement: "",
   addons: "",
   nanocoating: "",
+  priority: "safety",
 };
+
+interface StepProps {
+  formData: FormData;
+  updateFormData: (field: keyof FormData, value: string) => void;
+  onNext: () => void;
+  onReset: () => void;
+}
+
+type StepComponent = React.ComponentType<StepProps>;
 
 export default function GlassRecommendationWizard() {
   const [currentStep, setCurrentStep] = useState(0);
@@ -55,7 +67,11 @@ export default function GlassRecommendationWizard() {
   };
 
   const getSteps = () => {
-    const steps = [
+    const steps: Array<{
+      id: string;
+      title: string;
+      component: StepComponent;
+    }> = [
       {
         id: "property-type",
         title: "Property Type",
@@ -90,7 +106,7 @@ export default function GlassRecommendationWizard() {
     });
 
     // Conditionally add mounting type step
-    if (formData.installationArea) {
+    if (shouldAskMountingType()) {
       steps.push({
         id: "mounting-type",
         title: "Mounting Type",
@@ -110,9 +126,9 @@ export default function GlassRecommendationWizard() {
         component: ApplicationTypeStep,
       },
       {
-        id: "requirement",
-        title: "Requirements",
-        component: RequirementStep,
+        id: "priority",
+        title: "Priority",
+        component: PriorityStep,
       },
       {
         id: "addons",
@@ -167,8 +183,8 @@ export default function GlassRecommendationWizard() {
         return formData.railingLength !== "";
       case "application-type":
         return formData.applicationType !== "";
-      case "requirement":
-        return formData.requirement !== "";
+      case "priority":
+        return formData.priority !== "";
       case "addons":
         return formData.addons !== "";
       case "results":

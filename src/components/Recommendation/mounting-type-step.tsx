@@ -1,7 +1,9 @@
 "use client";
 
 import type { FormData } from "../../pages/GlassRecommendationSystem/GlassRecommendationSystem";
-import { ArrowUp, ArrowRight } from "lucide-react";
+import TopMountedImg from "../../../public/images/components/logos/top-mounting.png";
+import SideMountedImg from "../../../public/images/components/logos/side-mounting.png";
+import InFloorImg from "../../../public/images/components/logos/Screenshot 2025-07-14 110723.png";
 
 interface Props {
   formData: FormData;
@@ -10,18 +12,32 @@ interface Props {
   onReset: () => void;
 }
 
-const mountingOptions = [
+// ✅ Create a union type to enforce valid structure
+type MountingOption = {
+  value: string;
+  label: string;
+  image: string; // using image path
+  description: string;
+};
+
+const mountingOptions: MountingOption[] = [
   {
     value: "top-mounted",
     label: "Top Mounted",
-    icon: ArrowUp,
+    image: TopMountedImg,
     description: "Railing mounted on top of the surface",
   },
   {
     value: "side-mounted",
     label: "Side Mounted",
-    icon: ArrowRight,
+    image: SideMountedImg,
     description: "Railing mounted on the side of the surface",
+  },
+  {
+    value: "in-floor",
+    label: "In-Floor Mounted",
+    image: InFloorImg,
+    description: "Railing mounted into the floor surface",
   },
 ];
 
@@ -36,9 +52,8 @@ export default function MountingTypeStep({ formData, updateFormData }: Props) {
         {formData.installationArea.toLowerCase()} railing
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
         {mountingOptions.map((option) => {
-          const IconComponent = option.icon;
           const isSelected = formData.mountingType === option.value;
           return (
             <div
@@ -51,7 +66,11 @@ export default function MountingTypeStep({ formData, updateFormData }: Props) {
               onClick={() => updateFormData("mountingType", option.value)}
             >
               <div className="text-center">
-                <IconComponent className="w-12 h-12 mx-auto mb-4 text-blue-600" />
+                <img
+                  src={option.image}
+                  alt={option.label}
+                  className="w-16 h-16 mx-auto mb-4"
+                />
                 <h3 className="text-lg font-semibold mb-2 text-gray-900">
                   {option.label}
                 </h3>
