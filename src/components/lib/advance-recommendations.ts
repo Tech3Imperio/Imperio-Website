@@ -93,42 +93,9 @@ const staircaseBases: Component[] = [
   { name: "Spigot-(SP250)", safety: 60, cost: 85, suitability: 85 },
 ];
 
-// Recommendation mappings based on your specifications
-// const baseRecommendations = {
-//   Staircase: {
-//     Low: ["SemiPro-(C50)", "Mini-(F55)", "Spigot-(SP250)"],
-//     Moderate: ["SemiPro-(C50)", "Mini-(F55)", "Ultra-(M50)"],
-//     High: ["Smart-(C75)", "Ace-(A50)", "Pro-(L50)", "Dot-(E50)"],
-//   },
-//   "Non-Staircase": {
-//     Low: ["SemiMini-(D55)", "SemiSmart-(D75)", "Lux-(T100)"],
-//     Moderate: ["SemiPro-(C50)", "Mini-(F55)", "Smart-(C75)", "Spigot-(SP250)"],
-//     High: ["Ace-(A50)", "Pro-(L50)"],
-//   },
-// }
-
-// const handrailRecommendations = {
-//   Staircase: {
-//     Low: ["Slim-(S-25)"],
-//     Moderate: ["Square-(S-40)", "Square-(S-50)", "Round-(R-50)", "Oval-(O-60)"],
-//     High: ["LED-20", "LED-40", "Oval-(O-80)", "Sleek-(S-17)"],
-//   },
-//   "Non-Staircase": {
-//     Low: ["Slim-(S-25)"],
-//     Moderate: ["Square-(S-40)", "Square-(S-50)", "Round-(R-50)", "Oval-(O-60)"],
-//     High: ["LED-20", "LED-40", "Oval-(O-80)", "Sleek-(S-17)"],
-//   },
-// }
-
-// const glassRecommendations = {
-//   Low: ["Tough-12mm"],
-//   Moderate: ["PVB-8+8", "PVB-6+6"],
-//   High: ["Sentry-10+10", "Sentry-8+8", "Sentry-6+6"],
-// }
-
 // Premium product definitions
-const premiumHandrails = ["LED-20", "Slim-(S-25)"];
-const premiumBases = ["Ace-(A50)", "Ultra-(M50)", "Pro-(L50)"];
+// const premiumHandrails = ["LED-20", "Slim-(S-25)"]
+// const premiumBases = ["Ace-(A50)", "Ultra-(M50)", "Pro-(L50)"]
 
 // Property types that require floor number input
 const FLOOR_REQUIRED_PROPERTIES = ["Apartment", "Commercial", "Hotel"];
@@ -242,165 +209,6 @@ function calculateRequiredSafety(totalRisk: number): {
   return { safety: baseSafety, level };
 }
 
-function getRecommendedComponents(
-  riskLevel: string,
-  isStaircase: boolean,
-  mountingType: string,
-  componentType: "base" | "handrail" | "glass"
-): string[] {
-  if (componentType === "glass") {
-    const glassRecommendations = {
-      Low: ["Tough-12mm"],
-      Moderate: ["PVB-8+8", "PVB-6+6"],
-      High: ["Sentry-8+8", "Sentry-6+6"],
-    };
-    return (
-      glassRecommendations[riskLevel as keyof typeof glassRecommendations] || []
-    );
-  } else if (componentType === "base") {
-    // Special handling for in-floor mounting - recommend lowest safety bases
-    if (mountingType === "in-floor") {
-      return ["Micro-(F40)", "SemiMini-(D55)", "Mini-(F55)"];
-    }
-
-    // Staircase specific logic
-    if (isStaircase) {
-      if (mountingType === "top-mounted") {
-        return ["Spigot-(SP250)"]; // Compulsory Spigot for staircase top-mounted
-      } else if (mountingType === "side-mounted") {
-        return ["Dot-(E50)"]; // Compulsory Dot for staircase side-mounted
-      }
-    }
-
-    // Top mounting should always recommend Ace and C75
-    if (mountingType === "top-mounted") {
-      return ["Ace-(A50)", "Smart-(C75)"];
-    }
-
-    // Side mounting logic for non-staircase
-    if (mountingType === "side-mounted") {
-      return ["Dot-(E50)", "Smart-(C75)"];
-    }
-
-    // Default recommendations based on risk level
-    const baseRecommendations = {
-      Staircase: {
-        Low: ["SemiPro-(C50)", "Mini-(F55)"],
-        Moderate: ["SemiPro-(C50)", "Mini-(F55)"],
-        High: [
-          "Smart-(C75)",
-          "Ace-(A50)",
-          "Pro-(L50)",
-          "Dot-(E50)",
-          "Ultra-(M50)",
-        ],
-      },
-      "Non-Staircase": {
-        Low: ["SemiMini-(D55)", "SemiSmart-(D75)", "Lux-(T100)"],
-        Moderate: ["SemiPro-(C50)", "Mini-(F55)", "Smart-(C75)"],
-        High: ["Ace-(A50)", "Pro-(L50)"],
-      },
-    };
-
-    const areaType = isStaircase ? "Staircase" : "Non-Staircase";
-    return (
-      baseRecommendations[areaType as keyof typeof baseRecommendations][
-        riskLevel as keyof typeof baseRecommendations.Staircase
-      ] || []
-    );
-  } else if (componentType === "handrail") {
-    const handrailRecommendations = {
-      Staircase: {
-        Low: ["Slim-(S-25)"],
-        Moderate: [
-          "Square-(S-40)",
-          "Square-(S-50)",
-          "Round-(R-50)",
-          "Oval-(O-60)",
-        ],
-        High: ["LED-20", "LED-40", "Oval-(O-80)", "Sleek-(S-17)"],
-      },
-      "Non-Staircase": {
-        Low: ["Slim-(S-25)"],
-        Moderate: [
-          "Square-(S-40)",
-          "Square-(S-50)",
-          "Round-(R-50)",
-          "Oval-(O-60)",
-        ],
-        High: ["LED-20", "LED-40", "Oval-(O-80)", "Sleek-(S-17)"],
-      },
-    };
-
-    const areaType = isStaircase ? "Staircase" : "Non-Staircase";
-    return (
-      handrailRecommendations[areaType as keyof typeof handrailRecommendations][
-        riskLevel as keyof typeof handrailRecommendations.Staircase
-      ] || []
-    );
-  }
-
-  return [];
-}
-
-function calculateProportionalWeight(
-  componentSafety: number,
-  requiredSafety: number,
-  priority: string,
-  isRecommended = false,
-  componentName = ""
-): number {
-  let safetyWeight = 0;
-  const safetyRatio = componentSafety / Math.max(requiredSafety, 1);
-
-  if (safetyRatio >= 0.9 && safetyRatio <= 1.3) {
-    safetyWeight = 100;
-  } else if (safetyRatio >= 0.7) {
-    safetyWeight = 80;
-  } else if (safetyRatio >= 0.5) {
-    safetyWeight = 60;
-  } else if (safetyRatio >= 0.3) {
-    safetyWeight = 40;
-  } else {
-    safetyWeight = 20;
-  }
-
-  // Priority-based adjustments
-  if (priority === "cost") {
-    // For cost priority, favor lower cost components
-    if (componentSafety <= 40) {
-      safetyWeight += 30;
-    }
-  } else if (priority === "safety") {
-    // For safety priority, favor higher safety components
-    if (componentSafety >= 60) {
-      safetyWeight += 30;
-    }
-  }
-
-  // Premium component identification
-  if (
-    premiumHandrails.includes(componentName) ||
-    premiumBases.includes(componentName)
-  ) {
-    if (priority === "safety") {
-      safetyWeight += 25; // Boost premium components for safety priority
-    }
-  }
-
-  // Boost recommended components
-  if (isRecommended) {
-    safetyWeight += 25;
-  }
-
-  // Special boost for Ace components
-  if (componentName === "Ace-(A50)") {
-    safetyWeight += 15;
-  }
-
-  return Math.max(10, Math.min(180, safetyWeight));
-}
-
 function filterGlassByType(
   glasses: Component[],
   glassType: string
@@ -425,72 +233,6 @@ function getCompatibleHandrail(
     return handrails.find((h) => h.name === "Sleek-(S-12)") || null;
   }
   return null;
-}
-
-function selectComponentsByProportion(
-  components: Component[],
-  requiredSafety: number,
-  priority: string,
-  recommendedNames: string[],
-  count = 4,
-  excludeNames: string[] = [],
-  mountingType?: string
-): Component[] {
-  let availableComponents = components.filter(
-    (c) => !excludeNames.includes(c.name)
-  );
-
-  // For top-mounted, exclude Dot and Smart components (except for compulsory cases)
-  if (mountingType === "top-mounted") {
-    availableComponents = availableComponents.filter(
-      (c) => c.name !== "Dot-(E50)" && c.name !== "Smart-(C75)"
-    );
-  }
-
-  const weightedComponents = availableComponents.map((component) => ({
-    component,
-    weight: calculateProportionalWeight(
-      component.safety,
-      requiredSafety,
-      priority,
-      recommendedNames.includes(component.name),
-      component.name
-    ),
-  }));
-
-  // Reduce Spigot weight when risk is above 60
-  weightedComponents.forEach((item) => {
-    if (item.component.name.includes("Spigot") && requiredSafety > 60) {
-      item.weight = Math.max(10, item.weight * 0.3);
-    }
-  });
-
-  weightedComponents.sort((a, b) => b.weight - a.weight);
-
-  const selected: Component[] = [];
-  const remainingComponents = [...weightedComponents];
-
-  for (let i = 0; i < count && remainingComponents.length > 0; i++) {
-    const totalWeight = remainingComponents.reduce(
-      (sum, item) => sum + item.weight,
-      0
-    );
-    let random = Math.random() * totalWeight;
-
-    let selectedIndex = 0;
-    for (let j = 0; j < remainingComponents.length; j++) {
-      random -= remainingComponents[j].weight;
-      if (random <= 0) {
-        selectedIndex = j;
-        break;
-      }
-    }
-
-    selected.push(remainingComponents[selectedIndex].component);
-    remainingComponents.splice(selectedIndex, 1);
-  }
-
-  return selected;
 }
 
 function evaluateRecommendationSet(
@@ -549,7 +291,7 @@ function evaluateRecommendationSet(
     safetyScore: Math.round(safetyScore),
     costEfficiency: Math.round(costEfficiency),
     riskMitigation: Math.round(riskMitigation),
-    compatibility: Math.round(Math.min(100, compatibility * 100)), // Fixed: Cap compatibility at 100
+    compatibility: Math.round(Math.min(100, compatibility * 100)),
     suitabilityMatch: Math.round(suitabilityMatch),
   };
 }
@@ -560,177 +302,194 @@ function generateProportionalRecommendations(
   bases: Component[],
   requiredSafety: number,
   priority: string,
-  riskLevel: string,
   isStaircase: boolean,
   mountingType: string
 ): RecommendationSet[] {
-  const recommendedGlassNames = getRecommendedComponents(
-    riskLevel,
-    isStaircase,
-    mountingType,
-    "glass"
-  );
-  const recommendedHandrailNames = getRecommendedComponents(
-    riskLevel,
-    isStaircase,
-    mountingType,
-    "handrail"
-  );
-  const recommendedBaseNames = getRecommendedComponents(
-    riskLevel,
-    isStaircase,
-    mountingType,
-    "base"
-  );
-
   const combinations: RecommendationSet[] = [];
-  const usedGlasses: string[] = [];
-  const usedHandrails: string[] = [];
-  const usedBases: string[] = [];
+  const usedCombinations = new Set<string>();
 
-  // Generate 3 unique recommendations
-  for (let i = 0; i < 3; i++) {
-    const selectedGlasses = selectComponentsByProportion(
-      glasses,
-      requiredSafety,
-      priority,
-      recommendedGlassNames,
-      4,
-      usedGlasses
-    );
-    const selectedHandrails = selectComponentsByProportion(
-      handrails,
-      requiredSafety,
-      priority,
-      recommendedHandrailNames,
-      4,
-      usedHandrails
-    );
-    const selectedBases = selectComponentsByProportion(
-      bases,
-      requiredSafety,
-      priority,
-      recommendedBaseNames,
-      5,
-      usedBases,
-      mountingType
-    );
+  // Generate all possible combinations first
+  const allCombinations: RecommendationSet[] = [];
 
-    // Handle compulsory base selections
-    if (isStaircase) {
-      if (mountingType === "top-mounted") {
-        const spigotComponent = bases.find((b) => b.name.includes("Spigot"));
-        if (spigotComponent && !usedBases.includes(spigotComponent.name)) {
-          selectedBases.unshift(spigotComponent);
-        }
-      } else if (mountingType === "side-mounted") {
-        const dotComponent = bases.find((b) => b.name === "Dot-(E50)");
-        if (dotComponent && !usedBases.includes(dotComponent.name)) {
-          selectedBases.unshift(dotComponent);
-        }
-      }
-    } else {
-      // Non-staircase logic
-      if (mountingType === "top-mounted") {
-        const aceComponent = bases.find((b) => b.name === "Ace-(A50)");
-        const smartComponent = bases.find((b) => b.name === "Smart-(C75)");
-
-        if (i === 0 && aceComponent && !usedBases.includes(aceComponent.name)) {
-          selectedBases.unshift(aceComponent);
-        } else if (
-          i === 1 &&
-          smartComponent &&
-          !usedBases.includes(smartComponent.name)
+  for (const glass of glasses) {
+    for (const handrail of handrails) {
+      for (const base of bases) {
+        // Check mounting type restrictions
+        if (
+          mountingType === "top-mounted" &&
+          (base.name === "Dot-(E50)" || base.name === "Smart-(C75)")
         ) {
-          selectedBases.unshift(smartComponent);
-        }
-      } else if (mountingType === "side-mounted") {
-        const dotComponent = bases.find((b) => b.name === "Dot-(E50)");
-        const smartComponent = bases.find((b) => b.name === "Smart-(C75)");
-
-        if (i === 0 && dotComponent && !usedBases.includes(dotComponent.name)) {
-          selectedBases.unshift(dotComponent);
-        } else if (
-          i === 1 &&
-          smartComponent &&
-          !usedBases.includes(smartComponent.name)
-        ) {
-          selectedBases.unshift(smartComponent);
-        }
-      }
-    }
-
-    // Ensure Ace is in recommendations when risk > 60
-    if (requiredSafety > 60) {
-      const aceComponent = bases.find((b) => b.name === "Ace-(A50)");
-      if (
-        aceComponent &&
-        !usedBases.includes(aceComponent.name) &&
-        !selectedBases.some((b) => b.name === aceComponent.name)
-      ) {
-        selectedBases[0] = aceComponent;
-      }
-    }
-
-    // Create combinations for this recommendation
-    const currentCombinations: RecommendationSet[] = [];
-
-    for (const glass of selectedGlasses.slice(0, 3)) {
-      const compatibleHandrail = getCompatibleHandrail(glass.name, handrails);
-      let handrailsToUse = selectedHandrails.slice(0, 3);
-
-      if (
-        compatibleHandrail &&
-        !usedHandrails.includes(compatibleHandrail.name)
-      ) {
-        handrailsToUse = [
-          compatibleHandrail,
-          ...handrailsToUse.filter((h) => h.name !== compatibleHandrail.name),
-        ];
-      }
-
-      for (const handrail of handrailsToUse) {
-        for (const base of selectedBases.slice(0, 3)) {
-          if (
-            !usedGlasses.includes(glass.name) &&
-            !usedHandrails.includes(handrail.name) &&
-            !usedBases.includes(base.name)
-          ) {
-            const recommendation = evaluateRecommendationSet(
-              glass,
-              handrail,
-              base,
-              requiredSafety,
-              priority
-            );
-
-            if (getCompatibleHandrail(glass.name, [handrail])) {
-              recommendation.totalScore += 10;
-              recommendation.compatibility = Math.min(
-                100,
-                recommendation.compatibility + 10
-              ); // Fixed: Cap at 100
-            }
-
-            currentCombinations.push(recommendation);
+          // Skip Dot and Smart for top-mounted (except compulsory cases)
+          if (!isStaircase || base.name !== "Smart-(C75)") {
+            continue;
           }
         }
+
+        const recommendation = evaluateRecommendationSet(
+          glass,
+          handrail,
+          base,
+          requiredSafety,
+          priority
+        );
+
+        // Add compatibility bonus
+        if (getCompatibleHandrail(glass.name, [handrail])) {
+          recommendation.totalScore += 10;
+          recommendation.compatibility = Math.min(
+            100,
+            recommendation.compatibility + 10
+          );
+        }
+
+        allCombinations.push(recommendation);
       }
-    }
-
-    if (currentCombinations.length > 0) {
-      currentCombinations.sort((a, b) => b.totalScore - a.totalScore);
-      const bestCombination = currentCombinations[0];
-
-      combinations.push(bestCombination);
-
-      usedGlasses.push(bestCombination.glass.name);
-      usedHandrails.push(bestCombination.handrail.name);
-      usedBases.push(bestCombination.base.name);
     }
   }
 
-  return combinations;
+  // Sort all combinations by total score
+  allCombinations.sort((a, b) => b.totalScore - a.totalScore);
+
+  // Apply compulsory selections and generate 3 unique recommendations
+  for (let i = 0; i < 3 && allCombinations.length > 0; i++) {
+    let selectedRecommendation: RecommendationSet | null = null;
+
+    // Handle compulsory base selections for first recommendation
+    if (i === 0) {
+      if (isStaircase) {
+        if (mountingType === "top-mounted") {
+          // Find best combination with Spigot
+          selectedRecommendation =
+            allCombinations.find(
+              (rec) =>
+                rec.base.name.includes("Spigot") &&
+                !usedCombinations.has(
+                  `${rec.glass.name}-${rec.handrail.name}-${rec.base.name}`
+                )
+            ) || null;
+        } else if (mountingType === "side-mounted") {
+          // Find best combination with Dot
+          selectedRecommendation =
+            allCombinations.find(
+              (rec) =>
+                rec.base.name === "Dot-(E50)" &&
+                !usedCombinations.has(
+                  `${rec.glass.name}-${rec.handrail.name}-${rec.base.name}`
+                )
+            ) || null;
+        }
+      } else {
+        // Non-staircase logic
+        if (mountingType === "top-mounted") {
+          // Find best combination with Ace
+          selectedRecommendation =
+            allCombinations.find(
+              (rec) =>
+                rec.base.name === "Ace-(A50)" &&
+                !usedCombinations.has(
+                  `${rec.glass.name}-${rec.handrail.name}-${rec.base.name}`
+                )
+            ) || null;
+        } else if (mountingType === "side-mounted") {
+          // Find best combination with Dot
+          selectedRecommendation =
+            allCombinations.find(
+              (rec) =>
+                rec.base.name === "Dot-(E50)" &&
+                !usedCombinations.has(
+                  `${rec.glass.name}-${rec.handrail.name}-${rec.base.name}`
+                )
+            ) || null;
+        }
+      }
+    } else if (i === 1) {
+      // Second recommendation preferences
+      if (!isStaircase && mountingType === "top-mounted") {
+        // Find best combination with Smart-(C75)
+        selectedRecommendation =
+          allCombinations.find(
+            (rec) =>
+              rec.base.name === "Smart-(C75)" &&
+              !usedCombinations.has(
+                `${rec.glass.name}-${rec.handrail.name}-${rec.base.name}`
+              )
+          ) || null;
+      } else if (!isStaircase && mountingType === "side-mounted") {
+        // Find best combination with Smart-(C75)
+        selectedRecommendation =
+          allCombinations.find(
+            (rec) =>
+              rec.base.name === "Smart-(C75)" &&
+              !usedCombinations.has(
+                `${rec.glass.name}-${rec.handrail.name}-${rec.base.name}`
+              )
+          ) || null;
+      }
+    }
+
+    // If no compulsory selection found, pick the best available
+    if (!selectedRecommendation) {
+      selectedRecommendation =
+        allCombinations.find(
+          (rec) =>
+            !usedCombinations.has(
+              `${rec.glass.name}-${rec.handrail.name}-${rec.base.name}`
+            )
+        ) || null;
+    }
+
+    // If still no recommendation found, create a fallback
+    if (
+      !selectedRecommendation &&
+      glasses.length > 0 &&
+      handrails.length > 0 &&
+      bases.length > 0
+    ) {
+      const fallbackGlass = glasses[i % glasses.length];
+      const fallbackHandrail = handrails[i % handrails.length];
+      const fallbackBase = bases[i % bases.length];
+
+      selectedRecommendation = evaluateRecommendationSet(
+        fallbackGlass,
+        fallbackHandrail,
+        fallbackBase,
+        requiredSafety,
+        priority
+      );
+    }
+
+    if (selectedRecommendation) {
+      combinations.push(selectedRecommendation);
+      usedCombinations.add(
+        `${selectedRecommendation.glass.name}-${selectedRecommendation.handrail.name}-${selectedRecommendation.base.name}`
+      );
+    }
+  }
+
+  // Ensure we always have exactly 3 recommendations
+  while (
+    combinations.length < 3 &&
+    glasses.length > 0 &&
+    handrails.length > 0 &&
+    bases.length > 0
+  ) {
+    const fallbackIndex = combinations.length;
+    const fallbackGlass = glasses[fallbackIndex % glasses.length];
+    const fallbackHandrail = handrails[fallbackIndex % handrails.length];
+    const fallbackBase = bases[fallbackIndex % bases.length];
+
+    const fallbackRecommendation = evaluateRecommendationSet(
+      fallbackGlass,
+      fallbackHandrail,
+      fallbackBase,
+      requiredSafety,
+      priority
+    );
+
+    combinations.push(fallbackRecommendation);
+  }
+
+  return combinations.slice(0, 3); // Ensure exactly 3 recommendations
 }
 
 function sortRecommendationsByPriority(
@@ -769,7 +528,6 @@ export function getAdvancedRecommendations(
     availableBases,
     safetyRequirement.safety,
     formData.priority,
-    safetyRequirement.level,
     isStaircase,
     formData.mountingType || ""
   );

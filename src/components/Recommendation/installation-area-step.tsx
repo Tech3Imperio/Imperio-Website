@@ -1,7 +1,7 @@
 "use client";
 
 import type { FormData } from "../../pages/GlassRecommendationSystem/GlassRecommendationSystem";
-import { Sun, Building } from "lucide-react";
+import { Sun, Waves } from "lucide-react";
 import type { FC } from "react";
 import type { LucideProps } from "lucide-react";
 import Staircase from "../../../public/images/components/logos/staircase.png";
@@ -49,10 +49,10 @@ const areaOptions: AreaOption[] = [
     icon: Sun,
   },
   {
-    value: "Double height",
-    label: "Double Height",
+    value: "Pool Side",
+    label: "Pool Side",
     type: "icon",
-    icon: Building,
+    icon: Waves,
   },
 ];
 
