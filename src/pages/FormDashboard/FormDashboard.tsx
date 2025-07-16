@@ -348,8 +348,8 @@ function App() {
         ];
 
         const results = await Promise.allSettled(
-          urls.map(async ({ url, key, name }, index) => {
-            setLoadingMessage(`Loading ${name}...`);
+          urls.map(async ({ url, key }, index) => {
+            setLoadingMessage(`Loading lastest data...`);
             setLoadingProgress((index / urls.length) * 100);
 
             const data = await fetchSheetData(url, key);
@@ -702,7 +702,7 @@ function App() {
           ...productData,
           ...userFormData,
         };
-
+        // https://backendimperio-5uku.onrender.com
         const response = await axios.post(
           "https://backendimperio-5uku.onrender.com/submit-form",
           formData,

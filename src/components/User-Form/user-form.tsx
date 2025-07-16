@@ -34,7 +34,7 @@ const sendPhoneOTP = async (
 ): Promise<{ success: boolean; sessionId?: string; error?: string }> => {
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout
+    const timeoutId = setTimeout(() => controller.abort(), 50000); // 30 second timeout
 
     const response = await fetch(
       "https://backendimperio-5uku.onrender.com/api/send-phone-otp",
