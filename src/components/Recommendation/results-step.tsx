@@ -8,6 +8,7 @@ import {
   DollarSign,
   Star,
   TrendingUp,
+  ShoppingCart,
 } from "lucide-react";
 import type { FormData } from "../../pages/GlassRecommendationSystem/GlassRecommendationSystem";
 import { getAdvancedRecommendations } from "../lib/advance-recommendations";
@@ -17,6 +18,14 @@ interface Props {
   updateFormData: (field: keyof FormData, value: string) => void;
   onNext: () => void;
   onReset: () => void;
+}
+
+interface RecommendationData {
+  base: string;
+  handrail: string;
+  glass: string;
+  height: number;
+  timestamp: number;
 }
 
 const ResultsStep: React.FC<Props> = ({ formData, onReset }) => {
@@ -43,8 +52,6 @@ const ResultsStep: React.FC<Props> = ({ formData, onReset }) => {
       if (productName.includes("PVB-6+6")) return `${baseImagePath}pvb-6+6.jpg`;
       if (productName.includes("Tough-12mm"))
         return `${baseImagePath}tough-12mm.jpg`;
-      if (productName.includes("Tough-10mm"))
-        return `${baseImagePath}tough-10mm.jpg`;
     }
 
     // Handrail images
@@ -57,7 +64,7 @@ const ResultsStep: React.FC<Props> = ({ formData, onReset }) => {
         return `${baseImagePath}square-(s-50).jpg`;
       if (productName.includes("Square-(S-40)"))
         return `${baseImagePath}square-(s-40).jpg`;
-      if (productName.includes("LED-80")) return `${baseImagePath}led-80.jpg`;
+      if (productName.includes("LED-40")) return `${baseImagePath}led-80.jpg`;
       if (productName.includes("LED-40")) return `${baseImagePath}led-40.jpg`;
       if (productName.includes("LED-20")) return `${baseImagePath}led-20.jpg`;
       if (productName.includes("Round-(R-50)"))
@@ -100,6 +107,91 @@ const ResultsStep: React.FC<Props> = ({ formData, onReset }) => {
 
     // Fallback placeholder
     return `/placeholder.svg?height=120&width=120`;
+  };
+
+  // Map recommendation names to product selection names
+  const mapToProductSelectionName = (
+    productName: string,
+    category: "glass" | "handrail" | "base"
+  ): string => {
+    if (category === "glass") {
+      // Map glass names to match product selection format
+      if (productName.includes("Sentry-10+10")) return "Sentry 10+10mm";
+      if (productName.includes("Sentry-8+8")) return "Sentry 8+8mm";
+      if (productName.includes("Sentry-6+6")) return "Sentry 6+6mm";
+      if (productName.includes("PVB-8+8")) return "PVB 8+8mm";
+      if (productName.includes("PVB-6+6")) return "PVB 6+6mm";
+      if (productName.includes("Tough-12mm")) return "Toughened 12mm";
+    }
+
+    if (category === "handrail") {
+      // Map handrail names to match product selection format
+      if (productName.includes("Oval-(O-80)")) return "Oval80";
+      if (productName.includes("Oval-(O-60)")) return "Oval60";
+      if (productName.includes("Square-(S-50)")) return "Square50";
+      if (productName.includes("Square-(S-40)")) return "Square40";
+      if (productName.includes("LED-40")) return "LED40";
+      if (productName.includes("LED-20")) return "LED20";
+      if (productName.includes("Round-(R-50)")) return "Round50";
+      if (productName.includes("Slim-(S-25)")) return "Slim";
+      if (productName.includes("Sleek-(S-17)")) return "Sleek";
+      if (productName.includes("Sleek-(S-12)")) return "Sleek";
+    }
+
+    if (category === "base") {
+      // Map base names to match product selection format
+      if (productName.includes("Ultra-(M50)")) return "Ultra";
+      if (productName.includes("Pro-(L50)")) return "Pro";
+      if (productName.includes("Ace-(A50)")) return "Ace";
+      if (productName.includes("Dot-(E50)")) return "Dot";
+      if (productName.includes("Spigot-(SP250)")) return "Spigot";
+      if (productName.includes("Smart-(C75)")) return "Smart";
+      if (productName.includes("Lux-(T100)")) return "Lux";
+      if (productName.includes("SemiPro-(C50)")) return "SemiPro";
+      if (productName.includes("SemiSmart-(D75)")) return "SemiSmart";
+      if (productName.includes("Mini-(F55)")) return "Mini";
+      if (productName.includes("SemiMini-(D55)")) return "SemiMini";
+      if (productName.includes("Micro-(F40)")) return "Micro";
+    }
+
+    return productName;
+  };
+
+  // Handle Go to Quote button click
+  const handleGoToQuote = (recommendation: {
+    base: { name: string };
+    handrail: { name: string };
+    glass: { name: string };
+  }) => {
+    const baseSelection = mapToProductSelectionName(
+      recommendation.base.name,
+      "base"
+    );
+    const handrailSelection = mapToProductSelectionName(
+      recommendation.handrail.name,
+      "handrail"
+    );
+    const glassSelection = mapToProductSelectionName(
+      recommendation.glass.name,
+      "glass"
+    );
+
+    // Store recommendation data in localStorage
+    const recommendationData: RecommendationData = {
+      base: baseSelection,
+      handrail: handrailSelection,
+      glass: glassSelection,
+      height: Number.parseFloat(formData.glassHeight) || 3.5,
+      timestamp: Date.now(),
+    };
+
+    localStorage.setItem(
+      "selectedRecommendation",
+      JSON.stringify(recommendationData)
+    );
+
+    // Navigate to product selection page
+    window.location.href = "/formdash";
   };
 
   // Get recommendations from formData
@@ -242,7 +334,7 @@ const ResultsStep: React.FC<Props> = ({ formData, onReset }) => {
                       "/placeholder.svg"
                     }
                     alt={recommendation.glass.name}
-                    className="w-48 h-48 object-contain mb-3 rounded-md bg-white"
+                    className="w-24 h-24 object-contain mb-3 rounded-md bg-white p-2"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src =
                         "/placeholder.svg?height=96&width=96";
@@ -272,7 +364,7 @@ const ResultsStep: React.FC<Props> = ({ formData, onReset }) => {
                       ) || "/placeholder.svg"
                     }
                     alt={recommendation.handrail.name}
-                    className="w-48 h-48 object-contain mb-3 rounded-md bg-white "
+                    className="w-24 h-24 object-contain mb-3 rounded-md bg-white p-2"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src =
                         "/placeholder.svg?height=96&width=96";
@@ -300,7 +392,7 @@ const ResultsStep: React.FC<Props> = ({ formData, onReset }) => {
                       "/placeholder.svg"
                     }
                     alt={recommendation.base.name}
-                    className="w-48 h-48 object-contain mb-3 rounded-md bg-white"
+                    className="w-24 h-24 object-contain mb-3 rounded-md bg-white p-2"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src =
                         "/placeholder.svg?height=96&width=96";
@@ -318,7 +410,7 @@ const ResultsStep: React.FC<Props> = ({ formData, onReset }) => {
             </div>
 
             {/* Scores */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm mb-6">
               <div>
                 <span className="font-medium">Safety Score:</span>
                 <div className="w-full bg-gray-200 rounded-full h-2 mt-1">
@@ -367,6 +459,17 @@ const ResultsStep: React.FC<Props> = ({ formData, onReset }) => {
                   {recommendation.compatibility}/100
                 </span>
               </div>
+            </div>
+
+            {/* Go to Quote Button */}
+            <div className="flex justify-center">
+              <button
+                onClick={() => handleGoToQuote(recommendation)}
+                className="flex items-center gap-2 px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors font-medium"
+              >
+                <ShoppingCart className="w-5 h-5" />
+                Go to Quote
+              </button>
             </div>
           </div>
         ))}

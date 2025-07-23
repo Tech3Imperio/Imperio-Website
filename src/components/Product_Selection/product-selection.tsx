@@ -3,7 +3,7 @@
 import type React from "react";
 import { getLocationFromPincode } from "../../utils/pincode-service";
 import { Info } from "lucide-react";
-import { useState, useCallback, useMemo } from "react";
+import { useState, useCallback, useMemo, useEffect } from "react";
 
 // Interfaces (keeping your existing ones)
 interface BaseDataItem {
@@ -171,6 +171,58 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
     },
     []
   );
+  const mapGlassNameToDropdownLabel = (recommended: string): string => {
+    const map: Record<string, string> = {
+      "Tough 12mm": "12mm Clear Toughened Glass",
+      "PVB 6+6mm": "6+6 PVB Laminated Toughened glass",
+      "PVB 8+8mm": "8+8 PVB Laminated Toughened glass",
+      "Sentry 6+6mm": "6+6 SGP Laminated Toughened glass",
+      "Sentry 8+8mm": "8+8 SGP Laminated Toughened glass",
+      "Sentry 10+10mm": "8+8 SGP Laminated Toughened glass",
+    };
+
+    return map[recommended] || recommended;
+  };
+
+  const [isEditMode, setIsEditMode] = useState(false);
+  useEffect(() => {
+    if (isEditMode) return;
+
+    const saved = localStorage.getItem("selectedRecommendation");
+    if (!saved) return;
+
+    const { base, handrail, glass, height } = JSON.parse(saved);
+
+    if (
+      baseData.length &&
+      handrailData.length &&
+      glassData.length &&
+      heightOptions.length
+    ) {
+      const mappedGlass = mapGlassNameToDropdownLabel(glass);
+
+      const isBaseAvailable = baseData.some((b) => b.Base === base);
+      const isHandrailAvailable = handrailData.some(
+        (h) => h["Handrail Type"] === handrail
+      );
+      const isGlassAvailable = glassData.some(
+        (g) => g["Glass Thickness"] === mappedGlass
+      );
+      const isHeightAvailable = heightOptions.includes(height);
+
+      setProductData((prev) => ({
+        ...prev,
+        base: isBaseAvailable ? base : baseData[0]?.Base || "",
+        handrail: isHandrailAvailable
+          ? handrail
+          : handrailData[0]?.["Handrail Type"] || "",
+        glass: isGlassAvailable
+          ? mappedGlass
+          : glassData[0]?.["Glass Thickness"] || "",
+        height: isHeightAvailable ? height : heightOptions[0] || 3.5,
+      }));
+    }
+  }, [isEditMode, baseData, handrailData, glassData, heightOptions]);
 
   // Optimized product data update handlers
   const updateProductData = useCallback(
@@ -248,6 +300,19 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
           })}
         </div>
       </div>
+      {localStorage.getItem("selectedRecommendation") && !isEditMode && (
+        <div className="flex justify-end mb-4">
+          <button
+            className="px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600 transition-all"
+            onClick={() => {
+              localStorage.removeItem("selectedRecommendation");
+              setIsEditMode(true); // Now unlock full manual editing
+            }}
+          >
+            Edit Selection
+          </button>
+        </div>
+      )}
 
       {/* Base Selection */}
       <div className="mb-10 bg-white rounded-none p-6 sm:p-8 shadow-md">
@@ -389,6 +454,12 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                     ? "Heavy duty Railing Systems, Ultra Strong and Modern Aesthetics, High Grade Anti Corrosion"
                     : showBaseInfo === "Spigot"
                     ? "Premium floor-mounted spigot system with sleek design and high load capacity. Ideal for frameless installations."
+                    : showBaseInfo === "Ultra"
+                    ? "Premium floor-mounted spigot system with sleek design and high load capacity. Ideal for frameless installations."
+                    : showBaseInfo === "Prime"
+                    ? "Premium floor-mounted spigot system with sleek design and high load capacity. Ideal for frameless installations."
+                    : showBaseInfo === "Flex"
+                    ? "Premium floor-mounted spigot system with sleek design and high load capacity. Ideal for frameless installations."
                     : "Custom installations requiring specialized mounting solutions"}
                 </p>
                 <p>
@@ -413,6 +484,12 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
                     ? "Residential and light commercial use. Suitable for standard balconies and medium-sized staircases with space constraints."
                     : showBaseInfo === "Spigot"
                     ? "Versatile for balconies, pool fencing, and decks. Supports frameless installations with a clean aesthetic."
+                    : showBaseInfo === "Ultra"
+                    ? "Premium floor-mounted spigot system with sleek design and high load capacity. Ideal for frameless installations."
+                    : showBaseInfo === "Prime"
+                    ? "Premium floor-mounted spigot system with sleek design and high load capacity. Ideal for frameless installations."
+                    : showBaseInfo === "Flex"
+                    ? "Premium floor-mounted spigot system with sleek design and high load capacity. Ideal for frameless installations."
                     : "Commercial spaces and unique architectural designs requiring specific mounting configurations."}
                 </p>
               </div>

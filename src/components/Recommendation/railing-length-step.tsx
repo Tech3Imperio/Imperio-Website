@@ -17,15 +17,15 @@ export default function RailingLengthStep({ formData, updateFormData }: Props) {
     updateFormData("railingLength", e.target.value);
   };
 
-  const getRiskPoints = (length: number) => {
-    if (length <= 10) return 20;
-    if (length >= 30) return 100;
+  // const getRiskPoints = (length: number) => {
+  //   if (length <= 10) return 20;
+  //   if (length >= 30) return 100;
 
-    return Math.round(20 + ((length - 10) / (30 - 10)) * (100 - 20));
-  };
+  //   return Math.round(20 + ((length - 10) / (30 - 10)) * (100 - 20));
+  // };
 
   const currentLength = Number.parseFloat(formData.railingLength) || 0;
-  const riskPoints = currentLength > 0 ? getRiskPoints(currentLength) : 0;
+  // const riskPoints = currentLength > 0 ? getRiskPoints(currentLength) : 0;
 
   return (
     <div>
@@ -66,9 +66,9 @@ export default function RailingLengthStep({ formData, updateFormData }: Props) {
           {currentLength > 0 && (
             <div className="mt-4 p-3 bg-gray-50 rounded-md">
               <p className="text-sm text-gray-600 mb-1">Risk Assessment</p>
-              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+              {/* <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
                 {riskPoints} Risk Points
-              </span>
+              </span> */}
             </div>
           )}
 

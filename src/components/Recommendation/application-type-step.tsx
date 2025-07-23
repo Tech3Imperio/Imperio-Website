@@ -114,9 +114,9 @@ export default function ApplicationTypeStep({
                 <p className="text-sm text-gray-600 mb-3">
                   {option.description}
                 </p>
-                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                {/* <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
                   {option.risk}
-                </span>
+                </span> */}
               </div>
             </div>
           );

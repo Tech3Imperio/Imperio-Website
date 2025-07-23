@@ -3,7 +3,7 @@
 import type { FormData } from "../../pages/GlassRecommendationSystem/GlassRecommendationSystem";
 import TopMountedImg from "../../../public/images/components/logos/top-mounting.png";
 import SideMountedImg from "../../../public/images/components/logos/side-mounting.png";
-import InFloorImg from "../../../public/images/components/logos/Screenshot 2025-07-14 110723.png";
+import InFloorImg from "../../../public/images/components/logos/infloor-mounting.png";
 
 interface Props {
   formData: FormData;
