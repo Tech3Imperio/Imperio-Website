@@ -222,7 +222,14 @@ const ProductSelection: React.FC<ProductSelectionProps> = ({
         height: isHeightAvailable ? height : heightOptions[0] || 3.5,
       }));
     }
-  }, [isEditMode, baseData, handrailData, glassData, heightOptions]);
+  }, [
+    isEditMode,
+    baseData,
+    handrailData,
+    glassData,
+    heightOptions,
+    setProductData,
+  ]);
 
   // Optimized product data update handlers
   const updateProductData = useCallback(
