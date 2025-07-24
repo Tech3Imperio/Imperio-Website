@@ -198,7 +198,7 @@ const ResultsStep: React.FC<Props> = ({ formData, onReset }) => {
     );
 
     // Navigate to product selection page
-    window.location.href = "/product-selection";
+    window.location.href = "/formdash";
   };
 
   // Get recommendations from formData
