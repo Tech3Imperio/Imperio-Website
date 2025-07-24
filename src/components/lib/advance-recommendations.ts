@@ -246,8 +246,8 @@ function evaluateRecommendationSet(
     Math.max(20, (combinedSafety / Math.max(requiredSafety, 1)) * 100)
   );
   const riskMitigation = Math.max(
-    10,
-    Math.min(100, combinedSafety - requiredSafety + 60)
+    0,
+    Math.min(200, combinedSafety - requiredSafety + 100)
   );
 
   const avgCost = (glass.cost + handrail.cost + base.cost) / 3;
@@ -292,6 +292,23 @@ function evaluateRecommendationSet(
   };
 }
 
+function filterBasesFor12mmGlass(
+  bases: Component[],
+  glassName: string
+): Component[] {
+  if (glassName.includes("12mm")) {
+    // Exclude Lux, Mini, SemiMini, and Micro for 12mm glass
+    return bases.filter(
+      (base) =>
+        !base.name.includes("Lux") &&
+        !base.name.includes("Mini") &&
+        !base.name.includes("SemiMini") &&
+        !base.name.includes("Micro")
+    );
+  }
+  return bases;
+}
+
 function generateProportionalRecommendations(
   glasses: Component[],
   handrails: Component[],
@@ -331,7 +348,7 @@ function generateProportionalRecommendations(
   if (isStaircase && mountingType === "top-mounted") {
     // For staircase + top-mounted: only Spigot
     filteredBases = bases.filter((b) => b.name.includes("Spigot"));
-  } else if (isStaircase && mountingType == "top-mounted" && length > 25) {
+  } else if (isStaircase && mountingType !== "top-mounted") {
     // For staircase + other mounting: exclude Spigot, only Lux
     filteredBases = bases.filter((b) => b.name === "Lux-(T100)");
   } else if (formData.installationArea === "Balcony") {
@@ -357,8 +374,14 @@ function generateProportionalRecommendations(
   }
 
   for (const glass of glasses) {
+    // Filter bases based on glass compatibility
+    const glassCompatibleBases = filterBasesFor12mmGlass(
+      filteredBases,
+      glass.name
+    );
+
     for (const handrail of filteredHandrails) {
-      for (const base of filteredBases) {
+      for (const base of glassCompatibleBases) {
         // Check mounting type restrictions
         if (
           mountingType === "top-mounted" &&

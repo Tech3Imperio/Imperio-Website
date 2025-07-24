@@ -122,6 +122,7 @@ const ResultsStep: React.FC<Props> = ({ formData, onReset }) => {
       if (productName.includes("PVB-8+8")) return "PVB 8+8mm";
       if (productName.includes("PVB-6+6")) return "PVB 6+6mm";
       if (productName.includes("Tough-12mm")) return "Toughened 12mm";
+      if (productName.includes("Tough-10mm")) return "Toughened 10mm";
     }
 
     if (category === "handrail") {
@@ -158,11 +159,17 @@ const ResultsStep: React.FC<Props> = ({ formData, onReset }) => {
   };
 
   // Handle Go to Quote button click
-  const handleGoToQuote = (recommendation: {
-    base: { name: string };
-    handrail: { name: string };
-    glass: { name: string };
-  }) => {
+  type Recommendation = {
+    base: { name: string; safety: number; cost: number };
+    handrail: { name: string; safety: number; cost: number };
+    glass: { name: string; safety: number; cost: number };
+    safetyScore: number;
+    costEfficiency: number;
+    totalScore: number;
+    riskMitigation: number;
+  };
+
+  const handleGoToQuote = (recommendation: Recommendation) => {
     const baseSelection = mapToProductSelectionName(
       recommendation.base.name,
       "base"
@@ -191,7 +198,7 @@ const ResultsStep: React.FC<Props> = ({ formData, onReset }) => {
     );
 
     // Navigate to product selection page
-    window.location.href = "/formdash";
+    window.location.href = "/product-selection";
   };
 
   // Get recommendations from formData
@@ -322,30 +329,30 @@ const ResultsStep: React.FC<Props> = ({ formData, onReset }) => {
 
             {/* Components with Images */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-              {/* Glass Component */}
-              <div className="p-4 bg-blue-50 rounded-lg">
-                <h4 className="font-medium text-blue-900 mb-3 text-center">
-                  Glass
+              {/* Base Component */}
+              <div className="p-4 bg-purple-50 rounded-lg">
+                <h4 className="font-medium text-purple-900 mb-3 text-center">
+                  Base
                 </h4>
                 <div className="flex flex-col items-center">
                   <img
                     src={
-                      getProductImage(recommendation.glass.name, "glass") ||
+                      getProductImage(recommendation.base.name, "base") ||
                       "/placeholder.svg"
                     }
-                    alt={recommendation.glass.name}
+                    alt={recommendation.base.name}
                     className="w-24 h-24 object-contain mb-3 rounded-md bg-white p-2"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src =
                         "/placeholder.svg?height=96&width=96";
                     }}
                   />
-                  <p className="text-blue-800 font-medium text-center">
-                    {recommendation.glass.name}
+                  <p className="text-purple-800 font-medium text-center">
+                    {recommendation.base.name}
                   </p>
-                  <div className="mt-2 text-sm text-blue-600 text-center">
-                    <p>Safety: {recommendation.glass.safety}</p>
-                    <p>Cost: {recommendation.glass.cost}</p>
+                  <div className="mt-2 text-sm text-purple-600 text-center">
+                    <p>Safety: {recommendation.base.safety}</p>
+                    <p>Cost: {recommendation.base.cost}</p>
                   </div>
                 </div>
               </div>
@@ -380,37 +387,37 @@ const ResultsStep: React.FC<Props> = ({ formData, onReset }) => {
                 </div>
               </div>
 
-              {/* Base Component */}
-              <div className="p-4 bg-purple-50 rounded-lg">
-                <h4 className="font-medium text-purple-900 mb-3 text-center">
-                  Base
+              {/* Glass Component */}
+              <div className="p-4 bg-blue-50 rounded-lg">
+                <h4 className="font-medium text-blue-900 mb-3 text-center">
+                  Glass
                 </h4>
                 <div className="flex flex-col items-center">
                   <img
                     src={
-                      getProductImage(recommendation.base.name, "base") ||
+                      getProductImage(recommendation.glass.name, "glass") ||
                       "/placeholder.svg"
                     }
-                    alt={recommendation.base.name}
+                    alt={recommendation.glass.name}
                     className="w-24 h-24 object-contain mb-3 rounded-md bg-white p-2"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src =
                         "/placeholder.svg?height=96&width=96";
                     }}
                   />
-                  <p className="text-purple-800 font-medium text-center">
-                    {recommendation.base.name}
+                  <p className="text-blue-800 font-medium text-center">
+                    {recommendation.glass.name}
                   </p>
-                  <div className="mt-2 text-sm text-purple-600 text-center">
-                    <p>Safety: {recommendation.base.safety}</p>
-                    <p>Cost: {recommendation.base.cost}</p>
+                  <div className="mt-2 text-sm text-blue-600 text-center">
+                    <p>Safety: {recommendation.glass.safety}</p>
+                    <p>Cost: {recommendation.glass.cost}</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Scores */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm mb-6">
               <div>
                 <span className="font-medium">Safety Score:</span>
                 <div className="w-full bg-gray-200 rounded-full h-2 mt-1">
@@ -437,26 +444,35 @@ const ResultsStep: React.FC<Props> = ({ formData, onReset }) => {
               </div>
               <div>
                 <span className="font-medium">Risk Mitigation:</span>
-                <div className="w-full bg-gray-200 rounded-full h-2 mt-1">
+                <div className="relative w-full bg-gray-200 rounded-full h-4 mt-1">
+                  {/* Center line at 100 */}
+                  <div className="absolute left-1/2 top-0 w-0.5 h-full bg-gray-400 transform -translate-x-0.5"></div>
+
+                  {/* Risk mitigation bar */}
                   <div
-                    className="bg-yellow-600 h-2 rounded-full"
-                    style={{ width: `${recommendation.riskMitigation}%` }}
+                    className={`h-4 rounded-full ${
+                      recommendation.riskMitigation >= 100
+                        ? "bg-green-600"
+                        : "bg-red-500"
+                    }`}
+                    style={{
+                      width: `${Math.abs(
+                        recommendation.riskMitigation - 100
+                      )}%`,
+                      marginLeft:
+                        recommendation.riskMitigation >= 100
+                          ? "50%"
+                          : `${
+                              50 - Math.abs(recommendation.riskMitigation - 100)
+                            }%`,
+                    }}
                   />
+
+                  {/* Scale labels */}
+                  <div className="flex justify-between text-xs text-gray-500 mt-1"></div>
                 </div>
-                <span className="text-xs text-gray-600">
-                  {recommendation.riskMitigation}/100
-                </span>
-              </div>
-              <div>
-                <span className="font-medium">Compatibility:</span>
-                <div className="w-full bg-gray-200 rounded-full h-2 mt-1">
-                  <div
-                    className="bg-purple-600 h-2 rounded-full"
-                    style={{ width: `${recommendation.compatibility}%` }}
-                  />
-                </div>
-                <span className="text-xs text-gray-600">
-                  {recommendation.compatibility}/100
+                <span className="text-xs text-gray-600 flex justify-center mt-1">
+                  {recommendation.riskMitigation}/100{" "}
                 </span>
               </div>
             </div>

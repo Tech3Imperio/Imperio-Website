@@ -20,7 +20,7 @@ import { CiFilter } from "react-icons/ci";
 import { IoSearchOutline } from "react-icons/io5";
 import { BsHandbag } from "react-icons/bs";
 // import EnquiryButton from "../../components/EnquiryButton/EnquiryButton";
-
+import { useNavigate } from "react-router-dom";
 // import DealerProductsPage from "./DealerProductsPage";
 
 export type ProductDescription = {
@@ -162,7 +162,11 @@ const MemoProducts: React.FC = () => {
       setLocalStorageItem<ProductProps[]>("ProductData", data);
     }
   }, [data, error, loading, dataBuilder]);
+  const navigate = useNavigate();
 
+  const handleClick = () => {
+    navigate("/recommend");
+  };
   const filterCategories = [
     {
       name: "Applications",
@@ -364,6 +368,12 @@ const MemoProducts: React.FC = () => {
             ))}
             <button
               onClick={() => setSelectedTypes([])}
+              className="py-3 mb-3 tablet:py-4 px-5 laptop:px-6 text-sm text-white bg-[--black] font-normal rounded-none transition-700 hover:text-[--black] hover:bg-[--secound]"
+            >
+              Reset Filters
+            </button>
+            <button
+              onClick={handleClick}
               className="py-3 mb-3 tablet:py-4 px-5 laptop:px-6 text-sm text-white bg-[--black] font-normal rounded-none transition-700 hover:text-[--black] hover:bg-[--secound]"
             >
               Reset Filters
@@ -746,6 +756,12 @@ const MemoProducts: React.FC = () => {
               className="py-3 mb-3 tablet:py-4 px-5 laptop:px-6 text-sm text-white bg-[--black] font-normal rounded-none transition-700 hover:text-[--black] hover:bg-[--secound]"
             >
               Reset Filters
+            </button>
+            <button
+              onClick={handleClick}
+              className=" tablet:py-4 laptop:px-6 text-sm text-white bg-[--black] font-normal rounded-none transition-700 hover:text-[--black] hover:bg-[--secound]"
+            >
+              Get Recommendation
             </button>
           </aside>
         )}
